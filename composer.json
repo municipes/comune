@@ -9,7 +9,20 @@
       "role": "Maintainer"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
   "require": {
+    "php": "^8.1",
+    "composer/installers": "^2.0",
+    "cweagans/composer-patches": "^1.6.0",
     "drupal/address": "^1.12",
     "drupal/admin_toolbar": "^3.4",
     "drupal/auto_entitylabel": "^3.0",
@@ -55,20 +68,19 @@
     "drupal/webform": "^6.2@beta",
     "drush/drush": "^11.5",
     "geocoder-php/nominatim-provider": "^5.7",
+    "municipes/silfi_triplette": "^1.0",
     "municipes/scaenographia": "^1.0"
   },
   "support": {
     "docs": "https://drupal.org/project/comune_profile"
   },
+  "replace": {
+    "drupal/comune": "self.version"
+  },
   "config": {
     "sort-packages": true,
     "allow-plugins": {
       "cweagans/composer-patches": true
-    }
-  },
-  "extra": {
-    "patches": {
-
     }
   }
 }
