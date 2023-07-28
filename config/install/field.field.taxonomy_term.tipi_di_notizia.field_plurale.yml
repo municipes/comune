@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_plurale
+    - taxonomy.vocabulary.tipi_di_notizia
+id: taxonomy_term.tipi_di_notizia.field_plurale
+field_name: field_plurale
+entity_type: taxonomy_term
+bundle: tipi_di_notizia
+label: Plurale
+description: 'Il termine nella sua forma al plurale.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

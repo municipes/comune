@@ -1,0 +1,99 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_galleria_immagini
+    - node.type.documento_pubblico
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - entity_reference_revisions
+id: node.documento_pubblico.field_galleria_immagini
+field_name: field_galleria_immagini
+entity_type: node
+bundle: documento_pubblico
+label: 'Galleria di immagini'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 25
+        enabled: false
+      accordion_item:
+        weight: 26
+        enabled: false
+      attachments:
+        weight: 27
+        enabled: false
+      callout:
+        weight: 28
+        enabled: false
+      carousel:
+        weight: 29
+        enabled: false
+      citation:
+        weight: 30
+        enabled: false
+      content:
+        weight: 31
+        enabled: false
+      dataset:
+        weight: 65
+        enabled: false
+      fase_intitolata:
+        weight: 70
+        enabled: false
+      fase_semplice:
+        weight: 34
+        enabled: false
+      gallery:
+        weight: 35
+        enabled: true
+      gallery_item:
+        weight: 36
+        enabled: false
+      hero:
+        weight: 37
+        enabled: false
+      in_evidenza:
+        weight: 38
+        enabled: false
+      link:
+        weight: 75
+        enabled: false
+      map:
+        weight: 40
+        enabled: false
+      node_reference:
+        weight: 41
+        enabled: false
+      punto_di_contatto:
+        weight: 79
+        enabled: false
+      section:
+        weight: 43
+        enabled: false
+      settings:
+        weight: 44
+        enabled: false
+      slide:
+        weight: 45
+        enabled: false
+      timeline:
+        weight: 46
+        enabled: false
+      timeline_item:
+        weight: 47
+        enabled: false
+      vista:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

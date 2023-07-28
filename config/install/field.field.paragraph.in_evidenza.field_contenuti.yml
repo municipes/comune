@@ -1,0 +1,44 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenuti
+    - node.type.documento_pubblico
+    - node.type.evento
+    - node.type.luogo
+    - node.type.notizia
+    - node.type.pagina
+    - node.type.persona
+    - node.type.servizio
+    - node.type.sito_tematico
+    - node.type.unita_organizzativa
+    - paragraphs.paragraphs_type.in_evidenza
+id: paragraph.in_evidenza.field_contenuti
+field_name: field_contenuti
+entity_type: paragraph
+bundle: in_evidenza
+label: Contenuti
+description: 'Seleziona i contenuti (nodi) da mettere in evidenza'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_pubblico: documento_pubblico
+      evento: evento
+      luogo: luogo
+      notizia: notizia
+      pagina: pagina
+      persona: persona
+      servizio: servizio
+      sito_tematico: sito_tematico
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: notizia
+field_type: entity_reference

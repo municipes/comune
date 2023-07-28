@@ -1,0 +1,33 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_timeline_item.field_date
+    - field.field.paragraph.date_timeline_item.field_title
+    - paragraphs.paragraphs_type.date_timeline_item
+  module:
+    - datetime
+id: paragraph.date_timeline_item.default
+targetEntityType: paragraph
+bundle: date_timeline_item
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_datetime
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

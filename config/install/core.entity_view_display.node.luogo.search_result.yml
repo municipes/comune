@@ -1,0 +1,72 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.luogo.field_argomenti
+    - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_descrizione_breve
+    - field.field.node.luogo.field_descrizione_completa
+    - field.field.node.luogo.field_galleria_immagini
+    - field.field.node.luogo.field_identificativo
+    - field.field.node.luogo.field_immagine
+    - field.field.node.luogo.field_indirizzo
+    - field.field.node.luogo.field_luoghi
+    - field.field.node.luogo.field_modalita_di_accesso
+    - field.field.node.luogo.field_orario_per_il_pubblico
+    - field.field.node.luogo.field_posizione_gps
+    - field.field.node.luogo.field_punti_di_contatto
+    - field.field.node.luogo.field_quartiere
+    - field.field.node.luogo.field_servizi_presenti_nel_luogo
+    - field.field.node.luogo.field_sottotitolo
+    - field.field.node.luogo.field_tipo_di_luogo
+    - field.field.node.luogo.field_ulteriori_informazioni
+    - field.field.node.luogo.field_unita_organizzativa
+    - field.field.node.luogo.field_video_esterno
+    - node.type.luogo
+  module:
+    - user
+id: node.luogo.search_result
+targetEntityType: node
+bundle: luogo
+mode: search_result
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+hidden:
+  field_argomenti: true
+  field_circoscrizione: true
+  field_descrizione_completa: true
+  field_galleria_immagini: true
+  field_identificativo: true
+  field_immagine: true
+  field_indirizzo: true
+  field_luoghi: true
+  field_modalita_di_accesso: true
+  field_orario_per_il_pubblico: true
+  field_posizione_gps: true
+  field_punti_di_contatto: true
+  field_quartiere: true
+  field_servizi_presenti_nel_luogo: true
+  field_sottotitolo: true
+  field_tipo_di_luogo: true
+  field_ulteriori_informazioni: true
+  field_unita_organizzativa: true
+  field_video_esterno: true
+  langcode: true
+  node_read_time: true

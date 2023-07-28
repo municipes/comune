@@ -1,0 +1,22 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - scaenographia
+id: brandingdelsito
+theme: scaenographia
+region: footer_brand
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding del sito'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_in_evidenza
+label: 'Teaser in evidenza'
+targetEntityType: node
+cache: true

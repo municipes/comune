@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unita_organizzativa
+    - node.type.appuntamento
+    - node.type.unita_organizzativa
+id: node.appuntamento.field_unita_organizzativa
+field_name: field_unita_organizzativa
+entity_type: node
+bundle: appuntamento
+label: 'Unità organizzativa'
+description: "Se l'appuntamento non è su un servizio ma con un'unità organizzativa."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

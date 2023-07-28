@@ -1,0 +1,17 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.unita_organizzativa
+id: node.unita_organizzativa.title
+field_name: title
+entity_type: node
+bundle: unita_organizzativa
+label: "Nome dell'unità organizzativa"
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

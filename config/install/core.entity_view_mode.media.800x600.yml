@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - media
+id: media.800x600
+label: 800x600
+targetEntityType: media
+cache: true

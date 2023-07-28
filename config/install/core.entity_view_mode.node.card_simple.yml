@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_simple
+label: 'Card semplice'
+targetEntityType: node
+cache: true

@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+id: footer
+label: 'Piè di pagina'
+description: 'Collegamenti informazioni sito'
+locked: true

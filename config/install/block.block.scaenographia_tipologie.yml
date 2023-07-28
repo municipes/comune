@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - facets.facet.tipologie
+  module:
+    - facets
+    - system
+  theme:
+    - scaenographia
+id: scaenographia_tipologie
+theme: scaenographia
+region: sidebar_first
+weight: -15
+provider: null
+plugin: 'facet_block:tipologie'
+settings:
+  id: 'facet_block:tipologie'
+  label: Tipologie
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: scaenographia_tipologie
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /ricerca-globale

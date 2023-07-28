@@ -1,0 +1,13 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - user.role.editor
+  module:
+    - user
+id: user_remove_role_action.editor
+label: 'Remove the Redattore role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor

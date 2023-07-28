@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+id: html_datetime
+label: 'Data e ora HTML'
+locked: true
+pattern: 'Y-m-d\TH:i:sO'

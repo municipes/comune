@@ -1,0 +1,33 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.800x600
+    - field.field.media.image.field_media_image
+    - image.style.focal_point_svga_4_3_800x600_
+    - media.type.image
+  module:
+    - image
+id: media.image.800x600
+targetEntityType: media
+bundle: image
+mode: 800x600
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: focal_point_svga_4_3_800x600_
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

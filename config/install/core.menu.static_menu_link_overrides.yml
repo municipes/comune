@@ -1,0 +1,92 @@
+langcode: it
+definitions:
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__43':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__40':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__27':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__30':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__42':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__31':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__28':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__36':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__38':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__45':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__34':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__41':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__39':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__33':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__categorie_di_servizio__29':
+    expanded: false
+    parent: 'menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+    weight: 0
+    menu_name: categorie-di-servizio
+    enabled: true

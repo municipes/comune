@@ -1,0 +1,25 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  type_tray:
+    type_category: riservata
+    type_thumbnail: ''
+    type_icon: ''
+    type_description: ''
+    existing_nodes_link_text: 'View existing <em class="placeholder">Pratica</em> content'
+    type_weight: 0
+name: Pratica
+type: pratica
+description: '“Content type utile per l’ implementazione dell’AREA RISERVATA”'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

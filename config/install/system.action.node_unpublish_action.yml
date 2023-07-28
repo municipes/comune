@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node_unpublish_action
+label: 'Rimuovere contenuto dalla pubblicazione'
+type: node
+plugin: 'entity:unpublish_action:node'
+configuration: {  }

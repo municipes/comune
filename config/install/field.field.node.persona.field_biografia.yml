@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_biografia
+    - node.type.persona
+  module:
+    - text
+id: node.persona.field_biografia
+field_name: field_biografia
+entity_type: node
+bundle: persona
+label: Biografia
+description: 'Solo per Persona Politica: testo descrittivo che riporta la biografia della persona.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

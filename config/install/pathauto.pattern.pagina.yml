@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: pagina
+label: Pagina
+type: 'canonical_entities:node'
+pattern: '/[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  7c43125c-ea69-49e7-9a02-efca82e2c569:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7c43125c-ea69-49e7-9a02-efca82e2c569
+    context_mapping:
+      node: node
+    bundles:
+      pagina: pagina
+selection_logic: and
+weight: -5
+relationships: {  }

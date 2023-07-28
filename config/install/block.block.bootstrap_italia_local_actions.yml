@@ -1,0 +1,17 @@
+langcode: it
+status: true
+dependencies:
+  theme:
+    - bootstrap_italia
+id: bootstrap_italia_local_actions
+theme: bootstrap_italia
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Azioni di amministrazione principali'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,45 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.paragraph
+    - field.field.node.punto_di_contatto.field_persona
+    - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
+    - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
+    - node.type.punto_di_contatto
+id: node.punto_di_contatto.paragraph
+targetEntityType: node
+bundle: punto_di_contatto
+mode: paragraph
+content:
+  field_tipo_punto_di_contatto:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_valore_punto_di_contatto:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_persona: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

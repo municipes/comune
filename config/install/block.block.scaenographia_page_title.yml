@@ -1,0 +1,17 @@
+langcode: it
+status: true
+dependencies:
+  theme:
+    - scaenographia
+id: scaenographia_page_title
+theme: scaenographia
+region: title
+weight: -15
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titolo della pagina'
+  label_display: '0'
+  provider: core
+visibility: {  }

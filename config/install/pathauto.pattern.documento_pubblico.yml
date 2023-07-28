@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: documento_pubblico
+label: 'Documento pubblico'
+type: 'canonical_entities:node'
+pattern: '/amministrazione/documenti-e-dati/[node:field_tipo_di_documento]/[node:title]'
+selection_criteria:
+  5e7afa2c-f843-432f-890d-11b56fc13362:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5e7afa2c-f843-432f-890d-11b56fc13362
+    context_mapping:
+      node: node
+    bundles:
+      documento_pubblico: documento_pubblico
+selection_logic: and
+weight: -5
+relationships: {  }

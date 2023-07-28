@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies: {  }
+id: fase_semplice
+label: 'Fase semplice'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

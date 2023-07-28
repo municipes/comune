@@ -1,0 +1,9 @@
+langcode: it
+categories:
+  amministrazione: Amministrazione
+  novita: Novità
+  servizi: Servizi
+  vivere: 'Vivere il Comune'
+  riservata: 'Area riservata'
+fallback_label: 'Non categorizzati'
+text_format: plain_text

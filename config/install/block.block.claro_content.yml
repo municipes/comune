@@ -1,0 +1,19 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - claro
+id: claro_content
+theme: claro
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenuto della pagina principale'
+  label_display: '0'
+  provider: system
+visibility: {  }

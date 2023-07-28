@@ -1,0 +1,13 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - pathauto
+  enforced:
+    module:
+      - user
+id: pathauto_update_alias_user
+label: 'Aggiorna alias URL'
+type: user
+plugin: pathauto_update_alias
+configuration: {  }

@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: "Eventi della vita di un'impresa"
+vid: eventi_della_vita_di_un_impresa
+description: "Classificazione degli eventi della vita dei un'impresa (Business Events)"
+weight: 0

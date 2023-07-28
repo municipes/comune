@@ -1,0 +1,11 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'

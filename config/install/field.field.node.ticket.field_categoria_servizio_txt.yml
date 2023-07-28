@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria_servizio_txt
+    - node.type.ticket
+id: node.ticket.field_categoria_servizio_txt
+field_name: field_categoria_servizio_txt
+entity_type: node
+bundle: ticket
+label: 'Categoria del servizio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

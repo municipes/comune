@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: 'Tipi di luogo'
+vid: tipi_di_luogo
+description: 'Classificazione multi livello dei luoghi di interesse pubblico'
+weight: 0

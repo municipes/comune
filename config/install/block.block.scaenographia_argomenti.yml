@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - facets.facet.argomenti
+  module:
+    - facets
+    - system
+  theme:
+    - scaenographia
+id: scaenographia_argomenti
+theme: scaenographia
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'facet_block:argomenti'
+settings:
+  id: 'facet_block:argomenti'
+  label: Argomenti
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: scaenographia_argomenti
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /ricerca-globale

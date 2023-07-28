@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: Amministrazione
+vid: amministrazione
+description: "Tutta l'amministrazione. Vocabolario di supporto alla navigazione."
+weight: 0

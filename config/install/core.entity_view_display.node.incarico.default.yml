@@ -1,0 +1,74 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.incarico.field_compensi
+    - field.field.node.incarico.field_data_fine
+    - field.field.node.incarico.field_data_inizio
+    - field.field.node.incarico.field_data_insediamento
+    - field.field.node.incarico.field_documento
+    - field.field.node.incarico.field_importi_viaggio_servizio
+    - field.field.node.incarico.field_persona
+    - field.field.node.incarico.field_responsabile_struttura
+    - field.field.node.incarico.field_tipo_di_incarico
+    - field.field.node.incarico.field_ulteriori_informazioni
+    - field.field.node.incarico.field_unita_organizzativa
+    - node.type.incarico
+  module:
+    - datetime
+    - user
+id: node.incarico.default
+targetEntityType: node
+bundle: incarico
+mode: default
+content:
+  field_data_fine:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_data_inizio:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_documento:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_responsabile_struttura:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_compensi: true
+  field_data_insediamento: true
+  field_importi_viaggio_servizio: true
+  field_persona: true
+  field_tipo_di_incarico: true
+  field_ulteriori_informazioni: true
+  field_unita_organizzativa: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

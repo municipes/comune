@@ -1,0 +1,31 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.days_timeline_item.field_days
+    - field.field.paragraph.days_timeline_item.field_title
+    - paragraphs.paragraphs_type.days_timeline_item
+id: paragraph.days_timeline_item.default
+targetEntityType: paragraph
+bundle: days_timeline_item
+mode: default
+content:
+  field_days:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,37 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.buttons
+    - field.field.paragraph.link.field_description
+    - field.field.paragraph.link.field_link
+    - paragraphs.paragraphs_type.link
+  module:
+    - link
+id: paragraph.link.buttons
+targetEntityType: paragraph
+bundle: link
+mode: buttons
+content:
+  field_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

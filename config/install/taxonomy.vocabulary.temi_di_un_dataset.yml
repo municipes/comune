@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: 'Temi di un dataset'
+vid: temi_di_un_dataset
+description: 'Classificazione dei temi dei dati secondo il Vocabolario Controllato Temi dei dati.'
+weight: 0

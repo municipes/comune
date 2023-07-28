@@ -1,0 +1,15 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+    - system
+id: pubblicatore
+label: Pubblicatore
+weight: 13
+is_admin: null
+permissions:
+  - 'access content'
+  - 'administer users'
+  - 'view own unpublished content'
+  - 'view the administration theme'

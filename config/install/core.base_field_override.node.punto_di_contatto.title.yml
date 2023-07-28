@@ -1,0 +1,17 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.punto_di_contatto
+id: node.punto_di_contatto.title
+field_name: title
+entity_type: node
+bundle: punto_di_contatto
+label: 'Titolo punto di contatto'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

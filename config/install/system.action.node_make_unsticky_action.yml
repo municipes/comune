@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node_make_unsticky_action
+label: 'Rimuovere il contenuto dalla cima delle liste'
+type: node
+plugin: node_make_unsticky_action
+configuration: {  }

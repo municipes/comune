@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - user
+id: user.compact
+label: Compatto
+targetEntityType: user
+cache: true

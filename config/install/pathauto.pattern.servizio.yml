@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: servizio
+label: Servizio
+type: 'canonical_entities:node'
+pattern: '/servizi/[node:field_categoria_del_servizio]/[node:title]'
+selection_criteria:
+  949e6e2b-fe76-452a-a538-5d026aef3515:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 949e6e2b-fe76-452a-a538-5d026aef3515
+    context_mapping:
+      node: node
+    bundles:
+      servizio: servizio
+selection_logic: and
+weight: -5
+relationships: {  }

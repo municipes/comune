@@ -1,0 +1,17 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.chip
+    - field.field.taxonomy_term.argomenti.field_immagine
+    - taxonomy.vocabulary.argomenti
+id: taxonomy_term.argomenti.chip
+targetEntityType: taxonomy_term
+bundle: argomenti
+mode: chip
+content: {  }
+hidden:
+  description: true
+  field_immagine: true
+  langcode: true
+  search_api_excerpt: true

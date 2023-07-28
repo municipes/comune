@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: 'Tipi di incarico'
+vid: tipi_di_incarico
+description: '"Classificazione multi livello dei tipi di incarico che una persona può ricoprire presso un''amministrazione locale.'
+weight: 0

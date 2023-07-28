@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_e_orario_di_fine
+    - node.type.appuntamento
+  module:
+    - datetime
+id: node.appuntamento.field_data_e_orario_di_fine
+field_name: field_data_e_orario_di_fine
+entity_type: node
+bundle: appuntamento
+label: 'Data e ora fine appuntamento'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

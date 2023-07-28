@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_teaser
+label: 'Card teaser'
+targetEntityType: node
+cache: true

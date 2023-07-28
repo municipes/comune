@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node_promote_action
+label: 'Promozione in prima pagina del contenuto'
+type: node
+plugin: node_promote_action
+configuration: {  }

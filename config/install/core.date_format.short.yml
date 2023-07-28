@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+id: short
+label: 'Formato predefinito data corta'
+locked: false
+pattern: 'd/m/Y - H:i'

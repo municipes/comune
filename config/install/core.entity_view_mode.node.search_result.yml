@@ -1,0 +1,9 @@
+langcode: it
+status: false
+dependencies:
+  module:
+    - node
+id: node.search_result
+label: 'Highlighting dei risultati di ricerca'
+targetEntityType: node
+cache: true

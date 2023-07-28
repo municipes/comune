@@ -1,0 +1,15 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.chip
+    - taxonomy.vocabulary.tipi_di_documento
+id: taxonomy_term.tipi_di_documento.chip
+targetEntityType: taxonomy_term
+bundle: tipi_di_documento
+mode: chip
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

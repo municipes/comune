@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.con_paragrafi
+id: block_content.con_paragrafi
+target_entity_type_id: block_content
+target_bundle: con_paragrafi
+default_langcode: site_default
+language_alterable: false

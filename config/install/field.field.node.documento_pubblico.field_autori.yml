@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_autori
+    - node.type.documento_pubblico
+  module:
+    - text
+id: node.documento_pubblico.field_autori
+field_name: field_autori
+entity_type: node
+bundle: documento_pubblico
+label: Autore/i
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: 'Tipi di evento'
+vid: tipi_di_evento
+description: 'Classificazione multi livello degli eventi di interesse pubblico'
+weight: 0

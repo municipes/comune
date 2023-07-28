@@ -1,0 +1,10 @@
+langcode: it
+first_day: 1
+country:
+  default: IT
+timezone:
+  default: Europe/Rome
+  user:
+    configurable: true
+    default: 0
+    warn: false

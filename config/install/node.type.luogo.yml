@@ -1,0 +1,24 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  type_tray:
+    type_category: vivere
+    type_thumbnail: ''
+    type_icon: ''
+    type_description: ''
+    existing_nodes_link_text: 'View existing <em class="placeholder">Luogo</em> content'
+    type_weight: 0
+name: Luogo
+type: luogo
+description: 'Tipologia che struttura le informazioni relative a un luogo di interesse pubblico.'
+help: "Tipologia che struttura le informazioni relative a un luogo di interesse pubblico. Schema.org prevede una Tipologia Place<br>\r\nNota: I luoghi possono essere sede di eventi,  sede di strutture amministrative o politiche o punti di interesse.\r\nNome del luogo: nome principale del luogo o nome con il quale il luogo è conosciuto (ad es. Colosseo)"
+new_revision: false
+preview_mode: 1
+display_submitted: false

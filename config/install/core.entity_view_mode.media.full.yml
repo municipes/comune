@@ -1,0 +1,9 @@
+langcode: it
+status: false
+dependencies:
+  module:
+    - media
+id: media.full
+label: 'Contenuto completo'
+targetEntityType: media
+cache: true

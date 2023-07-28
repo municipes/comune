@@ -1,0 +1,32 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.faq
+  module:
+    - node
+    - path
+    - pathauto
+    - system
+    - taxonomy
+id: editor
+label: Redattore
+weight: 11
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer taxonomy'
+  - 'bypass node access'
+  - 'create faq content'
+  - 'create url aliases'
+  - 'delete any faq content'
+  - 'delete own faq content'
+  - 'edit any faq content'
+  - 'edit own faq content'
+  - 'notify of path changes'
+  - 'view own unpublished content'
+  - 'view the administration theme'

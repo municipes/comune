@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_identificativo
+    - node.type.luogo
+id: node.luogo.field_identificativo
+field_name: field_identificativo
+entity_type: node
+bundle: luogo
+label: Identificativo
+description: "Codice identificativo del luogo. Nel MIBAC c'è il codice del DBUnico per i luoghi della cultura e il codice ISIL per le biblioteche. Non deve comparire nel frontend del sito."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

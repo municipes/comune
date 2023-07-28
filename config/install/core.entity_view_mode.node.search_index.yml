@@ -1,0 +1,9 @@
+langcode: it
+status: false
+dependencies:
+  module:
+    - node
+id: node.search_index
+label: 'Indice di ricerca'
+targetEntityType: node
+cache: true

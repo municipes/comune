@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_patrocinio
+    - node.type.evento
+  module:
+    - text
+id: node.evento.field_patrocinio
+field_name: field_patrocinio
+entity_type: node
+bundle: evento
+label: 'Patrocinato da'
+description: 'Nome dell''ente che patrocina l''evento. Si raccomanda di non usare sigle ma il nome esteso (es. Non "Mise" ma "Ministero dello sviluppo economico").'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ultima_modifica
+    - node.type.dataset
+  module:
+    - datetime
+id: node.dataset.field_ultima_modifica
+field_name: field_ultima_modifica
+entity_type: node
+bundle: dataset
+label: 'Ultima modifica'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_di_documento
+    - node.type.documento_pubblico
+    - taxonomy.vocabulary.tipi_di_documento
+id: node.documento_pubblico.field_tipo_di_documento
+field_name: field_tipo_di_documento
+entity_type: node
+bundle: documento_pubblico
+label: 'Tipo di documento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_di_documento: tipi_di_documento
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

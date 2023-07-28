@@ -1,0 +1,104 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vista.field_settings
+    - field.field.paragraph.vista.field_title
+    - field.field.paragraph.vista.field_vista_da_visualizzare
+    - paragraphs.paragraphs_type.vista
+  module:
+    - field_group
+    - paragraphs
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_contenitore:
+      children:
+        - group_dati_della_vista
+        - group_impostazioni
+      label: Contenitore
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_dati_della_vista:
+      children:
+        - field_title
+        - field_vista_da_visualizzare
+        - field_view_id
+        - field_view_display_id
+        - field_view_param
+      label: 'Dati della vista'
+      region: content
+      parent_name: group_contenitore
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_impostazioni:
+      children:
+        - field_settings
+      label: Impostazioni
+      region: content
+      parent_name: group_contenitore
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: paragraph.vista.default
+targetEntityType: paragraph
+bundle: vista
+mode: default
+content:
+  field_settings:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragrafo
+      title_plural: Paragrafi
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: settings
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vista_da_visualizzare:
+    type: viewsreference_select
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

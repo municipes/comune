@@ -1,0 +1,5 @@
+langcode: it
+status: true
+dependencies: {  }
+id: default
+label: Predefinito

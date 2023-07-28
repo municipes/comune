@@ -1,0 +1,30 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - system.menu.slim-top
+  module:
+    - menu_block
+  theme:
+    - scaenographia
+id: slimtop
+theme: scaenographia
+region: header_slim_menu
+weight: 0
+provider: null
+plugin: 'menu_block:slim-top'
+settings:
+  id: 'menu_block:slim-top'
+  label: 'Slim top'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'slim-top:'
+  suggestion: slim_top
+visibility: {  }

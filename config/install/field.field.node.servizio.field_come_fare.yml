@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_come_fare
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_come_fare
+field_name: field_come_fare
+entity_type: node
+bundle: servizio
+label: 'Come fare'
+description: 'Procedura da seguire per usufruire del Servizio'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

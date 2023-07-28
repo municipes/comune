@@ -1,0 +1,110 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timeline_item
+    - paragraphs.paragraphs_type.date_timeline
+    - paragraphs.paragraphs_type.date_timeline_item
+    - paragraphs.paragraphs_type.days_timeline_item
+  module:
+    - entity_reference_revisions
+id: paragraph.date_timeline.field_timeline_item
+field_name: field_timeline_item
+entity_type: paragraph
+bundle: date_timeline
+label: 'Date Timeline item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      date_timeline_item: date_timeline_item
+      days_timeline_item: days_timeline_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 26
+        enabled: false
+      accordion_item:
+        weight: 27
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 30
+        enabled: false
+      attachments:
+        weight: 28
+        enabled: false
+      callout:
+        weight: 29
+        enabled: false
+      carousel:
+        weight: 30
+        enabled: false
+      citation:
+        weight: 31
+        enabled: false
+      content:
+        weight: 32
+        enabled: false
+      dataset:
+        weight: 33
+        enabled: false
+      date_timeline:
+        weight: 34
+        enabled: false
+      date_timeline_item:
+        weight: 35
+        enabled: true
+      days_timeline_item:
+        weight: 37
+        enabled: true
+      fase_intitolata:
+        weight: 36
+        enabled: false
+      fase_semplice:
+        weight: 37
+        enabled: false
+      gallery:
+        weight: 38
+        enabled: false
+      gallery_item:
+        weight: 39
+        enabled: false
+      hero:
+        weight: 40
+        enabled: false
+      in_evidenza:
+        weight: 41
+        enabled: false
+      link:
+        weight: 42
+        enabled: false
+      map:
+        weight: 43
+        enabled: false
+      node_reference:
+        weight: 44
+        enabled: false
+      section:
+        weight: 45
+        enabled: false
+      settings:
+        weight: 46
+        enabled: false
+      slide:
+        weight: 47
+        enabled: false
+      timeline:
+        weight: 48
+        enabled: false
+      timeline_item:
+        weight: 49
+        enabled: false
+      vista:
+        weight: 50
+        enabled: false
+field_type: entity_reference_revisions

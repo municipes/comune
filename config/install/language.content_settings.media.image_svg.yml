@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - media.type.image_svg
+id: media.image_svg
+target_entity_type_id: media
+target_bundle: image_svg
+default_langcode: site_default
+language_alterable: false

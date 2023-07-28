@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies: {  }
+id: fase_intitolata
+label: 'Fase intitolata'
+icon_uuid: null
+icon_default: null
+description: 'Fase costituita da titolo, data di inizio fase e descrizione'
+behavior_plugins: {  }

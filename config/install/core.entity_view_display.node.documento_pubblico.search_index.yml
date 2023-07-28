@@ -1,0 +1,148 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.documento_pubblico.field_argomenti
+    - field.field.node.documento_pubblico.field_autori
+    - field.field.node.documento_pubblico.field_business_events
+    - field.field.node.documento_pubblico.field_data_fine
+    - field.field.node.documento_pubblico.field_data_inizio
+    - field.field.node.documento_pubblico.field_data_protocollo
+    - field.field.node.documento_pubblico.field_dataset
+    - field.field.node.documento_pubblico.field_descrizione_breve
+    - field.field.node.documento_pubblico.field_descrizione_completa
+    - field.field.node.documento_pubblico.field_documenti
+    - field.field.node.documento_pubblico.field_formato_documento
+    - field.field.node.documento_pubblico.field_galleria_immagini
+    - field.field.node.documento_pubblico.field_identificativo
+    - field.field.node.documento_pubblico.field_immagine
+    - field.field.node.documento_pubblico.field_licenza_di_distribuzione
+    - field.field.node.documento_pubblico.field_life_events
+    - field.field.node.documento_pubblico.field_paragraph_documento
+    - field.field.node.documento_pubblico.field_protocollo
+    - field.field.node.documento_pubblico.field_riferimenti_normativi
+    - field.field.node.documento_pubblico.field_sezione_amministrazione
+    - field.field.node.documento_pubblico.field_tipo_di_documento
+    - field.field.node.documento_pubblico.field_tipo_doc_albo_pretorio
+    - field.field.node.documento_pubblico.field_ulteriori_informazioni
+    - field.field.node.documento_pubblico.field_unita_organizzativa
+    - field.field.node.documento_pubblico.field_view_reference
+    - node.type.documento_pubblico
+  module:
+    - text
+    - user
+id: node.documento_pubblico.search_index
+targetEntityType: node
+bundle: documento_pubblico
+mode: search_index
+content:
+  field_autori:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_business_events:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_completa:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_identificativo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_licenza_di_distribuzione:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_life_events:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_protocollo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_riferimenti_normativi:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tipo_di_documento:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tipo_doc_albo_pretorio:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_argomenti: true
+  field_data_fine: true
+  field_data_inizio: true
+  field_data_protocollo: true
+  field_dataset: true
+  field_documenti: true
+  field_formato_documento: true
+  field_galleria_immagini: true
+  field_immagine: true
+  field_paragraph_documento: true
+  field_sezione_amministrazione: true
+  field_unita_organizzativa: true
+  field_view_reference: true
+  langcode: true
+  links: true
+  node_read_time: true
+  search_api_excerpt: true

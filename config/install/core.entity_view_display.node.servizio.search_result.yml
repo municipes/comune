@@ -1,0 +1,108 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.servizio.field_a_chi_e_rivolto
+    - field.field.node.servizio.field_accedi_al_servizio
+    - field.field.node.servizio.field_allegati
+    - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_business_events
+    - field.field.node.servizio.field_casi_particolari
+    - field.field.node.servizio.field_categoria_del_servizio
+    - field.field.node.servizio.field_codice_dell_ente_erogatore
+    - field.field.node.servizio.field_come_fare
+    - field.field.node.servizio.field_condizioni_di_servizio
+    - field.field.node.servizio.field_copertura_geografica
+    - field.field.node.servizio.field_cosa_serve
+    - field.field.node.servizio.field_cosa_si_ottiene
+    - field.field.node.servizio.field_costi
+    - field.field.node.servizio.field_descrizione_breve
+    - field.field.node.servizio.field_descrizione_completa
+    - field.field.node.servizio.field_destinazioni
+    - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_immagine
+    - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_link_esterni
+    - field.field.node.servizio.field_motivo_dello_stato
+    - field.field.node.servizio.field_normativa_di_riferimento
+    - field.field.node.servizio.field_note_interne
+    - field.field.node.servizio.field_parole_chiave
+    - field.field.node.servizio.field_procedure_collegate_esito
+    - field.field.node.servizio.field_promemoria_accesso
+    - field.field.node.servizio.field_punti_di_contatto
+    - field.field.node.servizio.field_reclami_ricorsi_opposizion
+    - field.field.node.servizio.field_schede_collegate
+    - field.field.node.servizio.field_settore_merceologico
+    - field.field.node.servizio.field_sottotitolo
+    - field.field.node.servizio.field_stato_del_servizio
+    - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
+    - field.field.node.servizio.field_ulteriori_informazioni
+    - field.field.node.servizio.field_unita_organizzative
+    - field.field.node.servizio.field_vincoli
+    - node.type.servizio
+  module:
+    - user
+id: node.servizio.search_result
+targetEntityType: node
+bundle: servizio
+mode: search_result
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+hidden:
+  field_a_chi_e_rivolto: true
+  field_accedi_al_servizio: true
+  field_allegati: true
+  field_argomenti: true
+  field_business_events: true
+  field_casi_particolari: true
+  field_categoria_del_servizio: true
+  field_codice_dell_ente_erogatore: true
+  field_come_fare: true
+  field_condizioni_di_servizio: true
+  field_copertura_geografica: true
+  field_cosa_serve: true
+  field_cosa_si_ottiene: true
+  field_costi: true
+  field_descrizione_completa: true
+  field_destinazioni: true
+  field_documenti: true
+  field_immagine: true
+  field_life_events: true
+  field_link_esterni: true
+  field_motivo_dello_stato: true
+  field_normativa_di_riferimento: true
+  field_note_interne: true
+  field_parole_chiave: true
+  field_procedure_collegate_esito: true
+  field_promemoria_accesso: true
+  field_punti_di_contatto: true
+  field_reclami_ricorsi_opposizion: true
+  field_schede_collegate: true
+  field_settore_merceologico: true
+  field_sottotitolo: true
+  field_stato_del_servizio: true
+  field_tempi_e_scadenze: true
+  field_triplette: true
+  field_ulteriori_informazioni: true
+  field_unita_organizzative: true
+  field_vincoli: true
+  langcode: true
+  node_read_time: true

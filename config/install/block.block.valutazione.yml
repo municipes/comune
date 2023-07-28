@@ -1,0 +1,24 @@
+langcode: it
+status: true
+dependencies:
+  content:
+    - 'block_content:fake:dea3afba-66df-43be-9051-7c70d3c599cd'
+  module:
+    - block_content
+  theme:
+    - scaenographia
+id: valutazione
+theme: scaenographia
+region: rating
+weight: 0
+provider: null
+plugin: 'block_content:dea3afba-66df-43be-9051-7c70d3c599cd'
+settings:
+  id: 'block_content:dea3afba-66df-43be-9051-7c70d3c599cd'
+  label: Valutazione
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

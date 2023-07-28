@@ -1,0 +1,39 @@
+langcode: it
+reading_time:
+  container:
+    dataset:
+      is_activated: 0
+    documento_privato:
+      is_activated: 0
+    documento_pubblico:
+      is_activated: 0
+    evento:
+      is_activated: 0
+    faq:
+      is_activated: 0
+    incarico:
+      is_activated: 0
+    luogo:
+      is_activated: 0
+    messaggio:
+      is_activated: 0
+    notizia:
+      is_activated: 1
+    pagamento:
+      is_activated: 0
+    persona:
+      is_activated: 0
+    pratica:
+      is_activated: 0
+    punto_di_contatto:
+      is_activated: 0
+    servizio:
+      is_activated: 0
+    sito_tematico:
+      is_activated: 0
+    ticket:
+      is_activated: 0
+    unita_organizzativa:
+      is_activated: 0
+  words_per_minute: 225
+  unit_of_time: minute

@@ -1,0 +1,17 @@
+name: 'Comune Silfi Content'
+description: Imports the basics content.
+type: module
+version: VERSION
+package: 'Core (Experimental)'
+lifecycle: experimental
+hidden: true
+dependencies:
+  - drupal:field
+  - drupal:file
+  - drupal:image
+  - drupal:node
+  - drupal:options
+  - drupal:path
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:user

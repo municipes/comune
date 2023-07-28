@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.dataset
+id: node.dataset.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: dataset
+label: 'Descrizione breve'
+description: "Descrizione del dataset. Si raccomanda di fornire una breve descrizione dei contenuti principali del dataset. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. \r\nUtilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il contenuto del dataset. Esempi–> «Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell’anno 2007.» "
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

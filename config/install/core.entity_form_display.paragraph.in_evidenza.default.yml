@@ -1,0 +1,125 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.in_evidenza.field_call_to_action
+    - field.field.paragraph.in_evidenza.field_contenuti
+    - field.field.paragraph.in_evidenza.field_data_element
+    - field.field.paragraph.in_evidenza.field_settings
+    - field.field.paragraph.in_evidenza.field_title
+    - paragraphs.paragraphs_type.in_evidenza
+  module:
+    - field_group
+    - link
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_contenitore:
+      children:
+        - group_contenuto
+        - group_impostazioni
+      label: Contenitore
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_contenuto:
+      children:
+        - field_title
+        - field_contenuti
+        - field_call_to_action
+        - field_data_element
+      label: Contenuto
+      region: content
+      parent_name: group_contenitore
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_impostazioni:
+      children:
+        - field_settings
+      label: Impostazioni
+      region: content
+      parent_name: group_contenitore
+      weight: 23
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: paragraph.in_evidenza.default
+targetEntityType: paragraph
+bundle: in_evidenza
+mode: default
+content:
+  field_call_to_action:
+    type: link_default
+    weight: 26
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_contenuti:
+    type: entity_reference_autocomplete
+    weight: 25
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_data_element:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_settings:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragrafo
+      title_plural: Paragrafi
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: settings
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,62 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_timeline.field_settings
+    - field.field.paragraph.date_timeline.field_text
+    - field.field.paragraph.date_timeline.field_timeline_item
+    - paragraphs.paragraphs_type.date_timeline
+  module:
+    - entity_reference_revisions
+    - ui_patterns_field_formatters
+id: paragraph.date_timeline.default
+targetEntityType: paragraph
+bundle: date_timeline
+mode: default
+content:
+  field_settings:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+      pattern_settings:
+        node_full_field:
+          attributes: 'data-element="service-calendar-text"'
+          override_label: ''
+          intro_text: ''
+          label_size: ''
+          label_visible: not_visible
+          label_menu: not_visible
+          heading_value: h3
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_timeline_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

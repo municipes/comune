@@ -1,0 +1,24 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  type_tray:
+    type_category: amministrazione
+    type_thumbnail: ''
+    type_icon: ''
+    type_description: ''
+    existing_nodes_link_text: 'View existing <em class="placeholder">Documento pubblico</em> content'
+    type_weight: 0
+name: 'Documento pubblico'
+type: documento_pubblico
+description: 'Struttura delle informazioni relative utili a presentare un documento pubblico.'
+help: "Struttura delle informazioni relative utili a presentare un documento pubblico. Schema.org prevede una Tipologia DigitalDocument.<br>\r\nNota: I documenti pubblici sono presentati nella sezioni pubbliche sel sito. I documenti personali sono disponibili nell'area personale utente <br>\r\nIl nome del Documento deve essere facilmente comprensibile dai cittadini. Vincoli: massimo 160 caratteri spazi inclusi"
+new_revision: true
+preview_mode: 1
+display_submitted: true

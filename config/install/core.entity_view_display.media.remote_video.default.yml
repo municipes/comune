@@ -1,0 +1,31 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_video.field_media_oembed_video
+    - media.type.remote_video
+  module:
+    - media_video_micromodal
+id: media.remote_video.default
+targetEntityType: media
+bundle: remote_video
+mode: default
+content:
+  thumbnail:
+    type: micromodal_field_formatter
+    label: hidden
+    settings:
+      string_classes: ''
+      link_text: ''
+      thumbnail_image_style: bootstrap_italia_card_image_standard
+      caption_swap: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_oembed_video: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

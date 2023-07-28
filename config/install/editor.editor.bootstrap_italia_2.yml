@@ -1,0 +1,364 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - filter.format.bootstrap_italia_2
+  module:
+    - ckeditor5
+format: bootstrap_italia_2
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - style
+      - alignment
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - '|'
+      - numberedList
+      - bulletedList
+      - indent
+      - outdent
+      - '-'
+      - link
+      - drupalInsertImage
+      - drupalMedia
+      - blockQuote
+      - insertTable
+      - '|'
+      - removeFormat
+      - code
+      - codeBlock
+      - sourceEditing
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: 'Plain text'
+          language: plaintext
+        -
+          label: C
+          language: c
+        -
+          label: 'C#'
+          language: cs
+        -
+          label: C++
+          language: cpp
+        -
+          label: CSS
+          language: css
+        -
+          label: Diff
+          language: diff
+        -
+          label: HTML
+          language: html
+        -
+          label: Java
+          language: java
+        -
+          label: JavaScript
+          language: javascript
+        -
+          label: PHP
+          language: php
+        -
+          label: Python
+          language: python
+        -
+          label: Ruby
+          language: ruby
+        -
+          label: TypeScript
+          language: typescript
+        -
+          label: XML
+          language: xml
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: Link
+          element: '<a class="text-decoration-none fw-bold">'
+        -
+          label: Abbreviazione
+          element: '<abbr class="attribute">'
+        -
+          label: Initialism
+          element: '<abbr class="initialism">'
+        -
+          label: Citazione
+          element: '<blockquote class="blockquote">'
+        -
+          label: 'Citazione centrata'
+          element: '<blockquote class="text-center">'
+        -
+          label: 'Citazione a destra'
+          element: '<blockquote class="text-end">'
+        -
+          label: 'Citazione semplice'
+          element: '<blockquote class="blockquote-simple">'
+        -
+          label: 'Citazione variante card'
+          element: '<blockquote class="blockquote-card">'
+        -
+          label: 'Citazione variante card dark'
+          element: '<blockquote class="blockquote-card dark">'
+        -
+          label: 'Immagine responsiva'
+          element: '<img class="img-fluid">'
+        -
+          label: Miniatura
+          element: '<img class="img-thumbnail">'
+        -
+          label: 'Immagine arrotondata'
+          element: '<img class="rounded">'
+        -
+          label: 'Immagine a sinistra'
+          element: '<img class="float-start m-5">'
+        -
+          label: 'Immagine a destra'
+          element: '<img class="float-end m-5">'
+        -
+          label: 'Immagine centrata'
+          element: '<img class="mx-auto d-block my-5">'
+        -
+          label: Figura
+          element: '<figure class="figure">'
+        -
+          label: 'Didascalia della figura'
+          element: '<figcaption class="figure-caption">'
+        -
+          label: 'Didascalia della figuare a destra'
+          element: '<figcaption class="text-end">'
+        -
+          label: 'Testo in grassetto'
+          element: '<p class="fw-bold">'
+        -
+          label: 'Testo semibold'
+          element: '<p class="fw-semibold">'
+        -
+          label: 'Testo normale'
+          element: '<p class="fw-normal">'
+        -
+          label: 'Testo sottile'
+          element: '<p class="fw-light">'
+        -
+          label: Corsivo
+          element: '<p class="fst-italic">'
+        -
+          label: 'Testo a sinistra'
+          element: '<p class="text-start">'
+        -
+          label: 'Testo centrato'
+          element: '<p class="text-center">'
+        -
+          label: 'Testo allineato a destra'
+          element: '<p class="text-end">'
+        -
+          label: 'Testo variante small'
+          element: '<p class="small">'
+        -
+          label: 'Testo senza grazie'
+          element: '<p class="font-sans-serif">'
+        -
+          label: 'Testo con grazie'
+          element: '<p class="font-serif">'
+        -
+          label: 'Testo con carattere monospace'
+          element: '<p class="font-monospace">'
+        -
+          label: 'Testo evidenziato'
+          element: '<p class="bd-highlight">'
+        -
+          label: 'Testo variante "lead"'
+          element: '<p class="lead">'
+        -
+          label: 'Testo variante "mark"'
+          element: '<p class="mark">'
+        -
+          label: 'Testo variante "muted"'
+          element: '<p class="text-muted">'
+        -
+          label: 'Testo minuscolo'
+          element: '<p class="text-lowercase">'
+        -
+          label: 'Testo maiuscolo'
+          element: '<p class="text-uppercase">'
+        -
+          label: 'Testo con prima lettera maiuscola'
+          element: '<p class="text-capitalize">'
+        -
+          label: 'Tabella responsiva'
+          element: '<table class="table table-responsive">'
+        -
+          label: 'Tabella con righe alternate'
+          element: '<table class="table-striped">'
+        -
+          label: 'Evidenzia le righe al passaggio'
+          element: '<table class="table-hover">'
+        -
+          label: 'Tabella con tutti i bordi'
+          element: '<table class="table-bordered">'
+        -
+          label: 'Tabella senza bordi'
+          element: '<table class="table-borderless">'
+        -
+          label: 'Variante piccola della tabella'
+          element: '<table class="table-small">'
+        -
+          label: 'Tabella di colore "Primario"'
+          element: '<table class="table-primary">'
+        -
+          label: 'Tabella di colore secondario'
+          element: '<table class="table-secondary">'
+        -
+          label: 'Tabella di colore "success"'
+          element: '<table class="table-success">'
+        -
+          label: 'Tabella di colore "danger"'
+          element: '<table class="table-danger">'
+        -
+          label: 'Tabella di colore "warning"'
+          element: '<table class="table-warning">'
+        -
+          label: 'Tabella di colore "info"'
+          element: '<table class="table-info">'
+        -
+          label: 'Tabella chiara'
+          element: '<table class="table-light">'
+        -
+          label: 'Tabella scura'
+          element: '<table class="table-dark">'
+        -
+          label: 'Allinea in cima'
+          element: '<table class="align-top">'
+        -
+          label: 'Allinea al centro'
+          element: '<table class="align-middle">'
+        -
+          label: 'Allinea in basso'
+          element: '<table class="align-bottom">'
+        -
+          label: 'Descrizione della tabella in cima'
+          element: '<table class="caption-top">'
+        -
+          label: 'Intestazione chiara'
+          element: '<thead class="table-light">'
+        -
+          label: 'Intestazione scura'
+          element: '<thead class="table-dark">'
+        -
+          label: 'Allinea in cima alla riga'
+          element: '<tr class="align-top">'
+        -
+          label: 'Allinea al centro della riga'
+          element: '<tr class="align-middle">'
+        -
+          label: 'Allinea in basso alla riga'
+          element: '<tr class="align-bottom">'
+        -
+          label: 'Riga attiva'
+          element: '<tr class="table-active">'
+        -
+          label: 'Riga di colore primario'
+          element: '<tr class="table-primary">'
+        -
+          label: 'Riga di colore secondario'
+          element: '<tr class="table-secondary">'
+        -
+          label: 'Riga di colore "success"'
+          element: '<tr class="table-success">'
+        -
+          label: 'Riga di colore "danger"'
+          element: '<tr class="table-danger">'
+        -
+          label: 'Riga di colore "warning"'
+          element: '<tr class="table-warning">'
+        -
+          label: 'Riga di colore "info"'
+          element: '<tr class="table-info">'
+        -
+          label: 'Riga chiara'
+          element: '<tr class="table-light">'
+        -
+          label: 'Riga scura'
+          element: '<tr class="table-dark">'
+        -
+          label: 'Posiziona in cima alla cella'
+          element: '<td class="align-top">'
+        -
+          label: 'Posiziona al centro della cella'
+          element: '<td class="align-middle">'
+        -
+          label: 'Posiziona in basso alla cella'
+          element: '<td class="align-bottom">'
+        -
+          label: 'Cella attiva'
+          element: '<td class="table-active">'
+        -
+          label: 'Cella di colore primario'
+          element: '<td class="table-primary">'
+        -
+          label: 'Cella di colore secondario'
+          element: '<td class="table-secondary">'
+        -
+          label: 'Cella di colore "success"'
+          element: '<td class="table-success">'
+        -
+          label: 'Cella di colore "danger"'
+          element: '<td class="table-danger">'
+        -
+          label: 'Cella di colore "warning"'
+          element: '<td class="table-warning">'
+        -
+          label: 'Cella di colore "info"'
+          element: '<td class="table-info">'
+        -
+          label: 'Cella chiara'
+          element: '<td class="table-light">'
+        -
+          label: 'Cella dark'
+          element: '<td class="table-dark">'
+        -
+          label: 'Lista senza stile'
+          element: '<ul class="list-unstyled">'
+        -
+          label: 'Lista in linea'
+          element: '<ul class="list-inline">'
+        -
+          label: 'Elemento della lista in linea'
+          element: '<li class="list-inline-item">'
+    media_media:
+      allow_view_mode_override: false
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

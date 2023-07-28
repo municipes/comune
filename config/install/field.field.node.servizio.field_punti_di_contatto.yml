@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_punti_di_contatto
+    - node.type.punto_di_contatto
+    - node.type.servizio
+id: node.servizio.field_punti_di_contatto
+field_name: field_punti_di_contatto
+entity_type: node
+bundle: servizio
+label: Contatti
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      punto_di_contatto: punto_di_contatto
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

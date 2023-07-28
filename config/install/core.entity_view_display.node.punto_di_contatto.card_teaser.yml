@@ -1,0 +1,36 @@
+langcode: it
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.card_teaser
+    - field.field.node.punto_di_contatto.field_persona
+    - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
+    - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
+    - node.type.punto_di_contatto
+  module:
+    - user
+id: node.punto_di_contatto.card_teaser
+targetEntityType: node
+bundle: punto_di_contatto
+mode: card_teaser
+content:
+  field_valore_punto_di_contatto:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_persona: true
+  field_tipo_punto_di_contatto: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true
+  sharing_buttons: true

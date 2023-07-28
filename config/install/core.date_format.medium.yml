@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+id: medium
+label: 'Formato predefinito data media'
+locked: false
+pattern: 'D, d/m/Y - H:i'

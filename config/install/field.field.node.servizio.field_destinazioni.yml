@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_destinazioni
+    - node.type.servizio
+id: node.servizio.field_destinazioni
+field_name: field_destinazioni
+entity_type: node
+bundle: servizio
+label: Destinazioni
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,171 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_esterno
+    - node.type.evento
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - entity_reference_revisions
+id: node.evento.field_video_esterno
+field_name: field_video_esterno
+entity_type: node
+bundle: evento
+label: 'Galleria di video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 49
+        enabled: false
+      accordion_item:
+        weight: 50
+        enabled: false
+      attachments:
+        weight: 51
+        enabled: false
+      callout:
+        weight: 52
+        enabled: false
+      carousel:
+        weight: 53
+        enabled: false
+      citation:
+        weight: 54
+        enabled: false
+      container_foto_gallery:
+        weight: 63
+        enabled: false
+      content:
+        weight: 56
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 61
+        enabled: false
+      dataset:
+        weight: 62
+        enabled: false
+      documento:
+        weight: 63
+        enabled: false
+      elemento_video:
+        weight: 65
+        enabled: false
+      esplora:
+        weight: 66
+        enabled: false
+      faq:
+        weight: 67
+        enabled: false
+      fase_intitolata:
+        weight: 68
+        enabled: false
+      fase_semplice:
+        weight: 64
+        enabled: false
+      gallery:
+        weight: 65
+        enabled: true
+      gallery_item:
+        weight: 66
+        enabled: false
+      hero:
+        weight: 67
+        enabled: false
+      hero_immagine:
+        weight: 69
+        enabled: false
+      homepage_top_card:
+        weight: 70
+        enabled: false
+      homepage_top_cards:
+        weight: 71
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 72
+        enabled: false
+      link:
+        weight: 73
+        enabled: false
+      link_con_icona:
+        weight: 75
+        enabled: false
+      link_esterno:
+        weight: 76
+        enabled: false
+      links_con_icona:
+        weight: 74
+        enabled: false
+      map:
+        weight: 76
+        enabled: false
+      node_reference:
+        weight: 77
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 78
+        enabled: false
+      punto_di_contatto:
+        weight: 77
+        enabled: false
+      ricerca:
+        weight: 78
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 79
+        enabled: false
+      ricerca_novita:
+        weight: 80
+        enabled: false
+      ricerca_servizi:
+        weight: 81
+        enabled: false
+      richiesta_assistenza:
+        weight: 84
+        enabled: false
+      section:
+        weight: 85
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 82
+        enabled: false
+      settings:
+        weight: 87
+        enabled: false
+      siti_tematici:
+        weight: 83
+        enabled: false
+      slide:
+        weight: 89
+        enabled: false
+      testo_e_lista:
+        weight: 84
+        enabled: false
+      timeline:
+        weight: 91
+        enabled: false
+      timeline_item:
+        weight: 92
+        enabled: false
+      titolo_descrizione_link:
+        weight: 85
+        enabled: false
+      titolo_e_descrizione:
+        weight: 86
+        enabled: false
+      ultima_notizia:
+        weight: 87
+        enabled: false
+      valutazione:
+        weight: 88
+        enabled: false
+field_type: entity_reference_revisions

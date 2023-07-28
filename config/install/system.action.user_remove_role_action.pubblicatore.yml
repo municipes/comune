@@ -1,0 +1,13 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - user.role.pubblicatore
+  module:
+    - user
+id: user_remove_role_action.pubblicatore
+label: 'Remove the Pubblicatore role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: pubblicatore

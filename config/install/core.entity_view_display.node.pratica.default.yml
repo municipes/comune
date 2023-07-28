@@ -1,0 +1,65 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.pratica.field_argomenti
+    - field.field.node.pratica.field_descrizione_completa
+    - field.field.node.pratica.field_documenti
+    - field.field.node.pratica.field_documenti_privati
+    - field.field.node.pratica.field_numero_di_protocollo
+    - field.field.node.pratica.field_servizio
+    - field.field.node.pratica.field_stato_della_pratica
+    - field.field.node.pratica.field_unita_organizzative
+    - node.type.pratica
+  module:
+    - user
+id: node.pratica.default
+targetEntityType: node
+bundle: pratica
+mode: default
+content:
+  field_documenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_documenti_privati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_servizio:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_unita_organizzative:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_argomenti: true
+  field_descrizione_completa: true
+  field_numero_di_protocollo: true
+  field_stato_della_pratica: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

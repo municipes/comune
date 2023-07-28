@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - media
+id: media.card_teaser
+label: 'Card teaser'
+targetEntityType: media
+cache: true

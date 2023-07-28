@@ -1,0 +1,112 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_componenti
+    - node.type.pagina
+    - paragraphs.paragraphs_type.fase_intitolata
+    - paragraphs.paragraphs_type.fase_semplice
+    - paragraphs.paragraphs_type.settings
+  module:
+    - entity_reference_revisions
+id: node.pagina.field_componenti
+field_name: field_componenti
+entity_type: node
+bundle: pagina
+label: Componenti
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fase_intitolata: fase_intitolata
+      fase_semplice: fase_semplice
+      settings: settings
+    negate: 1
+    target_bundles_drag_drop:
+      accordion:
+        weight: 66
+        enabled: false
+      accordion_item:
+        weight: 67
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 71
+        enabled: false
+      attachments:
+        weight: 74
+        enabled: false
+      callout:
+        weight: 77
+        enabled: false
+      carousel:
+        weight: 80
+        enabled: false
+      citation:
+        weight: 81
+        enabled: false
+      content:
+        weight: 90
+        enabled: false
+      dataset:
+        weight: 92
+        enabled: false
+      date_timeline:
+        weight: 37
+        enabled: false
+      date_timeline_item:
+        weight: 38
+        enabled: false
+      days_timeline_item:
+        weight: 39
+        enabled: false
+      fase_intitolata:
+        weight: 97
+        enabled: true
+      fase_semplice:
+        weight: 98
+        enabled: true
+      gallery:
+        weight: 99
+        enabled: false
+      gallery_item:
+        weight: 100
+        enabled: false
+      hero:
+        weight: 101
+        enabled: false
+      in_evidenza:
+        weight: 45
+        enabled: false
+      link:
+        weight: 106
+        enabled: false
+      map:
+        weight: 110
+        enabled: false
+      node_reference:
+        weight: 111
+        enabled: false
+      section:
+        weight: 119
+        enabled: false
+      settings:
+        weight: 121
+        enabled: true
+      slide:
+        weight: 123
+        enabled: false
+      timeline:
+        weight: 125
+        enabled: false
+      timeline_item:
+        weight: 126
+        enabled: false
+      vista:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

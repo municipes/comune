@@ -1,0 +1,27 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.ricerca_globale
+  module:
+    - facets_summary
+    - system
+  theme:
+    - scaenographia
+id: scaenographia_ricercaglobale
+theme: scaenographia
+region: content
+weight: -12
+provider: null
+plugin: 'facets_summary_block:ricerca_globale'
+settings:
+  id: 'facets_summary_block:ricerca_globale'
+  label: 'Ricerca globale'
+  label_display: '0'
+  provider: facets_summary
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /ricerca-globale

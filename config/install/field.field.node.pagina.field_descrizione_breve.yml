@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.pagina
+id: node.pagina.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: pagina
+label: 'Descrizione breve'
+description: 'Testo introduttivo'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

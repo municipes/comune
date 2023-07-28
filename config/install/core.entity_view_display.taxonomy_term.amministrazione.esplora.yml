@@ -1,0 +1,23 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.esplora
+    - taxonomy.vocabulary.amministrazione
+  module:
+    - text
+id: taxonomy_term.amministrazione.esplora
+targetEntityType: taxonomy_term
+bundle: amministrazione
+mode: esplora
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

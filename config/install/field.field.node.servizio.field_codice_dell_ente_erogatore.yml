@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_codice_dell_ente_erogatore
+    - node.type.servizio
+id: node.servizio.field_codice_dell_ente_erogatore
+field_name: field_codice_dell_ente_erogatore
+entity_type: node
+bundle: servizio
+label: 'Codice dell’Ente erogatore (ipa)'
+description: 'Il nome dell’organizzazione, come indicato nell’Indice della Pubblica Amministrazione (IPA), che esercita uno specifico ruolo sul Servizio.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

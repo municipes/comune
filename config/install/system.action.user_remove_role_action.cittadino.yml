@@ -1,0 +1,13 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - user.role.cittadino
+  module:
+    - user
+id: user_remove_role_action.cittadino
+label: 'Remove the Cittadino role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cittadino

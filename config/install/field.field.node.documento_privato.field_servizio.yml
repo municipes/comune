@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servizio
+    - node.type.documento_privato
+    - node.type.servizio
+id: node.documento_privato.field_servizio
+field_name: field_servizio
+entity_type: node
+bundle: documento_privato
+label: 'Servizio collegato'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      servizio: servizio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

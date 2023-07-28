@@ -1,0 +1,38 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  type_tray:
+    type_category: amministrazione
+    type_thumbnail: ''
+    type_icon: ''
+    type_description: ''
+    existing_nodes_link_text: 'View existing <em class="placeholder">Servizio</em> content'
+    type_weight: 0
+  scheduler:
+    expand_fieldset: always
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: Servizio
+type: servizio
+description: 'Struttura delle informazioni relative a un servizio pubblico, funzionale alla creazione di una scheda servizio'
+help: "Struttura delle informazioni relative a un servizio pubblico, funzionale alla creazione di una scheda servizio. Schema.org prevede una Tipologia GovernmentService<br>\r\nIl nome del Servizio deve essere facilmente comprensibile dai cittadini. Il Servizio di raccolta differenziata si chiamerà \"Raccolta differenziata\". Il Servizio di iscrizione all'asilo nido si chiamerà \"Iscrizione asilo nido\". Vincoli: massimo 160 caratteri spazi inclusi"
+new_revision: true
+preview_mode: 1
+display_submitted: false

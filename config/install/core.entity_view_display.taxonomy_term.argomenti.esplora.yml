@@ -1,0 +1,25 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.esplora
+    - field.field.taxonomy_term.argomenti.field_immagine
+    - taxonomy.vocabulary.argomenti
+  module:
+    - text
+id: taxonomy_term.argomenti.esplora
+targetEntityType: taxonomy_term
+bundle: argomenti
+mode: esplora
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_immagine: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,103 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.argomenti_in_evidenza.field_argomento
+    - field.field.paragraph.argomenti_in_evidenza.field_settings
+    - field.field.paragraph.argomenti_in_evidenza.field_title
+    - paragraphs.paragraphs_type.argomenti_in_evidenza
+  module:
+    - field_group
+    - inline_entity_form
+third_party_settings:
+  field_group:
+    group_contenitore:
+      children:
+        - group_contenuto
+        - group_impostazioni
+      label: Contenitore
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
+    group_contenuto:
+      children:
+        - field_title
+        - field_argomento
+      label: Contenuto
+      region: hidden
+      parent_name: group_contenitore
+      weight: 3
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_impostazioni:
+      children:
+        - field_settings
+      label: Impostazioni
+      region: hidden
+      parent_name: group_contenitore
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: paragraph.argomenti_in_evidenza.default
+targetEntityType: paragraph
+bundle: argomenti_in_evidenza
+mode: default
+content:
+  field_argomento:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_settings:
+    type: inline_entity_form_complex
+    weight: 0
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

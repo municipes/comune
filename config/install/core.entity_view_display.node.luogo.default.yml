@@ -1,0 +1,89 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.luogo.field_argomenti
+    - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_descrizione_breve
+    - field.field.node.luogo.field_descrizione_completa
+    - field.field.node.luogo.field_galleria_immagini
+    - field.field.node.luogo.field_identificativo
+    - field.field.node.luogo.field_immagine
+    - field.field.node.luogo.field_indirizzo
+    - field.field.node.luogo.field_luoghi
+    - field.field.node.luogo.field_modalita_di_accesso
+    - field.field.node.luogo.field_orario_per_il_pubblico
+    - field.field.node.luogo.field_posizione_gps
+    - field.field.node.luogo.field_punti_di_contatto
+    - field.field.node.luogo.field_quartiere
+    - field.field.node.luogo.field_servizi_presenti_nel_luogo
+    - field.field.node.luogo.field_sottotitolo
+    - field.field.node.luogo.field_tipo_di_luogo
+    - field.field.node.luogo.field_ulteriori_informazioni
+    - field.field.node.luogo.field_unita_organizzativa
+    - field.field.node.luogo.field_video_esterno
+    - node.type.luogo
+  module:
+    - text
+    - user
+id: node.luogo.default
+targetEntityType: node
+bundle: luogo
+mode: default
+content:
+  field_descrizione_completa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_luoghi:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_sottotitolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_unita_organizzativa:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_argomenti: true
+  field_circoscrizione: true
+  field_descrizione_breve: true
+  field_galleria_immagini: true
+  field_identificativo: true
+  field_immagine: true
+  field_indirizzo: true
+  field_modalita_di_accesso: true
+  field_orario_per_il_pubblico: true
+  field_posizione_gps: true
+  field_punti_di_contatto: true
+  field_quartiere: true
+  field_servizi_presenti_nel_luogo: true
+  field_tipo_di_luogo: true
+  field_ulteriori_informazioni: true
+  field_video_esterno: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - media
+id: media_delete_action
+label: 'Elimina media'
+type: media
+plugin: 'entity:delete_action:media'
+configuration: {  }

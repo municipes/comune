@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_importi_viaggio_servizio
+    - node.type.evento
+  module:
+    - text
+id: node.evento.field_importi_viaggio_servizio
+field_name: field_importi_viaggio_servizio
+entity_type: node
+bundle: evento
+label: Costo
+description: "Eventuale costo dell'evento (se ci sono uno o più biglietti), con link all'alcquisto se disponibile."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,239 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.servizio.field_a_chi_e_rivolto
+    - field.field.node.servizio.field_accedi_al_servizio
+    - field.field.node.servizio.field_allegati
+    - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_business_events
+    - field.field.node.servizio.field_casi_particolari
+    - field.field.node.servizio.field_categoria_del_servizio
+    - field.field.node.servizio.field_codice_dell_ente_erogatore
+    - field.field.node.servizio.field_come_fare
+    - field.field.node.servizio.field_condizioni_di_servizio
+    - field.field.node.servizio.field_copertura_geografica
+    - field.field.node.servizio.field_cosa_serve
+    - field.field.node.servizio.field_cosa_si_ottiene
+    - field.field.node.servizio.field_costi
+    - field.field.node.servizio.field_descrizione_breve
+    - field.field.node.servizio.field_descrizione_completa
+    - field.field.node.servizio.field_destinazioni
+    - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_immagine
+    - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_link_esterni
+    - field.field.node.servizio.field_motivo_dello_stato
+    - field.field.node.servizio.field_normativa_di_riferimento
+    - field.field.node.servizio.field_note_interne
+    - field.field.node.servizio.field_parole_chiave
+    - field.field.node.servizio.field_procedure_collegate_esito
+    - field.field.node.servizio.field_promemoria_accesso
+    - field.field.node.servizio.field_punti_di_contatto
+    - field.field.node.servizio.field_reclami_ricorsi_opposizion
+    - field.field.node.servizio.field_schede_collegate
+    - field.field.node.servizio.field_settore_merceologico
+    - field.field.node.servizio.field_sottotitolo
+    - field.field.node.servizio.field_stato_del_servizio
+    - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
+    - field.field.node.servizio.field_ulteriori_informazioni
+    - field.field.node.servizio.field_unita_organizzative
+    - field.field.node.servizio.field_vincoli
+    - node.type.servizio
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.servizio.search_index
+targetEntityType: node
+bundle: servizio
+mode: search_index
+content:
+  field_a_chi_e_rivolto:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_business_events:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_casi_particolari:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_categoria_del_servizio:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_codice_dell_ente_erogatore:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_come_fare:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_condizioni_di_servizio:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_copertura_geografica:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cosa_serve:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cosa_si_ottiene:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_costi:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_completa:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_life_events:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_procedure_collegate_esito:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_punti_di_contatto:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_settore_merceologico:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_sottotitolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tempi_e_scadenze:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_unita_organizzative:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_vincoli:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_accedi_al_servizio: true
+  field_allegati: true
+  field_argomenti: true
+  field_destinazioni: true
+  field_documenti: true
+  field_immagine: true
+  field_link_esterni: true
+  field_motivo_dello_stato: true
+  field_normativa_di_riferimento: true
+  field_note_interne: true
+  field_parole_chiave: true
+  field_promemoria_accesso: true
+  field_reclami_ricorsi_opposizion: true
+  field_schede_collegate: true
+  field_stato_del_servizio: true
+  field_triplette: true
+  langcode: true
+  links: true
+  node_read_time: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - user
+id: user.register
+label: Registrati
+targetEntityType: user
+cache: true

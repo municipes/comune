@@ -1,0 +1,11 @@
+langcode: it
+name: 'Nome del Comune'
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /empty-front-page
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: it

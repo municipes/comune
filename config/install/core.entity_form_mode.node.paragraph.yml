@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.paragraph
+label: Paragraph
+targetEntityType: node
+cache: true

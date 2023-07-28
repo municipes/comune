@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_normativa_di_riferimento
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_normativa_di_riferimento
+field_name: field_normativa_di_riferimento
+entity_type: node
+bundle: servizio
+label: 'Normativa di riferimento'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

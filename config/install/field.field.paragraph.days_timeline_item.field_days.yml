@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_days
+    - paragraphs.paragraphs_type.days_timeline_item
+id: paragraph.days_timeline_item.field_days
+field_name: field_days
+entity_type: paragraph
+bundle: days_timeline_item
+label: Giorni
+description: 'Numeri di giorni'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

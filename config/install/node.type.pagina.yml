@@ -1,0 +1,26 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - footer
+    parent: 'main:'
+  type_tray:
+    type_category: _none
+    type_thumbnail: ''
+    type_icon: ''
+    type_description: ''
+    existing_nodes_link_text: ''
+    type_weight: 0
+name: Pagina
+type: pagina
+description: 'Pagina componibile con i paragrafi.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

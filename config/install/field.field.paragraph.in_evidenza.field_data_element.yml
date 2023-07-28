@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_data_element
+    - paragraphs.paragraphs_type.in_evidenza
+id: paragraph.in_evidenza.field_data_element
+field_name: field_data_element
+entity_type: paragraph
+bundle: in_evidenza
+label: data-element
+description: 'Valore di data-element per il pulsante. Vedi <a href="https://docs.italia.it/italia/designers-italia/app-valutazione-modelli-docs/it/versione-attuale/requisiti-e-modalita-verifica-comuni.html">documentazione AgID</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

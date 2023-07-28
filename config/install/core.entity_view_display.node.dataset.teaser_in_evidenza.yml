@@ -1,0 +1,42 @@
+langcode: it
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_in_evidenza
+    - field.field.node.dataset.field_descrizione_breve
+    - field.field.node.dataset.field_distribuzione
+    - field.field.node.dataset.field_frequenza_di_aggiornamento
+    - field.field.node.dataset.field_licenza_di_distribuzione
+    - field.field.node.dataset.field_sezione_amministrazione
+    - field.field.node.dataset.field_temi
+    - field.field.node.dataset.field_ultima_modifica
+    - field.field.node.dataset.field_unita_organizzativa
+    - field.field.node.dataset.field_url_dataset
+    - node.type.dataset
+  module:
+    - user
+id: node.dataset.teaser_in_evidenza
+targetEntityType: node
+bundle: dataset
+mode: teaser_in_evidenza
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_distribuzione: true
+  field_frequenza_di_aggiornamento: true
+  field_licenza_di_distribuzione: true
+  field_sezione_amministrazione: true
+  field_temi: true
+  field_ultima_modifica: true
+  field_unita_organizzativa: true
+  field_url_dataset: true
+  langcode: true
+  links: true
+  node_read_time: true
+  search_api_excerpt: true

@@ -1,0 +1,59 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.in_evidenza.field_call_to_action
+    - field.field.paragraph.in_evidenza.field_contenuti
+    - field.field.paragraph.in_evidenza.field_data_element
+    - field.field.paragraph.in_evidenza.field_settings
+    - field.field.paragraph.in_evidenza.field_title
+    - paragraphs.paragraphs_type.in_evidenza
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.in_evidenza.default
+targetEntityType: paragraph
+bundle: in_evidenza
+mode: default
+content:
+  field_call_to_action:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_contenuti:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_settings:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_data_element: true
+  search_api_excerpt: true

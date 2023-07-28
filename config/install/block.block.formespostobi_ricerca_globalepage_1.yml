@@ -1,0 +1,22 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - views.view.bi_ricerca_globale
+  module:
+    - views
+  theme:
+    - scaenographia
+id: formespostobi_ricerca_globalepage_1
+theme: scaenographia
+region: header_center_search
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:bi_ricerca_globale-page_1'
+settings:
+  id: 'views_exposed_filter_block:bi_ricerca_globale-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility: {  }

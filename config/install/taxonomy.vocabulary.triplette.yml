@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  enforced:
+    module:
+      - silfi_triplette
+name: Triplette
+vid: triplette
+description: 'Per il contact center'
+weight: 0

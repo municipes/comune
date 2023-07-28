@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - user
+id: user_block_user_action
+label: 'Bloccare gli utenti selezionati'
+type: user
+plugin: user_block_user_action
+configuration: {  }

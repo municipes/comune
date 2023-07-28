@@ -1,0 +1,33 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.colore.field_colore
+    - taxonomy.vocabulary.colore
+  module:
+    - color_field
+    - text
+id: taxonomy_term.colore.default
+targetEntityType: taxonomy_term
+bundle: colore
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_colore:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

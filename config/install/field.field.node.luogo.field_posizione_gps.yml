@@ -1,0 +1,37 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_posizione_gps
+    - node.type.luogo
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    field: field_indirizzo
+    skip_not_empty_value: true
+    disabled: false
+    hidden: false
+    providers:
+      - openstreetmap
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.luogo.field_posizione_gps
+field_name: field_posizione_gps
+entity_type: node
+bundle: luogo
+label: 'Posizione GPS'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

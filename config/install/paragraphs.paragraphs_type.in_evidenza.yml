@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies: {  }
+id: in_evidenza
+label: 'Contenuti in evidenza'
+icon_uuid: null
+icon_default: null
+description: 'Paragrafo per la sezione "In evidenza" nelle pagine di sezione.'
+behavior_plugins: {  }

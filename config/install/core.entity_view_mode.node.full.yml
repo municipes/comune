@@ -1,0 +1,9 @@
+langcode: it
+status: false
+dependencies:
+  module:
+    - node
+id: node.full
+label: 'Contenuto completo'
+targetEntityType: node
+cache: true

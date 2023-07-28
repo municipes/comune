@@ -1,0 +1,73 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.persona.field_altre_cariche
+    - field.field.node.persona.field_biografia
+    - field.field.node.persona.field_cognome
+    - field.field.node.persona.field_competenze
+    - field.field.node.persona.field_curriculum_vitae
+    - field.field.node.persona.field_deleghe
+    - field.field.node.persona.field_dichiarazione_dei_redditi
+    - field.field.node.persona.field_galleria_immagini
+    - field.field.node.persona.field_immagine
+    - field.field.node.persona.field_incarichi
+    - field.field.node.persona.field_nome
+    - field.field.node.persona.field_punti_di_contatto
+    - field.field.node.persona.field_sezione_amministrazione
+    - field.field.node.persona.field_situazione_patrimoniale
+    - field.field.node.persona.field_spese_elettorali
+    - field.field.node.persona.field_ulteriori_informazioni
+    - field.field.node.persona.field_v_situazione_patrimoniale
+    - field.field.node.persona.field_view_reference
+    - node.type.persona
+  module:
+    - text
+    - user
+id: node.persona.teaser
+targetEntityType: node
+bundle: persona
+mode: teaser
+content:
+  field_competenze:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: card_teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_altre_cariche: true
+  field_biografia: true
+  field_cognome: true
+  field_curriculum_vitae: true
+  field_deleghe: true
+  field_dichiarazione_dei_redditi: true
+  field_galleria_immagini: true
+  field_incarichi: true
+  field_nome: true
+  field_punti_di_contatto: true
+  field_sezione_amministrazione: true
+  field_situazione_patrimoniale: true
+  field_spese_elettorali: true
+  field_ulteriori_informazioni: true
+  field_v_situazione_patrimoniale: true
+  field_view_reference: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

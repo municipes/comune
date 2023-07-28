@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.argomenti_in_evidenza
+id: block_content.argomenti_in_evidenza
+target_entity_type_id: block_content
+target_bundle: argomenti_in_evidenza
+default_langcode: site_default
+language_alterable: false

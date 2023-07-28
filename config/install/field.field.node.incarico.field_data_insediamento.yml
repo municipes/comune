@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_insediamento
+    - node.type.incarico
+  module:
+    - datetime
+id: node.incarico.field_data_insediamento
+field_name: field_data_insediamento
+entity_type: node
+bundle: incarico
+label: 'Data insediamento'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

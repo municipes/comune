@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+name: 'Eventi della vita delle persone'
+vid: eventi_della_vita_delle_persone
+description: 'Classificazione degli eventi della vita delle persone (Life Events)'
+weight: 0

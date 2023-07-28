@@ -1,0 +1,64 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vista_da_visualizzare
+    - paragraphs.paragraphs_type.vista
+  module:
+    - viewsreference
+id: paragraph.vista.field_vista_da_visualizzare
+field_name: field_vista_da_visualizzare
+entity_type: paragraph
+bundle: vista
+label: 'Vista da visualizzare'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    bi_categorie_news: bi_categorie_news
+    bi_esplora_tassonomia: bi_esplora_tassonomia
+    bi_persone: bi_persone
+    bi_servizi_in_evidenza: bi_servizi_in_evidenza
+    bi_tutte_le_novita: bi_tutte_le_novita
+    bi_tutte_le_novita_elenchi: bi_tutte_le_novita_elenchi
+    bi_tutti_i_servizi_indice: bi_tutti_i_servizi_indice
+    bi_unita_organizzative_area: bi_unita_organizzative_area
+    bi_argomenti: 0
+    bi_argomenti_chip: 0
+    bi_campi_nodi: 0
+    bi_faq: 0
+    bi_ricerca_globale: 0
+    bi_siti_tematici: 0
+    bi_tutti_gli_eventi: 0
+    bi_tutti_i_luoghi: 0
+    block_content: 0
+    content: 0
+    content_recent: 0
+    files: 0
+    media: 0
+    media_library: 0
+    taxonomy_term: 0
+    ultima_notizia: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    argument: argument
+    title: title
+    limit: limit
+    offset: 0
+    pager: 0
+field_type: viewsreference

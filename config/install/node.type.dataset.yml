@@ -1,0 +1,19 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  type_tray:
+    existing_nodes_link_text: 'View existing <em class="placeholder">Dataset</em> content'
+name: Dataset
+type: dataset
+description: 'Struttura delle informazioni relative utili a presentare un Dataset'
+help: "Struttura delle informazioni relative utili a presentare un Dataset. Schema.org prevede una Tipologia Dataset <br>\r\nSi raccomanda di inserire un titolo semplice e corto. Esempi di titoli di dataset –> «Contratti del Sistema Pubblico di Connettività (SPC)» oppure «Luoghi ed eventi della cultura»."
+new_revision: true
+preview_mode: 1
+display_submitted: true

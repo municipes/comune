@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dichiarazione_dei_redditi
+    - media.type.document
+    - node.type.persona
+id: node.persona.field_dichiarazione_dei_redditi
+field_name: field_dichiarazione_dei_redditi
+entity_type: node
+bundle: persona
+label: 'Dichiarazione dei redditi'
+description: "Obbligatorio per Persona che ha incarichi o cariche politiche: copia dell'ultima dichiarazione dei redditi soggetti all'imposta sui redditi delle persone fisiche Per il soggetto, il coniuge non separato e i parenti entro il secondo grado, ove gli stessi vi consentano (NB: dando eventualmente evidenza del mancato consenso) (NB: è necessario limitare, con appositi accorgimenti a cura dell'interessato o della amministrazione, la pubblicazione dei dati sensibili)."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

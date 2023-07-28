@@ -1,0 +1,66 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view_reference
+    - node.type.documento_pubblico
+    - views.view.bi_campi_nodi
+  module:
+    - viewsreference
+id: node.documento_pubblico.field_view_reference
+field_name: field_view_reference
+entity_type: node
+bundle: documento_pubblico
+label: Servizi
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    display_id: block_2
+    data: 'a:5:{s:8:"argument";N;s:5:"title";N;s:6:"offset";N;s:5:"pager";N;s:5:"limit";N;}'
+    target_uuid: 28158f42-9b55-4a7c-9959-ebb13db2850f
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    bi_campi_nodi: bi_campi_nodi
+    bi_argomenti: 0
+    bi_argomenti_chip: 0
+    bi_esplora_tassonomia: 0
+    bi_faq: 0
+    bi_persone: 0
+    bi_servizi_in_evidenza: 0
+    bi_tutte_le_novita: 0
+    bi_tutte_le_novita_elenchi: 0
+    bi_tutti_gli_eventi: 0
+    bi_tutti_i_luoghi: 0
+    bi_tutti_i_servizi_indice: 0
+    bi_unita_organizzative_area: 0
+    block_content: 0
+    content: 0
+    content_recent: 0
+    files: 0
+    media: 0
+    media_library: 0
+    taxonomy_term: 0
+    ultima_notizia: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    argument: 0
+    title: 0
+    offset: 0
+    pager: 0
+    limit: 0
+field_type: viewsreference

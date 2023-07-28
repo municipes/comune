@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formato_documento
+    - node.type.documento_privato
+id: node.documento_privato.field_formato_documento
+field_name: field_formato_documento
+entity_type: node
+bundle: documento_privato
+label: 'Formato Documento'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

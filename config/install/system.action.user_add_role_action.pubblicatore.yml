@@ -1,0 +1,13 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - user.role.pubblicatore
+  module:
+    - user
+id: user_add_role_action.pubblicatore
+label: 'Add the Pubblicatore role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: pubblicatore

@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_completa
+    - node.type.luogo
+  module:
+    - text
+id: node.luogo.field_descrizione_completa
+field_name: field_descrizione_completa
+entity_type: node
+bundle: luogo
+label: 'Descrizione estesa'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

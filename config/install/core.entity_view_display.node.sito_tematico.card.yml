@@ -1,0 +1,64 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.sito_tematico.field_colore
+    - field.field.node.sito_tematico.field_descrizione_breve
+    - field.field.node.sito_tematico.field_immagine
+    - field.field.node.sito_tematico.field_link
+    - node.type.sito_tematico
+  module:
+    - link
+    - user
+id: node.sito_tematico.card
+targetEntityType: node
+bundle: sito_tematico
+mode: card
+content:
+  field_colore:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: media_library
+      link: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

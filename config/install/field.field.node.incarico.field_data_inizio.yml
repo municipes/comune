@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_inizio
+    - node.type.incarico
+  module:
+    - datetime
+id: node.incarico.field_data_inizio
+field_name: field_data_inizio
+entity_type: node
+bundle: incarico
+label: 'Data inizio incarico'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

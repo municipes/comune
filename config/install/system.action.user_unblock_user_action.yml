@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - user
+id: user_unblock_user_action
+label: 'Sbloccare gli utenti selezionati'
+type: user
+plugin: user_unblock_user_action
+configuration: {  }

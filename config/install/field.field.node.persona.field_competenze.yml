@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competenze
+    - node.type.persona
+  module:
+    - text
+id: node.persona.field_competenze
+field_name: field_competenze
+entity_type: node
+bundle: persona
+label: Competenze
+description: 'Se Persona Politica, descrizione testuale del ruolo, comprensiva delle deleghe, oppure se Persona Amministrativa, descrizione dei compiti di cui si occupa la persona.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

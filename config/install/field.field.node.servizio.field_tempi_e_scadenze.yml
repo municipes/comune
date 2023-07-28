@@ -1,0 +1,108 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tempi_e_scadenze
+    - node.type.servizio
+    - paragraphs.paragraphs_type.date_timeline
+  module:
+    - entity_reference_revisions
+id: node.servizio.field_tempi_e_scadenze
+field_name: field_tempi_e_scadenze
+entity_type: node
+bundle: servizio
+label: 'Tempi e scadenze'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      date_timeline: date_timeline
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 24
+        enabled: false
+      accordion_item:
+        weight: 25
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 30
+        enabled: false
+      attachments:
+        weight: 26
+        enabled: false
+      callout:
+        weight: 27
+        enabled: false
+      carousel:
+        weight: 28
+        enabled: false
+      citation:
+        weight: 29
+        enabled: false
+      content:
+        weight: 30
+        enabled: false
+      dataset:
+        weight: 68
+        enabled: false
+      date_timeline:
+        weight: 34
+        enabled: true
+      date_timeline_item:
+        weight: 35
+        enabled: false
+      days_timeline_item:
+        weight: 37
+        enabled: false
+      fase_intitolata:
+        weight: 73
+        enabled: false
+      fase_semplice:
+        weight: 74
+        enabled: false
+      gallery:
+        weight: 34
+        enabled: false
+      gallery_item:
+        weight: 35
+        enabled: false
+      hero:
+        weight: 36
+        enabled: false
+      in_evidenza:
+        weight: 37
+        enabled: false
+      link:
+        weight: 79
+        enabled: false
+      map:
+        weight: 39
+        enabled: false
+      node_reference:
+        weight: 40
+        enabled: false
+      section:
+        weight: 41
+        enabled: false
+      settings:
+        weight: 42
+        enabled: false
+      slide:
+        weight: 43
+        enabled: false
+      timeline:
+        weight: 44
+        enabled: false
+      timeline_item:
+        weight: 45
+        enabled: false
+      vista:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

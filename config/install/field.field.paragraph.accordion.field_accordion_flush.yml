@@ -1,0 +1,22 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordion_flush
+    - paragraphs.paragraphs_type.accordion
+id: paragraph.accordion.field_accordion_flush
+field_name: field_accordion_flush
+entity_type: paragraph
+bundle: accordion
+label: 'Accordion flush'
+description: 'Selezione per rimuovere il colore di sfondo predefinito, i bordi e gli angoli arrotondati per renderizzare accordion bordo-a-bordo con il suo contenitore'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Acceso
+  off_label: Spento
+field_type: boolean

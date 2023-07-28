@@ -1,0 +1,109 @@
+langcode: it
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_in_evidenza_2
+    - field.field.node.unita_organizzativa.field_argomenti
+    - field.field.node.unita_organizzativa.field_competenze
+    - field.field.node.unita_organizzativa.field_descrizione_breve
+    - field.field.node.unita_organizzativa.field_documenti
+    - field.field.node.unita_organizzativa.field_immagine
+    - field.field.node.unita_organizzativa.field_incarichi
+    - field.field.node.unita_organizzativa.field_luoghi
+    - field.field.node.unita_organizzativa.field_luogo
+    - field.field.node.unita_organizzativa.field_persona
+    - field.field.node.unita_organizzativa.field_punti_di_contatto
+    - field.field.node.unita_organizzativa.field_sezione_amministrazione
+    - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
+    - field.field.node.unita_organizzativa.field_ulteriori_informazioni
+    - field.field.node.unita_organizzativa.field_unita_organizzativa
+    - field.field.node.unita_organizzativa.field_view_persone
+    - field.field.node.unita_organizzativa.field_view_reference
+    - node.type.unita_organizzativa
+  module:
+    - text
+    - user
+id: node.unita_organizzativa.teaser_in_evidenza_2
+targetEntityType: node
+bundle: unita_organizzativa
+mode: teaser_in_evidenza_2
+content:
+  field_argomenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_competenze:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_persona:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_sezione_amministrazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_tipo_di_organizzazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_documenti: true
+  field_incarichi: true
+  field_luoghi: true
+  field_luogo: true
+  field_punti_di_contatto: true
+  field_unita_organizzativa: true
+  field_view_persone: true
+  field_view_reference: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

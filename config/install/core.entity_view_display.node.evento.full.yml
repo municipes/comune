@@ -1,0 +1,520 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.evento.field_a_chi_e_rivolto
+    - field.field.node.evento.field_allegati
+    - field.field.node.evento.field_argomenti
+    - field.field.node.evento.field_data_e_orario_di_fine
+    - field.field.node.evento.field_data_e_orario_di_inizio
+    - field.field.node.evento.field_descrizione_breve
+    - field.field.node.evento.field_descrizione_completa
+    - field.field.node.evento.field_evento_genitore
+    - field.field.node.evento.field_galleria_immagini
+    - field.field.node.evento.field_immagine
+    - field.field.node.evento.field_importi_viaggio_servizio
+    - field.field.node.evento.field_luogo
+    - field.field.node.evento.field_patrocinio
+    - field.field.node.evento.field_persone
+    - field.field.node.evento.field_punti_di_contatto
+    - field.field.node.evento.field_sottotitolo
+    - field.field.node.evento.field_sponsor
+    - field.field.node.evento.field_tipo_di_evento
+    - field.field.node.evento.field_ulteriori_informazioni
+    - field.field.node.evento.field_unita_organizzativa
+    - field.field.node.evento.field_video_esterno
+    - field.field.node.evento.field_view_reference
+    - node.type.evento
+  module:
+    - ui_patterns_field_formatters
+    - user
+    - viewsreference
+id: node.evento.full
+targetEntityType: node
+bundle: evento
+mode: full
+content:
+  field_a_chi_e_rivolto:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+        'field_properties:_label':
+          destination: field_label
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_allegati:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: card_teaser
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_argomenti:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: chip
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_data_e_orario_di_fine:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: date_timeline
+      pattern_mapping:
+        'field_properties:value':
+          destination: data_fase
+          weight: 0
+          plugin: field_properties
+          source: value
+        'field_properties:_label':
+          destination: testo
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings: {  }
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_data_e_orario_di_inizio:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: date_timeline
+      pattern_mapping:
+        'field_properties:value':
+          destination: data_fase
+          weight: 0
+          plugin: field_properties
+          source: value
+        'field_properties:_label':
+          destination: testo
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings: {  }
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_descrizione_completa:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+        'field_properties:_label':
+          destination: field_label
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: "Cos'è"
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_evento_genitore:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: card
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_importi_viaggio_servizio:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+        'field_properties:_label':
+          destination: field_label
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_luogo:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: card_simple
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          intro_text: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_patrocinio:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+        'field_properties:_label':
+          destination: field_label
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          intro_text: ''
+          label_size: h4
+          label_visible: visible
+          label_menu: not_visible
+          heading_value: ''
+          use_card: 0
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_persone:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: chip
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_punti_di_contatto:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: teaser
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: 'class="row"'
+          override_label: ''
+          intro_text: ''
+          label_size: ''
+          heading_value: ''
+          use_card: '1'
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_sottotitolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_sponsor:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+        'field_properties:_label':
+          destination: field_label
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          intro_text: ''
+          label_size: h4
+          label_visible: visible
+          label_menu: not_visible
+          heading_value: ''
+          use_card: 0
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_tipo_di_evento:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_ulteriori_informazioni:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: node_full_field
+      pattern_mapping:
+        'field_properties:processed':
+          destination: field_value
+          weight: 0
+          plugin: field_properties
+          source: processed
+        'field_properties:_label':
+          destination: field_label
+          weight: 1
+          plugin: field_properties
+          source: _label
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_unita_organizzativa:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: card
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_view_reference:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sharing_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_galleria_immagini: true
+  field_video_esterno: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

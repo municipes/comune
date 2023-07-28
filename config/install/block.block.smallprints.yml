@@ -1,0 +1,30 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - system.menu.small-prints
+  module:
+    - menu_block
+  theme:
+    - scaenographia
+id: smallprints
+theme: scaenographia
+region: footer_small_prints
+weight: 0
+provider: null
+plugin: 'menu_block:small-prints'
+settings:
+  id: 'menu_block:small-prints'
+  label: 'Small prints'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'small-prints:'
+  suggestion: small_prints
+visibility: {  }

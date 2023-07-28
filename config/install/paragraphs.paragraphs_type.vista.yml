@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies: {  }
+id: vista
+label: Vista
+icon_uuid: null
+icon_default: null
+description: 'Paragrafo che stampa una vista'
+behavior_plugins: {  }

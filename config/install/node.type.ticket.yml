@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - type_tray
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  type_tray:
+    existing_nodes_link_text: 'View existing <em class="placeholder">Ticket</em> content'
+name: Ticket
+type: ticket
+description: 'Ticket di richiesta assistenza.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
