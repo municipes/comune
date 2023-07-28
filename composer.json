@@ -2,6 +2,7 @@
   "name": "municipes/comune",
   "description": "The installation profile for municipality by Silfi.",
   "type": "drupal-profile",
+  "license": "GPL-3.0-only",
   "authors": [
     {
       "name": "Maurizio Cavalletti",
