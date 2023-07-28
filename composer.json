@@ -56,6 +56,7 @@
     "drupal/migrate_upgrade": "^4.0",
     "drupal/node_read_time": "^1.11",
     "drupal/paragraphs": "^1.15",
+    "drupal/pathauto": "^1.11'",
     "drupal/scheduler": "^2.0",
     "drupal/search_api": "^1.29",
     "drupal/taxonomy_custom_controller": "^1.5",
