@@ -64,5 +64,5 @@ function comune_install() {
   // Enable the demo content module. This can't be specified as a dependency
   // in the comune.info.yml file, as it requires configuration provided by
   // the profile (fields etc.).
-  \Drupal::service('module_installer')->install(['comune_content'], TRUE);
+  // \Drupal::service('module_installer')->install(['comune_content'], TRUE);
 }
