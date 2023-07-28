@@ -1,0 +1,38 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.accesso_al_servizio.field_link
+    - field.field.node.accesso_al_servizio.field_tipo_di_accesso
+    - node.type.accesso_al_servizio
+  module:
+    - link
+    - user
+id: node.accesso_al_servizio.card
+targetEntityType: node
+bundle: accesso_al_servizio
+mode: card
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_tipo_di_accesso: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

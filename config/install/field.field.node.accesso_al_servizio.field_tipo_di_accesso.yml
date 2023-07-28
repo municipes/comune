@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_di_accesso
+    - node.type.accesso_al_servizio
+    - taxonomy.vocabulary.tipo_di_accesso_al_servizio
+id: node.accesso_al_servizio.field_tipo_di_accesso
+field_name: field_tipo_di_accesso
+entity_type: node
+bundle: accesso_al_servizio
+label: 'Tipo di accesso'
+description: 'Tipologia di accesso (online, tramite appuntamento....)'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipo_di_accesso_al_servizio: tipo_di_accesso_al_servizio
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

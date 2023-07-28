@@ -49,6 +49,11 @@ targetEntityType: node
 bundle: servizio
 mode: card
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_descrizione_breve:
     type: basic_string
     label: hidden

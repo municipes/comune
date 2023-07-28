@@ -1,0 +1,26 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.accesso_al_servizio.field_link
+    - field.field.node.accesso_al_servizio.field_tipo_di_accesso
+    - node.type.accesso_al_servizio
+  module:
+    - user
+id: node.accesso_al_servizio.teaser
+targetEntityType: node
+bundle: accesso_al_servizio
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_link: true
+  field_tipo_di_accesso: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

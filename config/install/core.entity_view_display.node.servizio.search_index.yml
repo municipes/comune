@@ -51,6 +51,11 @@ targetEntityType: node
 bundle: servizio
 mode: search_index
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_a_chi_e_rivolto:
     type: text_default
     label: hidden

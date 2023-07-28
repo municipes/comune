@@ -87,7 +87,6 @@ third_party_settings:
         - field_tempi_e_scadenze
         - field_costi
         - field_procedure_collegate_esito
-        - field_accedi_al_servizio
         - field_vincoli
         - field_casi_particolari
         - field_ulteriori_informazioni
@@ -96,6 +95,7 @@ third_party_settings:
         - field_unita_organizzative
         - field_documenti
         - field_argomenti
+        - field_accedi_al_servizio
       label: Contenuto
       region: content
       parent_name: group_contenitore
@@ -119,6 +119,7 @@ third_party_settings:
         - field_note_interne
         - field_parole_chiave
         - scheduler_settings
+        - publish_on
         - unpublish_on
         - field_destinazioni
       label: 'Dati non visibili'
@@ -172,22 +173,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_accedi_al_servizio:
-    type: paragraphs
-    weight: 24
+    type: options_select
+    weight: 101
     region: content
-    settings:
-      title: Paragrafo
-      title_plural: Paragrafi
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
+    settings: {  }
     third_party_settings: {  }
   field_allegati:
     type: media_library_widget
@@ -208,7 +197,7 @@ content:
     third_party_settings: {  }
   field_business_events:
     type: options_buttons
-    weight: 34
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -228,7 +217,7 @@ content:
     third_party_settings: {  }
   field_codice_dell_ente_erogatore:
     type: string_textfield
-    weight: 35
+    weight: 11
     region: content
     settings:
       size: 60
@@ -299,7 +288,7 @@ content:
     third_party_settings: {  }
   field_destinazioni:
     type: string_textfield
-    weight: 46
+    weight: 19
     region: content
     settings:
       size: 60
@@ -324,7 +313,7 @@ content:
     third_party_settings: {  }
   field_life_events:
     type: options_buttons
-    weight: 33
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -354,7 +343,7 @@ content:
     third_party_settings: {  }
   field_note_interne:
     type: text_textarea
-    weight: 38
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -362,7 +351,7 @@ content:
     third_party_settings: {  }
   field_parole_chiave:
     type: string_textfield
-    weight: 43
+    weight: 15
     region: content
     settings:
       size: 60
@@ -414,7 +403,7 @@ content:
     third_party_settings: {  }
   field_settore_merceologico:
     type: string_textfield
-    weight: 36
+    weight: 12
     region: content
     settings:
       size: 60
@@ -456,7 +445,7 @@ content:
     third_party_settings: {  }
   field_triplette:
     type: options_select
-    weight: 37
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -508,8 +497,14 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   scheduler_settings:
-    weight: 44
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -547,10 +542,9 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 45
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_promemoria_accesso: true
-  publish_on: true

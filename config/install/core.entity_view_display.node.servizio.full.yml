@@ -51,6 +51,11 @@ targetEntityType: node
 bundle: servizio
 mode: full
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_a_chi_e_rivolto:
     type: pattern_formatter
     label: hidden
@@ -81,40 +86,6 @@ content:
       variants_token: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_accedi_al_servizio:
-    type: pattern_wrapper_entity_reference_formatter
-    label: hidden
-    settings:
-      view_mode: buttons
-      pattern: node_full_field
-      pattern_mapping:
-        'field_wrapper:label':
-          destination: field_label
-          weight: 0
-          plugin: field_wrapper
-          source: label
-        'field_wrapper:items':
-          destination: field_value
-          weight: 1
-          plugin: field_wrapper
-          source: items
-      pattern_settings:
-        node_full_field:
-          attributes: ''
-          override_label: ''
-          intro_text: ''
-          label_size: ''
-          heading_value: ''
-          has_bg_grey: '1'
-          label_visible: null
-          label_menu: null
-          use_card: 0
-          audio: null
-      pattern_variant: default
-      link: false
-    third_party_settings: {  }
-    weight: 13
     region: content
   field_allegati:
     type: pattern_wrapper_entity_reference_formatter
@@ -808,6 +779,7 @@ content:
     weight: 22
     region: content
 hidden:
+  field_accedi_al_servizio: true
   field_business_events: true
   field_categoria_del_servizio: true
   field_codice_dell_ente_erogatore: true

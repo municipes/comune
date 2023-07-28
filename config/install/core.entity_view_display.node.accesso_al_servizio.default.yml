@@ -1,0 +1,44 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.accesso_al_servizio.field_link
+    - field.field.node.accesso_al_servizio.field_tipo_di_accesso
+    - node.type.accesso_al_servizio
+  module:
+    - link
+    - user
+id: node.accesso_al_servizio.default
+targetEntityType: node
+bundle: accesso_al_servizio
+mode: default
+content:
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_tipo_di_accesso:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

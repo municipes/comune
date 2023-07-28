@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tipo_di_accesso_al_servizio
+id: taxonomy_term.tipo_di_accesso_al_servizio
+target_entity_type_id: taxonomy_term
+target_bundle: tipo_di_accesso_al_servizio
+default_langcode: site_default
+language_alterable: false

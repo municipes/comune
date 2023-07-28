@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
     - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
     - node.type.punto_di_contatto
+  module:
+    - content_moderation
 id: node.punto_di_contatto.paragraph
 targetEntityType: node
 bundle: punto_di_contatto
@@ -26,6 +28,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -40,6 +48,9 @@ hidden:
   langcode: true
   path: true
   promote: true
+  publish_on: true
+  scheduler_settings: true
   status: true
   sticky: true
   uid: true
+  unpublish_on: true
