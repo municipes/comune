@@ -27,20 +27,120 @@ distribution:
   #   finish_url: ?welcome=1
   langcode: it
 
-# Modules to install to support the profile.
+# Dependencies that Comune can not live without.
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  # core
+  - drupal:block
+  - drupal:datetime
+  - drupal:field
+  - drupal:file
+  - drupal:image
+  - drupal:media
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:user
+  - drupal:views
+  # Contrib
+
+  # Comune
+
+# Modules that are installed by default but can be uninstalled.
 install:
+  # core
+  - drupal:big_pipe
+  - drupal:block_content
+  - drupal:breakpoint
+  - drupal:ckeditor5
+  - drupal:config
+  - drupal:content_moderation
+  - drupal:contextual
+  - drupal:datetime_range
+  - drupal:dblog
+  - drupal:dynamic_page_cache
+  - drupal:editor
+  - drupal:field_ui
+  - drupal:filter
+  - drupal:inline_form_errors
+  - drupal:language
+  - drupal:link
+  - drupal:locale
+  - drupal:media_library
+  - drupal:menu_link_content
+  - drupal:menu_ui
+  - drupal:migrate
+  - drupal:migrate_drupal
+  - drupal:mysql
+  - drupal:options
+  - drupal:page_cache
+  - drupal:path
+  - drupal:path_alias
+  - drupal:phpass
+  - drupal:responsive_image
+  - drupal:shortcut
+  - drupal:syslog
+  - drupal:system
+  - drupal:text
+  - drupal:token
+  - drupal:toolbar
+  - drupal:update
+  - drupal:views_ui
+  - drupal:workflows
+  # Contrib
   - address:address
   - admin_toolbar:admin_toolbar
   - admin_toolbar:admin_toolbar_tools
   - auto_entitylabel:auto_entitylabel
   - backup_migrate:backup_migrate
+  - color_field:color_field
+  - components:components
+  - crop:crop
+  - easy_breadcrumb:easy_breadcrumb
+  - empty_front_page:empty_front_page
+  - entity_reference_display:entity_reference_display
+  - entity_reference_revisions:entity_reference_revisions
+  - facets:facets
+  - facets:facets_summary
+  - field_group:field_group
+  - focal_point:focal_point
+  - geocoder:geocoder
+  - geocoder:geocoder_address
+  - geocoder:geocoder_field
+  - geocoder:geocoder_geofield
+  - geofield:geofield
+  - imce:imce
+  - inline_entity_form:inline_entity_form
+  - jquery_ui:jquery_ui
+  - jquery_ui_draggable:jquery_ui_draggable
+  - leaflet:leaflet
+  - media_video_micromodal:media_video_micromodal
+  - menu_block:menu_block
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - migrate_upgrade:migrate_upgrade
+  - node_read_time:node_read_time
+  - paragraphs:paragraphs
+  - pathauto:pathauto
+  - scheduler:scheduler
+  - search_api:search_api
+  - search_api:search_api_db
+  - taxonomy_custom_controller:taxonomy_custom_controller
+  - taxonomy_menu:taxonomy_menu
+  - twig_tweak:twig_tweak
+  - type_tray:type_tray
+  - ui_patterns:ui_patterns
+  - ui_patterns_field_formatters:ui_patterns_field_formatters
+  - ui_patterns:ui_patterns_library
+  - ui_patterns_settings:ui_patterns_settings
+  - viewsreference:viewsreference
+  # Comune
   - scaenographia:bi_calendar
   - scaenographia:bi_contacts
   - scaenographia:bi_taxonomy_custom_controller
   - scaenographia:bi_toc
-  - drupal:big_pipe
-  - drupal:block
-  - drupal:block_content
+  - municipes:silfi_migrate
+  - municipes:silfi_triplette
+  # Bootstrap Italia
   - bootstrap_italia:bootstrap_italia_empty_front_page
   - bootstrap_italia:bootstrap_italia_image_style
   - bootstrap_italia:bootstrap_italia_paragraph
@@ -58,101 +158,6 @@ install:
   - bootstrap_italia:bootstrap_italia_paragraph_timeline
   - bootstrap_italia:bootstrap_italia_text_editor2
   - bootstrap_italia:bootstrap_italia_views_carousel
-  - drupal:breakpoint
-  - drupal:ckeditor5
-  - color_field:color_field
-  - components:components
-  - drupal:config
-  - drupal:content_moderation
-  - drupal:contextual
-  - crop:crop
-  - drupal:datetime
-  - drupal:datetime_range
-  - drupal:dblog
-  - drupal:dynamic_page_cache
-  - easy_breadcrumb:easy_breadcrumb
-  - drupal:editor
-  - empty_front_page:empty_front_page
-  - entity_reference_display:entity_reference_display
-  - entity_reference_revisions:entity_reference_revisions
-  - facets:facets
-  - facets:facets_summary
-  - drupal:field
-  - field_group:field_group
-  - drupal:field_ui
-  - drupal:file
-  - drupal:filter
-  - focal_point:focal_point
-  - geocoder:geocoder
-  - geocoder:geocoder_address
-  - geocoder:geocoder_field
-  - geocoder:geocoder_geofield
-  - geofield:geofield
-  - drupal:image
-  - imce:imce
-  - inline_entity_form:inline_entity_form
-  - drupal:inline_form_errors
-  - jquery_ui:jquery_ui
-  - jquery_ui_draggable:jquery_ui_draggable
-  - drupal:language
-  - leaflet:leaflet
-  - drupal:link
-  - drupal:locale
-  - drupal:media
-  - drupal:media_library
-  - media_video_micromodal:media_video_micromodal
-  - menu_block:menu_block
-  - drupal:menu_link_content
-  - drupal:menu_ui
-  - drupal:migrate
-  - drupal:migrate_drupal
-  - migrate_plus:migrate_plus
-  - migrate_tools:migrate_tools
-  - migrate_upgrade:migrate_upgrade
-  - drupal:mysql
-  - drupal:node
-  - node_read_time:node_read_time
-  - drupal:options
-  - drupal:page_cache
-  - drupal:path
-  - drupal:path_alias
-  - drupal:phpass
-  - drupal:responsive_image
-  - scheduler:scheduler
-  - search_api:search_api
-  - search_api:search_api_db
-  - drupal:shortcut
-  - municipes:silfi_migrate
-  - municipes:silfi_triplette
-  - drupal:syslog
-  - drupal:system
-  - drupal:taxonomy
-  - taxonomy_custom_controller:taxonomy_custom_controller
-  - taxonomy_menu:taxonomy_menu
-  - drupal:text
-  - drupal:token
-  - drupal:toolbar
-  - twig_tweak:twig_tweak
-  - type_tray:type_tray
-  - ui_patterns:ui_patterns
-  - ui_patterns_field_formatters:ui_patterns_field_formatters
-  - ui_patterns:ui_patterns_library
-  - ui_patterns_settings:ui_patterns_settings
-  - drupal:update
-  - drupal:user
-  - drupal:views_ui
-  - viewsreference:viewsreference
-  - drupal:workflows
-  - pathauto:pathauto
-  - drupal:views
-  - paragraphs:paragraphs
-
-# Required modules
-# Note that any dependencies of the modules listed here will be installed automatically.
-dependencies:
-  - node
-  - block
-  - views
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
