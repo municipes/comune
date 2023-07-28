@@ -138,7 +138,7 @@ install:
   - scaenographia:bi_contacts
   - scaenographia:bi_taxonomy_custom_controller
   - scaenographia:bi_toc
-  - municipes:silfi_migrate
+  # - municipes:silfi_migrate
   - municipes:silfi_triplette
   # Bootstrap Italia
   - bootstrap_italia:bootstrap_italia_empty_front_page
