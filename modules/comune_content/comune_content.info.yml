@@ -2,7 +2,8 @@ name: 'Comune Silfi Content'
 description: Imports the basics content.
 type: module
 version: VERSION
-package: 'Core (Experimental)'
+core_version_requirement: '^10'
+package: 'Municipes (Experimental)'
 lifecycle: experimental
 hidden: true
 dependencies:
