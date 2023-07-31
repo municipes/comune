@@ -78,6 +78,8 @@ function comune_install() {
   ]);
   $shortcut->save();
 
+  // Enable empty front page module
+  \Drupal::service('module_installer')->install(['bootstrap_italia_empty_front_page'], TRUE);
   // Enable the demo content module. This can't be specified as a dependency
   // in the comune.info.yml file, as it requires configuration provided by
   // the profile (fields etc.).

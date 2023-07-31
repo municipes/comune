@@ -141,7 +141,7 @@ install:
   # - municipes:silfi_migrate
   - municipes:silfi_triplette
   # Bootstrap Italia
-  - bootstrap_italia:bootstrap_italia_empty_front_page
+  # - bootstrap_italia:bootstrap_italia_empty_front_page
   - bootstrap_italia:bootstrap_italia_image_style
   - bootstrap_italia:bootstrap_italia_paragraph
   - bootstrap_italia:bootstrap_italia_paragraph_accordion
@@ -164,5 +164,6 @@ install:
 themes:
   - bootstrap_italia
   - claro
+  - scaenographia
 
 keep_english: false
