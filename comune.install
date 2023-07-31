@@ -7,6 +7,9 @@
 
 use Drupal\user\Entity\User;
 use Drupal\shortcut\Entity\Shortcut;
+use Drupal\migrate\MigrateExecutable;
+use Drupal\migrate\MigrateMessage;
+use Drupal\migrate\MigrationInterface;
 
 /**
  * Implements hook_requirements().
@@ -80,8 +83,36 @@ function comune_install() {
 
   // Enable empty front page module
   \Drupal::service('module_installer')->install(['bootstrap_italia_empty_front_page'], TRUE);
+  // Enable import taxonomy module
+  \Drupal::service('module_installer')->install(['lexicum_collatio'], TRUE);
+  // Import taxonomy
+  comune_execute_migrations(['taxonomy_common']);
   // Enable the demo content module. This can't be specified as a dependency
   // in the comune.info.yml file, as it requires configuration provided by
   // the profile (fields etc.).
   // \Drupal::service('module_installer')->install(['comune_content'], TRUE);
+}
+
+/**
+ * Execute migrations
+ *
+ * @param array $migration_ids
+ * @return void
+ */
+function comune_execute_migrations(array $migration_ids) {
+  $manager = Drupal::service('plugin.manager.migration');
+    foreach ($migration_ids as $migration_id) {
+      $migration = $manager->createInstance($migration_id);
+      // update existing entity imported.
+      $migration->getIdMap()->prepareUpdate();
+      $executable = new MigrateExecutable($migration, new MigrateMessage());
+
+      try {
+        // Run the migration.
+        $executable->import();
+      }
+      catch (\Exception $e) {
+        $migration->setStatus(MigrationInterface::STATUS_IDLE);
+      }
+    }
 }
