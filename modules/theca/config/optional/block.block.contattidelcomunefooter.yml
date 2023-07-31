@@ -1,0 +1,24 @@
+langcode: it
+status: true
+dependencies:
+  content:
+    - 'block_content:solo_testo:13ded2e7-a845-444c-8c48-f060df24db48'
+  module:
+    - block_content
+  theme:
+    - scaenographia
+id: contattidelcomunefooter
+theme: scaenographia
+region: footer_credits
+weight: 0
+provider: null
+plugin: 'block_content:13ded2e7-a845-444c-8c48-f060df24db48'
+settings:
+  id: 'block_content:13ded2e7-a845-444c-8c48-f060df24db48'
+  label: 'Contatti del Comune footer'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

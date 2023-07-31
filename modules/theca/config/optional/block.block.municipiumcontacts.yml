@@ -1,0 +1,24 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - bi_contacts
+  theme:
+    - scaenographia
+id: municipiumcontacts
+theme: scaenographia
+region: contacts
+weight: 0
+provider: null
+plugin: bi_contacts
+settings:
+  id: bi_contacts
+  label: 'Municipium: contacts'
+  label_display: '0'
+  provider: bi_contacts
+  bi_contacts_faq: /domande-frequenti
+  bi_contacts_help: /help-desk
+  bi_contacts_call: '+39055055055'
+  bi_contacts_reservation: /prenota-appuntamento
+  bi_contacts_report: /
+visibility: {  }

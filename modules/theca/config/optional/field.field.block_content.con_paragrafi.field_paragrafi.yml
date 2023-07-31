@@ -1,0 +1,94 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.con_paragrafi
+    - field.storage.block_content.field_paragrafi
+  module:
+    - entity_reference_revisions
+id: block_content.con_paragrafi.field_paragrafi
+field_name: field_paragrafi
+entity_type: block_content
+bundle: con_paragrafi
+label: Paragrafi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 1
+    target_bundles_drag_drop:
+      accordion:
+        weight: 24
+        enabled: false
+      accordion_item:
+        weight: 25
+        enabled: false
+      attachments:
+        weight: 26
+        enabled: false
+      callout:
+        weight: 27
+        enabled: false
+      carousel:
+        weight: 28
+        enabled: false
+      citation:
+        weight: 29
+        enabled: false
+      content:
+        weight: 30
+        enabled: false
+      dataset:
+        weight: 31
+        enabled: false
+      fase_intitolata:
+        weight: 32
+        enabled: false
+      fase_semplice:
+        weight: 33
+        enabled: false
+      gallery:
+        weight: 34
+        enabled: false
+      gallery_item:
+        weight: 35
+        enabled: false
+      hero:
+        weight: 36
+        enabled: false
+      in_evidenza:
+        weight: 37
+        enabled: false
+      map:
+        weight: 38
+        enabled: false
+      node_reference:
+        weight: 39
+        enabled: false
+      punto_di_contatto:
+        weight: 40
+        enabled: false
+      ricerca_novita:
+        weight: 41
+        enabled: false
+      section:
+        weight: 42
+        enabled: false
+      settings:
+        weight: 43
+        enabled: false
+      slide:
+        weight: 44
+        enabled: false
+      timeline:
+        weight: 45
+        enabled: false
+      timeline_item:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

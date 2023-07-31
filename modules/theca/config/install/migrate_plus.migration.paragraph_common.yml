@@ -1,0 +1,86 @@
+uuid: 1e711b8c-8ecc-46e3-a758-e706cdb78395
+id: paragraph_common
+label: Paragrafi
+migration_group: comune_block
+migration_tags:
+  - json
+  - comune
+  - paragraph
+  - paragraph_common
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+
+  # The data_parser normally limits the fields passed on to the source plugin
+  # to fields configured to be used as part of the migration. To support more
+  # dynamic migrations, the JSON data parser supports including the original
+  # data for the current row. Simply include the 'include_raw_data' flag set
+  # to `true` to enable this. This option is disabled by default to minimize
+  # memory footprint for migrations that do not need this capability.
+  # include_raw_data: false
+
+  # Flags whether to track changes to incoming data. If TRUE, we will maintain
+  # hashed source rows to determine whether incoming data has changed.
+  # track_changes: false
+
+  urls:
+    - 'https://municipes.github.io/origo/block/paragraphs.json'
+
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: data
+
+  fields:
+    - name: id
+      label: 'ID blocco'
+      selector: id
+    - name: uuid
+      label: 'UUID blocco'
+      selector: uuid
+    - name: type
+      label: 'Tipo di paragrafo'
+      selector: type
+    - name: title
+      label: 'Campo titolo'
+      selector: attributes/title
+    - name: args
+      label: 'TID argomenti'
+      selector: attributes/args
+    - name: parent_type
+      label: 'Tipo contenuto padre'
+      selector: attributes/parent_type
+    - name: parent_field_name
+      label: 'Nome campo padre'
+      selector: attributes/parent_field_name
+    - name: parent_id
+      label: 'ID entità padre'
+      selector: attributes/parent_id
+
+  ids:
+    id:
+      type: integer
+
+process:
+  id: id
+  uuid: uuid
+  field_title: title
+  field_argomento: args
+  parent_type: parent_type
+  parent_field_name: parent_field_name
+  parent_id: parent_id
+
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: argomenti_in_evidenza
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - theca

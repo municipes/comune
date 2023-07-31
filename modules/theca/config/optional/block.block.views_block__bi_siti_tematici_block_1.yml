@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - views.view.bi_siti_tematici
+  module:
+    - system
+    - views
+  theme:
+    - scaenographia
+id: views_block__bi_siti_tematici_block_1
+theme: scaenographia
+region: home_third_row_full_width
+weight: 0
+provider: null
+plugin: 'views_block:bi_siti_tematici-block_1'
+settings:
+  id: 'views_block:bi_siti_tematici-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.solo_testo
+id: block_content.solo_testo
+target_entity_type_id: block_content
+target_bundle: solo_testo
+default_langcode: site_default
+language_alterable: false

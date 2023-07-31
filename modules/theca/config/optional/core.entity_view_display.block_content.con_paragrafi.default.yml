@@ -1,0 +1,25 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.con_paragrafi
+    - field.field.block_content.con_paragrafi.field_paragrafi
+  module:
+    - entity_reference_revisions
+id: block_content.con_paragrafi.default
+targetEntityType: block_content
+bundle: con_paragrafi
+mode: default
+content:
+  field_paragrafi:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

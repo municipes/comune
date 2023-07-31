@@ -1,0 +1,29 @@
+langcode: it
+status: true
+dependencies:
+  content:
+    - 'block_content:con_paragrafi:0ff346e1-ad19-431f-9ecd-30e26c8c6aa8'
+  module:
+    - block_content
+    - system
+  theme:
+    - scaenographia
+id: hpargomentiinevidenza
+theme: scaenographia
+region: home_third_row_full_width
+weight: -13
+provider: null
+plugin: 'block_content:0ff346e1-ad19-431f-9ecd-30e26c8c6aa8'
+settings:
+  id: 'block_content:0ff346e1-ad19-431f-9ecd-30e26c8c6aa8'
+  label: 'HP Argomenti in evidenza'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

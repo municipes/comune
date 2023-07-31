@@ -1,0 +1,27 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - bi_calendar
+    - system
+  theme:
+    - scaenographia
+id: eventscalendarblock
+theme: scaenographia
+region: home_second_row_full_width
+weight: 10
+provider: null
+plugin: bi_calendar_hp
+settings:
+  id: bi_calendar_hp
+  label: Eventi
+  label_display: visible
+  provider: bi_calendar
+  bi_calendar_hp_start: '0'
+  bi_calendar_hp_stop: '6'
+  bi_calendar_days_number: '6'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

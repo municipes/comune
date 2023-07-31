@@ -1,0 +1,85 @@
+id: node_common
+label: Nodi
+migration_group: comune_node
+migration_tags:
+  - json
+  - comune
+  - node
+  - node_common
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+
+  # The data_parser normally limits the fields passed on to the source plugin
+  # to fields configured to be used as part of the migration. To support more
+  # dynamic migrations, the JSON data parser supports including the original
+  # data for the current row. Simply include the 'include_raw_data' flag set
+  # to `true` to enable this. This option is disabled by default to minimize
+  # memory footprint for migrations that do not need this capability.
+  # include_raw_data: false
+
+  # Flags whether to track changes to incoming data. If TRUE, we will maintain
+  # hashed source rows to determine whether incoming data has changed.
+  # track_changes: false
+
+  urls:
+    - 'https://municipes.github.io/origo/node/pages.json'
+
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: data
+
+  fields:
+    - name: nid
+      label: 'ID del nodo'
+      selector: id
+    - name: label
+      label: 'Il titolo del nodo'
+      selector: attributes/label
+    - name: description
+      label: 'La descrizione di introduzione al nodo'
+      selector: attributes/desc
+
+  ids:
+    nid:
+      type: integer
+
+process:
+  nid: nid
+  langcode:
+    -
+      plugin: default_value
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: label
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: default_value
+      default_value: 1
+
+  field_descrizione_breve:
+    - plugin: skip_on_empty
+      method: process
+      source: description
+
+destination:
+  plugin: entity:node
+  default_bundle: pagina
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - navigatio

@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+id: fake
+label: Fake
+revision: 0
+description: 'Sono blocchi temporanei di test'

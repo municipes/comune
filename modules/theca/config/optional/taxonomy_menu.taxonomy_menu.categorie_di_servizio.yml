@@ -1,0 +1,15 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.categorie_dei_servizi
+id: categorie_di_servizio
+label: 'Categorie di servizio'
+vocabulary: categorie_dei_servizi
+menu: main
+expanded: false
+depth: 0
+menu_parent: 'main:menu_link_content:ea276eaf-e6b7-4a6e-8dfa-7cee0513b6ba'
+description_field_name: ''
+use_term_weight_order: true

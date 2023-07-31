@@ -1,0 +1,22 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.fake
+    - field.field.block_content.fake.body
+  module:
+    - text
+id: block_content.fake.default
+targetEntityType: block_content
+bundle: fake
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

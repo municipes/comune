@@ -1,0 +1,23 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.argomenti_in_evidenza
+    - field.field.block_content.argomenti_in_evidenza.body
+  module:
+    - text
+id: block_content.argomenti_in_evidenza.default
+targetEntityType: block_content
+bundle: argomenti_in_evidenza
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

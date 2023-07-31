@@ -1,0 +1,7 @@
+langcode: it
+status: true
+dependencies: {  }
+id: solo_testo
+label: 'Solo testo'
+revision: 0
+description: 'Semplice blocco con un solo campo testo HTML.'
