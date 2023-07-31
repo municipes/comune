@@ -1,6 +1,0 @@
-langcode: it
-silfi_triplette_url: 'http://baseprivilegioperatore.cst:8080/baseprivilegioperatore/triplette'
-silfi_triplette_codice_ente: PONTASSIEVE
-silfi_triplette_sync: 0
-silfi_triplette_timecron: '3600'
-lightweight_cron_access_key: 943ca3e162f29347c4f62fa4e828e74c
