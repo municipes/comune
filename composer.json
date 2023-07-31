@@ -71,6 +71,7 @@
     "drush/drush": "^11.5",
     "geocoder-php/nominatim-provider": "^5.7",
     "municipes/silfi_triplette": "^1.0",
+    "municipes/privatum_documentum": "^1.x-dev",
     "municipes/scaenographia": "^1.0"
   },
   "support": {

@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_documenti_privati
-    - node.type.documento_privato
     - node.type.pratica
 id: node.pratica.field_documenti_privati
 field_name: field_documenti_privati
@@ -18,8 +17,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      documento_privato: documento_privato
+    target_bundles: {  }
     sort:
       field: _none
       direction: ASC
