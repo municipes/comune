@@ -85,6 +85,10 @@ function comune_install() {
   \Drupal::service('module_installer')->install(['bootstrap_italia_empty_front_page'], TRUE);
   // Enable import taxonomy module
   \Drupal::service('module_installer')->install(['lexicum_collatio'], TRUE);
+  // Enable import taxonomy module
+  \Drupal::service('module_installer')->install(['navigatio'], TRUE);
+  // Enable import taxonomy module
+  \Drupal::service('module_installer')->install(['theca'], TRUE);
   // Import taxonomy
   comune_execute_migrations(['taxonomy_common']);
   // Enable the demo content module. This can't be specified as a dependency
