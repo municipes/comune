@@ -1,6 +1,7 @@
 name: "Lexicum Collatio"
 description: Lexicum Collatio è un modulo Drupal che importa le voci di tassonomia utilizzate dai Comuni.
-package: "Municipes"
+package: "Comune"
+hidden: true
 
 type: module
 core_version_requirement: ^9.5 || ^10

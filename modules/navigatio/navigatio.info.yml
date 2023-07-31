@@ -1,6 +1,7 @@
 name: "Navigatĭo"
 description: Navigatĭo è un modulo Drupal che importa i menu utilizzati dai Comuni.
-package: "Municipes"
+package: "Comune"
+hidden: true
 
 type: module
 core_version_requirement: ^9.5 || ^10

@@ -1,6 +1,7 @@
 name: "Thēca"
 description: Thēca è un modulo Drupal che importa i blocchi utilizzati dai Comuni.
-package: "Municipes"
+package: "Comune"
+hidden: true
 
 type: module
 core_version_requirement: ^9.5 || ^10
