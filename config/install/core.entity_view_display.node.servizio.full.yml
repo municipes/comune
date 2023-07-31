@@ -37,7 +37,6 @@ dependencies:
     - field.field.node.servizio.field_sottotitolo
     - field.field.node.servizio.field_stato_del_servizio
     - field.field.node.servizio.field_tempi_e_scadenze
-    - field.field.node.servizio.field_triplette
     - field.field.node.servizio.field_ulteriori_informazioni
     - field.field.node.servizio.field_unita_organizzative
     - field.field.node.servizio.field_vincoli
