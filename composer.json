@@ -73,6 +73,7 @@
     "municipes/silfi_triplette": "^1.0",
     "municipes/privatum_documentum": "^1.x-dev",
     "municipes/libellus": "^1.x-dev",
+    "municipes/nuntium": "^1.x-dev",
     "municipes/scaenographia": "^1.0"
   },
   "support": {
