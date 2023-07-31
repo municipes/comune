@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_galleria_immagini
     - node.type.documento_privato
+    - paragraphs.paragraphs_type.gallery
   module:
     - entity_reference_revisions
 id: node.documento_privato.field_galleria_immagini
@@ -19,142 +20,89 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      gallery: gallery
     negate: 0
     target_bundles_drag_drop:
-      amministrazione_ref_in_evidenza:
-        weight: 46
+      accordion:
+        weight: 28
         enabled: false
-      amministrazione_view_in_evidenza:
-        weight: 47
-        enabled: false
-      argomenti:
-        weight: 48
+      accordion_item:
+        weight: 29
         enabled: false
       argomenti_in_evidenza:
         weight: 49
         enabled: false
-      argomenti_in_evidenza_card:
-        weight: 50
+      attachments:
+        weight: 31
         enabled: false
-      argomenti_in_evidenza_ct:
-        weight: 51
+      callout:
+        weight: 32
         enabled: false
-      biglietto_evento:
-        weight: 52
+      carousel:
+        weight: 33
         enabled: false
-      calendario:
-        weight: 53
+      citation:
+        weight: 34
         enabled: false
-      card_assistenza:
-        weight: 54
-        enabled: false
-      card_foto_gallery:
-        weight: 55
-        enabled: false
-      collection_multimediale:
-        weight: 56
-        enabled: false
-      collegamenti_unita_organizzative:
-        weight: 57
-        enabled: false
-      comuni_altri_argomenti:
-        weight: 58
-        enabled: false
-      container_argomenti_in_evidenza:
-        weight: 59
-        enabled: false
-      container_assistenza:
-        weight: 60
-        enabled: false
-      container_calendario:
-        weight: 61
-        enabled: false
-      container_contenuti_in_evidenza:
-        weight: 62
-        enabled: false
-      container_foto_gallery:
-        weight: 63
-        enabled: true
-      contenuto_allegati_per_tipo:
-        weight: 64
+      content:
+        weight: 35
         enabled: false
       dataset:
         weight: 65
         enabled: false
-      documento:
-        weight: 66
+      date_timeline:
+        weight: 37
         enabled: false
-      elemento_video:
-        weight: 67
+      date_timeline_item:
+        weight: 38
         enabled: false
-      esplora:
-        weight: 68
-        enabled: false
-      faq:
-        weight: 69
+      days_timeline_item:
+        weight: 39
         enabled: false
       fase_intitolata:
         weight: 70
         enabled: false
-      hero_immagine:
-        weight: 71
+      fase_semplice:
+        weight: 41
         enabled: false
-      homepage_top_card:
-        weight: 72
+      gallery:
+        weight: 42
+        enabled: true
+      gallery_item:
+        weight: 43
         enabled: false
-      homepage_top_cards:
-        weight: 73
+      hero:
+        weight: 44
         enabled: false
-      intestazione_ricerca_e_preferiti:
-        weight: 74
+      in_evidenza:
+        weight: 45
         enabled: false
       link:
         weight: 75
         enabled: false
-      link_con_icona:
-        weight: 77
+      map:
+        weight: 47
         enabled: false
-      link_esterno:
-        weight: 78
+      node_reference:
+        weight: 48
         enabled: false
-      links_con_icona:
-        weight: 76
+      section:
+        weight: 49
         enabled: false
-      punto_di_contatto:
-        weight: 79
+      settings:
+        weight: 50
         enabled: false
-      ricerca:
-        weight: 80
+      slide:
+        weight: 51
         enabled: false
-      ricerca_documenti_e_dati:
-        weight: 81
+      timeline:
+        weight: 52
         enabled: false
-      ricerca_novita:
-        weight: 82
+      timeline_item:
+        weight: 53
         enabled: false
-      ricerca_servizi:
-        weight: 83
-        enabled: false
-      servizi_ref_in_evidenza:
-        weight: 84
-        enabled: false
-      siti_tematici:
-        weight: 85
-        enabled: false
-      testo_e_lista:
-        weight: 86
-        enabled: false
-      titolo_descrizione_link:
-        weight: 87
-        enabled: false
-      titolo_e_descrizione:
-        weight: 88
-        enabled: false
-      ultima_notizia:
-        weight: 89
-        enabled: false
-      valutazione:
-        weight: 90
+      vista:
+        weight: 54
         enabled: false
 field_type: entity_reference_revisions
