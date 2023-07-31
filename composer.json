@@ -70,7 +70,6 @@
     "drupal/webform": "^6.2@beta",
     "drush/drush": "^11.5",
     "geocoder-php/nominatim-provider": "^5.7",
-    "municipes/silfi_triplette": "^1.0",
     "municipes/scaenographia": "^1.0"
   },
   "support": {
