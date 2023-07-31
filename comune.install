@@ -91,6 +91,14 @@ function comune_install() {
   \Drupal::service('module_installer')->install(['theca'], TRUE);
   // Import taxonomy
   comune_execute_migrations(['taxonomy_common']);
+  // Import node
+  comune_execute_migrations(['node_common']);
+  // Import menu
+  comune_execute_migrations(['menu_common']);
+  // Import paragraph
+  comune_execute_migrations(['paragraph_common']);
+  // Import block
+  comune_execute_migrations(['block_common']);
   // Enable the demo content module. This can't be specified as a dependency
   // in the comune.info.yml file, as it requires configuration provided by
   // the profile (fields etc.).
