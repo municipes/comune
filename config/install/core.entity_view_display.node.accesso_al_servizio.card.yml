@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
+    - field.field.node.accesso_al_servizio.field_categoria_del_servizio
+    - field.field.node.accesso_al_servizio.field_descrizione_breve
     - field.field.node.accesso_al_servizio.field_link
     - field.field.node.accesso_al_servizio.field_tipo_di_accesso
     - node.type.accesso_al_servizio
@@ -32,6 +34,8 @@ content:
     weight: 100
     region: content
 hidden:
+  field_categoria_del_servizio: true
+  field_descrizione_breve: true
   field_tipo_di_accesso: true
   langcode: true
   node_read_time: true

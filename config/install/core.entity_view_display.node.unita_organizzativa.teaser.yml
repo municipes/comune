@@ -29,15 +29,16 @@ mode: teaser
 content:
   field_descrizione_breve:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
   field_luogo:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
+      view_mode: teaser
       link: false
     third_party_settings: {  }
     weight: 1

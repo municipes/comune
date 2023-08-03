@@ -2,46 +2,35 @@ langcode: it
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_index
     - field.field.node.accesso_al_servizio.field_categoria_del_servizio
     - field.field.node.accesso_al_servizio.field_descrizione_breve
     - field.field.node.accesso_al_servizio.field_link
     - field.field.node.accesso_al_servizio.field_tipo_di_accesso
     - node.type.accesso_al_servizio
   module:
-    - link
     - user
-id: node.accesso_al_servizio.teaser
+id: node.accesso_al_servizio.search_index
 targetEntityType: node
 bundle: accesso_al_servizio
-mode: teaser
+mode: search_index
 content:
-  field_descrizione_breve:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_link:
-    type: link
+  field_categoria_del_servizio:
+    type: entity_reference_label
     label: hidden
     settings:
-      trim_length: 250
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 100
     region: content
 hidden:
-  field_categoria_del_servizio: true
+  field_descrizione_breve: true
+  field_link: true
   field_tipo_di_accesso: true
   langcode: true
   node_read_time: true

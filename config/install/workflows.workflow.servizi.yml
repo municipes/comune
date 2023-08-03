@@ -1,8 +1,6 @@
 langcode: it
 status: true
 dependencies:
-  config:
-    - node.type.servizio
   module:
     - content_moderation
 id: servizi
@@ -35,7 +33,5 @@ type_settings:
         - published
       to: published
       weight: 1
-  entity_types:
-    node:
-      - servizio
+  entity_types: {  }
   default_moderation_state: draft
