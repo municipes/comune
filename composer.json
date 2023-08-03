@@ -49,6 +49,7 @@
     "drupal/inline_entity_form": "^1.0@RC",
     "drupal/leaflet": "^10.0",
     "drupal/media_video_micromodal": "^1.1",
+    "drupal/memcache": "^2.5",
     "drupal/menu_block": "^1.10",
     "drupal/metatag": "^2.0",
     "drupal/migrate_plus": "^6.0",
