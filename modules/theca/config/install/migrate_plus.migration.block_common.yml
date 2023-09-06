@@ -14,8 +14,8 @@ source:
   data_parser_plugin: json
 
   headers:
-    Accept: 'application/json; charset=utf-8'
-    Content-Type: 'application/json'
+    Accept: "application/json; charset=utf-8"
+    Content-Type: "application/json"
 
   # The data_parser normally limits the fields passed on to the source plugin
   # to fields configured to be used as part of the migration. To support more
@@ -30,32 +30,32 @@ source:
   # track_changes: false
 
   urls:
-    - 'https://municipes.github.io/origo/block/content.json'
+    - "https://municipes.github.io/origo/block/content.json"
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: data
 
   fields:
     - name: id
-      label: 'ID blocco'
+      label: "ID blocco"
       selector: id
     - name: uuid
-      label: 'UUID blocco'
+      label: "UUID blocco"
       selector: uuid
     - name: type
-      label: 'Tipo di blocco'
+      label: "Tipo di blocco"
       selector: type
     - name: info
-      label: 'Info sul blocco'
+      label: "Info sul blocco"
       selector: attributes/info
     - name: body
-      label: 'Il testo del blocco'
+      label: "Il testo del blocco"
       selector: attributes/body
     - name: paragraph
-      label: 'Il paragrafo'
+      label: "Il paragrafo"
       selector: attributes/paragraph
     - name: paragraph_revision
-      label: 'Il paragrafo: revisione'
+      label: "Il paragrafo: revisione"
       selector: attributes/paragraph_revision
 
   ids:
@@ -67,18 +67,57 @@ process:
   uuid: uuid
   type: type
   info: info
-  'body/format':
+  "body/format":
     plugin: default_value
     default_value: bootstrap_italia_2
-  'body/value': body
-  'field_paragrafi/target_id': paragraph
-  'field_paragrafi/target_revision_id': paragraph_revision
+  "body/value": body
+
+  'field_paragrafi/target_id':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: paragraph
+    -
+      plugin: extract
+      source: paragraph
+      index:
+        - 0
+
+  'field_paragrafi/target_revision_id':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: paragraph_revision
+    -
+      plugin: extract
+      source: paragraph_revision
+      index:
+        - 0
+
+  # field_paragrafi:
+  #   -
+  #     plugin: skip_on_empty
+  #     method: process
+  #     source: paragraph
+  #   -
+  #     plugin: sub_process
+  #     source:
+  #       - paragraph
+  #       - paragraph_revision
+  #     process:
+  #       target_id:
+  #         - plugin: skip_on_empty
+  #           method: process
+  #           message: "Cannot import empty paragraph"
+  #           source: "0"
+  #       target_revision_id:
+
 destination:
   plugin: entity:block_content
   bundle: type
   no_stub: true
 
-migration_dependencies: {  }
+migration_dependencies: {}
 
 dependencies:
   enforced:
