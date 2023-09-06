@@ -54,6 +54,9 @@ source:
     - name: paragraph
       label: 'Il paragrafo'
       selector: attributes/paragraph
+    - name: paragraph_revision
+      label: 'Il paragrafo: revisione'
+      selector: attributes/paragraph_revision
 
   ids:
     id:
@@ -69,6 +72,7 @@ process:
     default_value: bootstrap_italia_2
   'body/value': body
   'field_paragrafi/target_id': paragraph
+  'field_paragrafi/target_revision_id': paragraph_revision
 destination:
   plugin: entity:block_content
   bundle: type

@@ -39,6 +39,9 @@ source:
     - name: id
       label: 'ID blocco'
       selector: id
+    - name: revision_id
+      label: 'ID blocco: revisione'
+      selector: revision_id
     - name: uuid
       label: 'UUID blocco'
       selector: uuid
@@ -67,6 +70,7 @@ source:
 
 process:
   id: id
+  revision_id: revision_id
   uuid: uuid
   field_title: title
   field_argomento: args
