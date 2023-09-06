@@ -72,45 +72,46 @@ process:
     default_value: bootstrap_italia_2
   "body/value": body
 
-  'field_paragrafi/target_id':
-    -
-      plugin: skip_on_empty
-      method: process
-      source: paragraph
-    -
-      plugin: extract
-      source: paragraph
-      index:
-        - 0
-
-  'field_paragrafi/target_revision_id':
-    -
-      plugin: skip_on_empty
-      method: process
-      source: paragraph_revision
-    -
-      plugin: extract
-      source: paragraph_revision
-      index:
-        - 0
-
-  # field_paragrafi:
+  # 'field_paragrafi/target_id':
   #   -
   #     plugin: skip_on_empty
   #     method: process
   #     source: paragraph
   #   -
-  #     plugin: sub_process
-  #     source:
-  #       - paragraph
-  #       - paragraph_revision
-  #     process:
-  #       target_id:
-  #         - plugin: skip_on_empty
-  #           method: process
-  #           message: "Cannot import empty paragraph"
-  #           source: "0"
-  #       target_revision_id:
+  #     plugin: extract
+  #     source: paragraph
+  #     index:
+  #       - 0
+
+  # 'field_paragrafi/target_revision_id':
+  #   -
+  #     plugin: skip_on_empty
+  #     method: process
+  #     source: paragraph_revision
+  #   -
+  #     plugin: extract
+  #     source: paragraph_revision
+  #     index:
+  #       - 0
+
+  field_paragrafi:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: paragraph
+    # -
+    #   plugin: extract
+    #   index:
+    #     - 0
+    -
+      plugin: migration_lookup
+      migration: paragraph_common
+    -
+      plugin: sub_process
+      process:
+        target_id: '0'
+        target_revision_id: '1'
+
 
 destination:
   plugin: entity:block_content
