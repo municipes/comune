@@ -92,13 +92,14 @@ process:
     - plugin: skip_on_empty
       method: process
       source: weight
-  "description/format":
-    plugin: default_value
-    default_value: bootstrap_italia_2
-  "description/value":
+  description/value:
     - plugin: skip_on_empty
       method: process
-      source: description
+      source: description/value
+  description/format:
+    plugin: default_value
+    default_value: bootstrap_italia_2
+
 
 destination:
   plugin: entity:taxonomy_term
