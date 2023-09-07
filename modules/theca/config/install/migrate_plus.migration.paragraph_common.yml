@@ -68,6 +68,9 @@ source:
     id:
       type: integer
 
+  # constants:
+  #   TYPE: type
+
 process:
   id: id
   revision_id: revision_id
@@ -77,10 +80,11 @@ process:
   parent_type: parent_type
   parent_field_name: parent_field_name
   parent_id: parent_id
+  type: type
 
 destination:
   plugin: entity_reference_revisions:paragraph
-  default_bundle: argomenti_in_evidenza
+  # default_bundle: argomenti_in_evidenza
 
 migration_dependencies: {  }
 
