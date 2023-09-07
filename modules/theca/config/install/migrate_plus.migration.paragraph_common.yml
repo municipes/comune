@@ -31,6 +31,7 @@ source:
 
   urls:
     - 'https://municipes.github.io/origo/block/paragraphs.json'
+    - 'https://municipes.github.io/origo/node/paragraphs.json'
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: data
@@ -71,9 +72,6 @@ source:
     id:
       type: integer
 
-  # constants:
-  #   TYPE: type
-
 process:
   id: id
   revision_id: revision_id
@@ -84,6 +82,11 @@ process:
       method: process
       source: title
   field_argomento:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: args
+  field_contenuti:
     -
       plugin: skip_on_empty
       method: process
@@ -110,7 +113,9 @@ destination:
   plugin: entity_reference_revisions:paragraph
   # default_bundle: argomenti_in_evidenza
 
-migration_dependencies: {  }
+migration_dependencies:
+  required:
+    - paragraph_sub
 
 dependencies:
   enforced:
