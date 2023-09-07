@@ -109,6 +109,10 @@ function comune_install() {
   \Drupal::configFactory()->getEditable('migrate_plus.migration_group.comune_node')->delete();
   \Drupal::configFactory()->getEditable('migrate_plus.migration_group.comune_taxonomy')->delete();
 
+  \Drupal::service('module_installer')->uninstall(['theca']);
+  \Drupal::service('module_installer')->uninstall(['navigatio']);
+  \Drupal::service('module_installer')->uninstall(['lexicum_collatio']);
+
   // Enable the demo content module. This can't be specified as a dependency
   // in the comune.info.yml file, as it requires configuration provided by
   // the profile (fields etc.).
