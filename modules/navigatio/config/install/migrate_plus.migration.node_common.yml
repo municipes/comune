@@ -44,6 +44,9 @@ source:
     - name: description
       label: 'La descrizione di introduzione al nodo'
       selector: attributes/desc
+    - name: components
+      label: 'Paragrafi'
+      selector: attributes/components
 
   ids:
     nid:
@@ -77,10 +80,10 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: settings
+      source: components
     -
       plugin: migration_lookup
-      migration: paragraph_sub
+      migration: paragraph_common
     -
       plugin: sub_process
       process:
