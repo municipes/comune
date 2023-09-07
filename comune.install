@@ -89,16 +89,20 @@ function comune_install() {
   \Drupal::service('module_installer')->install(['navigatio'], TRUE);
   // Enable import taxonomy module
   \Drupal::service('module_installer')->install(['theca'], TRUE);
+
+  // Import sub paragraph
+  comune_execute_migrations(['paragraph_sub']);
+  // Import paragraph
+  comune_execute_migrations(['paragraph_common']);
+  // Import block
+  comune_execute_migrations(['block_common']);
   // Import taxonomy
   comune_execute_migrations(['taxonomy_common']);
   // Import node
   comune_execute_migrations(['node_common']);
   // Import menu
   comune_execute_migrations(['menu_common']);
-  // Import paragraph
-  comune_execute_migrations(['paragraph_common']);
-  // Import block
-  comune_execute_migrations(['block_common']);
+
 
   // \Drupal::configFactory()->getEditable('migrate_plus.migration.block_common')->delete();
   // \Drupal::configFactory()->getEditable('migrate_plus.migration.paragraph_common')->delete();
@@ -127,18 +131,17 @@ function comune_install() {
  */
 function comune_execute_migrations(array $migration_ids) {
   $manager = Drupal::service('plugin.manager.migration');
-    foreach ($migration_ids as $migration_id) {
-      $migration = $manager->createInstance($migration_id);
-      // update existing entity imported.
-      $migration->getIdMap()->prepareUpdate();
-      $executable = new MigrateExecutable($migration, new MigrateMessage());
+  foreach ($migration_ids as $migration_id) {
+    $migration = $manager->createInstance($migration_id);
+    // update existing entity imported.
+    $migration->getIdMap()->prepareUpdate();
+    $executable = new MigrateExecutable($migration, new MigrateMessage());
 
-      try {
-        // Run the migration.
-        $executable->import();
-      }
-      catch (\Exception $e) {
-        $migration->setStatus(MigrationInterface::STATUS_IDLE);
-      }
+    try {
+      // Run the migration.
+      $executable->import();
+    } catch (\Exception $e) {
+      $migration->setStatus(MigrationInterface::STATUS_IDLE);
     }
+  }
 }
