@@ -103,6 +103,11 @@ function comune_install() {
   \Drupal::configFactory()->getEditable('migrate_plus.migration.block_common')->delete();
   \Drupal::configFactory()->getEditable('migrate_plus.migration.paragraph_common')->delete();
   \Drupal::configFactory()->getEditable('migrate_plus.migration_group.comune_block')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.menu_common')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.node_common')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.taxonomy_common')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration_group.comune_node')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration_group.comune_taxonomy')->delete();
 
   // Enable the demo content module. This can't be specified as a dependency
   // in the comune.info.yml file, as it requires configuration provided by
