@@ -1,6 +1,6 @@
-uuid: 1e711b8c-8ecc-46e3-a758-e706cdb78395
-id: paragraph_common
-label: Paragrafi
+uuid: 64038b64-ae1e-4d66-b241-2fd107d0d4f3
+id: paragraph_sub
+label: Paragrafi di secondo livello
 migration_group: comune_block
 migration_tags:
   - json
@@ -30,7 +30,7 @@ source:
   # track_changes: false
 
   urls:
-    - 'https://municipes.github.io/origo/block/paragraphs.json'
+    - 'https://municipes.github.io/origo/node/paragraphs_sub.json'
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: data
@@ -51,9 +51,6 @@ source:
     - name: title
       label: 'Campo titolo'
       selector: attributes/title
-    - name: settings
-      label: 'Paragrafo settings'
-      selector: attributes/settings
     - name: args
       label: 'TID argomenti'
       selector: attributes/args
@@ -88,19 +85,7 @@ process:
       plugin: skip_on_empty
       method: process
       source: args
-  field_settings:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: settings
-    -
-      plugin: migration_lookup
-      migration: paragraph_sub
-    -
-      plugin: sub_process
-      process:
-        target_id: '0'
-        target_revision_id: '1'
+
   parent_type: parent_type
   parent_field_name: parent_field_name
   parent_id: parent_id

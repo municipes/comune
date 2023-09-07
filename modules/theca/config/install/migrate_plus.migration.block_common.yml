@@ -72,37 +72,11 @@ process:
     default_value: bootstrap_italia_2
   "body/value": body
 
-  # 'field_paragrafi/target_id':
-  #   -
-  #     plugin: skip_on_empty
-  #     method: process
-  #     source: paragraph
-  #   -
-  #     plugin: extract
-  #     source: paragraph
-  #     index:
-  #       - 0
-
-  # 'field_paragrafi/target_revision_id':
-  #   -
-  #     plugin: skip_on_empty
-  #     method: process
-  #     source: paragraph_revision
-  #   -
-  #     plugin: extract
-  #     source: paragraph_revision
-  #     index:
-  #       - 0
-
   field_paragrafi:
     -
       plugin: skip_on_empty
       method: process
       source: paragraph
-    # -
-    #   plugin: extract
-    #   index:
-    #     - 0
     -
       plugin: migration_lookup
       migration: paragraph_common

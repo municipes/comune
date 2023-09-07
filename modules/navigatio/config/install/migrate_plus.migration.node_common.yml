@@ -73,6 +73,20 @@ process:
       method: process
       source: description
 
+  field_componenti:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: settings
+    -
+      plugin: migration_lookup
+      migration: paragraph_sub
+    -
+      plugin: sub_process
+      process:
+        target_id: '0'
+        target_revision_id: '1'
+
 destination:
   plugin: entity:node
   default_bundle: pagina
