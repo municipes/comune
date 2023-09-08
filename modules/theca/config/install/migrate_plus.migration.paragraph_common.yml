@@ -58,6 +58,15 @@ source:
     - name: args
       label: 'TID argomenti'
       selector: attributes/args
+    - name: view_id
+      label: 'View:ID'
+      selector: attributes/view_id
+    - name: view_display
+      label: 'View: display'
+      selector: attributes/view_display
+    - name: view_data
+      label: 'View: data'
+      selector: attributes/view_data
     - name: parent_type
       label: 'Tipo contenuto padre'
       selector: attributes/parent_type
@@ -91,6 +100,21 @@ process:
       plugin: skip_on_empty
       method: process
       source: args
+  field_vista_da_visualizzare/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: view_id
+  field_vista_da_visualizzare/display_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: view_display
+  field_vista_da_visualizzare/data:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: view_data
   field_settings:
     -
       plugin: skip_on_empty
