@@ -67,6 +67,15 @@ source:
     - name: view_data
       label: 'View: data'
       selector: attributes/view_data
+    - name: link_url
+      label: 'Link: URI'
+      selector: attributes/link_url
+    - name: link_title
+      label: 'Link: title'
+      selector: attributes/link_title
+    - name: data_element
+      label: 'data Element'
+      selector: attributes/data_element
     - name: parent_type
       label: 'Tipo contenuto padre'
       selector: attributes/parent_type
@@ -100,6 +109,7 @@ process:
       plugin: skip_on_empty
       method: process
       source: args
+
   field_vista_da_visualizzare/target_id:
     -
       plugin: skip_on_empty
@@ -115,6 +125,12 @@ process:
       plugin: skip_on_empty
       method: process
       source: view_data
+  field_call_to_action/uri: link_url
+
+  field_call_to_action/title: link_title
+
+  field_data_element: data_element
+
   field_settings:
     -
       plugin: skip_on_empty
