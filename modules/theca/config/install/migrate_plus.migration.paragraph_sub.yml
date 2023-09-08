@@ -54,6 +54,12 @@ source:
     - name: args
       label: 'TID argomenti'
       selector: attributes/args
+    - name: full_width
+      label: 'Config: full widht'
+      selector: attributes/full_width
+    - name: enable_container
+      label: 'Config: enable container'
+      selector: attributes/enable_container
     - name: parent_type
       label: 'Tipo contenuto padre'
       selector: attributes/parent_type
@@ -85,6 +91,16 @@ process:
       plugin: skip_on_empty
       method: process
       source: args
+  field_full_width:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: full_width
+  field_enable_container:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: enable_container
 
   parent_type: parent_type
   parent_field_name: parent_field_name
