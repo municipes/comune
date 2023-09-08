@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Silfi OpenCityItalia module.
+ */
+
+/**
+ * Implements hook_theme().
+ *
+ * Defines the theming capabilities provided by this module.
+ */
+function silfi_opencityitalia_theme($existing, $type, $theme, $path) {
+  return [
+    'oci_satisfy_block' => [
+      // We use 'variables' when the item to be passed is an array whose
+      // structure must be described here.
+      'variables' => [
+        'uuid' => NULL,
+      ],
+    ],
+  ];
+}

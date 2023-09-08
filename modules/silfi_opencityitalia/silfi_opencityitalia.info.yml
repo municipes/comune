@@ -1,0 +1,7 @@
+name: Silfi OpenCityItalia
+type: module
+description: Collezione di widget
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:block

@@ -1,0 +1,4 @@
+# Third-party library (CDN).
+satisfy:
+  js:
+    https://servizi.pontassieve.opencityitalia.it/widgets/satisfy/bootstrap-italia@2/js/satisfy.js: {type: external, minified: true}
