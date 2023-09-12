@@ -98,6 +98,7 @@ function comune_install() {
   comune_execute_migrations(['block_common']);
   // Import taxonomy
   comune_execute_migrations(['taxonomy_common']);
+  comune_execute_migrations(['taxonomy_colors']);
   // Import node
   comune_execute_migrations(['node_common']);
   // Import menu
