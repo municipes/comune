@@ -1,0 +1,107 @@
+id: taxonomy_simple
+label: Tassonomie con json semplici
+migration_group: comune_taxonomy
+migration_tags:
+  - json
+  - comune
+  - taxonomy
+  - taxonomy_common
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+
+  # The data_parser normally limits the fields passed on to the source plugin
+  # to fields configured to be used as part of the migration. To support more
+  # dynamic migrations, the JSON data parser supports including the original
+  # data for the current row. Simply include the 'include_raw_data' flag set
+  # to `true` to enable this. This option is disabled by default to minimize
+  # memory footprint for migrations that do not need this capability.
+  # include_raw_data: false
+
+  # Flags whether to track changes to incoming data. If TRUE, we will maintain
+  # hashed source rows to determine whether incoming data has changed.
+  # track_changes: false
+
+  urls:
+    - 'https://municipes.github.io/origo/taxonomy/colori.json'
+    - 'https://municipes.github.io/origo/taxonomy/tipo_di_accesso_al_servizio.json'
+
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: data
+
+  fields:
+    - name: type
+      label: 'Il tipo di vocabolario'
+      selector: type
+    - name: tid
+      label: 'ID del termine di tassonomia'
+      selector: tid
+    - name: name
+      label: 'Il nome della voce di tassonomia'
+      selector: attributes/name
+    - name: description
+      label: 'La descrizione della voce di tassonomia'
+      selector: attributes/description
+    - name: weight
+      label: 'Il peso della voce di tassonomia'
+      selector: attributes/weight
+    - name: color
+      label: 'Il valore di colore'
+      selector: attributes/color
+    - name: opacity
+      label: 'Il valore di opacità colore'
+      selector: attributes/opacity
+
+  ids:
+    tid:
+      type: integer
+
+process:
+  tid: tid
+  vid: type
+  name: name
+  parent_id:
+    - plugin: skip_on_empty
+      method: process
+      source: parent_id
+    - plugin: migration_lookup
+      migration: taxonomy_common
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  weight:
+    - plugin: skip_on_empty
+      method: process
+      source: weight
+  description/value:
+    - plugin: skip_on_empty
+      method: process
+      source: description/value
+  description/format:
+    plugin: default_value
+    default_value: bootstrap_italia_2
+  field_colore/color:
+    - plugin: skip_on_empty
+      method: process
+      source: color
+  field_colore/opacity:
+    - plugin: skip_on_empty
+      method: process
+      source: opacity
+
+destination:
+  plugin: entity:taxonomy_term
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - lexicum_collatio
