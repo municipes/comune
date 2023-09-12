@@ -50,6 +50,12 @@ source:
     - name: weight
       label: 'Il peso della voce di tassonomia'
       selector: attributes/weight
+    - name: color
+      label: 'Il valore di colore'
+      selector: attributes/color
+    - name: opacity
+      label: 'Il valore di opacità colore'
+      selector: attributes/opacity
 
   ids:
     tid:
@@ -80,7 +86,14 @@ process:
   description/format:
     plugin: default_value
     default_value: bootstrap_italia_2
-
+  field_colore/color:
+    - plugin: skip_on_empty
+      method: process
+      source: color
+  field_colore/opacity:
+    - plugin: skip_on_empty
+      method: process
+      source: opacity
 
 destination:
   plugin: entity:taxonomy_term
