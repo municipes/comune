@@ -4,6 +4,7 @@ dependencies:
   config:
     - node.type.faq
   module:
+    - media
     - node
     - path
     - pathauto
@@ -29,4 +30,5 @@ permissions:
   - 'edit own faq content'
   - 'notify of path changes'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view the administration theme'

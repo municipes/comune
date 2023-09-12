@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       unita_organizzativa: unita_organizzativa
 selection_logic: and
-weight: -5
+weight: 4
 relationships: {  }

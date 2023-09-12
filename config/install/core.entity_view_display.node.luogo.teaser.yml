@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.luogo.field_video_esterno
     - node.type.luogo
   module:
+    - ui_patterns_field_formatters
     - user
 id: node.luogo.teaser
 targetEntityType: node
@@ -33,15 +34,37 @@ mode: teaser
 content:
   field_descrizione_breve:
     type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_indirizzo:
+    type: pattern_formatter
+    label: hidden
+    settings:
+      pattern: address_field
+      pattern_mapping:
+        'field_properties:locality':
+          destination: field_city
+          weight: 0
+          plugin: field_properties
+          source: locality
+        'field_properties:postal_code':
+          destination: field_cap
+          weight: 1
+          plugin: field_properties
+          source: postal_code
+        'field_properties:address_line1':
+          destination: field_street
+          weight: 2
+          plugin: field_properties
+          source: address_line1
+      pattern_settings: {  }
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   field_argomenti: true
@@ -50,7 +73,6 @@ hidden:
   field_galleria_immagini: true
   field_identificativo: true
   field_immagine: true
-  field_indirizzo: true
   field_luoghi: true
   field_modalita_di_accesso: true
   field_orario_per_il_pubblico: true
@@ -64,5 +86,6 @@ hidden:
   field_unita_organizzativa: true
   field_video_esterno: true
   langcode: true
+  links: true
   node_read_time: true
   search_api_excerpt: true

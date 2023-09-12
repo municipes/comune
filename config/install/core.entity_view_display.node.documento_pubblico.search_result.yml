@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.documento_pubblico.field_descrizione_breve
     - field.field.node.documento_pubblico.field_descrizione_completa
     - field.field.node.documento_pubblico.field_documenti
+    - field.field.node.documento_pubblico.field_file
     - field.field.node.documento_pubblico.field_formato_documento
     - field.field.node.documento_pubblico.field_galleria_immagini
     - field.field.node.documento_pubblico.field_identificativo
@@ -63,6 +64,7 @@ hidden:
   field_dataset: true
   field_descrizione_completa: true
   field_documenti: true
+  field_file: true
   field_formato_documento: true
   field_galleria_immagini: true
   field_identificativo: true

@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       persona: persona
 selection_logic: and
-weight: -5
+weight: 0
 relationships: {  }

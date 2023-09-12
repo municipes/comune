@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       notizia: notizia
 selection_logic: and
-weight: -5
+weight: -3
 relationships: {  }

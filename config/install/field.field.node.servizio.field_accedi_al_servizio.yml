@@ -4,15 +4,15 @@ dependencies:
   config:
     - field.storage.node.field_accedi_al_servizio
     - node.type.accesso_al_servizio
+    - node.type.luogo
     - node.type.servizio
-    - node.type.unita_organizzativa
 id: node.servizio.field_accedi_al_servizio
 field_name: field_accedi_al_servizio
 entity_type: node
 bundle: servizio
 label: 'Accedi al servizio'
 description: 'Seleziona le modalità di accesso al servizio.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -21,10 +21,10 @@ settings:
   handler_settings:
     target_bundles:
       accesso_al_servizio: accesso_al_servizio
-      unita_organizzativa: unita_organizzativa
+      luogo: luogo
     sort:
       field: _none
       direction: ASC
-    auto_create: false
+    auto_create: true
     auto_create_bundle: accesso_al_servizio
 field_type: entity_reference

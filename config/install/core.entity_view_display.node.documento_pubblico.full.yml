@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.documento_pubblico.field_descrizione_breve
     - field.field.node.documento_pubblico.field_descrizione_completa
     - field.field.node.documento_pubblico.field_documenti
+    - field.field.node.documento_pubblico.field_file
     - field.field.node.documento_pubblico.field_formato_documento
     - field.field.node.documento_pubblico.field_galleria_immagini
     - field.field.node.documento_pubblico.field_identificativo
@@ -32,6 +33,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
+    - file
     - ui_patterns_field_formatters
     - user
     - viewsreference
@@ -203,6 +205,14 @@ content:
     third_party_settings: {  }
     weight: 22
     region: content
+  field_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_formato_documento:
     type: pattern_formatter
     label: hidden
@@ -311,37 +321,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 15
-    region: content
-  field_paragraph_documento:
-    type: pattern_wrapper_entity_reference_formatter
-    label: hidden
-    settings:
-      view_mode: default
-      pattern: node_full_field
-      pattern_mapping:
-        'field_wrapper:label':
-          destination: field_label
-          weight: 0
-          plugin: field_wrapper
-          source: label
-        'field_wrapper:items':
-          destination: field_value
-          weight: 1
-          plugin: field_wrapper
-          source: items
-      pattern_settings:
-        node_full_field:
-          attributes: ''
-          override_label: Download
-          label_size: ''
-          label_visible: not_visible
-          label_menu: visible
-          heading_value: ''
-          audio: null
-      pattern_variant: default
-      link: false
-    third_party_settings: {  }
-    weight: 9
     region: content
   field_protocollo:
     type: pattern_formatter
@@ -501,6 +480,7 @@ content:
 hidden:
   field_business_events: true
   field_life_events: true
+  field_paragraph_documento: true
   field_sezione_amministrazione: true
   langcode: true
   node_read_time: true

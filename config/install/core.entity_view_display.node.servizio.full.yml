@@ -37,12 +37,14 @@ dependencies:
     - field.field.node.servizio.field_sottotitolo
     - field.field.node.servizio.field_stato_del_servizio
     - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
     - field.field.node.servizio.field_ulteriori_informazioni
     - field.field.node.servizio.field_unita_organizzative
     - field.field.node.servizio.field_vincoli
     - node.type.servizio
   module:
     - link
+    - text
     - ui_patterns_field_formatters
     - user
 id: node.servizio.full
@@ -84,7 +86,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_accedi_al_servizio:
     type: pattern_wrapper_entity_reference_formatter
@@ -105,7 +107,7 @@ content:
           source: items
       pattern_settings:
         node_full_field:
-          attributes: ''
+          attributes: 'data-element="service-generic-access"'
           override_label: ''
           intro_text: ''
           label_size: ''
@@ -118,7 +120,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 15
+    weight: 14
     region: content
   field_allegati:
     type: pattern_wrapper_entity_reference_formatter
@@ -152,7 +154,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 26
+    weight: 25
     region: content
   field_argomenti:
     type: entity_reference_label
@@ -160,7 +162,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 24
+    weight: 23
     region: content
   field_casi_particolari:
     type: pattern_formatter
@@ -193,7 +195,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 16
     region: content
   field_come_fare:
     type: pattern_formatter
@@ -224,7 +226,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   field_condizioni_di_servizio:
     type: pattern_wrapper_entity_reference_formatter
@@ -256,7 +258,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 19
+    weight: 18
     region: content
   field_copertura_geografica:
     type: pattern_formatter
@@ -286,7 +288,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_cosa_serve:
     type: pattern_formatter
@@ -319,7 +321,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   field_cosa_si_ottiene:
     type: pattern_formatter
@@ -350,7 +352,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 10
     region: content
   field_costi:
     type: pattern_formatter
@@ -381,14 +383,14 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 12
     region: content
   field_descrizione_breve:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_descrizione_completa:
     type: pattern_formatter
@@ -418,7 +420,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_documenti:
     type: pattern_wrapper_entity_reference_formatter
@@ -452,7 +454,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 22
+    weight: 21
     region: content
   field_immagine:
     type: entity_reference_entity_view
@@ -461,7 +463,7 @@ content:
       view_mode: full
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_link_esterni:
     type: link
@@ -473,14 +475,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 29
+    weight: 28
     region: content
   field_motivo_dello_stato:
-    type: basic_string
-    label: visually_hidden
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_normativa_di_riferimento:
     type: pattern_formatter
@@ -513,7 +515,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 25
+    weight: 24
     region: content
   field_procedure_collegate_esito:
     type: pattern_formatter
@@ -546,7 +548,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 13
     region: content
   field_punti_di_contatto:
     type: pattern_wrapper_entity_reference_formatter
@@ -567,7 +569,7 @@ content:
           source: items
       pattern_settings:
         node_full_field:
-          attributes: 'data-element="service-area'
+          attributes: 'data-element="service-area"'
           override_label: ''
           intro_text: ''
           label_size: ''
@@ -580,7 +582,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 20
+    weight: 19
     region: content
   field_reclami_ricorsi_opposizion:
     type: pattern_formatter
@@ -613,7 +615,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 27
+    weight: 26
     region: content
   field_schede_collegate:
     type: pattern_wrapper_entity_reference_formatter
@@ -647,7 +649,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 28
+    weight: 27
     region: content
   field_sottotitolo:
     type: string
@@ -655,7 +657,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_stato_del_servizio:
     type: pattern_formatter
@@ -672,7 +674,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_tempi_e_scadenze:
     type: pattern_wrapper_entity_reference_formatter
@@ -704,7 +706,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 12
+    weight: 11
     region: content
   field_ulteriori_informazioni:
     type: pattern_formatter
@@ -737,7 +739,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 18
+    weight: 17
     region: content
   field_unita_organizzative:
     type: pattern_wrapper_entity_reference_formatter
@@ -762,16 +764,16 @@ content:
           override_label: ''
           intro_text: ''
           label_size: ''
+          label_visible: not_visible
           label_menu: not_visible
           heading_value: ''
-          label_visible: null
           use_card: 0
           has_bg_grey: 0
           audio: null
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 21
+    weight: 20
     region: content
   field_vincoli:
     type: pattern_formatter
@@ -804,12 +806,12 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 15
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 23
+    weight: 22
     region: content
 hidden:
   field_business_events: true

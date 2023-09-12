@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.documento_pubblico.field_descrizione_breve
     - field.field.node.documento_pubblico.field_descrizione_completa
     - field.field.node.documento_pubblico.field_documenti
+    - field.field.node.documento_pubblico.field_file
     - field.field.node.documento_pubblico.field_formato_documento
     - field.field.node.documento_pubblico.field_galleria_immagini
     - field.field.node.documento_pubblico.field_identificativo
@@ -31,6 +32,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
+    - file
     - taxonomy
     - text
     - user
@@ -111,6 +113,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 20
+    region: content
+  field_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_formato_documento:
     type: string

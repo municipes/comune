@@ -36,6 +36,7 @@ dependencies:
     - field.field.node.servizio.field_sottotitolo
     - field.field.node.servizio.field_stato_del_servizio
     - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
     - field.field.node.servizio.field_ulteriori_informazioni
     - field.field.node.servizio.field_unita_organizzative
     - field.field.node.servizio.field_vincoli
@@ -181,11 +182,11 @@ content:
     weight: 38
     region: content
   field_motivo_dello_stato:
-    type: basic_string
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 24
+    weight: 119
     region: content
   field_normativa_di_riferimento:
     type: text_default

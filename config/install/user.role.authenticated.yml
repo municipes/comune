@@ -2,6 +2,7 @@ langcode: it
 status: true
 dependencies:
   module:
+    - media
     - system
 id: authenticated
 label: 'authenticated user'
@@ -9,3 +10,4 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'view media'

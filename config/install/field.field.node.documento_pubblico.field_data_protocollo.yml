@@ -12,7 +12,7 @@ entity_type: node
 bundle: documento_pubblico
 label: 'Data protocollo'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

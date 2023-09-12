@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_servizi
+label: 'Taxonomy term - Servizi'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'servizi/[term:name]'
+selection_criteria:
+  ed5bb0f6-bb9b-4871-bf77-f9c785355ce0:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: ed5bb0f6-bb9b-4871-bf77-f9c785355ce0
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      categorie_dei_servizi: categorie_dei_servizi
+selection_logic: and
+weight: 5
+relationships: {  }

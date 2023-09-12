@@ -124,6 +124,40 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_documenti:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: teaser
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          intro_text: ''
+          label_size: h4
+          label_menu: not_visible
+          heading_value: ''
+          label_visible: null
+          use_card: 0
+          has_bg_grey: 0
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_galleria_immagini:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -285,7 +319,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   node_read_time:
     type: string
@@ -293,11 +327,10 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
 hidden:
   field_dataset: true
-  field_documenti: true
   field_ulteriori_informazioni: true
   langcode: true
   reading_time: true
