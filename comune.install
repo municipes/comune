@@ -83,6 +83,8 @@ function comune_install() {
 
   // Enable empty front page module
   \Drupal::service('module_installer')->install(['bootstrap_italia_empty_front_page'], TRUE);
+  // Enable opencityitalia module
+  \Drupal::service('module_installer')->install(['silfi_opencityitalia'], TRUE);
   // Enable import taxonomy module
   \Drupal::service('module_installer')->install(['lexicum_collatio'], TRUE);
   // Enable import taxonomy module
