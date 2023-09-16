@@ -159,8 +159,6 @@ install:
   - bootstrap_italia:bootstrap_italia_paragraph_timeline
   - bootstrap_italia:bootstrap_italia_text_editor2
   - bootstrap_italia:bootstrap_italia_views_carousel
-  # Comune Profile
-  - silfi_opencityitalia
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
