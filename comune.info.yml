@@ -71,6 +71,7 @@ install:
   - drupal:migrate
   - drupal:migrate_drupal
   - drupal:mysql
+  - drupal:office_hours
   - drupal:options
   - drupal:page_cache
   - drupal:path
