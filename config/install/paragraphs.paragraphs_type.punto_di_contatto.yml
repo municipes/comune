@@ -1,0 +1,9 @@
+langcode: it
+status: true
+dependencies: {  }
+id: punto_di_contatto
+label: 'Punto di contatto'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

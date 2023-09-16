@@ -1,0 +1,111 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contatto
+    - node.type.punto_di_contatto
+    - paragraphs.paragraphs_type.punto_di_contatto
+  module:
+    - entity_reference_revisions
+id: node.punto_di_contatto.field_contatto
+field_name: field_contatto
+entity_type: node
+bundle: punto_di_contatto
+label: Contatto
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      punto_di_contatto: punto_di_contatto
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 29
+        enabled: false
+      accordion_item:
+        weight: 30
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 31
+        enabled: false
+      attachments:
+        weight: 32
+        enabled: false
+      callout:
+        weight: 33
+        enabled: false
+      carousel:
+        weight: 34
+        enabled: false
+      citation:
+        weight: 35
+        enabled: false
+      content:
+        weight: 36
+        enabled: false
+      dataset:
+        weight: 37
+        enabled: false
+      date_timeline:
+        weight: 38
+        enabled: false
+      date_timeline_item:
+        weight: 39
+        enabled: false
+      days_timeline_item:
+        weight: 40
+        enabled: false
+      fase_intitolata:
+        weight: 41
+        enabled: false
+      fase_semplice:
+        weight: 42
+        enabled: false
+      gallery:
+        weight: 43
+        enabled: false
+      gallery_item:
+        weight: 44
+        enabled: false
+      hero:
+        weight: 45
+        enabled: false
+      in_evidenza:
+        weight: 46
+        enabled: false
+      link:
+        weight: 47
+        enabled: false
+      map:
+        weight: 48
+        enabled: false
+      node_reference:
+        weight: 49
+        enabled: false
+      punto_di_contatto:
+        weight: 50
+        enabled: true
+      section:
+        weight: 51
+        enabled: false
+      settings:
+        weight: 52
+        enabled: false
+      slide:
+        weight: 53
+        enabled: false
+      timeline:
+        weight: 54
+        enabled: false
+      timeline_item:
+        weight: 55
+        enabled: false
+      vista:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions

@@ -3,36 +3,51 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.paragraph
+    - field.field.node.punto_di_contatto.field_contatto
+    - field.field.node.punto_di_contatto.field_orari
     - field.field.node.punto_di_contatto.field_persona
     - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
     - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
     - node.type.punto_di_contatto
+  module:
+    - inline_entity_form
+    - office_hours
 id: node.punto_di_contatto.paragraph
 targetEntityType: node
 bundle: punto_di_contatto
 mode: paragraph
 content:
+  field_contatto:
+    type: inline_entity_form_complex
+    weight: 1
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  field_orari:
+    type: office_hours_list
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_persona:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_tipo_punto_di_contatto:
-    type: options_select
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_valore_punto_di_contatto:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -52,6 +67,8 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_tipo_punto_di_contatto: true
+  field_valore_punto_di_contatto: true
   langcode: true
   path: true
   promote: true

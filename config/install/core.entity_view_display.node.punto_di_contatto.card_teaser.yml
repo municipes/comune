@@ -3,6 +3,8 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.card_teaser
+    - field.field.node.punto_di_contatto.field_contatto
+    - field.field.node.punto_di_contatto.field_orari
     - field.field.node.punto_di_contatto.field_persona
     - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
     - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
@@ -28,6 +30,8 @@ content:
     weight: 1
     region: content
 hidden:
+  field_contatto: true
+  field_orari: true
   field_persona: true
   field_tipo_punto_di_contatto: true
   langcode: true

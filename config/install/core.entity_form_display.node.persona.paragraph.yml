@@ -1,8 +1,8 @@
 langcode: it
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser_dettaglio_notizia
+    - core.entity_form_mode.node.paragraph
     - field.field.node.persona.field_altre_cariche
     - field.field.node.persona.field_biografia
     - field.field.node.persona.field_cognome
@@ -24,12 +24,78 @@ dependencies:
     - field.field.node.persona.field_view_reference
     - node.type.persona
   module:
-    - user
-id: node.persona.teaser_dettaglio_notizia
+    - path
+id: node.persona.paragraph
 targetEntityType: node
 bundle: persona
-mode: teaser_dettaglio_notizia
-content: {  }
+mode: paragraph
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_descrizione_breve:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   field_altre_cariche: true
   field_biografia: true
@@ -37,7 +103,6 @@ hidden:
   field_competenze: true
   field_curriculum_vitae: true
   field_deleghe: true
-  field_descrizione_breve: true
   field_dichiarazione_dei_redditi: true
   field_galleria_immagini: true
   field_immagine: true
@@ -50,7 +115,5 @@ hidden:
   field_ulteriori_informazioni: true
   field_v_situazione_patrimoniale: true
   field_view_reference: true
-  langcode: true
-  links: true
-  node_read_time: true
-  search_api_excerpt: true
+  publish_on: true
+  unpublish_on: true

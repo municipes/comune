@@ -1,0 +1,20 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_orari
+    - node.type.punto_di_contatto
+  module:
+    - office_hours
+id: node.punto_di_contatto.field_orari
+field_name: field_orari
+entity_type: node
+bundle: punto_di_contatto
+label: Orari
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: office_hours

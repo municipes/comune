@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.persona.field_competenze
     - field.field.node.persona.field_curriculum_vitae
     - field.field.node.persona.field_deleghe
+    - field.field.node.persona.field_descrizione_breve
     - field.field.node.persona.field_dichiarazione_dei_redditi
     - field.field.node.persona.field_galleria_immagini
     - field.field.node.persona.field_immagine
@@ -53,6 +54,7 @@ hidden:
   field_cognome: true
   field_curriculum_vitae: true
   field_deleghe: true
+  field_descrizione_breve: true
   field_dichiarazione_dei_redditi: true
   field_galleria_immagini: true
   field_immagine: true

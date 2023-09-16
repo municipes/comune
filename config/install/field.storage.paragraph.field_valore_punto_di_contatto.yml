@@ -2,10 +2,10 @@ langcode: it
 status: true
 dependencies:
   module:
-    - node
-id: node.field_valore_punto_di_contatto
+    - paragraphs
+id: paragraph.field_valore_punto_di_contatto
 field_name: field_valore_punto_di_contatto
-entity_type: node
+entity_type: paragraph
 type: string
 settings:
   max_length: 255

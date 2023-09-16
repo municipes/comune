@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - silfi_opencityitalia
+  theme:
+    - scaenographia
+id: scaenographia_opencityitaliavalutazione
+theme: scaenographia
+region: rating
+weight: 0
+provider: null
+plugin: silfi_opencityitalia_satisfy
+settings:
+  id: silfi_opencityitalia_satisfy
+  label: 'OpenCityItalia: Valutazione'
+  label_display: '0'
+  provider: silfi_opencityitalia
+  uuid: 5ceb04b2-b18e-47e4-88e9-d8af2bab916d
+  domain: ''
+visibility: {  }
