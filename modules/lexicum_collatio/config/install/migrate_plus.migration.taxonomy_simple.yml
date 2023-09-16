@@ -31,6 +31,7 @@ source:
   urls:
     - 'https://municipes.github.io/origo/taxonomy/colori.json'
     - 'https://municipes.github.io/origo/taxonomy/tipo_di_accesso_al_servizio.json'
+    - 'https://municipes.github.io/origo/taxonomy/argomenti.json'
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: data
@@ -57,6 +58,9 @@ source:
     - name: opacity
       label: 'Il valore di opacità colore'
       selector: attributes/opacity
+    - name: parent_id
+      label: 'Id del termine genitore della voce di tassonomia'
+      selector: relationships/parent/data/0/meta/drupal_internal__target_id
 
   ids:
     tid:
@@ -77,9 +81,9 @@ process:
     default_value: 0
     source: '@parent_id'
   weight:
-    - plugin: skip_on_empty
-      method: process
-      source: weight
+    plugin: default_value
+    default_value: 0
+    source: weight
   description/value:
     - plugin: skip_on_empty
       method: process

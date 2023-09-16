@@ -30,7 +30,6 @@ source:
 
   urls:
     - 'https://municipes.github.io/origo/taxonomy/amministrazione.json'
-    - 'https://municipes.github.io/origo/taxonomy/argomenti.json'
     - 'https://municipes.github.io/origo/taxonomy/categorie_dei_servizi.json'
     - 'https://municipes.github.io/origo/taxonomy/documenti_albo_pretorio.json'
     - 'https://municipes.github.io/origo/taxonomy/eventi_della_vita_delle_persone.json'
