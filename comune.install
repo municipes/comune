@@ -55,6 +55,11 @@ use Drupal\Component\Serialization\Yaml;
  * @see system_install()
  */
 function comune_install() {
+  // set site UUID
+  $uuid = '60989369-aa27-42f2-82e0-f91a00cc1f85';
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('system.site')->set('uuid', $uuid)->save();
+
   // Assign user 1 the "administrator" role.
   /** @var \Drupal\user\Entity\User $user */
   $user = User::load(1);
