@@ -10,6 +10,7 @@ use Drupal\shortcut\Entity\Shortcut;
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessage;
 use Drupal\migrate\MigrationInterface;
+use Drupal\Component\Serialization\Yaml;
 
 /**
  * Implements hook_requirements().
@@ -148,3 +149,73 @@ function comune_execute_migrations(array $migration_ids) {
     }
   }
 }
+
+/**
+ * Update or install config entities from config/install files.
+ *
+ * @see \Drupal\config_update\ConfigReverter::import
+ * @see \Drupal\config_update\ConfigReverter::revert
+ *
+ * @param string $prefix
+ *   The prefix for YAML files in find, like 'field.storage.node'
+ */
+function comune_update_or_install_config($prefix) {
+  $updated = [];
+  $created = [];
+  /** @var \Drupal\Core\Config\ConfigManagerInterface $config_manager */
+  $config_manager = \Drupal::service('config.manager');
+  $files = glob(__DIR__ . '/config/update/' . $prefix . '.*.yml');
+  foreach ($files as $file) {
+    $raw = file_get_contents($file);
+    $value = Yaml::decode($raw);
+    if (!is_array($value)) {
+      throw new \RuntimeException(sprintf('Invalid YAML file %s'), $file);
+    }
+    // Lazy hack here since that code ignores the file extension.
+    $type = $config_manager->getEntityTypeIdByName(basename($file));
+    $entity_manager = $config_manager->getEntityTypeManager();
+    $definition = $entity_manager->getDefinition($type);
+    $id_key = $definition->getKey('id');
+    $id = $value[$id_key];
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorage $entity_storage */
+    $entity_storage = $entity_manager->getStorage($type);
+    $entity = $entity_storage->load($id);
+    if ($entity) {
+      $entity = $entity_storage->updateFromStorageRecord($entity, $value);
+      $entity->save();
+      $updated[] = $id;
+    } else {
+      $entity = $entity_storage->createFromStorageRecord($value);
+      $entity->save();
+      $created[] = $id;
+    }
+  }
+  return [
+    'updated' => $updated,
+    'created' => $created,
+  ];
+}
+
+/**
+ * Add new action configurations.
+ */
+// function comune_update_8001() {
+//   $prefixes = [
+//     '',
+//   ];
+//   $results = [];
+//   foreach ($prefixes as $prefix) {
+//     $results[$prefix] = comune_update_or_install_config($prefix);
+//   }
+//   $return = '';
+//   foreach ($results as $prefix => $result) {
+//     $return .= "\n$prefix:\n";
+//     foreach ($result as $key => $ids) {
+//       $return .= "$key: " . implode(', ', $ids) . "\n";
+//     }
+//   }
+//   if (function_exists('drush_log')) {
+//     drush_log($return, \Psr\Log\LogLevel::WARNING);
+//   }
+//   return $return;
+// }
