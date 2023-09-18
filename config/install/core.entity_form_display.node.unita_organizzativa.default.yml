@@ -1,3 +1,4 @@
+uuid: 9ec95400-a081-4c2d-b075-944ecba6cd51
 langcode: it
 status: true
 dependencies:
@@ -25,6 +26,8 @@ dependencies:
     - media_library
     - path
     - text
+_core:
+  default_config_hash: 3x--bb0p_k7yv44r71-1Ta3ROfiPu9RsHFjDfc7dfKQ
 id: node.unita_organizzativa.default
 targetEntityType: node
 bundle: unita_organizzativa
@@ -107,7 +110,7 @@ content:
       label_singular: ''
       label_plural: ''
       allow_new: true
-      allow_existing: false
+      allow_existing: true
       match_operator: CONTAINS
       allow_duplicate: false
       collapsible: false
@@ -197,3 +200,5 @@ hidden:
   field_incarichi: true
   field_view_persone: true
   field_view_reference: true
+  publish_on: true
+  unpublish_on: true

@@ -1,3 +1,4 @@
+uuid: 0be7bdd5-1c13-424e-b84c-4d262c45e26c
 langcode: it
 status: true
 dependencies:
@@ -126,6 +127,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+_core:
+  default_config_hash: xzO0BjwGHnt0GiMnekygijqLdChCIqGfbhS4o9Ikfxw
 id: node.evento.default
 targetEntityType: node
 bundle: evento
@@ -268,7 +271,7 @@ content:
       label_singular: ''
       label_plural: ''
       allow_new: true
-      allow_existing: false
+      allow_existing: true
       match_operator: CONTAINS
       allow_duplicate: false
       collapsible: false
@@ -385,3 +388,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_view_reference: true
+  publish_on: true
+  unpublish_on: true

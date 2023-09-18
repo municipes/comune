@@ -1,3 +1,4 @@
+uuid: cabe7533-5ae9-444c-8ea9-574c135a9dbe
 langcode: it
 status: true
 dependencies:
@@ -217,7 +218,7 @@ content:
       label_singular: ''
       label_plural: ''
       allow_new: true
-      allow_existing: false
+      allow_existing: true
       match_operator: CONTAINS
       allow_duplicate: false
       collapsible: false
@@ -339,4 +340,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true
