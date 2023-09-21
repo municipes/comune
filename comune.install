@@ -206,7 +206,7 @@ function comune_update_or_install_config($prefix) {
  */
 function comune_update_8001() {
   $return = Drupal::configFactory()->getEditable('views.view.bi_faq')->delete();
-  return $return;
+  return;
 }
 
 /**
