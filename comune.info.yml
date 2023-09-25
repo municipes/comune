@@ -123,7 +123,6 @@ install:
   - paragraphs:paragraphs
   - pathauto:pathauto
   - scheduler:scheduler
-  - schema_metatag:schema_service
   - search_api:search_api
   - search_api:search_api_db
   - taxonomy_custom_controller:taxonomy_custom_controller
