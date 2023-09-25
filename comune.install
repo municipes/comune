@@ -210,14 +210,6 @@ function comune_update_8001() {
 }
 
 /**
- * Enable schema_service module.
- */
-function comune_update_8002() {
-  $return = \Drupal::service('module_installer')->install(['schema_service'], TRUE);
-  return;
-}
-
-/**
  * Add new action configurations.
  */
 // function comune_update_8001() {
