@@ -1,4 +1,3 @@
-uuid: cabe7533-5ae9-444c-8ea9-574c135a9dbe
 langcode: it
 status: true
 dependencies:
@@ -186,7 +185,7 @@ content:
       locate:
         control: true
         options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
-        automatic: true
+        automatic: false
       geocoder:
         control: true
         settings:

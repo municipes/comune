@@ -186,7 +186,7 @@ content:
       locate:
         control: true
         options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
-        automatic: true
+        automatic: false
       geocoder:
         control: true
         settings:
