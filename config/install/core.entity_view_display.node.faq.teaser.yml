@@ -8,8 +8,6 @@ dependencies:
   module:
     - text
     - user
-_core:
-  default_config_hash: DFa6sQ6pIwDw1--yW6E2ftMa5TQzcV7LxoxaecdLIDE
 id: node.faq.teaser
 targetEntityType: node
 bundle: faq

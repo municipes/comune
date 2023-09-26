@@ -156,7 +156,7 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete_tags
+    type: entity_reference_autocomplete
     weight: 13
     region: content
     settings:

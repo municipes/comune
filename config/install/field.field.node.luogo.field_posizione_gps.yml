@@ -23,8 +23,6 @@ third_party_settings:
       handling: preserve
       status_message: true
       log: false
-_core:
-  default_config_hash: SWn-dyny__5iKJV5cFrYGV-0iyddJnmL0tKYjlJKTr4
 id: node.luogo.field_posizione_gps
 field_name: field_posizione_gps
 entity_type: node

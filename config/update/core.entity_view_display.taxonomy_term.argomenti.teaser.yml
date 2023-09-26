@@ -1,0 +1,26 @@
+uuid: 3987213b-99f3-4520-a961-fedc9af5ed6b
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.argomenti.field_immagine
+    - taxonomy.vocabulary.argomenti
+  module:
+    - text
+id: taxonomy_term.argomenti.teaser
+targetEntityType: taxonomy_term
+bundle: argomenti
+mode: teaser
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_immagine: true
+  langcode: true
+  search_api_excerpt: true

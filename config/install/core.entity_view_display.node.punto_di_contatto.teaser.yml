@@ -13,8 +13,6 @@ dependencies:
     - entity_reference_revisions
     - office_hours
     - user
-_core:
-  default_config_hash: c5y-RU-S_urfKk_Siqas6F-LtzoC-rqjNi9RVFOOaQo
 id: node.punto_di_contatto.teaser
 targetEntityType: node
 bundle: punto_di_contatto
