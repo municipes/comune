@@ -205,8 +205,17 @@ function comune_update_or_install_config($prefix) {
  * Delete old faq view.
  */
 function comune_update_8001() {
-  $return = Drupal::configFactory()->getEditable('views.view.bi_faq')->delete();
+  Drupal::configFactory()->getEditable('views.view.bi_faq')->delete();
   return;
+}
+
+/**
+ * Delete old argomenti view.
+ */
+function comune_update_8002() {
+  $prefix = 'views';
+  Drupal::configFactory()->getEditable('views.view.bi_argomenti')->delete();
+  return comune_update_or_install_config($prefix);
 }
 
 /**
