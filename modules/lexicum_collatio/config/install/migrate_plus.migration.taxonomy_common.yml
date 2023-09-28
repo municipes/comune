@@ -42,7 +42,6 @@ source:
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_evento.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_incarico.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_luogo.json'
-    - 'https://municipes.github.io/origo/taxonomy/tipi_di_notizia.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_punto_di_contatto.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_unita_organizzativa.json'
 
