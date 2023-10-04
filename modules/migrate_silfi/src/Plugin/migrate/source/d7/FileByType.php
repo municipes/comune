@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\migrate_silfi\Plugin\migrate\source\d7;
+namespace Drupal\silfi_migrate\Plugin\migrate\source;
 
 use Drupal\file\Plugin\migrate\source\d7\File;
 use Drupal\migrate\Row;
@@ -26,21 +26,19 @@ class FileByType extends File {
       $query->condition('f.type', $this->configuration['type']);
     }
 
-    // Get the alt text, if configured.
-    if (isset($this->configuration['get_alt']) && isset($this->configuration['fields'])) {
-      $alt_alias = $query->addJoin('LEFT', 'field_data_field_foto', 'alt', 'f.fid = %alias.field_foto_fid');
-      $query->addField($alt_alias, 'field_foto_alt', 'alt');
-    }
-
-    // Get the title text, if configured.
-    if (isset($this->configuration['get_title']) && isset($this->configuration['fields'])) {
-      $title_alias = $query->addJoin('LEFT', 'field_data_field_foto', 'title', 'f.fid = %alias.entity_id');
-      $query->addField($title_alias, 'field_foto_title', 'title');
-    }
-
-    // Get the description text, if configured.
-    if (isset($this->configuration['get_description']) && isset($this->configuration['fields'])) {
-      foreach ($this->configuration['fields'] as $field) {
+    foreach ($this->configuration['fields'] as $field) {
+      // Get the alt text, if configured.
+      if (isset($this->configuration['get_alt']) && isset($this->configuration['fields'])) {
+        $alt_alias = $query->addJoin('LEFT', 'field_data_' . $field, 'alt', 'f.fid = %alias.' . $field . '_fid');
+        $query->addField($alt_alias, $field . '_alt', 'alt');
+      }
+      // Get the title text, if configured.
+      if (isset($this->configuration['get_title']) && isset($this->configuration['fields'])) {
+        $title_alias = $query->addJoin('LEFT', 'field_data_' . $field . '', 'title', 'f.fid = %alias.entity_id');
+        $query->addField($title_alias, $field . '_title', 'title');
+      }
+      // Get the description text, if configured.
+      if (isset($this->configuration['get_description']) && isset($this->configuration['fields'])) {
         $desc_alias = $query->addJoin('LEFT', 'field_data_' . $field, 'description', 'f.fid = %alias.' . $field . '_fid');
         $query->addField($desc_alias, $field . '_description', 'description');
       }

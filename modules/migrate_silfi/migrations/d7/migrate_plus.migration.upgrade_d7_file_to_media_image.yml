@@ -1,4 +1,4 @@
-uuid: 96a36eaf-f635-43b7-8f9a-10ca34821d4b
+uuid: 4487a960-5332-43d0-a112-e2a3b4288035
 id: upgrade_d7_file_to_media_image
 class: Drupal\migrate\Plugin\Migration
 migration_tags:
@@ -10,7 +10,10 @@ source:
   plugin: d7_file_by_type
   scheme: public
   type: image
-  fields: {}
+  fields:
+    - field_image
+    - field_immagine_evento
+    - field_galleria_fotografica
   get_alt: true
   # get_title: true
 
@@ -31,6 +34,9 @@ process:
     -
       plugin: get
       source: alt
+    -
+      plugin: default_value
+      default_value: 'Descrizione immagine non disponibile'
   # field_media_image/title: title
   status: status
   created: timestamp
