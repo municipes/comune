@@ -1,0 +1,10 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.amministrazione_trasparente
+id: node.amministrazione_trasparente
+target_entity_type_id: node
+target_bundle: amministrazione_trasparente
+default_langcode: site_default
+language_alterable: false

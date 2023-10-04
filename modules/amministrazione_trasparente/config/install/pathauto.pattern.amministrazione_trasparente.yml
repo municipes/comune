@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: amministrazione_trasparente
+label: 'Amministrazione trasparente'
+type: 'canonical_entities:node'
+pattern: '/[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  ab2fa973-b2d2-4a83-a1e1-a944e40ef892:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ab2fa973-b2d2-4a83-a1e1-a944e40ef892
+    context_mapping:
+      node: node
+    bundles:
+      amministrazione_trasparente: amministrazione_trasparente
+selection_logic: and
+weight: -5
+relationships: {  }

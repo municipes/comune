@@ -1,0 +1,10 @@
+name: "Amministrazione Trasparente"
+description: Amministrazione Trasparente è un modulo Drupal che crea la sezione Amministrazione Trasparente utilizzata dai Comuni.
+package: "Comune"
+hidden: false
+
+type: module
+core_version_requirement: ^9.5 || ^10
+dependencies:
+  - comune:migrate_silfi
+

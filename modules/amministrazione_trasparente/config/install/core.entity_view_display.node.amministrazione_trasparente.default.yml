@@ -1,0 +1,73 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.amministrazione_trasparente.body
+    - field.field.node.amministrazione_trasparente.field_allegati
+    - field.field.node.amministrazione_trasparente.field_descrizione_breve
+    - field.field.node.amministrazione_trasparente.field_link_esterni
+    - field.field.node.amministrazione_trasparente.field_view_reference
+    - node.type.amministrazione_trasparente
+  module:
+    - link
+    - text
+    - user
+    - viewsreference
+id: node.amministrazione_trasparente.default
+targetEntityType: node
+bundle: amministrazione_trasparente
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_allegati:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link_esterni:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_view_reference:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

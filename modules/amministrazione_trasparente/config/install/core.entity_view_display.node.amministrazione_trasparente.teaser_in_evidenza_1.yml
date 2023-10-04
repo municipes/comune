@@ -1,0 +1,38 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_in_evidenza_1
+    - field.field.node.amministrazione_trasparente.body
+    - field.field.node.amministrazione_trasparente.field_allegati
+    - field.field.node.amministrazione_trasparente.field_descrizione_breve
+    - field.field.node.amministrazione_trasparente.field_link_esterni
+    - field.field.node.amministrazione_trasparente.field_view_reference
+    - node.type.amministrazione_trasparente
+  module:
+    - user
+id: node.amministrazione_trasparente.teaser_in_evidenza_1
+targetEntityType: node
+bundle: amministrazione_trasparente
+mode: teaser_in_evidenza_1
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_allegati: true
+  field_link_esterni: true
+  field_view_reference: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

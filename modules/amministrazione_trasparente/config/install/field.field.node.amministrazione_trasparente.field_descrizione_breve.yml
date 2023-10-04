@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.amministrazione_trasparente
+id: node.amministrazione_trasparente.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: amministrazione_trasparente
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,113 @@
+uuid: 9a1eb4c4-7376-4ed3-9de5-f6a57a41e5ab
+langcode: en
+status: true
+dependencies: {  }
+id: d7_node_amm_trasp
+# class: Drupal\node\Plugin\migrate\D7NodeTranslation
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node (Amministrazione Trasparente)'
+source:
+  plugin: d7_migrate_page_legacy
+  node_type: page
+  mlid: 6385 # l'id del menu di partenza
+  not_at: false # solo le pagine di Amministrazione Trasparente
+  from_date: false # data in unixtime dei nodi da cui iniziare migrazione
+  context: false # tid del vocabolario Contesto per la Rete Civica
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+  # moderation_state:
+  #   plugin: static_map
+  #   source: status
+  #   default_value: draft
+  #   map:
+  #     '0': draft
+  #     '1': published
+  field_link_esterni:
+    -
+      plugin: silfi_field_link
+      uri_scheme: 'https://'
+      source: field_link_esterni
+    -
+      plugin: skip_on_empty
+      method: process
+  field_allegati:
+    plugin: sub_process
+    source: field_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_document
+        source: fid
+        no_stub: true
+
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: amministrazione_trasparente
+# migration_dependencies:
+#   required:
+    # - upgrade_d7_user
+    # - upgrade_d7_file_to_media_document
+    # - upgrade_language
