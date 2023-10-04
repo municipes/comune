@@ -1,0 +1,87 @@
+uuid: 7e321b45-15b5-4f65-90de-143bf038ba15
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.pagina_legacy.body
+    - field.field.node.pagina_legacy.field_allegati
+    - field.field.node.pagina_legacy.field_galleria
+    - field.field.node.pagina_legacy.field_immagine
+    - field.field.node.pagina_legacy.field_link_esterni
+    - field.field.node.pagina_legacy.field_video_gdpr
+    - node.type.pagina_legacy
+  module:
+    - link
+    - text
+    - user
+id: node.pagina_legacy.default
+targetEntityType: node
+bundle: pagina_legacy
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_allegati:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_galleria:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_immagine:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link_esterni:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_video_gdpr:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

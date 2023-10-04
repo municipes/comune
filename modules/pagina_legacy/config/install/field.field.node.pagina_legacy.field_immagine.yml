@@ -1,0 +1,29 @@
+uuid: def5b890-8041-4995-a5ef-4acf956d1677
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_immagine
+    - media.type.image
+    - node.type.pagina_legacy
+id: node.pagina_legacy.field_immagine
+field_name: field_immagine
+entity_type: node
+bundle: pagina_legacy
+label: Immagine
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

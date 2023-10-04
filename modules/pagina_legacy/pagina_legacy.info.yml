@@ -1,0 +1,10 @@
+name: "Pagina legacy"
+description: Pagina legacy è un modulo Drupal che crea il tipo di contenuto per migrare pagine da vecchi siti.
+package: "Comune"
+hidden: false
+
+type: module
+core_version_requirement: ^9.5 || ^10
+dependencies:
+  - comune:migrate_silfi
+

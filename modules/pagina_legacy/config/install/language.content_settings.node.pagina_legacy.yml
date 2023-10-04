@@ -1,0 +1,11 @@
+uuid: 1c67615b-fad8-4395-b715-6a60f3e96621
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.pagina_legacy
+id: node.pagina_legacy
+target_entity_type_id: node
+target_bundle: pagina_legacy
+default_langcode: site_default
+language_alterable: false

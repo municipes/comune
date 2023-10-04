@@ -1,0 +1,42 @@
+uuid: 8fd07c11-5af4-4aa0-baa4-c5418ac7bdaa
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.pagina_legacy.body
+    - field.field.node.pagina_legacy.field_allegati
+    - field.field.node.pagina_legacy.field_galleria
+    - field.field.node.pagina_legacy.field_immagine
+    - field.field.node.pagina_legacy.field_link_esterni
+    - field.field.node.pagina_legacy.field_video_gdpr
+    - node.type.pagina_legacy
+  module:
+    - user
+id: node.pagina_legacy.card
+targetEntityType: node
+bundle: pagina_legacy
+mode: card
+content:
+  field_immagine:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_allegati: true
+  field_galleria: true
+  field_link_esterni: true
+  field_video_gdpr: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: fc496eeb-6a59-4f68-a6d4-1a55675c1b53
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_allegati
+    - media.type.document
+    - node.type.pagina_legacy
+id: node.pagina_legacy.field_allegati
+field_name: field_allegati
+entity_type: node
+bundle: pagina_legacy
+label: Allegati
+description: 'Eventuali documenti in allegato'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

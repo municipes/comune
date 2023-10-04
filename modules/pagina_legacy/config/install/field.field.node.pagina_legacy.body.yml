@@ -1,0 +1,24 @@
+uuid: f3e96e8c-8249-4b63-a258-b761c4b29b24
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.pagina_legacy
+  module:
+    - text
+id: node.pagina_legacy.body
+field_name: body
+entity_type: node
+bundle: pagina_legacy
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

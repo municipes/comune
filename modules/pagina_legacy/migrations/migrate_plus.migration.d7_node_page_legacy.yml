@@ -1,0 +1,135 @@
+uuid: 8eb231e6-87da-40d3-91c8-92cd772c71fb
+langcode: en
+status: true
+dependencies: {  }
+id: d7_node_page_legacy
+# class: Drupal\node\Plugin\migrate\D7NodeTranslation
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node (Pagine legacy)'
+source:
+  plugin: d7_migrate_at
+  node_type: page
+  mlid: 6385 # l'id del menu amm trasp di partenza
+  not_at: true # esclude le pagine di Amministrazione Trasparente
+  from_date: 1456786799 # data in unixtime dei nodi da cui iniziare migrazione
+  context: 1 # valore del campo field_sito la Rete Civica
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: default_value
+      default_value: 0
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+  # moderation_state:
+  #   plugin: static_map
+  #   source: status
+  #   default_value: draft
+  #   map:
+  #     '0': draft
+  #     '1': published
+  field_link_esterni:
+    -
+      plugin: field_link
+      source: field_link_esterni
+  field_allegati:
+    plugin: sub_process
+    source: field_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_document
+        source: fid
+        no_stub: true
+  field_galleria:
+    plugin: sub_process
+    source: field_galleria_fotografica
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_image
+        source: fid
+        no_stub: true
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_image
+        source: fid
+        no_stub: true
+  # field_video_gdpr:
+  #   plugin: sub_process
+  #   source: field_video
+  #   process:
+  #     uri:
+  #       source: url
+  #     title:
+  #       source: description
+
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: pagina_legacy
+# migration_dependencies:
+#   required:
+    # - upgrade_d7_user
+    # - upgrade_d7_file_to_media_document
+    # - upgrade_language

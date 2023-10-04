@@ -1,0 +1,22 @@
+uuid: ccbd4961-d3e6-4833-8bac-2587921333a5
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.pagina_legacy
+id: node.pagina_legacy.status
+field_name: status
+entity_type: node
+bundle: pagina_legacy
+label: Pubblicato
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Acceso
+  off_label: Spento
+field_type: boolean
