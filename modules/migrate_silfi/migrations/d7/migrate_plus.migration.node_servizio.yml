@@ -308,9 +308,10 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: servizio
-# migration_dependencies:
-#   required:
-#     - upgrade_d7_node_complete_accesso_al_servizio
+migration_dependencies:
+  required:
+    - upgrade_d7_node_complete_accesso_al_servizio
+    - upgrade_cmis_document
 
 # dependencies:
 #   enforced:
