@@ -1,0 +1,11 @@
+name: Silfi Migrate
+type: module
+description: Data migration from old websites
+package: Comune
+core_version_requirement: ^9.5 || ^10
+dependencies:
+  - migrate:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - drupal:migrate_drupal
+  - drupal:migrate_upgrade

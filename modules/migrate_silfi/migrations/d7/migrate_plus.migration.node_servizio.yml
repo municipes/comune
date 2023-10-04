@@ -1,0 +1,318 @@
+uuid: f63d17e9-eca1-4f0d-ab38-7399ac63b7bb
+langcode: it
+status: true
+id: node_servizio
+# class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node Servizio'
+source:
+  plugin: d7_node_servizio
+  node_type: scheda_servizio
+  track_changes: true
+  constants:
+    TITLE_PART: ' (servizio)'
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+
+  field_accedi_al_servizio:
+    plugin: sub_process
+    source: field_servizi_on_line
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: upgrade_d7_node_complete_accesso_al_servizio
+          source: target_id
+          no_stub: true
+
+  field_allegati:
+    plugin: sub_process
+    source: field_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_document
+        source: fid
+        no_stub: true
+
+  field_a_chi_e_rivolto:
+    plugin: sub_process
+    source: field_requisiti_del_richiedente
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_come_fare:
+    plugin: sub_process
+    source: field_modalita_di_richiesta
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_cosa_serve:
+    plugin: sub_process
+    source: field_documentazione_da_presenta
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_costi:
+    plugin: sub_process
+    source: field_costi
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve:
+    plugin: sub_process
+    source: field_descrizione
+    process:
+      value:
+        -
+          plugin: silfi_abstract_text
+          source: value
+
+  field_descrizione_completa:
+    plugin: sub_process
+    source: field_descrizione
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_destinazioni: field_destinazioni
+
+  field_link_esterni:
+    -
+      plugin: silfi_field_link
+      uri_scheme: 'https://'
+      source: field_link_esterni
+    -
+      plugin: skip_on_empty
+      method: process
+
+  field_normativa_di_riferimento:
+    plugin: sub_process
+    source: field_normativa_di_riferimento
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_note_interne:
+    plugin: sub_process
+    source: field_note_interne
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_parole_chiave: field_parole_chiave
+
+  normalize:
+    plugin: silfi_normalize_title
+    source: field_nome_ufficio
+
+  field_unita_organizzative:
+    plugin: entity_generate
+    source: '@normalize'
+    value_key: title
+    bundle_key: type
+    bundle: unita_organizzativa
+    entity_type: node
+    ignore_case: true
+    default_values:
+      status: 1
+      uid: 1
+
+  field_procedure_collegate_esito:
+    plugin: sub_process
+    source: field_iter_procedura
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_reclami_ricorsi_opposizion:
+    plugin: sub_process
+    source: field_reclami_ricorsi_opposizion
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_schede_collegate:
+    plugin: sub_process
+    source: field_schede_collegate
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: node_servizio
+          source: target_id
+          no_stub: false
+        -
+          plugin: skip_on_empty
+          method: process
+
+  field_sottotitolo: field_nome_esteso
+
+  field_ulteriori_informazioni:
+    plugin: sub_process
+    source: field_informazioni
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_vincoli:
+    plugin: sub_process
+    source: field_avvertenze
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  # field_punti_di_contatto:
+  #   plugin: child_entity_generate
+  #   source: contatti
+  #   entity_type: node
+  #   bundle: punto_di_contatto
+  #   value_key: title
+  #   bundle_key: type
+  #   values:
+  #     title: title
+  #     field_tipo_punto_di_contatto: type
+  #     field_valore_punto_di_contatto: value
+  #   default_values:
+  #     # title: 'missing title'
+  #     status: 1
+    # plugin: sub_process
+    # source: contatti
+    # process:
+    #   target_id:
+    #     plugin: entity_generate
+    #     value_key: title
+    #     bundle_key: type
+    #     bundle: punto_di_contatto
+    #     entity_type: node
+    #     ignore_case: true
+    #     default_values:
+    #       title: 'Title missing'
+    #       status: 1
+    #       uid: 1
+    #     values:
+    #       title: 'Servizio'
+    #       field_tipo_punto_di_contatto: type
+    #       field_valore_punto_di_contatto: value
+
+
+
+  field_categoria_del_servizio:
+    plugin: sub_process
+    source: field_le_guide_tematiche
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          244: 36
+          246: 41
+          398: 29
+          250: 34
+          243: 31
+          252: 31
+          245: 27
+          247: 38
+          251: 39
+          242: 28
+          248: 28
+          241: 40
+          249: 45
+
+  field_documenti:
+    plugin: sub_process
+    source: field_allegati_documentale
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: upgrade_cmis_document
+          source: target_id
+          no_stub: true
+        -
+          plugin: skip_on_empty
+          method: process
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: servizio
+# migration_dependencies:
+#   required:
+#     - upgrade_d7_node_complete_accesso_al_servizio
+
+# dependencies:
+#   enforced:
+#     module:
+#       - migrate_silfi

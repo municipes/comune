@@ -1,0 +1,120 @@
+uuid: 1528035b-2f29-478e-a1d5-52804d07c665
+langcode: it
+status: true
+id: upgrade_cmis_document
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'CMIS Document to Documento pubblico'
+
+source:
+  plugin: cmis_document_7
+  host: "http://192.168.97.41:8080/alfresco/api/-default-/public/cmis/versions/1.1/atom"
+  user: "pontassieve"
+  pass: "FwtBzp6LZJ2JJb5V"
+  node_type: allegato_documentale
+  track_changes: true
+
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+
+  field_tipo_di_accesso/target_id:
+    -
+      plugin: default_value
+      default_value: 424
+
+  field_autori: author
+
+  field_data_inizio: val_start
+
+  field_data_fine: val_end
+
+  field_descrizione_completa:
+    plugin: sub_process
+    source: description
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve: abstract
+
+  field_identificativo: file_cmis_id
+
+  field_licenza_di_distribuzione:
+    plugin: default_value
+    default_value: 149
+
+  field_tipo_di_documento:
+    plugin: sub_process
+    source: tipo_documento
+    process:
+      target_id:
+        plugin: static_map
+        source: tipo_documento
+        map:
+          'Moduli': 47
+          'Allegati': 55
+          'Atti': 52
+          # 'Delibere':
+          # 'Determine':
+          # 'Ordinanze':
+          'Regolamenti': 51
+
+  field_file:
+    plugin: migration_lookup
+    migration: upgrade_cmis_file
+    source: nid
+
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: documento_pubblico
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - migrate_silfi
