@@ -1,0 +1,110 @@
+uuid: a836d107-7cc8-48c7-b4a2-e0c16c0ca28d
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.notizia.field_allegati
+    - field.field.node.notizia.field_argomenti
+    - field.field.node.notizia.field_data_fine
+    - field.field.node.notizia.field_data_inizio
+    - field.field.node.notizia.field_dataset
+    - field.field.node.notizia.field_descrizione_breve
+    - field.field.node.notizia.field_descrizione_completa
+    - field.field.node.notizia.field_documenti
+    - field.field.node.notizia.field_galleria_immagini
+    - field.field.node.notizia.field_immagine
+    - field.field.node.notizia.field_luoghi
+    - field.field.node.notizia.field_numero_comunicato_stampa
+    - field.field.node.notizia.field_persone
+    - field.field.node.notizia.field_tipo_di_bando
+    - field.field.node.notizia.field_tipo_di_notizia
+    - field.field.node.notizia.field_ulteriori_informazioni
+    - field.field.node.notizia.field_unita_organizzativa
+    - field.field.node.notizia.field_video_esterno
+    - node.type.notizia
+  module:
+    - text
+    - user
+id: node.notizia.search_index
+targetEntityType: node
+bundle: notizia
+mode: search_index
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_completa:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_luoghi:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_numero_comunicato_stampa:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_persone:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tipo_di_notizia:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_unita_organizzativa:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_allegati: true
+  field_argomenti: true
+  field_data_fine: true
+  field_data_inizio: true
+  field_dataset: true
+  field_documenti: true
+  field_galleria_immagini: true
+  field_immagine: true
+  field_tipo_di_bando: true
+  field_video_esterno: true
+  langcode: true
+  links: true
+  node_read_time: true
+  reading_time: true
+  search_api_excerpt: true

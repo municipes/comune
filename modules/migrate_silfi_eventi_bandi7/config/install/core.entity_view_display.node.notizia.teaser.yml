@@ -1,0 +1,79 @@
+uuid: bee38ecc-ae0e-4e07-8b78-5b5052c33085
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.notizia.field_allegati
+    - field.field.node.notizia.field_argomenti
+    - field.field.node.notizia.field_data_fine
+    - field.field.node.notizia.field_data_inizio
+    - field.field.node.notizia.field_dataset
+    - field.field.node.notizia.field_descrizione_breve
+    - field.field.node.notizia.field_descrizione_completa
+    - field.field.node.notizia.field_documenti
+    - field.field.node.notizia.field_galleria_immagini
+    - field.field.node.notizia.field_immagine
+    - field.field.node.notizia.field_luoghi
+    - field.field.node.notizia.field_numero_comunicato_stampa
+    - field.field.node.notizia.field_persone
+    - field.field.node.notizia.field_tipo_di_bando
+    - field.field.node.notizia.field_tipo_di_notizia
+    - field.field.node.notizia.field_ulteriori_informazioni
+    - field.field.node.notizia.field_unita_organizzativa
+    - field.field.node.notizia.field_video_esterno
+    - node.type.notizia
+  module:
+    - datetime
+    - user
+id: node.notizia.teaser
+targetEntityType: node
+bundle: notizia
+mode: teaser
+content:
+  field_data_inizio:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: bootstrap_italia_medium
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_teaser
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  field_allegati: true
+  field_argomenti: true
+  field_data_fine: true
+  field_dataset: true
+  field_descrizione_completa: true
+  field_documenti: true
+  field_galleria_immagini: true
+  field_luoghi: true
+  field_numero_comunicato_stampa: true
+  field_persone: true
+  field_tipo_di_bando: true
+  field_tipo_di_notizia: true
+  field_ulteriori_informazioni: true
+  field_unita_organizzativa: true
+  field_video_esterno: true
+  langcode: true
+  links: true
+  node_read_time: true
+  reading_time: true
+  search_api_excerpt: true

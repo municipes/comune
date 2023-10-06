@@ -1,0 +1,11 @@
+uuid: f3b50403-b6e9-4c70-aa13-a21528ff4af1
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tipi_di_bando
+id: taxonomy_term.tipi_di_bando
+target_entity_type_id: taxonomy_term
+target_bundle: tipi_di_bando
+default_langcode: site_default
+language_alterable: false
