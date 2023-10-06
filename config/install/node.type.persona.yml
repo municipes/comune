@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - scheduler
     - type_tray
 third_party_settings:
   menu_ui:
@@ -16,9 +17,22 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Persona pubblica di un Comune</em> content'
     type_weight: 0
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
 _core:
   default_config_hash: gvkaPSr8VRgBYHo4OEWaWka0WjupqMkFvtaTekBVix0
-name: 'Persona pubblica'
+name: Persona
 type: persona
 description: 'Questa Tipologia descrive la struttura delle persone pubbliche che sono salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona.'
 help: 'Questa Tipologia descrive la struttura delle persone pubbliche che sono salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona.'

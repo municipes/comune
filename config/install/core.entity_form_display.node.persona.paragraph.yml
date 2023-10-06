@@ -119,4 +119,5 @@ hidden:
   field_v_situazione_patrimoniale: true
   field_view_reference: true
   publish_on: true
+  scheduler_settings: true
   unpublish_on: true
