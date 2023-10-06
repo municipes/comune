@@ -1,3 +1,4 @@
+uuid: 45faa293-f564-4333-a289-35101b9d5ac7
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - node
     - views
     - viewsreference
+_core:
+  default_config_hash: jWUx3HihCFHWd_VrYw4kDSixumjn9A7kK-afjcDXWKA
 id: node.field_view_reference
 field_name: field_view_reference
 entity_type: node

@@ -1,6 +1,9 @@
+uuid: 4bf24382-7cdc-497c-9cb0-7a4b22862adb
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: ywRVm4ePoBlwSAb97vIQc2PpI6zCA-RsEAAkpfYfo68
 id: argomenti
 label: Argomenti
 description: 'Secondary menu'

@@ -1,8 +1,11 @@
+uuid: 4a6d5bc4-3faf-41d0-9183-b285a0b3fdaa
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:2b050e2a-9377-4e02-9a2a-c93ba2180fd5'
+_core:
+  default_config_hash: KDUu6AzQHJ_2dyKvKFTkRnkZtRgQy34A-qXbq6wSBU8
 id: node_reference
 label: 'Riferimento nodo'
 icon_uuid: 2b050e2a-9377-4e02-9a2a-c93ba2180fd5

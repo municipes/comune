@@ -1,3 +1,4 @@
+uuid: fd258b22-634f-4cdf-9362-3009a135eb42
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - node
     - search_api
+_core:
+  default_config_hash: jHDPJhH3cN_fYCmjdKdwAgwmKodAnv20W3xKFtikKYk
 id: novita
 name: Novità
 description: ''

@@ -1,8 +1,11 @@
+uuid: bacef0e5-a7b9-4057-8755-b0068887aa3b
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.evento
+_core:
+  default_config_hash: _uuXu6HjUzFBcrhDtBEr96H1-Izcx73RhigIssuUe80
 id: node.evento.title
 field_name: title
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: a4d1441d-d373-42fd-912b-65cea969eed7
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_argomenti
     - node.type.unita_organizzativa
     - taxonomy.vocabulary.argomenti
+_core:
+  default_config_hash: f2mF7BfgtRtIWjoOvSywuWP4ZU1VvPPQ69aDMk6yBNI
 id: node.unita_organizzativa.field_argomenti
 field_name: field_argomenti
 entity_type: node

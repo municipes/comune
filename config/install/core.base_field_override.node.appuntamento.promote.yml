@@ -1,8 +1,11 @@
+uuid: 56f9a3f3-3d66-4fd9-bd0d-f9f3d3200adc
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.appuntamento
+_core:
+  default_config_hash: hWCarzE3kevu8pANHEkryXQj7bzPOYK9w1yAgadCF2s
 id: node.appuntamento.promote
 field_name: promote
 entity_type: node

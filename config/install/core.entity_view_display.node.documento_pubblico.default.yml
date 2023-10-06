@@ -1,3 +1,4 @@
+uuid: 2e20dc15-a642-4596-a766-0fb2a7a87dfe
 langcode: it
 status: true
 dependencies:
@@ -37,6 +38,8 @@ dependencies:
     - text
     - user
     - viewsreference
+_core:
+  default_config_hash: EXTbeCEanOFwwHvLqgAwb9dqgAN7_A_bMqx9I4LQlfQ
 id: node.documento_pubblico.default
 targetEntityType: node
 bundle: documento_pubblico

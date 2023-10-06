@@ -1,3 +1,4 @@
+uuid: 468700e7-2070-4278-b61f-d942a2f227e1
 langcode: it
 status: true
 dependencies:
@@ -26,6 +27,8 @@ dependencies:
     - entity_reference_revisions
     - ui_patterns_field_formatters
     - user
+_core:
+  default_config_hash: VRqTritpikzqabd5-DqCPupYyGENunJHStRngk-DEs4
 id: node.notizia.full
 targetEntityType: node
 bundle: notizia

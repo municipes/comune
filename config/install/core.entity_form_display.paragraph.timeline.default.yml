@@ -1,3 +1,4 @@
+uuid: 770ed325-f816-46b1-8ef9-8a72f59d8603
 langcode: it
 status: true
 dependencies:
@@ -55,6 +56,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+_core:
+  default_config_hash: Ic-udu1a9g5sy6__QhKNdfFMLwBY8tpNGdm9UwyYbb0
 id: paragraph.timeline.default
 targetEntityType: paragraph
 bundle: timeline

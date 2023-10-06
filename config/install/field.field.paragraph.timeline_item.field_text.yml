@@ -1,3 +1,4 @@
+uuid: f25c90d4-825d-49df-b89b-96e35b8bccdc
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.timeline_item
   module:
     - text
+_core:
+  default_config_hash: iNNGd-A5_q8lh5VAuxphBSIvLOKg_tZBDQo0Tiuqso4
 id: paragraph.timeline_item.field_text
 field_name: field_text
 entity_type: paragraph
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

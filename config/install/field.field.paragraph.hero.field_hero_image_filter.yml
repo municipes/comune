@@ -1,9 +1,12 @@
+uuid: 4cd13cc4-1d0b-41e1-9bc6-9cd9a7fc7c5b
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_hero_image_filter
     - paragraphs.paragraphs_type.hero
+_core:
+  default_config_hash: Wx0EQn5gqvaWK7XFIWwmrSBC4pNjz1Ayil3PiexEJes
 id: paragraph.hero.field_hero_image_filter
 field_name: field_hero_image_filter
 entity_type: paragraph

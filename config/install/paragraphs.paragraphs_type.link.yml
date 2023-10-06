@@ -1,6 +1,9 @@
+uuid: 84d08436-84db-424b-aef5-164a367bafe6
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: '-mZS-oKI1XjFcv-EpfBCv70_SQUsqe3oO-zUpEnpTL8'
 id: link
 label: Link
 icon_uuid: null

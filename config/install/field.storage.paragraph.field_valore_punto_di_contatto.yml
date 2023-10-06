@@ -1,8 +1,11 @@
+uuid: 4e184673-92f2-4d07-b0d6-906dcfe6b47b
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: ZqNNejT6xoiVuAUxgEstx28utO6kdsQrUa8YKi0XPJM
 id: paragraph.field_valore_punto_di_contatto
 field_name: field_valore_punto_di_contatto
 entity_type: paragraph

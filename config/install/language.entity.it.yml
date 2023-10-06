@@ -1,6 +1,9 @@
+uuid: f184b896-07c7-4617-990a-3d36c8c9ef47
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: PEjrGNaa2n7K7WbRTzGzCrQD0SJbOqH8ClNjZAIYAzw
 id: it
 label: Italian
 direction: ltr

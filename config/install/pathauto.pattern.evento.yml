@@ -1,8 +1,11 @@
+uuid: 6b964644-45dd-4c65-b1b1-e92e18ea728c
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: REJ67nkeEFezKX-I3hVKhg3z0mMOQHikVUeSuulmrfs
 id: evento
 label: Evento
 type: 'canonical_entities:node'

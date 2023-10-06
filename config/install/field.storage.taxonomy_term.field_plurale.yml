@@ -1,8 +1,11 @@
+uuid: 0da40fbe-4d57-4144-b9ca-3f3917d41d47
 langcode: it
 status: true
 dependencies:
   module:
     - taxonomy
+_core:
+  default_config_hash: euD_yaRb8Inw63lKuuRSNBjGLZ3nlA789SjgRbDoRi4
 id: taxonomy_term.field_plurale
 field_name: field_plurale
 entity_type: taxonomy_term

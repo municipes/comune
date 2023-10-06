@@ -1,8 +1,11 @@
+uuid: f74806fa-f8c0-47c7-81db-46e8ad929ca9
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: Ul_qLit449ltNaXQQhI2YOp_yur5gL1haGWStadkgEI
 id: node.punto_di_contatto
 target_entity_type_id: node
 target_bundle: punto_di_contatto

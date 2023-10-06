@@ -1,8 +1,11 @@
+uuid: e28ed303-5abe-4f49-b9b1-260ee53c4e0a
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: yzYt_PMAMoixfEbbMXtnj2_HxhAFZe3279Qf44AUnlc
 id: node.punto_di_contatto.promote
 field_name: promote
 entity_type: node

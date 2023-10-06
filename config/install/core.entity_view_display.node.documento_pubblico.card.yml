@@ -1,3 +1,4 @@
+uuid: fb6bcb19-0a46-417e-a460-16ceb0e3001c
 langcode: it
 status: true
 dependencies:
@@ -36,6 +37,8 @@ dependencies:
     - taxonomy
     - text
     - user
+_core:
+  default_config_hash: xvC-agBBhkelG0z8dzdOZ66Jxl7fBtqKjgzgpDp_p3U
 id: node.documento_pubblico.card
 targetEntityType: node
 bundle: documento_pubblico

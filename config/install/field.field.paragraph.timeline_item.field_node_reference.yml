@@ -1,3 +1,4 @@
+uuid: e4bc15ea-f48f-4d27-a207-4f688cdaf0aa
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.timeline_item
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: ZuYL-zqKyktpGpEs_3Rc507qe9-ug0snxI3JVw0yXTg
 id: paragraph.timeline_item.field_node_reference
 field_name: field_node_reference
 entity_type: paragraph

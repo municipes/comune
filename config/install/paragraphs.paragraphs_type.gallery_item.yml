@@ -1,8 +1,11 @@
+uuid: 85eae3f9-84b5-44d7-8500-92a3795e8c9b
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:9e93b3f3-dad6-4a31-85f7-592f45085f19'
+_core:
+  default_config_hash: dYFopUHJuwZV9GLMAK2JtXKIpmL7KToBm3OEwnXSkGU
 id: gallery_item
 label: 'Elemento Galleria'
 icon_uuid: 9e93b3f3-dad6-4a31-85f7-592f45085f19

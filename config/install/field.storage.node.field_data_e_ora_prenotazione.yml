@@ -1,9 +1,12 @@
+uuid: 4e0ea5c0-75c8-464c-9b39-3d2d372b600c
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: 43UKzmbqOq1zNQj5IwiHRrKjVIFaZX1GMvKfrYzzWew
 id: node.field_data_e_ora_prenotazione
 field_name: field_data_e_ora_prenotazione
 entity_type: node

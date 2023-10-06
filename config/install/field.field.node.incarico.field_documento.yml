@@ -1,3 +1,4 @@
+uuid: b7d46cd2-8b31-4b56-bec3-e9f72ef414f1
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_documento
     - node.type.documento_pubblico
     - node.type.incarico
+_core:
+  default_config_hash: WCvJ5rR14cDmdQVVMNbhQi4ErO_lV80unr6QiO0vg8A
 id: node.incarico.field_documento
 field_name: field_documento
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: 9e736981-8451-4e8e-abee-62f7369d12c5
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: ZTXTF0V9A6XFrS6PU4McV-8L6h5RqWWv_JrWYBvOQR0
 id: scaenographia_branding
 theme: scaenographia
 region: brand

@@ -1,9 +1,12 @@
+uuid: 06cc2514-c15c-4def-ae98-330a5d14ae8e
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_nome_servizio_txt
     - node.type.ticket
+_core:
+  default_config_hash: 4VnSPOWboh4PmIdCtmGSqQ0QotKhgg7mJbYXnXQVAGY
 id: node.ticket.field_nome_servizio_txt
 field_name: field_nome_servizio_txt
 entity_type: node

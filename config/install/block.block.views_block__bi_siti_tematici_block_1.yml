@@ -1,3 +1,4 @@
+uuid: 4279d759-0e5f-4614-a9fc-334415b7ec0a
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - views
   theme:
     - scaenographia
+_core:
+  default_config_hash: X6Hv8KD7gRhvQ55R0pW-H5Sn6iLE8-N8rpartk1w_i4
 id: views_block__bi_siti_tematici_block_1
 theme: scaenographia
 region: home_third_row_full_width

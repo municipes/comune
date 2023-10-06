@@ -1,3 +1,4 @@
+uuid: 88844491-f434-4499-b153-7a1ba1b0f08b
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - views
   theme:
     - scaenographia
+_core:
+  default_config_hash: h4Bt1ZWnXPMzSQwxXW5HVHCfcr7vXqoggiUwpTrZb_g
 id: scaenographia_formespostobi_ricerca_globalepage_1
 theme: scaenographia
 region: title

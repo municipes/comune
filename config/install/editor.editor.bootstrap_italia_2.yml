@@ -1,3 +1,4 @@
+uuid: 28004668-4172-4e43-8a97-a374a4e3b1b9
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - filter.format.bootstrap_italia_2
   module:
     - ckeditor5
+_core:
+  default_config_hash: RtNpW1erFlF7Zuuh9p7pPZa69LXTJppazLCzsKDcIws
 format: bootstrap_italia_2
 editor: ckeditor5
 settings:

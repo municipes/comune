@@ -1,3 +1,4 @@
+uuid: a848d212-487d-4e78-bdaf-db14345500eb
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_documenti
     - node.type.documento_pubblico
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: qEvP5jWKSbPjDGTY8vvzeVXQ6K1LH2-SUuPF4fNtqo0
 id: node.unita_organizzativa.field_documenti
 field_name: field_documenti
 entity_type: node

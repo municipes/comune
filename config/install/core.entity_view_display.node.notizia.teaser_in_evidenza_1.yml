@@ -1,3 +1,4 @@
+uuid: 7dd4bb32-8637-4a3c-a38c-ff9bd9fc1deb
 langcode: it
 status: true
 dependencies:
@@ -24,6 +25,8 @@ dependencies:
   module:
     - datetime
     - user
+_core:
+  default_config_hash: eatbl7zPRIYc56gngySsx9BVt1uARlEHPGecAX62IrA
 id: node.notizia.teaser_in_evidenza_1
 targetEntityType: node
 bundle: notizia

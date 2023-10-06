@@ -1,9 +1,12 @@
+uuid: 0493f7cb-b33b-48f8-9137-7d68a79219b8
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.luogo
+_core:
+  default_config_hash: Gn_MbhLENxPfPRzKRwi8AZXec9uMEBT3VNADEYMXIMY
 id: node.luogo.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

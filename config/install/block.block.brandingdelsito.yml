@@ -1,3 +1,4 @@
+uuid: 9a8a1032-cf79-4d45-84fb-b78c440e02e8
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: SgPxTInF5hBLbpKWcC9yY_ixTjRagvCz1B4rZpQQDp0
 id: brandingdelsito
 theme: scaenographia
 region: footer_brand

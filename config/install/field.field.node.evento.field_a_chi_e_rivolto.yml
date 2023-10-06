@@ -1,3 +1,4 @@
+uuid: 86541772-7788-4c9f-bc32-ffb6cc4462e6
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.evento
   module:
     - text
+_core:
+  default_config_hash: I0_0Wz7Ht56Mny5zm0Mm_VBSv69LN1LhZA-fPQc6rAI
 id: node.evento.field_a_chi_e_rivolto
 field_name: field_a_chi_e_rivolto
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

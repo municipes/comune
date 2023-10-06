@@ -1,3 +1,4 @@
+uuid: 132e9ad1-b0da-4eb9-afe7-437e3152c3cd
 langcode: it
 status: true
 dependencies:
@@ -43,6 +44,8 @@ dependencies:
     - node.type.servizio
   module:
     - user
+_core:
+  default_config_hash: g_RPNijEusmYHdkMP_UNxjHTnxdNp-yogCn-UL623eg
 id: node.servizio.teaser
 targetEntityType: node
 bundle: servizio

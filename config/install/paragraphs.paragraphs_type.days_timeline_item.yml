@@ -1,8 +1,11 @@
+uuid: 8215a496-bb26-4d81-bbed-c86058c10913
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:d5713859-a79d-43a3-9011-d25510828e08'
+_core:
+  default_config_hash: V4OBRtjsXgivFsgWH-xzPrwsDkWlvuEj9CEdCiI2qz4
 id: days_timeline_item
 label: 'Days Timeline item'
 icon_uuid: d5713859-a79d-43a3-9011-d25510828e08

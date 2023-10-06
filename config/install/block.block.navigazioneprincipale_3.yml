@@ -1,3 +1,4 @@
+uuid: 0b787db7-914b-4616-ae6f-4da57415fa8d
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - menu_block
   theme:
     - scaenographia
+_core:
+  default_config_hash: AaiBVjhyIUHwVmNXFIf9YXMdyPiXbxUkWesipy39AKc
 id: navigazioneprincipale_3
 theme: scaenographia
 region: footer_third
@@ -20,11 +23,11 @@ settings:
   provider: menu_block
   follow: false
   follow_parent: child
-  label_link: false
-  label_type: block
   level: 1
   depth: 1
   expand_all_items: true
   parent: 'main:menu_link_content:d2e63ca4-4c52-429e-9b0f-1703de0aa715'
   suggestion: main
+  label_type: block
+  label_link: false
 visibility: {  }

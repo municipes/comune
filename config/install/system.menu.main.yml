@@ -1,6 +1,9 @@
+uuid: 42163586-eba8-42a4-a50c-1fd829b4320a
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: iiG_muVQNK7AdQCIDKdsYsJt94qpVduGQjwYhZ3lRJQ
 id: main
 label: 'Navigazione principale'
 description: 'Collegamenti sezioni del sito'

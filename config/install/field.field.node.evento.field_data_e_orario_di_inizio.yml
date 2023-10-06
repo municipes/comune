@@ -1,3 +1,4 @@
+uuid: 820709f0-9259-4701-94d3-fdf3a3185b20
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.evento
   module:
     - datetime
+_core:
+  default_config_hash: npSKazlE765dFwvtSEVQh08XDnHkFMc11M-oHXOU4_E
 id: node.evento.field_data_e_orario_di_inizio
 field_name: field_data_e_orario_di_inizio
 entity_type: node

@@ -1,6 +1,9 @@
+uuid: cc2b9975-3969-4335-b366-1f941f69160a
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: ZX43r6bLUMF0uDgD0gvGjFl_IxvQIA8-l_fvAUJcKIo
 id: solo_testo
 label: 'Solo testo'
 revision: 0

@@ -1,3 +1,4 @@
+uuid: 9d376cb6-3420-4086-b636-97edf15f7fcd
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - datetime
+_core:
+  default_config_hash: u49pRSnOKy0ALEGfYCVb5SmahvufxZ067ZqUCyEyiJI
 id: node.documento_pubblico.field_data_protocollo
 field_name: field_data_protocollo
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: 431ce490-ee33-4e28-95e5-adf94a3c0e00
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.argomenti_in_evidenza
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: VjmKTQFPhqYdRfedirYxDpybH0-6LneyP6vzjfaTUks
 id: paragraph.argomenti_in_evidenza.default
 targetEntityType: paragraph
 bundle: argomenti_in_evidenza

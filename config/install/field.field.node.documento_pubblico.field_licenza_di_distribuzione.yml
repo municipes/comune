@@ -1,3 +1,4 @@
+uuid: 5d553235-b77c-42d2-9794-fe7b86b5c2ba
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_licenza_di_distribuzione
     - node.type.documento_pubblico
     - taxonomy.vocabulary.licenze
+_core:
+  default_config_hash: mx3YAme6aRMX4zKs_rapYB_Bwv1AtekYiANtvo9Ywlg
 id: node.documento_pubblico.field_licenza_di_distribuzione
 field_name: field_licenza_di_distribuzione
 entity_type: node

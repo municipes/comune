@@ -1,3 +1,4 @@
+uuid: 1ef3d9ac-e7fa-4625-bcff-88b785518e6a
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   module:
     - search_api
     - user
+_core:
+  default_config_hash: dGn9Gc4pXbXMrQaVyehmqRGr9wDZLy0LLz4DyWMAZdo
 id: bi_tutte_le_novita
 label: 'BI Tutte le novità (indice)'
 module: views

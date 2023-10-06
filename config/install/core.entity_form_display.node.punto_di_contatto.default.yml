@@ -1,3 +1,4 @@
+uuid: 02649abc-3844-4425-b887-7f6168d93279
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
     - office_hours
     - paragraphs
     - path
+_core:
+  default_config_hash: 7FlBsVQQi1li0Qsp2P5piR7CknhyuK0NKnqemJGfp0E
 id: node.punto_di_contatto.default
 targetEntityType: node
 bundle: punto_di_contatto

@@ -1,9 +1,12 @@
+uuid: 4be50fad-ddca-43db-92d7-bbcf6b6f4747
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: xHntYMCjn5zXRamjABtn3UWIvTiefS5HChHlCy20xoE
 id: paragraph.field_alignment
 field_name: field_alignment
 entity_type: paragraph

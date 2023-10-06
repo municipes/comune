@@ -1,8 +1,11 @@
+uuid: 8fab9098-d30e-467b-8335-db234b440760
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: U6gzqbsYE4qRdBUHVJ7Wvd3Cs1ay6YPc_454jfGUoxA
 id: paragraph.field_accordion_item_always_open
 field_name: field_accordion_item_always_open
 entity_type: paragraph

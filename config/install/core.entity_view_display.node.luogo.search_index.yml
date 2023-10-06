@@ -1,3 +1,4 @@
+uuid: 0656e205-5334-493d-961c-d2d88f0222e2
 langcode: it
 status: true
 dependencies:
@@ -28,6 +29,8 @@ dependencies:
     - address
     - text
     - user
+_core:
+  default_config_hash: CbpvDh77yKkBFO-NrBIus7FWk_wOh2Q1WbrN6jxTz8A
 id: node.luogo.search_index
 targetEntityType: node
 bundle: luogo

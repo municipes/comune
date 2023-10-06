@@ -1,9 +1,12 @@
+uuid: e4e2edd3-9d50-43a9-b789-cb43cda119d9
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: ej_2RoJjUeG55KyNJ6KDRcyNt5QLpD5TtPAMfyLaubc
 id: node.field_importi_viaggio_servizio
 field_name: field_importi_viaggio_servizio
 entity_type: node

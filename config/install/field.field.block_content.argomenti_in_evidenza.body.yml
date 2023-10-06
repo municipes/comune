@@ -1,3 +1,4 @@
+uuid: aeff4297-cca1-4897-93cf-af788ad3a9d3
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - field.storage.block_content.body
   module:
     - text
+_core:
+  default_config_hash: IeKe5h9DHj8NO2447L76QeknWGk05epiD41JA4H7tKE
 id: block_content.argomenti_in_evidenza.body
 field_name: body
 entity_type: block_content
@@ -19,4 +22,5 @@ default_value_callback: ''
 settings:
   display_summary: false
   required_summary: false
+  allowed_formats: {  }
 field_type: text_with_summary

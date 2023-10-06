@@ -1,6 +1,9 @@
+uuid: 4ffc0465-81a2-4785-81fc-641abe42f3c2
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: QkCHv9VWqLAICqo2Fr3URkq2xpAlEDv6wGLbQ7zpg-4
 id: private_files
 label: 'Private Files Directory'
 type: Directory

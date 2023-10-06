@@ -1,3 +1,4 @@
+uuid: e195557c-6721-4ec1-9f96-2459d10be4e1
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.citation
   module:
     - options
+_core:
+  default_config_hash: RArGxs5Pqd-c4RcQMdC0u-OMqCF2AiCH2uSxy7GsXJk
 id: paragraph.citation.field_alignment
 field_name: field_alignment
 entity_type: paragraph

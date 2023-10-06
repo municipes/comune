@@ -1,9 +1,12 @@
+uuid: 67f14130-659d-49bb-83d0-efa7da8e201b
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_parole_chiave
     - node.type.servizio
+_core:
+  default_config_hash: at75T1Kog6-A1S9Jz70vkqfAsTHzygGrIUT3XWTukYY
 id: node.servizio.field_parole_chiave
 field_name: field_parole_chiave
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: 0f927be1-226e-4e92-8ba4-c8ed58e94a2a
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - media.type.video
   module:
     - file
+_core:
+  default_config_hash: Skb_E71kWzkCPSqXslRMPmoKS0Hd3JUilvR6tU3HY2Q
 id: media.video.field_media_video_file
 field_name: field_media_video_file
 entity_type: media

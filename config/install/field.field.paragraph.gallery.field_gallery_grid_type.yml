@@ -1,3 +1,4 @@
+uuid: 72f351a8-7eb6-463b-b67f-f99660f92f06
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
   module:
     - options
+_core:
+  default_config_hash: WouzAaNMELJiqUAl_Yr4g7dOqaXWwFqu0eWW8OZqoXA
 id: paragraph.gallery.field_gallery_grid_type
 field_name: field_gallery_grid_type
 entity_type: paragraph

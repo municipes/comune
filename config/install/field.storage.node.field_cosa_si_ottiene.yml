@@ -1,9 +1,12 @@
+uuid: 55b3db9c-2865-40fa-8a61-d6a905cf7468
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: VbkHOkG_s0rnu84XfdCTMU6Ytqdx6V5mP668JDn9Zi0
 id: node.field_cosa_si_ottiene
 field_name: field_cosa_si_ottiene
 entity_type: node

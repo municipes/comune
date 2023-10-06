@@ -1,8 +1,11 @@
+uuid: 092584f0-bbcc-40a0-a6b2-dbd857da182d
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.servizio
+_core:
+  default_config_hash: irNSxz2H61RMSLES69LJjNIzoI7F-0o8g3l6EYSJDgs
 id: node.servizio.title
 field_name: title
 entity_type: node

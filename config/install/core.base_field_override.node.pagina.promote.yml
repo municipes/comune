@@ -1,8 +1,11 @@
+uuid: ef98c62e-4f55-44ff-b0d9-0eceda1bee75
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.pagina
+_core:
+  default_config_hash: Xi18TM7o1kLhzmnIz2wWrOSSc0ucFYNrfJCqG65KXeA
 id: node.pagina.promote
 field_name: promote
 entity_type: node

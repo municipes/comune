@@ -1,9 +1,12 @@
+uuid: 3829196a-5da5-4de8-ba4b-d3066a38e501
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_small
     - paragraphs.paragraphs_type.hero
+_core:
+  default_config_hash: v-xlzpPnkbDTLVgm6IuSK5SXPr9fXWBi5d2tJw1sKaI
 id: paragraph.hero.field_small
 field_name: field_small
 entity_type: paragraph

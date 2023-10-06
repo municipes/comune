@@ -1,9 +1,12 @@
+uuid: 67f18da7-5edb-41a6-8c9a-ee4f5e42a204
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.documento_pubblico
+_core:
+  default_config_hash: ckrNnX2SnQFNi9igUHVxaN8y6YiFY5tWnpEH5LiiWDY
 id: node.documento_pubblico.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: a8c436d8-ae44-4e65-92aa-3570a018672c
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: SJZPi0weaOHatOmY9HedwZtNjzDcBUybDL1OTMkL9cQ
 id: paragraph.field_blockquote_card
 field_name: field_blockquote_card
 entity_type: paragraph

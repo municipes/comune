@@ -1,3 +1,4 @@
+uuid: 750a3c72-5470-4c87-b02e-26f3f2d5482c
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.attachments
   module:
     - file
+_core:
+  default_config_hash: OQYqeRI7tlUUusg8yuhqJJPMHDIyODDs4Kd58VZLh_s
 id: paragraph.attachments.field_file
 field_name: field_file
 entity_type: paragraph

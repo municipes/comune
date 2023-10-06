@@ -1,8 +1,11 @@
+uuid: cb84147e-5f00-40f5-b77b-35c87fb60b1a
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: ZYk8GIL9B4lgqiNwDH7jaxy8pDuO89ntctvo9QsZiCM
 id: paragraph.field_id_video_youtube
 field_name: field_id_video_youtube
 entity_type: paragraph

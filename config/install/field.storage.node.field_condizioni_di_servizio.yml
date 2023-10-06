@@ -1,9 +1,12 @@
+uuid: 98d59338-9e8d-4ce4-aa05-4758bec6ab00
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: cHt_wl2HCJKHPJGU0NAVMT8C2irvLa0UDSDLMTaHbuw
 id: node.field_condizioni_di_servizio
 field_name: field_condizioni_di_servizio
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: 753a6a8c-050b-4d39-ae75-ceb82ca0d481
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.pagina
+_core:
+  default_config_hash: zm0-vrTwTzM3oHNoNTrnUbYyQIScuvU2cF96Wyn6JOE
 id: node.pagina
 target_entity_type_id: node
 target_bundle: pagina

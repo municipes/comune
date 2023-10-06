@@ -1,9 +1,12 @@
+uuid: 497b45ed-9913-4751-b9e3-6470de7031b4
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_cognome
     - node.type.ticket
+_core:
+  default_config_hash: v1hVTTW0yrkdF7zyNLTOsT2FcnHfApa9yWyJ5ecZBzE
 id: node.ticket.field_cognome
 field_name: field_cognome
 entity_type: node

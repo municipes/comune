@@ -1,9 +1,12 @@
+uuid: 6484da3f-b1a4-4985-9689-0d0891465648
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: CUiGgl0aoERf7f7AchfIrxHgZcY59lci71OYyjCqwSg
 id: node.field_life_events
 field_name: field_life_events
 entity_type: node

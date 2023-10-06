@@ -1,8 +1,11 @@
+uuid: 49f08a96-67f0-46a7-b555-85f3fca91b6d
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: Q16kZTprg40YEiCbwLAT_NyaLm_-jVme5B9Nd2Li_O0
 id: node.paragraph
 label: Paragraph
 targetEntityType: node

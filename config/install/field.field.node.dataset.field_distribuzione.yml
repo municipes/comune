@@ -1,3 +1,4 @@
+uuid: ba21cb1a-9c93-4956-8cd9-3fb875a8def5
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.dataset
   module:
     - text
+_core:
+  default_config_hash: 3r2LUjok3mUBuG6NIkwIiD0kWiSCgOjB09Z0_cIizAA
 id: node.dataset.field_distribuzione
 field_name: field_distribuzione
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

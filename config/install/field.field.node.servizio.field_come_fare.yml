@@ -1,3 +1,4 @@
+uuid: 36da0f97-b96d-4d0e-8d5f-5f04c45cb7a1
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: 70gp6j4IQuaoWVT61hIUVIAlXAKW2_929iAWpLOtyzA
 id: node.servizio.field_come_fare
 field_name: field_come_fare
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

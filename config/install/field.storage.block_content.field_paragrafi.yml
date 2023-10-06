@@ -1,3 +1,4 @@
+uuid: d7a6e6cb-ce2d-45df-b314-25ddb520d221
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - block_content
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: F32-8VyjxTQk-xbdcrsEP-dQyq5mi3z_hp-pgxD3aA4
 id: block_content.field_paragrafi
 field_name: field_paragrafi
 entity_type: block_content

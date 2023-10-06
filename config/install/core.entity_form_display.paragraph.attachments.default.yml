@@ -1,3 +1,4 @@
+uuid: 1e4efada-0d4a-442f-b1d4-4c672332d26a
 langcode: it
 status: true
 dependencies:
@@ -62,6 +63,8 @@ third_party_settings:
         formatter: open
         description: ''
         required_fields: true
+_core:
+  default_config_hash: g_CL911Kabp2f5IjirBoIRF_zAnBWBoqC43NxjOJCDY
 id: paragraph.attachments.default
 targetEntityType: paragraph
 bundle: attachments

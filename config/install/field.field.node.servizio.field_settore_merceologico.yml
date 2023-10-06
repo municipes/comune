@@ -1,9 +1,12 @@
+uuid: 1ed9a676-c2bd-4d1f-9801-424a6be3f365
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_settore_merceologico
     - node.type.servizio
+_core:
+  default_config_hash: ZepUDEEHyHuSTxo8rg22YXA_Umi-oZL75ArkF6Gj4Zk
 id: node.servizio.field_settore_merceologico
 field_name: field_settore_merceologico
 entity_type: node

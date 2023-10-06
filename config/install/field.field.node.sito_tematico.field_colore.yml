@@ -1,3 +1,4 @@
+uuid: 154a81ec-b375-412a-a246-b45c3de065f4
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_colore
     - node.type.sito_tematico
     - taxonomy.vocabulary.colore
+_core:
+  default_config_hash: d8BPAY0zNuDs3j_TRMmK-eg9_Lg-vzgONOrIMj94WYI
 id: node.sito_tematico.field_colore
 field_name: field_colore
 entity_type: node

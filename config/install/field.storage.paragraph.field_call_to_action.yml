@@ -1,9 +1,12 @@
+uuid: b177b0b4-6d6d-4a44-b181-07c69d46cc94
 langcode: it
 status: true
 dependencies:
   module:
     - link
     - paragraphs
+_core:
+  default_config_hash: nAhBF8yJqsAmuE2-PigWo8P1otdpW6O2JmkGpnb5Q50
 id: paragraph.field_call_to_action
 field_name: field_call_to_action
 entity_type: paragraph

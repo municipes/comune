@@ -1,9 +1,12 @@
+uuid: d5bc4140-d4df-4667-83d9-0ded60330f87
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: T8t8_d9dBrRF3ySYjvtOaZDh_rTpxZW3WpBjUZPDavw
 id: node.field_tipo_doc_albo_pretorio
 field_name: field_tipo_doc_albo_pretorio
 entity_type: node

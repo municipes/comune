@@ -1,9 +1,12 @@
+uuid: c90395a4-d1e5-4077-a55f-6c72b5e4e29c
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
     - text
+_core:
+  default_config_hash: d6Lta280vMZ4pYYcGt2gufk6uxnzyV_5gnbjb4HZVg4
 id: paragraph.field_testo_introduttivo
 field_name: field_testo_introduttivo
 entity_type: paragraph

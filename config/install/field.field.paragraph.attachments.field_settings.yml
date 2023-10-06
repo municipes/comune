@@ -1,3 +1,4 @@
+uuid: a38b6eee-facd-4611-a69d-3b83be8b23ae
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.settings
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: 3pRLz-7JzLmdl7V2jWKDx7M_jyCOPqT4ZUY4BRRAvxw
 id: paragraph.attachments.field_settings
 field_name: field_settings
 entity_type: paragraph

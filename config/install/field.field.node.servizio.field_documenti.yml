@@ -1,3 +1,4 @@
+uuid: b49f5a1e-2301-4619-a9b3-dae5845ccb76
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_documenti
     - node.type.documento_pubblico
     - node.type.servizio
+_core:
+  default_config_hash: 27c-iHfje7081TM5SH1xvlRfzYNwgjWMYPMXVihO-SI
 id: node.servizio.field_documenti
 field_name: field_documenti
 entity_type: node

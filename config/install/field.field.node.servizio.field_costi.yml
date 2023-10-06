@@ -1,3 +1,4 @@
+uuid: 5da15cbd-c966-4bf7-987f-a34cc556ae2e
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: LLfDNtfYR61UCJE5O2WPIvCvxoK1EyG1HuNPmSG8cN8
 id: node.servizio.field_costi
 field_name: field_costi
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

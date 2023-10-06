@@ -1,9 +1,12 @@
+uuid: c942fcb6-1f7d-474f-acb3-42e31ee9c0a7
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_data_element
     - paragraphs.paragraphs_type.in_evidenza
+_core:
+  default_config_hash: 1XzHV08dalcwTHh0HrBcxqczvKgjFyVfQJNcf3d22E4
 id: paragraph.in_evidenza.field_data_element
 field_name: field_data_element
 entity_type: paragraph

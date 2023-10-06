@@ -1,8 +1,11 @@
+uuid: 74112eff-13c4-4836-8afa-97d4190cea8d
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: S03IFyIqC7emBK5872DvNbYNHgHpU_VMEhDVGzPxe8o
 id: persona
 label: Persona
 type: 'canonical_entities:node'

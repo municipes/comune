@@ -1,3 +1,4 @@
+uuid: 09fc2f88-f603-416c-95c4-02a07a34e9d0
 langcode: it
 status: false
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - node.type.pagina
   module:
     - user
+_core:
+  default_config_hash: KfLTET1RSXoMLXi5bJlYF3OQyeUiG4RN6TToIJl98Is
 id: node.pagina.teaser
 targetEntityType: node
 bundle: pagina

@@ -1,3 +1,4 @@
+uuid: 9eba784a-6c2e-48fe-9f2c-4d3a0b8a1e26
 langcode: it
 status: false
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: dAVk_QXgsBkNApiC_9EtUrsq0OsiLI0-yfEe9uVb6b4
 id: frontpage
 label: 'Pagina iniziale'
 module: node

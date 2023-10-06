@@ -1,3 +1,4 @@
+uuid: af0611a4-85c2-47a9-a4f9-6f82783ea02b
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
     - text
     - ui_patterns_field_formatters
     - user
+_core:
+  default_config_hash: lXlmOQwAnxu3Fk87yKG0mBEGS991Lb7AKmYmy2n-yrc
 id: node.appuntamento.default
 targetEntityType: node
 bundle: appuntamento

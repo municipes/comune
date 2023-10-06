@@ -1,8 +1,11 @@
+uuid: b7df1139-4e95-4e7e-bccf-46932b4b350f
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: Bq039-b-ksg8bTpCdzeU1Cw_iJ4BS228yi9xjhmwTz4
 id: node.field_esito
 field_name: field_esito
 entity_type: node

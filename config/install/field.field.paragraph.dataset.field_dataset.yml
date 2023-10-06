@@ -1,3 +1,4 @@
+uuid: f8a90512-3deb-4824-90a6-9d708c02fd97
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_dataset
     - media.type.dataset
     - paragraphs.paragraphs_type.dataset
+_core:
+  default_config_hash: DaweGUXOgB1kdgL_RvMUB1JiVETOFmXJzLC3ZMPAJjA
 id: paragraph.dataset.field_dataset
 field_name: field_dataset
 entity_type: paragraph

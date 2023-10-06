@@ -1,3 +1,4 @@
+uuid: 77b1e370-de65-4d20-9d1e-47ea4f3af388
 langcode: it
 status: true
 dependencies:
@@ -26,6 +27,8 @@ dependencies:
     - media_library
     - path
     - text
+_core:
+  default_config_hash: ezm_ux40glyQNs73HXZHCjz9YLlTn37oJRW6iFRgKl8
 id: node.notizia.default
 targetEntityType: node
 bundle: notizia
@@ -227,3 +230,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_ulteriori_informazioni: true
+  publish_on: true
+  unpublish_on: true

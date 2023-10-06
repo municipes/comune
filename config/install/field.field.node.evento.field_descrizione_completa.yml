@@ -1,3 +1,4 @@
+uuid: 0798e12d-7fde-493a-a407-17fe77597c02
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.evento
   module:
     - text
+_core:
+  default_config_hash: 5VhbtC8WNvpsrjMHDE8mYSb9RDUu73kjHm8nWdUN6QU
 id: node.evento.field_descrizione_completa
 field_name: field_descrizione_completa
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

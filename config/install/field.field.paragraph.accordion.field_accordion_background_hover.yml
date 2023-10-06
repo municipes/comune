@@ -1,9 +1,12 @@
+uuid: fb89d182-bf7a-4354-bfaf-13ee34f16ee4
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_accordion_background_hover
     - paragraphs.paragraphs_type.accordion
+_core:
+  default_config_hash: 2DAnraLsuUC4cqmNPMgzKmgYu6no8ZbEsvwY7JEOmss
 id: paragraph.accordion.field_accordion_background_hover
 field_name: field_accordion_background_hover
 entity_type: paragraph

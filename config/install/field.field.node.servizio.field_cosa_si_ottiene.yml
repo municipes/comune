@@ -1,3 +1,4 @@
+uuid: b01e14ed-10d6-4dc5-a7b8-34c298dbb5b8
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: zDnrhWITSxpCIsGrKu9WFVQZW4H36PBrWwdFHs4aNDs
 id: node.servizio.field_cosa_si_ottiene
 field_name: field_cosa_si_ottiene
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

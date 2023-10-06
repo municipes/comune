@@ -1,9 +1,12 @@
+uuid: 2c38c3b1-93ca-47d7-9bd2-e8d8e8d6aeef
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_identificativo
     - node.type.documento_pubblico
+_core:
+  default_config_hash: 6OXPfT5QFjI_GOGkKPBJaUPgXPVKEBkLon3KWNWWo_s
 id: node.documento_pubblico.field_identificativo
 field_name: field_identificativo
 entity_type: node

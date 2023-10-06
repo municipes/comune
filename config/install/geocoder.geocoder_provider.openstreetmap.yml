@@ -1,6 +1,9 @@
+uuid: 342750c9-c79a-4176-baa4-60ea21f4cbd8
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: wgFjbXfma_MeJ9BgGmteVZuKqtGcZH0oKYcFXD9YODc
 id: openstreetmap
 label: OpenStreetMap
 plugin: openstreetmap

@@ -1,3 +1,4 @@
+uuid: 9816f13d-f0ef-454a-89f6-1750a6ee4d62
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.date_timeline_item
   module:
     - datetime
+_core:
+  default_config_hash: w-BfnYVDz0zNrMuKwObmT9ONGbT70fb-n3bV3mZz-mk
 id: paragraph.date_timeline_item.default
 targetEntityType: paragraph
 bundle: date_timeline_item

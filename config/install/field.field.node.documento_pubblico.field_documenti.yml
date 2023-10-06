@@ -1,9 +1,12 @@
+uuid: 01dcf382-a184-4981-a36d-8fa8f00db4b3
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_documenti
     - node.type.documento_pubblico
+_core:
+  default_config_hash: HDAvbp-sF0wntG2zd6stRHn1xxZpdlt4DENkRCgAwP0
 id: node.documento_pubblico.field_documenti
 field_name: field_documenti
 entity_type: node

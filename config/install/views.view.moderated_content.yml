@@ -1,3 +1,4 @@
+uuid: fa98285a-d741-46de-903d-016db4eca499
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   enforced:
     module:
       - content_moderation
+_core:
+  default_config_hash: 3fkH4VPJ3ovizTvw3fSqoLKxKHyCCdwcKFoGYWEGxSI
 id: moderated_content
 label: 'Contenuto moderato'
 module: views

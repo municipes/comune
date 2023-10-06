@@ -1,3 +1,4 @@
+uuid: 81d016e2-d55b-4daf-b718-c9c54bb0fc11
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.persona
   module:
     - text
+_core:
+  default_config_hash: K8LqdKui2p7zUMo5UDNE3GGM1NrW4-jr75WY6dY1UDg
 id: node.persona.field_competenze
 field_name: field_competenze
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

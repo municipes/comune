@@ -1,6 +1,9 @@
+uuid: 392c9b08-474e-49ce-95a6-7190dc971f39
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: JniL1VpYXwZW_lMQVYxKk0mOrtpptVbOkuwS1mZqLm0
 id: member
 label: 'Member profile'
 description: 'Configuration for site members'

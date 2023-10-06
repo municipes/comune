@@ -1,6 +1,9 @@
+uuid: 18dc0401-7c90-4b4a-9228-6c21ec88d0b4
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pe0dgnKT08G5l8-Asapds0dVkcJMbiZEjFiBH38mYp8
 id: image_svg
 label: 'Image SVG'
 description: 'Use local svg images for reusable media.'

@@ -1,3 +1,4 @@
+uuid: 0b3dd4c0-d6dd-45dd-892c-877e3604d391
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: 22TVK9guHBQ2HJNGqcy2IchcqFNEK-Kr8Tm7nkOQjDs
 id: node.notizia.field_galleria_immagini
 field_name: field_galleria_immagini
 entity_type: node

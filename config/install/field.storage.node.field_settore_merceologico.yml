@@ -1,8 +1,11 @@
+uuid: fce36584-91c3-42b9-9f3c-67a5cb4264d1
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: tnoT0DgdIY3X8knJ86M-lSKCxZRqVg2So5CqFcaH1nU
 id: node.field_settore_merceologico
 field_name: field_settore_merceologico
 entity_type: node

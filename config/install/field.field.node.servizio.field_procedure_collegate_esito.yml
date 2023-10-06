@@ -1,3 +1,4 @@
+uuid: a032d563-beff-41a4-baec-c3c8760af8b0
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: CuL0IpbyxWhRV1po0Ap6FRC9zPPdQrWpL-R8cwOokg8
 id: node.servizio.field_procedure_collegate_esito
 field_name: field_procedure_collegate_esito
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

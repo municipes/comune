@@ -1,8 +1,11 @@
+uuid: 9509948a-f0f6-4051-9567-87277c00a772
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 4aqFEfOu_tiTryjFRmWyUiHQ4NOodFtjyKLCGZOf770
 id: unita_organizzativa
 label: 'Unità organizzativa'
 type: 'canonical_entities:node'

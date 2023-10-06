@@ -1,9 +1,12 @@
+uuid: c36baefd-25ef-4ab5-ac41-ea1e46ef2965
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_full_width
     - paragraphs.paragraphs_type.settings
+_core:
+  default_config_hash: tyPQjNnofNSAi7gKWF-QN77SUGVNXAGgh-ANubohBns
 id: paragraph.settings.field_full_width
 field_name: field_full_width
 entity_type: paragraph

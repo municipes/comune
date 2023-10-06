@@ -1,3 +1,4 @@
+uuid: f862869b-e0ed-4743-9494-f760a6db56f1
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_punto_di_contatto
     - node.type.punto_di_contatto
     - taxonomy.vocabulary.tipi_punto_di_contatto
+_core:
+  default_config_hash: rSm_9Kfg3xo2GYO8xcZUw4VgyOCaJwUMtH6cYRJ_CVI
 id: node.punto_di_contatto.field_tipo_punto_di_contatto
 field_name: field_tipo_punto_di_contatto
 entity_type: node

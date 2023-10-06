@@ -1,9 +1,12 @@
+uuid: 0e36f225-6b53-45b7-88d9-4e5d82f7b4b3
 langcode: it
 status: true
 dependencies:
   module:
     - editor
     - media
+_core:
+  default_config_hash: fdYDbxehXdtCKsfbSnskVAf-T_zQWEaI66g2dkdMXJE
 name: 'Bootstrap Italia 2'
 format: bootstrap_italia_2
 weight: 0

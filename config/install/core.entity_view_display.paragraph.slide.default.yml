@@ -1,3 +1,4 @@
+uuid: db5cffe7-445c-4082-92ee-43dab1710e4b
 langcode: it
 status: true
 dependencies:
@@ -10,6 +11,8 @@ dependencies:
   module:
     - responsive_image
     - text
+_core:
+  default_config_hash: Sve7TrAfCuojzctNmRNPvtSQWxBZ0pQ_xCqxciL0rEY
 id: paragraph.slide.default
 targetEntityType: paragraph
 bundle: slide

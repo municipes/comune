@@ -1,9 +1,12 @@
+uuid: 9012c8a5-df09-4f27-adc0-d0861b0daf48
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: YyFyoIzXomZYOqIHKCsW54uoTZhevQjsSCmuecz6-dE
 id: paragraph.field_calendario
 field_name: field_calendario
 entity_type: paragraph

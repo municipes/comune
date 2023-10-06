@@ -1,3 +1,4 @@
+uuid: 57097124-a5fb-4180-84fe-2ea356918035
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - media.type.remote_video
   module:
     - media_video_micromodal
+_core:
+  default_config_hash: VBa0J511R2mi9ZlbnWoGLrCSeh5UMZ6gTQ_ZJPEmTF4
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video

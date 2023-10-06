@@ -1,6 +1,9 @@
+uuid: 2d7427f5-1b98-4ff9-914c-2ef130168db2
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 7cOLPPBNrHLanO9rZBxxJ7j9l-PVsk339DdzXQgDmpo
 id: con_paragrafi
 label: 'Con paragrafi'
 revision: 0

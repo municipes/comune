@@ -1,9 +1,12 @@
+uuid: c9cdfae1-bb03-4a4c-bc1f-e8d0051ae188
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: XQigWttWlNVbEyMnB8DiM5RdQV1ASEaeWnoml0HGKxo
 id: paragraph.field_tipo_di_layout_argomenti
 field_name: field_tipo_di_layout_argomenti
 entity_type: paragraph

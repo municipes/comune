@@ -1,8 +1,11 @@
+uuid: 56a63998-2c21-4ca9-a3df-f415210f66c8
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: Pwlzinqs_yzPEGjNgXiHWE-Jir3E5u9dDwJAHyHvAtQ
 id: paragraph.field_background_image_fixed
 field_name: field_background_image_fixed
 entity_type: paragraph

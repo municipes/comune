@@ -1,8 +1,11 @@
+uuid: fe2429fb-ce3f-4707-ae88-4d8800ba304b
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.servizio
+_core:
+  default_config_hash: '-zJpiYVmZeVRfjLyuz0nnwRjKwFAQXfz59jUlJGIsuY'
 id: node.servizio.promote
 field_name: promote
 entity_type: node

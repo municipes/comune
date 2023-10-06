@@ -1,9 +1,12 @@
+uuid: 7b8a6d37-f449-4821-8177-70ae2fc41b18
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: KwOyGodtP24AR2IrUVAtejZraaEBl6IKq71mmq395uo
 id: node.field_spese_elettorali
 field_name: field_spese_elettorali
 entity_type: node

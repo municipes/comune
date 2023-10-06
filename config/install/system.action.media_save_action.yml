@@ -1,8 +1,11 @@
+uuid: e42401bf-83fe-4952-8386-a8c17ec1f45a
 langcode: it
 status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: bd9Ta-BK0Zq01cBY1nhAqSxYQSobNqlD3F5iDh_D99o
 id: media_save_action
 label: 'Save media'
 type: media

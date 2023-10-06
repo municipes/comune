@@ -1,3 +1,4 @@
+uuid: 28a73990-8a34-4955-9e50-d5a1f2523f4e
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_responsabile_struttura
     - node.type.incarico
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: v1tMQQb3kl7Dq5olMQcFk83x6esApRYBkyIjtqWCtec
 id: node.incarico.field_responsabile_struttura
 field_name: field_responsabile_struttura
 entity_type: node

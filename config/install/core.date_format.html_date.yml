@@ -1,6 +1,9 @@
+uuid: 64a4f56d-0748-4357-9d88-d91b6662f4d0
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: GPfBm9eadT_TT0PrvMl_angWYwReBy8_CRl-Fx_ydj4
 id: html_date
 label: 'Data HTML'
 locked: true

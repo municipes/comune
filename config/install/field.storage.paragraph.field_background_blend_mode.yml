@@ -1,9 +1,12 @@
+uuid: b5d78b1c-50f8-4226-9ed8-9a84efa8bfda
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: xBpDAwEm08ZINGnaBpmaa40nAMpv_1yQQvnRw8ZsLQc
 id: paragraph.field_background_blend_mode
 field_name: field_background_blend_mode
 entity_type: paragraph

@@ -1,3 +1,4 @@
+uuid: 57c85890-517b-4b90-8362-59faa7c55765
 langcode: it
 status: false
 dependencies:
@@ -15,6 +16,8 @@ dependencies:
     - node.type.dataset
   module:
     - user
+_core:
+  default_config_hash: JsGth0uAGfResbn07eIp9LS1-qIjbqC-LLSBgCJtIfQ
 id: node.dataset.teaser_in_evidenza
 targetEntityType: node
 bundle: dataset

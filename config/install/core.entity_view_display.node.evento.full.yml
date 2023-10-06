@@ -1,3 +1,4 @@
+uuid: d627e87e-42aa-4df4-924d-88ef45f6b117
 langcode: it
 status: true
 dependencies:
@@ -30,6 +31,8 @@ dependencies:
     - ui_patterns_field_formatters
     - user
     - viewsreference
+_core:
+  default_config_hash: y_bAwJLIiLOGJ3Tkf9TufWocYob2BbqdSoLx2_JfFz4
 id: node.evento.full
 targetEntityType: node
 bundle: evento

@@ -1,3 +1,4 @@
+uuid: 191d2457-6d84-4345-b43b-de874289b4c2
 langcode: it
 status: true
 dependencies:
@@ -10,6 +11,8 @@ dependencies:
     - pathauto
     - system
     - taxonomy
+_core:
+  default_config_hash: bqnPOVbOu5gcRszI961YtGae48o8jxvN3IW_CE2gxbg
 id: editor
 label: Redattore
 weight: 11

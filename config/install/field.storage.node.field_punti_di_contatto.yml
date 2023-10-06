@@ -1,8 +1,11 @@
+uuid: ba466647-d8db-40c4-988f-15df495d6513
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: WhN-AcdSrX9sLpY-CT5IwkKnmFsEyzi9bZk2iIDyzs0
 id: node.field_punti_di_contatto
 field_name: field_punti_di_contatto
 entity_type: node

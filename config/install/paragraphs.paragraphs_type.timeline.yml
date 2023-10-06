@@ -1,8 +1,11 @@
+uuid: a5f91c61-d118-47b7-9a65-8da204f6c778
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:ceb6c335-05c5-4c55-bf1a-1a24a882e9e2'
+_core:
+  default_config_hash: bY5CRQjK1oETahn-EyIZE4AqDTw1vqILj-8tkuKIY2I
 id: timeline
 label: Timeline
 icon_uuid: ceb6c335-05c5-4c55-bf1a-1a24a882e9e2

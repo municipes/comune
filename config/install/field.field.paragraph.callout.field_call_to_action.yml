@@ -1,3 +1,4 @@
+uuid: ce57183d-77c3-4adf-945e-ac8836ac0f5b
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.callout
   module:
     - link
+_core:
+  default_config_hash: ytUKWlXOJcdwM7nT8IzyEjxg22VGWRV1c1kS72ka8Io
 id: paragraph.callout.field_call_to_action
 field_name: field_call_to_action
 entity_type: paragraph

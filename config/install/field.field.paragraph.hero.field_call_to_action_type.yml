@@ -1,3 +1,4 @@
+uuid: 62e7105c-ad3a-4d86-81ce-d6dc07f28093
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.hero
   module:
     - options
+_core:
+  default_config_hash: S-5B3t8c6lU8AEN_gN8GTFvjFNpGmneTIKiBo9wW7bA
 id: paragraph.hero.field_call_to_action_type
 field_name: field_call_to_action_type
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: 431d6f7f-d3a6-4340-afd7-c707138a01a6
 langcode: it
 status: true
 dependencies:
   module:
     - file
+_core:
+  default_config_hash: utiaVetoknD3Wlo3bHPo4swxgovH84u_FmPHnDfAunI
 id: file.token
 label: Token
 targetEntityType: file

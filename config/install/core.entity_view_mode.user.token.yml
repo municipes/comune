@@ -1,8 +1,11 @@
+uuid: d2181e24-b070-4bf4-971b-b13bce8d7c10
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: mlLH4e6ZCsv8j31TBhMKhF_txQN8hhHyCNsUcUFSNe4
 id: user.token
 label: Token
 targetEntityType: user

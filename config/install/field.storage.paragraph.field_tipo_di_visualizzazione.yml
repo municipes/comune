@@ -1,9 +1,12 @@
+uuid: 7cd7a643-a8a5-41ec-af2d-0b9a70d0c4a7
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: iSq8jaqBnMda6TeOb3BvUZnt32Lv69OU-sLYuI-7v4E
 id: paragraph.field_tipo_di_visualizzazione
 field_name: field_tipo_di_visualizzazione
 entity_type: paragraph

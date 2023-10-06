@@ -1,3 +1,4 @@
+uuid: 923c2706-c4b2-442b-aef8-0c550a0b4194
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_allegati
     - media.type.document
     - node.type.servizio
+_core:
+  default_config_hash: 9FhvLDe7Db29sttceUvLaUrC636fb7P-ye1lNm1L-d8
 id: node.servizio.field_allegati
 field_name: field_allegati
 entity_type: node

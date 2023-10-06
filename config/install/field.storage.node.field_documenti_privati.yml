@@ -1,8 +1,11 @@
+uuid: d4c90b7b-112f-48f4-ba56-bdc43ab5f58b
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 6zS8KBcHOW4sbRX1tzlsqnXAsI2B2jnFeTU0_MbSx5Q
 id: node.field_documenti_privati
 field_name: field_documenti_privati
 entity_type: node

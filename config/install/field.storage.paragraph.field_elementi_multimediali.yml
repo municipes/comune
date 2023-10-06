@@ -1,9 +1,12 @@
+uuid: bb7ba93f-7057-41cd-9083-e956fb139f70
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: FEiAbLtg9QtG92SXmaXISfCx9VqZfJvjJ3OehLb43lo
 id: paragraph.field_elementi_multimediali
 field_name: field_elementi_multimediali
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: 9105b42b-a5ab-4bb8-a5f1-fc4d0d18cc0a
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:81be34f9-dc6a-4a12-b21b-5fd146a46ec2'
+_core:
+  default_config_hash: r8PSOIyfPi5QIA9fu7jrkcPSiKuut0Y9qVhWE5lsgoA
 id: carousel
 label: Carosello
 icon_uuid: 81be34f9-dc6a-4a12-b21b-5fd146a46ec2

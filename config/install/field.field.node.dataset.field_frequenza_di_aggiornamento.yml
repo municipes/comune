@@ -1,3 +1,4 @@
+uuid: 476a372c-4846-4c66-9128-d8dd54dd65cb
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_frequenza_di_aggiornamento
     - node.type.dataset
     - taxonomy.vocabulary.frequenze_di_aggiornamento
+_core:
+  default_config_hash: LVgZYLF3x2yMw9zGgi8u_F5pyW0bbQlZUmPQlV2twfQ
 id: node.dataset.field_frequenza_di_aggiornamento
 field_name: field_frequenza_di_aggiornamento
 entity_type: node

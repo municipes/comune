@@ -1,8 +1,11 @@
+uuid: b3314446-194d-41ae-b44e-21845003670d
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: uu2IVzSm6gAHPwFj20mRfwoY41ngdP6DKWZUpUE7OdI
 id: node.field_luogo
 field_name: field_luogo
 entity_type: node

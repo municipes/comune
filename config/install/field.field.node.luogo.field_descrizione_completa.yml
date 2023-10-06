@@ -1,3 +1,4 @@
+uuid: 4c67cac0-434a-4815-960d-b1bc13c9974e
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.luogo
   module:
     - text
+_core:
+  default_config_hash: tRPLbuTLQfLenvyfgtRFfiW8dh_LRdU6kC2FMGfCcU0
 id: node.luogo.field_descrizione_completa
 field_name: field_descrizione_completa
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

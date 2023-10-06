@@ -1,9 +1,12 @@
+uuid: 57cadbac-9675-4070-8d8f-0f7d62dd140b
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_blockquote_simple
     - paragraphs.paragraphs_type.citation
+_core:
+  default_config_hash: xS2OqiqyuValpeFPYKn3yV8jxL628Wkt-c-pI285bmI
 id: paragraph.citation.field_blockquote_simple
 field_name: field_blockquote_simple
 entity_type: paragraph

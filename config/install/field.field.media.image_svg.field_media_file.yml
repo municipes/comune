@@ -1,3 +1,4 @@
+uuid: b3163ea6-e12d-4a71-be31-93a9abacbbc7
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - media.type.image_svg
   module:
     - file
+_core:
+  default_config_hash: PdjN2UY1YP9CNfW1ZLFQ6YlgO2lJ6KkwtWK1sxIPFyI
 id: media.image_svg.field_media_file
 field_name: field_media_file
 entity_type: media

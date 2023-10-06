@@ -1,9 +1,12 @@
+uuid: 2c806050-f148-496f-bb1c-b711b953f1ce
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_nome
     - node.type.ticket
+_core:
+  default_config_hash: gCaAppJkhC9b7Hh8W4PP8z5DgumsLYw8Tw_86vF4mXg
 id: node.ticket.field_nome
 field_name: field_nome
 entity_type: node

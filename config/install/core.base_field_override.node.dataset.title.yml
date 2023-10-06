@@ -1,8 +1,11 @@
+uuid: bd477b18-fe55-4a12-85e1-f68da7993fca
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.dataset
+_core:
+  default_config_hash: hP0LG5P6JnwG7-KqtAZlmXT0tnXxCJKlTnW-6lzBYZ0
 id: node.dataset.title
 field_name: title
 entity_type: node

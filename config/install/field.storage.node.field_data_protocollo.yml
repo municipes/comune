@@ -1,9 +1,12 @@
+uuid: 56c54a5a-9acb-496b-9f44-994aa3f66c5f
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: XrleuxQtQ7LnDVTpbCaRhFL72547PD6SMjJdRUaASZM
 id: node.field_data_protocollo
 field_name: field_data_protocollo
 entity_type: node

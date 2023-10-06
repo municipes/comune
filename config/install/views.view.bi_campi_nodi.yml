@@ -1,3 +1,4 @@
+uuid: 5564d0be-09fc-47f3-b333-40ad9d4754b5
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ dependencies:
     - datetime
     - node
     - user
+_core:
+  default_config_hash: isgM4a23gkWLifdo7fE_u0R8HZIQXMu8tv_FrN0gD0w
 id: bi_campi_nodi
 label: 'BI Campi nodi'
 module: views

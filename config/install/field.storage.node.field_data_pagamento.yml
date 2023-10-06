@@ -1,9 +1,12 @@
+uuid: 72795c8d-09c1-4001-b822-2cffee987d95
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: Oa4j_L1xV-TdxYUIFChMlk9r4iixhszhhubN5JUYO_o
 id: node.field_data_pagamento
 field_name: field_data_pagamento
 entity_type: node

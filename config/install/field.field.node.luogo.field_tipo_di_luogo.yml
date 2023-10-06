@@ -1,3 +1,4 @@
+uuid: 541dc3c6-5a63-4c68-a496-e7c19059bca3
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_luogo
     - node.type.luogo
     - taxonomy.vocabulary.tipi_di_luogo
+_core:
+  default_config_hash: axuv2pEI6bxqieny5YjESLuGPBBglwtFVG-fkaUDGnQ
 id: node.luogo.field_tipo_di_luogo
 field_name: field_tipo_di_luogo
 entity_type: node

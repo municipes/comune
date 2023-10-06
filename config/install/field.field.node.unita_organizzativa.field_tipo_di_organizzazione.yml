@@ -1,3 +1,4 @@
+uuid: f5e711b3-4b84-48bd-9691-d729ca1a1084
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_organizzazione
     - node.type.unita_organizzativa
     - taxonomy.vocabulary.tipi_unita_organizzativa
+_core:
+  default_config_hash: '-XuDE9Kx-YQYwwKjvFjdqwbEDDlOGE0o6T-fpxGpaUU'
 id: node.unita_organizzativa.field_tipo_di_organizzazione
 field_name: field_tipo_di_organizzazione
 entity_type: node

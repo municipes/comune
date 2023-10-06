@@ -1,3 +1,4 @@
+uuid: f486a5dd-f71d-4690-a626-4524b60530bf
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.argomenti
   module:
     - text
+_core:
+  default_config_hash: NibITJJD6MO6XjhJ_vxQ07d-7gbHLIN9skT2WXi-xwg
 id: taxonomy_term.argomenti.default
 targetEntityType: taxonomy_term
 bundle: argomenti

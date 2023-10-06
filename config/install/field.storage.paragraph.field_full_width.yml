@@ -1,8 +1,11 @@
+uuid: 9bf7c309-0f50-416e-8439-b8f8555c18b5
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: ugXTdrR3ILH8AlEARz4pqo55GVEOYxkPx_S9CL7ExKI
 id: paragraph.field_full_width
 field_name: field_full_width
 entity_type: paragraph

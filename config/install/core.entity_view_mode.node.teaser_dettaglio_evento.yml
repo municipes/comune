@@ -1,8 +1,11 @@
+uuid: 8bf210b3-cf59-46bd-a50f-eafe8cd9a0b6
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: HiRX3rnUkPw3TF3E-0r47kzhwnherXcTATUTZgwMccI
 id: node.teaser_dettaglio_evento
 label: 'Teaser - Dettaglio Evento'
 targetEntityType: node

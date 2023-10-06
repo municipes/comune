@@ -1,8 +1,11 @@
+uuid: 817b7a1f-cc46-4910-aa9c-26ccff1a44fa
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.sito_tematico
+_core:
+  default_config_hash: GQwAeILr_CpFPAmwjlz3SdXhPqaAsDFf0Fjww190KK8
 id: node.sito_tematico
 target_entity_type_id: node
 target_bundle: sito_tematico

@@ -1,3 +1,4 @@
+uuid: b32c6664-0bc1-42f3-a6a9-e280c430ee35
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: VGrYzyZibQBuIkyNNrNc3DEXdP_La-Z7aERNJvQi1fM
 id: node.appuntamento.teaser
 targetEntityType: node
 bundle: appuntamento

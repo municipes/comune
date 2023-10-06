@@ -1,6 +1,9 @@
+uuid: b9a1e3bb-e78c-41e1-b597-ae02538cfbc9
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: uEelEr7DViPGPCmzhZAoisOVemkN-c9kXCl0VgCSKWo
 name: Argomenti
 vid: argomenti
 description: 'Vocabolario controllato che raccoglie un subset dei vocaboli definiti in Eurovoc.'

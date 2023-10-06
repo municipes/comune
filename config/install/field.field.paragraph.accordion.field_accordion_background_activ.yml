@@ -1,9 +1,12 @@
+uuid: 12f6a914-ad13-4080-befb-8f7b028fcddb
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_accordion_background_activ
     - paragraphs.paragraphs_type.accordion
+_core:
+  default_config_hash: iyU70ATtglrjDXjwkZ2zG5N9VQwPiP4FP3sPEvJSlwc
 id: paragraph.accordion.field_accordion_background_activ
 field_name: field_accordion_background_activ
 entity_type: paragraph

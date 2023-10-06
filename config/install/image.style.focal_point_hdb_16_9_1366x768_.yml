@@ -1,8 +1,11 @@
+uuid: c1c4ded6-25a0-40ad-b352-bd1429e484a2
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: zuG_3T0-ASMu5coZFVfc-jyi7yk5hIgav3dflvie8Ec
 name: focal_point_hdb_16_9_1366x768_
 label: 'Punto focale HDB ~16:9 (1366x768) Wide'
 effects:

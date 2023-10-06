@@ -1,3 +1,4 @@
+uuid: a29664f4-b74b-44e1-854b-2348d61d494c
 langcode: it
 status: true
 dependencies:
@@ -63,6 +64,8 @@ third_party_settings:
         formatter: closed
         description: 'Docs for <em>Container classes</em> field: <a href="https://italia.github.io/bootstrap-italia/docs/componenti/sections/#colori-di-sfondo" title="Read the Docs" target="_blank">https://italia.github.io/bootstrap-italia/docs/componenti/sections/#colori-di-sfondo</a>'
         required_fields: false
+_core:
+  default_config_hash: sT1mtfJoscy6LL0bKzVXy_VdqF0vzVwj6b-6irrimMk
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section

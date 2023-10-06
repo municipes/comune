@@ -1,8 +1,11 @@
+uuid: 3a29f1ee-538f-4cd0-bc62-03854a1ca5c1
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: WOjoW6e4qvOk_AKGgJ3l1FjlRHSiIAfVYIMKBBRnJ3k
 id: paragraph.field_hero_image_filter
 field_name: field_hero_image_filter
 entity_type: paragraph

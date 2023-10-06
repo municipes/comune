@@ -1,3 +1,4 @@
+uuid: dbacb2f2-e823-48af-9275-920be01b1f2c
 langcode: it
 status: true
 dependencies:
@@ -17,6 +18,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
+_core:
+  default_config_hash: u1uvErq4D2yeltxqCKGBBBGRpZx3ogCR4IKEVjEA47A
 name: 'Tipo di accesso al servizio'
 vid: tipo_di_accesso_al_servizio
 description: ''

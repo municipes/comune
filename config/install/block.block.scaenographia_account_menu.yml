@@ -1,3 +1,4 @@
+uuid: 2894ec2c-c587-4a0f-a192-a97d53d6da56
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: TuHsCa1vRwuNP46ImuD_c-xHQKyfDcCH4YCTUzjlGHU
 id: scaenographia_account_menu
 theme: scaenographia
 region: header_slim_action

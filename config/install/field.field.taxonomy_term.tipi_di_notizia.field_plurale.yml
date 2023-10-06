@@ -1,9 +1,12 @@
+uuid: 36a2d52d-69e4-4e4d-8532-5724c4cc5f89
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_plurale
     - taxonomy.vocabulary.tipi_di_notizia
+_core:
+  default_config_hash: S8aRkcedO43aZPQ49pFot8zl8WcEUZCKue70ntR-V9s
 id: taxonomy_term.tipi_di_notizia.field_plurale
 field_name: field_plurale
 entity_type: taxonomy_term

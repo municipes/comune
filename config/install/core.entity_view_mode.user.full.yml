@@ -1,8 +1,11 @@
+uuid: 06cf149e-ab2c-4756-b206-fcb1e40f4eec
 langcode: it
 status: false
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: c6nWNiher4FlBYHPkXlowx8vDFtgQO4ULxi5kpR2skI
 id: user.full
 label: 'Profilo utente'
 targetEntityType: user

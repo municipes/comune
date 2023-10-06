@@ -1,3 +1,4 @@
+uuid: d688eef4-5707-43bc-b281-66d2cc9f686c
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.accesso_al_servizio
     - node.type.luogo
     - node.type.servizio
+_core:
+  default_config_hash: RDMRvti7SEGpY3H8GVZ4BAi9e4IiZm75-JfZIRydRvk
 id: node.servizio.field_accedi_al_servizio
 field_name: field_accedi_al_servizio
 entity_type: node

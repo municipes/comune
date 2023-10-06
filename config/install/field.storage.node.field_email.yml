@@ -1,8 +1,11 @@
+uuid: ca327092-308c-4914-a89b-42456b4c3a56
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 2e5wZbChFMBnRkqDzZAhCKTOtxOD-PDARRIk9_m9lSI
 id: node.field_email
 field_name: field_email
 entity_type: node

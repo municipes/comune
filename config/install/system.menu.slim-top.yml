@@ -1,6 +1,9 @@
+uuid: 717057c9-54e4-43f3-8de5-9564dc8a9793
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: AOnJQ1QEiQfGYKcG7LPLqTZGmFS249Ye6QxtzQNCQHc
 id: slim-top
 label: 'Zona superiore sottile'
 description: 'Top slim menu'

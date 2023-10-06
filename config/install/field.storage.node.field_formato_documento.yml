@@ -1,8 +1,11 @@
+uuid: 7cec6634-a1a5-4ad2-914f-9bf61c3fd69d
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: Fou-WunRYcGSpBEOB2EqEYeOURo9CCe3vilEJ3fwxmA
 id: node.field_formato_documento
 field_name: field_formato_documento
 entity_type: node

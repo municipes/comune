@@ -1,9 +1,12 @@
+uuid: 395eb4dc-c753-4284-b854-f5506f88e3da
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: uBSCJvNdFF7jhX5CTs7qT6hBcUlY0Ie9-w7lG32_j5s
 id: node.field_come_fare
 field_name: field_come_fare
 entity_type: node

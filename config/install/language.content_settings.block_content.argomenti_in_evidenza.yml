@@ -1,8 +1,11 @@
+uuid: 360173cb-5166-4608-9588-ee8710b94839
 langcode: it
 status: true
 dependencies:
   config:
     - block_content.type.argomenti_in_evidenza
+_core:
+  default_config_hash: HRU81UUYhHQpF7v5Z5RgJlQynuqazRshBnAjjg1HQvI
 id: block_content.argomenti_in_evidenza
 target_entity_type_id: block_content
 target_bundle: argomenti_in_evidenza

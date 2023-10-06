@@ -1,8 +1,11 @@
+uuid: 66ccc26f-aef2-451e-acad-e970e7d19993
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: LOXb02pUMhss9eXDBUelDavLsGiCuWYgQJTdvcBmW8o
 id: node.token
 label: Token
 targetEntityType: node

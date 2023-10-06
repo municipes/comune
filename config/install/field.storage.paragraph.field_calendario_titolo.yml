@@ -1,8 +1,11 @@
+uuid: d0a7c23c-3b4a-41a7-a7a3-9dd0908bad68
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: nVRoAZxlLi5vO_fpWDH-my1QrP2kDWBq4mvE7mkx-GM
 id: paragraph.field_calendario_titolo
 field_name: field_calendario_titolo
 entity_type: paragraph

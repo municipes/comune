@@ -1,9 +1,12 @@
+uuid: 57072061-833a-4590-9ffb-403c197308e2
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: NCiW3hN5PxLTq98lZppDjbA20JjQsKYSUlMBCPE_bcU
 id: node.field_competenze
 field_name: field_competenze
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: 3c3ddde1-780c-418f-b1d9-7cc8e265b462
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:9d5c97fb-3fa4-404c-8c77-14c32f357073'
+_core:
+  default_config_hash: GSwF-LoOOGQ80qOztt5k2PIR9PY6DRZyITg9uVQIKL8
 id: section
 label: Sezione
 icon_uuid: 9d5c97fb-3fa4-404c-8c77-14c32f357073

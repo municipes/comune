@@ -1,3 +1,4 @@
+uuid: a367f4b4-92db-430b-afd3-064e6ae2dc46
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_incarico
     - node.type.incarico
     - taxonomy.vocabulary.tipi_di_incarico
+_core:
+  default_config_hash: w4XIOku3o8wEmiBMPZJOMy5MuOCfss9xUT1PvdwfDb4
 id: node.incarico.field_tipo_di_incarico
 field_name: field_tipo_di_incarico
 entity_type: node

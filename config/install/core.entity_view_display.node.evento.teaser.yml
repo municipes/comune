@@ -1,3 +1,4 @@
+uuid: 9dcf62a4-4ba0-43d3-9c08-fb6c25334403
 langcode: it
 status: true
 dependencies:
@@ -28,6 +29,8 @@ dependencies:
     - node.type.evento
   module:
     - user
+_core:
+  default_config_hash: MwyLZ0f5vhcJ1TePA1UGkfIS0848P0DMW9RkPbWSfEU
 id: node.evento.teaser
 targetEntityType: node
 bundle: evento

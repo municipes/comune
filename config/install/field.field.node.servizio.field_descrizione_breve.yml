@@ -1,9 +1,12 @@
+uuid: adfa5fd4-9efd-49b0-b1d6-fb9e7c196491
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.servizio
+_core:
+  default_config_hash: 1sLf6o8fxsLuQXVwuMD1P2RAg6MobSG_ceGJRJbmdNU
 id: node.servizio.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

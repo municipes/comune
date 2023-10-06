@@ -1,3 +1,4 @@
+uuid: 124171f8-1d13-4eb2-8d91-c5dc3a09fb57
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_luoghi
     - node.type.luogo
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: R_lfslQXG3FMn0NLWkrXxrwq6YtywguTfL7dUwyhic0
 id: node.unita_organizzativa.field_luoghi
 field_name: field_luoghi
 entity_type: node

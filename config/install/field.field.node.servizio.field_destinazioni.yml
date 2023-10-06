@@ -1,9 +1,12 @@
+uuid: 1d114973-a86d-438a-835b-c69905082aa4
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_destinazioni
     - node.type.servizio
+_core:
+  default_config_hash: rjQejStXdBPmrQIw3i1aehl7TL1Uuzd2aJfelUIUvpo
 id: node.servizio.field_destinazioni
 field_name: field_destinazioni
 entity_type: node

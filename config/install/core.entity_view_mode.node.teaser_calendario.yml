@@ -1,8 +1,11 @@
+uuid: 170a8dd4-afa1-444c-aee9-98f3e76970ff
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: O15w0ZuIicKMjzh9a1Xh1gs0ZM437uutsV9AnSMrN9s
 id: node.teaser_calendario
 label: 'Teaser Calendario'
 targetEntityType: node

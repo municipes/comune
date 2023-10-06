@@ -1,9 +1,12 @@
+uuid: b28f3ab7-de42-4111-beb5-04676fb2024e
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: OrhjE27Nh7xnaLuC90AA9hRFufehjWZXEiD2MpgN65Y
 id: node.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node

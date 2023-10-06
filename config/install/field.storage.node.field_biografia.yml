@@ -1,9 +1,12 @@
+uuid: 4c7fa8b0-2c46-4d1e-8965-bef2601c106b
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: iT87Rr0WQc-rxZBJ3oVwz9bDfasU8BklHsf_0s1RlSI
 id: node.field_biografia
 field_name: field_biografia
 entity_type: node

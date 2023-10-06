@@ -1,9 +1,12 @@
+uuid: ef8bb934-213d-4e56-b354-cf1279ff1422
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: OFQAgbgH3UK_1nVzuL0aiajvY20_zrh48YafvQD5wwE
 id: node.field_modalita_di_accesso
 field_name: field_modalita_di_accesso
 entity_type: node

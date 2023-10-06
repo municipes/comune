@@ -1,9 +1,12 @@
+uuid: a44f8767-a471-4bdf-ae41-e2d0309f1447
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: h3dvMiy4r8ec_MVs6SXlZIDx1-elctMBhLd8SCt2Ehc
 id: node.field_motivo_dello_stato
 field_name: field_motivo_dello_stato
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: e77a2aaa-677e-41bc-b975-8f5e6ace47eb
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.notizia
   module:
     - text
+_core:
+  default_config_hash: IDin9oac-2oPQWOjrvX5Iu6Fu_evm3cEriWFnIajs1U
 id: node.notizia.field_descrizione_completa
 field_name: field_descrizione_completa
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

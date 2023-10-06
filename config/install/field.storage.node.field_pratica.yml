@@ -1,8 +1,11 @@
+uuid: 7f6753cc-a6f2-42c1-8855-a0bb2cd417fc
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: pxgdTsI8A4Bt0wW94VY-uHZIE1I2c1tw2xoBbS34pIA
 id: node.field_pratica
 field_name: field_pratica
 entity_type: node

@@ -1,6 +1,9 @@
+uuid: b35e2a7b-be40-46c2-aac0-c59aaa7dfa3a
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: qCuSmd5a8th1NA5XTLo-3mgUHmgDa2PzMBdvvhiQa18
 name: 'Tipi unità organizzativa'
 vid: tipi_unita_organizzativa
 description: "Classificazione multi livello dei tipi di unità organizzativa che distingue tra macro ambiti di un'amministrazione locale."

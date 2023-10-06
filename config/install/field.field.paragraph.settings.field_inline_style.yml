@@ -1,9 +1,12 @@
+uuid: 0122c047-4adb-4d20-88be-b4fc2073fa1c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_inline_style
     - paragraphs.paragraphs_type.settings
+_core:
+  default_config_hash: brnBgZQAMzPZOaQHB0LGkHb4k_xnSv4d1f2gjNEPbuo
 id: paragraph.settings.field_inline_style
 field_name: field_inline_style
 entity_type: paragraph

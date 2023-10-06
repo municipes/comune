@@ -1,3 +1,4 @@
+uuid: 6cdfef7b-b797-4f7d-bd1f-982d4d8efbb2
 langcode: it
 status: true
 dependencies:
@@ -82,6 +83,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: false
+_core:
+  default_config_hash: BHbxerWjrV1oOSNHPGu9MGO9KuJksVlihCxxr43oCxY
 id: paragraph.citation.default
 targetEntityType: paragraph
 bundle: citation

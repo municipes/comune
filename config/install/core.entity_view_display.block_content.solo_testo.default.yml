@@ -1,3 +1,4 @@
+uuid: ac6d645d-c211-465e-8b19-50fbf8f4c79b
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - field.field.block_content.solo_testo.body
   module:
     - text
+_core:
+  default_config_hash: IVmScgGVIIOemJHn-Cl-GgzGfljR7uCLKsfDRBUmjx8
 id: block_content.solo_testo.default
 targetEntityType: block_content
 bundle: solo_testo

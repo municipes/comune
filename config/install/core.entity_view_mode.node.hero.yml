@@ -1,8 +1,11 @@
+uuid: 91aaf866-9af6-41a8-92d5-9fcf0e4e5f66
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: EW_J5GVFJKx6E3Kc0z4Uk6Ub0GAvJxz7_Bv5AxDXedw
 id: node.hero
 label: Hero
 targetEntityType: node

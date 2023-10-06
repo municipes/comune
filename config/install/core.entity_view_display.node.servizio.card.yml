@@ -1,3 +1,4 @@
+uuid: 10a0ef91-09e0-41ee-be21-970db4fdc4aa
 langcode: it
 status: true
 dependencies:
@@ -43,6 +44,8 @@ dependencies:
     - node.type.servizio
   module:
     - user
+_core:
+  default_config_hash: EQrd2NE3QSPOfgl1dcUTZrzFD-ZjsHOz-3uX8nIBfj0
 id: node.servizio.card
 targetEntityType: node
 bundle: servizio

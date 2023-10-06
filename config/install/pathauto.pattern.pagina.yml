@@ -1,8 +1,11 @@
+uuid: d6317b69-d992-4fbd-8729-dcceb453c41f
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: fw3nXaLdS8-SZJZPApd4jKF0A6hXMZS9ckZuT-nXulE
 id: pagina
 label: Pagina
 type: 'canonical_entities:node'

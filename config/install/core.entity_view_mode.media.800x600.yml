@@ -1,8 +1,11 @@
+uuid: c595257c-29ea-477c-b4cd-2268da64451a
 langcode: it
 status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: UxaSDjd1hu8klrXVHbZBgroxJQgaP1PiDThL7pDsQpY
 id: media.800x600
 label: 800x600
 targetEntityType: media

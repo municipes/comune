@@ -1,3 +1,4 @@
+uuid: b4f1b309-9905-40e6-88f6-8df7a7ba2233
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.unita_organizzativa
   module:
     - text
+_core:
+  default_config_hash: zKTEONAabX_CTa-vQzDhEQ-i4lbu19Jd_i2di-zkCrM
 id: node.unita_organizzativa.field_competenze
 field_name: field_competenze
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -1,9 +1,12 @@
+uuid: b505dea4-04ed-4e30-883c-879e2946ba56
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: j94MrPi8gsTht5510p5uGVFugbI6jEJTIuS-gK-TW_Y
 id: node.field_patrocinio
 field_name: field_patrocinio
 entity_type: node

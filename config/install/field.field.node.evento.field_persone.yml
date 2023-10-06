@@ -1,3 +1,4 @@
+uuid: fcf18b27-84f3-4b89-83a4-a9829be49863
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_persone
     - node.type.evento
     - node.type.persona
+_core:
+  default_config_hash: kMn-EdN3OCXHuLxitCyl0thCMOcPQUQJ9NioR60Js_s
 id: node.evento.field_persone
 field_name: field_persone
 entity_type: node

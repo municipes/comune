@@ -1,3 +1,4 @@
+uuid: 03b50a46-01fe-4940-97a7-15c32b963f28
 langcode: it
 status: false
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
     - node.type.punto_di_contatto
   module:
     - user
+_core:
+  default_config_hash: MaUy5DPzPwoGQR5MLxUIhGy-qQv8sLTaSsEteC9qS8E
 id: node.punto_di_contatto.card_simple
 targetEntityType: node
 bundle: punto_di_contatto

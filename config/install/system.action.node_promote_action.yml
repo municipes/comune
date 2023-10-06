@@ -1,8 +1,11 @@
+uuid: 186fc0b8-24f8-41e0-bd3b-ec6e6c8a96d9
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: fL1KLn216zIZZckhn-YycGYnkEBW1Ee3gqLP1kKirlE
 id: node_promote_action
 label: 'Promozione in prima pagina del contenuto'
 type: node

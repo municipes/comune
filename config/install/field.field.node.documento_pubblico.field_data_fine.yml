@@ -1,3 +1,4 @@
+uuid: 555c7a7d-5261-4b8c-87c8-e9b8736fb51e
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - datetime
+_core:
+  default_config_hash: ooMoEdxMJNKAjqbAc_wgXLrB3nbI01G75IzgTVlL_54
 id: node.documento_pubblico.field_data_fine
 field_name: field_data_fine
 entity_type: node

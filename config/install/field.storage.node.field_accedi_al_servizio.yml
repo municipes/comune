@@ -1,8 +1,11 @@
+uuid: d7519da3-20e2-4166-b29b-36a765bf963f
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: f1qgOKuzgJ7N2Chqtb_lYa-33q6bx3EUu0aWbqIfeXQ
 id: node.field_accedi_al_servizio
 field_name: field_accedi_al_servizio
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: df6b8c5c-0b7f-4a42-b1e1-b8dbf650a636
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: '-MgiHY4AoFOZvdnJVbz4UpSmYogHYyNGR_foVGGWvR8'
 id: node.card_template_argomento
 label: 'Card template argomento'
 targetEntityType: node

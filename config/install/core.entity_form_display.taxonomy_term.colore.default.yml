@@ -1,3 +1,4 @@
+uuid: 68b17258-9d0a-4f03-aef0-27ffef0fcbe4
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - color_field
     - path
     - text
+_core:
+  default_config_hash: 79nwsNaVXAO6MFUnwyB155PISfz2uI57NcNaddGouoo
 id: taxonomy_term.colore.default
 targetEntityType: taxonomy_term
 bundle: colore
@@ -55,4 +58,6 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

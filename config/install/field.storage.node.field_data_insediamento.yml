@@ -1,9 +1,12 @@
+uuid: fa30507d-f903-442c-bc8d-d7318d5cd235
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: IrK1mB41vlld7FgDqU67NpaS1g1s5U9PX7sD6aQM-7Q
 id: node.field_data_insediamento
 field_name: field_data_insediamento
 entity_type: node

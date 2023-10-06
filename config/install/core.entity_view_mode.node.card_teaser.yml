@@ -1,8 +1,11 @@
+uuid: d0a012c7-7fe1-4ce6-a308-9f8136b1503e
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: DvYrU-yBKsc3coWvhLjCjkX0lzQKY8_u-YFeLXHsQTA
 id: node.card_teaser
 label: 'Card teaser'
 targetEntityType: node

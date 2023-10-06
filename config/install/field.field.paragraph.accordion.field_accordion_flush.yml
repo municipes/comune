@@ -1,9 +1,12 @@
+uuid: 0ec078fc-b4ff-45a7-b5c9-8eecee7b969e
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_accordion_flush
     - paragraphs.paragraphs_type.accordion
+_core:
+  default_config_hash: gQtQe6A1pB7qdvotMkp57JFe0TS3gcf4pnCfftz6lVI
 id: paragraph.accordion.field_accordion_flush
 field_name: field_accordion_flush
 entity_type: paragraph

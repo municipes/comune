@@ -1,3 +1,4 @@
+uuid: 52636974-8c42-47cf-966f-c1bdb86be4ec
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - views.view.bi_servizi_in_evidenza
   module:
     - search_api
+_core:
+  default_config_hash: 05eKOqsbOFbbgr3Ze2L0eclW9CarrEQaOAWsc7QF5Jw
 id: bi_tutti_i_servizi_indice
 label: 'BI Tutti i servizi (indice)'
 module: views

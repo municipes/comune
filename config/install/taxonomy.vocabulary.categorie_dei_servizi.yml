@@ -1,6 +1,9 @@
+uuid: 2666e44c-c1f9-42fa-939b-d9662f8c8fa0
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: W3JWHJQotcnrV8-Ofiv93cYrM_cI2cOIRaUBQLABrDA
 name: 'Categorie dei servizi'
 vid: categorie_dei_servizi
 description: 'Classificazione delle materie dei servizi pubblici'

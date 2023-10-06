@@ -1,9 +1,12 @@
+uuid: 4cc11cfb-e262-43bc-85f2-8e841670d82f
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
     - paragraphs.paragraphs_type.days_timeline_item
+_core:
+  default_config_hash: 81izVnRWebtTamI5kFpRpxDOuZxJ27cpiNjQV3WJSVg
 id: paragraph.days_timeline_item.field_title
 field_name: field_title
 entity_type: paragraph

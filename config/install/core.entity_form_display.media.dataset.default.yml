@@ -1,3 +1,4 @@
+uuid: 052c54a6-5490-41f3-bd31-fd9d6b2cb686
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - file
     - path
+_core:
+  default_config_hash: DIV9oCKDwkhuSopRMe0L-UhA7v86_X6axzaEWbXXdSc
 id: media.dataset.default
 targetEntityType: media
 bundle: dataset
@@ -63,4 +66,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

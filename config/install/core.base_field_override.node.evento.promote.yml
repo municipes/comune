@@ -1,8 +1,11 @@
+uuid: 03f44a44-e426-4f73-889f-184693e1fa10
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.evento
+_core:
+  default_config_hash: dQ3SeyXcHq3z1Y_esGero3NR6Cxsq1lavlA18IXa9p0
 id: node.evento.promote
 field_name: promote
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: d48a900b-b534-43be-9842-e4d00895737b
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.dataset
   module:
     - media_library
+_core:
+  default_config_hash: 3UOs0wD3PHNnAExUGchTySx6peLPjV-Jd6urWKHPHJY
 id: paragraph.dataset.default
 targetEntityType: paragraph
 bundle: dataset

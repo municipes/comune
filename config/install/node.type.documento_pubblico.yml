@@ -1,3 +1,4 @@
+uuid: f1928ba7-032e-4af1-adef-bf656cdffaca
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Documento pubblico</em> content'
     type_weight: 0
+_core:
+  default_config_hash: xj-v2CDzIPnQC2rmsT_gR-w-0UnlDxMXYPUpztuR4vQ
 name: 'Documento pubblico'
 type: documento_pubblico
 description: 'Struttura delle informazioni relative utili a presentare un documento pubblico.'

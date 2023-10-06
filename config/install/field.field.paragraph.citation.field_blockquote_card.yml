@@ -1,9 +1,12 @@
+uuid: f5d7a0cc-31db-4f10-8367-705f5809e064
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_blockquote_card
     - paragraphs.paragraphs_type.citation
+_core:
+  default_config_hash: yCqtFZ53ZlMEws3KNLLeT0gvg9PVx2gr1VfZWyToJXg
 id: paragraph.citation.field_blockquote_card
 field_name: field_blockquote_card
 entity_type: paragraph

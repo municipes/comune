@@ -1,3 +1,4 @@
+uuid: d791d2e4-5f80-449d-ab01-95f87a2d1cba
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - field.storage.block_content.body
   module:
     - text
+_core:
+  default_config_hash: 6unGLEasKsLepHvTvrYxEy_Jzun0CQ1MIb49RP69EXk
 id: block_content.fake.body
 field_name: body
 entity_type: block_content
@@ -19,4 +22,5 @@ default_value_callback: ''
 settings:
   display_summary: false
   required_summary: false
+  allowed_formats: {  }
 field_type: text_with_summary

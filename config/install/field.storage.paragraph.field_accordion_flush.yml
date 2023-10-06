@@ -1,8 +1,11 @@
+uuid: 1976a34c-9ddd-44f6-96de-557f69592b89
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: Tl5ZoCneW_p2pYUmgK5ARSdvYzc8HZVzWyXj8sHF9Ok
 id: paragraph.field_accordion_flush
 field_name: field_accordion_flush
 entity_type: paragraph

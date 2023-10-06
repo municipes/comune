@@ -1,8 +1,11 @@
+uuid: ce71239e-0f1a-4637-aeaf-28e80aa570e6
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: zxCKD7MN6E0vptYzIqql1BKIAAjWsb9SwLAlyLJJQDY
 id: node_publish_action
 label: 'Pubblica contenuto'
 type: node

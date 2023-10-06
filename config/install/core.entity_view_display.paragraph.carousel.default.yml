@@ -1,3 +1,4 @@
+uuid: 23ba6880-ec8e-4bd7-bc93-2466abe421f1
 langcode: it
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - options
+_core:
+  default_config_hash: tnBTi60sU66jBsk0pf7-p9vZ2bjpIQGd7TDF5CNk_uE
 id: paragraph.carousel.default
 targetEntityType: paragraph
 bundle: carousel
@@ -55,4 +58,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

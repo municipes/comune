@@ -1,3 +1,4 @@
+uuid: dcf37205-2660-425e-9f7c-ef5c4a74a014
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.colore
   module:
     - color_field
+_core:
+  default_config_hash: G-whWyku2JmApxAdY3Yh1JtsC8IJnzkSww0pKi-6ACg
 id: taxonomy_term.colore.field_colore
 field_name: field_colore
 entity_type: taxonomy_term

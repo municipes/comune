@@ -1,6 +1,9 @@
+uuid: f0bf638a-34c0-4937-abb1-a5e36fc325c3
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 3N0mQH2Uer7qS3Zh8poTv0LiVRh6Zyp79OSzrY3LvUo
 id: in_evidenza
 label: 'Contenuti in evidenza'
 icon_uuid: null

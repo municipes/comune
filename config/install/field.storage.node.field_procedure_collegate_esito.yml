@@ -1,9 +1,12 @@
+uuid: c7a05b68-9900-4033-974f-4f1afb5b634f
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: 3twqSILqCIyRKfKmUc07Te_zCoXngcsYE73PPZuqxBw
 id: node.field_procedure_collegate_esito
 field_name: field_procedure_collegate_esito
 entity_type: node

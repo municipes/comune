@@ -1,3 +1,4 @@
+uuid: b6298842-9f1e-4f83-8977-8cf65f72f9f8
 langcode: it
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
   module:
     - link
     - user
+_core:
+  default_config_hash: UJGwZLLBF9RnTwltlmILGyexQVPjgOeMZS7HK7LZiDs
 id: node.sito_tematico.card
 targetEntityType: node
 bundle: sito_tematico

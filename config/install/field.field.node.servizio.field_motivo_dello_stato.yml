@@ -1,3 +1,4 @@
+uuid: b48b1183-e040-4388-a7dd-45da76de3423
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: JKqcCZxndzjb6hejVezzsVCW8Ct4CGUAC8ccwIUPE5A
 id: node.servizio.field_motivo_dello_stato
 field_name: field_motivo_dello_stato
 entity_type: node

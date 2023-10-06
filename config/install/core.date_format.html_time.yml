@@ -1,6 +1,9 @@
+uuid: 911ba724-e9c9-4cd8-a5d2-fbe00231e989
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: FKoMZpFQ9Z-MPdKGpyJJM3SM0zXlAp5UKbSoR44csGI
 id: html_time
 label: 'Ora HTML'
 locked: true

@@ -1,3 +1,4 @@
+uuid: d104da1b-3b17-4b31-aa95-546b24a326b8
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - viewsreference
+_core:
+  default_config_hash: inJ5YCJ3KuJ2YdIUUSji-LLOzkF3RI1PtejuTGKwxP4
 id: paragraph.vista.default
 targetEntityType: paragraph
 bundle: vista

@@ -1,3 +1,4 @@
+uuid: 3b3691ef-be7a-4ddf-b1a5-210356ac3318
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Evento</em> content'
     type_weight: 0
+_core:
+  default_config_hash: TFLoMxCB_l5gETJCtH6m0VcT4H_pzQCvFXrUGZ4bV24
 name: Evento
 type: evento
 description: 'Tipologia che struttura le informazioni relative a un evento di interesse pubblico pubblicato sul sito di un comune.'

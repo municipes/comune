@@ -1,3 +1,4 @@
+uuid: 45d1c7ba-3d55-4b48-b0ad-0501def8001d
 langcode: it
 status: true
 dependencies:
@@ -6,9 +7,11 @@ dependencies:
     - search_api.server.drupal_db
     - core.entity_view_mode.node.search_index
   module:
-    - node
     - taxonomy
+    - node
     - search_api
+_core:
+  default_config_hash: fyy_Zv5dMQC4Qn9j86J-LZhx2DZTueCFR20bE_05Ze8
 id: all
 name: All
 description: ''

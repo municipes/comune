@@ -1,3 +1,4 @@
+uuid: 851df862-b0d4-4955-a7c0-d5717a4fbe3a
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: Cet1PK8iX7jPTbY4xMMPx-24wbKtEiA8joqdhPYR54g
 id: node.servizio.field_note_interne
 field_name: field_note_interne
 entity_type: node

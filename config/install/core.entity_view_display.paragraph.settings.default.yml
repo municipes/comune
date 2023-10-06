@@ -1,3 +1,4 @@
+uuid: ab6ad3a1-d288-45a5-9b99-e846e5555364
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ dependencies:
     - color_field
     - image
     - options
+_core:
+  default_config_hash: fdG8f5DBp4-a1KXpX25Sz-H2TMM27msHxLZlRt1jzY8
 id: paragraph.settings.default
 targetEntityType: paragraph
 bundle: settings
@@ -89,4 +92,5 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

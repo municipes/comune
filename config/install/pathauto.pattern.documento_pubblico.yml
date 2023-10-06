@@ -1,8 +1,11 @@
+uuid: 00b905d3-23a6-4732-8e35-5669cb074053
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 1AwCH1_xKC9rQGx1M49d8x3wJpy2exFW7hd-4m7nFsQ
 id: documento_pubblico
 label: 'Documento pubblico'
 type: 'canonical_entities:node'

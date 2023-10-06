@@ -1,9 +1,12 @@
+uuid: 84392808-4230-425b-ad27-ca6558277e63
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_schede_collegate
     - node.type.servizio
+_core:
+  default_config_hash: iQDEotWBeKqxn77oxxQ9A51Y3Ylgh5kARUpZplKlCA4
 id: node.servizio.field_schede_collegate
 field_name: field_schede_collegate
 entity_type: node

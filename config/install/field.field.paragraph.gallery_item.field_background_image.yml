@@ -1,3 +1,4 @@
+uuid: 7b294551-15a6-4cc2-b6ea-1beaae29182d
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery_item
   module:
     - image
+_core:
+  default_config_hash: 0PEyIDotyg7qwl19w8yLyfrB0xkpZt9XKo72Ok1sliU
 id: paragraph.gallery_item.field_background_image
 field_name: field_background_image
 entity_type: paragraph

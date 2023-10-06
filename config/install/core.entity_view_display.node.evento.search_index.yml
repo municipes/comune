@@ -1,3 +1,4 @@
+uuid: dd1791d0-ee40-44fc-96de-8d2e3dc06b8e
 langcode: it
 status: true
 dependencies:
@@ -31,6 +32,8 @@ dependencies:
     - text
     - user
     - viewsreference
+_core:
+  default_config_hash: Q27YGQ4zb4YPjvBlYMcsYv62kO-cYQeZm4-VsBlWpY0
 id: node.evento.search_index
 targetEntityType: node
 bundle: evento

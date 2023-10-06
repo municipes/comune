@@ -1,3 +1,4 @@
+uuid: 17cc5b17-525a-4fb7-8b71-5a13f2a57dd9
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Notizia</em> content'
     type_weight: 0
+_core:
+  default_config_hash: gGpQUpnRB4LNnb091c9qchwAZ5gGlPVvF_TdmSxvSYw
 name: Notizia
 type: notizia
 description: 'Tipologia che struttura le informazioni relative agli aggiornamenti d un comune.'

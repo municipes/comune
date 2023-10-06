@@ -1,3 +1,4 @@
+uuid: 4c73ffbc-a9d5-4b94-a30c-fc40c784ac08
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_servizio
     - node.type.pagamento
     - node.type.servizio
+_core:
+  default_config_hash: cXv2TwBYntAgjBSdhVM0AowkkTk-58dOXYF_za2e4-g
 id: node.pagamento.field_servizio
 field_name: field_servizio
 entity_type: node

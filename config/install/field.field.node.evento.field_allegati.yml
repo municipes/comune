@@ -1,3 +1,4 @@
+uuid: 3ae73776-5900-4bc3-8336-d4db05290856
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_allegati
     - media.type.document
     - node.type.evento
+_core:
+  default_config_hash: 6IxdALTP--C-DvpOzV-My5ztjbHno43EWp21l0gVaQU
 id: node.evento.field_allegati
 field_name: field_allegati
 entity_type: node

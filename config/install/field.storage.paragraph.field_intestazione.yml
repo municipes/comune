@@ -1,9 +1,12 @@
+uuid: d15da1ba-64e3-498a-bbc2-16132be0daa2
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: otj995LV4I4EQfOvFjNReppS76HvU8sgNfScJYi4al4
 id: paragraph.field_intestazione
 field_name: field_intestazione
 entity_type: paragraph

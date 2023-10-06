@@ -1,9 +1,12 @@
+uuid: 30f3d90d-19a4-46b3-a813-b2dbecdc6b49
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_background_image_fixed
     - paragraphs.paragraphs_type.settings
+_core:
+  default_config_hash: hIDJBRgNW6NKLdZIFAxrmPDgpG8ZPJmj-7NOi4ejwfo
 id: paragraph.settings.field_background_image_fixed
 field_name: field_background_image_fixed
 entity_type: paragraph

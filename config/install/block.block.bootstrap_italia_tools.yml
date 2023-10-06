@@ -1,3 +1,4 @@
+uuid: cff325f7-9c5e-4e46-aeb9-18f7763ffbf9
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - system
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: WnXqiCotlyqmxnRB0tCz9fkvBD-umiNJWc90bLgPKxU
 id: bootstrap_italia_tools
 theme: bootstrap_italia
 region: sidebar_first

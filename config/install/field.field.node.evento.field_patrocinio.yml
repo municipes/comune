@@ -1,3 +1,4 @@
+uuid: 50bc64ed-483d-4483-a11e-acad0c2cc8ad
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.evento
   module:
     - text
+_core:
+  default_config_hash: kfZerRBWstfiNWe5pGzviiOzdAejF34ExJ9u2Uua-us
 id: node.evento.field_patrocinio
 field_name: field_patrocinio
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

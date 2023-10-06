@@ -1,6 +1,9 @@
+uuid: a3a9d0b6-a148-4e1b-89d1-33b202f67d03
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 44zbVL9l7nzq7PNH3PtRjgSKxoGats_3HUJNSkKNLYY
 id: private_files
 label: 'Private Files Directory'
 type: DrupalFiles

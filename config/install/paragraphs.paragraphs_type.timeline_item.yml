@@ -1,8 +1,11 @@
+uuid: dcf6c19b-d2c2-4e0a-8863-3204e4047b0d
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:d5713859-a79d-43a3-9011-d25510828e08'
+_core:
+  default_config_hash: 6B1PpqsDKj6EA5yqTHkZ3aZLhshyb_SqgVhaEl75EjE
 id: timeline_item
 label: 'Elemento Timeline'
 icon_uuid: d5713859-a79d-43a3-9011-d25510828e08

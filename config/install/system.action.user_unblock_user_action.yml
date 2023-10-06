@@ -1,8 +1,11 @@
+uuid: db35f639-8145-4609-9610-1ab219080615
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: zrgDDq-IF0F3oxvnPQbvebQnHY5xKDHSOSgkHDt2yJ0
 id: user_unblock_user_action
 label: 'Sbloccare gli utenti selezionati'
 type: user

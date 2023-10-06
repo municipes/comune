@@ -1,3 +1,4 @@
+uuid: 33d21543-52d4-4e9d-9086-74df779fa201
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - field.field.block_content.con_paragrafi.field_paragrafi
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: XfM1DFXWGKQFdjRpGb843r7mfEJkidSYOGRmRan4_Vo
 id: block_content.con_paragrafi.default
 targetEntityType: block_content
 bundle: con_paragrafi

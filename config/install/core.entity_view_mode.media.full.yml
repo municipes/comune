@@ -1,8 +1,11 @@
+uuid: 01543494-2ec1-421c-b8f3-80ad8af9cece
 langcode: it
 status: false
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: xCKf2icgmBLcbs6c3avtGRKmQFRxckK-XRbE9JzH35I
 id: media.full
 label: 'Contenuto completo'
 targetEntityType: media

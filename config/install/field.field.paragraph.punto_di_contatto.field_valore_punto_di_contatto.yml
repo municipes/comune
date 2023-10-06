@@ -1,9 +1,12 @@
+uuid: fabfb985-45b6-4d87-a608-50275b1d884d
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_valore_punto_di_contatto
     - paragraphs.paragraphs_type.punto_di_contatto
+_core:
+  default_config_hash: _rwqaPs-RtaaF9ctKrDHPkya5xtk7ake1T6m7VTku80
 id: paragraph.punto_di_contatto.field_valore_punto_di_contatto
 field_name: field_valore_punto_di_contatto
 entity_type: paragraph

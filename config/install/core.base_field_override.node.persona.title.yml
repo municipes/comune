@@ -1,8 +1,11 @@
+uuid: 725497fe-7af5-4228-aa90-78383d682331
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.persona
+_core:
+  default_config_hash: ft7GPb0D_tzibP5pv80LmKWyWDpG5MQyfkZ69hIniT0
 id: node.persona.title
 field_name: title
 entity_type: node

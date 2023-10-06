@@ -1,8 +1,11 @@
+uuid: acea10b6-c2ae-4072-b0c3-45c82f714a14
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:2719c77e-9007-4e54-a46c-af8c661bcc9e'
+_core:
+  default_config_hash: EsU1GmuhU5ikVf5UB6Ojmgw8LIwwCavnGkAxUrp_CH0
 id: callout
 label: Callout
 icon_uuid: 2719c77e-9007-4e54-a46c-af8c661bcc9e

@@ -1,3 +1,4 @@
+uuid: 04fe1723-a383-4820-a828-1aaa781bb159
 langcode: it
 status: false
 dependencies:
@@ -25,6 +26,8 @@ dependencies:
     - node.type.persona
   module:
     - user
+_core:
+  default_config_hash: conb-VWZFd8U6FFp5RWB180PDy6l14bQREJgPTMNIyo
 id: node.persona.teaser_dettaglio_notizia
 targetEntityType: node
 bundle: persona

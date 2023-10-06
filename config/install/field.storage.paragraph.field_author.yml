@@ -1,8 +1,11 @@
+uuid: 859d290a-97a2-4c00-be33-f8760ec627fd
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: ywunVG8-uUZwgZ3VNv4ifFTd7BhoJWSimahXtXkp5XU
 id: paragraph.field_author
 field_name: field_author
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: 51e8011f-92f5-4c63-9b27-48288bbfa3d8
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: T0SxiSkje9BMjzT3EJ8-Ni8x8buaOHz4vr62AlOHp0E
 id: node.accordion
 label: Accordion
 targetEntityType: node

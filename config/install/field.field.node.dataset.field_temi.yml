@@ -1,3 +1,4 @@
+uuid: 0aa3e100-41bc-46ac-8108-512f75f34676
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_temi
     - node.type.dataset
     - taxonomy.vocabulary.temi_di_un_dataset
+_core:
+  default_config_hash: lIfIp6WcEAXz2Jg4W-G0btG00iQhfti3V5cPOaP6k3w
 id: node.dataset.field_temi
 field_name: field_temi
 entity_type: node

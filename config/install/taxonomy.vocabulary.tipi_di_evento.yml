@@ -1,6 +1,9 @@
+uuid: f95b17c6-01af-4674-a8d9-6767e0831779
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: TeOv8benXXEUXMmOck8TykHgT5JASUmWd7UTPaPKN6k
 name: 'Tipi di evento'
 vid: tipi_di_evento
 description: 'Classificazione multi livello degli eventi di interesse pubblico'

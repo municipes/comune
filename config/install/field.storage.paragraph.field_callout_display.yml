@@ -1,9 +1,12 @@
+uuid: 13b311cf-bd8d-449b-802e-f450b97a8030
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: nCMjWA2USJDrCRBiWeKHXuKhRxYvIbi0-aZC7oQ01hQ
 id: paragraph.field_callout_display
 field_name: field_callout_display
 entity_type: paragraph

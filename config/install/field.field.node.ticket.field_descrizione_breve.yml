@@ -1,9 +1,12 @@
+uuid: 48916ba2-4bbb-4af3-9efa-b27142cb02f3
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.ticket
+_core:
+  default_config_hash: EAqJV1xhkLUrEPqmnTp0LbjonW_rAGjOISAaTu226us
 id: node.ticket.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

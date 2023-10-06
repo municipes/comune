@@ -1,6 +1,9 @@
+uuid: 72c4d689-74d6-4a29-9753-9bde6440349d
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: OLFpkqKJ72UTXkFA1owO_kODohDtvvhotg_9hD2MhtI
 id: fase_semplice
 label: 'Fase semplice'
 icon_uuid: null

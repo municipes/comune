@@ -1,3 +1,4 @@
+uuid: cabe7533-5ae9-444c-8ea9-574c135a9dbe
 langcode: it
 status: true
 dependencies:
@@ -170,7 +171,7 @@ content:
         editMode: false
         dragMode: false
         cutPolygon: false
-        removalMode: false
+        removalMode: true
         rotateMode: false
       reset_map:
         control: true

@@ -1,3 +1,4 @@
+uuid: e2952343-e1eb-458f-8249-66e6ae39ca54
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: 21k30N0M-A_j1eg_5EL17s0J9A6QDSWrNmdvVeiP4dk
 id: node.servizio.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

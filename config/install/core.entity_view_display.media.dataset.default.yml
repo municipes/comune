@@ -1,3 +1,4 @@
+uuid: 0ba816cf-09c5-4038-8b9d-2e27bb80fb9f
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - media.type.dataset
   module:
     - file
+_core:
+  default_config_hash: 6F3eRZkQ8QaJleG2lFn5z6i9U2tLrVJp_cd-ZBGlUs4
 id: media.dataset.default
 targetEntityType: media
 bundle: dataset

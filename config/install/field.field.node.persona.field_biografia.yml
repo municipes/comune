@@ -1,3 +1,4 @@
+uuid: cc4f6e7c-6afe-48fa-a13b-854cbaca15d4
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.persona
   module:
     - text
+_core:
+  default_config_hash: K4l_MrQ0ozLmh656cViHxG8sZniTeMNNsBbM4esFNtY
 id: node.persona.field_biografia
 field_name: field_biografia
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -1,9 +1,12 @@
+uuid: 4ad38e3a-bcd8-4cb1-838b-e448e1edf25d
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_codice_dell_ente_erogatore
     - node.type.servizio
+_core:
+  default_config_hash: ICX5XjjMNxQ_QyoAdbgb2L3umYBzP1jn-KD7V4TxndA
 id: node.servizio.field_codice_dell_ente_erogatore
 field_name: field_codice_dell_ente_erogatore
 entity_type: node

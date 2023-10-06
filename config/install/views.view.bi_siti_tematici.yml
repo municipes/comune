@@ -1,3 +1,4 @@
+uuid: 8b2aa13e-3834-4249-b22e-c3bb0e643e61
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: T8n6Eh3a8LldiUjLzb6QreidGnbtV6qmKV-VwszT8-A
 id: bi_siti_tematici
 label: 'BI Siti tematici'
 module: views

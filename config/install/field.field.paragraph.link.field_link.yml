@@ -1,3 +1,4 @@
+uuid: e72a9cb1-6497-4c99-b4b7-689fdff0ff75
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.link
   module:
     - link
+_core:
+  default_config_hash: _ZGtdO6tQCu_Lo_9AIVwSAcQv_5JK12pLTpwp6gnoYA
 id: paragraph.link.field_link
 field_name: field_link
 entity_type: paragraph

@@ -1,9 +1,12 @@
+uuid: 0b91e8b5-0d9a-4ed2-bbaf-5febd00feb67
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_nome
     - node.type.persona
+_core:
+  default_config_hash: qzSC0NRFqy-2KVhlRMZDSPyqR-OTOscsVEhRxTapanY
 id: node.persona.field_nome
 field_name: field_nome
 entity_type: node

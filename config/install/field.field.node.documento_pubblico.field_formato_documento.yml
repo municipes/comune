@@ -1,9 +1,12 @@
+uuid: 856f76d5-6b01-4115-a9d7-a974e54ffb1b
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_formato_documento
     - node.type.documento_pubblico
+_core:
+  default_config_hash: H8nUDjC039GqZ-9pu3J-y8gx2iSM0zhp8FrsDiGxzqA
 id: node.documento_pubblico.field_formato_documento
 field_name: field_formato_documento
 entity_type: node

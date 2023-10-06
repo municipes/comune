@@ -1,3 +1,4 @@
+uuid: 229633b0-7f0c-4d18-b4ea-dca165f45ead
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - media.type.logo_content_type
   module:
     - image
+_core:
+  default_config_hash: YpoM1qWIDP5om8VONaQHzt2Ho9r2ahLo0xyYTzC3kqM
 id: media.logo_content_type.field_media_image_1
 field_name: field_media_image_1
 entity_type: media

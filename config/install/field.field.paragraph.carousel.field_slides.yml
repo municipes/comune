@@ -1,3 +1,4 @@
+uuid: 69182785-0de5-4053-a033-cddb74cd3ca5
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.slide
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: 1NFWq1hXVIjgJbXfKDaS28te--oWYhXnTyDYKhwSO8I
 id: paragraph.carousel.field_slides
 field_name: field_slides
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: c893528a-d52e-4676-ae9f-ecbc8477f033
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: 0SkjXICJGZy_45ZqZOy585XKMs4UVZYXlZNvD0Vn9ss
 name: focal_point_sxga_4_5_1024x1280_narrow
 label: 'Punto focale SXGA 4:5 (1024x1280) Stretto'
 effects:

@@ -1,13 +1,13 @@
+uuid: 88d5fe3c-058d-4c28-b1c3-20fa3b42a998
 langcode: it
 status: true
 dependencies:
-  content:
-    - 'block_content:con_paragrafi:0ff346e1-ad19-431f-9ecd-30e26c8c6aa8'
   module:
-    - block_content
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: Zmnut9dkXtlLPd4TIU-BHgO8AH3gTxkb3Ym8NS7brpM
 id: hpargomentiinevidenza
 theme: scaenographia
 region: home_third_row_full_width

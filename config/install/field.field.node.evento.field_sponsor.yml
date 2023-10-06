@@ -1,3 +1,4 @@
+uuid: 10ffd267-e1f2-4036-8b4b-f6c3335e4968
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.evento
   module:
     - text
+_core:
+  default_config_hash: I2Tj16QcEE5Ok4hpWV78Y0Sqi9rULO1iVLFvs4IV67Q
 id: node.evento.field_sponsor
 field_name: field_sponsor
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

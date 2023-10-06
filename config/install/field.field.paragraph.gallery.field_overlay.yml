@@ -1,9 +1,12 @@
+uuid: 185d1baf-f051-401c-b468-1fb5fc20eb19
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_overlay
     - paragraphs.paragraphs_type.gallery
+_core:
+  default_config_hash: 2e0EALPyuTMqR9tq6DFiJ7bVLMMnBIaldEJE1pENUn4
 id: paragraph.gallery.field_overlay
 field_name: field_overlay
 entity_type: paragraph

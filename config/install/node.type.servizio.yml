@@ -1,3 +1,4 @@
+uuid: 57c04c00-54d2-47d3-b409-9caf99df9439
 langcode: it
 status: true
 dependencies:
@@ -29,6 +30,8 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: true
+_core:
+  default_config_hash: X0md9JARnsP3OIDY8D1udcTl-QLdKPZYYL7qywgmRYI
 name: Servizio
 type: servizio
 description: 'Struttura delle informazioni relative a un servizio pubblico, funzionale alla creazione di una scheda servizio'

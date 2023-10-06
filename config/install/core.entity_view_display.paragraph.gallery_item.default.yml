@@ -1,3 +1,4 @@
+uuid: 9498ce44-6d4a-4faa-a0ec-e47e0bea06ac
 langcode: it
 status: true
 dependencies:
@@ -13,6 +14,8 @@ dependencies:
   module:
     - link
     - responsive_image
+_core:
+  default_config_hash: '-Ljyz-rrseXTQYNHxetiuMGQvXco3B2FrxsrCbs6JoU'
 id: paragraph.gallery_item.default
 targetEntityType: paragraph
 bundle: gallery_item

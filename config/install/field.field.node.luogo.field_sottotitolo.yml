@@ -1,9 +1,12 @@
+uuid: cce1867a-d42d-498f-b201-2470da38d573
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_sottotitolo
     - node.type.luogo
+_core:
+  default_config_hash: dhi-C7vxlxevehhe455CrWCHkBXWYtSksCkkeAqY1oA
 id: node.luogo.field_sottotitolo
 field_name: field_sottotitolo
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: e85b0767-e887-4c99-8931-f60f5daf5b38
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - text
+_core:
+  default_config_hash: xCJviPeybC91pHDmrJWbDctoAVUx4uLeuDj_OmJvGYs
 id: node.documento_pubblico.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

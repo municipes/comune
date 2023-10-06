@@ -1,3 +1,4 @@
+uuid: 7fb3ebbd-e412-4e68-80ed-d8048b31ce4f
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   module:
     - focal_point
     - imce
+_core:
+  default_config_hash: WXlaSVCgRUxwZZ5KtmUyhmlCkYV6bBO8ApLO6JFi0qI
 id: media.image.media_library
 targetEntityType: media
 bundle: image
@@ -51,4 +54,6 @@ content:
 hidden:
   created: true
   path: true
+  publish_on: true
   uid: true
+  unpublish_on: true

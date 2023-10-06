@@ -1,3 +1,4 @@
+uuid: 6af306e9-4dbb-4f23-a078-3ca38800acab
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - node
     - taxonomy
     - user
+_core:
+  default_config_hash: UbSOqmdDQ0wVaqLnRUrTR9s0cXafvFlO7bxs7saxvME
 id: bi_unita_organizzative_area
 label: 'BI Unità organizzative per area'
 module: views

@@ -1,0 +1,28 @@
+uuid: a79db21f-e6cf-48f0-96bf-5503d0b67ca6
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_id
+    - taxonomy.vocabulary.triplette
+  enforced:
+    module:
+      - silfi_triplette
+_core:
+  default_config_hash: 2rZ2LVCuvdeCGJNVQkIs9b6nrFu9Eugv47o-jptgZ70
+id: taxonomy_term.triplette.field_id
+field_name: field_id
+entity_type: taxonomy_term
+bundle: triplette
+label: 'ID tripletta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

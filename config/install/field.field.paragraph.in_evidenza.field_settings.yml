@@ -1,3 +1,4 @@
+uuid: 39234462-e472-49f5-b12a-a18c71d085a9
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.settings
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: Qqb4WXk-hslPuVHeaTGm7KNQomCHYtLF-RKuQG869lw
 id: paragraph.in_evidenza.field_settings
 field_name: field_settings
 entity_type: paragraph

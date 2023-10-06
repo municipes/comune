@@ -1,9 +1,12 @@
+uuid: 2d2c855c-a133-431c-9b05-935abfeedaf3
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - system
+_core:
+  default_config_hash: IvNmstPQ3ud6yiCj4kAJ0G-grQZdm9_nrm8qul-5Di8
 id: pubblicatore
 label: Pubblicatore
 weight: 13

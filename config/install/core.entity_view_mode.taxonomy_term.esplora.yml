@@ -1,8 +1,11 @@
+uuid: 0f801bbc-546b-407e-a9aa-53433d536293
 langcode: it
 status: true
 dependencies:
   module:
     - taxonomy
+_core:
+  default_config_hash: 7VmdbqVs-VTiZROwAOHk9cV3xvqTyXD3pyfZddc5DU0
 id: taxonomy_term.esplora
 label: Esplora
 targetEntityType: taxonomy_term

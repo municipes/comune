@@ -1,3 +1,4 @@
+uuid: 2b60b725-e45f-4d67-a371-4588fa7fd9b8
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.incarico
   module:
     - text
+_core:
+  default_config_hash: D9HlTdn_57L0LU4sasjii2pTUlAjg5kVpsu6I3VJRM0
 id: node.incarico.field_importi_viaggio_servizio
 field_name: field_importi_viaggio_servizio
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

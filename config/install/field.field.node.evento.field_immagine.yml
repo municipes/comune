@@ -1,3 +1,4 @@
+uuid: 142f063f-e2c1-471c-b156-cd0f65990241
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_immagine
     - media.type.image
     - node.type.evento
+_core:
+  default_config_hash: YfB7f7rxuLpOVXMBCuwRtpk2XD8PFBeoO-FCDjzmhbo
 id: node.evento.field_immagine
 field_name: field_immagine
 entity_type: node

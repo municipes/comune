@@ -1,8 +1,11 @@
+uuid: 429ab55a-71dd-44cf-8645-2094c5884971
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.appuntamento
+_core:
+  default_config_hash: W0M3mSMe-aSmTBCCsg6N9bok8ObZIHdxDXfsF9RZ3Ps
 id: node.appuntamento
 target_entity_type_id: node
 target_bundle: appuntamento

@@ -1,3 +1,4 @@
+uuid: c9a3f6c3-39b2-447a-88dc-102e89b78747
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_dichiarazione_dei_redditi
     - media.type.document
     - node.type.persona
+_core:
+  default_config_hash: 15jHsLr3RbwA1lcT4AFfLheLGcaJtwlmZVF1k1q5DuY
 id: node.persona.field_dichiarazione_dei_redditi
 field_name: field_dichiarazione_dei_redditi
 entity_type: node

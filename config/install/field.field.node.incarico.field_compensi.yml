@@ -1,3 +1,4 @@
+uuid: 8bd05305-8613-4b35-99cb-951da231e24a
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.incarico
   module:
     - text
+_core:
+  default_config_hash: JLtaSJhgvxeb4xmtYCatjy15FPdhWzvBH5evUrV0t0M
 id: node.incarico.field_compensi
 field_name: field_compensi
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

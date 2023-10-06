@@ -1,9 +1,12 @@
+uuid: 158d49d5-249a-4cd7-a25d-68a70b433b34
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: cvHhtqkUv-92qq2X21LYpnzyt_FrZBaglkG15scDUXE
 id: paragraph.field_carousel_slide_spacing
 field_name: field_carousel_slide_spacing
 entity_type: paragraph

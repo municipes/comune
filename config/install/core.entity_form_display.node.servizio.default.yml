@@ -1,3 +1,4 @@
+uuid: 581f142b-8555-4f2b-9441-b57711038052
 langcode: it
 status: true
 dependencies:
@@ -150,6 +151,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+_core:
+  default_config_hash: HVrjcoHMEIhR71Hld1URzvkz2IdNdW6FUjrjJ6GxMxw
 id: node.servizio.default
 targetEntityType: node
 bundle: servizio

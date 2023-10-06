@@ -1,9 +1,12 @@
+uuid: 038c1566-1096-4e80-b234-fead1c7c29f5
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: 26Y_Y7KZc4QTgKsGkPX9z0CLfcdc9tj_qp3kRr2uLRI
 id: node.field_tipo_di_documento
 field_name: field_tipo_di_documento
 entity_type: node

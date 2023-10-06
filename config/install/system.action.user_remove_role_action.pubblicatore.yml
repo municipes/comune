@@ -1,3 +1,4 @@
+uuid: b6450833-f431-483c-b5ed-91166bb6b356
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - user.role.pubblicatore
   module:
     - user
+_core:
+  default_config_hash: 69G-GaDIMS9jziHmHbcx0Muryi2nCnUiSw_sLYbcORE
 id: user_remove_role_action.pubblicatore
 label: 'Remove the Pubblicatore role from the selected user(s)'
 type: user

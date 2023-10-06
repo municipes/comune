@@ -1,3 +1,4 @@
+uuid: a7f50356-bbe1-4e65-9cf1-eb3f900cbfad
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: mzaezxPfIHa1ZZ1MudiP3zUx9d1RkF5Th7Q7bUsUxgI
 id: node.servizio.field_normativa_di_riferimento
 field_name: field_normativa_di_riferimento
 entity_type: node

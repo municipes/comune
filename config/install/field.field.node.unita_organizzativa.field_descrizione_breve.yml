@@ -1,9 +1,12 @@
+uuid: cdf5a089-d98b-46d3-a703-7feb61b73b33
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: jbhM7vgENYeComgDQBZaQXQpt9Tkni5E4EsJbHfrK_Q
 id: node.unita_organizzativa.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

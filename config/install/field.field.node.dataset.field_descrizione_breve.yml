@@ -1,9 +1,12 @@
+uuid: ae6b6fae-d229-40ea-a1f1-42c0a29e1d6b
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.dataset
+_core:
+  default_config_hash: KHzdM_LNXjGzdvw0l7xQdEWphDhw7vd8RbCBm8CnVpI
 id: node.dataset.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

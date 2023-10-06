@@ -1,8 +1,11 @@
+uuid: de5eb040-3cf8-4e63-aae3-217aa28d93f8
 langcode: it
 status: true
 dependencies:
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: As36kgvOXCLHPJnNOc5taUbVa9M-QVrMUNnTOHA15y4
 id: bootstrap_italia_page_title
 theme: bootstrap_italia
 region: content

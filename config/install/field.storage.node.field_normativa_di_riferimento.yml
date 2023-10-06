@@ -1,9 +1,12 @@
+uuid: bad24977-4b70-4f3c-8f89-3b040f1293de
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: QPgRuG0l7vRLOFQT6rmPrQe6g4EexP6TBLljKxb1sw0
 id: node.field_normativa_di_riferimento
 field_name: field_normativa_di_riferimento
 entity_type: node

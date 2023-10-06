@@ -1,9 +1,12 @@
+uuid: 88233c1a-c8e2-402d-ac6f-f9c82b86f2c6
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: 04DwXzOu42d_xeKNAQHNQCKHMCg9BN032M5mfZiPfUU
 id: paragraph.field_cards
 field_name: field_cards
 entity_type: paragraph

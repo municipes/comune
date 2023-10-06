@@ -1,3 +1,4 @@
+uuid: 23e0f882-330d-4507-a326-4751ce6d5ee2
 langcode: it
 status: true
 dependencies:
@@ -10,6 +11,8 @@ dependencies:
     - node.type.accesso_al_servizio
   module:
     - user
+_core:
+  default_config_hash: vxJtuuNYFNP6sTtoHc7S-gGtjvsBeabnnIIcskpo5Ds
 id: node.accesso_al_servizio.search_index
 targetEntityType: node
 bundle: accesso_al_servizio

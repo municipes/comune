@@ -1,6 +1,9 @@
+uuid: e0462092-1709-41ab-9936-9136e836dd29
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: QZCTk6XivN2iXfHsLpWI9bJj9_dbFRVubyHon9L8SvE
 id: fake
 label: Fake
 revision: 0

@@ -1,3 +1,4 @@
+uuid: 52b50178-ff62-4636-871b-27663fc98562
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_immagine
     - media.type.image
     - node.type.documento_pubblico
+_core:
+  default_config_hash: Re-FCo_0YcyVoDlcbrvNQxHQ8_lWNSkSoPXAHWChefM
 id: node.documento_pubblico.field_immagine
 field_name: field_immagine
 entity_type: node

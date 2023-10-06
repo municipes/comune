@@ -1,3 +1,4 @@
+uuid: 48152194-1660-40ae-baa1-55eae14e5605
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_dataset
     - node.type.dataset
     - node.type.notizia
+_core:
+  default_config_hash: RAq5X10NX-raKBHmIMGT-kAivxmPGints5bdqvsntXw
 id: node.notizia.field_dataset
 field_name: field_dataset
 entity_type: node

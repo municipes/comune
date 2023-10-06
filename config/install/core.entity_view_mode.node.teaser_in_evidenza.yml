@@ -1,8 +1,11 @@
+uuid: b4de4894-3a5a-430b-a5b4-398c1848260f
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: HNw2t_fJPTgmFDLYPhCYPCiC3F66NRLMoi-3KOSBQE8
 id: node.teaser_in_evidenza
 label: 'Teaser in evidenza'
 targetEntityType: node

@@ -1,3 +1,4 @@
+uuid: 2ec5d251-ab10-4620-b851-174cea0a2a49
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - taxonomy.vocabulary.tipi_di_documento
   module:
     - text
+_core:
+  default_config_hash: YTsgxcX6Vqm4Mg311I2PtshWGbSJ6BjKT9gVo2WEZYA
 id: taxonomy_term.tipi_di_documento.default
 targetEntityType: taxonomy_term
 bundle: tipi_di_documento

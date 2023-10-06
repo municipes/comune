@@ -1,3 +1,4 @@
+uuid: 4fe2569e-57f9-4f6c-9287-4269875bbc23
 langcode: it
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
     - node.type.ticket
   module:
     - user
+_core:
+  default_config_hash: bBBXDiX5J4HVmXp7NzPmDeiVM462X_zixkzv2mptPQQ
 id: node.ticket.default
 targetEntityType: node
 bundle: ticket

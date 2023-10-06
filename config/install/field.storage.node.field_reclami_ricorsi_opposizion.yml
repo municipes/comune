@@ -1,9 +1,12 @@
+uuid: d0d3ec2b-de70-4cb8-a3a0-a7d04220f33b
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: 0alSmpVIehzjd4vjBn72YB_dZGtw69z28OA1sOTiG6M
 id: node.field_reclami_ricorsi_opposizion
 field_name: field_reclami_ricorsi_opposizion
 entity_type: node

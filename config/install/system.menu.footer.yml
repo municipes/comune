@@ -1,6 +1,9 @@
+uuid: b6e22edd-7fda-43a4-a86b-113cc57ddcfa
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: o3M_UZcf-DP6_TCdQvJ8r1y_huZdzmlI8VqoADNX5fQ
 id: footer
 label: 'Piè di pagina'
 description: 'Collegamenti informazioni sito'

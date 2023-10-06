@@ -1,9 +1,12 @@
+uuid: 1abaae71-f6c3-4935-a5a2-8022afbfa181
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: 6xjf4PJt9Dn3fF9KN8K3zWYZit3f1QzKp5ePk-Oner4
 id: node.field_licenza_di_distribuzione
 field_name: field_licenza_di_distribuzione
 entity_type: node

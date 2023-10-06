@@ -1,3 +1,4 @@
+uuid: 7b2fdd1d-ec36-45cd-b25c-f31ed1e3ea46
 langcode: it
 status: false
 dependencies:
@@ -22,6 +23,8 @@ dependencies:
     - node.type.unita_organizzativa
   module:
     - user
+_core:
+  default_config_hash: Pr-e_pZx9YcMD-dS-Uem6LivuIyidUIw0E9V2Ha0aZk
 id: node.unita_organizzativa.teaser_in_evidenza
 targetEntityType: node
 bundle: unita_organizzativa

@@ -1,8 +1,11 @@
+uuid: 7081c689-b0ba-4b79-a138-b1db548f46f7
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 0ZpjkppViQ7yWtZ77A3oXYltBKOLS50F882iqaFHsbo
 id: paragraph.field_days
 field_name: field_days
 entity_type: paragraph

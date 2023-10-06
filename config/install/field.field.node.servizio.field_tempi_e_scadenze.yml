@@ -1,3 +1,4 @@
+uuid: b75013d2-2719-4cdc-9694-01ca4aff2a23
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.date_timeline
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: HbKXPG3Tam5iYYJV39CTpYkMmMswJE6u20-Z9Swj_g4
 id: node.servizio.field_tempi_e_scadenze
 field_name: field_tempi_e_scadenze
 entity_type: node

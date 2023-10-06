@@ -1,6 +1,9 @@
+uuid: 147f3e19-1142-42ef-b167-73c9920273ca
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: aBVAx5jnrcRs7Bz1zMD_2_EABR161XMIcoKPIncMAds
 name: Licenze
 vid: licenze
 description: 'Classificazione delle licenze dei dataset secondo il Vocabolario Controllato Licenze.'

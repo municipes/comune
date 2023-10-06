@@ -1,9 +1,12 @@
+uuid: c3428bd2-91a5-44ae-b676-7e12d8c754e2
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text_centered
     - paragraphs.paragraphs_type.hero
+_core:
+  default_config_hash: 7-3Yh7XIv7TkaHuFwmZTKrVWkyXg-kKMoMiY2wnKA3M
 id: paragraph.hero.field_text_centered
 field_name: field_text_centered
 entity_type: paragraph

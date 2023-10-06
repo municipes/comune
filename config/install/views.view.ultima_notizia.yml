@@ -1,3 +1,4 @@
+uuid: b801bf97-d44a-4d4a-9e7e-95e0449a1c14
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: VMi25ZTswjbYpW0T4FsAceErgfNKNgd19dwSdE-vPEY
 id: ultima_notizia
 label: 'Ultima Notizia'
 module: views

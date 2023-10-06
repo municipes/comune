@@ -1,6 +1,9 @@
+uuid: c8310a02-6c34-487c-9512-26b89135fa16
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: gne7PyYbtsixtNL9nuN4wldN-vyMU3MnNGTXjA3fSEw
 id: daily_schedule
 label: 'Daily Schedule'
 enabled: false

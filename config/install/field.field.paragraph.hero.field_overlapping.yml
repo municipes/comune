@@ -1,9 +1,12 @@
+uuid: f30ac611-3a43-49c3-a1a3-3e0ef31bf7c3
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_overlapping
     - paragraphs.paragraphs_type.hero
+_core:
+  default_config_hash: wJMpEU_bjb7Thv6F1KSrEpwaziv9Ws5ZKT1qhv5J02w
 id: paragraph.hero.field_overlapping
 field_name: field_overlapping
 entity_type: paragraph

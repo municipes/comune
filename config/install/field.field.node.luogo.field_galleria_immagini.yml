@@ -1,3 +1,4 @@
+uuid: eb8b3a9d-2533-4ec6-9b04-1bc1556e9c0d
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: gcvBWrsOEpHqrXksKulSrmFGFetqNyiQG2uCfFcXPII
 id: node.luogo.field_galleria_immagini
 field_name: field_galleria_immagini
 entity_type: node

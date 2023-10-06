@@ -1,3 +1,4 @@
+uuid: bcc5cf36-99de-4e6b-8e6b-eb02c9187cad
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - image.style.focal_point_xga_4_3_1024x768_
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: CUiVX-ynnF6fF0BI6IRHQ052C-ojJwn3QAlOGzH5W78
 id: bootstrap_italia_paragraph_slide
 label: 'Bootstrap Italia paragraph slide'
 image_style_mappings:

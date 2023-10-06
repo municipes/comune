@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: 7rL1mo0bTmKyhg-zTISGbs9yRemv3YdlrlfOvV_3ncg
 langcode: it
 applies_admin_routes: false
 include_invalid_paths: true

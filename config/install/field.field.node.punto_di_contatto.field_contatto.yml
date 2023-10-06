@@ -1,3 +1,4 @@
+uuid: 60a50b18-68b4-4c94-a407-350c82649dc8
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.punto_di_contatto
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: pkdtQq7rHWxJunhtnT9BArrAyNF9uiX1kHfQsq9k_Uw
 id: node.punto_di_contatto.field_contatto
 field_name: field_contatto
 entity_type: node

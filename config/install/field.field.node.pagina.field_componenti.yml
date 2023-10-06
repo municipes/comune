@@ -1,3 +1,4 @@
+uuid: d0a5ba4f-bc1d-474c-8b88-65e685f8087b
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - paragraphs.paragraphs_type.settings
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: B16YveBvyzzJzXXKteS6lcMVgQmDFlzASi_ED2IN7eQ
 id: node.pagina.field_componenti
 field_name: field_componenti
 entity_type: node

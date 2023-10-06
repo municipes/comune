@@ -1,3 +1,4 @@
+uuid: c55114c5-597f-496b-a5a8-c28633eab196
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: QPnuJ2H8QoCnehGeqjYiiO0XPAPwf5ts5Aq-KhBqjdM
 id: eventscalendarblock
 theme: scaenographia
 region: home_second_row_full_width

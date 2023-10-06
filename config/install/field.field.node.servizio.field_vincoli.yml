@@ -1,3 +1,4 @@
+uuid: eeed003c-00c6-4052-b0b7-45d97fcb66fd
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: wThbgDCM3Wn4EW3HZanXxowB3JtqrWPZy4oQs-_lQN8
 id: node.servizio.field_vincoli
 field_name: field_vincoli
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

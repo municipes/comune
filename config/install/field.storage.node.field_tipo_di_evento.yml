@@ -1,9 +1,12 @@
+uuid: d1252e60-b440-462e-9e00-26f273f6c088
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: rVztNZRxaEN8Jl-YjfVbfJz5h3oRQbZ4UZr02MTPjmc
 id: node.field_tipo_di_evento
 field_name: field_tipo_di_evento
 entity_type: node

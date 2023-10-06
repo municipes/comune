@@ -1,3 +1,4 @@
+uuid: 0ea4018c-b692-44ff-b99e-e77c888e99ad
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - datetime
     - node
     - user
+_core:
+  default_config_hash: iHld9bBnrj-PhklO9udwKyuS87B4wn48Ol-RSc0WyuU
 id: bi_tutti_gli_eventi
 label: 'BI Tutti gli eventi'
 module: views

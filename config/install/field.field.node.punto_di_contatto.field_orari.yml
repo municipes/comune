@@ -1,3 +1,4 @@
+uuid: ebc0499f-f840-4aad-8d32-fd740bdeee1d
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.punto_di_contatto
   module:
     - office_hours
+_core:
+  default_config_hash: b3GIkBdrNWmVpVsZBjAMgwvaya9w1RGfBlSnyN7ntqk
 id: node.punto_di_contatto.field_orari
 field_name: field_orari
 entity_type: node

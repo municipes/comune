@@ -1,8 +1,11 @@
+uuid: 371ff99f-c01d-435f-9e80-89458b46c941
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: OsSC5wFCsp10cPtZCVs4btkK1az_AsN9jdZR0s_GJOo
 id: user_block_user_action
 label: 'Bloccare gli utenti selezionati'
 type: user

@@ -1,9 +1,12 @@
+uuid: 4e9c5aaa-57f3-4d8d-9a70-70d3c7efd817
 langcode: it
 status: true
 dependencies:
   enforced:
     theme:
       - bootstrap_italia
+_core:
+  default_config_hash: nrgD82KX2jkQWDfj-l-Q4bOltsI_pPyR_IiEA4CQi3E
 id: bootstrap_italia_medium
 label: 'Bootstrap Italia data media'
 locked: false

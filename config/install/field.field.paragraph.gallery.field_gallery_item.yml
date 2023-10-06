@@ -1,3 +1,4 @@
+uuid: d07a0d5e-f597-4e86-8142-0cb40bd90908
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery_item
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: E_Vhvr_A92LyXHnIw-1M-jt-9-DjoevZQxcjU6_YzCI
 id: paragraph.gallery.field_gallery_item
 field_name: field_gallery_item
 entity_type: paragraph

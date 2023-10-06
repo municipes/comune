@@ -1,8 +1,11 @@
+uuid: dcb4eba6-b093-4971-b2d6-dcbb7f89c5f2
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: a0sSSlhaZM-PrIYg83ekD96Nq31U5uyAr_YY7Ai6hKk
 id: incarico
 label: Incarico
 type: 'canonical_entities:node'

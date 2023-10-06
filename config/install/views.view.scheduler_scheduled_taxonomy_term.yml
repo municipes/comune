@@ -1,3 +1,4 @@
+uuid: e64a27e3-acd3-4bae-bf6a-2c438ab13ba5
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   enforced:
     module:
       - scheduler
+_core:
+  default_config_hash: _KH4UHQRY4phWMxQsQDJyWF6RKpBMOUfXTxI7oeo0FI
 id: scheduler_scheduled_taxonomy_term
 label: 'Scheduled Taxonomy Terms'
 module: views

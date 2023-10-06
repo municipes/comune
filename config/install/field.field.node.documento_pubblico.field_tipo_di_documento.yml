@@ -1,3 +1,4 @@
+uuid: 7d73fa12-90ed-48d0-9e3f-edf5e5b24fb2
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_documento
     - node.type.documento_pubblico
     - taxonomy.vocabulary.tipi_di_documento
+_core:
+  default_config_hash: 1vpS3PM2-FvrgOSY6OyUyQ_4vFGMedWzFd7W-_5IhME
 id: node.documento_pubblico.field_tipo_di_documento
 field_name: field_tipo_di_documento
 entity_type: node

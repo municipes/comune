@@ -1,9 +1,12 @@
+uuid: 94a80dfb-c6a5-4e7b-8265-cf6b3f79cda8
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_past_event
     - paragraphs.paragraphs_type.timeline_item
+_core:
+  default_config_hash: unDq52Fi-gD8yZQcrOO7BepxfR2a3iXdhVYfvWzWpRI
 id: paragraph.timeline_item.field_past_event
 field_name: field_past_event
 entity_type: paragraph

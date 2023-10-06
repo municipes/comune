@@ -1,8 +1,11 @@
+uuid: 3a69ce1e-b125-4de3-8528-08b742ac80cb
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: ZQ9Qg2LPHduSyT4IMzMr0qdm1dBa89TZhsaU7MWJy5g
 id: luogo
 label: Luogo
 type: 'canonical_entities:node'

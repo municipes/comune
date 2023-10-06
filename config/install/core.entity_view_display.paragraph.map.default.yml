@@ -1,3 +1,4 @@
+uuid: 54e54e95-8d9d-41a9-b8ac-037c162f3b16
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - leaflet
+_core:
+  default_config_hash: r21fjW9QDSqUqDL2olPh2quRwq6jKF6Tgestnkutfk4
 id: paragraph.map.default
 targetEntityType: paragraph
 bundle: map
@@ -91,4 +94,5 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

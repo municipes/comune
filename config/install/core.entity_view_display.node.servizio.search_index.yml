@@ -1,3 +1,4 @@
+uuid: 116c3527-8d58-49d5-b4de-ced3b49d64f2
 langcode: it
 status: true
 dependencies:
@@ -45,6 +46,8 @@ dependencies:
     - entity_reference_revisions
     - text
     - user
+_core:
+  default_config_hash: geTWSGlJe5OAq-maYQJ0lDNjwMd-HLdsl_NM04S2z20
 id: node.servizio.search_index
 targetEntityType: node
 bundle: servizio

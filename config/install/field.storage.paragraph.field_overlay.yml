@@ -1,8 +1,11 @@
+uuid: 8727df75-c28c-4f25-9f93-50f454f1ab27
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: gDJQChoJBC26EDDrugSF5uhFnY_qjPK1AX2Hf4h1zJc
 id: paragraph.field_overlay
 field_name: field_overlay
 entity_type: paragraph

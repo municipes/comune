@@ -1,3 +1,4 @@
+uuid: 58da4afc-bb54-4e03-834a-41b1d1d4a4d3
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_life_events
     - node.type.servizio
     - taxonomy.vocabulary.eventi_della_vita_delle_persone
+_core:
+  default_config_hash: IGIfS7Eo6fSMSsznMvXIbDgroWw7wgfBzL-H5kytD-M
 id: node.servizio.field_life_events
 field_name: field_life_events
 entity_type: node

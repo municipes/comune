@@ -1,8 +1,11 @@
+uuid: 9cbfc371-2b36-4f12-b347-eef6589047e8
 langcode: it
 status: true
 dependencies:
   config:
     - media.type.image_svg
+_core:
+  default_config_hash: P0wAyb-uWehD9Q9MA6aAspOFWJ-HlCLY1KhLle33RRU
 id: media.image_svg
 target_entity_type_id: media
 target_bundle: image_svg

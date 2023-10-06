@@ -1,9 +1,12 @@
+uuid: de86ef49-810a-4848-a80b-60d5cac9b0ee
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: '-3SGUeBxGqwUZWFiTGTmbQi4pNk5Dse_cHzfoeJKZgo'
 id: node.field_situazione_patrimoniale
 field_name: field_situazione_patrimoniale
 entity_type: node

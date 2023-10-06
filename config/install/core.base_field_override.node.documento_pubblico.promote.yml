@@ -1,8 +1,11 @@
+uuid: 0c631b05-862d-4e90-a2e3-1c3bfd6fbb25
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.documento_pubblico
+_core:
+  default_config_hash: YFgNdH0TCLebbWJNKi37RuUd3Oekmx9VGyvCNyT9anY
 id: node.documento_pubblico.promote
 field_name: promote
 entity_type: node

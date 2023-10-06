@@ -1,3 +1,4 @@
+uuid: 2997a612-95d1-4b33-b0db-69a37cb66fa9
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_accesso
     - node.type.accesso_al_servizio
     - taxonomy.vocabulary.tipo_di_accesso_al_servizio
+_core:
+  default_config_hash: CWYzmVRlIYZwdtuh69g3rJcVlTezAkL_JN2NKpqj_vE
 id: node.accesso_al_servizio.field_tipo_di_accesso
 field_name: field_tipo_di_accesso
 entity_type: node

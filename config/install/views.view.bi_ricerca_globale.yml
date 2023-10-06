@@ -1,3 +1,4 @@
+uuid: 5f70cb85-2eaa-4e76-be36-98e8f266d847
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - search_api.index.all
   module:
     - search_api
+_core:
+  default_config_hash: vxgoc8BbGoyPERT7Nn-EwrXkUIKiZya_BSDoGrDMCpw
 id: bi_ricerca_globale
 label: 'BI Ricerca globale'
 module: views

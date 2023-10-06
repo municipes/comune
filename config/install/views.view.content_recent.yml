@@ -1,9 +1,12 @@
+uuid: ad1f1590-ecc5-4202-be43-072a5e838b2b
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: 7HkvbN9fB_0fby7bTF1grDl-fZLm76HnO_0fH_FF1MA
 id: content_recent
 label: 'Contenuti recenti'
 module: node

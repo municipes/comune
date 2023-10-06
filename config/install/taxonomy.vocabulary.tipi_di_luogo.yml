@@ -1,6 +1,9 @@
+uuid: d8930826-21d8-4381-a991-ddcf4d725d40
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 9gxusqTxnRQ7JQiWEJISrsfafua3MW6YL5_HKqz4XLs
 name: 'Tipi di luogo'
 vid: tipi_di_luogo
 description: 'Classificazione multi livello dei luoghi di interesse pubblico'

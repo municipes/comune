@@ -1,8 +1,11 @@
+uuid: 046c2da0-d9d5-479f-a87c-b83d61259f8a
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.dataset
+_core:
+  default_config_hash: gtzi6bS6v1xxpwzHKZYj65mSvBUceljmPeSjrHyCqhE
 id: node.dataset.promote
 field_name: promote
 entity_type: node

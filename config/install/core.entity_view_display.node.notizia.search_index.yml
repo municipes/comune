@@ -1,3 +1,4 @@
+uuid: b128c9ba-0c8d-42c5-8f5b-097a13647bf0
 langcode: it
 status: true
 dependencies:
@@ -24,6 +25,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: A5JlXaznuJOUoZ1m2aAand-OGjvm8WC_aPSydKh8Nzk
 id: node.notizia.search_index
 targetEntityType: node
 bundle: notizia

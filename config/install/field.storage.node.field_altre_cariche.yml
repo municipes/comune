@@ -1,9 +1,12 @@
+uuid: a7fde52c-1e90-4a53-b4de-593ed5927155
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: L046fwhKaM4KkLbFfOOnytN3DnDj1qOPpKUjaq9Ij3I
 id: node.field_altre_cariche
 field_name: field_altre_cariche
 entity_type: node

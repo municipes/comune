@@ -1,3 +1,4 @@
+uuid: 9f43180d-ca55-466c-85f5-f1cf99978599
 langcode: it
 status: true
 dependencies:
@@ -6,25 +7,18 @@ dependencies:
     - views.view.bi_ricerca_globale
   module:
     - search_api
+_core:
+  default_config_hash: x02RGCLVu-VlwUo-GxTgqcVHUQGpPXxpP-K_QEmlyn0
 id: tipologie
 name: Tipologie
+url_alias: tipologie
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: tipologie
-facet_source_id: 'search_api:views_page__bi_ricerca_globale__page_1'
+show_only_one_result: false
 field_identifier: type
-query_operator: or
-hard_limit: 0
-exclude: false
-use_hierarchy: false
-keep_hierarchy_parents_active: false
-hierarchy:
-  type: taxonomy
-  config: {  }
-expand_hierarchy: false
-enable_parent_when_child_gets_disabled: true
+facet_source_id: 'search_api:views_page__bi_ricerca_globale__page_1'
 widget:
   type: checkbox
   config:
@@ -36,11 +30,17 @@ widget:
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
-empty_behavior:
-  behavior: none
+query_operator: or
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+hierarchy:
+  type: taxonomy
+  config: {  }
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
 only_visible_when_facet_source_is_visible: true
-show_only_one_result: false
-show_title: false
 processor_configs:
   display_value_widget_order:
     processor_id: display_value_widget_order
@@ -64,3 +64,6 @@ processor_configs:
       pre_query: 50
       build: 15
     settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

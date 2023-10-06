@@ -1,9 +1,12 @@
+uuid: 978d94fc-f2c6-4d82-bf43-7e1861a8d9ac
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_blockquote_dark
     - paragraphs.paragraphs_type.citation
+_core:
+  default_config_hash: lieTOJIeik-hJexuvVaAemGezQhGynU-ths5Ld6UhQ8
 id: paragraph.citation.field_blockquote_dark
 field_name: field_blockquote_dark
 entity_type: paragraph

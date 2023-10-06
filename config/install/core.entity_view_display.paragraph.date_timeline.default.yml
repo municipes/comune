@@ -1,3 +1,4 @@
+uuid: 5058b122-9996-4986-8180-7774c1a61ff5
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - ui_patterns_field_formatters
+_core:
+  default_config_hash: d3hgvJdeSlo7q-UWoTYL0pOT8bGqqj1J-qB0LRUqTU4
 id: paragraph.date_timeline.default
 targetEntityType: paragraph
 bundle: date_timeline

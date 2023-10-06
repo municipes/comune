@@ -1,3 +1,4 @@
+uuid: 25262d65-35cf-4822-9bc3-3b1f8c5f538d
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - paragraphs
     - views
     - viewsreference
+_core:
+  default_config_hash: '-kjotPi-ar2iTPNm9qPOwSvcPDPpn7YTGZIUPFQjTfU'
 id: paragraph.field_vista_da_visualizzare
 field_name: field_vista_da_visualizzare
 entity_type: paragraph

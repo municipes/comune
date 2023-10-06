@@ -1,9 +1,12 @@
+uuid: 4c5b5357-14a2-4519-8979-5fb8394a1681
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: 16D3ws2FAUgOCJ2Kr8HDH-LXwazr_nSLesZhHa1B5XQ
 id: node.field_costi
 field_name: field_costi
 entity_type: node

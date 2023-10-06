@@ -1,9 +1,12 @@
+uuid: a1b03075-c090-4021-b8e1-225f0f37debc
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_description
     - paragraphs.paragraphs_type.hero
+_core:
+  default_config_hash: cmA1qZaJlRcEfIaB3XYjEz9Ky1JNBvyNCPD6tc2Yp14
 id: paragraph.hero.field_description
 field_name: field_description
 entity_type: paragraph

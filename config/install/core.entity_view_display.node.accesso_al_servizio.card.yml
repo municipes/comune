@@ -1,3 +1,4 @@
+uuid: 39a07f4a-36d8-4956-831c-5ed4e32c5e62
 langcode: it
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
   module:
     - link
     - user
+_core:
+  default_config_hash: rD5nAtQ2CQ5Cd3OocRM_q-nVRvMBpT-NyyOpOoeiiPM
 id: node.accesso_al_servizio.card
 targetEntityType: node
 bundle: accesso_al_servizio

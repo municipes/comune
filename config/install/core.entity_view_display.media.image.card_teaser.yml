@@ -1,3 +1,4 @@
+uuid: e477e5c5-0f7b-4086-9d41-d2eeb1ad0f0d
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - media.type.image
   module:
     - image
+_core:
+  default_config_hash: 8KsOr6h8ZGgv2cRaX789Fi9-9Ctm5KIlDr3jxRK0po4
 id: media.image.card_teaser
 targetEntityType: media
 bundle: image

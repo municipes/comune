@@ -1,8 +1,11 @@
+uuid: 9650549f-e695-4067-aea7-d53a9fdb2987
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 17koVSvP1usgmLLsonvEDwZTAPOvpSB98iQY1igRAQg
 id: paragraph.field_show_caption
 field_name: field_show_caption
 entity_type: paragraph

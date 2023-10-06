@@ -1,8 +1,11 @@
+uuid: 38d0d5a1-a296-4957-b882-2884d0d9af87
 langcode: it
 status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: cLtRm43nylXI8009YDR7qyaGU9-Kgo9q-U0gpYvoKn4
 id: media.card_teaser
 label: 'Card teaser'
 targetEntityType: media

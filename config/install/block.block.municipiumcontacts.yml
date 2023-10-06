@@ -1,3 +1,4 @@
+uuid: be02bab0-2efa-415c-8238-80b667c2eb29
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - bi_contacts
   theme:
     - scaenographia
+_core:
+  default_config_hash: ZFGaSTCY0CFX_DwL-oOXRS-Adqfj1Y9r43mIy6egoUA
 id: municipiumcontacts
 theme: scaenographia
 region: contacts
@@ -13,12 +16,12 @@ provider: null
 plugin: bi_contacts
 settings:
   id: bi_contacts
-  label: 'Municipium: contacts'
+  label: 'Contatta il comune'
   label_display: '0'
   provider: bi_contacts
   bi_contacts_faq: /domande-frequenti
   bi_contacts_help: /help-desk
-  bi_contacts_call: '+39055055055'
+  bi_contacts_call: '+3907447471'
   bi_contacts_reservation: /prenota-appuntamento
   bi_contacts_report: /
 visibility: {  }

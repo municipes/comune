@@ -1,9 +1,12 @@
+uuid: a8cc96e7-f00b-42f1-ae85-44797f945e99
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: RtFT-xF3xhwXxm4SDuEbuX10tQM2evHn1L6t94Rqs1c
 id: paragraph.field_assistenza
 field_name: field_assistenza
 entity_type: paragraph

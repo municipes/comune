@@ -1,9 +1,12 @@
+uuid: 47708ede-b162-49d1-9154-7bb0caf04792
 langcode: it
 status: true
 dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: 62mCGUFJ0oJyU8CL2xqHLD0Xz7BK5GNM3vZYyYDB8Y0
 id: node.field_ricevuta
 field_name: field_ricevuta
 entity_type: node

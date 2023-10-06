@@ -1,3 +1,4 @@
+uuid: 3772a4f5-21ab-41d3-8c0d-4145a02335bc
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - text
+_core:
+  default_config_hash: 9Lc3XM-ac-oUApLmR9rDdc4q3l-wLPGlkLPlri_e1U0
 id: node.documento_pubblico.field_riferimenti_normativi
 field_name: field_riferimenti_normativi
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

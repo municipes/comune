@@ -1,3 +1,4 @@
+uuid: 2101b3ae-be66-424a-922a-ee301dae0699
 langcode: it
 status: true
 dependencies:
@@ -24,6 +25,8 @@ dependencies:
     - text
     - user
     - viewsreference
+_core:
+  default_config_hash: JFNECRgTxs0gmfy-PGVUHd-Wqvm4Iq0UJccpvW0yZeE
 id: node.unita_organizzativa.search_index
 targetEntityType: node
 bundle: unita_organizzativa

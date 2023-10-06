@@ -1,3 +1,4 @@
+uuid: e90c5f23-f19e-47a3-827b-2cc50f790a84
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.carousel
   module:
     - options
+_core:
+  default_config_hash: WSqOdkaCh8Hke_RSiGar13BkWy6sIF3vGS7cqbHZR2M
 id: paragraph.carousel.field_carousel_slide_spacing
 field_name: field_carousel_slide_spacing
 entity_type: paragraph

@@ -1,3 +1,4 @@
+uuid: ab6b3461-56f5-4cf2-afca-1c74ed674ef2
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.unita_organizzativa
   module:
     - text
+_core:
+  default_config_hash: cq36XcmR412auRnb4CWo8CBUymMQwW_C8qsqz0b5Tpo
 id: node.unita_organizzativa.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

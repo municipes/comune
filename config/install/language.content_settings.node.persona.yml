@@ -1,8 +1,11 @@
+uuid: 8531a48a-6285-4c1b-b5b0-0c531120a381
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.persona
+_core:
+  default_config_hash: uOKrnxUTTP9Db02XnseJk5zOTgXK96WsOw29zg-m378
 id: node.persona
 target_entity_type_id: node
 target_bundle: persona

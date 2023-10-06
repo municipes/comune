@@ -1,9 +1,12 @@
+uuid: 325d1597-68a8-4242-bebe-9e42d5ca485c
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: a-GZkXRXFf2W3LvCzY_bTwVB0qLL2zfwzgVj67UP_Gw
 id: node.field_argomenti
 field_name: field_argomenti
 entity_type: node

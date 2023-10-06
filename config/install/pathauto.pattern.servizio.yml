@@ -1,8 +1,11 @@
+uuid: 08da9c76-ca57-488f-be34-77720c75cad7
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: nUerjO90x7U6bHgS1N8OXOryH6zuucEtMpIeXxbiF6g
 id: servizio
 label: Servizio
 type: 'canonical_entities:node'

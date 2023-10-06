@@ -1,3 +1,4 @@
+uuid: 9ba31136-6f8d-4b25-9b21-d630dbfb32a5
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - node
     - taxonomy
     - user
+_core:
+  default_config_hash: SLnlPv6FVw1kERoNln1LM6Bw2pWozv9PpTbsloDvT_4
 id: bi_persone
 label: 'BI Persone'
 module: views

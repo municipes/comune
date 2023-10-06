@@ -1,3 +1,4 @@
+uuid: 025287d1-4b8d-4cb3-92d7-792d870ccbf4
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: DFa6sQ6pIwDw1--yW6E2ftMa5TQzcV7LxoxaecdLIDE
 id: node.faq.teaser
 targetEntityType: node
 bundle: faq

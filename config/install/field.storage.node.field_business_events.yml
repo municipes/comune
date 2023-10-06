@@ -1,9 +1,12 @@
+uuid: af7ef320-daa1-43e3-9646-27ca9a8492b1
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: Ssu5q0XS6pMSO3oMVd5Q1fUmI8WHlulGd_bEz61BigE
 id: node.field_business_events
 field_name: field_business_events
 entity_type: node

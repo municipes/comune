@@ -1,3 +1,4 @@
+uuid: f02e2676-1bd6-4437-a67d-509be84e36cd
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.tipi_di_notizia
   module:
     - text
+_core:
+  default_config_hash: p352NfBxA-S3Xa_KnT0ADfZPuTuIrTV45u913oBJiIk
 id: taxonomy_term.tipi_di_notizia.default
 targetEntityType: taxonomy_term
 bundle: tipi_di_notizia

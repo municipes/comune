@@ -1,9 +1,12 @@
+uuid: 49b1c1e4-7723-442e-8021-bbde92faf808
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: JEpJTm8FW14ETcCFG3wBkzdo5SmgAQdyl-yYRHIcoGA
 id: node.field_modalita_di_pagamento
 field_name: field_modalita_di_pagamento
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: eb5baf0c-9eda-44db-a4dc-b0c3112c1685
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.section
   module:
     - text
+_core:
+  default_config_hash: VErNkOFOaPx4mL9IsqpgZgGCgPlEzi9Tly7ihzOHOCs
 id: paragraph.section.field_section_content
 field_name: field_section_content
 entity_type: paragraph
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

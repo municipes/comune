@@ -1,3 +1,4 @@
+uuid: ab8890c6-c5c6-4f28-bc56-15543a6afbec
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: DPJW30XhZ1035yyfZ-mmySy06NgDsTD_hseiOUYM8VQ
 id: scaenographia_messages
 theme: scaenographia
 region: notification

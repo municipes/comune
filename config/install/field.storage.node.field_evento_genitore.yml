@@ -1,8 +1,11 @@
+uuid: a32c6534-8af5-42ed-9142-26627dead750
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: m3Rq9GbbC-K15bh5IX9qcnsalbkpncUDEdRNQx3IZjU
 id: node.field_evento_genitore
 field_name: field_evento_genitore
 entity_type: node

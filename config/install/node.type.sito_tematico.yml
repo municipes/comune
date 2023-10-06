@@ -1,3 +1,4 @@
+uuid: 88b7989c-593e-4e4d-ad0d-edd0daf9e9a6
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Sito Tematico</em> content'
     type_weight: 0
+_core:
+  default_config_hash: to1A4WygFJuBuSRePfg9V541lzF6O3zEoxi_Dey3BF8
 name: 'Sito Tematico'
 type: sito_tematico
 description: ''

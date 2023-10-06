@@ -1,8 +1,11 @@
+uuid: 54fb0dc5-bd45-4e5d-a605-af340cfb2955
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: ubpCP6J6T04VYi79TduushQhTM_tmpfNcVS6CG7pmi0
 id: node.field_importo_pagato
 field_name: field_importo_pagato
 entity_type: node

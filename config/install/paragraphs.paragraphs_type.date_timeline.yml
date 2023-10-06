@@ -1,8 +1,11 @@
+uuid: 9d0fa0b8-1256-4cd8-8061-abc48abdb1ce
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:ceb6c335-05c5-4c55-bf1a-1a24a882e9e2'
+_core:
+  default_config_hash: 3IsL3ABblalL5TIx_yIzCSfuRw6dlTBJht_v_PDcr3E
 id: date_timeline
 label: 'Date Timeline'
 icon_uuid: ceb6c335-05c5-4c55-bf1a-1a24a882e9e2

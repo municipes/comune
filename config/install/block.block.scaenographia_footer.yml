@@ -1,3 +1,4 @@
+uuid: 334ad242-28ad-42ce-b724-9aad7450d1cd
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: AZYvVFQD7BCyqpwbuRina8ys1VazpVoZTgYUImAtXrY
 id: scaenographia_footer
 theme: scaenographia
 region: footer_menu

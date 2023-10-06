@@ -1,3 +1,4 @@
+uuid: a0a6793f-e833-4863-83f6-a2c6a9bde084
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: gbtNTIdnoirfjy6VHpUgM3abV-2H_aem2l1S0NfKTTI
 id: scaenographia_breadcrumbs
 theme: scaenographia
 region: breadcrumb

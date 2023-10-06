@@ -1,3 +1,4 @@
+uuid: e71d7d0d-30cc-4850-bc68-3fd99ecfb21d
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.incarico
   module:
     - datetime
+_core:
+  default_config_hash: zj3MfEXpnh3KhWb3TJsTNJvdRz-rVkWODDwuPCvfhkI
 id: node.incarico.field_data_fine
 field_name: field_data_fine
 entity_type: node

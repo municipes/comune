@@ -1,8 +1,11 @@
+uuid: e49cdf40-3741-4e79-b5f8-96242ce841c2
 langcode: it
 status: true
 dependencies:
   module:
     - taxonomy
+_core:
+  default_config_hash: PEC3xNOocY4siknb2_gnIzMoZlT1g_bvpcRuevYayB8
 id: taxonomy_term_servizi
 label: 'Taxonomy term - Servizi'
 type: 'canonical_entities:taxonomy_term'

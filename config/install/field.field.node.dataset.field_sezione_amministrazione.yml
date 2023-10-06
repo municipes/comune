@@ -1,3 +1,4 @@
+uuid: 5ae73a1d-650b-4f8e-8ba7-a2b32b076d1c
 langcode: it
 status: true
 dependencies:
@@ -5,8 +6,8 @@ dependencies:
     - field.storage.node.field_sezione_amministrazione
     - node.type.dataset
     - taxonomy.vocabulary.amministrazione
-  content:
-    - 'taxonomy_term:amministrazione:73a2d142-1917-4eb6-86e3-f5276858896e'
+_core:
+  default_config_hash: VsaTSQacFULuVdgkQgooxX8YP8dANxdCwiAepFVytv8
 id: node.dataset.field_sezione_amministrazione
 field_name: field_sezione_amministrazione
 entity_type: node

@@ -1,9 +1,12 @@
+uuid: 2f396ec1-e643-4c2c-99b1-a52d3ad323ad
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_circoscrizione
     - node.type.luogo
+_core:
+  default_config_hash: 69nTthB0cqarkQybF7sdLeGGtrqT4VNb08GCO8ZYUsw
 id: node.luogo.field_circoscrizione
 field_name: field_circoscrizione
 entity_type: node

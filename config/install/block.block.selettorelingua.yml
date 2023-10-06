@@ -1,3 +1,4 @@
+uuid: 91e9d737-0755-4f1d-9d67-6538887fb7ff
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - language
   theme:
     - scaenographia
+_core:
+  default_config_hash: Nfj7ElKoE2aWM_x4ZiGHfiy3DWKgNaZH9SXno08FWbo
 id: selettorelingua
 theme: scaenographia
 region: header_slim_language

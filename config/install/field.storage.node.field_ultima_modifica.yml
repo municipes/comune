@@ -1,9 +1,12 @@
+uuid: 9f6f4010-5093-4f30-a7f7-b4d83789714f
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: q0ct2IPqKarfa9q8bP4cfQg84dbhSLvsy4WI7KpeoPM
 id: node.field_ultima_modifica
 field_name: field_ultima_modifica
 entity_type: node

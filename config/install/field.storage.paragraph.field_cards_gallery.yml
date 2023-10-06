@@ -1,9 +1,12 @@
+uuid: 3fbf0e2c-8fc3-4453-96cb-e59f1aebd352
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: zIE57QRq4g396qM9JoEy6SYVKlGd8TyOPOGbUYWa1M4
 id: paragraph.field_cards_gallery
 field_name: field_cards_gallery
 entity_type: paragraph

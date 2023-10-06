@@ -1,3 +1,4 @@
+uuid: 5eab43fb-f9fd-4fe1-a206-f832f7a3babd
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.link
   module:
     - link
+_core:
+  default_config_hash: LpKeUiRgM7K-eNRG0xEE2f6FhygjC0h2b-BX8GUX1eU
 id: paragraph.link.buttons
 targetEntityType: paragraph
 bundle: link

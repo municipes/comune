@@ -1,6 +1,9 @@
+uuid: e13df0f7-8257-4a28-b70d-ecbc5dd765f8
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: JgKHyMrsZ8m5_5rei9wBcn0Hm_AEa3DyS5D8hB_DnGE
 id: small-prints
 label: 'Small prints'
 description: 'Footer: link legali'

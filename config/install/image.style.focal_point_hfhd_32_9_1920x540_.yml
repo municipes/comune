@@ -1,8 +1,11 @@
+uuid: 01a92a0b-c27c-467e-b01b-856dfa06e6ee
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: 3pucHbJ2C-Lv8bT1X2dHJAxNa00LTu8noFDL4uWykps
 name: focal_point_hfhd_32_9_1920x540_
 label: 'Punto focale HFHD 32:9 (1920x540) Wide'
 effects:

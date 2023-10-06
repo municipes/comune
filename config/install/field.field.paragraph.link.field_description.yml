@@ -1,9 +1,12 @@
+uuid: 2fc9dff4-6b1a-4968-99cc-b9b2c197772e
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_description
     - paragraphs.paragraphs_type.link
+_core:
+  default_config_hash: bIUxgFarOlf8dVmyuFfkrh1I9XAtGexgJVQPAQ4mIOE
 id: paragraph.link.field_description
 field_name: field_description
 entity_type: paragraph

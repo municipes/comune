@@ -1,3 +1,4 @@
+uuid: dde8aac4-3423-4c29-9310-a3445d16cab9
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_spese_elettorali
     - media.type.document
     - node.type.persona
+_core:
+  default_config_hash: pAyiIA_zbt4exHnkmSQNE7ZasN-9SQJ3Ym5P4ZSpXjw
 id: node.persona.field_spese_elettorali
 field_name: field_spese_elettorali
 entity_type: node

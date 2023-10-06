@@ -1,8 +1,11 @@
+uuid: 87724933-b441-48c8-995e-71b19fb8d66e
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:3cd2c713-944b-45a5-a5f3-240e592ad0fc'
+_core:
+  default_config_hash: hDA-UH-NZN5TWnYYm3hvir8n_GzE5CiTwB1ZrfKiG-M
 id: hero
 label: Hero
 icon_uuid: 3cd2c713-944b-45a5-a5f3-240e592ad0fc

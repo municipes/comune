@@ -1,3 +1,4 @@
+uuid: 61b57b62-8f2c-4d9d-928e-35a224db288e
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_unita_organizzativa
     - node.type.documento_pubblico
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: 32Tq1A-9sEeBax1P7h38dhrHQYwsEsVaeJP9xl78jVk
 id: node.documento_pubblico.field_unita_organizzativa
 field_name: field_unita_organizzativa
 entity_type: node

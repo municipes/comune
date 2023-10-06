@@ -1,8 +1,11 @@
+uuid: 3374fab8-f810-44ed-b98a-f963773a8028
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: 4aT-7DoDaBzPlY81S49XRuxWjVNuBJ__Z7Y9VR4ce0w
 name: focal_point_hd_16_9_1600x900_
 label: 'Punto focale HD+ 16:9 (1600x900) Wide'
 effects:

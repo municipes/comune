@@ -1,9 +1,12 @@
+uuid: 37c0adfe-ac5d-4d41-ae6e-d7bbfbc087ea
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_now_event
     - paragraphs.paragraphs_type.timeline_item
+_core:
+  default_config_hash: dySzixwbdL9p3qcVvhP8NrsSSa92sPQtmwqCDUvWzLA
 id: paragraph.timeline_item.field_now_event
 field_name: field_now_event
 entity_type: paragraph

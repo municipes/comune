@@ -1,3 +1,4 @@
+uuid: 6762e92d-042f-4a14-b3de-382cb238f925
 langcode: it
 status: true
 dependencies:
@@ -5,8 +6,8 @@ dependencies:
     - field.storage.node.field_sezione_amministrazione
     - node.type.documento_pubblico
     - taxonomy.vocabulary.amministrazione
-  content:
-    - 'taxonomy_term:amministrazione:73a2d142-1917-4eb6-86e3-f5276858896e'
+_core:
+  default_config_hash: nqVLAQGBJ_pt24yUFqFsif2D-FR9PO70NKtelZvVx0g
 id: node.documento_pubblico.field_sezione_amministrazione
 field_name: field_sezione_amministrazione
 entity_type: node

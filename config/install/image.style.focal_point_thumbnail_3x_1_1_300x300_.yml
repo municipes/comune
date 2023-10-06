@@ -1,8 +1,11 @@
+uuid: 235bca31-fdd3-485f-82f6-dfced83dd705
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: 2LFLqo0b-R3riTOq64sqQTKVpA2mkFjLigmt0VnbphI
 name: focal_point_thumbnail_3x_1_1_300x300_
 label: 'Miniatura del punto focale 3X 1:1 (300x300)'
 effects:

@@ -1,10 +1,10 @@
-uuid: 48ea8e42-e3c3-4bf0-ba37-482fa220cb27
+uuid: e38c8171-215e-4b5a-be5c-d03de8cae330
 langcode: it
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.teaser
-label: Teaser
+id: taxonomy_term.token
+label: Token
 targetEntityType: taxonomy_term
 cache: true

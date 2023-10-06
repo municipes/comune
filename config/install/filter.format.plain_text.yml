@@ -1,6 +1,9 @@
+uuid: 150423de-4521-41ef-8047-8955b030831e
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: reRP1wnypkb94VZ6517pV3F3etl7iGnjycdf2KA7vHI
 name: 'Testo semplice'
 format: plain_text
 weight: 10

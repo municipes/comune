@@ -1,9 +1,12 @@
+uuid: 684ef708-0582-42af-9fce-d4af8303983a
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: KP6YCCCDDWvd-21NfiqOOfhEVi8tbdmPVQo7VvtUL4Y
 id: node.field_categoria_del_servizio
 field_name: field_categoria_del_servizio
 entity_type: node

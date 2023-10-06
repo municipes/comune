@@ -1,9 +1,12 @@
+uuid: 8204ff43-33df-4306-9bf0-f582ec6e8b71
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: HJix8nJsNa1EsUAwFRueUOGHDRmzUSMOqnVKLPRWa-c
 id: node.field_temi
 field_name: field_temi
 entity_type: node

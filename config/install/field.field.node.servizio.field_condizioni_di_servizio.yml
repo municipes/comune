@@ -1,3 +1,4 @@
+uuid: c753490c-6226-4da8-9908-d96c1b184439
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_condizioni_di_servizio
     - media.type.document
     - node.type.servizio
+_core:
+  default_config_hash: LDcldvy3A-Kq2SNmY8SNQd2YPTlHvT1A6U32BQwYjMY
 id: node.servizio.field_condizioni_di_servizio
 field_name: field_condizioni_di_servizio
 entity_type: node

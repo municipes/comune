@@ -1,9 +1,12 @@
+uuid: 7ff13378-57b2-4f08-9e0b-58fcf86f4cbc
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_valore_punto_di_contatto
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: LtW92biOzXTfh99F72yLcjg2lCXr0K_RsnQS4Igkxo8
 id: node.punto_di_contatto.field_valore_punto_di_contatto
 field_name: field_valore_punto_di_contatto
 entity_type: node

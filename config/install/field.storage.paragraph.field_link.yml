@@ -1,9 +1,12 @@
+uuid: d5b465b2-bdc6-488f-b389-4255f2a1bc2c
 langcode: it
 status: true
 dependencies:
   module:
     - link
     - paragraphs
+_core:
+  default_config_hash: tS-br_rpBCXBrcwBn3HDvRAhIaQJvJQir6q3HEzTjqA
 id: paragraph.field_link
 field_name: field_link
 entity_type: paragraph

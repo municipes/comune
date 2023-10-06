@@ -1,9 +1,12 @@
+uuid: 9bf18d11-966f-4ad6-8609-a30bd100f24a
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: eUPGEcv_kK3MtR_cenPRwWogS-CfdZBtqJtxRP0sOPU
 id: node.field_copertura_geografica
 field_name: field_copertura_geografica
 entity_type: node

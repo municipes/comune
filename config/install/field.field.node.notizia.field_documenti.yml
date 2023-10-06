@@ -1,3 +1,4 @@
+uuid: 71842134-c101-4d1a-aa64-e3960b44940d
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_documenti
     - node.type.documento_pubblico
     - node.type.notizia
+_core:
+  default_config_hash: nqHtmkWhGvwkI8WaUEEsvmnh2PXvYbza1xu3wmFJt_4
 id: node.notizia.field_documenti
 field_name: field_documenti
 entity_type: node

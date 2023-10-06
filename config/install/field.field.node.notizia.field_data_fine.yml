@@ -1,3 +1,4 @@
+uuid: b6579145-4dc8-46cc-abee-8d5f2fe52cd3
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.notizia
   module:
     - datetime
+_core:
+  default_config_hash: v-YAjzuJ5PY6O0Sk4qOMGaTQ_tAppCdhp3-9aTOd1r0
 id: node.notizia.field_data_fine
 field_name: field_data_fine
 entity_type: node

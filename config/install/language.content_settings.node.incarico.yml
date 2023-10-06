@@ -1,8 +1,11 @@
+uuid: dd8f51da-7cdb-4e93-8e67-f364116dfdd3
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.incarico
+_core:
+  default_config_hash: sSVYpxywPid2cy0BA8XmmmIPxg_Gln81a9lq9Td2Hhw
 id: node.incarico
 target_entity_type_id: node
 target_bundle: incarico

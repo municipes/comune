@@ -1,3 +1,4 @@
+uuid: 63091fcd-6392-4c2f-9de3-d7eec1b9a941
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_punti_di_contatto
     - node.type.evento
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: H7Pq0Cm6od61MChtbIIAqgKt87nYDHTHnCWFGSGux4E
 id: node.evento.field_punti_di_contatto
 field_name: field_punti_di_contatto
 entity_type: node

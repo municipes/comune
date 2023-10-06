@@ -1,8 +1,11 @@
+uuid: 61b72b4e-daff-49e7-aa79-fec4f61291e0
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 4nPo-XMUAKnsrqRxUY9dlwr7gPIHLrlJDieL8wMyA6A
 id: paragraph.field_blockquote_dark
 field_name: field_blockquote_dark
 entity_type: paragraph

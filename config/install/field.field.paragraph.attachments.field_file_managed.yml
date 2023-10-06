@@ -1,3 +1,4 @@
+uuid: 5e23de72-64b0-4d15-a2d5-bec297f881b1
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_file_managed
     - media.type.document
     - paragraphs.paragraphs_type.attachments
+_core:
+  default_config_hash: _yo4JN3UpzYUC60DA61ld1jboFbjidyh3QlmKv3NX34
 id: paragraph.attachments.field_file_managed
 field_name: field_file_managed
 entity_type: paragraph

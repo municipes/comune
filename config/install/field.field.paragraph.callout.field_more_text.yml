@@ -1,3 +1,4 @@
+uuid: c6f46957-dcc4-4550-a8f5-160982d7e0f6
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.callout
   module:
     - text
+_core:
+  default_config_hash: 0lzh6jkjE2Kk-hVCEsiktEYTQgycoXxKTZEh6SunXWk
 id: paragraph.callout.field_more_text
 field_name: field_more_text
 entity_type: paragraph
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

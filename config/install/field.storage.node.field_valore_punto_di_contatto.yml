@@ -1,8 +1,11 @@
+uuid: cc178d7a-6d20-4d97-94a3-9ea9c4b34c97
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: uA4Py4Yyk880hGwJKDibtBAQYGaUQvCHVr37ELxuQmQ
 id: node.field_valore_punto_di_contatto
 field_name: field_valore_punto_di_contatto
 entity_type: node

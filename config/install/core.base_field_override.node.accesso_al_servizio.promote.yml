@@ -1,8 +1,11 @@
+uuid: da5288e6-3ebf-4ffa-941f-d96df1c11893
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.accesso_al_servizio
+_core:
+  default_config_hash: gRkovdu5h2OKVYfzcKXPXBUynLiahvErMAEHjD7dvUE
 id: node.accesso_al_servizio.promote
 field_name: promote
 entity_type: node

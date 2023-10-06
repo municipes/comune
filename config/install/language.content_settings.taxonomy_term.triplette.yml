@@ -1,0 +1,16 @@
+uuid: 39606d69-0ea9-4693-9801-f7404421ba36
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.triplette
+  enforced:
+    module:
+      - silfi_triplette
+_core:
+  default_config_hash: ERUjFw7Emt5fPQZVlVI6yaNQoyiPdWrEVTzppm0VrfY
+id: taxonomy_term.triplette
+target_entity_type_id: taxonomy_term
+target_bundle: triplette
+default_langcode: site_default
+language_alterable: false

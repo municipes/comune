@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: Jhhx4iD98TWyUyzvo0sSWTnOkLcfm1TCDe2UQAA4W6g
 langcode: it
 crop_type: focal_point
 default_value: '50,50'

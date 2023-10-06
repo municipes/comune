@@ -1,3 +1,4 @@
+uuid: 7547c007-2a4e-4ac4-8a9e-9043390df110
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.pagamento
   module:
     - text
+_core:
+  default_config_hash: QV1PTbANa5sk7FbcG7kgiGcQruQStZzRfRJi9mPmDKU
 id: node.pagamento.field_descrizione_completa
 field_name: field_descrizione_completa
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

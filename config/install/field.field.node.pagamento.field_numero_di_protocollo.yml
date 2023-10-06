@@ -1,9 +1,12 @@
+uuid: 974778ed-a8bf-4373-b8d1-1a1ebdc9cfb3
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_numero_di_protocollo
     - node.type.pagamento
+_core:
+  default_config_hash: f8ZvUhI2YJRdI4_IFJZHfGq5m-WI9U2pB-gZsxy_knY
 id: node.pagamento.field_numero_di_protocollo
 field_name: field_numero_di_protocollo
 entity_type: node

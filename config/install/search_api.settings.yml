@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: OGLIJJM1oYdVdvlsMN9vzDdtnNivYkqFSlpcrR_KlMI
 langcode: it
 default_cron_limit: 50
 cron_worker_runtime: 15

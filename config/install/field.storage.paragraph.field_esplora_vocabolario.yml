@@ -1,9 +1,12 @@
+uuid: ef283407-db5b-4763-8976-0ae603abd85c
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
+_core:
+  default_config_hash: CmbVXhVDUJTA98zedEqqcck9SYSRyKmzt2d-Ld0SciY
 id: paragraph.field_esplora_vocabolario
 field_name: field_esplora_vocabolario
 entity_type: paragraph

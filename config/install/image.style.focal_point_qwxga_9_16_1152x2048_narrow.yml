@@ -1,8 +1,11 @@
+uuid: 00b07999-6d94-44b6-9c24-70eb555c7459
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: queKJ1pKxMMAYspYhepl6FxI-jZzUjV-xVobGGsvcXI
 name: focal_point_qwxga_9_16_1152x2048_narrow
 label: 'Punto focale QWXGA 9:16 (1152x2048) Stretto'
 effects:

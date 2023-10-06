@@ -1,3 +1,4 @@
+uuid: 01cf6bfc-f049-447a-be8d-cdb1c4f0742b
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.vista
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: hbCFeZADGtocHJn0yiEPkadmsDOsPmgXhy8gH1AyHCc
 id: paragraph.vista.field_settings
 field_name: field_settings
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: 73222d9a-a454-4b01-9bbb-f8597d49ee99
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: FgLiBcRpacEpIaEl0TU9Jn4D1jz76S7WSglD-xyFWPc
 name: focal_point_4k_uhd_16_9_3840x2160_
 label: 'Punto focale 4K UHD 16:9 (3840x2160) Wide'
 effects:

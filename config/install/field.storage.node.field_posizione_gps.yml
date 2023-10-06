@@ -1,9 +1,12 @@
+uuid: 7827aa1a-30c7-4e6b-90b0-f53592aa0421
 langcode: it
 status: true
 dependencies:
   module:
     - geofield
     - node
+_core:
+  default_config_hash: 4u6I5p8I-k_q5qVU2C4Z7NqIEWmnJrqv0drBhTxaXeg
 id: node.field_posizione_gps
 field_name: field_posizione_gps
 entity_type: node

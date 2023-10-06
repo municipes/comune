@@ -1,8 +1,11 @@
+uuid: 9833ceec-bcc5-4e4f-ad43-87f65f92fd63
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 6lXN5WzHYc_XJUtaHAVM0hYx_SaTG5E9-paJZHcd5nc
 id: node.field_servizio
 field_name: field_servizio
 entity_type: node

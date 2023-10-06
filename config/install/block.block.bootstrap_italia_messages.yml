@@ -1,3 +1,4 @@
+uuid: 2e10148f-c979-4b53-9dfc-86c88a173e0f
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: p0NBMkb736YE3lTpx2Y2ZKz-aNFGQYaboNMA80VnKwI
 id: bootstrap_italia_messages
 theme: bootstrap_italia
 region: disabled_blocks

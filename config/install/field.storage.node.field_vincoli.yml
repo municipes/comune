@@ -1,9 +1,12 @@
+uuid: 6efd7f73-1b39-407f-8dc5-5e8c183248fd
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: SeJL2NcSxO5jp4YvkhZS44_sd-4A6xYnYJpeXRwsYYw
 id: node.field_vincoli
 field_name: field_vincoli
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: b8d874ad-3017-4765-bc69-2e18cd99970c
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: HrsVB7DOBfuoxZS8YJOUutoCy7bqI5DeYPixO_Z4NoA
 id: node.field_parole_chiave
 field_name: field_parole_chiave
 entity_type: node

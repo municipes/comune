@@ -1,8 +1,11 @@
+uuid: 165046e7-10de-4a69-a67a-c6276a45bc24
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: LuLKi67tegUu5SmhhOlbRxFeJw5PPCX4GCPGW7dOjDw
 id: node.card_simple
 label: 'Card semplice'
 targetEntityType: node

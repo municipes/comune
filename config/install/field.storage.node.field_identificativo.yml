@@ -1,8 +1,11 @@
+uuid: 57b88314-8c2c-4ba7-8f4a-297ebb7acfd8
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: L99DwZJYUj_i44xQfRnCRcHzAB7Mm-ymBRDKq_Rx-iQ
 id: node.field_identificativo
 field_name: field_identificativo
 entity_type: node

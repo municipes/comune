@@ -1,9 +1,12 @@
+uuid: ee2e0cc6-507a-46b1-86f9-a6b56aa13bfe
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: 9YJrCjr96vmNYR0b2PxXEsw0dimtLEkcDyirihdStpk
 id: node.field_cosa_serve
 field_name: field_cosa_serve
 entity_type: node

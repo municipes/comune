@@ -1,9 +1,12 @@
+uuid: 29688b45-50bf-4424-a63e-9006de5f8326
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: EuHQqjsSlD9RB-TooPaHHc2VFReIV8X5sskdSAhaCNg
 id: node.field_a_chi_e_rivolto
 field_name: field_a_chi_e_rivolto
 entity_type: node

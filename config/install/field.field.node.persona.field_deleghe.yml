@@ -1,3 +1,4 @@
+uuid: 218d6f2a-cea5-40a2-bfb5-a087b7e82108
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.persona
   module:
     - text
+_core:
+  default_config_hash: wtq5KGka_vqTeX4q73Q7eoMDopI3ajfwHP1l6aqAegQ
 id: node.persona.field_deleghe
 field_name: field_deleghe
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

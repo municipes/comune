@@ -1,8 +1,11 @@
+uuid: 10a26328-a415-4e52-beac-890c6e54cdf2
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: bXuo_YaOyRXrIrbfOqE6ILMOP8fhCfL_H2acKKCegc0
 id: node_make_unsticky_action
 label: 'Rimuovere il contenuto dalla cima delle liste'
 type: node

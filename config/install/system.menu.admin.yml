@@ -1,6 +1,9 @@
+uuid: 9e514f78-a8df-4f6e-99f1-53090f28a8ee
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: qYqR45wKA7zzpvfdlTSgzAmdzuVIo5v7GPhi_v44nQc
 id: admin
 label: 'Amministrazione Drupal'
 description: 'Administrative task links'

@@ -1,3 +1,4 @@
+uuid: 0fcb302f-c3d9-4f9e-84bd-79274810da85
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.luogo
   module:
     - text
+_core:
+  default_config_hash: vYOaF7AAinQzn8gBG5cxCueIPw9DGkF2VLC7XvWHId4
 id: node.luogo.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -1,6 +1,9 @@
+uuid: 6222726e-5616-42f2-8daf-6a029bbbf66f
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: A0eiRJFfHuriTqVjeZceoEQA8cUAq45U5-uNrWVwue4
 id: medium
 label: 'Formato predefinito data media'
 locked: false

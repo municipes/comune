@@ -1,9 +1,12 @@
+uuid: 09fc026d-9a9b-4e0f-9aa4-9bdebb01593e
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: FpaQSUDtnuDmNs9n-cAShbs8k209ZIfRvzisT3pCKeI
 id: node.field_colore
 field_name: field_colore
 entity_type: node

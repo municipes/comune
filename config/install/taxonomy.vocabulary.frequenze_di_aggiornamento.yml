@@ -1,6 +1,9 @@
+uuid: a974ea7f-6689-4cfd-8c42-4ca2c141f963
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: V1e5znyM_zPiQXrt_1_i-GKx3eg3LODO-2k4VXDKnik
 name: 'Frequenze di aggiornamento'
 vid: frequenze_di_aggiornamento
 description: 'Classificazione della frequenza di aggiornamento secondo il Vocabolario Controllato Frequenza'

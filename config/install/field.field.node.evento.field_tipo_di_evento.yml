@@ -1,3 +1,4 @@
+uuid: e3414740-696c-4756-a185-a52985d19e0d
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_evento
     - node.type.evento
     - taxonomy.vocabulary.tipi_di_evento
+_core:
+  default_config_hash: 37agVeuHFiZxr8HPnbQ5sW-6cUrUjd6dv0qcHjTzJ4k
 id: node.evento.field_tipo_di_evento
 field_name: field_tipo_di_evento
 entity_type: node

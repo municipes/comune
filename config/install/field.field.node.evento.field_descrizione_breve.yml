@@ -1,9 +1,12 @@
+uuid: a39c2c8f-a05a-44a6-a451-37c42e54ae56
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.evento
+_core:
+  default_config_hash: d1ZLjlu3jdMTgnFG5vK2PNiRUXukpz9HEhqtljSIyqU
 id: node.evento.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

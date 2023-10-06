@@ -1,3 +1,4 @@
+uuid: 56e46ae6-ec92-40bf-8eed-692eac2b3a5d
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_sezione_amministrazione
     - node.type.persona
     - taxonomy.vocabulary.amministrazione
+_core:
+  default_config_hash: uKWIcaNdHjAk0B_ZsAYhs8PHIAtuH4tSdpe3Vi55qxQ
 id: node.persona.field_sezione_amministrazione
 field_name: field_sezione_amministrazione
 entity_type: node

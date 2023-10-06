@@ -1,3 +1,4 @@
+uuid: e424d714-7434-4346-9cfe-a0d9612e8e78
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.luogo
   module:
     - text
+_core:
+  default_config_hash: VyOJJTqwv9HGwskMBtedfuvHrjtYcAjGewGULNuQC9M
 id: node.luogo.field_modalita_di_accesso
 field_name: field_modalita_di_accesso
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

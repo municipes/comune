@@ -1,3 +1,4 @@
+uuid: 9deb3363-4cf3-432f-8031-222b8c1276e9
 langcode: it
 status: true
 dependencies:
@@ -29,6 +30,8 @@ dependencies:
   module:
     - datetime
     - user
+_core:
+  default_config_hash: L_ixWfTAOR78W4rUB4JFlcQE4kOi06anmj0lABR9lO8
 id: node.evento.card
 targetEntityType: node
 bundle: evento

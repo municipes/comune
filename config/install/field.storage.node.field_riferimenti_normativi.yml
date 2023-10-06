@@ -1,9 +1,12 @@
+uuid: 65063bb6-6410-4a97-9410-c0e69efd3693
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: 0-Wctc8mhvZA-45TIC4xuY1oDV7WQhotUrlEMXnqz_Q
 id: node.field_riferimenti_normativi
 field_name: field_riferimenti_normativi
 entity_type: node

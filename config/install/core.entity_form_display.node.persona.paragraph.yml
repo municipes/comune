@@ -1,3 +1,4 @@
+uuid: ece25d6f-55de-4575-b524-caabeece4b94
 langcode: it
 status: true
 dependencies:
@@ -25,6 +26,8 @@ dependencies:
     - node.type.persona
   module:
     - path
+_core:
+  default_config_hash: WD4tSGbltnYHfY2mOnW_SxO9UMylj_iU4pqkk_RdVwM
 id: node.persona.paragraph
 targetEntityType: node
 bundle: persona

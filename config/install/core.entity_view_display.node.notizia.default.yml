@@ -1,3 +1,4 @@
+uuid: 2abcb6b9-e972-4619-93ec-18d8690be9b4
 langcode: it
 status: true
 dependencies:
@@ -25,6 +26,8 @@ dependencies:
     - entity_reference_revisions
     - text
     - user
+_core:
+  default_config_hash: fkcl9lsiMeapysexz4coFDGYajUXMaEWxfjC4htJZiM
 id: node.notizia.default
 targetEntityType: node
 bundle: notizia

@@ -1,8 +1,11 @@
+uuid: 1023d9bc-6632-476e-b728-cbdfe0b9add8
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: CF6vSGH9Bwmhc19OFgQ1Fj3vTZsX0Z2nhxgTs5GT-Vg
 id: node.field_schede_collegate
 field_name: field_schede_collegate
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: 7d471808-e2b9-4cdf-9dc0-2a1aa832cc23
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: jDhPp4Fh1JMF99G1Tk75Z6k88cI6nHoeM16Vv41WViQ
 name: focal_point_nhd_9_16_360x640_narrow
 label: 'Punto focale nHD 9:16 (360x640) Stretto'
 effects:

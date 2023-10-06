@@ -1,9 +1,12 @@
+uuid: 7acaaade-1b3f-4a6c-ad94-dc811472a95d
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_protocollo
     - node.type.documento_pubblico
+_core:
+  default_config_hash: MXP0OaXYkk-xnE1URxC6VLLdufyQZuF_llTJPVbffd0
 id: node.documento_pubblico.field_protocollo
 field_name: field_protocollo
 entity_type: node

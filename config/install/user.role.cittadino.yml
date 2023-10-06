@@ -1,6 +1,9 @@
+uuid: b3504da5-ec1a-4e3c-850a-14b6f57d57e8
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: lvKPNxjdJ0H-rBYj28LN4bbT2gaG_n7ZFAnHhoQou6w
 id: cittadino
 label: Cittadino
 weight: 12

@@ -1,3 +1,4 @@
+uuid: e41be256-07ba-4dca-9f26-2c7d275e0d54
 langcode: it
 status: true
 dependencies:
@@ -16,6 +17,8 @@ dependencies:
     - color_field
     - image
     - imce
+_core:
+  default_config_hash: auIGtByFTlW2wN8kRs5pdKMXtBDjo20tlAmg7VApxeA
 id: paragraph.settings.default
 targetEntityType: paragraph
 bundle: settings

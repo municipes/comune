@@ -1,9 +1,12 @@
+uuid: 8d05b292-2efb-4908-ba9a-c1380890629d
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_icon_name
     - paragraphs.paragraphs_type.callout
+_core:
+  default_config_hash: HwQqYlP8olQk98C32h4cus7Pbru8P47tpWSzREURFvI
 id: paragraph.callout.field_icon_name
 field_name: field_icon_name
 entity_type: paragraph

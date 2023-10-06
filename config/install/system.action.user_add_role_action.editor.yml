@@ -1,3 +1,4 @@
+uuid: 0a9b3900-8033-491e-abb4-e2149f5d94b8
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - user.role.editor
   module:
     - user
+_core:
+  default_config_hash: O2HKTJ-vPxqZTb6BJgBddLyj0qNaTHM3vxxBMDkGu70
 id: user_add_role_action.editor
 label: 'Add the Redattore role to the selected user(s)'
 type: user

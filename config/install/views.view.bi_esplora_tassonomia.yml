@@ -1,3 +1,4 @@
+uuid: d3a516a0-f024-4392-b7e6-52be55a3a72f
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   module:
     - taxonomy
     - user
+_core:
+  default_config_hash: B_HQoKRzULgiJLQ7fkikb-5MQTxTflQP84kMGG9wKmQ
 id: bi_esplora_tassonomia
 label: 'BI Esplora tassonomia'
 module: views

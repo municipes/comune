@@ -1,3 +1,4 @@
+uuid: fb8c4feb-2768-41d8-8c10-de23c9cdc561
 langcode: it
 status: true
 dependencies:
@@ -24,6 +25,8 @@ dependencies:
   module:
     - datetime
     - user
+_core:
+  default_config_hash: Cd4NopFwEuEyVQ7zO4P7DohxxW9nZn-GTkWo9pbPVns
 id: node.notizia.card
 targetEntityType: node
 bundle: notizia

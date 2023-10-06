@@ -1,3 +1,4 @@
+uuid: 7b4f202d-6744-4e7e-91d7-52d6d1ac82fa
 langcode: it
 status: true
 dependencies:
@@ -27,6 +28,8 @@ dependencies:
     - text
     - user
     - viewsreference
+_core:
+  default_config_hash: 4VzyzZTfcjCRAkHsGnrjvs8Z0k1qVh02t-FhV4lIkfM
 id: node.persona.search_index
 targetEntityType: node
 bundle: persona

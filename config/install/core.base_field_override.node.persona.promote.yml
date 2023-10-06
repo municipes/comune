@@ -1,8 +1,11 @@
+uuid: 1eea268b-c4dc-4601-b4b0-a2fe8c99b9a8
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.persona
+_core:
+  default_config_hash: 8IRgGu2O6KVu0z2cXQjVtILMFOjye40T0kLC8LjSU2w
 id: node.persona.promote
 field_name: promote
 entity_type: node

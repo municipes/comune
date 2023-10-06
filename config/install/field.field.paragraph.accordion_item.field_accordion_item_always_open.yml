@@ -1,9 +1,12 @@
+uuid: b627b4e7-90b1-4672-8991-7c2886416318
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_accordion_item_always_open
     - paragraphs.paragraphs_type.accordion_item
+_core:
+  default_config_hash: H7q8qJ9PhAiD3MPV2tNd2Um4wYETbmaf5n2atl7C4f0
 id: paragraph.accordion_item.field_accordion_item_always_open
 field_name: field_accordion_item_always_open
 entity_type: paragraph

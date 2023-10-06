@@ -1,8 +1,11 @@
+uuid: 2b353963-13c2-4b31-b4ab-c91be9314b85
 langcode: it
 status: true
 dependencies:
   module:
     - path_alias
+_core:
+  default_config_hash: gXgem57NPxpqQU7Jh9JzOp9DT0nQPsRDDa8rnOFsLaM
 id: path_alias.path_alias
 target_entity_type_id: path_alias
 target_bundle: path_alias

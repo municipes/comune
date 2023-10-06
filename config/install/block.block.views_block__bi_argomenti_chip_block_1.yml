@@ -1,3 +1,4 @@
+uuid: 9822a604-068a-4206-ab66-33b7d9c26e4e
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - views
   theme:
     - scaenographia
+_core:
+  default_config_hash: Z-eLBLRKKwKyXQ76GdoVCeyD0FgzjWaokvBkd-nsy3g
 id: views_block__bi_argomenti_chip_block_1
 theme: scaenographia
 region: home_third_row_full_width

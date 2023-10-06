@@ -1,3 +1,4 @@
+uuid: 4b80cca8-1de0-4820-a3c0-0162ecaf98e9
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
     - file
     - imce
     - text
+_core:
+  default_config_hash: LR-y-_tt77M_1hZ7gh1olZNQkOZsu16dFL5HSxAGL8E
 id: paragraph.accordion_item.default
 targetEntityType: paragraph
 bundle: accordion_item

@@ -1,3 +1,4 @@
+uuid: c7e0ebc1-ef83-4659-8eb7-2b560bd4d8c4
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - menu_block
   theme:
     - scaenographia
+_core:
+  default_config_hash: D4SN2C_DfHVNeIgo8Kpt33tuCDLcqnE4w4xHGgcFIyA
 id: slimtop
 theme: scaenographia
 region: header_slim_menu
@@ -20,11 +23,11 @@ settings:
   provider: menu_block
   follow: false
   follow_parent: child
-  label_link: false
-  label_type: block
   level: 1
   depth: 0
   expand_all_items: false
   parent: 'slim-top:'
   suggestion: slim_top
+  label_type: block
+  label_link: false
 visibility: {  }

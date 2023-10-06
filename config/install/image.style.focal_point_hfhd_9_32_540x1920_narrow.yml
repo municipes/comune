@@ -1,8 +1,11 @@
+uuid: 7fe3bd6f-2865-459e-92a6-e81b4be44fbb
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: _v-PXrfC6yj64abjzNBKeBbqRJqJBfYBM5xowMSxMQw
 name: focal_point_hfhd_9_32_540x1920_narrow
 label: 'Punto focale HFHD 9:32 (540x1920) Stretto'
 effects:

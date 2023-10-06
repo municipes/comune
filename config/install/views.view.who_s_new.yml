@@ -1,8 +1,11 @@
+uuid: 533ae9e7-feab-4cd3-9c4e-8c00701e334d
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: ZMQ2fqQI7GwU-eZ9fv44MzpVRXKC13ApL31gaO3MOPg
 id: who_s_new
 label: 'Nuovi utenti'
 module: user

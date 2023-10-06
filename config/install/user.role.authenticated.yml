@@ -1,9 +1,12 @@
+uuid: df4c53cb-bf04-4462-9ef8-d4d5e1dd72bc
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - system
+_core:
+  default_config_hash: eKrcXhqX1iGrVvkOpct77iVjg1wrY04VFerWLjtn4Tk
 id: authenticated
 label: 'authenticated user'
 weight: 1

@@ -1,3 +1,4 @@
+uuid: a2cf4015-cc7f-449a-93ca-d26394567bb8
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - views
   theme:
     - scaenographia
+_core:
+  default_config_hash: tQ60UhJDyjtlH-__FnHfTAb2Ho-a73avDGsEfv43y6M
 id: views_block__bi_tutte_le_novita_elenchi_block_1
 theme: scaenographia
 region: home_first_row_full_width

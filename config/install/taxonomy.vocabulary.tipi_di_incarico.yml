@@ -1,6 +1,9 @@
+uuid: 88ec5ac9-cc3d-428b-bb58-12889258cf65
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Zs0sX5W5QVz-UQb9yurNMtoapnJ0ZhnFCZYLT0TaEy4
 name: 'Tipi di incarico'
 vid: tipi_di_incarico
 description: '"Classificazione multi livello dei tipi di incarico che una persona può ricoprire presso un''amministrazione locale.'

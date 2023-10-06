@@ -1,3 +1,4 @@
+uuid: bdafade9-f939-444b-a52a-144492e06d8e
 langcode: it
 status: true
 dependencies:
@@ -37,6 +38,8 @@ dependencies:
     - ui_patterns_field_formatters
     - user
     - viewsreference
+_core:
+  default_config_hash: xakYPHjP1T8wO-OWaXWCyhbFSs1ukqEJH1qo1ElyBlA
 id: node.documento_pubblico.full
 targetEntityType: node
 bundle: documento_pubblico

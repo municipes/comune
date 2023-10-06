@@ -1,8 +1,11 @@
+uuid: 43b5ce84-71e0-44e5-8321-cd96e574e9d4
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.faq
+_core:
+  default_config_hash: 7V-Y8L5LSbkO26e5xHwbnJqOuTI0T0h714zbxheouVA
 id: node.faq
 target_entity_type_id: node
 target_bundle: faq

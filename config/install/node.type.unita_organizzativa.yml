@@ -1,3 +1,4 @@
+uuid: b917aa13-3900-4e54-a745-79a1eee07764
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Unità organizzativa</em> content'
     type_weight: 0
+_core:
+  default_config_hash: x-H8nXFT0-qsl2BAg7piZe08gMQYECdzUYS_FfsAgVE
 name: 'Unità organizzativa'
 type: unita_organizzativa
 description: "Questa Tipologia descrive la struttura di un'organizzazione comunale funzionale alla creazione di contenuti come uffici o altre unità organizzative"

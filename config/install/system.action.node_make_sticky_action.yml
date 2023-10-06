@@ -1,8 +1,11 @@
+uuid: 4a20d5e2-09d9-4269-ba1e-ba193a0f1b3b
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: VZM3VxS5ehiLLTKKN7f4Ze6Ik2qmc5QEdy62UdzgTuU
 id: node_make_sticky_action
 label: 'Posizionamento del contenuto in testa agli elenchi'
 type: node

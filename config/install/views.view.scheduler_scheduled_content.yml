@@ -1,3 +1,4 @@
+uuid: a3c568b2-177d-468a-b7d8-1fb2a90b4271
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   enforced:
     module:
       - scheduler
+_core:
+  default_config_hash: Q114tTFeHoLUFz0QmPRMNiTBr7gQwGnv0RRN16JkJmY
 id: scheduler_scheduled_content
 label: 'Scheduled Content'
 module: views

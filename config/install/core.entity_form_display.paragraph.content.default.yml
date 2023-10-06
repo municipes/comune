@@ -1,3 +1,4 @@
+uuid: d5d545b5-9ccb-4c7e-b142-36dbfdbbd13a
 langcode: it
 status: true
 dependencies:
@@ -56,6 +57,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: false
+_core:
+  default_config_hash: KapSbvuKvpruS2cqqZ59BjTFx9YzPcePdnegm91QTkM
 id: paragraph.content.default
 targetEntityType: paragraph
 bundle: content

@@ -1,8 +1,11 @@
+uuid: 2168f37a-c7a6-475c-a189-2d0c4b00cd61
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: dChEQGC7Ihmjz4XRbYUIQ965HYvYnhgRvwp3igUfmRc
 name: focal_point_hdb_9_16_768x1366_narrow
 label: 'Punto focale HDB ~9:16 (768x1366) Stretto'
 effects:

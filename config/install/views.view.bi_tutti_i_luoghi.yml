@@ -1,3 +1,4 @@
+uuid: 2b3b2e29-8d52-43cc-bc74-f4e7b8c0bffd
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: F1ZYjIn_Xd2A9PCgxvaK4su7Sa6_t7UJh8xHfC24CxM
 id: bi_tutti_i_luoghi
 label: 'BI Tutti i luoghi'
 module: views

@@ -1,3 +1,4 @@
+uuid: c53686eb-b7a6-4491-a52b-fa05b42a2e67
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - node
     - taxonomy
     - user
+_core:
+  default_config_hash: RYxxLIg2XmDqY_ejcmda6husiNdigzi_O69oFSrwgiQ
 id: bi_argomenti_chip
 label: 'BI Argomenti chip'
 module: views

@@ -1,3 +1,4 @@
+uuid: c974fc1d-95c6-4ff4-a0cd-44f203a4d7d8
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.content
   module:
     - text
+_core:
+  default_config_hash: TDLFpSTZbXopHBQSKv58w5H4qiWQWsxcgUBFz2agw3c
 id: paragraph.content.field_text
 field_name: field_text
 entity_type: paragraph
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

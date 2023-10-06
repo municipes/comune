@@ -1,3 +1,4 @@
+uuid: 071dea9e-208d-42de-a522-ffc5f7210203
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: 4ddL-GBIRumupCNYuak1pDOozZ5kOvcrDj9jiDlhA0A
 id: node.field_galleria_immagini
 field_name: field_galleria_immagini
 entity_type: node

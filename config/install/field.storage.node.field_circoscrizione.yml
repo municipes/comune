@@ -1,8 +1,11 @@
+uuid: 7d9e5c9f-24d5-4f46-9fd1-845b27fc6b8f
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: LPhmOP44LfU_6hobpksNi_QEPAGUSxxI0llCCKxJz1E
 id: node.field_circoscrizione
 field_name: field_circoscrizione
 entity_type: node

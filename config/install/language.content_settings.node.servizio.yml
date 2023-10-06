@@ -1,8 +1,11 @@
+uuid: 712fe179-e7e0-42fb-8e49-831e740a6aa9
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.servizio
+_core:
+  default_config_hash: BLk5yxexFiALunV_tlpZI32yhdFiTLgyRi7xq3wA7gQ
 id: node.servizio
 target_entity_type_id: node
 target_bundle: servizio

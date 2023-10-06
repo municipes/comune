@@ -1,3 +1,4 @@
+uuid: ecf054b8-49e9-4af2-a7eb-baef00c55bbb
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_luoghi
     - node.type.luogo
     - node.type.notizia
+_core:
+  default_config_hash: CVBLWIIQfYBi0bQBEuYlxkhtAGKVmzUmyWYDwOdLiY8
 id: node.notizia.field_luoghi
 field_name: field_luoghi
 entity_type: node

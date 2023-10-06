@@ -1,8 +1,11 @@
+uuid: b6675d86-dc01-4bf2-b5b0-71bb988b4ffe
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: nw2CCSxQqKDenoegJLFoXD14EtWMDHHhrMou3uOw-4E
 id: node.field_documento
 field_name: field_documento
 entity_type: node

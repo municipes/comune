@@ -1,8 +1,11 @@
+uuid: c945d59a-cee6-482f-83e9-133342840834
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: OG9NiaLcu-1e1PxhTShHipzGu_F3gEIE8Z7OEjmDW30
 id: paragraph.buttons
 label: Buttons
 targetEntityType: paragraph

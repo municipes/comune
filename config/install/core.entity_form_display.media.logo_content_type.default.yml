@@ -1,3 +1,4 @@
+uuid: 16481ac7-e48c-4280-b873-622967dcf91e
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
   module:
     - image
     - path
+_core:
+  default_config_hash: Wac-xgCqzhO8rT9BQNy8Yn3T0rBCHzVYKo-NfVarG2w
 id: media.logo_content_type.default
 targetEntityType: media
 bundle: logo_content_type
@@ -65,4 +68,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

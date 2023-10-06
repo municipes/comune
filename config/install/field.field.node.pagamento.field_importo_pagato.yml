@@ -1,9 +1,12 @@
+uuid: 47f60ee7-72d6-42c1-81a0-51aee6fd2303
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_importo_pagato
     - node.type.pagamento
+_core:
+  default_config_hash: 7KLthOgQP802EnjjSIS8bbKwW7m5r-obwK8xnA5aw7g
 id: node.pagamento.field_importo_pagato
 field_name: field_importo_pagato
 entity_type: node

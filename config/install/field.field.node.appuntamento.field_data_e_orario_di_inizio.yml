@@ -1,3 +1,4 @@
+uuid: 7078e7e4-a9fa-4567-abfc-268377aab821
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.appuntamento
   module:
     - datetime
+_core:
+  default_config_hash: JnB-09q_1W1gpaQ9s27WJOlGK9U38WZlPCt7KgG3H7s
 id: node.appuntamento.field_data_e_orario_di_inizio
 field_name: field_data_e_orario_di_inizio
 entity_type: node

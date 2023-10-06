@@ -1,3 +1,4 @@
+uuid: 8f9e5efd-d989-43fb-b74d-5f44b8d4907b
 langcode: it
 status: true
 dependencies:
@@ -78,6 +79,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: false
+_core:
+  default_config_hash: jaJdPwhB0qqsVjt5Iu-MK33tIzntiLE7hEYnPqLKhXQ
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion

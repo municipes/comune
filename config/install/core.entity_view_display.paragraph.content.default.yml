@@ -1,3 +1,4 @@
+uuid: 59a6c068-d02e-4f8a-914d-d242dd1ed45d
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - text
+_core:
+  default_config_hash: Aibze3_kECGM7EzZhFD8OTb-cTB_8z0iU8vjt4cpRLk
 id: paragraph.content.default
 targetEntityType: paragraph
 bundle: content
@@ -29,4 +32,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

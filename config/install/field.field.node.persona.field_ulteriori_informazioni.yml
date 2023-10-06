@@ -1,3 +1,4 @@
+uuid: 8c424bcf-32e3-4b14-b148-f67e9b1f4312
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.persona
   module:
     - text
+_core:
+  default_config_hash: 7gPPnFRpUYnyiKXWhwlPM3Doj4oGqW5OLRh_9uL0Ql0
 id: node.persona.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

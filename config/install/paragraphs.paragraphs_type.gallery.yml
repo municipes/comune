@@ -1,8 +1,11 @@
+uuid: 2af27618-a899-46aa-9e63-ee4e56f36447
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:23a9d98e-bab0-4069-b4ce-77b1fd87cc2d'
+_core:
+  default_config_hash: qvDgBdaxpWQLaxdNteh2bxmh7F_jOTFFuAqvHUQFSyg
 id: gallery
 label: Galleria
 icon_uuid: 23a9d98e-bab0-4069-b4ce-77b1fd87cc2d

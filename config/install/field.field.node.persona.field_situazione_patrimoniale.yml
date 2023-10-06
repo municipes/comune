@@ -1,3 +1,4 @@
+uuid: abc4a1dd-4a26-4449-a96d-877ebc39ce6e
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.persona
   module:
     - text
+_core:
+  default_config_hash: wXhzXM8qHmYtkce1hHWN5PpHW-6NZmbb_OSZX0psT6A
 id: node.persona.field_situazione_patrimoniale
 field_name: field_situazione_patrimoniale
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -1,8 +1,11 @@
+uuid: c0a76805-f048-46d1-903f-185cf8e422c2
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.evento
+_core:
+  default_config_hash: vx_ANiTIaPIhol1SjUXme2dRVhm_rcfGF9r34R9LYls
 id: node.evento
 target_entity_type_id: node
 target_bundle: evento

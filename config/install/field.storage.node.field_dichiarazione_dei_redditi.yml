@@ -1,9 +1,12 @@
+uuid: 6dfceef8-439b-4c61-bbcd-f39fb61c0603
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: HEcqm4LOB-uqq3VrEmo5lqrrxgFRzlMg5mfU4Bm01Pc
 id: node.field_dichiarazione_dei_redditi
 field_name: field_dichiarazione_dei_redditi
 entity_type: node

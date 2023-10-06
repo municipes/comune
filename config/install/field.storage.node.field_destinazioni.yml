@@ -1,8 +1,11 @@
+uuid: d225aa2b-3ccb-4e3c-8c88-cf6908f719e8
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: ycbNqgiTssih5y50hTpr0vre4kN9N5ItUV5sohZbGzY
 id: node.field_destinazioni
 field_name: field_destinazioni
 entity_type: node

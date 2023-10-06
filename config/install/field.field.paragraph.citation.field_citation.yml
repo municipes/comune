@@ -1,9 +1,12 @@
+uuid: a10afa36-36ce-433f-81c5-c324151c674c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_citation
     - paragraphs.paragraphs_type.citation
+_core:
+  default_config_hash: pmrDvw1E-CQit9NKs06aPoqHQbyYqZCu8myIc4AXJ7o
 id: paragraph.citation.field_citation
 field_name: field_citation
 entity_type: paragraph

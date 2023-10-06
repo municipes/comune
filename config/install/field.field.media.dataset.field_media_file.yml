@@ -1,3 +1,4 @@
+uuid: b7496db8-e352-4f82-a585-9461e4cb9e25
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - media.type.dataset
   module:
     - file
+_core:
+  default_config_hash: IsP4U5tw26_DRGfDxwZHjO2KENcLLfxx6V_gb2e_EG4
 id: media.dataset.field_media_file
 field_name: field_media_file
 entity_type: media

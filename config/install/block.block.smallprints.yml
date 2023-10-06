@@ -1,3 +1,4 @@
+uuid: 43db220c-bb53-47dc-b428-dd889d0309c0
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - menu_block
   theme:
     - scaenographia
+_core:
+  default_config_hash: FaEqrbIYCX8Pjbg5W8o4XqhZgaf_wqm2wus56Td4seU
 id: smallprints
 theme: scaenographia
 region: footer_small_prints
@@ -20,11 +23,11 @@ settings:
   provider: menu_block
   follow: false
   follow_parent: child
-  label_link: false
-  label_type: block
   level: 1
   depth: 0
   expand_all_items: false
   parent: 'small-prints:'
   suggestion: small_prints
+  label_type: block
+  label_link: false
 visibility: {  }

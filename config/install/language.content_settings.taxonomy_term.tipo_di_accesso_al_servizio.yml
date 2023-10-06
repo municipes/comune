@@ -1,8 +1,11 @@
+uuid: 5dfb3b96-5d23-4ed2-adf2-bd4ea9148341
 langcode: it
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.tipo_di_accesso_al_servizio
+_core:
+  default_config_hash: YkytydSjfBq5ofkebYj5GqAQ9sg28vE5kif-N5z0Vlk
 id: taxonomy_term.tipo_di_accesso_al_servizio
 target_entity_type_id: taxonomy_term
 target_bundle: tipo_di_accesso_al_servizio

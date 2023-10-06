@@ -1,3 +1,4 @@
+uuid: 8525b936-c91d-474c-9d25-81af081d6c34
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_immagine
     - media.type.image
     - node.type.luogo
+_core:
+  default_config_hash: PQYBp4SxcqxHNoLTSmOO1IIksq21gV1nTtcEGqTWPS4
 id: node.luogo.field_immagine
 field_name: field_immagine
 entity_type: node

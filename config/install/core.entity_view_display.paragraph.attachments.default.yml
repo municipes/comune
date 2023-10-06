@@ -1,3 +1,4 @@
+uuid: ffcde0dc-3892-4e40-83a4-0225ee836fc8
 langcode: it
 status: true
 dependencies:
@@ -10,6 +11,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - file
+_core:
+  default_config_hash: Ty-aYm5lnzaU2u5cjLHkYCLG1O4vbWne28WI-s0v0wc
 id: paragraph.attachments.default
 targetEntityType: paragraph
 bundle: attachments
@@ -49,4 +52,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

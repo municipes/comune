@@ -1,3 +1,4 @@
+uuid: f7022628-d68f-412e-90d8-f934cad4f906
 langcode: it
 status: true
 dependencies:
@@ -28,6 +29,8 @@ dependencies:
     - text
     - user
     - viewsreference
+_core:
+  default_config_hash: PNmPzyddMzcZrqc1qSnxNR0P06WrkD0IQQ-eKKmPSzA
 id: node.persona.default
 targetEntityType: node
 bundle: persona
@@ -35,7 +38,7 @@ mode: default
 content:
   field_competenze:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 2

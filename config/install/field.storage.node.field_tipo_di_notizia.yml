@@ -1,9 +1,12 @@
+uuid: c48e28dd-d2e3-4a7b-b0cf-694ba921cb9e
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: NELplANhVOfvd_9bI8weErpgpAPBVnW1oaFwTvgXwYw
 id: node.field_tipo_di_notizia
 field_name: field_tipo_di_notizia
 entity_type: node

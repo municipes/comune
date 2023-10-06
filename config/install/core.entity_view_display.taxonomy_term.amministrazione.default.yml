@@ -1,3 +1,4 @@
+uuid: 6c51b410-ab45-4a4b-ad13-59dac45622c5
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - taxonomy.vocabulary.amministrazione
   module:
     - text
+_core:
+  default_config_hash: nXfpfRieI5s0kczCNDXLr-BAosx_Cdco-6-hcHK_5nk
 id: taxonomy_term.amministrazione.default
 targetEntityType: taxonomy_term
 bundle: amministrazione

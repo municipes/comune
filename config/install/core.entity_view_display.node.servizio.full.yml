@@ -1,3 +1,4 @@
+uuid: 6cc22860-3a0a-4fee-911e-b72bb654a1e9
 langcode: it
 status: true
 dependencies:
@@ -46,6 +47,8 @@ dependencies:
     - text
     - ui_patterns_field_formatters
     - user
+_core:
+  default_config_hash: AGP7PFYSHlerOq6WHh9aBPJWU0U-szPj5MUhHS1kUyQ
 id: node.servizio.full
 targetEntityType: node
 bundle: servizio

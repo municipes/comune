@@ -1,3 +1,4 @@
+uuid: d4d27fb5-9833-45ff-bc54-f1e3862a337f
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.settings
   module:
     - color_field
+_core:
+  default_config_hash: 4BNGJ1CdLpQJbmUvyCD26yr7UoWjrmUj5DRB2H1Jq4s
 id: paragraph.settings.field_background_color
 field_name: field_background_color
 entity_type: paragraph

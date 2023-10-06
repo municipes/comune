@@ -1,3 +1,4 @@
+uuid: c7c3e2f9-575f-4d1c-ae47-05807fecb91b
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery_item
   module:
     - link
+_core:
+  default_config_hash: nLuevpd26DOFCG5YM5qDMvHNprl3_Xx8u3RADG-vctg
 id: paragraph.gallery_item.field_call_to_action
 field_name: field_call_to_action
 entity_type: paragraph

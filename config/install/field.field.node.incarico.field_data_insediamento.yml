@@ -1,3 +1,4 @@
+uuid: 1c1ff412-2aaf-4df7-937b-3b208be70610
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.incarico
   module:
     - datetime
+_core:
+  default_config_hash: HewFpyNQLw3tnrY6zNGrXWsioUL46TWXkKJNL5FyKnM
 id: node.incarico.field_data_insediamento
 field_name: field_data_insediamento
 entity_type: node

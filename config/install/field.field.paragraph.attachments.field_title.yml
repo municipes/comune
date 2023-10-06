@@ -1,9 +1,12 @@
+uuid: 6c65079f-726f-455e-a980-10052fe140b1
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
     - paragraphs.paragraphs_type.attachments
+_core:
+  default_config_hash: eiDCQym-LMXSfBuyDTyPQ4i7q84uBn0UBhF6VFzEabc
 id: paragraph.attachments.field_title
 field_name: field_title
 entity_type: paragraph

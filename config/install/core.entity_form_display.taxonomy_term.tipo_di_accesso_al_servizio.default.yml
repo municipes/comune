@@ -1,3 +1,4 @@
+uuid: 41858084-e26a-4f23-a05e-3156d6235a61
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   module:
     - path
     - text
+_core:
+  default_config_hash: GiCVJWCmPofKptVC6KURrFr06pRPCI64yr2fJ1n6E1g
 id: taxonomy_term.tipo_di_accesso_al_servizio.default
 targetEntityType: taxonomy_term
 bundle: tipo_di_accesso_al_servizio

@@ -1,6 +1,9 @@
+uuid: d9da6a65-24f4-452c-be4e-4a0c53b8233e
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: zY3L_Ddj6ogsSuoAQV4UhW6hjDI0H7SdIFwKFno4w60
 id: html_year
 label: 'Anno HTML'
 locked: true

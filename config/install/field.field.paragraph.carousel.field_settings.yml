@@ -1,3 +1,4 @@
+uuid: fbe8a69b-9055-42fd-8be7-4ad3cad453b1
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.settings
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: NhyTj0vInNTuaQ8Zt3_k6J1bFCeSkZK5vjEeG-D3gDA
 id: paragraph.carousel.field_settings
 field_name: field_settings
 entity_type: paragraph

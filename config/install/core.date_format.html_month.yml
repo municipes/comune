@@ -1,6 +1,9 @@
+uuid: 271207f5-a7c4-4d8b-ada9-ca46bc8e0671
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Fv2mgalUZsFATc9d_91lzUDSzAT2VrgPvbUoG83RS-c
 id: html_month
 label: 'Mese HTML'
 locked: true

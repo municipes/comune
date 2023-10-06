@@ -1,3 +1,4 @@
+uuid: 6f8cd979-ec65-470a-884d-09ebf0ba2b45
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_di_notizia
     - node.type.notizia
     - taxonomy.vocabulary.tipi_di_notizia
+_core:
+  default_config_hash: e6UcOaGsT_IipQ9cCv35uz4X1wKnr24qvCd1U9YkdYs
 id: node.notizia.field_tipo_di_notizia
 field_name: field_tipo_di_notizia
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: c8917425-d92f-488f-b341-3f9a28d4c0b5
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - user.role.pubblicatore
   module:
     - user
+_core:
+  default_config_hash: RQjuTaCMp7usLRf5Ujg7klnflFByICcH6HQCTingH24
 id: user_add_role_action.pubblicatore
 label: 'Add the Pubblicatore role to the selected user(s)'
 type: user

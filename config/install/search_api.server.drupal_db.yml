@@ -1,8 +1,11 @@
+uuid: 7ed83e71-302e-44b3-982b-a00ee7846feb
 langcode: it
 status: true
 dependencies:
   module:
     - search_api_db
+_core:
+  default_config_hash: X7L2ITENtK4TZS-cvL7pncs9SAfxliQWj2j0fKMOLe0
 id: drupal_db
 name: 'Drupal DB'
 description: ''

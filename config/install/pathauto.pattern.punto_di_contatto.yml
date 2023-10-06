@@ -1,8 +1,11 @@
+uuid: b962b450-4661-40fa-89df-908d41fb9684
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: nYyQ_Vmo2oO1P8L7eYSc267BeoFqQiX3dW7r7VC_wpo
 id: punto_di_contatto
 label: 'Punto di contatto'
 type: 'canonical_entities:node'

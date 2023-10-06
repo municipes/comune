@@ -1,13 +1,13 @@
+uuid: 8682d554-14e9-4dc3-86e7-c2e6ee453537
 langcode: it
 status: true
 dependencies:
-  config:
-    - facets_summary.facets_summary.ricerca_globale
   module:
-    - facets_summary
     - system
   theme:
     - scaenographia
+_core:
+  default_config_hash: pxT3jRMT0s-zKhFNFuafl5rJiiFf_EWW0wtOLym-e1w
 id: scaenographia_ricercaglobale
 theme: scaenographia
 region: content

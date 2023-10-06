@@ -1,9 +1,12 @@
+uuid: c85821c5-d314-433d-bcce-bba04e87fe61
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_stato_del_servizio
     - node.type.servizio
+_core:
+  default_config_hash: WAOBrJU6gto5QvinmVNnINJflKn6Ydda4cuZsa5XK2s
 id: node.servizio.field_stato_del_servizio
 field_name: field_stato_del_servizio
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: 5e03e19b-fe38-46c7-84f3-680c5aa38882
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:cd1e0a39-9bcc-498a-89be-abf64f937ab9'
+_core:
+  default_config_hash: D9X7sCKmtGxieeKeWWIuQZw4KKCBpAJkAvmkJyu96Ck
 id: slide
 label: 'Elemento carosello'
 icon_uuid: cd1e0a39-9bcc-498a-89be-abf64f937ab9

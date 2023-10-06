@@ -1,3 +1,4 @@
+uuid: 4e82416c-40b0-4268-9cd7-24815c1c03f8
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - search_api
     - node
+_core:
+  default_config_hash: P3M4a82ERTKRFmHeZ5qqTAH-WRDg8HdCfdCWlczO14Q
 id: documenti_e_dati
 name: 'Documenti e Dati'
 description: ''

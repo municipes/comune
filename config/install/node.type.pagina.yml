@@ -1,3 +1,4 @@
+uuid: 3f03905e-d1e0-4915-aa4d-b964bd94ddf4
 langcode: it
 status: true
 dependencies:
@@ -17,6 +18,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: ''
     type_weight: 0
+_core:
+  default_config_hash: sod1mFZpBoFFsxkHgcXYo6s_U52VTQj_4BIMG1j_b9k
 name: Pagina
 type: pagina
 description: 'Pagina componibile con i paragrafi.'

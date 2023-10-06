@@ -1,9 +1,12 @@
+uuid: b10b255f-5d85-4b4e-9a52-ddbd96facf64
 langcode: it
 status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.chip
     - taxonomy.vocabulary.tipi_di_documento
+_core:
+  default_config_hash: lgZS90_Z9MjnhETQFQiVqt0iGcL0GFOHNZY-7NJ51zY
 id: taxonomy_term.tipi_di_documento.chip
 targetEntityType: taxonomy_term
 bundle: tipi_di_documento

@@ -1,3 +1,4 @@
+uuid: 313a7a0c-3bd2-4c26-8b03-759f7cb8d683
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - text
+_core:
+  default_config_hash: oL_VSRnmqOSqd1qxrIDi00Lz9029l1maLJ0VJeRauNE
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section
@@ -38,4 +41,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

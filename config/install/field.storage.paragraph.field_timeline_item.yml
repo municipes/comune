@@ -1,9 +1,12 @@
+uuid: be5433b0-cac9-4bf6-b9b3-50439d814d98
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: sxY6PmdQtcfPTA2-Cw34VCdvRXhoxWJw-cftpxe2QlY
 id: paragraph.field_timeline_item
 field_name: field_timeline_item
 entity_type: paragraph

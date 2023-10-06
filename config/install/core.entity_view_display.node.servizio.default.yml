@@ -1,3 +1,4 @@
+uuid: c02a55c2-c889-4a47-844f-d760141e9400
 langcode: it
 status: true
 dependencies:
@@ -45,6 +46,8 @@ dependencies:
     - link
     - text
     - user
+_core:
+  default_config_hash: LGYYGzTGdYI_HvPpknqz1HMyHNXGixU7IIQpzOhuKVM
 id: node.servizio.default
 targetEntityType: node
 bundle: servizio

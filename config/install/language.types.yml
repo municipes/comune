@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: EYl3057m3qcES7RpmGQIvztvYz9ZQDL5AZ6pE4UvHHs
 langcode: it
 all:
   - language_interface

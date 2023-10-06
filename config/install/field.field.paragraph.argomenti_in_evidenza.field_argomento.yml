@@ -1,3 +1,4 @@
+uuid: 893149e4-ddb9-4eff-8d06-9105e1692a98
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_argomento
     - paragraphs.paragraphs_type.argomenti_in_evidenza
     - taxonomy.vocabulary.argomenti
+_core:
+  default_config_hash: 4cHF3y32SzXAPe74m7WVD8x9S7IeRSp7dgTGf_a0oB0
 id: paragraph.argomenti_in_evidenza.field_argomento
 field_name: field_argomento
 entity_type: paragraph

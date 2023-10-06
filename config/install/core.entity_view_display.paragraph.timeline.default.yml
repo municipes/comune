@@ -1,3 +1,4 @@
+uuid: f4de08a9-0950-4663-8c4e-887d190acc87
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.timeline
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: HbFZGQ0kJH2Xuz0L1rj65r__-G777vYfda-_NLBoSRo
 id: paragraph.timeline.default
 targetEntityType: paragraph
 bundle: timeline
@@ -30,4 +33,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

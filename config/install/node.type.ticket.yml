@@ -1,3 +1,4 @@
+uuid: c4e6f128-f6fa-4d9a-a567-cda3acca1816
 langcode: it
 status: true
 dependencies:
@@ -11,6 +12,8 @@ third_party_settings:
     parent: 'main:'
   type_tray:
     existing_nodes_link_text: 'View existing <em class="placeholder">Ticket</em> content'
+_core:
+  default_config_hash: 7ETp_JlDmNuCxSmkKP_rIyhH2hRvSxF81Ea0ARroT8I
 name: Ticket
 type: ticket
 description: 'Ticket di richiesta assistenza.'

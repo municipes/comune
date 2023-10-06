@@ -1,6 +1,9 @@
+uuid: 38240592-a64b-4395-88c3-b66a7b383bac
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 8pGX1Cz07r4vRTI2AyHMui7q9_sXGevNMb3sdjgmp5A
 name: 'Eventi della vita delle persone'
 vid: eventi_della_vita_delle_persone
 description: 'Classificazione degli eventi della vita delle persone (Life Events)'

@@ -1,9 +1,12 @@
+uuid: bfa81389-b413-4bf4-a72b-7c768b5a2a7f
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: jiLd_x3tbGz4TFo6nNAU0N-ppkpZ2cYpa1j6L2E9vxQ
 id: paragraph.field_color
 field_name: field_color
 entity_type: paragraph

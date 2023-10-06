@@ -1,3 +1,4 @@
+uuid: 9fbb0be8-ccfc-4ea5-a571-d63c4cc863cb
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_servizio
     - node.type.appuntamento
     - node.type.servizio
+_core:
+  default_config_hash: Wq-xEUz4cFipRahfW8FWFW04CxtfbFahPremFkZ2yCI
 id: node.appuntamento.field_servizio
 field_name: field_servizio
 entity_type: node

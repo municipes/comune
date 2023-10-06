@@ -1,8 +1,11 @@
+uuid: 28068090-beb4-4fc3-ac9e-f4360f53cdb3
 langcode: it
 status: true
 dependencies:
   config:
     - block_content.type.solo_testo
+_core:
+  default_config_hash: YTvz9m58kBAmLdIzbE06fkBeVbr2iM62fNojEvZj7MU
 id: block_content.solo_testo
 target_entity_type_id: block_content
 target_bundle: solo_testo

@@ -1,3 +1,4 @@
+uuid: 69e00d8d-460c-4cd7-b2be-5bf079482d7d
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.settings
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: GTvhKtU-d_AfH_F5d6ola0aki-pUqKE35Oz40P6ZR60
 id: paragraph.section.field_settings
 field_name: field_settings
 entity_type: paragraph

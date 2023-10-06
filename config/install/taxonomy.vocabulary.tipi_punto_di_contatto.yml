@@ -1,6 +1,9 @@
+uuid: 49cc69ed-76e2-4bba-bae0-acd819d61cce
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: B6ZsLSVHCKdaW9xS_GTc_Qn9qDNJX3Z1ISuD6-7f4RU
 name: 'Tipi punto di contatto'
 vid: tipi_punto_di_contatto
 description: 'Classificazione dei tipi di punti di contatto riprendendo le Linee Guida Cataloghi dei dati.'

@@ -1,6 +1,9 @@
+uuid: 9e1530ff-e479-4b33-af77-aa8641485145
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 3ogd3MWjfujCn48bCrA4XMU0V3t95HDJCfauMErc-Zw
 name: Amministrazione
 vid: amministrazione
 description: "Tutta l'amministrazione. Vocabolario di supporto alla navigazione."

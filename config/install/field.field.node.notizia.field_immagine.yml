@@ -1,3 +1,4 @@
+uuid: 357c7787-4bda-4b0b-90dd-963afc579c69
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_immagine
     - media.type.image
     - node.type.notizia
+_core:
+  default_config_hash: CRx12xNB1c3PjPNLB4jvn2_PF56wgCgab6t6OlN__nk
 id: node.notizia.field_immagine
 field_name: field_immagine
 entity_type: node

@@ -1,9 +1,12 @@
+uuid: 900a2c93-b1b7-4845-b468-c3ea8f6df521
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: kaB5S5Vj3lhIeh7R5erF6a8W9yk38MNaHoGzEntm5jQ
 id: node.field_distribuzione
 field_name: field_distribuzione
 entity_type: node

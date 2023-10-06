@@ -1,3 +1,4 @@
+uuid: 7d4b1218-a960-4635-abf6-271f0eb642ea
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: RjilZ6vB5fjVrnCM7PABcxqEdPdbY0cGP7V7v9bVtOM
 id: node.servizio.field_cosa_serve
 field_name: field_cosa_serve
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

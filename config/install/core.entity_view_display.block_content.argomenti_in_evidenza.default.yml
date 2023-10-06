@@ -1,3 +1,4 @@
+uuid: 34dca0c8-6b1e-431c-b711-16201a124d80
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - field.field.block_content.argomenti_in_evidenza.body
   module:
     - text
+_core:
+  default_config_hash: vQ78LT_uV7k4eqEgZetjxyRWpIaOxS498scau5TXnsY
 id: block_content.argomenti_in_evidenza.default
 targetEntityType: block_content
 bundle: argomenti_in_evidenza

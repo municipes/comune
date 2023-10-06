@@ -1,3 +1,4 @@
+uuid: 6defe6e1-9428-476d-a669-aada5b683e61
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: Cjazbtq-FnALGLIGdtAWEOf6sY8H1gQChLAakbgyI4Q
 id: node.field_tempi_e_scadenze
 field_name: field_tempi_e_scadenze
 entity_type: node

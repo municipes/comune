@@ -1,8 +1,11 @@
+uuid: 57f3e328-8d72-48b4-bb9d-8f815dbd484f
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.notizia
+_core:
+  default_config_hash: u7_CFxffnlqpoKKSQXyIuNXio9DnpKUcRz0kg_HJdfI
 id: node.notizia
 target_entity_type_id: node
 target_bundle: notizia

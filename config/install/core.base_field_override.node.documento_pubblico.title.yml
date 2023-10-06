@@ -1,8 +1,11 @@
+uuid: ccfae77a-6bee-4598-b68e-b0615e2fbb0b
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.documento_pubblico
+_core:
+  default_config_hash: y4ab4xdhBpXlYZIkBtHfzOozn5-RqRJsdXV0MgeDK68
 id: node.documento_pubblico.title
 field_name: title
 entity_type: node

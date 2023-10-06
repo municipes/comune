@@ -1,9 +1,12 @@
+uuid: 6fe524ef-9d41-402a-b096-e7fd04399107
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: KCVnlbAYHlECcg6PybBQidGw07gK9jDJZX6xJVmLeQ4
 id: node.field_data_fine
 field_name: field_data_fine
 entity_type: node

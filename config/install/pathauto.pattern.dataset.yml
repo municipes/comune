@@ -1,8 +1,11 @@
+uuid: 55805281-8dc1-41cf-b4a2-3f5876bb0c5b
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: HT8K5cdhunyGMC7jCqG5p3WLIXw9E0pndZQ-GgS_eds
 id: dataset
 label: Dataset
 type: 'canonical_entities:node'

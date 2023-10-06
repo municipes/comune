@@ -1,8 +1,11 @@
+uuid: 24f937f7-a27c-449a-b758-a4a57738ec98
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: WKfqWggu9FJ5cXrFJT0MC4gTD1sOTSpVsBTxAQZO29U
 id: node.field_numero_comunicato_stampa
 field_name: field_numero_comunicato_stampa
 entity_type: node

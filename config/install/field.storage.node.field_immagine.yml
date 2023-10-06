@@ -1,9 +1,12 @@
+uuid: 87c7dd7f-ff19-4a33-a353-a69ae59eef84
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: XN4nDos-_LU3SWBZgMJ9DHZd66mGeSUYDzEoxdBMeeY
 id: node.field_immagine
 field_name: field_immagine
 entity_type: node

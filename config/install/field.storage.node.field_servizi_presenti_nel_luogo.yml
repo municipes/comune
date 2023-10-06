@@ -1,9 +1,12 @@
+uuid: d7b4342a-50dc-4fa0-9ea4-0e54d9a9df0f
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: qj6-jzlfYDAFyJh32sIZumGlYxxGThaddXVaEXvtc08
 id: node.field_servizi_presenti_nel_luogo
 field_name: field_servizi_presenti_nel_luogo
 entity_type: node

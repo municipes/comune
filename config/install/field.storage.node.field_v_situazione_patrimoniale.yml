@@ -1,9 +1,12 @@
+uuid: 67797ef9-9286-4c94-864a-a191ff3457e6
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: 5SKQkJK-yF2sfguk_ju3EVc99vP6gf0fwCenqsOzeAY
 id: node.field_v_situazione_patrimoniale
 field_name: field_v_situazione_patrimoniale
 entity_type: node

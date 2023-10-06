@@ -1,6 +1,9 @@
+uuid: 97b8047b-08f0-484c-ba42-ebe6d27acda7
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: wRNNZN6IbRisYHXevSE01GR1-KWWPXpY--HEk5BFx3c
 id: argomenti_in_evidenza
 label: 'Argomenti in evidenza'
 revision: 0

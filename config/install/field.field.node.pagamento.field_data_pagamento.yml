@@ -1,3 +1,4 @@
+uuid: fe26ca68-78af-49d8-b628-54524374e8bd
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.pagamento
   module:
     - datetime
+_core:
+  default_config_hash: DEloJgL9rZTBYUSN9m0XjxoFyreOPFOwDxpyn7M-O4s
 id: node.pagamento.field_data_pagamento
 field_name: field_data_pagamento
 entity_type: node

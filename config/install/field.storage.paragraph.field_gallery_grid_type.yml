@@ -1,9 +1,12 @@
+uuid: fa262204-233c-4e15-94c4-8323f8b7d1ca
 langcode: it
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: Y3fKTorHe8uJ_Tm-jxjqs6t0ZbDJxtsa3rmyeBq6yVI
 id: paragraph.field_gallery_grid_type
 field_name: field_gallery_grid_type
 entity_type: paragraph

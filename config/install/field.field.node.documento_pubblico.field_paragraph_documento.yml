@@ -1,3 +1,4 @@
+uuid: 27a956fd-049b-49e6-8d13-9fc965bc7384
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.link
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: NGP8ER8i4VqG3jPeEIJc3OGywcbD9HBRBkDbLyrzDCc
 id: node.documento_pubblico.field_paragraph_documento
 field_name: field_paragraph_documento
 entity_type: node

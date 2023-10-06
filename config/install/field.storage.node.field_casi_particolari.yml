@@ -1,9 +1,12 @@
+uuid: a1eff8dd-619a-41b7-96c9-b7f44133f07c
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: V1Ls4JvijM-ZIPmzgbrgPo72iImgWcg6zsSDsnhNGF8
 id: node.field_casi_particolari
 field_name: field_casi_particolari
 entity_type: node

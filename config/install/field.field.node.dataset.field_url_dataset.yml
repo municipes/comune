@@ -1,3 +1,4 @@
+uuid: f7822f08-6a9f-44b0-aa7c-16fdeda49431
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.link
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: mBdIZkdTu4bkcDrAV5gVyShYSW5U5ODgGOzaQddiV5M
 id: node.dataset.field_url_dataset
 field_name: field_url_dataset
 entity_type: node

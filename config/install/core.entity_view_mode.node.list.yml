@@ -1,8 +1,11 @@
+uuid: ee240b87-2151-4a1e-b690-21389fc9ae1a
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: WTen44_MsEt1wXc1GqA4c-RvKYAb0wzooceuWEDac2w
 id: node.list
 label: Elenco
 targetEntityType: node

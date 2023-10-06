@@ -1,3 +1,4 @@
+uuid: 9141f2f9-3071-4d8e-b599-d050283c5bcc
 langcode: it
 status: true
 dependencies:
@@ -25,6 +26,8 @@ dependencies:
     - node.type.persona
   module:
     - user
+_core:
+  default_config_hash: Eaf6t2tBHJjrFmoOX1SWmgFU_cZ9zXG58sUjwqMOaMc
 id: node.persona.teaser_in_evidenza_1
 targetEntityType: node
 bundle: persona

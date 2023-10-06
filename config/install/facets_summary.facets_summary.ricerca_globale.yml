@@ -1,3 +1,4 @@
+uuid: 68bfc3f1-1d85-4c7e-bc42-f64178f7122d
 langcode: it
 status: true
 dependencies:
@@ -6,8 +7,23 @@ dependencies:
     - views.view.bi_ricerca_globale
   module:
     - search_api
+_core:
+  default_config_hash: jqp-cuLqqraUpGx7W13d0vymV3PSfYSvzoJpGuiS4Fk
 id: ricerca_globale
 name: 'Ricerca globale'
+facets:
+  argomenti:
+    checked: true
+    label: Argomenti
+    separator: ', '
+    show_count: false
+    weight: 0
+  tipologie:
+    checked: true
+    label: Tipologie
+    separator: ', '
+    show_count: false
+    weight: 0
 facet_source_id: 'search_api:views_page__bi_ricerca_globale__page_1'
 processor_configs:
   hide_when_not_rendered:
@@ -35,16 +51,3 @@ processor_configs:
       text:
         value: 'No results found.'
         format: plain_text
-facets:
-  argomenti:
-    checked: true
-    label: Argomenti
-    separator: ', '
-    show_count: false
-    weight: 0
-  tipologie:
-    checked: true
-    label: Tipologie
-    separator: ', '
-    show_count: false
-    weight: 0

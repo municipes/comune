@@ -1,8 +1,11 @@
+uuid: 6daaa1b6-c228-4cdf-bafd-76f07c41c0c4
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 7l8wOazx_kp5uS5WvXEvxbR7rh1nOikLSzYy4XzqC3Q
 id: paragraph.field_giorni
 field_name: field_giorni
 entity_type: paragraph

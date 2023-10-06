@@ -1,9 +1,12 @@
+uuid: ff5024a4-b4e5-445a-a69e-feb8e11b5544
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - paragraphs
+_core:
+  default_config_hash: IzSh8lOziQCyRXr8EJvaN3ynyMYRPnrqOgIPq_KBvjc
 id: paragraph.field_dataset
 field_name: field_dataset
 entity_type: paragraph

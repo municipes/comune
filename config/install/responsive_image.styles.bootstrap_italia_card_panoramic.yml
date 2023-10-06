@@ -1,3 +1,4 @@
+uuid: e951b89a-2982-4f65-a5f1-be907e315ccf
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - image.style.focal_point_wuxga_16_10_1920x1200_
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: coV1nXtnZb7WyoCY6XqgvZQuoQk_YuLriBDmhktkJro
 id: bootstrap_italia_card_panoramic
 label: 'Bootstrap Italia Card Panoramica'
 image_style_mappings:

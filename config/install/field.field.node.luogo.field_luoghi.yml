@@ -1,9 +1,12 @@
+uuid: f68b9866-b95c-460e-ba4b-b102da811679
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_luoghi
     - node.type.luogo
+_core:
+  default_config_hash: 8GoqgmYic1hO0xM6mxXxwCubuMZhpNMA0MxxAw-kNU0
 id: node.luogo.field_luoghi
 field_name: field_luoghi
 entity_type: node

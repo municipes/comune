@@ -1,3 +1,4 @@
+uuid: 57ffdcdf-2ce6-4cb9-b861-a6baa34ef070
 langcode: it
 status: true
 dependencies:
@@ -76,6 +77,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+_core:
+  default_config_hash: TUgEOmRgqOUyc-N0WZ3YCsU0P4b1ZY80gpLCdHfozeg
 id: paragraph.carousel.default
 targetEntityType: paragraph
 bundle: carousel

@@ -1,8 +1,11 @@
+uuid: 0b84584b-6d55-4bfc-a722-2fe42575d67f
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: BV0Zkb-pSu0PP2aHjT0I_31lggW2ElZcwFcEwJ4slLc
 id: paragraph.field_text_centered
 field_name: field_text_centered
 entity_type: paragraph

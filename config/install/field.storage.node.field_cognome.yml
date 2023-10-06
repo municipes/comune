@@ -1,8 +1,11 @@
+uuid: e880de01-1937-4217-97fc-7ac9fa96104b
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: '-p6_Z7_bsRujz_-Xpm5fRWzMoY2OCm3h6BkU3QWS6tw'
 id: node.field_cognome
 field_name: field_cognome
 entity_type: node

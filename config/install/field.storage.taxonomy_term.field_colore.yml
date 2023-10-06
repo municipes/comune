@@ -1,9 +1,12 @@
+uuid: 2fd84d58-b8c8-4cf2-81aa-a4139148e08a
 langcode: it
 status: true
 dependencies:
   module:
     - color_field
     - taxonomy
+_core:
+  default_config_hash: O4-T3ENz9desOcFTNgCTBgFD5DKzLh3nfGJybFKwdUw
 id: taxonomy_term.field_colore
 field_name: field_colore
 entity_type: taxonomy_term

@@ -1,8 +1,11 @@
+uuid: 56e27319-3143-4d54-910f-32f05ad7b3c8
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: pjicf2y5uL2ZYFpZjNwo1QDSI1oLoIxSok2k2E-2hTo
 id: node.field_quartiere
 field_name: field_quartiere
 entity_type: node

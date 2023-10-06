@@ -1,8 +1,11 @@
+uuid: cf4db43e-935f-421d-8d6b-ab47fa8721fd
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: yUl81Oe79lxYDWH-wsZRNybZ6nWhGz1EPAZ6Bxdws9E
 id: paragraph.field_overlapping
 field_name: field_overlapping
 entity_type: paragraph

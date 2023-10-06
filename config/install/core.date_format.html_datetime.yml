@@ -1,6 +1,9 @@
+uuid: 97118a72-5b5a-4b43-a636-2fefdbb0a305
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: iBwp795SIZJt2qDuS3j2Z9r0xUKkzaQQNFUzakyiDrk
 id: html_datetime
 label: 'Data e ora HTML'
 locked: true

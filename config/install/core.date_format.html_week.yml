@@ -1,6 +1,9 @@
+uuid: 2bb666cf-523b-47c2-b231-ea3a4c958f44
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 5TiiVo59xXWZdMwAuAynp_Yh7qlwJsPRl4N7j9zHTbw
 id: html_week
 label: 'Settimana HTML'
 locked: true

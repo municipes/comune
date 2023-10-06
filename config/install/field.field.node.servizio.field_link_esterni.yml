@@ -1,3 +1,4 @@
+uuid: af7c683b-cb62-46da-8b17-0fe7e41e2ca2
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - link
+_core:
+  default_config_hash: QdAfj6mmUMK25BC_vUp52Y9dp8bo1kQGfKPslFjKB0E
 id: node.servizio.field_link_esterni
 field_name: field_link_esterni
 entity_type: node

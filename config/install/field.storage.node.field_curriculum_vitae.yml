@@ -1,9 +1,12 @@
+uuid: 3181972a-e8ee-4ab7-b2c3-56e3f8e21e86
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: S6VpXsWXGJvqcd0KEjc4VPDRRByMI9p7HBHwWlNicYs
 id: node.field_curriculum_vitae
 field_name: field_curriculum_vitae
 entity_type: node

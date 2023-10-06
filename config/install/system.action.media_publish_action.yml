@@ -1,8 +1,11 @@
+uuid: 3071123d-1536-49ec-979c-70af0d2fc6f4
 langcode: it
 status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: jFZMmAskkLWCE1K-h6KmiunfIc4jizq4_fcARJCTH4Q
 id: media_publish_action
 label: 'Publish media'
 type: media

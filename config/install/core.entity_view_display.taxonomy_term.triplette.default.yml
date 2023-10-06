@@ -1,0 +1,38 @@
+uuid: 9b47490d-6441-49c1-8e75-5207d73887f8
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.triplette.field_id
+    - taxonomy.vocabulary.triplette
+  module:
+    - text
+  enforced:
+    module:
+      - silfi_triplette
+_core:
+  default_config_hash: 5E8HVnrpSbyP7OWpVMAtt_iKUfSZ2zURoVUxlo-cUsM
+id: taxonomy_term.triplette.default
+targetEntityType: taxonomy_term
+bundle: triplette
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_id:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

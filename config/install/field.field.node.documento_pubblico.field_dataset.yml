@@ -1,3 +1,4 @@
+uuid: 291b4661-675c-401d-9ded-293541e46715
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_dataset
     - node.type.dataset
     - node.type.documento_pubblico
+_core:
+  default_config_hash: YrcA5KWb81eM3VO2_U1BFWiT76lkkwRTPS2DI_PbHIg
 id: node.documento_pubblico.field_dataset
 field_name: field_dataset
 entity_type: node

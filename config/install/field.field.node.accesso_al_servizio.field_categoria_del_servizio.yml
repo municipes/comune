@@ -1,3 +1,4 @@
+uuid: d39f88e5-7fd3-49b8-b204-bf7f79a7fcd9
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_categoria_del_servizio
     - node.type.accesso_al_servizio
     - taxonomy.vocabulary.categorie_dei_servizi
+_core:
+  default_config_hash: nfRHNgaXjLRe_UL_CUgzj4tj0M8eOnwYgFQcxx1W11E
 id: node.accesso_al_servizio.field_categoria_del_servizio
 field_name: field_categoria_del_servizio
 entity_type: node

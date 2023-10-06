@@ -1,9 +1,12 @@
+uuid: 83baf29a-0cdc-432c-84d7-b35468abf06c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.sito_tematico
+_core:
+  default_config_hash: V6Ef_JFK89PS1Z5lavSPp8FQk4DBHkaT57qZTgADY-k
 id: node.sito_tematico.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

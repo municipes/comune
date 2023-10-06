@@ -1,3 +1,4 @@
+uuid: 0f6630c4-5357-464b-b030-179f7b32b23a
 langcode: it
 status: true
 dependencies:
@@ -17,6 +18,8 @@ dependencies:
     - link
     - options
     - text
+_core:
+  default_config_hash: 9accPNfh_xTlta9v6azjKop2AOxoCtLrKwFXBbXTl-8
 id: paragraph.callout.default
 targetEntityType: paragraph
 bundle: callout
@@ -95,4 +98,5 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

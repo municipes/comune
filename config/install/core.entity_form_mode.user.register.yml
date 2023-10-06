@@ -1,8 +1,11 @@
+uuid: 9f5b6a08-3c45-40e7-9fb1-3aa7579e8305
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: 171S96LIfzlvxhcdyVqBPzX8P74-SLEb3WQI1NVgQxU
 id: user.register
 label: Registrati
 targetEntityType: user

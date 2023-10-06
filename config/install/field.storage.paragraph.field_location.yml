@@ -1,9 +1,12 @@
+uuid: 4c9e1909-e040-4e72-b929-9546bbf79fb0
 langcode: it
 status: true
 dependencies:
   module:
     - geofield
     - paragraphs
+_core:
+  default_config_hash: Eh3qs9gYqBVMnBE5cbqq8apjS7DjZyqFk_-vPmeMEDI
 id: paragraph.field_location
 field_name: field_location
 entity_type: paragraph

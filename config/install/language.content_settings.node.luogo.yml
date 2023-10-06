@@ -1,8 +1,11 @@
+uuid: 97e40210-aadf-4ff7-abc2-7d7fc710d2ff
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.luogo
+_core:
+  default_config_hash: Nh0PSVN0gfm1piHfqd_QkFJnBobxCif7K5lx7aT3M0c
 id: node.luogo
 target_entity_type_id: node
 target_bundle: luogo

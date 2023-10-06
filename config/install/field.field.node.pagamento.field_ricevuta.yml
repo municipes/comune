@@ -1,3 +1,4 @@
+uuid: 6030792f-db51-4eb6-a037-60980bf279ab
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.pagamento
   module:
     - link
+_core:
+  default_config_hash: wL_wPT2N7HI3Ty6EOfJV7Uj23lXE_BWgBN5GvMSPqX4
 id: node.pagamento.field_ricevuta
 field_name: field_ricevuta
 entity_type: node

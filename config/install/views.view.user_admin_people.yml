@@ -1,8 +1,11 @@
+uuid: 78683b55-7dd0-4350-8037-db59668bd1b3
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: ac_SZXmRSnP9J4zDsOJbHSXoS75YrbOsgjy50YII_xs
 id: user_admin_people
 label: Persone
 module: user

@@ -1,3 +1,4 @@
+uuid: 24852299-4650-43bb-87b6-ceecec767e6b
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
     - imce
     - media_library
     - text
+_core:
+  default_config_hash: LSn-pvXFi62uetD-vtIzBUFlIK5KYMkSSGiUVuYWXoc
 id: paragraph.slide.default
 targetEntityType: paragraph
 bundle: slide

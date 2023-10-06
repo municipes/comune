@@ -1,3 +1,4 @@
+uuid: ae80b3b2-29fd-4640-b764-21914cc3c2d0
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_unita_organizzativa
     - node.type.dataset
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: obEIaw4eLj2Z79BLSg9rH7yh7z10Z9MC-mb3VdKPqAc
 id: node.dataset.field_unita_organizzativa
 field_name: field_unita_organizzativa
 entity_type: node

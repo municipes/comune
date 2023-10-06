@@ -1,3 +1,4 @@
+uuid: 1c694aa1-3d8e-4b2b-b2e3-2cbf39f962f0
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.field.paragraph.days_timeline_item.field_days
     - field.field.paragraph.days_timeline_item.field_title
     - paragraphs.paragraphs_type.days_timeline_item
+_core:
+  default_config_hash: JhZxdlmuSWYUNSb1JkBkrWDL8l7kdmiTke-wSQH8yHU
 id: paragraph.days_timeline_item.default
 targetEntityType: paragraph
 bundle: days_timeline_item

@@ -1,0 +1,25 @@
+uuid: 521b6d16-5bbf-4763-99e2-46db078ed37c
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+  enforced:
+    module:
+      - silfi_triplette
+_core:
+  default_config_hash: nVfsdxmR0DDtGZNDKwt4lPRiQbuKIGmzabmgMHvDEoA
+id: taxonomy_term.field_id
+field_name: field_id
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

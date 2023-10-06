@@ -1,9 +1,12 @@
+uuid: 334448b2-5913-4d3b-abc5-55e20e6e6fab
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: w0zt2GnAv4O1UcRNZ3s_WPFQfqtWBl3dpX1C4lNUnsc
 id: node.field_descrizione_completa
 field_name: field_descrizione_completa
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: 88aa88e5-ef60-42d4-aa88-1b96cadd26b1
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - user.role.cittadino
   module:
     - user
+_core:
+  default_config_hash: Y9zgN0kBlq5czbOD49iB9AQ5yLW9lG_eUtlzXbPVEzc
 id: user_remove_role_action.cittadino
 label: 'Remove the Cittadino role from the selected user(s)'
 type: user

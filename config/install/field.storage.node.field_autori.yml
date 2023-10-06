@@ -1,9 +1,12 @@
+uuid: 02fac5ed-92ed-4b81-969e-178a1ddea062
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: rc7XD3Zla2bajhi0qQB5P-0h8yJ41hyarPdofAvCf-A
 id: node.field_autori
 field_name: field_autori
 entity_type: node

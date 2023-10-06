@@ -1,3 +1,4 @@
+uuid: acc2809f-6735-41a7-8e2e-12e031659f83
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_persona
     - node.type.incarico
     - node.type.persona
+_core:
+  default_config_hash: Vq1DdVm8wSiWtC-QILq5ssoJBzehJy3XlVfRygYxdBk
 id: node.incarico.field_persona
 field_name: field_persona
 entity_type: node

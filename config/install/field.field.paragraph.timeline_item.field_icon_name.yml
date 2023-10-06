@@ -1,9 +1,12 @@
+uuid: 80e4ba5d-82f7-4e2d-99da-713468f0a416
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_icon_name
     - paragraphs.paragraphs_type.timeline_item
+_core:
+  default_config_hash: qPfAO2LgG3a9q_9hjAumEUtvDRObUDbY1Fl57GHeEP8
 id: paragraph.timeline_item.field_icon_name
 field_name: field_icon_name
 entity_type: paragraph

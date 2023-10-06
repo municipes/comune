@@ -1,8 +1,11 @@
+uuid: fc3423dd-b670-41ae-8e1e-26aa89a9b667
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: Ef2QtoeTuItV1U6ROomdJqjnalx-wnKvz_MjfW3lZb8
 id: paragraph.field_citation
 field_name: field_citation
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: 5487c13c-e975-4ddb-a40f-0bc4c5797d4e
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 9J9Fla8lTKSccNtw7WdhKb-lW0OqZSMsDVHX3rNzX4A
 id: node.teaser_dettaglio_notizia
 label: 'Teaser - Dettaglio Notizia'
 targetEntityType: node

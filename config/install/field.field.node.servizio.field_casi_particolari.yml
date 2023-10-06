@@ -1,3 +1,4 @@
+uuid: 05bf3c16-4158-40c5-814f-9ccf9efc52f9
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: 5nXdZ5dKKsS5QRRz3ouytFVjxAtng2nok8LiIU5GFWo
 id: node.servizio.field_casi_particolari
 field_name: field_casi_particolari
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -1,8 +1,11 @@
+uuid: 6d6eb7a3-55df-4244-9b7f-6f799f83dc99
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: rsY6tdf-fOb6D6ao3TIECKQbz90eJH-Jf4itbPahw9c
 id: node.chip
 label: Chip
 targetEntityType: node

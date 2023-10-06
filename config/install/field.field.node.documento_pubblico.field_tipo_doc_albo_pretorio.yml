@@ -1,3 +1,4 @@
+uuid: dc59c3fc-5926-40d0-89d8-c2e5e91c6a6e
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_tipo_doc_albo_pretorio
     - node.type.documento_pubblico
     - taxonomy.vocabulary.documenti_albo_pretorio
+_core:
+  default_config_hash: H33GhXPl1tJfD9q_JdaxQMFwlqvg_CTL8DetBKfVngA
 id: node.documento_pubblico.field_tipo_doc_albo_pretorio
 field_name: field_tipo_doc_albo_pretorio
 entity_type: node

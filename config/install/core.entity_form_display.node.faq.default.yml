@@ -1,3 +1,4 @@
+uuid: 1f597c46-0f8d-458a-b396-61da98706940
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - path
     - text
+_core:
+  default_config_hash: gYe4r8pbpZ1wHOafR7FTLD4zrMfbVD36zcX58EcdeGo
 id: node.faq.default
 targetEntityType: node
 bundle: faq
@@ -80,4 +83,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

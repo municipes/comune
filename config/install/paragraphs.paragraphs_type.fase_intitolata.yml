@@ -1,6 +1,9 @@
+uuid: 9bfa8b83-1710-4587-8f27-a3c8e823e36e
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: hMHQDCdnL1VGtf8wR47IbC3PgVkdjSyc3WQjVSupoAQ
 id: fase_intitolata
 label: 'Fase intitolata'
 icon_uuid: null

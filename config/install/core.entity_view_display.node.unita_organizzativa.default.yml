@@ -1,3 +1,4 @@
+uuid: 9c7e8929-05e4-4e08-9d94-ff2ced6c64b1
 langcode: it
 status: true
 dependencies:
@@ -23,6 +24,8 @@ dependencies:
     - text
     - user
     - viewsreference
+_core:
+  default_config_hash: IIPDjgxAGETzvQm9gjDiCyh8Y_Lyt44ip7dpWoMCm4o
 id: node.unita_organizzativa.default
 targetEntityType: node
 bundle: unita_organizzativa

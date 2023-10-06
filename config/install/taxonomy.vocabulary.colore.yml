@@ -1,6 +1,9 @@
+uuid: 06cac552-882c-44b9-ba9d-1a31b0916ce5
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pLHOvFK4AX4B5Nhoo0GgpZS6R5axIPlO70GFlmCCPJQ
 name: Colore
 vid: colore
 description: ''

@@ -1,3 +1,4 @@
+uuid: cb40ab28-2556-447f-b030-41bc6a04fb26
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Incarico</em> content'
     type_weight: 0
+_core:
+  default_config_hash: ZwkH4M3SjhyPMZ0fKYMy7VlBV0uiSwmEJ0FRKy-Z4fs
 name: Incarico
 type: incarico
 description: 'Questa Tipologia descrive la struttura di cariche, incarichi o ruoli salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona'

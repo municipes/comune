@@ -1,8 +1,11 @@
+uuid: c2c61b4d-9cf7-43f2-bd2f-eb9d1c9f1476
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 4wPicCArN1hx2V1MkPZTsn6H0sS3gkP-8p2ZIEzBURM
 id: paragraph.field_counter_contenuti
 field_name: field_counter_contenuti
 entity_type: paragraph

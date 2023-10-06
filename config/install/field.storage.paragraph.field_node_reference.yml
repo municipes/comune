@@ -1,9 +1,12 @@
+uuid: 8a95c269-cd27-4db1-824b-29070721584c
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: uksb2572Ag3sUv598QTmlgrdrnbP7Q7omk0XJRkc71A
 id: paragraph.field_node_reference
 field_name: field_node_reference
 entity_type: paragraph

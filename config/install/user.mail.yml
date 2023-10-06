@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: wo8XlPPlHKgdYAHfLoJMC8Jt9IPtiDSkDN7T5ILPryE
 langcode: it
 cancel_confirm:
   subject: 'Richiesta rimozione profilo per [user:display-name] su [site:name]'

@@ -1,8 +1,11 @@
+uuid: cecce934-5289-4a10-ab36-ade7ebade25a
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: dx4EVSNjfeubJYVT_1pByrbV8LrhoaCEUPNE99dxFvU
 id: node.gallery
 label: Galleria
 targetEntityType: node

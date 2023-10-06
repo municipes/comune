@@ -1,9 +1,12 @@
+uuid: e05e3a8b-9940-411d-98c5-0eac9ad742cc
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - paragraphs
+_core:
+  default_config_hash: NEaA4Y_h-9Aj7AojcYQmUsOM9AqMkzxk6vHfwao5hXQ
 id: paragraph.field_documento
 field_name: field_documento
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: bd2fd0c8-dd53-4e11-b838-fb8e95b3a5e9
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 0SnCR-OJJI3w-9SgegnZfj88NKmwZOO_kDZ9eJ4vHQA
 id: node.field_protocollo
 field_name: field_protocollo
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: 66c274f7-9da1-493f-86dc-018450390e2e
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: R8mnewge8QGIlAm6NpsfNPFP1pk027qqpKp0nJz2LSA
 id: who_s_online
 label: 'Blocco "Chi è online"'
 module: user

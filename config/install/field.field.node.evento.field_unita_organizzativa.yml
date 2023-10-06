@@ -1,3 +1,4 @@
+uuid: 738e9365-250c-47d9-885e-5fc32a2c4a04
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_unita_organizzativa
     - node.type.evento
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: GeeTAiNxHyfADdkwfTTLKcPW3v5DSZuj112bkbbVKxw
 id: node.evento.field_unita_organizzativa
 field_name: field_unita_organizzativa
 entity_type: node

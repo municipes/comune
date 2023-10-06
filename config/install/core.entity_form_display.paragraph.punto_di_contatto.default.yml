@@ -1,3 +1,4 @@
+uuid: cac6d489-0455-4fc3-ba52-3ee806e21406
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.field.paragraph.punto_di_contatto.field_tipo_punto_di_contatto
     - field.field.paragraph.punto_di_contatto.field_valore_punto_di_contatto
     - paragraphs.paragraphs_type.punto_di_contatto
+_core:
+  default_config_hash: oHxizoP0iTbnAb4lN0UfsphDLSoCH1KIg3CE57tSUqk
 id: paragraph.punto_di_contatto.default
 targetEntityType: paragraph
 bundle: punto_di_contatto

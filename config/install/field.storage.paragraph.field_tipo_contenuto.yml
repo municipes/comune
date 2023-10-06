@@ -1,9 +1,12 @@
+uuid: 6ec2c61d-6fa7-402c-ab67-fe3917b02878
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - paragraphs
+_core:
+  default_config_hash: GEPZcB_l30687AgbSpwEnszvgqaHKmYJrnwZwOtMKJg
 id: paragraph.field_tipo_contenuto
 field_name: field_tipo_contenuto
 entity_type: paragraph

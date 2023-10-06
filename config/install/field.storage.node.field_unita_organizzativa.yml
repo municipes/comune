@@ -1,8 +1,11 @@
+uuid: 515e1348-095f-475a-9d42-3ee09ee6598a
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: wanqnswetYjnr6nsXSnmyphoD58BOXBCwHKe4a1UX8M
 id: node.field_unita_organizzativa
 field_name: field_unita_organizzativa
 entity_type: node

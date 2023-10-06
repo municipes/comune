@@ -1,8 +1,11 @@
+uuid: e58b086f-5f60-47e1-9268-ef1e039a0d16
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: SEiNCYZX7RzPrQzuc__-LJPIEIqXte7lnucXXKlz8pY
 id: node.unita_organizzativa.promote
 field_name: promote
 entity_type: node

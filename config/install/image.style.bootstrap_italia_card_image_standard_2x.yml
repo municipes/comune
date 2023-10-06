@@ -1,3 +1,4 @@
+uuid: c8d53d46-86a9-42b4-9f15-3fd897e25b2e
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   module:
     - crop
     - focal_point
+_core:
+  default_config_hash: l3iIQYAs1UogdBRT4cVoh8njrwNMg7VEqISWJzT4tf8
 name: bootstrap_italia_card_image_standard_2x
 label: 'Bootstrap Italia Card Image Standard 2x'
 effects:

@@ -1,9 +1,12 @@
+uuid: e74af0ea-49a2-4a87-8d31-56f5b562c3b1
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: uNdKsZVPXdbmAj6ISYFwa69oXaN4mad5DxyBv66SV84
 id: node.field_tipo_di_organizzazione
 field_name: field_tipo_di_organizzazione
 entity_type: node

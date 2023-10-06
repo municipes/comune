@@ -1,3 +1,4 @@
+uuid: 8f51d6cc-e697-4543-812c-1d59f6da0f1b
 langcode: it
 status: true
 dependencies:
@@ -28,6 +29,8 @@ dependencies:
     - leaflet
     - ui_patterns_field_formatters
     - user
+_core:
+  default_config_hash: 35pX9YngMgi09Cco3yWaDWiOs5nuHCbMBeeD0ZsGwGY
 id: node.luogo.card_simple
 targetEntityType: node
 bundle: luogo

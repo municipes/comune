@@ -1,9 +1,12 @@
+uuid: 474ddb28-95b3-4299-8732-2e13083e21cf
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: 97KvW7c2AHSyv13HJ4aaNmz6_oh0L1WTzqQY3KdhOd8
 id: node.field_sezione_amministrazione
 field_name: field_sezione_amministrazione
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: 7bbe9625-61cc-4bbe-8ab2-4fc13e8fec1b
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:cdf8b2b8-5f56-4705-9346-8ec918c35c27'
+_core:
+  default_config_hash: qf3a9GpfKqeth95VMCzdWcATPgiiAHZAX6_fPFoed38
 id: content
 label: Contenuto
 icon_uuid: cdf8b2b8-5f56-4705-9346-8ec918c35c27

@@ -1,3 +1,4 @@
+uuid: e21145d4-727b-4b04-b03d-f5fddcd0a820
 langcode: it
 status: true
 dependencies:
@@ -20,6 +21,8 @@ dependencies:
     - taxonomy
     - toolbar
     - views_ui
+_core:
+  default_config_hash: P_G2Z9G_CbpJi6xgWz2ctboLDZzcSpcdX1EgW8Bb9iQ
 id: administrator
 label: administrator
 weight: 10

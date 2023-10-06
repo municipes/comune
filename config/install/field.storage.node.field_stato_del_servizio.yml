@@ -1,8 +1,11 @@
+uuid: b4c4234e-81fa-46f7-a002-c61820f97150
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: bNUJHvox6BjHXf6GIYcSG-4Sk1UvW71Mzk_OY4p98Qw
 id: node.field_stato_del_servizio
 field_name: field_stato_del_servizio
 entity_type: node

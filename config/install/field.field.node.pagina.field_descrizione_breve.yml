@@ -1,9 +1,12 @@
+uuid: 8e2b1b03-693f-4a47-98f3-e0f1bc8187ed
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.pagina
+_core:
+  default_config_hash: e0PUyPwVolvMWLySZhDxbkSMO-mRP8hMyyshoYOytn8
 id: node.pagina.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

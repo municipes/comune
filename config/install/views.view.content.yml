@@ -1,9 +1,12 @@
+uuid: 631db310-43c1-4b49-8641-09d94242a771
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: 07EeHSTRLs3Q1JQwjAi8J9tG1lc65jL35c3Xp2c2VYc
 id: content
 label: Contenuto
 module: node

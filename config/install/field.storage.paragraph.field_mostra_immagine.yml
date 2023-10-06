@@ -1,8 +1,11 @@
+uuid: 33de120f-84ab-4200-a9a8-3d3dcd9cd94b
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 3aE-v2md39O12ABSulSJIDwSoFiQvLTURiBI0cnvC3k
 id: paragraph.field_mostra_immagine
 field_name: field_mostra_immagine
 entity_type: paragraph

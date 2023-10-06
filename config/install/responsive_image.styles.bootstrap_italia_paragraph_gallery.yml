@@ -1,3 +1,4 @@
+uuid: a36bf1dd-fca3-44ca-8171-c00db406c733
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - image.style.focal_point_vga_4_3_640x480_
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: Ngaix6D5QJsCZMXNJWBVohgsxyqwnZJhYeyDwiPcMIs
 id: bootstrap_italia_paragraph_gallery
 label: 'Bootstrap Italia paragraph gallery'
 image_style_mappings:

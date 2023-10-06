@@ -1,3 +1,4 @@
+uuid: d89bc0f0-5b03-412b-9d91-a47482fcfbd1
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_sezione_amministrazione
     - node.type.unita_organizzativa
     - taxonomy.vocabulary.amministrazione
+_core:
+  default_config_hash: FZMebe5cRVPTBBdiCwmaUhXY09YbCEtEQHRKHwQ7UcI
 id: node.unita_organizzativa.field_sezione_amministrazione
 field_name: field_sezione_amministrazione
 entity_type: node

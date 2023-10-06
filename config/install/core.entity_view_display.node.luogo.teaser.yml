@@ -1,3 +1,4 @@
+uuid: e5549426-7269-47d0-b4b7-4e8ac9816970
 langcode: it
 status: true
 dependencies:
@@ -27,6 +28,8 @@ dependencies:
   module:
     - ui_patterns_field_formatters
     - user
+_core:
+  default_config_hash: EUMlbZP1CxA1jjeUygl5MawaXaYHw6BswfnF1Z6DoWI
 id: node.luogo.teaser
 targetEntityType: node
 bundle: luogo

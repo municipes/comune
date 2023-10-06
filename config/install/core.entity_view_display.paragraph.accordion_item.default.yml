@@ -1,3 +1,4 @@
+uuid: df2cd8dc-b543-4b48-aa21-4c0aeb32d7f9
 langcode: it
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
   module:
     - file
     - text
+_core:
+  default_config_hash: Kl81JnSn7osyJqKIYV_wPGVoY6FwfpmErV7hmNCsOYQ
 id: paragraph.accordion_item.default
 targetEntityType: paragraph
 bundle: accordion_item
@@ -59,4 +62,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

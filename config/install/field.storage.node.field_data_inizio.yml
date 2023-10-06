@@ -1,9 +1,12 @@
+uuid: 9b628a75-20cb-48c7-b4cf-cce2cb4474dc
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - node
+_core:
+  default_config_hash: 7zORph3hkx3EBPx5DZAjPq9dKL0JMhV5x3a5wFcV0d0
 id: node.field_data_inizio
 field_name: field_data_inizio
 entity_type: node

@@ -1,6 +1,9 @@
+uuid: 8af503bf-9a1e-437a-a805-e809d4c1ac64
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pZrr7bFArCa0ijvy4djAgPcM_SvDejq6oRo8VM4VWdc
 name: 'Temi di un dataset'
 vid: temi_di_un_dataset
 description: 'Classificazione dei temi dei dati secondo il Vocabolario Controllato Temi dei dati.'

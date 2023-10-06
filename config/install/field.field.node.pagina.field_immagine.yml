@@ -1,3 +1,4 @@
+uuid: bdba2998-6670-4df3-b5ca-4a4c471aa11d
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_immagine
     - media.type.image
     - node.type.pagina
+_core:
+  default_config_hash: k5nFD-Y8nzvKSiUGcQAWvfvA3fzYGr7-6Km8U0Gwl8U
 id: node.pagina.field_immagine
 field_name: field_immagine
 entity_type: node

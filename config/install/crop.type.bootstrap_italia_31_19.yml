@@ -1,8 +1,11 @@
+uuid: 864e6934-cbc5-457e-be50-7373cdba9be1
 langcode: it
 status: true
 dependencies: {  }
-label: 'Bootstrap Italia 31:19'
+_core:
+  default_config_hash: nExrXYYm4_0d7hYgh7eGCY8N12VrwBuu_tX3tqr2Axo
 id: bootstrap_italia_31_19
+label: 'Bootstrap Italia 31:19'
 description: 'Tipo di ritaglio 31:19.'
 aspect_ratio: '31:19'
 soft_limit_width: null

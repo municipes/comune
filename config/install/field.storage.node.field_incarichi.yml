@@ -1,3 +1,4 @@
+uuid: 201f1da4-c85d-4ef7-a6ec-e93daf224d19
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - node
     - views
     - viewsreference
+_core:
+  default_config_hash: P3kJpZpd0m18P7b-WaTOEh1dVcpLndkSDnwvAFk0FUs
 id: node.field_incarichi
 field_name: field_incarichi
 entity_type: node

@@ -1,8 +1,11 @@
+uuid: b2e87f89-d007-4089-b976-f14fd3fa0e8c
 langcode: it
 status: true
 dependencies:
   theme:
     - scaenographia
+_core:
+  default_config_hash: peMlmYu5GIoyqBtrygFhNWRqMz4gJtK8A-OhuTfji_k
 id: scaenographia_local_actions
 theme: scaenographia
 region: local_tasks

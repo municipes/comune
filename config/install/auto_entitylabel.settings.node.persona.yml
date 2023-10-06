@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: m8c6zkjRy4uTxWP6Ha3AR_N77TJg6i6sTO59WltT4TU
 langcode: it
 status: 1
 pattern: '[node:field_nome] [node:field_cognome]'

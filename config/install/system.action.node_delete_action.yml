@@ -1,8 +1,11 @@
+uuid: cd0932c7-f46a-453a-876f-2ba8678bcb52
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 39d57YELIos22WAAiTmeQ2I4zREcnN2dSG7EnBcvLfY
 id: node_delete_action
 label: 'Cancella il contenuto'
 type: node

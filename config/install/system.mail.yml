@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: '-BAUPdPru9N_gT6MC7uiQUvywEzkjxlL0wv50JfpFVU'
 langcode: it
 interface:
   default: php_mail

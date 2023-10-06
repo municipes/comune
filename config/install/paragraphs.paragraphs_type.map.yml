@@ -1,8 +1,11 @@
+uuid: 9afc047f-b6ee-4929-8efa-2da22024623e
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:6ab464d4-d2f9-4e88-aa9e-00a26df2b6c0'
+_core:
+  default_config_hash: Y0lt3XqwyTtCZMkciIHuTGd8UzJ7ej3nq0r34EDN4rQ
 id: map
 label: Mappa
 icon_uuid: 6ab464d4-d2f9-4e88-aa9e-00a26df2b6c0

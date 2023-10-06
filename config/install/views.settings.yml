@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: 2EHP5yoo4pRbY6rAtmulsoae3bCGeFc0G6WCjw9hj4g
 langcode: it
 display_extenders: {  }
 skip_cache: false

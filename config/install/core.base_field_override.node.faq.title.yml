@@ -1,8 +1,11 @@
+uuid: 523bc117-4692-4a8c-8203-a6d92eec1799
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.faq
+_core:
+  default_config_hash: pKhIa3hE_EvjRM8kua19sfhBwGzP31-qx9o_1iJikOo
 id: node.faq.title
 field_name: title
 entity_type: node

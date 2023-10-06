@@ -1,3 +1,4 @@
+uuid: dbc4d580-a97f-465a-a706-77fe26fd4458
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
   enforced:
     module:
       - media
+_core:
+  default_config_hash: DeRhxnstqiSCoOvF2rO1AAW1S1TnIu5FLflxQ2XhiJE
 id: media.document.field_media_document
 field_name: field_media_document
 entity_type: media

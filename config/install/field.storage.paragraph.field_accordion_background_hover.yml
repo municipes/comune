@@ -1,8 +1,11 @@
+uuid: eb146169-7db3-42ae-87d9-3e0691f93752
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: Ab7NYwLmJAOgO3-JbKblDCIvV2xlGF7jbDPnHYuw3-E
 id: paragraph.field_accordion_background_hover
 field_name: field_accordion_background_hover
 entity_type: paragraph

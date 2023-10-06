@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: tlCER_jlmrqMHfhLytzZh9yQUb1W6mwVHVionPLLJfw
 langcode: it
 session:
   parameter: language
@@ -5,6 +7,7 @@ url:
   source: path_prefix
   prefixes:
     it: ''
+    '': null
   domains:
     it: ''
 selected_langcode: site_default

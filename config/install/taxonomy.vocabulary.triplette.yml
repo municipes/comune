@@ -1,0 +1,13 @@
+uuid: 6b1c81bd-60fb-45c5-af3a-583e25180132
+langcode: it
+status: true
+dependencies:
+  enforced:
+    module:
+      - silfi_triplette
+_core:
+  default_config_hash: MJ80Z8uLd2yuCmlPwElOnOl2LqzbThfS0NTsEhowXqM
+name: Triplette
+vid: triplette
+description: 'Per il contact center'
+weight: 0

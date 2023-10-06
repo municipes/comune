@@ -1,3 +1,4 @@
+uuid: 648c3bc2-7aca-43c3-92c7-db137463c33a
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
   module:
     - paragraphs
     - text
+_core:
+  default_config_hash: hXzNxeBs2e8RU59VOtK0Koc9Mmc6LueZGxxzO7RXC-w
 id: paragraph.timeline_item.default
 targetEntityType: paragraph
 bundle: timeline_item

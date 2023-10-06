@@ -1,6 +1,9 @@
+uuid: bde4f2b6-0ba1-4aec-a93e-592aeb374d1e
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: K7XTo1cNwmC1mmT4MAR7OrOSgudPs7OY6vGShVLhTnc
 id: admin
 label: 'Admin profile'
 description: 'Configuration for site administrators'

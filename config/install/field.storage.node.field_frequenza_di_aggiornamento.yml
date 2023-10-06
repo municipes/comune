@@ -1,9 +1,12 @@
+uuid: e96fffea-e4dc-4f29-9665-20370568bb46
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: 0DNss8WLT8Sd64M21KnPWg4mbqHJaQtGrDtNLrtISL0
 id: node.field_frequenza_di_aggiornamento
 field_name: field_frequenza_di_aggiornamento
 entity_type: node

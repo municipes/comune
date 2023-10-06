@@ -1,3 +1,4 @@
+uuid: 5550aff6-ef7d-44a1-8adf-486d9933b50e
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.amministrazione
   module:
     - text
+_core:
+  default_config_hash: 0IT-PYkLdi9Rlcg-VWZex3b7mfhwZ_Eg9Oiyv7Mrkxg
 id: taxonomy_term.amministrazione.esplora
 targetEntityType: taxonomy_term
 bundle: amministrazione

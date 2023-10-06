@@ -1,3 +1,4 @@
+uuid: 25b88c7e-f678-4cfd-865a-dedd102c32aa
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.luogo
   module:
     - address
+_core:
+  default_config_hash: fi-Rg4_QEPk9c6nDG-UfN25qnItfwfRzaSJgR7V9dV0
 id: node.luogo.field_indirizzo
 field_name: field_indirizzo
 entity_type: node

@@ -1,3 +1,4 @@
+uuid: fd64dc9a-bfa3-437e-bea4-f179bb5c0465
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_unita_organizzativa
     - node.type.incarico
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: lUrGs2jSb9hbBAwj63RN99qibJZJaLcuOrVX07pKwfU
 id: node.incarico.field_unita_organizzativa
 field_name: field_unita_organizzativa
 entity_type: node

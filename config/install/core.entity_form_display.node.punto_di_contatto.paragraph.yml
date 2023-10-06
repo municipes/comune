@@ -1,3 +1,4 @@
+uuid: 122f95eb-99e3-4b0c-bf04-f56cf912fdc9
 langcode: it
 status: true
 dependencies:
@@ -12,6 +13,8 @@ dependencies:
   module:
     - inline_entity_form
     - office_hours
+_core:
+  default_config_hash: SiQbWTVrjVPb7I3bkj7Hx_lZO-1zpG8yUpdxvmwZLDc
 id: node.punto_di_contatto.paragraph
 targetEntityType: node
 bundle: punto_di_contatto

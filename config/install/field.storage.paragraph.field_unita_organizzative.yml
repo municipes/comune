@@ -1,9 +1,12 @@
+uuid: 8be75841-a4ef-4fb4-b697-a40d82a2bc5b
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - paragraphs
+_core:
+  default_config_hash: vNDeUuMfugo8egiH5v_vQFuzersdBmkhzAzOjfmBKuw
 id: paragraph.field_unita_organizzative
 field_name: field_unita_organizzative
 entity_type: paragraph

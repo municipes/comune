@@ -1,3 +1,4 @@
+uuid: 425cf9ba-6b82-4caf-93e0-f127444e40c1
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.incarico
   module:
     - text
+_core:
+  default_config_hash: oQPALR-DcE2mHkcg_e0rBqCS5AQWDeBTHusTAiMB8JY
 id: node.incarico.field_ulteriori_informazioni
 field_name: field_ulteriori_informazioni
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

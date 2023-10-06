@@ -1,6 +1,9 @@
+uuid: e6e4b881-686e-4d09-a83f-9bf80fe6722b
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: LnzfBhkBgF-i2-gWxGb9ivY6a9f8EH4nyrX_hj-RBK0
 id: default_db
 label: 'Default Drupal Database'
 type: DefaultDB

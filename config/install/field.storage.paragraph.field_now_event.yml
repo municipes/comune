@@ -1,8 +1,11 @@
+uuid: 73363a8c-8c67-4a1a-9dc0-83910649b3dd
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: 8wOuBZ-oCX3-IOgy4jXQKhaFWI3gxXbj4XwfyCCVPVQ
 id: paragraph.field_now_event
 field_name: field_now_event
 entity_type: paragraph

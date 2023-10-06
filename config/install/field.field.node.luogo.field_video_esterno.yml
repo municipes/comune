@@ -1,3 +1,4 @@
+uuid: c919f0bf-141f-4b69-af6a-3e5826b35be5
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: s_FqTWrvdzR6fFAY51_wHSpVoFX7yYZQzoUKWpspYfs
 id: node.luogo.field_video_esterno
 field_name: field_video_esterno
 entity_type: node

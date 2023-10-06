@@ -1,9 +1,12 @@
+uuid: 1129b093-4f5b-45a2-af7a-8fed29649ee7
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_quartiere
     - node.type.luogo
+_core:
+  default_config_hash: dHoWU-dc9j0zNb6LWPwokdrHjKwPFiYEo2bFmf4doAk
 id: node.luogo.field_quartiere
 field_name: field_quartiere
 entity_type: node

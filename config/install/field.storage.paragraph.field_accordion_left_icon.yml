@@ -1,8 +1,11 @@
+uuid: 55152090-078d-4005-9fc2-c5ba38730d53
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: bNAPMUXD-JU7WBoE6VXU0LeVEmJQlWOgdpaE1UGwYj4
 id: paragraph.field_accordion_left_icon
 field_name: field_accordion_left_icon
 entity_type: paragraph

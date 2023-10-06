@@ -1,3 +1,4 @@
+uuid: 10a58d1d-5835-4036-92aa-9fd54ccf4c97
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.callout
   module:
     - options
+_core:
+  default_config_hash: TPITHBUEjBYPQsmbpoqqtucBJMGnkNjNpD94Rjx9UO4
 id: paragraph.callout.field_callout_variant
 field_name: field_callout_variant
 entity_type: paragraph

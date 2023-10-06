@@ -1,3 +1,4 @@
+uuid: c917e74e-8dfa-4ef8-9aee-a2c811df6d1b
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.hero
   module:
     - options
+_core:
+  default_config_hash: xCDZSaLJNvgbTykhblUy3wAE56ZIzvxVPcCEv3E6_l0
 id: paragraph.hero.field_color
 field_name: field_color
 entity_type: paragraph

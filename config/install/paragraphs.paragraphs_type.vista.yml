@@ -1,6 +1,9 @@
+uuid: 46cb9e1b-1f37-4af9-8681-04573db765ae
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: xgSWALZ2ph46OrCil1uBEsXUsfBHCHbO-TiLDTFx5g8
 id: vista
 label: Vista
 icon_uuid: null

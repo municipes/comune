@@ -1,8 +1,11 @@
+uuid: 77498360-5aa7-485c-ad92-7ec879a1ce9a
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.pagamento
+_core:
+  default_config_hash: KRDfqvSL56gRasue3IwKrqbWWauZNFo11auGHcgvnK0
 id: node.pagamento
 target_entity_type_id: node
 target_bundle: pagamento

@@ -1,8 +1,11 @@
+uuid: ba2f1009-d261-47af-ba1d-95b9e1b33fa6
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: r5OkEWanDL3K3tv9th1y3qXh2U1E1egnR9QaTCSDCxk
 id: notizia
 label: Notizia
 type: 'canonical_entities:node'

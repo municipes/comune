@@ -1,3 +1,4 @@
+uuid: 96a9662a-43ba-40f9-a411-5e13425c09e2
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_unita_organizzativa
     - node.type.notizia
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: 9WbiyUPTdddAsk6jZDJ03GfzSVeaX7Z3R94maF0JRtY
 id: node.notizia.field_unita_organizzativa
 field_name: field_unita_organizzativa
 entity_type: node

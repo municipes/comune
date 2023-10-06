@@ -1,9 +1,12 @@
+uuid: 3f85c415-f118-4f63-9ebd-afdc31d063d1
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: 9WiryCMdxWe-fuEEsyWIi-KL9o7isLf22MAKduyhU3s
 id: node.field_deleghe
 field_name: field_deleghe
 entity_type: node

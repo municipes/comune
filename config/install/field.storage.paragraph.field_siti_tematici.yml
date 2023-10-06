@@ -1,9 +1,12 @@
+uuid: 8063aff6-cad9-4e53-9312-27ba03a80280
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: hrVltu-S7cW9pxDDXdQC43xRKw5OpA0rsL7fIfmzBZI
 id: paragraph.field_siti_tematici
 field_name: field_siti_tematici
 entity_type: paragraph

@@ -1,5 +1,8 @@
+uuid: 6628ed76-41e3-4052-9f51-5f0d2be3f2c8
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: eZbKOCcU30K9-zRt8uAs1FHwi6swnWrbabggBmzqAQc
 id: default
 label: Predefinito

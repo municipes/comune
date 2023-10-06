@@ -1,8 +1,11 @@
+uuid: 27dc1cf3-9413-4dd8-92ec-f8f57b58de26
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 6PIiFTe2sSzofhfpJivEwrc1_PLZSfKu_fi0dPmbCOM
 id: node.field_dataset
 field_name: field_dataset
 entity_type: node

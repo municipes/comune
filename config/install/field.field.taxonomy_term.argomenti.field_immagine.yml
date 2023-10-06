@@ -1,3 +1,4 @@
+uuid: c30fd3e6-a5f0-40c3-ab32-c422cccc47d2
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.taxonomy_term.field_immagine
     - media.type.image
     - taxonomy.vocabulary.argomenti
+_core:
+  default_config_hash: GDpuJcVF7Q9pdp0fiTclB_HzMTsQdtXACx9zKtjSxso
 id: taxonomy_term.argomenti.field_immagine
 field_name: field_immagine
 entity_type: taxonomy_term

@@ -1,3 +1,4 @@
+uuid: 9cda41c7-60bf-445f-93b4-b6ead0df5f43
 langcode: it
 status: false
 dependencies:
@@ -23,6 +24,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: pQbKdz0ZclukeMSBNPzSIPxbEzdeGE8lICv9owYikOo
 id: node.unita_organizzativa.teaser_in_evidenza_2
 targetEntityType: node
 bundle: unita_organizzativa

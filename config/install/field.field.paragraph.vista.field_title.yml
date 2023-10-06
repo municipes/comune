@@ -1,9 +1,12 @@
+uuid: d4600e96-52b3-4e13-9a36-f97a8541cd4c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
     - paragraphs.paragraphs_type.vista
+_core:
+  default_config_hash: ifrGrPLuno37OEYHNl7HIbO7NKQHDdOmN9CS32OZzV0
 id: paragraph.vista.field_title
 field_name: field_title
 entity_type: paragraph

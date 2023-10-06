@@ -1,6 +1,9 @@
+uuid: 8c403335-7ea5-42eb-85b2-7bdf72ed7407
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: phJalTRMMlGEIJWZjrmXB-68ki7sDMuLNyCPsmuMitA
 id: document
 label: Document
 description: 'An uploaded file or document, such as a PDF.'

@@ -1,8 +1,11 @@
+uuid: 5b048763-53f0-4b25-b584-15c98da809c4
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: py_UhI3NAeRd2R4L54Oqy_k18eC_rfZ2XbaXRx6uuhs
 id: paragraph.field_kicker
 field_name: field_kicker
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: b4c95f6f-8383-42ad-a08f-42f894c3d56e
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:408e39d7-63e6-4009-8766-46957157e8bc'
+_core:
+  default_config_hash: bGG3k9hVrEwUpt5f_BUgYawdlhoZkvUf-yJP--vYaLo
 id: accordion
 label: Accordion
 icon_uuid: 408e39d7-63e6-4009-8766-46957157e8bc

@@ -1,8 +1,11 @@
+uuid: b3ef5122-687d-4931-b24a-bba5a76c1eb9
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.luogo
+_core:
+  default_config_hash: d0pSTsQxW2vEStHB5BoJgw1ZsYT5p80Rx1gFPEpyXs0
 id: node.luogo.title
 field_name: title
 entity_type: node

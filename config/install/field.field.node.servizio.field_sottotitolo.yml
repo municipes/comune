@@ -1,9 +1,12 @@
+uuid: 7a831056-ceb5-4fa4-894e-db3a00a972c0
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_sottotitolo
     - node.type.servizio
+_core:
+  default_config_hash: QqtKnT2B_1l2vY8-D0KgIp-J9VWZmoAhM4TEqltvJi8
 id: node.servizio.field_sottotitolo
 field_name: field_sottotitolo
 entity_type: node

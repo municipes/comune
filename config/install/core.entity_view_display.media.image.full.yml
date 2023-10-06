@@ -1,3 +1,4 @@
+uuid: ab6f5b37-391d-4feb-9acf-c3d23e448afa
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - responsive_image.styles.bootstrap_italia_card_panoramic
   module:
     - responsive_image
+_core:
+  default_config_hash: Zw2EyVrNAmDaF_UXBd-dgebVfpxm5wM3OWP0OqxZxbU
 id: media.image.full
 targetEntityType: media
 bundle: image

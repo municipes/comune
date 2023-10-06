@@ -1,8 +1,11 @@
+uuid: 0037a49a-9214-4e57-87db-d8d137c9b446
 langcode: it
 status: true
 dependencies:
   config:
     - block_content.type.con_paragrafi
+_core:
+  default_config_hash: VYiuMpJnoxcQIFyexyQ-tS42Ev-H4lxqZu-05r5DYKk
 id: block_content.con_paragrafi
 target_entity_type_id: block_content
 target_bundle: con_paragrafi

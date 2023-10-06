@@ -1,9 +1,12 @@
+uuid: d4252868-6bb7-4d4c-a7c2-609e9cc49acb
 langcode: it
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: WsfT1P9s3eORvB13yAZvExLHImE_gLiAZCwzG8OIV1g
 id: node.field_allegati
 field_name: field_allegati
 entity_type: node

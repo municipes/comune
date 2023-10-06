@@ -1,3 +1,4 @@
+uuid: ea7d0de0-6486-48a1-a94b-741a0242c64f
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - node
     - taxonomy
     - user
+_core:
+  default_config_hash: McAT2VHA3-mpmBXh2K30H8EcwjmNl03CsBN6UfamxXU
 id: taxonomy_term
 label: 'Termine della tassonomia'
 module: taxonomy

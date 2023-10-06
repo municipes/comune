@@ -1,9 +1,12 @@
+uuid: 131bcdc8-2029-4a88-ba47-350b2e0cde96
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
+_core:
+  default_config_hash: BEEPPplEvxOB74143Lw00tHe0-2vcrSKCXFOIxNF0j8
 id: paragraph.field_tipo_punto_di_contatto
 field_name: field_tipo_punto_di_contatto
 entity_type: paragraph

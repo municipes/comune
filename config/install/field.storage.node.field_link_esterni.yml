@@ -1,9 +1,12 @@
+uuid: e04714bf-9122-43ec-9778-567e96152d4d
 langcode: it
 status: true
 dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: 7ZJHTcPiOAzVfj9tHZN3MuX1H4xsNE0pKlc1I-qh_j0
 id: node.field_link_esterni
 field_name: field_link_esterni
 entity_type: node

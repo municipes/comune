@@ -1,9 +1,12 @@
+uuid: 79356f00-bce9-4dad-9fb7-963abf59705c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_kicker
     - paragraphs.paragraphs_type.timeline_item
+_core:
+  default_config_hash: UI3t-WKIzLGbUbkNJZ-NP_ir1GB8dsVnsrSp4TOemps
 id: paragraph.timeline_item.field_kicker
 field_name: field_kicker
 entity_type: paragraph

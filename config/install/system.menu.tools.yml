@@ -1,6 +1,9 @@
+uuid: 7ddba998-fd38-49d6-b89b-11edfc9fe9c2
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Eyd_os306SOHwS9nHpK8Vfr05AL7W7N3YQxkTnEfx3Q
 id: tools
 label: Strumenti
 description: 'User tool links, often added by modules'

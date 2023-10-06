@@ -1,3 +1,4 @@
+uuid: e9bbd28a-3a8f-46b2-9ffd-ad9a544af193
 langcode: it
 status: true
 dependencies:
@@ -17,6 +18,8 @@ dependencies:
     - paragraphs
     - path
     - text
+_core:
+  default_config_hash: VYqjAS8-4JFaeL8QzBVISGWH6cG_BUH3_WTvhrY_bO0
 id: node.dataset.default
 targetEntityType: node
 bundle: dataset
@@ -155,4 +158,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

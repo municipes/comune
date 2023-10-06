@@ -1,9 +1,12 @@
+uuid: 27d2c634-ac77-46c6-8581-127af01b76ad
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: u5Eg7iIxXraXGzULobzOX73QRJgH-0E8i5lYiC3H61Y
 id: node.field_tipo_di_luogo
 field_name: field_tipo_di_luogo
 entity_type: node

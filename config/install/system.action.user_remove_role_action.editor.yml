@@ -1,3 +1,4 @@
+uuid: 46c1ed48-cf0a-44bd-9bd0-a7cdd7e3d4f1
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - user.role.editor
   module:
     - user
+_core:
+  default_config_hash: stBheHdoQPgjhRItckcy5NqSFX1WxD4B91YaBgD1icM
 id: user_remove_role_action.editor
 label: 'Remove the Redattore role from the selected user(s)'
 type: user

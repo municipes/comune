@@ -1,9 +1,12 @@
+uuid: deec036d-8cf1-4aaa-8658-f75caae95286
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - office_hours
+_core:
+  default_config_hash: rtTtozo37GQlsNUfqQXbluIm1__OhorDWYGnbMka-n0
 id: node.field_orari
 field_name: field_orari
 entity_type: node

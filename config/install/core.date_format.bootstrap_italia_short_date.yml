@@ -1,6 +1,9 @@
+uuid: f1d934b5-683d-425a-8de0-32f3d7816924
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 9Oy7NgazX-m_ZWA4BPU73e2yZCMCTxebfgIbylYDyxc
 id: bootstrap_italia_short_date
 label: 'Bootstrap Italia data breve'
 locked: false

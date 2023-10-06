@@ -1,3 +1,4 @@
+uuid: 0654b0ba-bd78-4cce-ac05-b225be70edd6
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_v_situazione_patrimoniale
     - media.type.document
     - node.type.persona
+_core:
+  default_config_hash: eMFXHRutE-PQD5vXWalSsMZ8RP8n7ivtoD9qACoJZ2Q
 id: node.persona.field_v_situazione_patrimoniale
 field_name: field_v_situazione_patrimoniale
 entity_type: node

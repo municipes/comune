@@ -1,8 +1,11 @@
+uuid: 17c14732-2121-4379-bfe9-ba64b2ab9224
 langcode: it
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: cdsk0AAlfXeBQZ00RN1xOVqVo7ylpI5Jm-yypHRxlYI
 name: focal_point_hvga_2_3_320x480_
 label: 'Punto focale HVGA 2:3 (320x480) Wide'
 effects:

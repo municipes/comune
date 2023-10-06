@@ -1,6 +1,9 @@
+uuid: 6fc4ab2f-b10f-44a6-906a-8ec4042d166a
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: apc-3X24MrzPyiZ20xckydSmTB9duLfS2AgvY2pIVKA
 id: long
 label: 'Formato predefinito data lunga'
 locked: false

@@ -1,3 +1,4 @@
+uuid: da5c79ae-f3bc-4885-9856-fa2e46ce7a31
 langcode: it
 status: true
 dependencies:
@@ -16,6 +17,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Pagamento</em> content'
     type_weight: 0
+_core:
+  default_config_hash: j2If7n0fAUkACfjnYjzZFUIaQloSGTpPfPMDpvF35Ok
 name: Pagamento
 type: pagamento
 description: '“Content type utile per l’ implementazione dell’AREA RISERVATA”'

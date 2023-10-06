@@ -1,8 +1,11 @@
+uuid: febbefff-5bd9-446f-bc11-a879024083d5
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: Nq53Mw_jKOcRypU1zDBMwXjPnwErOh8c5A2Cp6MDjHQ
 id: node.punto_di_contatto.title
 field_name: title
 entity_type: node

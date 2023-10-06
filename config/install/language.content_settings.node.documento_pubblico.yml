@@ -1,8 +1,11 @@
+uuid: 90d9068a-aa92-43ae-a9a1-12f58dc76e88
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.documento_pubblico
+_core:
+  default_config_hash: Rwo_mR-zd999gjt7EuRyWfoGIV2iSoRnfYkkSiKTy0w
 id: node.documento_pubblico
 target_entity_type_id: node
 target_bundle: documento_pubblico

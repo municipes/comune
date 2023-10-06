@@ -1,8 +1,11 @@
+uuid: 8ddc13cf-2449-4ede-9e6d-0b620915043b
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.appuntamento
+_core:
+  default_config_hash: Fw8-bdBJtVxV_8xUkSeU2k1_l8XgYG-bDRK0tipPJIk
 id: node.appuntamento.title
 field_name: title
 entity_type: node

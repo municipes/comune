@@ -1,3 +1,4 @@
+uuid: bf2bf3e7-33af-4ee9-8ead-1eed56548b03
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: MISmjYBW8inrG2AswsEdpJXYXf6tXNinI7e3ehyzOrw
 id: bi_servizi_in_evidenza
 label: 'BI Servizi in evidenza'
 module: views

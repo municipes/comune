@@ -1,3 +1,4 @@
+uuid: 6b2d1aad-853a-4c72-856e-8f95f16c296c
 langcode: it
 status: true
 dependencies:
@@ -36,6 +37,8 @@ third_party_settings:
         open: false
         description: ''
         required_fields: false
+_core:
+  default_config_hash: j-RGIU-Ne2CDPaiZtijcLL9PqVU210kvCjFv2ArK3Gc
 id: paragraph.gallery_item.default
 targetEntityType: paragraph
 bundle: gallery_item

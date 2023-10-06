@@ -1,8 +1,11 @@
+uuid: 31372880-a784-4ca2-985f-97364bdba603
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: IuhXf1FSPf-xk4CGrnkmPZP7FOh1YCMeFX5y0Cqa3xs
 id: paragraph.field_more_icon
 field_name: field_more_icon
 entity_type: paragraph

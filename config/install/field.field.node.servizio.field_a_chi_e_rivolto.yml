@@ -1,3 +1,4 @@
+uuid: 4dadfd43-f849-4038-b783-47607a555b1c
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: 37fBhr1CjxuW1aVJrpThpoZ9kjvR3CaD-c5e9WLm6K0
 id: node.servizio.field_a_chi_e_rivolto
 field_name: field_a_chi_e_rivolto
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

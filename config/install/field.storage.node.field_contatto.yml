@@ -1,3 +1,4 @@
+uuid: d3ec0f12-1a3c-4489-afdc-c3e5d518ef4a
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: IqRy2ThQJtexi47FUDvDTYOwbTTj_StSRpkWfwDGyLI
 id: node.field_contatto
 field_name: field_contatto
 entity_type: node

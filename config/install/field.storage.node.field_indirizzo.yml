@@ -1,9 +1,12 @@
+uuid: d43da2e3-f491-4015-a69c-ff87649579fc
 langcode: it
 status: true
 dependencies:
   module:
     - address
     - node
+_core:
+  default_config_hash: hvON7sgmZUYTuGwiubX2qXoNZMDdoHbq_TGdoN-xVGg
 id: node.field_indirizzo
 field_name: field_indirizzo
 entity_type: node

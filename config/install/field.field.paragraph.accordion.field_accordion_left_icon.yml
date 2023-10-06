@@ -1,9 +1,12 @@
+uuid: 6b7ef98a-63ee-4562-abac-c595a9ecd491
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_accordion_left_icon
     - paragraphs.paragraphs_type.accordion
+_core:
+  default_config_hash: S05here0M3Yh6sViV6xNCg9qQSmeVVzyVQEskWRg0wo
 id: paragraph.accordion.field_accordion_left_icon
 field_name: field_accordion_left_icon
 entity_type: paragraph

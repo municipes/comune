@@ -1,3 +1,4 @@
+uuid: 5553cabd-32c1-4dc6-9807-b6f26cdaa48d
 langcode: it
 status: false
 dependencies:
@@ -22,6 +23,8 @@ dependencies:
     - node.type.unita_organizzativa
   module:
     - user
+_core:
+  default_config_hash: eBSArKouX4QRGYRjiDMvdjG2NBmIpcTdQL2d0Rr0iIc
 id: node.unita_organizzativa.teaser_dettaglio_notizia
 targetEntityType: node
 bundle: unita_organizzativa

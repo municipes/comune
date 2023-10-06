@@ -1,9 +1,12 @@
+uuid: 0ab996d3-9adf-454c-b2a8-2bf28323c99d
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: B9gbDtNKB9CEDProCxMD1o1d09mNY2mzpWBDMfZS5wc
 id: node.field_tipo_punto_di_contatto
 field_name: field_tipo_punto_di_contatto
 entity_type: node

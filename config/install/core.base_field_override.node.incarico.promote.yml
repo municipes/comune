@@ -1,8 +1,11 @@
+uuid: afe78f43-6f0f-44a5-ae35-bc2bb185cd0d
 langcode: it
 status: true
 dependencies:
   config:
     - node.type.incarico
+_core:
+  default_config_hash: kxshUreMdapU_pO7SAK1MQQbnwwnFfa82LBy_YpVbVM
 id: node.incarico.promote
 field_name: promote
 entity_type: node

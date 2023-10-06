@@ -1,6 +1,9 @@
+uuid: d75d92e2-33a3-4222-8b12-9e4efbccc2c2
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: BdBRH8b1bRCqp-MOa47N497HH4INsJDgR_BZXxW9ij4
 name: 'Tipi di notizia'
 vid: tipi_di_notizia
 description: "Classificazione multi livello dei tipi notizie pubblicate da un'amministrazione locale."

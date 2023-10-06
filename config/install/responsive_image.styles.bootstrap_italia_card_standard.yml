@@ -1,3 +1,4 @@
+uuid: 17cc5fe5-8885-483a-94eb-1264435f1bcf
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - image.style.bootstrap_italia_card_image_standard_4x
   theme:
     - bootstrap_italia
+_core:
+  default_config_hash: AnyHVdRUELFuSO6tMUxXQl97AFhjcoTJPbDOrQyzlhk
 id: bootstrap_italia_card_standard
 label: 'Bootstrap Italia Card Standard'
 image_style_mappings:

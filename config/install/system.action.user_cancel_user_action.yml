@@ -1,8 +1,11 @@
+uuid: d12b2ead-d09a-45c7-ae06-7fd96ba8ea5a
 langcode: it
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: GRjZjfWQFoISMAPiKT5ZrTafzUKMyMgBkg3gTiloW9c
 id: user_cancel_user_action
 label: 'Elimina i profili utente selezionati'
 type: user

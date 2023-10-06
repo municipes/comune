@@ -1,3 +1,4 @@
+uuid: c12b7567-8cd7-4027-8d1c-fe2c823db894
 langcode: it
 status: true
 dependencies:
@@ -26,6 +27,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: iEmBIREvCLQ1rm_V7N_JCzIJ04qqKwD93z-XNN3U-7I
 id: node.persona.teaser
 targetEntityType: node
 bundle: persona

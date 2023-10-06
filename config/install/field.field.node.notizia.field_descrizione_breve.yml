@@ -1,9 +1,12 @@
+uuid: 207f0aa2-3744-4c4d-b667-bbf77b29a6c6
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_descrizione_breve
     - node.type.notizia
+_core:
+  default_config_hash: pRtF0lpLjPBHNFZy5yi-y8t8iKbZE8IML1c4hTV5XMY
 id: node.notizia.field_descrizione_breve
 field_name: field_descrizione_breve
 entity_type: node

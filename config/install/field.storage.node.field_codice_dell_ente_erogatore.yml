@@ -1,8 +1,11 @@
+uuid: 117f84b2-9e10-4d9e-9b24-48c5b8ab854e
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: k7N2W_6Ye5mhYt3fFOQu8S4MCsO87BqHQpc8oClwJMI
 id: node.field_codice_dell_ente_erogatore
 field_name: field_codice_dell_ente_erogatore
 entity_type: node

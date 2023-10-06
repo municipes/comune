@@ -1,6 +1,9 @@
+uuid: 2074fd3a-aae9-4f56-9190-b669f1e9c232
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: irFacWLiyV-SjTy60zM2NYE4GjTFBaMWgnjshdMHh2Y
 name: "Eventi della vita di un'impresa"
 vid: eventi_della_vita_di_un_impresa
 description: "Classificazione degli eventi della vita dei un'impresa (Business Events)"

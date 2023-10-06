@@ -1,9 +1,12 @@
+uuid: a459a108-51f5-44c9-89de-3e0520fc29b9
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_icon_name
     - paragraphs.paragraphs_type.gallery_item
+_core:
+  default_config_hash: MLGSV_jx_TrfKS2dfUqNCSbBvgMLzF7d4cajCDHwadE
 id: paragraph.gallery_item.field_icon_name
 field_name: field_icon_name
 entity_type: paragraph

@@ -1,9 +1,12 @@
+uuid: bb2ad3d9-fc30-462e-8ba2-a4f89058b7ac
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_container_classes
     - paragraphs.paragraphs_type.settings
+_core:
+  default_config_hash: UHYFZIOO5-gRE3xnH6Cn1JdK1Hcn3HcsuveEu0Nwamo
 id: paragraph.settings.field_container_classes
 field_name: field_container_classes
 entity_type: paragraph

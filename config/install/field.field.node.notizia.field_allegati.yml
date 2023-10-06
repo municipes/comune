@@ -1,3 +1,4 @@
+uuid: 0937eed9-78aa-4f79-b077-e2405112a289
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_allegati
     - media.type.document
     - node.type.notizia
+_core:
+  default_config_hash: 3xkFrw1ewxovwlYsS-viFffz0zCXfJtFX2am81y5mK0
 id: node.notizia.field_allegati
 field_name: field_allegati
 entity_type: node

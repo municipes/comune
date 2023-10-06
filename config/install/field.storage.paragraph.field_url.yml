@@ -1,8 +1,11 @@
+uuid: dfac2b1c-f26e-4edb-9215-3b3a5c0081d3
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: tEfM8j7FxyIR6aJ5wtTsuHCh6q3UPI_gpqYAxAMjj2M
 id: paragraph.field_url
 field_name: field_url
 entity_type: paragraph

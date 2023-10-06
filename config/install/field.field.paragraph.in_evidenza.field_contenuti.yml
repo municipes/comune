@@ -1,3 +1,4 @@
+uuid: e0e1958c-2a4c-4b53-8194-a7169eeae2a2
 langcode: it
 status: true
 dependencies:
@@ -13,6 +14,8 @@ dependencies:
     - node.type.sito_tematico
     - node.type.unita_organizzativa
     - paragraphs.paragraphs_type.in_evidenza
+_core:
+  default_config_hash: yJh--yn6IQdceUlhtb6nrJFi-JjR2XmBRUVReP8M4HE
 id: paragraph.in_evidenza.field_contenuti
 field_name: field_contenuti
 entity_type: paragraph

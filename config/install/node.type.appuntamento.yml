@@ -1,3 +1,4 @@
+uuid: 92055777-a0a3-44f8-bbc3-6698226f97af
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: ''
     type_weight: 0
+_core:
+  default_config_hash: yGN7nJMntdgIr34dJ2g9RMmMAX7QPvGyvxoB59Xgi0s
 name: Appuntamento
 type: appuntamento
 description: 'Struttura delle informazioni relative utili a presentare un appuntamento.'

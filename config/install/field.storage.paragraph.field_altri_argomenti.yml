@@ -1,9 +1,12 @@
+uuid: 7b5b7d1d-6ccf-4efc-a3e6-31ee4093992a
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: LZ9rNkaYCRFk-Nn2SDGloXfV2Eox6FcVtomzwx1zmCg
 id: paragraph.field_altri_argomenti
 field_name: field_altri_argomenti
 entity_type: paragraph

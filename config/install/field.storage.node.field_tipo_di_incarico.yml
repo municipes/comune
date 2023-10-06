@@ -1,9 +1,12 @@
+uuid: 443e0bc6-fe24-40b8-ac9e-feedd6162d6b
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: c7GqryUlDbheIbTpVbGyPZLNTF0r9fzyQx__f_6jlK0
 id: node.field_tipo_di_incarico
 field_name: field_tipo_di_incarico
 entity_type: node

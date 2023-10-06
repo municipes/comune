@@ -1,8 +1,11 @@
+uuid: 58ab0315-e528-49b1-9c0d-bc799b060ece
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: WEQZPBeZ_ej4cTxuhH2JZlVniLV7uD87Zsbnoto-Gso
 id: paragraph.field_accordion_item_show
 field_name: field_accordion_item_show
 entity_type: paragraph

@@ -1,3 +1,4 @@
+uuid: 1649c265-28ab-4f58-8eeb-58c6caf10be5
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_immagine
     - media.type.image
     - node.type.unita_organizzativa
+_core:
+  default_config_hash: yGzk9khy8mmXHPS-vlKSIaM8lR7pJyKvNjSGlEEWPz8
 id: node.unita_organizzativa.field_immagine
 field_name: field_immagine
 entity_type: node

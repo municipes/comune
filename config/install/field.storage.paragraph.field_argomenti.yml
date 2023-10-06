@@ -1,9 +1,12 @@
+uuid: 75d388e5-bb15-4596-9fd9-3aa8edf03560
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
+_core:
+  default_config_hash: c_N6ThFF9-Z_dyO9zc_farsxd-12Pf5YDbHqpE_FNxk
 id: paragraph.field_argomenti
 field_name: field_argomenti
 entity_type: paragraph

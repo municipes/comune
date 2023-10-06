@@ -1,8 +1,11 @@
+uuid: 13badc27-6827-46e8-acc3-2a87c1834f15
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:36310e22-f911-4c9d-a00e-fb32c007c41e'
+_core:
+  default_config_hash: olf6_IQ4HQvyTKQ0QZEhDOu2nZPE8s06MkdaRAWdRd8
 id: citation
 label: Citazione
 icon_uuid: 36310e22-f911-4c9d-a00e-fb32c007c41e

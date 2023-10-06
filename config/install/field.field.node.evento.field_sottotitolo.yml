@@ -1,9 +1,12 @@
+uuid: 21f4801b-a4e6-48e9-9037-3b74e43866d3
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_sottotitolo
     - node.type.evento
+_core:
+  default_config_hash: zquKRtw2idCjsCZqyv8J6a6KLecFI3La4rmzVvggtZo
 id: node.evento.field_sottotitolo
 field_name: field_sottotitolo
 entity_type: node

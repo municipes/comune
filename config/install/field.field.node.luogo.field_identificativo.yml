@@ -1,9 +1,12 @@
+uuid: 7b43722b-e6b1-40e2-9ce7-d32b5ba58cdc
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_identificativo
     - node.type.luogo
+_core:
+  default_config_hash: 5kROHGSZuqv_2fLep-3lAaD7V4VdJSDw-3T9RS5kn3c
 id: node.luogo.field_identificativo
 field_name: field_identificativo
 entity_type: node

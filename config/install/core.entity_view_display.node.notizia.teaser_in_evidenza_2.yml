@@ -1,3 +1,4 @@
+uuid: d332ff65-3f2e-484c-a9b3-b23a4b0d8f1c
 langcode: it
 status: true
 dependencies:
@@ -24,6 +25,8 @@ dependencies:
   module:
     - datetime
     - user
+_core:
+  default_config_hash: HxM6A0jtTTOByihzMzk9xVwCXYqLApeejVqK-CBI-hk
 id: node.notizia.teaser_in_evidenza_2
 targetEntityType: node
 bundle: notizia

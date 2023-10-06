@@ -1,6 +1,9 @@
+uuid: 58eccba6-3938-419d-b12e-bafdb309f2ab
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: MNDguIEK6FYKg36TSe1_2U1QL_8U12tYA-_GOH9zSlk
 id: logo_content_type
 label: 'Logo Content Type'
 description: ''

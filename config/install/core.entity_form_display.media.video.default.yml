@@ -1,3 +1,4 @@
+uuid: 0bcd19d6-773c-4cdf-8bdc-7f91853114de
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - file
     - path
+_core:
+  default_config_hash: 21a4_5TQ9sYoOjnzKefQigKztSYtqytlHMAMAbcNYTU
 id: media.video.default
 targetEntityType: media
 bundle: video
@@ -57,3 +60,5 @@ content:
     third_party_settings: {  }
 hidden:
   name: true
+  publish_on: true
+  unpublish_on: true

@@ -1,3 +1,4 @@
+uuid: 53922731-9d84-4b85-8a4a-e460b8321de3
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - media.type.logo_content_type
   module:
     - image
+_core:
+  default_config_hash: DgyrmGauqJPHloZshHUc3aX1mqzOm-0AcHyP61mBSqM
 id: media.logo_content_type.default
 targetEntityType: media
 bundle: logo_content_type

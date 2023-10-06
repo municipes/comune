@@ -1,3 +1,4 @@
+uuid: f1620942-e481-47a6-be73-b8c9294e6d50
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - user.role.cittadino
   module:
     - user
+_core:
+  default_config_hash: gr9nh48ah_nFzJtTwwthJXpbMKmaZqIdbndJzZqJWsk
 id: user_add_role_action.cittadino
 label: 'Add the Cittadino role to the selected user(s)'
 type: user

@@ -1,3 +1,4 @@
+uuid: e590d366-8739-4c01-8349-87c31d9fbcb0
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - menu_block
   theme:
     - scaenographia
+_core:
+  default_config_hash: 1MU2UwwPsYkgN595S8C97wiXf-cTbqIkEAMF-MfLUXw
 id: argomenti
 theme: scaenographia
 region: header_nav
@@ -20,11 +23,11 @@ settings:
   provider: menu_block
   follow: false
   follow_parent: child
-  label_link: false
-  label_type: block
   level: 1
   depth: 1
   expand_all_items: false
   parent: 'argomenti:'
   suggestion: argomenti
+  label_type: block
+  label_link: false
 visibility: {  }

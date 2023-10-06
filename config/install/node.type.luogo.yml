@@ -1,3 +1,4 @@
+uuid: d4f15a0c-e824-4aad-a3a9-7f2825f8b97d
 langcode: it
 status: true
 dependencies:
@@ -15,6 +16,8 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Luogo</em> content'
     type_weight: 0
+_core:
+  default_config_hash: 1iiWoWEtcpEX16op_86TemLNccXvk8igsvhtGgdiSy0
 name: Luogo
 type: luogo
 description: 'Tipologia che struttura le informazioni relative a un luogo di interesse pubblico.'

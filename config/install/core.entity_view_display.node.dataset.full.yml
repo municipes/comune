@@ -1,3 +1,4 @@
+uuid: 62ad2724-5643-4345-a092-4c02a1aa6a77
 langcode: it
 status: true
 dependencies:
@@ -17,6 +18,8 @@ dependencies:
     - datetime
     - ui_patterns_field_formatters
     - user
+_core:
+  default_config_hash: ZDZMqmOY9uxAm98pbcVlNp_5Ips3ILJIPsida3-0N-M
 id: node.dataset.full
 targetEntityType: node
 bundle: dataset

@@ -1,3 +1,4 @@
+uuid: dda75c8c-b99e-4290-8e35-7b38f9c382f9
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
   module:
     - crop
     - focal_point
+_core:
+  default_config_hash: k4p8VLfhxLdJFURKbPPXhFPAXPD4ykZow3wXuOOBgp8
 name: bootstrap_italia_card_image_panoramic_4x
 label: 'Bootstrap Italia Card Image Panoramic 4x'
 effects:

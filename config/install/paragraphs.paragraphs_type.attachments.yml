@@ -1,8 +1,11 @@
+uuid: e7386b16-cabc-4214-9a92-3ff0eae761c8
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:5dd2b5cb-6f10-4b6e-aefb-4d1dae0a2d47'
+_core:
+  default_config_hash: uQXZh54DCh4x__It_GeeOBr_IxC_oHFcvz2cVuYuH-Q
 id: attachments
 label: Allegati
 icon_uuid: 5dd2b5cb-6f10-4b6e-aefb-4d1dae0a2d47

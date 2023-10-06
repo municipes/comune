@@ -1,3 +1,4 @@
+uuid: d59b25d0-c2d7-40ce-b725-278887594fe2
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - text
+_core:
+  default_config_hash: 2eDKGUjm441sgtoqLjBhzMJGej8iQg6XSeWJGD-_2Qc
 id: node.documento_pubblico.field_autori
 field_name: field_autori
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

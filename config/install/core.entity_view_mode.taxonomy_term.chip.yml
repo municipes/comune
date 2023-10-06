@@ -1,8 +1,11 @@
+uuid: 9c186181-96b4-4cbb-9e93-7cc236b067ac
 langcode: it
 status: true
 dependencies:
   module:
     - taxonomy
+_core:
+  default_config_hash: phjYpt97dys87cFZx4WNasiMIWucNK-s8PVFWcDme_0
 id: taxonomy_term.chip
 label: Chip
 targetEntityType: taxonomy_term

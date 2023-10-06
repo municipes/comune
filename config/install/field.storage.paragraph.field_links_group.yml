@@ -1,9 +1,12 @@
+uuid: b8220867-50e5-4dc7-8abe-1c24f023f203
 langcode: it
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: rvEsVSO7IospwEcPX0KnFaFJ8wj4M4xzMaFgnlwhFMM
 id: paragraph.field_links_group
 field_name: field_links_group
 entity_type: paragraph

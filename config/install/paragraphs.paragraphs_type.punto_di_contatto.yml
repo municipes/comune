@@ -1,6 +1,9 @@
+uuid: defcfdf3-c6ab-4b94-bfe9-c125800e8a04
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: bSkUZX1OLt27FMgNZxZBTg0KpmyKKOxS5ONTK7fyLRM
 id: punto_di_contatto
 label: 'Punto di contatto'
 icon_uuid: null

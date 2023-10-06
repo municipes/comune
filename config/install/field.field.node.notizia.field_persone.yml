@@ -1,3 +1,4 @@
+uuid: 7350c391-22c8-46a9-9151-b3e10e7ed15b
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_persone
     - node.type.notizia
     - node.type.persona
+_core:
+  default_config_hash: qh9QigD88j5LiDG14IT-F2nOHyF5iY3tfZcSznCRGGY
 id: node.notizia.field_persone
 field_name: field_persone
 entity_type: node

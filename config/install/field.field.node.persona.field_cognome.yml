@@ -1,9 +1,12 @@
+uuid: c4cf987c-6b58-4b69-a0a7-57f4f355e1a3
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_cognome
     - node.type.persona
+_core:
+  default_config_hash: vMBLscAtUlDVP46B06UQ6lmHWpmvBF0B9Ya-Lz6Akp4
 id: node.persona.field_cognome
 field_name: field_cognome
 entity_type: node

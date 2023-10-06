@@ -1,3 +1,4 @@
+uuid: ecbd7070-b4bf-4192-b9c9-d7f1112a77c0
 langcode: it
 status: true
 dependencies:
@@ -29,6 +30,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
+_core:
+  default_config_hash: iOaaIy95km0G1xv17K_DTWQBArntN09qoFZ8W7QmY_o
 name: 'Punto di contatto'
 type: punto_di_contatto
 description: 'Questa Tipologia descrive la struttura di un punto di contatto, che può essere fisico, virtuale o digitale.'

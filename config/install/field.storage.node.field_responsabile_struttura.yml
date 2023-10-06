@@ -1,8 +1,11 @@
+uuid: 34363352-337a-4b4c-93b2-471340f9ee69
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: UxoBiofTbWlefwESsUnHJOcTb89OZ1WNfgGwigYeA9E
 id: node.field_responsabile_struttura
 field_name: field_responsabile_struttura
 entity_type: node

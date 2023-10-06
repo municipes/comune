@@ -1,3 +1,4 @@
+uuid: 25e8ea32-9d11-4a30-8499-85c90972f532
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - color_field
     - text
+_core:
+  default_config_hash: 2_sUQx3QjtT2WZuqCRMqa0OsuvPvJMF300e9ZIr0M8s
 id: taxonomy_term.colore.default
 targetEntityType: taxonomy_term
 bundle: colore

@@ -1,6 +1,9 @@
+uuid: 66fde195-9dbd-4d85-b13c-f0a3c5b8e930
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Sskwiv4achRmCiKyscBo4t3-m-zEDfjnslAbAcEvttc
 id: dataset
 label: Dataset
 icon_uuid: null

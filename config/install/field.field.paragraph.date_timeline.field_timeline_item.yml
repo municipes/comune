@@ -1,3 +1,4 @@
+uuid: 7de6a63d-5341-4e98-9c19-be1dfe74c38b
 langcode: it
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.days_timeline_item
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: fYbx-I6rctLqa5g3gFCL8mvhTP-1GYqS2H7cL4hK58o
 id: paragraph.date_timeline.field_timeline_item
 field_name: field_timeline_item
 entity_type: paragraph

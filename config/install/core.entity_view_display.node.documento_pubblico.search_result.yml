@@ -1,3 +1,4 @@
+uuid: ce3f377f-ac63-4903-92c4-8003269bceff
 langcode: it
 status: true
 dependencies:
@@ -32,6 +33,8 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - user
+_core:
+  default_config_hash: XlnI0nveZOMqoqeyzW0KZCnm0t2OFCylFGR2EPZ6YFo
 id: node.documento_pubblico.search_result
 targetEntityType: node
 bundle: documento_pubblico

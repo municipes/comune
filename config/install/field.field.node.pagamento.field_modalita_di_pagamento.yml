@@ -1,3 +1,4 @@
+uuid: cdabddf3-0903-4004-adb9-dcd332d7a010
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.pagamento
   module:
     - text
+_core:
+  default_config_hash: VHDgRhS15eKMYyFS5_WzC_Yw6sBIpaR_URkjwnHyS6k
 id: node.pagamento.field_modalita_di_pagamento
 field_name: field_modalita_di_pagamento
 entity_type: node
@@ -16,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -1,3 +1,4 @@
+uuid: 3b82d479-5fd1-40d8-b7a1-26891720eefe
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_punti_di_contatto
     - node.type.luogo
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: fhnohgvOp8p_Nu9Ya1f8bn3dlyQYtOZ7C1LWvCJ5lOM
 id: node.luogo.field_punti_di_contatto
 field_name: field_punti_di_contatto
 entity_type: node

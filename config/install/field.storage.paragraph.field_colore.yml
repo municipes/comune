@@ -1,9 +1,12 @@
+uuid: 658b1b2d-e1b9-4b18-af83-b52544a7890d
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
+_core:
+  default_config_hash: Uct1h2K3vMU2oor66Zie3CZwX90ylShdx9kqOk-DXg8
 id: paragraph.field_colore
 field_name: field_colore
 entity_type: paragraph

@@ -1,8 +1,11 @@
+uuid: 19f74611-4fde-4fe2-bfc5-b5bc48494357
 langcode: it
 status: true
 dependencies:
   content:
     - 'file:file:8cb9cd29-5807-4978-8e8a-3ba49db5d91a'
+_core:
+  default_config_hash: Wj4oBTylHbwtqJhKnPGBJRjWbxaSFjVZv4SGCwhHihM
 id: accordion_item
 label: "Elemento dell'accordion"
 icon_uuid: 8cb9cd29-5807-4978-8e8a-3ba49db5d91a

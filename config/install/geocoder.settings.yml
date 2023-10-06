@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: 5TQo8Jsy0e6hRx5Im3IEahARKZ4a_JFP4jjv_VkPle4
 langcode: it
 geocoder_presave_disabled: false
 cache: true

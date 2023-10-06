@@ -1,3 +1,4 @@
+uuid: 13ff694e-ab85-4be3-868d-1b7855342206
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_persona
     - node.type.persona
     - node.type.punto_di_contatto
+_core:
+  default_config_hash: sNG6yNSIr7kxVvRK80Abpt4ovxm6ovPzOT3qLVmezVU
 id: node.punto_di_contatto.field_persona
 field_name: field_persona
 entity_type: node

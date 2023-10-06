@@ -1,3 +1,4 @@
+uuid: 1ca13c78-1596-4966-9769-d5fd108bd1ed
 langcode: it
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.node.field_argomenti
     - node.type.documento_pubblico
     - taxonomy.vocabulary.argomenti
+_core:
+  default_config_hash: uc7VuzkJwaEz8aNgQfvyFLIbfcSySuO6YvxnumWSKTk
 id: node.documento_pubblico.field_argomenti
 field_name: field_argomenti
 entity_type: node

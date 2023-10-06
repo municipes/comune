@@ -1,6 +1,9 @@
+uuid: 7e401b93-9e94-44d2-8940-ac059b24d07a
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: ggKixmYfTqVvO9BeqoBWGeNIKCrrC7DGWfh-TuDqN_k
 id: short
 label: 'Formato predefinito data corta'
 locked: false

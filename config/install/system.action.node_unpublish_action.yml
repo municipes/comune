@@ -1,8 +1,11 @@
+uuid: 72d5c0d3-5f6f-454b-ae69-9caf98dbf283
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: NIG_zuZsAENP_yu_au5H0D1w_9b1MBVR4d5FC5rDGk4
 id: node_unpublish_action
 label: 'Rimuovere contenuto dalla pubblicazione'
 type: node

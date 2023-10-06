@@ -1,9 +1,12 @@
+uuid: 17077811-4061-497e-bb5e-d8dcece979a6
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: RQ7d4aArPJXM5GodI6rnTVUr2f-PU0de8j3FrR_vtGA
 id: node.field_compensi
 field_name: field_compensi
 entity_type: node

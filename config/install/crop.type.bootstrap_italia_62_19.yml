@@ -1,8 +1,11 @@
+uuid: f874feeb-bba7-4b5e-82a0-61fa995f3b4e
 langcode: it
 status: true
 dependencies: {  }
-label: 'Bootstrap Italia 62:19'
+_core:
+  default_config_hash: YReieZpHfyasapP04AxQU49CgC9hhmOrfwyZqwR3slA
 id: bootstrap_italia_62_19
+label: 'Bootstrap Italia 62:19'
 description: 'Bootstrap Italia 62:19'
 aspect_ratio: '62:19'
 soft_limit_width: null

@@ -1,8 +1,11 @@
+uuid: 1d5ecfd8-5a2f-4e57-b4ec-216dd1482d08
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: u98uINLsVC5Xamvjp1e6_JV70FOy1--REQM8Ly8dgfk
 id: node.field_organizzazioni
 field_name: field_organizzazioni
 entity_type: node

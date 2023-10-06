@@ -1,9 +1,12 @@
+uuid: b36fdd03-add2-4d09-8159-43e717abc27b
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: cJT4yrbFw2WbCFreXPYzf38lX3iYc_POcipHVUWs16Q
 id: node.field_orario_per_il_pubblico
 field_name: field_orario_per_il_pubblico
 entity_type: node

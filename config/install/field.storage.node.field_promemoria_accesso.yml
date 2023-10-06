@@ -1,9 +1,12 @@
+uuid: f1fb0b3d-a118-450c-a493-56cbbeedb881
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: KShLUvlM8R6LRFc-fRivr1wNmxoCx6yu4bLoQmUoX2s
 id: node.field_promemoria_accesso
 field_name: field_promemoria_accesso
 entity_type: node

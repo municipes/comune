@@ -1,9 +1,12 @@
+uuid: f710b18d-f76a-427f-ab65-9055b6dfebed
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - taxonomy
+_core:
+  default_config_hash: kF_YhYAQ8G5FSddg8iubIFyeK4qwgjfRWFXkVbp03fM
 id: node.field_tipo_di_accesso
 field_name: field_tipo_di_accesso
 entity_type: node

@@ -1,9 +1,12 @@
+uuid: f6124c3a-b21e-4291-a0ad-5ea63d29ac73
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_numero_comunicato_stampa
     - node.type.notizia
+_core:
+  default_config_hash: r1rJdBA1Pgeg-goAk1slwk8faJT2MMLUqDw6WtAjuoc
 id: node.notizia.field_numero_comunicato_stampa
 field_name: field_numero_comunicato_stampa
 entity_type: node

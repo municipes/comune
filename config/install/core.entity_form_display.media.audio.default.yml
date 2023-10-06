@@ -1,3 +1,4 @@
+uuid: f1fea623-2ba7-40df-8237-64871df1e8fe
 langcode: it
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - file
     - path
+_core:
+  default_config_hash: YHQmI42HFmIctx7riHTEv8P6e2Y2XKnDmxujAjuyZOA
 id: media.audio.default
 targetEntityType: media
 bundle: audio
@@ -57,3 +60,5 @@ content:
     third_party_settings: {  }
 hidden:
   name: true
+  publish_on: true
+  unpublish_on: true

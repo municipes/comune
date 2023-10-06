@@ -1,3 +1,4 @@
+uuid: ff514e5b-683e-491f-b7d0-d1eb69e9c268
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.servizio
   module:
     - text
+_core:
+  default_config_hash: NNNPF7lz1-NRdRwTUu4BochwX4OZV2rYIufS0KOFF48
 id: node.servizio.field_copertura_geografica
 field_name: field_copertura_geografica
 entity_type: node
@@ -16,5 +19,6 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

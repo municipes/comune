@@ -1,3 +1,4 @@
+uuid: f8febc81-043c-4a16-b75e-ac2975269dbd
 langcode: it
 status: true
 dependencies:
@@ -9,6 +10,8 @@ dependencies:
     - datetime
     - node
     - user
+_core:
+  default_config_hash: vgm_z7TIgMuPDjsGMHN2zNfGvWB63WabWM6EXt0hzfI
 id: bi_tutte_le_novita_elenchi
 label: 'BI Tutte le novità (elenchi)'
 module: views

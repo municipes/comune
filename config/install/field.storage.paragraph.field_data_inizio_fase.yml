@@ -1,9 +1,12 @@
+uuid: c7f53935-c284-49e0-877c-a6c8a7f92078
 langcode: it
 status: true
 dependencies:
   module:
     - datetime
     - paragraphs
+_core:
+  default_config_hash: uRFABjfyDCTiLJoqyb2QCrwtyHxf8FV075dIY0jobQw
 id: paragraph.field_data_inizio_fase
 field_name: field_data_inizio_fase
 entity_type: paragraph

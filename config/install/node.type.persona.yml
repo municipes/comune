@@ -1,3 +1,4 @@
+uuid: c1c03279-2ff9-49f1-bdfc-1ca48d0447f4
 langcode: it
 status: true
 dependencies:
@@ -15,7 +16,9 @@ third_party_settings:
     type_description: ''
     existing_nodes_link_text: 'View existing <em class="placeholder">Persona pubblica di un Comune</em> content'
     type_weight: 0
-name: 'Persona'
+_core:
+  default_config_hash: gvkaPSr8VRgBYHo4OEWaWka0WjupqMkFvtaTekBVix0
+name: 'Persona pubblica'
 type: persona
 description: 'Questa Tipologia descrive la struttura delle persone pubbliche che sono salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona.'
 help: 'Questa Tipologia descrive la struttura delle persone pubbliche che sono salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona.'

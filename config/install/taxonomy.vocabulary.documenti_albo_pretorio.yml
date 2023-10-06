@@ -1,6 +1,9 @@
+uuid: 228bb6b9-4c28-4917-844a-8c39925acbfb
 langcode: it
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: NqTc3P8yvYSfg9Fk6UsSE4MAv0Wr2otl6B5UdYWPI7w
 name: 'Documenti albo pretorio'
 vid: documenti_albo_pretorio
 description: ''

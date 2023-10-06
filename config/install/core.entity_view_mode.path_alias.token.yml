@@ -1,8 +1,11 @@
+uuid: 17046023-bbeb-48cb-b2ff-f3d48d6580a3
 langcode: it
 status: true
 dependencies:
   module:
     - path_alias
+_core:
+  default_config_hash: ZDb8Kg6V3_nMk2GrGJDDf6sjuMjhopoqfHtk02MegbA
 id: path_alias.token
 label: Token
 targetEntityType: path_alias

@@ -1,3 +1,4 @@
+uuid: 2b9b6a40-cdf6-4ecd-bd33-d75410f78a5a
 langcode: it
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.carousel
   module:
     - options
+_core:
+  default_config_hash: DHbTYvXs72l73xNqUbzjo_IhOLXXQ-t0mvI8XIZ3nQo
 id: paragraph.carousel.field_carousel_col_type
 field_name: field_carousel_col_type
 entity_type: paragraph

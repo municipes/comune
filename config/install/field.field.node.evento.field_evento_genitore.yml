@@ -1,9 +1,12 @@
+uuid: baf99fe5-61bc-491d-b2b9-d629a1d39a8f
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_evento_genitore
     - node.type.evento
+_core:
+  default_config_hash: 1P4ZPCZtWTQnnhQmcVvMVjvpmgksux7227zVeLOj57U
 id: node.evento.field_evento_genitore
 field_name: field_evento_genitore
 entity_type: node

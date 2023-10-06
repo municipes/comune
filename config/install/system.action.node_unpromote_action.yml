@@ -1,8 +1,11 @@
+uuid: e8d1b308-c0c5-47ff-bbde-f3134da0f83b
 langcode: it
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: FUNOjBY-hXIZDptAfkYYhHrnSMwpz3QEP4c5X_CLslo
 id: node_unpromote_action
 label: 'Rimozione contenuto dalla prima pagina'
 type: node

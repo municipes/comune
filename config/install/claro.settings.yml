@@ -1,3 +1,4 @@
+langcode: it
 third_party_settings:
   shortcut:
     module_link: true

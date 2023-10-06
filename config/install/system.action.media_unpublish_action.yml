@@ -1,8 +1,11 @@
+uuid: 52d8e0b0-ada2-46a2-bcb4-5babd3a1731a
 langcode: it
 status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: gY2LC4l1UwQcqowXyZTRCJqNBJekUGCZ4ZnPn8S9LxU
 id: media_unpublish_action
 label: 'Unpublish media'
 type: media
