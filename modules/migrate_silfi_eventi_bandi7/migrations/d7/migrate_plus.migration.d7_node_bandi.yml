@@ -1,3 +1,4 @@
+uuid: c115bb38-ab06-47c7-9748-e418b5902681
 langcode: en
 status: true
 dependencies: {  }
@@ -10,12 +11,16 @@ migration_tags:
   - 'Drupal 7'
   - Content
 migration_group: migrate_drupal_7
-label: 'Node (Bandi e Concorsi presi dagli Eventi)'
+label: 'Node (Bandi, Concorsi, Notizie presi dagli Eventi)'
 source:
-  plugin: d7_migrate_bandi
-  node_type: page
-  mlid: 6385 # l'id del menu di partenza
-  not_at: false # solo le pagine di Amministrazione Trasparente
+  plugin: d7_migrate_page_legacy
+  node_type: eventi
+  mlid: false # l'id del menu amm trasp di partenza
+  not_at: false # esclude le pagine di Amministrazione Trasparente
+  from_date: false # data in unixtime dei nodi da cui iniziare migrazione
+  context: false # valore del campo field_sito
+  notice_types: [2, 5, 6, 32, 793] # valore del campo field_tipo_di_contenuto
+
 process:
   # nid:
   #   -
@@ -66,7 +71,61 @@ process:
     -
       plugin: get
       source: timestamp
-  body:
+  field_tipo_di_notizia:
+    plugin: sub_process
+    source: field_tipo_di_contenuto
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          2: 32
+          5: 9
+          6: 21
+          32: 9
+          793: 9
+  field_tipo_di_bando:
+    plugin: sub_process
+    source: field_tipo_di_contenuto
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          5: 1002
+          32: 1003
+          793: 1001
+        # default_value: 1001
+        bypass: true
+  field_descrizione_breve:
+    plugin: sub_process
+    source: field_descrizione_evento
+    process:
+      value:
+        -
+          plugin: silfi_abstract_text
+          source: value
+  field_data_inizio:
+    -
+      plugin: sub_process
+      source: field_data_evento
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d'
+          source: value
+  field_data_fine:
+    -
+      plugin: sub_process
+      source: field_data_evento
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d'
+          source: value2
+  field_descrizione_completa:
     plugin: sub_process
     source: body
     process:
@@ -74,13 +133,18 @@ process:
       format:
         plugin: default_value
         default_value: 'bootstrap_italia_2'
-  # moderation_state:
-  #   plugin: static_map
-  #   source: status
-  #   default_value: draft
-  #   map:
-  #     '0': draft
-  #     '1': published
+  field_immagine:
+    plugin: sub_process
+    source: field_immagine_evento
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_image
+        source: fid
+        no_stub: true
+  field_video_gdpr:
+    plugin: silfi_field_video
+    source: field_video
   field_link_esterni:
     -
       plugin: silfi_field_link

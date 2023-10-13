@@ -13,7 +13,7 @@ migration_tags:
 migration_group: migrate_drupal_7
 label: 'Node (Pagine legacy)'
 source:
-  plugin: d7_migrate_at
+  plugin: d7_migrate_page_legacy
   node_type: page
   mlid: 6385 # l'id del menu amm trasp di partenza
   not_at: true # esclude le pagine di Amministrazione Trasparente
@@ -115,14 +115,9 @@ process:
         migration: upgrade_d7_file_to_media_image
         source: fid
         no_stub: true
-  # field_video_gdpr:
-  #   plugin: sub_process
-  #   source: field_video
-  #   process:
-  #     uri:
-  #       source: url
-  #     title:
-  #       source: description
+  field_video_gdpr:
+    plugin: silfi_field_video
+    source: field_video
 
 destination:
   plugin: 'entity_complete:node'
