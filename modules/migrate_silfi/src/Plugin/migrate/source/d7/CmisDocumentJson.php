@@ -1,57 +1,27 @@
 <?php
 
-namespace Drupal\migrate_silfi\Plugin\migrate\source\d7;
+namespace Drupal\silfi_migrate\Plugin\migrate\source;
 
-use Drupal\node\Plugin\migrate\source\d7\Node;
+use Drupal\migrate_plus\Plugin\migrate\source\Url;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\migrate\Row;
-use Drupal\migrate_drupal\Plugin\migrate\source\d7\FieldableEntity;
-use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\migrate_silfi\CMISalfRepo;
-use Drupal\migrate_silfi\CMISalfObject;
+use Drupal\silfi_migrate\CMISalfRepo;
+use Drupal\silfi_migrate\CMISalfObject;
 
 
 /**
  * Drupal 7 node source from database with CMIS attributes.
  *
- * Available configuration keys:
- * - node_type: The node_types to get from the source - can be a string or
- *   an array. If not declared then nodes of all types will be retrieved.
- *
- * Examples:
- *
- * @code
- * source:
- *   plugin: cmis_document_7
- *   node_type: page
- * @endcode
- *
- * In this example nodes of type page are retrieved from the source database.
- *
- * @code
- * source:
- *   plugin: cmis_document_7
- *   node_type: [page, test]
- * @endcode
- *
- * In this example nodes of type page and test are retrieved from the source
- * database.
- *
- * For additional configuration keys, refer to the parent classes.
- *
- * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
- * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
- *
  * @MigrateSource(
- *   id = "cmis_document_7",
- *   source_module = "node"
+ *   id = "cmis_document_json",
+ *   source_module = "migration_plus"
  * )
  */
-class CmisDocument extends Node {
+class CmisDocumentJson extends Url {
 
   /**
    * The AlFresco URL.
@@ -77,8 +47,9 @@ class CmisDocument extends Node {
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, StateInterface $state, EntityTypeManagerInterface $entity_type_manager, ModuleHandlerInterface $module_handler) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $migration, $state, $entity_type_manager, $module_handler);
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
+
     $this->host = $configuration['host'];
     $this->user = $configuration['user'];
     $this->pass = $configuration['pass'];
@@ -87,19 +58,10 @@ class CmisDocument extends Node {
   /**
    * {@inheritdoc}
    */
-  public function query() {
-    $query = parent::query();
-    $query->leftJoin('field_data_field_allegati_alfresco', 'af', '[n].[nid] = [af].[entity_id]');
-    $query->addField('af', 'field_allegati_alfresco_path', 'cmis_id');
-    return $query;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function fields() {
+  public function fields(): array {
     $fields = parent::fields();
     $fields += [
+      'title'          => $this->t('title' ),
       'val_start'      => $this->t('val_start' ),
       'val_end'        => $this->t('val_end'),
       'tipo_documento' => $this->t('tipo_documento'),
@@ -116,7 +78,7 @@ class CmisDocument extends Node {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    $objId = $row->getSourceProperty('cmis_id');
+    $objId = $row->getSourceProperty('object_id');
     // $objId = rtrim($objId, ';1.0');
     $document = $this->getCmisObject($objId);
     $valStart = $document['gd:dataInizioValidita'] ?? NULL;
@@ -142,8 +104,14 @@ class CmisDocument extends Node {
       $row->setSourceProperty('abstract', ucfirst($abstract));
     }
 
+    $title = ucfirst(strtolower($document['cm:title'] ? $document['cm:title'] : substr($description, 0, 254)));
     $description = $document['cmis:description'] ?? NULL;
 
+    if (!$title) {
+      $debug = true;
+    }
+
+    $row->setSourceProperty('title', $title);
     $row->setSourceProperty('description', $description);
     $row->setSourceProperty('file_cmis_id', $objId);
     $author = $document['cm:author'] ?? NULL;
@@ -153,7 +121,7 @@ class CmisDocument extends Node {
     return parent::prepareRow($row);
   }
 
-  private function getCmisObject(string $objId) : array {
+  private function getCmisObject(string $objId): array {
     $document = new CMISalfObject($this->host, $this->user, $this->pass, $objId, null, null);
     //prnt document properties and aspects
     // print_r($document->properties);
@@ -165,7 +133,7 @@ class CmisDocument extends Node {
   /**
    * {@inheritdoc}
    */
-  public function getIds() {
+  public function getIds(): array {
     return parent::getIds();
   }
 }

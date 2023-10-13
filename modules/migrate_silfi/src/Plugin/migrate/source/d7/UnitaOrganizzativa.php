@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\migrate_silfi\Plugin\migrate\source;
+namespace Drupal\migrate_silfi\Plugin\migrate\source\d7;
 
 use Drupal\migrate\Annotation\MigrateSource;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;

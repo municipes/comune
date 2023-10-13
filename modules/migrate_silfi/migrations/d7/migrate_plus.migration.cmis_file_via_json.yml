@@ -1,0 +1,136 @@
+uuid: 399e59af-24b5-4d00-9193-5601d33928ca
+id: cmis_file_via_json
+label: CMIS files via JSON
+migration_group: migrate_drupal_7
+migration_tags:
+  - json
+  - comune
+
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+
+  # The data_parser normally limits the fields passed on to the source plugin
+  # to fields configured to be used as part of the migration. To support more
+  # dynamic migrations, the JSON data parser supports including the original
+  # data for the current row. Simply include the 'include_raw_data' flag set
+  # to `true` to enable this. This option is disabled by default to minimize
+  # memory footprint for migrations that do not need this capability.
+  # include_raw_data: false
+
+  # Flags whether to track changes to incoming data. If TRUE, we will maintain
+  # hashed source rows to determine whether incoming data has changed.
+  track_changes: true
+
+  urls:
+    - modules/custom/migrate_silfi/json/cmis/alfresco_files.json
+
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: content
+
+  fields:
+    - name: object_id
+      label: 'ID CMIS'
+      selector: id
+    - name: descrizione
+      label: 'Descrizione oggetto'
+      selector: descrizione
+    - name: titolo
+      label: 'Titolo oggetto'
+      selector: titolo
+    - name: visibile
+      label: 'Visibilità oggetto'
+      selector: visibile
+    - name: albo_pretorio
+      label: 'Appartenenza ad Albo Pretorio'
+      selector: alboPretorio
+    - name: type
+      label: 'Tipologia oggetto'
+      selector: cmisObjectTypeId
+    - name: oggetto
+      label: 'Base oggetto'
+      selector: base.oggetto
+    - name: file_name
+      label: 'Nome del file'
+      selector: cmisContentStreamFileName
+    - name: data_modifica
+      label: 'Data modifica'
+      selector: verificabile.modifica
+
+  ids:
+    object_id:
+      type: string
+
+  constants:
+    source_base_path: 'https://www.comune.pontassieve.fi.it/cmis/browser?id='
+    DRUPAL_FILE_DIRECTORY: 'public://documenti_pubblici/'
+process:
+  # fid:
+  #   -
+  #     plugin: get
+  #     source: fid
+  filename:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: file_name
+      message: 'File name is missing'
+
+  source_full_path:
+    -
+      plugin: concat
+      # delimiter: /
+      source:
+        - constants/source_base_path
+        - object_id
+    # -
+    #   plugin: urlencode
+  destination_full_path:
+    -
+      plugin: concat
+      # delimiter: /
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - file_name
+    # -
+    #   plugin: urlencode
+  uri:
+    -
+      plugin: file_copy
+      source:
+        - '@source_full_path'
+        - '@destination_full_path'
+      file_exists: 'rename'
+      move: FALSE
+  filemime:
+    -
+      plugin: get
+      source: filemime
+  status:
+    -
+      plugin: default_value
+      source: visibile
+      default_value: 0
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+destination:
+  plugin: 'entity:file'
+migration_dependencies:
+  required:
+    - upgrade_d7_file
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate

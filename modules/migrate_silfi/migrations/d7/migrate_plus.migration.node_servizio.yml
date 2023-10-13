@@ -292,28 +292,25 @@ process:
           249: 45
 
   field_documenti:
-    plugin: sub_process
-    source: field_allegati_documentale
-    process:
-      target_id:
-        -
-          plugin: migration_lookup
-          migration: upgrade_cmis_document
-          source: target_id
-          no_stub: true
-        -
-          plugin: skip_on_empty
-          method: process
+    -
+      plugin: migration_lookup
+      migration: cmis_document
+      source: documenti
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: process
 
 destination:
   plugin: 'entity:node'
   default_bundle: servizio
+
 migration_dependencies:
   required:
     - upgrade_d7_node_complete_accesso_al_servizio
-    - upgrade_cmis_document
+    - cmis_document
 
-# dependencies:
-#   enforced:
-#     module:
-#       - migrate_silfi
+dependencies:
+  enforced:
+    module:
+      - migrate_silfi
