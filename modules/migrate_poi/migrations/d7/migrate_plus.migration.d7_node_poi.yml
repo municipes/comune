@@ -1,0 +1,220 @@
+uuid: b75bbad4-c3ad-41b9-a7f1-c5eb55f1e2ae
+langcode: en
+status: true
+dependencies: {  }
+id: d7_node_poi
+# class: Drupal\node\Plugin\migrate\D7NodeTranslation
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node (POI)'
+source:
+  plugin: d7_migrate_page_legacy
+  node_type: poi
+  mlid: false # l'id del menu amm trasp di partenza
+  not_at: false # esclude le pagine di Amministrazione Trasparente
+  from_date: false # data in unixtime dei nodi da cui iniziare migrazione
+  context: false # valore del campo field_sito la Rete Civica
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: default_value
+      default_value: 0
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  field_tipo_di_luogo:
+    plugin: sub_process
+    source: field_categoria
+    process:
+      target_id:
+        plugin: static_map
+        source: tid
+        map:
+          441: 56
+          444: 318
+          442: 203
+        bypass: true
+  field_descrizione_breve:
+    plugin: sub_process
+    source: body
+    process:
+      value:
+        -
+          plugin: silfi_abstract_text
+          source: value
+  field_descrizione_completa:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+  # moderation_state:
+  #   plugin: static_map
+  #   source: status
+  #   default_value: draft
+  #   map:
+  #     '0': draft
+  #     '1': published
+  link_to_text:
+    plugin: silfi_link_to_text
+    source: field_link_esterni
+  field_ulteriori_informazioni:
+    plugin: sub_process
+    source: '@link_to_text'
+    process:
+      value:
+        plugin: get
+        source: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+  field_immagine:
+    plugin: sub_process
+    source: field_immagine_evento
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_image
+        source: fid
+        no_stub: true
+
+  field_indirizzo/address_line1: street
+  field_indirizzo/locality: city
+  field_indirizzo/postal_code:
+    plugin: default_value
+    source: postal_code
+    default_value: '50065'
+  field_indirizzo/administrative_area:
+    plugin: default_value
+    source: province
+    default_value: 'FI'
+  field_indirizzo/country_code:
+    plugin: default_value
+    default_value: 'IT'
+
+  # field_indirizzo:
+    # plugin: sub_process
+    # source: field_indirizzo
+    # process:
+    #   address_line1: value
+    #   locality:
+    #     plugin: default_value
+    #     default_value: 'Pontassieve'
+    #   postal_code:
+    #     plugin: default_value
+    #     default_value: '50065'
+    #   country_code:
+    #     plugin: default_value
+    #     default_value: 'IT'
+    #   administrative_area:
+    #     plugin: default_value
+    #     default_value: 'FI'
+
+  field_orario_per_il_pubblico: field_orario
+  field_posizione_gps:
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: location_to_geolocation
+      source: field_posizione
+    -
+      plugin: geofield_latlon
+
+
+  # contatti/0/value: field_telefono
+  # contatti/0/contact_type:
+  #   plugin: default_value
+  #   default_value: 62
+  # contatti/1/value: field_indirizzo_email
+  # contatti/1/contact_type:
+  #   plugin: default_value
+  #   default_value: 63
+  # punto_title:
+  #   plugin: concat
+  #   source:
+  #     - 'Contatto'
+  #     - title
+  #   delimiter: ' '
+
+  # field_punti_di_contatto:
+  #   plugin: child_entity_generate
+  #   source: '@contatti'
+  #   entity_type: node
+  #   bundle: punto_di_contatto
+  #   value_key: title
+  #   bundle_key: type
+  #   ignore_case: true
+  #   default_values:
+  #     title: 'Title missing'
+  #     status: 1
+  #     uid: 1
+  #   values:
+  #     title: '@punto_title'
+  #     field_contatto:
+  #       plugin: entity_generate
+  #       # source: value
+  #       entity_type: paragraph
+  #       bundle: punto_di_contatto
+  #       values:
+  #         field_tipo_punto_di_contatto/target_id: contact_type
+  #         field_valore_punto_di_contatto: value
+
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: luogo
+# migration_dependencies:
+#   required:
+    # - upgrade_d7_user
+    # - upgrade_d7_file_to_media_document
+    # - upgrade_language

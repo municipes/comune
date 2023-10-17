@@ -65,6 +65,19 @@ class PageLegacy extends Node {
       $query->addJoin('LEFT', 'field_data_field_sito', 'cx', 'n.nid = %alias.entity_id');
       $query->condition('cx.field_sito_value', $this->context);
     }
+    if ($this->node_type === 'eventi') {
+      $query->addJoin('LEFT', 'field_data_field_tipo_di_contenuto', 'ct', 'n.nid = %alias.entity_id');
+      $query->condition('ct.field_tipo_di_contenuto_target_id', $this->notice_types, 'IN');
+    }
+    if ($this->node_type === 'poi') {
+      $query->addJoin('LEFT', 'location_instance', 'li', 'n.nid = %alias.nid');
+      $query->addJoin('LEFT', 'location', 'l', 'li.lid = %alias.lid');
+      $query->condition('n.type', 'poi');
+      $query->addField('l', 'street');
+      $query->addField('l', 'city');
+      $query->addField('l', 'province');
+      $query->addField('l', 'postal_code');
+    }
     $query->distinct();
 
     return $query;
