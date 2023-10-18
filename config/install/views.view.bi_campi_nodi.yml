@@ -1,10 +1,9 @@
-uuid: 28158f42-9b55-4a7c-9959-ebb13db2850f
+uuid: 5564d0be-09fc-47f3-b333-40ad9d4754b5
 langcode: it
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - core.entity_view_mode.node.chip
     - field.storage.node.field_persona
     - field.storage.node.field_unita_organizzativa
     - node.type.documento_pubblico
@@ -17,6 +16,8 @@ dependencies:
     - datetime
     - node
     - user
+_core:
+  default_config_hash: isgM4a23gkWLifdo7fE_u0R8HZIQXMu8tv_FrN0gD0w
 id: bi_campi_nodi
 label: 'BI Campi nodi'
 module: views
@@ -578,10 +579,12 @@ display:
         type: default
         options: {  }
       row:
-        type: 'entity:node'
+        type: fields
         options:
-          relationship: none
-          view_mode: chip
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
         title: false
         style: false
@@ -719,18 +722,8 @@ display:
         operator: AND
         groups:
           1: AND
-      style:
-        type: default
-        options: {  }
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: chip
       defaults:
         title: false
-        style: false
-        row: false
         relationships: false
         arguments: false
         filters: false
