@@ -1,8 +1,0 @@
-_core:
-  default_config_hash: ePnI-0iVgGUqZqZ2rc03_fMHGyJJZaw9R9xDRFvX1eQ
-langcode: it
-silfi_triplette_url: 'http://baseprivilegioperatore.cst:8080/baseprivilegioperatore/triplette'
-silfi_triplette_codice_ente: null
-silfi_triplette_sync: 0
-silfi_triplette_timecron: '3600'
-lightweight_cron_access_key: 6b4b7d743376964086bf7e898a54c055
