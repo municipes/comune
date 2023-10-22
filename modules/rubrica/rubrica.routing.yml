@@ -1,0 +1,7 @@
+rubrica.search:
+  path: '/rubrica/search'
+  defaults:
+    _title: 'Rubrica'
+    _form: 'Drupal\rubrica\Form\SearchForm'
+  requirements:
+    _permission: 'access content'

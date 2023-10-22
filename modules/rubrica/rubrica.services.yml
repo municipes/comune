@@ -1,0 +1,4 @@
+services:
+  rubrica.entity_queries:
+    class: Drupal\rubrica\Helper\EntityQueries
+    arguments: ['@entity_type.manager']

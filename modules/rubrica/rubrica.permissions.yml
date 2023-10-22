@@ -1,0 +1,4 @@
+administer rubrica configuration:
+  title: 'Administer rubrica configuration'
+  description: 'Optional description.'
+  restrict access: true

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Rubrica module.
+ */
+
+ /**
+ * Implements hook_theme().
+ */
+function rubrica_theme() {
+  return [
+    'rubrica_item' => [
+      'variables' => [
+        'content' => '',
+        'attributes' => [],
+      ],
+    ],
+  ];
+}
