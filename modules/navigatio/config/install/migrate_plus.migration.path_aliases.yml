@@ -1,0 +1,79 @@
+id: path_aliases
+label: Path aliases
+migration_group: comune_node
+migration_tags:
+  - json
+  - comune
+  - node
+  - path_aliases
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+
+  # The data_parser normally limits the fields passed on to the source plugin
+  # to fields configured to be used as part of the migration. To support more
+  # dynamic migrations, the JSON data parser supports including the original
+  # data for the current row. Simply include the 'include_raw_data' flag set
+  # to `true` to enable this. This option is disabled by default to minimize
+  # memory footprint for migrations that do not need this capability.
+  # include_raw_data: false
+
+  # Flags whether to track changes to incoming data. If TRUE, we will maintain
+  # hashed source rows to determine whether incoming data has changed.
+  # track_changes: false
+
+  urls:
+    - 'https://municipes.github.io/origo/node/path_aliases.json'
+
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: data
+
+  fields:
+    - name: id
+      label: 'ID del path'
+      selector: id
+    - name: revision_id
+      label: 'Revision ID del path'
+      selector: revision_id
+    - name: uuid
+      label: 'UUID del path'
+      selector: uuid
+    - name: path
+      label: 'Il path numerico'
+      selector: attributes/path
+    - name: alias
+      label: "L'alias del path"
+      selector: attributes/alias
+
+  ids:
+    id:
+      type: integer
+
+process:
+  id: nid
+  revision_id: revision_id
+  uuid: uuid
+  langcode:
+    plugin: default_value
+    default_value: 'it'
+  path: path
+  alias: alias
+  status:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: 'entity:path_alias'
+
+migration_dependencies: {  }
+
+dependencies:
+  enforced:
+    module:
+      - navigatio
