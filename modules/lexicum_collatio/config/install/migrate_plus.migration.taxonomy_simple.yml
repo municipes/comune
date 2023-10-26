@@ -33,6 +33,7 @@ source:
     - 'https://municipes.github.io/origo/taxonomy/tipo_di_accesso_al_servizio.json'
     - 'https://municipes.github.io/origo/taxonomy/argomenti.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_notizia.json'
+    - 'https://municipes.github.io/origo/taxonomy/tipi_di_documento.json'
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: data

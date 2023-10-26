@@ -38,7 +38,6 @@ source:
     - 'https://municipes.github.io/origo/taxonomy/licenze.json'
     - 'https://municipes.github.io/origo/taxonomy/stati_di_una_pratica.json'
     - 'https://municipes.github.io/origo/taxonomy/temi_di_un_dataset.json'
-    - 'https://municipes.github.io/origo/taxonomy/tipi_di_documento.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_evento.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_incarico.json'
     - 'https://municipes.github.io/origo/taxonomy/tipi_di_luogo.json'
