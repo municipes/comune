@@ -1,4 +1,4 @@
-uuid: e49cdf40-3741-4e79-b5f8-96242ce841c2
+uuid: 4581e699-cce1-4e3c-af86-2980b4af642c
 langcode: it
 status: true
 dependencies:
@@ -6,19 +6,19 @@ dependencies:
     - taxonomy
 _core:
   default_config_hash: PEC3xNOocY4siknb2_gnIzMoZlT1g_bvpcRuevYayB8
-id: taxonomy_term_servizi
-label: 'Taxonomy term - Servizi'
+id: taxonomy_term_tipi_di_documento
+label: 'Taxonomy term - Tipi di Documento'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'servizi/[term:name]'
+pattern: '/amministrazione/documenti-e-dati/[term:name]'
 selection_criteria:
-  ed5bb0f6-bb9b-4871-bf77-f9c785355ce0:
+  9d9bcee8-9bd2-460d-ade2-b5ef60718f7a:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: ed5bb0f6-bb9b-4871-bf77-f9c785355ce0
+    uuid: 9d9bcee8-9bd2-460d-ade2-b5ef60718f7a
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
-      categorie_dei_servizi: categorie_dei_servizi
+      tipi_di_documento: tipi_di_documento
 selection_logic: and
-weight: 3
+weight: 2
 relationships: {  }
