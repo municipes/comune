@@ -36,6 +36,7 @@ settings:
     bi_tutte_le_novita: bi_tutte_le_novita
     bi_tutte_le_novita_elenchi: bi_tutte_le_novita_elenchi
     bi_tutti_i_servizi_indice: bi_tutti_i_servizi_indice
+    bi_unita_organizzative: bi_unita_organizzative
     bi_unita_organizzative_area: bi_unita_organizzative_area
     bi_argomenti_chip: 0
     bi_argomenti_nodi: 0
@@ -62,8 +63,8 @@ settings:
     who_s_new: 0
     who_s_online: 0
   enabled_settings:
-    argument: argument
     title: title
+    argument: argument
     limit: limit
     offset: 0
     pager: 0
