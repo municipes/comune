@@ -92,7 +92,7 @@ process:
   description/value:
     - plugin: skip_on_empty
       method: process
-      source: description/value
+      source: description
   description/format:
     plugin: default_value
     default_value: bootstrap_italia_2
