@@ -260,7 +260,7 @@ function comune_update_8004() {
   $database = \Drupal::database();
   $query = $database->delete('path_alias')->condition('path', $nodes, 'IN')->execute();
   $query = $database->delete('path_alias_revision')->condition('path', $nodes, 'IN')->execute();
-  comune_run_migration('path_aliases');
+  comune_run_migration('path_aliases', 'update');
   \Drupal::service('module_installer')->uninstall(['navigatio']);
 
   return;
