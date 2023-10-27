@@ -138,7 +138,7 @@ function comune_install() {
  * @param array $migration_ids
  * @return void
  */
-function comune_execute_migrations(array $migration_ids) {
+function comune_execute_migrations(array $migration_ids, string $operation = 'import') {
   $manager = Drupal::service('plugin.manager.migration');
   foreach ($migration_ids as $migration_id) {
     $migration = $manager->createInstance($migration_id);
@@ -148,7 +148,7 @@ function comune_execute_migrations(array $migration_ids) {
 
     try {
       // Run the migration.
-      $executable->import();
+      $executable->{$operation}();
     } catch (\Exception $e) {
       $migration->setStatus(MigrationInterface::STATUS_IDLE);
     }
@@ -231,6 +231,19 @@ function comune_update_8003() {
   comune_execute_migrations(['path_aliases']);
   \Drupal::configFactory()->getEditable('migrate_plus.migration.path_aliases')->delete();
   \Drupal::service('module_installer')->uninstall(['navigatio']);
+
+  return;
+}
+
+/**
+ * Update paragraphs for Amministrazione taxonomies.
+ */
+function comune_update_8004() {
+  \Drupal::service('module_installer')->install(['theca'], TRUE);
+  comune_execute_migrations(['paragraph_common'], 'rollback');
+  comune_execute_migrations(['paragraph_common'], 'import');
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.paragraph_common')->delete();
+  \Drupal::service('module_installer')->uninstall(['theca']);
 
   return;
 }
