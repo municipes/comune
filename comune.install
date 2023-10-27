@@ -215,7 +215,6 @@ function comune_update_or_install_config($prefix) {
  */
 function comune_update_8001() {
   Drupal::configFactory()->getEditable('views.view.bi_faq')->delete();
-  return;
 }
 
 /**
@@ -240,8 +239,6 @@ function comune_update_8003() {
   comune_run_migration('path_aliases');
   \Drupal::configFactory()->getEditable('migrate_plus.migration.path_aliases')->delete();
   \Drupal::service('module_installer')->uninstall(['navigatio']);
-
-  return;
 }
 
 /**
@@ -255,6 +252,14 @@ function comune_update_8004() {
   // aggiorna nodi
   \Drupal::service('module_installer')->install(['navigatio'], TRUE);
   comune_run_migration('node_common', 'update',  ['execute-dependencies']);
+  \Drupal::service('module_installer')->uninstall(['navigatio']);
+}
+
+/**
+ * Repeat path alias import.
+ */
+function comune_update_8005() {
+  \Drupal::service('module_installer')->install(['navigatio'], TRUE);
   // repeat alias fixes
   $nodes = ['/node/14', '/node/15', '/node/16', '/node/17', '/node/18', '/node/19', '/node/20'];
   $database = \Drupal::database();
@@ -262,6 +267,4 @@ function comune_update_8004() {
   $query = $database->delete('path_alias_revision')->condition('path', $nodes, 'IN')->execute();
   comune_run_migration('path_aliases', 'update');
   \Drupal::service('module_installer')->uninstall(['navigatio']);
-
-  return;
 }
