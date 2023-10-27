@@ -56,7 +56,7 @@ source:
       type: integer
 
 process:
-  id: nid
+  id: id
   revision_id: revision_id
   uuid: uuid
   langcode:
