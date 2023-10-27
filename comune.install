@@ -224,9 +224,8 @@ function comune_update_8002() {
 function comune_update_8003() {
   $nodes = ['/node/14', '/node/15', '/node/16', '/node/17', '/node/18', '/node/19', '/node/20'];
   $database = \Drupal::database();
-  $query = $database->query('DELETE FROM {path_alias} WHERE path IN (:nodes[])',
-    [':nodes[]' => $nodes]);
-  $result = $query->execute();
+  $query = $database->delete('path_alias')->condition('path', $nodes, 'IN')->execute();
+  $query = $database->delete('path_alias_revision')->condition('path', $nodes, 'IN')->execute();
 
   \Drupal::service('module_installer')->install(['navigatio'], TRUE);
   comune_execute_migrations(['path_aliases']);
