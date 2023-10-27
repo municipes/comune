@@ -265,27 +265,3 @@ function comune_update_8004() {
 
   return;
 }
-
-/**
- * Add new action configurations.
- */
-// function comune_update_8001() {
-//   $prefixes = [
-//     '',
-//   ];
-//   $results = [];
-//   foreach ($prefixes as $prefix) {
-//     $results[$prefix] = comune_update_or_install_config($prefix);
-//   }
-//   $return = '';
-//   foreach ($results as $prefix => $result) {
-//     $return .= "\n$prefix:\n";
-//     foreach ($result as $key => $ids) {
-//       $return .= "$key: " . implode(', ', $ids) . "\n";
-//     }
-//   }
-//   if (function_exists('drush_log')) {
-//     drush_log($return, \Psr\Log\LogLevel::WARNING);
-//   }
-//   return $return;
-// }
