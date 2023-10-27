@@ -10,6 +10,7 @@ use Drupal\shortcut\Entity\Shortcut;
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessage;
 use Drupal\migrate\MigrationInterface;
+use Drupal\migrate_tools\MigrateExecutable as MigrateToolsExecutable;
 use Drupal\Component\Serialization\Yaml;
 
 /**
@@ -99,18 +100,18 @@ function comune_install() {
   \Drupal::service('module_installer')->install(['theca'], TRUE);
 
   // Import sub paragraph
-  comune_execute_migrations(['paragraph_sub']);
+  comune_run_migration('paragraph_sub');
   // Import paragraph
-  comune_execute_migrations(['paragraph_common']);
+  comune_run_migration('paragraph_common');
   // Import block
-  comune_execute_migrations(['block_common']);
+  comune_run_migration('block_common');
   // Import taxonomy
-  comune_execute_migrations(['taxonomy_common']);
-  comune_execute_migrations(['taxonomy_simple']);
+  comune_run_migration('taxonomy_common');
+  comune_run_migration('taxonomy_simple');
   // Import node
-  comune_execute_migrations(['node_common']);
+  comune_run_migration('node_common');
   // Import menu
-  comune_execute_migrations(['menu_common']);
+  comune_run_migration('menu_common');
 
 
   \Drupal::configFactory()->getEditable('migrate_plus.migration.block_common')->delete();
@@ -133,25 +134,33 @@ function comune_install() {
 }
 
 /**
- * Execute migrations
+ * Runs a migration.
  *
- * @param array $migration_ids
- * @return void
+ * @param string $migration_name
+ *   The name of the migration to run.
+ * @param string $operation
+ *   The migration operation to execute (import|update|sync).
+ * @param array $options
+ *   The migration options (es: execute-dependencies)
  */
-function comune_execute_migrations(array $migration_ids, string $operation = 'import') {
-  $manager = Drupal::service('plugin.manager.migration');
-  foreach ($migration_ids as $migration_id) {
-    $migration = $manager->createInstance($migration_id);
-    // update existing entity imported.
-    $migration->getIdMap()->prepareUpdate();
-    $executable = new MigrateExecutable($migration, new MigrateMessage());
+function comune_run_migration(string $migration_name, string $operation = 'import', array $options = []) {
+  /** @var \Drupal\migrate\Plugin\MigrationPluginManager $plugin_manager_migration */
+  $plugin_manager_migration = \Drupal::service('plugin.manager.migration');
 
-    try {
-      // Run the migration.
-      $executable->{$operation}();
-    } catch (\Exception $e) {
-      $migration->setStatus(MigrationInterface::STATUS_IDLE);
+  if ($migration = $plugin_manager_migration->createInstance($migration_name)) {
+    switch ($operation) {
+      case 'update':
+        $migration->getIdMap()->prepareUpdate();
+        $import_options['update'] = TRUE;
+        break;
+
+      case 'sync':
+        $migration->set('syncSource', TRUE);
+        $import_options['sync'] = TRUE;
     }
+
+    $executable = new MigrateToolsExecutable($migration, new MigrateMessage(), $options);
+    $executable->import();
   }
 }
 
@@ -228,7 +237,7 @@ function comune_update_8003() {
   $query = $database->delete('path_alias_revision')->condition('path', $nodes, 'IN')->execute();
 
   \Drupal::service('module_installer')->install(['navigatio'], TRUE);
-  comune_execute_migrations(['path_aliases']);
+  comune_run_migration('path_aliases');
   \Drupal::configFactory()->getEditable('migrate_plus.migration.path_aliases')->delete();
   \Drupal::service('module_installer')->uninstall(['navigatio']);
 
@@ -240,10 +249,19 @@ function comune_update_8003() {
  */
 function comune_update_8004() {
   \Drupal::service('module_installer')->install(['theca'], TRUE);
-  comune_execute_migrations(['paragraph_common'], 'rollback');
-  comune_execute_migrations(['paragraph_common'], 'import');
-  \Drupal::configFactory()->getEditable('migrate_plus.migration.paragraph_common')->delete();
+  comune_run_migration('paragraph_sub', 'update');
+  comune_run_migration('paragraph_common', 'update', ['execute-dependencies']);
   \Drupal::service('module_installer')->uninstall(['theca']);
+  // aggiorna nodi
+  \Drupal::service('module_installer')->install(['navigatio'], TRUE);
+  comune_run_migration('node_common', 'update',  ['execute-dependencies']);
+  // repeat alias fixes
+  $nodes = ['/node/14', '/node/15', '/node/16', '/node/17', '/node/18', '/node/19', '/node/20'];
+  $database = \Drupal::database();
+  $query = $database->delete('path_alias')->condition('path', $nodes, 'IN')->execute();
+  $query = $database->delete('path_alias_revision')->condition('path', $nodes, 'IN')->execute();
+  comune_run_migration('path_aliases');
+  \Drupal::service('module_installer')->uninstall(['navigatio']);
 
   return;
 }
