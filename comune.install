@@ -219,6 +219,24 @@ function comune_update_8002() {
 }
 
 /**
+ * Update some node path aliases.
+ */
+function comune_update_8003() {
+  $nodes = ['/node/14', '/node/15', '/node/16', '/node/17', '/node/18', '/node/19', '/node/20'];
+  $database = \Drupal::database();
+  $query = $database->query('DELETE FROM {path_alias} WHERE path IN (:nodes)',
+    [':nodes' => $nodes]);
+  $result = $query->execute();
+
+  \Drupal::service('module_installer')->install(['navigatio'], TRUE);
+  comune_execute_migrations(['path_aliases']);
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.path_aliases')->delete();
+  \Drupal::service('module_installer')->uninstall(['navigatio']);
+
+  return;
+}
+
+/**
  * Add new action configurations.
  */
 // function comune_update_8001() {
