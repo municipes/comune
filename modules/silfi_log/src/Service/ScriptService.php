@@ -288,7 +288,8 @@ class ScriptService implements VisitorsScriptInterface {
     //   }
     // }
     // else {
-      $script .= 'g.src=u+"/modules/custom/silfi_log/js/tracker.js";';
+      $module_path = $this->moduleHandler->getModule('silfi_log')->getPath();
+      $script .= 'g.src=u+"/' . $module_path . '/js/tracker.js";';
     // }
 
     $script .= 's.parentNode.insertBefore(g,s);';
