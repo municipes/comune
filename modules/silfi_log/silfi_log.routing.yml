@@ -1,0 +1,17 @@
+silfi_log.track:
+  path: '/silfi_log/_track'
+  defaults:
+    _controller: '\Drupal\silfi_log\Controller\Visitors::track'
+    _title: 'Track'
+  methods: [POST]
+  requirements:
+    # All visitors should be able to log visits.
+    _access: 'TRUE'
+
+silfi_log.settings:
+  path: '/admin/config/system/silfi-log'
+  defaults:
+    _form: '\Drupal\silfi_log\Form\Settings'
+    _title: 'Silfi Log settings'
+  requirements:
+    _permission: 'administer site configuration'

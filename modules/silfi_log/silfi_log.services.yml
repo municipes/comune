@@ -1,0 +1,55 @@
+services:
+  silfi_log.tracker:
+    class: Drupal\silfi_log\Service\TrackerService
+    arguments:
+      - '@request_stack'
+      - '@datetime.time'
+      - '@module_handler'
+      - '@silfi_log.silfi_log'
+
+  silfi_log.script:
+    class: Drupal\silfi_log\Service\ScriptService
+    arguments:
+      - '@config.factory'
+      - '@current_user'
+      - '@request_stack'
+      - '@path.current'
+      - '@module_handler'
+      - '@state'
+      - '@session_configuration'
+      - '@current_route_match'
+      - '@entity.repository'
+  silfi_log.visibility:
+    class: Drupal\silfi_log\Service\VisibilityService
+    arguments:
+      - '@config.factory'
+      - '@path.current'
+      - '@path_alias.manager'
+      - '@path.matcher'
+      - '@module_handler'
+      - '@request_stack'
+  silfi_log.silfi_log:
+    class: Drupal\silfi_log\Logger\SilfiFileLog
+    arguments:
+      - '@config.factory'
+      - '@state'
+      - '@datetime.time'
+      - '@logger.log_message_parser'
+      - '@silfi_log.file_manager'
+    # tags:
+    #   - { name: logger }
+  silfi_log.file_manager:
+    class: Drupal\silfi_log\LogFileManager
+    arguments:
+      - '@config.factory'
+      - '@file_system'
+    lazy: true
+  silfi_log.rotator:
+    class: Drupal\silfi_log\LogRotator
+    arguments:
+      - '@config.factory'
+      - '@state'
+      - '@token'
+      - '@datetime.time'
+      - '@silfi_log.file_manager'
+      - '@file_system'

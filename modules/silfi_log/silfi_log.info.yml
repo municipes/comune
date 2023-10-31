@@ -1,0 +1,8 @@
+name: Silfi Log
+type: module
+description: Log visite al sito.
+package: Silfi
+core_version_requirement: ^9.5 || ^10
+configure: system.logging_settings
+
+version: '1.0.0'

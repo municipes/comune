@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * Contains silfi_log.module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function silfi_log_help($route_name): ?string {
+  if ($route_name === 'help.page.silfi_log') {
+    $output = '<h3>' . t('About') . '</h3>';
+    $output .= '<p>' . t('Logs system events to a file.') . '</p>';
+    return $output;
+  }
+
+  return NULL;
+}
+
+use Drupal\silfi_log\Component\Render\JavaScriptSnippet;
+use Drupal\Core\Utility\Error;
+
+/**
+ * Implements hook_page_attachment_alter().
+ */
+function silfi_log_page_attachments_alter(array &$page) {
+  try {
+    /** @var \Drupal\silfi_log\VisitorsVisibilityInterface $visibility_service */
+    $visibility_service = \Drupal::service('silfi_log.visibility');
+    if (!$visibility_service->isVisible()) {
+      return NULL;
+    }
+    /** @var \Drupal\silfi_log\VisitorsScriptInterface $script_service */
+    $script_service = \Drupal::service('silfi_log.script');
+    // Add module cache tags.
+    $tags = $page['#cache']['tags'] ?? [];
+    $page['#cache']['tags'] = $script_service->cacheTags($tags);
+
+    $script = $script_service->script();
+    // Add tracker code.
+    $page['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#value' => new JavaScriptSnippet($script),
+      ],
+      'visitors_tracking_script',
+    ];
+  }
+  catch (\Exception $e) {
+    $logger = \Drupal::logger('silfi_log');
+    Error::logException($logger, $e);
+  }
+
+}
+
+/**
+ * Implements hook_cron().
+ */
+function silfi_log_cron(): void {
+  Drupal::service('silfi_log.rotator')->run();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function silfi_log_theme(): array {
+  return [
+    'silfi_log_help' => [
+      'variables' => [
+        'title'        => NULL,
+        'rows'         => [],
+        'label_prefix' => NULL,
+      ],
+    ],
+  ];
+}

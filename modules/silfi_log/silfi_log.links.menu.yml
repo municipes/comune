@@ -1,0 +1,5 @@
+silfi_log.settings:
+  title: Silfi Log
+  route_name: silfi_log.settings
+  parent: system.admin_config_system
+  description: 'Configure Silfi Log settings.'

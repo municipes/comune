@@ -1,0 +1,52 @@
+silfi_log.settings:
+  type: config_object
+  label: 'Silfi Log settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable file output'
+    id_site:
+      type: string
+      label: 'Site ID'
+    file:
+      type: mapping
+      label: 'Logfile configs'
+      mapping:
+        location:
+          type: string
+          label: 'Logfile directory'
+    rotation:
+      type: mapping
+      label: 'Rotation settings'
+      mapping:
+        schedule:
+          type: string
+          label: 'Schedule (monthly, weekly, daily, never)'
+        delete:
+          type: boolean
+          label: 'Delete files instead of moving them.'
+        destination:
+          type: string
+          label: 'Destination pattern of archived files'
+        gzip:
+          type: boolean
+          label: 'Compress archived files with gzip'
+    disable_tracking:
+      type: boolean
+      label: 'disable tracking'
+    status_codes_disabled:
+      type: sequence
+      label: 'Status codes disabled'
+      sequence:
+        type: string
+        label: 'Status code'
+    visibility:
+      type: mapping
+      label: 'Visibility'
+      mapping:
+        request_path_mode:
+          type: integer
+          label: 'Add tracking to specific pages'
+        request_path_pages:
+          type: string
+          label: 'Pages by their paths'

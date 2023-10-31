@@ -1,0 +1,14 @@
+enabled: false
+id_site: NOSET
+file:
+  location: '/var/log/drupal/stats'
+rotation:
+  schedule: daily
+  delete: false
+  destination: 'archive/[date:custom:Y/m/d].log'
+  gzip: true
+disable_tracking: false
+status_codes_disabled: {}
+visibility:
+  request_path_mode: 0
+  request_path_pages: "/admin\n/admin/*\n/batch\n/node/add*\n/node/*/*\n/user/*/*"
