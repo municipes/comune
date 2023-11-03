@@ -1,10 +1,14 @@
-{{ attach_library('silfi_opencityitalia/satisfy') }}
+{% apply spaceless %}
+
 <div class="bg-primary">
   <div class="container">
     <div class="row d-flex justify-content-center bg-primary">
       <div class="col-12 col-lg-6 p-lg-0 px-4">
-        <app-widget data-entrypoints="{{ uuid }}"></app-widget>
+        <app-widget data-entrypoints="{{ data.uuid }}"></app-widget>
+        <script src="{{ data.common_url }}{{ data.satisfy_path }}"></script>
       </div>
     </div>
   </div>
 </div>
+
+{% endapply %}

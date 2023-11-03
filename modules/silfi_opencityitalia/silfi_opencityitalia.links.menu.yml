@@ -1,0 +1,5 @@
+silfi_opencityitalia.settings:
+  title: Silfi Open City Italia
+  route_name: silfi_opencityitalia.settings
+  parent: system.admin_config_system
+  description: 'Configure Silfi Open City Italia settings.'

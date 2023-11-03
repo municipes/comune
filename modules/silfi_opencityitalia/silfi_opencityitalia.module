@@ -16,7 +16,13 @@ function silfi_opencityitalia_theme($existing, $type, $theme, $path) {
       // We use 'variables' when the item to be passed is an array whose
       // structure must be described here.
       'variables' => [
-        'uuid' => NULL,
+        'data' => NULL,
+        ''
+      ],
+    ],
+    'opencityitalia_pages' => [
+      'variables' => [
+        'data' => NULL,
       ],
     ],
   ];

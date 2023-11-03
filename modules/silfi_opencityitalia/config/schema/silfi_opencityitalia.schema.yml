@@ -1,0 +1,34 @@
+silfi_opencityitalia.settings:
+  type: config_object
+  label: 'Silfi Open City Italia settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable Open City Italia'
+    common_url:
+      type: string
+      label: 'Open City Italia URL'
+    variables_path:
+      type: string
+      label: 'New variables'
+    booking_path:
+      type: string
+      label: 'Bookings URL'
+    inefficency_path:
+      type: string
+      label: 'Inefficiencies URL'
+    inefficency_variables:
+      type: string
+      label: 'Inefficiencies variables'
+    helpdesk_path:
+      type: string
+      label: 'Helpdesk URL'
+    uuid:
+      type: string
+      label: 'UUID'
+    satisfy_path:
+      type: string
+      label: 'Satisfay path'
+    oc_spid_button:
+      type: boolean
+      label: 'SPID'

@@ -1,0 +1,31 @@
+silfi_opencityitalia.settings:
+  path: '/admin/config/system/silfi-opencityitalia'
+  defaults:
+    _form: '\Drupal\silfi_opencityitalia\Form\SettingsForm'
+    _title: 'Silfi Open City Italia settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+silfi_opencityitalia.booking:
+  path: '/prenota-appuntamento'
+  defaults:
+    # _title: 'Prenotazione appuntamento'
+    _controller: '\Drupal\silfi_opencityitalia\Controller\OpencityitaliaController::booking'
+  requirements:
+    _permission: 'access content'
+
+silfi_opencityitalia.inefficiencies:
+  path: '/segnala-disservizio'
+  defaults:
+    # _title: 'Segnala disservizio'
+    _controller: '\Drupal\silfi_opencityitalia\Controller\OpencityitaliaController::inefficiencies'
+  requirements:
+    _permission: 'access content'
+
+silfi_opencityitalia.helpdesk:
+  path: '/help-desk'
+  defaults:
+    # _title: 'Richiesta assistenza'
+    _controller: '\Drupal\silfi_opencityitalia\Controller\OpencityitaliaController::helpdesk'
+  requirements:
+    _permission: 'access content'

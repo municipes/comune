@@ -1,0 +1,20 @@
+{% apply spaceless %}
+
+{% if data.enabled %}
+  {% set attributes = create_attribute().setAttribute('id', 'oc-' ~ data.page) %}
+  <div{{attributes}}></div>
+  {# {% if data.page == 'inefficiencies' %}
+      <link rel="stylesheet" type="text/css" href="{{ data.common_url }}/widgets/inefficiencies/bootstrap-italia@2/css/inefficiencies.css" />
+    {% endif %} #}
+  <script>
+    {% for item in data.variables %}
+      {% set variable = item | split('|') %}
+      window.{{ variable.0 }} = '{{ variable.1 }}';
+    {% endfor %}
+  </script>
+  <script src="{{ data.common_url }}{{ data.widget }}"></script>
+{% else %}
+  <h2>Configurare il modulo Open City Italia</h2>
+{% endif %}
+
+{% endapply %}

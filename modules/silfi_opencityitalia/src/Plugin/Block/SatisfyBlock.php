@@ -3,8 +3,11 @@
 namespace Drupal\silfi_opencityitalia\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Uuid\Uuid;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an valutation block.
@@ -15,65 +18,64 @@ use Drupal\Component\Uuid\Uuid;
  *   category = @Translation("Silfi OpenCityItalia")
  * )
  */
-class SatisfyBlock extends BlockBase {
+class SatisfyBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * {@inheritdoc}
+   * Config Factory service object.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  public function defaultConfiguration() {
-    return [
-      'uuid' => '',
-      'domain' => '',
-    ];
+  protected $configFactory;
+
+  /**
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin ID for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $configFactory) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->configFactory = $configFactory;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form['uuid'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Site UUID'),
-      '#description' => $this->t('UUID fornito da OpenCityItalia'),
-      '#default_value' => $this->configuration['uuid'],
-    ];
-    $form['domain'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Site domain'),
-      '#description' => $this->t('Ex: www.comune.pontassieve.it'),
-      '#default_value' => $this->configuration['domain'],
-    ];
-
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['uuid']
-      = $form_state->getValue('uuid');
-    $this->configuration['domain']
-      = $form_state->getValue('domain');
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    // Instantiates this form class.
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      // Load the service required to construct this class.
+      $container->get('config.factory')
+    );
   }
 
   /**
    * {@inheritdoc}
    */
   public function build() {
+    $config = $this->configFactory->get('silfi_opencityitalia.settings');
+    $debug = $config->get();
     if (Uuid::isValid($this->configuration['uuid'])) {
       $build['content'] = [
         '#theme' => 'oci_satisfy_block',
-        '#uuid' => $this->configuration['uuid'],
+        '#data' => [
+          'uuid' => $config->get('uuid'),
+          'common_url' => $config->get('common_url'),
+          'satisfy_path' => $config->get('satisfy_path'),
+        ],
       ];
-    }
-    else {
+    } else {
       $build['content'] = [
-        '#markup' => $this->t('UUID mancante o non valido'),
+        '#markup' => $this->t('Configurazione mancante o non valida'),
       ];
     }
 
     return $build;
   }
-
 }
