@@ -26,6 +26,9 @@ dependencies:
     - feeds_ex
     - feeds_tamper
     - node
+  enforced:
+    module:
+      - silfi_meteo
 third_party_settings:
   feeds_tamper:
     tampers:
