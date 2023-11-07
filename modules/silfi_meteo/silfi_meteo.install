@@ -5,6 +5,7 @@
  * Install, update and uninstall functions for the silfi_meteo module.
  */
 
+use Drupal\Core\Url;
 
 /**
  * Implements hook_install().
