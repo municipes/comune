@@ -1,0 +1,21 @@
+uuid: 1c6f6f79-459c-4766-9338-cd80ae338e7d
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_e_orario_di_inizio
+    - node.type.notizia
+  module:
+    - datetime
+id: node.notizia.field_data_e_orario_di_inizio
+field_name: field_data_e_orario_di_inizio
+entity_type: node
+bundle: notizia
+label: 'Data e ora inizio validità'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

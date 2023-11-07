@@ -1,0 +1,23 @@
+uuid: 95cbd2b5-a70d-4999-95f2-4d98808d81ad
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_id_avviso
+    - node.type.notizia
+id: node.notizia.field_id_avviso
+field_name: field_id_avviso
+entity_type: node
+bundle: notizia
+label: 'ID Avviso'
+description: 'Importato da feeds'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
