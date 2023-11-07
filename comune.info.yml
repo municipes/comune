@@ -102,6 +102,7 @@ install:
   - entity_reference_revisions:entity_reference_revisions
   - facets:facets
   - facets:facets_summary
+  - feeds:feeds
   - field_group:field_group
   - focal_point:focal_point
   - geocoder:geocoder
