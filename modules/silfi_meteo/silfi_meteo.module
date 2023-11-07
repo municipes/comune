@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Contains silfi_meteo.module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_help().
+ */
+function silfi_meteo_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name == 'help.page.silfi_meteo') {
+    $text = file_get_contents(__DIR__ . '/README.md');
+    if (!Drupal::moduleHandler()->moduleExists('markdown')) {
+      return '<pre>' . $text . '</pre>';
+    }
+    else {
+      /** @var \Drupal\markdown\PluginManager\ParserManagerInterface $parser_manager */
+      $parser_manager = \Drupal::service('plugin.manager.markdown.parser');
+      $parser = $parser_manager->getDefaultParser([
+        'render_strategy' => ['type' => 'none'],
+      ]);
+      return $parser->parse($text);
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function silfi_meteo_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation == 'view') {
+    $conditions = $block->getVisibilityConditions()->getConfiguration();
+    if ($conditions && !empty($conditions['expiry'])) {
+      $forbidden = FALSE;
+      if (!empty($conditions['expiry']['start']) && time() < $conditions['expiry']['start']) {
+        $forbidden = TRUE;
+      }
+      if (!empty($conditions['expiry']['end']) && time() >= $conditions['expiry']['end']) {
+        $forbidden = TRUE;
+      }
+      return AccessResult::forbiddenIf($forbidden === TRUE)
+        ->addCacheableDependency($block);
+    }
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * Defines the theming capabilities provided by this module.
+ */
+function silfi_meteo_theme($existing, $type, $theme, $path) {
+  return [
+    'silfi_avviso_block' => [
+      // We use 'variables' when the item to be passed is an array whose
+      // structure must be described here.
+      'variables' => [
+        'alert' => NULL,
+      ],
+    ],
+  ];
+}

@@ -1,0 +1,20 @@
+uuid: 9f081c25-5c36-4241-b0a4-e3a413a87a8c
+langcode: it
+status: true
+dependencies:
+  module:
+    - silfi_meteo
+  theme:
+    - scaenographia
+id: scaenographia_silfimeteoavviso
+theme: scaenographia
+region: before_content_full_width
+weight: 0
+provider: null
+plugin: silfi_avviso_meteo
+settings:
+  id: silfi_avviso_meteo
+  label: 'Silfi Meteo: Avviso'
+  label_display: '0'
+  provider: silfi_meteo
+visibility: {  }

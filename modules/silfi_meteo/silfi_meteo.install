@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the silfi_meteo module.
+ */
+
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function silfi_meteo_install() {
+  // uninstall Internal Page Cache module for Allerta Meteo block
+  \Drupal::service('module_installer')->uninstall(['page_cache']);
+  \Drupal::messenger()->addMessage(
+    'Disabilitato modulo Internal Page Cache, per il funzionamento del blocco di avviso meteo.');
+}
+
+/**
+ * Messages.
+ *
+ * @param mixed $sandbox
+ *   The sandbox variable.
+ */
+function silfi_meteo_update_8001(&$sandbox) {
+  \Drupal::messenger()->addMessage(
+    '<h1>Attenzione</h1>Settare nel <a href="/admin/structure/feeds/manage/allerta_meteo/tamper/28f4c4a7-4500-475b-9c51-e1a709ba9283/edit">filtro tamper</a> l\'Unità organizzatrice responsabile per gli Avvisi meteo.<br>');
+}

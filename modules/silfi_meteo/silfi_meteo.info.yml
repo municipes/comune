@@ -1,0 +1,15 @@
+name: Silfi Avvisi Meteo
+description: 'This module adds METEO block visibility conditions for scheduling blocks.'
+type: module
+package: Silfi
+core_version_requirement: ^10
+dependencies:
+  - "drupal:block"
+  - "color_field:color_field"
+  - "feeds:feeds"
+  - "feeds_ex:feeds_ex"
+  - "feeds_tamper:feeds_tamper"
+  - "scheduler:scheduler"
+
+version: '1.0.0'
+

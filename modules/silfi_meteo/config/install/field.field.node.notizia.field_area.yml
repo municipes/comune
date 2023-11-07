@@ -1,0 +1,19 @@
+uuid: 7b94559c-4b96-457c-b92e-968837a8a232
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_area
+    - node.type.notizia
+id: node.notizia.field_area
+field_name: field_area
+entity_type: node
+bundle: notizia
+label: Area
+description: 'Importato da Feeds'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

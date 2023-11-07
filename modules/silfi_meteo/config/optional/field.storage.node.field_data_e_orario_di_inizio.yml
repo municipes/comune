@@ -1,0 +1,22 @@
+uuid: 6f19605d-b1e5-41a2-85b0-b04541a472b6
+langcode: it
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: 2x783q4SfEazeTmNf-M0PXYjGZ3jmCyJOlHb46v5kLE
+id: node.field_data_e_orario_di_inizio
+field_name: field_data_e_orario_di_inizio
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

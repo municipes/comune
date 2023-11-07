@@ -1,0 +1,34 @@
+{{ attach_library('silfi_meteo/silfi_meteo.block') }}
+{% apply spaceless %}
+
+{% set map = {
+  '#9acd32': 'white',
+  '#ebcd03': 'black',
+  '#ffa500': 'black',
+  '#ff0000': 'white',
+} %}
+{% set bkg_color = create_attribute().setAttribute('style', 'min-height: 0; background-color: ' ~ alert.exadecimal) %}
+{% set txt_color = create_attribute().setAttribute('style', 'color: ' ~ map[alert.exadecimal|lower]) %}
+<section{{bkg_color}} class="it-hero-wrapper avviso-meteo">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        {{ drupal_image(alert.icon, '', {alt: alert.sector}, responsive=true) }}
+        {# <img class="img-responsive" src="{{ alert.icon }}" alt="icona settore allerta: {{ alert.sector }}"> #}
+      </div>
+      <div class="col-9">
+        <div{{ txt_color }} class="it-hero-text-wrapper">
+          <span{{ txt_color }} class="it-Categoria h4">{{ alert.code }}</span>
+          <h2{{ txt_color }}>#AllertaMeteo</h2>
+          <p{{ txt_color }} class="d-block fs-4"><strong>{{ alert.area }}</strong></p>
+          <div class="it-btn-container">
+            <a{{ txt_color.setAttribute('style', 'color: ' ~ map[alert.exadecimal|lower] ~ '; box-shadow: inset 0 0 0 2px ' ~ map[alert.exadecimal|lower]) }}
+             class="btn btn-sm btn-outline-primary" href="{{ info_link }}">Maggiori informazioni</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endapply %}

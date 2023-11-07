@@ -1,0 +1,22 @@
+uuid: b2a66e36-531d-4503-81c3-463214650057
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colore_esadecimale
+    - node.type.notizia
+  module:
+    - color_field
+id: node.notizia.field_colore_esadecimale
+field_name: field_colore_esadecimale
+entity_type: node
+bundle: notizia
+label: 'Colore esadecimale'
+description: 'Importato da Feeds'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

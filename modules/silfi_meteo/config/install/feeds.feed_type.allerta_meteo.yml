@@ -1,0 +1,330 @@
+uuid: 920f0deb-d189-40cc-9cc1-e9fd44346748
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.notizia.title
+    - field.field.node.notizia.field_area
+    - field.field.node.notizia.field_argomenti
+    - field.field.node.notizia.field_codice_allerta
+    - field.field.node.notizia.field_colore_esadecimale
+    - field.field.node.notizia.field_data_e_orario_di_fine
+    - field.field.node.notizia.field_data_e_orario_di_inizio
+    - field.field.node.notizia.field_data_fine
+    - field.field.node.notizia.field_data_inizio
+    - field.field.node.notizia.field_descrizione_breve
+    - field.field.node.notizia.field_descrizione_completa
+    - field.field.node.notizia.field_id_avviso
+    - field.field.node.notizia.field_immagine_settore
+    - field.field.node.notizia.field_settore
+    - field.field.node.notizia.field_tipo_di_notizia
+    - field.field.node.notizia.field_ulteriori_informazioni
+    - field.field.node.notizia.field_unita_organizzativa
+    - node.type.notizia
+  module:
+    - color_field
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      28f4c4a7-4500-475b-9c51-e1a709ba9283:
+        default_value: 'Ufficio cultura'
+        only_if_empty: false
+        uuid: 28f4c4a7-4500-475b-9c51-e1a709ba9283
+        plugin: default_value
+        source: uo
+        weight: 0
+        label: 'Set value or default value'
+      e794c3e6-3d2a-4fd1-9cd8-b646ecaf5077:
+        allowed_tags: ''
+        uuid: e794c3e6-3d2a-4fd1-9cd8-b646ecaf5077
+        plugin: strip_tags
+        source: descrizione
+        weight: 0
+        label: 'Strip tags'
+      7763206d-70ef-4ad4-873d-b215b4a4e4a7:
+        to_from: from
+        copy_source: settore
+        uuid: 7763206d-70ef-4ad4-873d-b215b4a4e4a7
+        plugin: copy
+        source: settore
+        weight: 0
+        label: Copia
+label: 'Allerta Meteo'
+id: allerta_meteo
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.*'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: notizia
+  langcode: it
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  visib_start:
+    value: visib_start
+    label: visib_start
+    machine_name: visib_start
+    type: json
+  visib_end:
+    value: visib_end
+    label: visib_end
+    machine_name: visib_end
+    type: json
+  node_title:
+    value: node_title
+    label: node_title
+    machine_name: node_title
+    type: json
+  area:
+    value: area
+    label: area
+    machine_name: area
+    type: json
+  tipo:
+    value: tipo
+    label: tipo
+    machine_name: tipo
+    type: json
+  descrizione:
+    value: descrizione
+    label: descrizione
+    machine_name: descrizione
+    type: json
+  valid_start:
+    value: valid_start
+    label: valid_start
+    machine_name: valid_start
+    type: json
+  valid_end:
+    value: valid_end
+    label: valid_end
+    machine_name: valid_end
+    type: json
+  argomenti:
+    value: argomenti
+    label: argomenti
+    machine_name: argomenti
+    type: json
+  immagine:
+    value: immagine
+    label: immagine
+    machine_name: immagine
+    type: json
+  corpo:
+    value: corpo
+    label: corpo
+    machine_name: corpo
+    type: json
+  allerta:
+    value: allerta
+    label: allerta
+    machine_name: allerta
+    type: json
+  esadecimale:
+    value: esadecimale
+    label: esadecimale
+    machine_name: esadecimale
+    type: json
+  settore:
+    value: settore
+    label: settore
+    machine_name: settore
+    type: json
+  nid:
+    value: nid
+    label: nid
+    machine_name: nid
+    type: json
+  uo:
+    value: UO
+    label: UO
+    machine_name: uo
+    type: blank
+  previsto:
+    value: previsto
+    label: previsto
+    machine_name: previsto
+    type: json
+  info:
+    value: info
+    label: info
+    machine_name: info
+    type: json
+  status:
+    value: status
+    label: status
+    machine_name: status
+    type: json
+mappings:
+  -
+    target: unpublish_on
+    map:
+      value: visib_end
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: title
+    map:
+      value: node_title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_tipo_di_notizia
+    map:
+      target_id: tipo
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: tipi_di_notizia
+  -
+    target: field_descrizione_breve
+    map:
+      value: descrizione
+    settings:
+      language: null
+  -
+    target: field_data_inizio
+    map:
+      value: valid_start
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_data_fine
+    map:
+      value: valid_end
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_argomenti
+    map:
+      target_id: argomenti
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: argomenti
+  -
+    target: field_descrizione_completa
+    map:
+      value: corpo
+    settings:
+      language: ''
+      format: bootstrap_italia_2
+  -
+    target: field_codice_allerta
+    map:
+      value: allerta
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_colore_esadecimale
+    map:
+      color: esadecimale
+      opacity: ''
+    settings:
+      language: null
+      format: '#hexhex'
+  -
+    target: field_area
+    map:
+      value: area
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_settore
+    map:
+      value: settore
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_id_avviso
+    map:
+      value: nid
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_unita_organizzativa
+    map:
+      target_id: uo
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: unita_organizzativa
+      feeds_item: false
+  -
+    target: field_ulteriori_informazioni
+    map:
+      value: info
+    settings:
+      language: ''
+      format: bootstrap_italia_2
+  -
+    target: field_data_e_orario_di_inizio
+    map:
+      value: valid_start
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_data_e_orario_di_fine
+    map:
+      value: valid_end
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_immagine_settore
+    map:
+      target_id: immagine
+      alt: settore
+      title: ''
+    settings:
+      language: ''
+      reference_by: fid
+      autocreate: 1
+      existing: '1'
+      autocreate_bundle: false
+  -
+    target: status
+    map:
+      value: status
+    settings:
+      language: null

@@ -1,0 +1,13 @@
+.it-hero-wrapper.avviso-meteo {
+  min-height: 0;
+}
+
+.it-hero-wrapper.avviso-meteo .it-hero-text-wrapper {
+  padding: 20px 40% 58px 20px;
+  color: black;
+}
+
+.avviso-meteo img {
+  max-width: 18rem;
+  /* max-height: 2rem; */
+}

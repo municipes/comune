@@ -1,0 +1,20 @@
+uuid: 0e09f0e7-cbb8-4074-9220-253dff89a5e2
+langcode: it
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+id: node.field_colore_esadecimale
+field_name: field_colore_esadecimale
+entity_type: node
+type: color_field_type
+settings:
+  format: '#hexhex'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

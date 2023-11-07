@@ -1,0 +1,22 @@
+uuid: 085148c0-8a77-45d7-8fec-b6a997806e5c
+langcode: it
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: gWal3metkLIJrO5ip6dT2DioSG_xQIImJ8Sub5A62rw
+id: node.field_data_e_orario_di_fine
+field_name: field_data_e_orario_di_fine
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

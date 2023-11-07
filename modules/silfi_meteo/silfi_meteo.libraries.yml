@@ -1,0 +1,4 @@
+silfi_meteo.block:
+  css:
+    theme:
+      css/avviso-meteo.css: {}
