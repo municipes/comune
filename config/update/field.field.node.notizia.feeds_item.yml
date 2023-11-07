@@ -1,0 +1,23 @@
+uuid: 1556c619-16bf-4611-a9f0-cea9f746125f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.notizia
+  module:
+    - feeds
+id: node.notizia.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: notizia
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item
