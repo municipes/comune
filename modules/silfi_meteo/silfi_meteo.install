@@ -15,9 +15,8 @@
  */
 function silfi_meteo_install() {
   // uninstall Internal Page Cache module for Allerta Meteo block
-  \Drupal::service('module_installer')->uninstall(['page_cache']);
-  \Drupal::messenger()->addMessage(
-    'Disabilitato modulo Internal Page Cache, per il funzionamento del blocco di avviso meteo.');
+  $messenger = \Drupal::messenger();
+  $messenger->addStatus(t('Disabilitato modulo Internal Page Cache, per il funzionamento del blocco di avviso meteo.'));
 }
 
 /**
@@ -27,6 +26,8 @@ function silfi_meteo_install() {
  *   The sandbox variable.
  */
 function silfi_meteo_update_8001(&$sandbox) {
-  \Drupal::messenger()->addMessage(
-    '<h1>Attenzione</h1>Settare nel <a href="/admin/structure/feeds/manage/allerta_meteo/tamper/28f4c4a7-4500-475b-9c51-e1a709ba9283/edit">filtro tamper</a> l\'Unità organizzatrice responsabile per gli Avvisi meteo.<br>');
+  $messenger = \Drupal::messenger();
+  $messenger->addStatus(t('<strong>Attenzione:</strong> Settare nel <a href=":tamper_url">filtro Tamper</a>. l\'Unità organizzatrice responsabile per gli Avvisi meteo.', [
+    ':tamper_url' => Url::fromUri('internal:/admin/structure/feeds/manage/allerta_meteo/tamper/28f4c4a7-4500-475b-9c51-e1a709ba9283/edit')->toString(),
+  ]));
 }
