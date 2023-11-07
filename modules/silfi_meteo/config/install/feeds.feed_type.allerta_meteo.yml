@@ -59,7 +59,7 @@ label: 'Allerta Meteo'
 id: allerta_meteo
 description: ''
 help: ''
-import_period: 3600
+import_period: 900
 fetcher: http
 fetcher_configuration:
   auto_detect_feeds: false
