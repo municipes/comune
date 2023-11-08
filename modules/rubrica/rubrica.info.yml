@@ -4,4 +4,5 @@ description: Genera rubrica con ricerca
 package: Silfi
 core_version_requirement: ^9.5 || ^10
 dependencies:
-  - drupal:node
+  - drupal:basic_auth
+  - drupal:rest
