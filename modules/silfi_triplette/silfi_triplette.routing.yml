@@ -1,0 +1,42 @@
+silfi_triplette.config:
+  path: '/admin/config/system/silfi-triplette'
+  defaults:
+    _title: 'Silfi Triplette settings'
+    _form: 'Drupal\silfi_triplette\Form\SettingsForm'
+  requirements:
+    _permission: 'administer silfi_triplette configuration'
+
+silfi_triplette.config.import:
+  path: '/admin/config/system/silfi-triplette/import'
+  defaults:
+    _title: 'Silfi Triplette import'
+    _form: 'Drupal\silfi_triplette\Form\ImportForm'
+  requirements:
+    _permission: 'administer silfi_triplette configuration'
+
+silfi_triplette.config.test:
+  path: '/admin/config/system/silfi-triplette/test'
+  defaults:
+    _title: 'Silfi Triplette test'
+    _controller: '\Drupal\silfi_triplette\Controller\TripletteTestController::testTriplette'
+  requirements:
+    _permission: 'administer silfi_triplette configuration'
+
+silfi_triplette.config.delete:
+  path: '/admin/config/system/silfi-triplette/delete'
+  defaults:
+    _title: 'Silfi Triplette delete'
+    _form: 'Drupal\silfi_triplette\Form\DeleteForm'
+  requirements:
+    _permission: 'administer silfi_triplette configuration'
+
+silfi_triplette.lightweight_cron:
+  path: '/silfi_triplette/cron/{cron_key}'
+  defaults:
+    _controller: '\Drupal\silfi_triplette\Controller\LightweightCronController::index'
+    _description: 'Run the lightweight cron process'
+    _title: 'Lightweight cron'
+  options:
+    no_cache: TRUE
+  requirements:
+    _custom_access: '\Drupal\silfi_triplette\Controller\LightweightCronController::access'

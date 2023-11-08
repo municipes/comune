@@ -1,0 +1,8 @@
+services:
+  silfi_triplette.commands:
+    class: \Drupal\silfi_triplette\Commands\TripletteCommands
+    arguments:
+      - '@silfi_triplette.import'
+      - '@messenger'
+    tags:
+      - { name: drush.command }

@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Silfi Triplette module.
+ */
+
+DEFINE('SILFI_TRIPLETTE_VOC', 'triplette');
+
+/**
+ * Implements hook_theme().
+ *
+ * Defines the theming capabilities provided by this module.
+ */
+function silfi_triplette_theme($existing, $type, $theme, $path) {
+  return [
+    'triplette_test' => [
+      // We use 'variables' when the item to be passed is an array whose
+      // structure must be described here.
+      'variables' => [
+        'data' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_help().
+ */
+function silfi_triplette_help($route_name, RouteMatchInterface $route_match) {
+  $output = '';
+  switch ($route_name) {
+
+    case 'silfi_triplette.config':
+      $base_url = $GLOBALS['base_url'];
+      $access_key = \Drupal::config('silfi_triplette.settings')->get('lightweight_cron_access_key');
+      $cron_url = $base_url . '/silfi_triplette/cron/' . $access_key;
+      $output = '<p>' . t("When you have set up Drupal's standard crontab job cron.php then Triplette will be executed during each cron run. However, if you would like finer granularity to scheduler, but don't want to run Drupal's cron more often then you can use the lightweight cron handler provided by Triplette. This is an independent cron job which only runs the scheduler process and does not execute any cron tasks defined by Drupal core or any other modules.") . '</p>';
+      $output .= '<p>' . t("Triplette's cron is at /silfi_triplette/cron/{access-key} and a sample crontab entry to run scheduler every minute might look like:") . '</p>';
+      $output .= '<code>* * * * * wget -q -O /dev/null "' . $cron_url . '"</code>';
+      $output .= '<p>' . t('or') . '</p>';
+      $output .= '<code>* * * * * curl -s -o /dev/null "' . $cron_url . '"</code><br/><br/>';
+      break;
+
+    default:
+  }
+  return $output;
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * We implement hook_cron() to do "background" processing. It gets called every
+ * time the Drupal cron runs. We then decide what has to happen in response.
+ *
+ * In this code, we log a message after the time given in the state value
+ * 'silfi_triplette.next_execution'. Then we update that variable to a time in the
+ * future.
+ */
+function silfi_triplette_cron() {
+  // We access our configuration.
+  $cron_config = \Drupal::config('silfi_triplette.settings');
+  if ($cron_config->get('silfi_triplette_sync')) {
+    // Default to an hourly interval. Of course, cron has to be running at least
+    // hourly for this to work.
+    $interval = $cron_config->get('silfi_triplette_timecron');
+    $interval = !empty($interval) ? $interval : 3600;
+
+    // We usually don't want to act every time cron runs (which could be every
+    // minute) so keep a time for the next run in the site state.
+    $next_execution = \Drupal::state()->get('silfi_triplette.next_execution', 0);
+    $request_time = \Drupal::time()->getRequestTime();
+    if ($request_time >= $next_execution) {
+      if ($data = \Drupal::service('silfi_triplette.triplette_json_data')->getTripletteData()) {
+        \Drupal::service('silfi_triplette.import')->createAllTreeTerms($data);
+      }
+      \Drupal::logger('silfi_triplette')->notice('silfi_triplette ran');
+      if (\Drupal::state()->get('silfi_triplette_show_status_message')) {
+        \Drupal::messenger()->addMessage(t('silfi_triplette executed at %time', ['%time' => date('c')]));
+        \Drupal::state()->set('silfi_triplette_show_status_message', FALSE);
+      }
+      \Drupal::state()->set('silfi_triplette.next_execution', $request_time + $interval);
+    }
+  }
+
+}

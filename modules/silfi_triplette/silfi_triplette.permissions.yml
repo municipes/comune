@@ -1,0 +1,4 @@
+administer silfi_triplette configuration:
+  title: 'Administer silfi_triplette configuration'
+  description: 'Optional description.'
+  restrict access: true

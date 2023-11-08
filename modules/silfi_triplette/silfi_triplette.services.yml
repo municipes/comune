@@ -1,0 +1,12 @@
+services:
+  silfi_triplette.triplette_json_data:
+    class: Drupal\silfi_triplette\TripletteJsonData
+    arguments: ['@config.factory', '@http_client', '@logger.channel.silfi_triplette']
+
+  silfi_triplette.import:
+    class: Drupal\silfi_triplette\TripletteImport
+    arguments: ['@config.factory', '@messenger', '@logger.channel.silfi_triplette']
+
+  logger.channel.silfi_triplette:
+    parent: logger.channel_base
+    arguments: ['silfi_triplette']

@@ -1,0 +1,39 @@
+# This file creates static local tasks (Tabs).
+# This file will be needed to place in module root.
+#
+# 'title' of the tab will show up on the user interface and tab.
+#
+# 'base_route' is the same as the name of the route where the "default" tab
+# appears. The base_route is used to group together related tabs.
+#
+# 'weight' is used to provide weights for the tabs if needed.
+# The tab whose route is the same as the base_route will by default
+# get a negative weight and appear on the left.
+#
+# 'parent_id' is used to create multi level of tabs.
+# To relate a tab to its parent use same name as parent_id as shown below in
+# examples.menu_example.tabs.secondary.
+#
+silfi_triplette.config:
+  route_name: silfi_triplette.config
+  base_route: silfi_triplette.config
+  title: 'Settings'
+  weight: 10
+
+silfi_triplette.config.import:
+  route_name: silfi_triplette.config.import
+  base_route: silfi_triplette.config
+  title: 'Import'
+  weight: 20
+
+silfi_triplette.config.test:
+  route_name: silfi_triplette.config.test
+  base_route: silfi_triplette.config
+  title: 'Test'
+  weight: 30
+
+silfi_triplette.config.delete:
+  route_name: silfi_triplette.config.delete
+  base_route: silfi_triplette.config
+  title: 'Delete (danger!)'
+  weight: 40

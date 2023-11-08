@@ -1,0 +1,28 @@
+<h2>Elementi totali: {{ data.totalElements }}</h2>
+
+<table class="responsive-enabled sticky-enabled sticky-table">
+  <thead>
+    <th>N.</td>
+    <th>ID</td>
+    <th>Ente</td>
+    <th>Macrostruttura</td>
+    <th>Servizio</td>
+    <th>Descrizione Macrostruttura</td>
+    <th>Descrizione Servizio</td>
+    <th>Descrizione</td>
+  </thead>
+  <tbody>
+  {% for item in data.content %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.ente }}</td>
+      <td>{{ item.macrostruttura }}</td>
+      <td>{{ item.servizio }}</td>
+      <td>{{ item.descMacrostruttura }}</td>
+      <td>{{ item.descServizio }}</td>
+      <td>{{ item.descrizione }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

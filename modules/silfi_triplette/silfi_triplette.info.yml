@@ -1,0 +1,10 @@
+name: Silfi Triplette
+type: module
+description: Importazione della tassonomia Triplette
+package: Custom
+core_version_requirement: ^9 || ^10
+configure: silfi_triplette.config
+dependencies:
+  - drupal:taxonomy
+
+version: '1.0.0'

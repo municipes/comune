@@ -1,0 +1,90 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Silfi Triplette module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function silfi_triplette_install() {
+  // Set cron access key value, as this is now required in SchedulerCronForm.
+  \Drupal::service('config.factory')->getEditable('silfi_triplette.settings')
+    ->set('lightweight_cron_access_key', substr(md5(rand()), 0, 32))
+    ->save();
+
+  \Drupal::messenger()->addStatus(__FUNCTION__);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function silfi_triplette_uninstall() {
+  \Drupal::messenger()->addStatus(__FUNCTION__);
+}
+
+/**
+ * Implements hook_schema().
+ */
+function silfi_triplette_schema() {
+  $schema['silfi_triplette'] = [
+    'description' => 'Triplette fields.',
+    'fields' => [
+      'sid' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'ente' => [
+        'type' => 'text',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ],
+      'macrostruttura' => [
+        'type' => 'text',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ],
+      'servizio' => [
+        'type' => 'text',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ],
+      'id' => [
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ],
+      'tid' => [
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ],
+      'obj' => [
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'changed' => [
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'changedby' => [
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => TRUE,
+        'default' => 1,
+      ],
+    ],
+    'unique keys' => [
+      'pub_story' => ['id', 'sid'],
+    ],
+    'primary key' => ['sid'],
+  ];
+
+  return $schema;
+}
+

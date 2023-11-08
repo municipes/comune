@@ -1,0 +1,20 @@
+# Schema for the configuration files of the Silfi Triplette module.
+silfi_triplette.settings:
+  type: config_object
+  label: 'Silfi Triplette settings'
+  mapping:
+    silfi_triplette_url:
+      type: string
+      label: 'URL host'
+    silfi_triplette_codice_ente:
+      type: string
+      label: 'Codice Ente'
+    silfi_triplette_sync:
+      type: integer
+      label: 'Attivazione cron'
+    silfi_triplette_timecron:
+      type: string
+      label: 'Frequenza cron'
+    lightweight_cron_access_key:
+      type: string
+      label: Lightweight cron access key
