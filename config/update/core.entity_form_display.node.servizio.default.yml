@@ -1,0 +1,563 @@
+uuid: 581f142b-8555-4f2b-9441-b57711038052
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.paragraph
+    - field.field.node.servizio.field_a_chi_e_rivolto
+    - field.field.node.servizio.field_accedi_al_servizio
+    - field.field.node.servizio.field_allegati
+    - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_business_events
+    - field.field.node.servizio.field_casi_particolari
+    - field.field.node.servizio.field_categoria_del_servizio
+    - field.field.node.servizio.field_codice_dell_ente_erogatore
+    - field.field.node.servizio.field_come_fare
+    - field.field.node.servizio.field_condizioni_di_servizio
+    - field.field.node.servizio.field_copertura_geografica
+    - field.field.node.servizio.field_cosa_serve
+    - field.field.node.servizio.field_cosa_si_ottiene
+    - field.field.node.servizio.field_costi
+    - field.field.node.servizio.field_descrizione_breve
+    - field.field.node.servizio.field_descrizione_completa
+    - field.field.node.servizio.field_destinazioni
+    - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_immagine
+    - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_link_esterni
+    - field.field.node.servizio.field_motivo_dello_stato
+    - field.field.node.servizio.field_normativa_di_riferimento
+    - field.field.node.servizio.field_note_interne
+    - field.field.node.servizio.field_parole_chiave
+    - field.field.node.servizio.field_procedure_collegate_esito
+    - field.field.node.servizio.field_promemoria_accesso
+    - field.field.node.servizio.field_punti_di_contatto
+    - field.field.node.servizio.field_reclami_ricorsi_opposizion
+    - field.field.node.servizio.field_schede_collegate
+    - field.field.node.servizio.field_settore_merceologico
+    - field.field.node.servizio.field_sottotitolo
+    - field.field.node.servizio.field_stato_del_servizio
+    - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
+    - field.field.node.servizio.field_ulteriori_informazioni
+    - field.field.node.servizio.field_unita_organizzative
+    - field.field.node.servizio.field_vincoli
+    - node.type.servizio
+  module:
+    - field_group
+    - inline_entity_form
+    - link
+    - media_library
+    - paragraphs
+    - path
+    - scheduler
+    - text
+third_party_settings:
+  field_group:
+    group_contenitore:
+      children:
+        - group_contenuto
+        - group_contenuto_2
+        - group_dati_non_visibili
+      label: Contenitore
+      region: content
+      parent_name: ''
+      weight: 47
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_contenuto:
+      children:
+        - field_categoria_del_servizio
+        - field_stato_del_servizio
+        - field_motivo_dello_stato
+        - field_sottotitolo
+        - field_immagine
+        - field_descrizione_breve
+        - field_a_chi_e_rivolto
+        - field_descrizione_completa
+        - field_copertura_geografica
+        - field_come_fare
+        - field_cosa_serve
+        - field_cosa_si_ottiene
+        - field_tempi_e_scadenze
+        - field_costi
+        - field_procedure_collegate_esito
+        - field_accedi_al_servizio
+        - field_vincoli
+        - field_casi_particolari
+        - field_ulteriori_informazioni
+        - field_condizioni_di_servizio
+        - field_punti_di_contatto
+        - field_unita_organizzative
+        - field_documenti
+        - field_argomenti
+      label: Contenuto
+      region: content
+      parent_name: group_contenitore
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_dati_non_visibili:
+      children:
+        - field_life_events
+        - field_business_events
+        - field_codice_dell_ente_erogatore
+        - field_settore_merceologico
+        - field_note_interne
+        - field_parole_chiave
+        - field_triplette
+        - unpublish_on
+        - field_destinazioni
+        - scheduler_settings
+        - publish_on
+      label: 'Dati non visibili'
+      region: content
+      parent_name: group_contenitore
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_contenuto_2:
+      children:
+        - field_normativa_di_riferimento
+        - field_reclami_ricorsi_opposizion
+        - field_schede_collegate
+        - field_link_esterni
+        - field_allegati
+      label: 'Contenuto 2'
+      region: content
+      parent_name: group_contenitore
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: HVrjcoHMEIhR71Hld1URzvkz2IdNdW6FUjrjJ6GxMxw
+id: node.servizio.default
+targetEntityType: node
+bundle: servizio
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_a_chi_e_rivolto:
+    type: text_textarea
+    weight: -2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_accedi_al_servizio:
+    type: inline_entity_form_complex
+    weight: 7
+    region: content
+    settings:
+      form_mode: paragraph
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: true
+      collapsed: false
+      revision: true
+      removed_reference: optional
+    third_party_settings: {  }
+  field_allegati:
+    type: media_library_widget
+    weight: 43
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_argomenti:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_business_events:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_casi_particolari:
+    type: text_textarea
+    weight: 9
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_categoria_del_servizio:
+    type: options_buttons
+    weight: -8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_codice_dell_ente_erogatore:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_come_fare:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_condizioni_di_servizio:
+    type: media_library_widget
+    weight: 11
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_copertura_geografica:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_cosa_serve:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_cosa_si_ottiene:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_costi:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_descrizione_breve:
+    type: string_textarea
+    weight: -3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_descrizione_completa:
+    type: text_textarea
+    weight: -1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_destinazioni:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_documenti:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_immagine:
+    type: media_library_widget
+    weight: -4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_life_events:
+    type: options_buttons
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link_esterni:
+    type: link_default
+    weight: 42
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_motivo_dello_stato:
+    type: text_textarea
+    weight: -6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_normativa_di_riferimento:
+    type: text_textarea
+    weight: 39
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_note_interne:
+    type: text_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_parole_chiave:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_procedure_collegate_esito:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_punti_di_contatto:
+    type: inline_entity_form_complex
+    weight: 12
+    region: content
+    settings:
+      form_mode: paragraph
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  field_reclami_ricorsi_opposizion:
+    type: text_textarea
+    weight: 40
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_schede_collegate:
+    type: entity_reference_autocomplete
+    weight: 41
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_settore_merceologico:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sottotitolo:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_stato_del_servizio:
+    type: boolean_checkbox
+    weight: -7
+    region: content
+    settings:
+      display_label: false
+    third_party_settings: {  }
+  field_tempi_e_scadenze:
+    type: paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragrafo
+      title_plural: Paragrafi
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+  field_triplette:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ulteriori_informazioni:
+    type: text_textarea
+    weight: 10
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_unita_organizzative:
+    type: options_buttons
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_vincoli:
+    type: text_textarea
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_promemoria_accesso: true
