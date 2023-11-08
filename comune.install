@@ -268,3 +268,10 @@ function comune_update_8005() {
   comune_run_migration('path_aliases', 'update');
   \Drupal::service('module_installer')->uninstall(['navigatio']);
 }
+
+/**
+ * Enable statistic module.
+ */
+function comune_update_8006() {
+  \Drupal::service('module_installer')->install(['statistics'], TRUE);
+}
