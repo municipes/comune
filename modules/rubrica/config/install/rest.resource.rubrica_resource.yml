@@ -7,6 +7,9 @@ dependencies:
     - rubrica
     - serialization
     - user
+  enforced:
+    module:
+      - rubrica
 id: rubrica_resource
 plugin_id: rubrica_resource
 granularity: resource
