@@ -6,6 +6,7 @@ dependencies:
     - node.type.servizio
   module:
     - node
+    - statistics
     - user
 _core:
   default_config_hash: MISmjYBW8inrG2AswsEdpJXYXf6tXNinI7e3ehyzOrw
@@ -128,6 +129,19 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
+        totalcount:
+          id: totalcount
+          table: node_counter
+          field: totalcount
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
@@ -223,10 +237,58 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'In evidenza'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Più richiesti'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: 'Servizi più richiesti'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            servizio: servizio
+          group: 1
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1

@@ -25,7 +25,6 @@ dependencies:
     - field.field.node.persona.field_view_reference
     - node.type.persona
   module:
-    - text
     - user
 _core:
   default_config_hash: iEmBIREvCLQ1rm_V7N_JCzIJ04qqKwD93z-XNN3U-7I
@@ -34,13 +33,6 @@ targetEntityType: node
 bundle: persona
 mode: teaser
 content:
-  field_competenze:
-    type: text_default
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_descrizione_breve:
     type: basic_string
     label: hidden
@@ -55,17 +47,18 @@ content:
       view_mode: card_teaser
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   field_altre_cariche: true
   field_biografia: true
   field_cognome: true
+  field_competenze: true
   field_curriculum_vitae: true
   field_deleghe: true
   field_dichiarazione_dei_redditi: true

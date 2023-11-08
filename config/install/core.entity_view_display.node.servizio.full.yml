@@ -38,6 +38,7 @@ dependencies:
     - field.field.node.servizio.field_sottotitolo
     - field.field.node.servizio.field_stato_del_servizio
     - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
     - field.field.node.servizio.field_ulteriori_informazioni
     - field.field.node.servizio.field_unita_organizzative
     - field.field.node.servizio.field_vincoli
@@ -148,8 +149,8 @@ content:
           intro_text: ''
           label_size: h4
           label_visible: visible
-          label_menu: not_visible
-          heading_value: h3
+          label_menu: visible
+          heading_value: h2
           use_card: 0
           has_bg_grey: 0
           audio: null

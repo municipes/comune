@@ -6,11 +6,10 @@ dependencies:
     - field.storage.node.field_sottotitolo
     - search_api.index.servizi
     - taxonomy.vocabulary.categorie_dei_servizi
-    - views.view.bi_servizi_in_evidenza
   module:
     - search_api
 _core:
-  default_config_hash: 05eKOqsbOFbbgr3Ze2L0eclW9CarrEQaOAWsc7QF5Jw
+  default_config_hash: BAl9tuRY6bRFU5Zcr7AYB3rdLpHo3eyP5dguflEby1w
 id: bi_tutti_i_servizi_indice
 label: 'BI Tutti i servizi (indice)'
 module: views
@@ -308,22 +307,32 @@ display:
       css_class: 'row g-4'
       header: {  }
       footer:
-        view:
-          id: view
-          table: views
-          field: view
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: view
-          empty: true
-          view_to_insert: 'bi_servizi_in_evidenza:block_1'
-          inherit_arguments: false
         entity_block:
           id: entity_block
           table: views
           field: entity_block
+          relationship: none
+          group_type: group
+          admin_label: ''
           plugin_id: entity
+          empty: false
+          target: scaenographia_views_block__bi_servizi_in_evidenza_block_1
+          view_mode: default
+          tokenize: false
+          bypass_access: false
+        entity_block_1:
+          id: entity_block_1
+          table: views
+          field: entity_block
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: entity
+          empty: false
+          target: scaenographia_views_block__bi_servizi_in_evidenza_block_2
+          view_mode: default
+          tokenize: false
+          bypass_access: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

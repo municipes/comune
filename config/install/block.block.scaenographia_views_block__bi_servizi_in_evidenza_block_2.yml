@@ -1,0 +1,24 @@
+uuid: 2eb5cfc7-d057-4e79-928c-a744b27c409a
+langcode: it
+status: true
+dependencies:
+  config:
+    - views.view.bi_servizi_in_evidenza
+  module:
+    - views
+  theme:
+    - scaenographia
+id: scaenographia_views_block__bi_servizi_in_evidenza_block_2
+theme: scaenographia
+region: disabled_blocks
+weight: 0
+provider: null
+plugin: 'views_block:bi_servizi_in_evidenza-block_2'
+settings:
+  id: 'views_block:bi_servizi_in_evidenza-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

@@ -38,6 +38,7 @@ dependencies:
     - field.field.node.servizio.field_sottotitolo
     - field.field.node.servizio.field_stato_del_servizio
     - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_triplette
     - field.field.node.servizio.field_ulteriori_informazioni
     - field.field.node.servizio.field_unita_organizzative
     - field.field.node.servizio.field_vincoli
@@ -113,9 +114,9 @@ third_party_settings:
         - field_business_events
         - field_codice_dell_ente_erogatore
         - field_settore_merceologico
-        - field_triplette
         - field_note_interne
         - field_parole_chiave
+        - field_triplette
         - unpublish_on
         - field_destinazioni
         - scheduler_settings
@@ -457,7 +458,7 @@ content:
     third_party_settings: {  }
   field_triplette:
     type: options_select
-    weight: 13
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
