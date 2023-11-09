@@ -49,7 +49,7 @@ class LogFileManager implements LogFileManagerInterface {
    */
   public function getFileName(): string {
     $siteId = $this->config->get('id_site');
-    $filename = (NULL === $siteId) ? static::FILENAME : 'logstat_' . $siteId . '.log';
+    $filename = (NULL === $siteId) ? static::FILENAME : 'logstash-rc-' . $siteId . '.log';
     return $this->config->get('file.location') . '/' . $filename;
   }
 
