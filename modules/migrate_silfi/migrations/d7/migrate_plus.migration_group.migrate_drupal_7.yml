@@ -1,0 +1,14 @@
+uuid: 78f8ffc7-5989-489e-a1fe-d5bd02958c3b
+langcode: it
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: S3GR08uI1MG6NEQKS_BDsp6YYbFLvDXvmn-IKp0CCEk
+id: migrate_drupal_7
+label: 'Import from Silfi Drupal 7'
+description: 'Comuni Drupal 7'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: migrate
