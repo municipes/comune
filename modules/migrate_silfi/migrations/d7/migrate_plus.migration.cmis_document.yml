@@ -81,8 +81,8 @@ process:
       default_value: 1
   status:
     -
-      plugin: get
-      source: status
+      plugin: default_value
+      default_value: 0
   created:
     -
       plugin: get
