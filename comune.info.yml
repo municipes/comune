@@ -79,7 +79,7 @@ install:
   - drupal:phpass
   - drupal:responsive_image
   - drupal:shortcut
-  - drupal:statistic
+  - drupal:statistics
   - drupal:syslog
   - drupal:system
   - drupal:text
