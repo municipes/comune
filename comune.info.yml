@@ -78,6 +78,7 @@ install:
   - drupal:path_alias
   - drupal:phpass
   - drupal:responsive_image
+  - drupal:rest
   - drupal:shortcut
   - drupal:statistics
   - drupal:syslog
