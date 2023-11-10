@@ -5,4 +5,4 @@ source_type: JSON
 dependencies:
   enforced:
     module:
-      - lexicum_collatio
+      - migrate_silfi_eventi_bandi7
