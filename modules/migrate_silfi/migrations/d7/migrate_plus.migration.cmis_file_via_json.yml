@@ -24,7 +24,7 @@ source:
   track_changes: true
 
   urls:
-    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/
+    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/gdbo_pontassieve_20231120_1437.json
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: content
