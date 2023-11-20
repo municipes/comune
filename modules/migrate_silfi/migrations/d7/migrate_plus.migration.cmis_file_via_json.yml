@@ -24,7 +24,7 @@ source:
   track_changes: true
 
   urls:
-    - modules/custom/migrate_silfi/json/cmis/alfresco_files.json
+    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: content
