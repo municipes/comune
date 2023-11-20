@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\silfi_migrate\Plugin\migrate\source;
+namespace Drupal\migrate_silfi\Plugin\migrate\source\d7;
 
 use Drupal\migrate_plus\Plugin\migrate\source\Url;
 use Drupal\Core\Extension\ModuleHandlerInterface;

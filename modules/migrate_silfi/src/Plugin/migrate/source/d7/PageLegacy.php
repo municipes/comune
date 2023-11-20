@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Contains \Drupal\pagina_legacy\Plugin\migrate\source\d7\AmministrazioneTrasparente.
+ * Contains \Drupal\migrate_silfi\Plugin\migrate\source\d7\AmministrazioneTrasparente.
  */
 
-namespace Drupal\pagina_legacy\Plugin\migrate\source\d7;
+namespace Drupal\migrate_silfi\Plugin\migrate\source\d7;
 
 use Drupal\migrate\Row;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
