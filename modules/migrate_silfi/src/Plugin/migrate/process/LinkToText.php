@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\silfi_migrate\Plugin\migrate\process;
+namespace Drupal\migrate_silfi\Plugin\migrate\process;
 
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\MigrateExecutableInterface;
