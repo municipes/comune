@@ -1,0 +1,105 @@
+uuid: c9bbd4e4-5502-4779-84c4-6f8c4be2a3b3
+langcode: it
+status: true
+id: upgrade_d7_node_accesso_al_servizio
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Accesso al servizio)'
+source:
+  plugin: d7_node
+  node_type: servizio_online
+  track_changes: true
+  constants:
+    link_title: 'Accedi al servizio online'
+
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+
+  field_tipo_di_accesso/target_id:
+    -
+      plugin: default_value
+      default_value: 19454
+
+  field_categoria_del_servizio:
+    plugin: sub_process
+    source: field_categoria_servizio
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          257: 36
+          259: 41
+          397: 29
+          262: 34
+          264: 31
+          256: 31
+          254: 27
+          260: 38
+          263: 39
+          261: 28
+          253: 40
+          258: 45
+
+  field_link:
+    -
+      plugin: silfi_field_link
+      uri_scheme: 'https://'
+      default_title: 'Accedi al servizio online'
+      force_title: true
+      source: field_link_servizio_online
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: accesso_al_servizio
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate
