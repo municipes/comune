@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\silfi_migrate\Plugin\migrate\source;
+namespace Drupal\migrate_silfi\Plugin\migrate\source\d7;
 
 use Drupal\file\Plugin\migrate\source\d7\File;
 use Drupal\migrate\Row;
