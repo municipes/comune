@@ -31,6 +31,8 @@ class PageLegacy extends Node {
 
   private $context;
 
+  private $notice_types;
+
   /**
    * {@inheritdoc}
    */
@@ -40,6 +42,7 @@ class PageLegacy extends Node {
     $this->not_at = $configuration['not_at'];
     $this->from_date = $configuration['from_date'];
     $this->context = $configuration['context'];
+    $this->notice_types = isset($configuration['notice_types']) ? $configuration['notice_types'] : false;
   }
 
   /**
