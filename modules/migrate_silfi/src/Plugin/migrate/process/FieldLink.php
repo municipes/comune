@@ -145,9 +145,9 @@ class FieldLink extends ProcessPluginBase {
     $value['title'] = $value['title'] ? $value['title'] : $this->configuration['default_title'];
 
     // Massage the values into the correct form for the link.
-    $route['uri'] = isset($value['url']) ?? $this->canonicalizeUri($value['url']);
+    $route['uri'] = isset($value['url']) ? $this->canonicalizeUri($value['url']) : '';
     $route['options']['attributes'] = $attributes;
-    $route['title'] = $this->configuration['force_title'] ? $this->configuration['default_title'] : $value['title'];
+    $route['title'] = $this->configuration['force_title'] ? $this->configuration['default_title'] : $lower = ucfirst(strtolower(trim($value['title'])));
     return $route;
   }
 
