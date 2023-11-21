@@ -23,6 +23,8 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
  */
 class PageLegacy extends Node {
 
+  private $node_type;
+
   private $mlid;
 
   private $not_at;
@@ -38,6 +40,7 @@ class PageLegacy extends Node {
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, StateInterface $state, EntityTypeManagerInterface $entity_type_manager, ModuleHandlerInterface $module_handler) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration, $state, $entity_type_manager, $module_handler);
+    $this->node_type = isset($configuration['node_type']) ? $configuration['node_type']: false;
     $this->mlid = $configuration['mlid'];
     $this->not_at = $configuration['not_at'];
     $this->from_date = $configuration['from_date'];
