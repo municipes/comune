@@ -61,8 +61,8 @@ class CmisDocumentJson extends Url {
   public function fields(): array {
     $fields = parent::fields();
     $fields += [
-      'title'          => $this->t('title' ),
-      'val_start'      => $this->t('val_start' ),
+      'title'          => $this->t('title'),
+      'val_start'      => $this->t('val_start'),
       'val_end'        => $this->t('val_end'),
       'tipo_documento' => $this->t('tipo_documento'),
       'abstract'       => $this->t('abstract'),
@@ -104,12 +104,13 @@ class CmisDocumentJson extends Url {
       $row->setSourceProperty('abstract', ucfirst($abstract));
     }
 
-    $title = ucfirst(strtolower($document['cm:title'] ? $document['cm:title'] : substr($description, 0, 254)));
     $description = $document['cmis:description'] ?? NULL;
+    $title = ucfirst(strtolower($document['cm:title'] ? $document['cm:title'] : $description));
+    $title = mb_substr($title, 0, 254);
 
-    if (!$title) {
-      $debug = true;
-    }
+    // if (!$title) {
+    //   $debug = true;
+    // }
 
     $row->setSourceProperty('title', $title);
     $row->setSourceProperty('description', $description);
