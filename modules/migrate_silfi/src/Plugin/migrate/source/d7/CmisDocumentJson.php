@@ -9,8 +9,8 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\silfi_migrate\CMISalfRepo;
-use Drupal\silfi_migrate\CMISalfObject;
+use Drupal\migrate_silfi\CMISalfRepo;
+use Drupal\migrate_silfi\CMISalfObject;
 
 
 /**
