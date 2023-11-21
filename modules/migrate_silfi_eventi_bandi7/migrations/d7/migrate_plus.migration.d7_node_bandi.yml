@@ -84,6 +84,7 @@ process:
           6: 21
           32: 9
           793: 9
+        bypass: true
   field_tipo_di_bando:
     plugin: sub_process
     source: field_tipo_di_contenuto
