@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.notizia.field_numero_comunicato_stampa
     - field.field.node.notizia.field_persone
     - field.field.node.notizia.field_settore
+    - field.field.node.notizia.field_tipo_di_bando
     - field.field.node.notizia.field_tipo_di_notizia
     - field.field.node.notizia.field_ulteriori_informazioni
     - field.field.node.notizia.field_unita_organizzativa
@@ -111,6 +112,7 @@ third_party_settings:
         width_breakpoint: 640
     group_notizia:
       children:
+        - field_tipo_di_bando
         - title
         - field_tipo_di_notizia
         - field_descrizione_breve
@@ -317,6 +319,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_tipo_di_bando:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_tipo_di_notizia:
     type: options_select
