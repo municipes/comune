@@ -1,0 +1,29 @@
+uuid: 4ebade43-95f5-4cee-af1e-95a8d3e0dfbf
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_di_bando
+    - node.type.notizia
+    - taxonomy.vocabulary.tipi_di_bando
+id: node.notizia.field_tipo_di_bando
+field_name: field_tipo_di_bando
+entity_type: node
+bundle: notizia
+label: 'Tipo di bando'
+description: 'Campo da selezionare nel caso di bandi e concorsi'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_di_bando: tipi_di_bando
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
