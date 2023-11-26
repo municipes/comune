@@ -258,13 +258,13 @@ class ReconciliationCommands extends DrushCommands {
         $db_query = $database->select('node__field_descrizione_completa');
         $db_query->condition('entity_id', $nid);
         $db_query->condition('field_descrizione_completa_value', "%/file/%/download%", "LIKE");
-        $db_query->addField('node__field_descrizione_completa', 'body_value');
+        $db_query->addField('node__field_descrizione_completa', 'field_descrizione_completa_value');
         $db_bodies = $db_query->execute();
         foreach ($db_bodies as $dbBody) {
-          $body = $dbBody->body_value;
+          $body = $dbBody->field_descrizione_completa_value;
           $this->replaceFiles($body, $options);
           $database->update('node__field_descrizione_completa')
-            ->fields(['body_value' => $body])
+            ->fields(['field_descrizione_completa_value' => $body])
             ->condition('entity_id', $nid)
             ->execute();
         }
