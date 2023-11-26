@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Drupal\reconciliation\Commands;
@@ -52,11 +53,9 @@ class ReconciliationCommands extends DrushCommands {
             $this->insertLinks((int)$nid, $links);
           }
         }
-
       }
       $this->output()->writeln('Finito!');
-    }
-    else {
+    } else {
       $this->output()->writeln('Errore! Tipo di contenuto obbligatorio.');
     }
   }
@@ -101,8 +100,7 @@ class ReconciliationCommands extends DrushCommands {
       try {
         $node->set('field_link_utili', $links);
         $node->save();
-      }
-      catch (\Exception $e) {
+      } catch (\Exception $e) {
         watchdog_exception('InsertLink', $e);
       }
     }
@@ -150,8 +148,7 @@ class ReconciliationCommands extends DrushCommands {
         }
       }
       $this->output()->writeln('Finito!');
-    }
-    else {
+    } else {
       $this->output()->writeln('Errore! Tipo di contenuto obbligatorio.');
     }
   }
@@ -168,7 +165,6 @@ class ReconciliationCommands extends DrushCommands {
       $sourceNids = $this->sourceNids($res, 'node');
       $this->replaceNids($body, $sourceNids, $content_type, 'node');
     }
-
   }
 
   /**
@@ -182,7 +178,6 @@ class ReconciliationCommands extends DrushCommands {
         $this->output()->writeln('Modificate n. occorrenze: ' . $count);
       }
     }
-
   }
 
   /**
@@ -194,7 +189,7 @@ class ReconciliationCommands extends DrushCommands {
       case 'node':
         $db_query = $database->select('migrate_map_silfi_d7_node_' . $content_type);
         $db_query->condition('sourceid1', $sourceNids, 'IN');
-        $db_query->fields('migrate_map_silfi_d7_node_'. $content_type, ['sourceid1', 'destid1']);
+        $db_query->fields('migrate_map_silfi_d7_node_' . $content_type, ['sourceid1', 'destid1']);
         break;
 
       default:
@@ -227,21 +222,35 @@ class ReconciliationCommands extends DrushCommands {
 
   /**
    * Drush command che sostituisce i link dei file.
+   * Il comando prevede un parametro content type e due opzioni: url del sito e,
+   * se diversa, il nome della cartella del sito D7.
    *
    * @param string $content_type
-   *   Argument with message to be displayed. Only for test.
+   *   Il content type da modificare.
+   *
    * @command reconciliation:filelink
    * @aliases rcl-filelink rcl-flink
    *
    * @option site Site URL.
+   * @option folder Nome della cartella se diversa dal nome sito.
    *
    * @usage reconciliation:filelink
    */
-  public function filelink($content_type = 'none', $options = ['site' => null]) {
+  public function filelink(
+      string $content_type = 'none',
+      array $options = [
+        'site' => null,
+        'folder' => null,
+      ]
+    ) {
     // entity query
     $query = \Drupal::entityQuery('node');
     if ("none" != $content_type && $options['site']) {
+      if (!$options['folder']) {
+        $options['folder'] = $options['site']
+      }
       $query->condition('type', $content_type, '=');
+      $query->accessCheck(FALSE);
       $nids = $query->execute();
       $database = \Drupal::database();
       foreach ($nids as $nid) {
@@ -261,8 +270,7 @@ class ReconciliationCommands extends DrushCommands {
         }
       }
       $this->output()->writeln('Finito con i link!');
-    }
-    else {
+    } else {
       $this->output()->writeln('Errore! Tipo di contenuto e site obbligatorio.');
     }
   }
@@ -284,7 +292,6 @@ class ReconciliationCommands extends DrushCommands {
         $i++;
       }
     }
-
   }
 
   /**
@@ -305,22 +312,20 @@ class ReconciliationCommands extends DrushCommands {
     foreach ($result as $record) {
       $url = str_replace(
         'public://',
-        'https://www.comune.pontassieve.fi.it/sites/'. $options['site'] .'/files/',
+        'https://' . $options['site'] . '/sites/' . $options['folder'] . '/files/',
         $record->uri
       );
 
-      $destination = 'sites/'. $options['site'] .'/files/' . $record->filename;
+      $destination = 'sites/default/files/' . $record->filename;
       try {
         /** @var GuzzleHttp\Psr\Response $response */
         $response = \Drupal::httpClient()->get($url, ['sink' => $destination]);
         if ($response->getStatusCode() == 200) {
           return $destination;
-        }
-        else return;
+        } else return;
       } catch (\Throwable $th) {
         $this->output()->writeln($th->__toString());
       }
-
     }
     return;
   }
