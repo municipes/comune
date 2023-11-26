@@ -1,0 +1,174 @@
+langcode: en
+status: true
+dependencies: {  }
+id: d7_node_eventi
+# class: Drupal\node\Plugin\migrate\D7NodeTranslation
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node (Eventi presi dagli Eventi)'
+source:
+  plugin: d7_migrate_page_legacy
+  node_type: eventi
+  mlid: false # l'id del menu amm trasp di partenza
+  not_at: false # esclude le pagine di Amministrazione Trasparente
+  from_date: false # data in unixtime dei nodi da cui iniziare migrazione
+  context: false # valore del campo field_sito
+  notice_types: [1] # valore del campo field_tipo_di_contenuto
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  field_tipo_di_notizia:
+    plugin: sub_process
+    source: field_tipo_di_contenuto
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          2: 32
+          5: 9
+          6: 21
+          32: 9
+          793: 9
+        bypass: true
+  field_tipo_di_bando:
+    plugin: sub_process
+    source: field_tipo_di_contenuto
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          5: 1002
+          32: 1003
+          793: 1001
+        # default_value: 1001
+        bypass: true
+  field_descrizione_breve:
+    plugin: sub_process
+    source: field_descrizione_evento
+    process:
+      value:
+        -
+          plugin: silfi_abstract_text
+          source: value
+  field_data_e_orario_di_inizio:
+    -
+      plugin: sub_process
+      source: field_data_evento
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d H:i:s'
+          source: value
+  field_data_e_orario_di_fine:
+    -
+      plugin: sub_process
+      source: field_data_evento
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d H:i:s'
+          source: value2
+  field_descrizione_completa:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+  field_immagine:
+    plugin: sub_process
+    source: field_immagine_evento
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_image
+        source: fid
+        no_stub: true
+  field_video_gdpr:
+    plugin: silfi_field_video
+    source: field_video
+  field_link_esterni:
+    -
+      plugin: silfi_field_link
+      uri_scheme: 'https://'
+      source: field_link_esterni
+    -
+      plugin: skip_on_empty
+      method: process
+  field_allegati:
+    plugin: sub_process
+    source: field_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: upgrade_d7_file_to_media_document
+        source: fid
+        no_stub: true
+
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: evento
+# migration_dependencies:
+#   required:
+    # - upgrade_d7_user
+    # - upgrade_d7_file_to_media_document
+    # - upgrade_language
