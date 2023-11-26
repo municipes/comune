@@ -3,13 +3,15 @@ langcode: it
 status: true
 dependencies:
   config:
+    - block.block.scaenographia_views_block__bi_servizi_in_evidenza_block_1
+    - block.block.scaenographia_views_block__bi_servizi_in_evidenza_block_2
     - field.storage.node.field_sottotitolo
     - search_api.index.servizi
     - taxonomy.vocabulary.categorie_dei_servizi
   module:
     - search_api
 _core:
-  default_config_hash: BAl9tuRY6bRFU5Zcr7AYB3rdLpHo3eyP5dguflEby1w
+  default_config_hash: l6EolfAWAxsUtr64odVcCqtFhWI8rUDGgN2fgOIfn8c
 id: bi_tutti_i_servizi_indice
 label: 'BI Tutti i servizi (indice)'
 module: views
