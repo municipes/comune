@@ -247,7 +247,7 @@ class ReconciliationCommands extends DrushCommands {
     $query = \Drupal::entityQuery('node');
     if ("none" != $content_type && $options['site']) {
       if (!$options['folder']) {
-        $options['folder'] = $options['site']
+        $options['folder'] = $options['site'];
       }
       $query->condition('type', $content_type, '=');
       $query->accessCheck(FALSE);
