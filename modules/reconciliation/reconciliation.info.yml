@@ -1,0 +1,10 @@
+name: Reconciliation
+type: module
+description: Helper per modificare contenuti dopo la migrazione.
+package: Silfi
+core_version_requirement: ^10
+dependencies:
+  - drupal:node
+
+version: '1.0.0'
+

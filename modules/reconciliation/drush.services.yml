@@ -1,0 +1,5 @@
+services:
+  reconciliation.commands:
+    class: Drupal\reconciliation\Commands\ReconciliationCommands
+    tags: 
+      - { name: drush.command }
