@@ -255,15 +255,15 @@ class ReconciliationCommands extends DrushCommands {
       $database = \Drupal::database();
       foreach ($nids as $nid) {
         // $nid = 17128;
-        $db_query = $database->select('node__body');
+        $db_query = $database->select('node__field_descrizione_completa');
         $db_query->condition('entity_id', $nid);
-        $db_query->condition('field_descrizione_completa', "%/file/%/download%", "LIKE");
-        $db_query->addField('node__body', 'body_value');
+        $db_query->condition('field_descrizione_completa_value', "%/file/%/download%", "LIKE");
+        $db_query->addField('node__field_descrizione_completa', 'body_value');
         $db_bodies = $db_query->execute();
         foreach ($db_bodies as $dbBody) {
           $body = $dbBody->body_value;
           $this->replaceFiles($body, $options);
-          $database->update('node__body')
+          $database->update('node__field_descrizione_completa')
             ->fields(['body_value' => $body])
             ->condition('entity_id', $nid)
             ->execute();
