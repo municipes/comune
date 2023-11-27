@@ -6,3 +6,4 @@ core_version_requirement: ^9.5 || ^10
 dependencies:
   - drupal:basic_auth
   - drupal:rest
+  - restui:restui
