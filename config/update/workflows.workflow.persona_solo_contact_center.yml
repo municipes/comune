@@ -1,0 +1,54 @@
+uuid: 43a89d0e-b6af-4845-bf70-74b2dd9178fd
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.persona
+  module:
+    - content_moderation
+id: persona_solo_contact_center
+label: 'Persona solo contact center'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+    solo_contact_center:
+      label: 'Solo Contact Center'
+      weight: 2
+      published: false
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: 0
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+      to: published
+      weight: 1
+    solo_contact_center:
+      label: 'Solo Contact Center'
+      from:
+        - draft
+        - published
+      to: solo_contact_center
+      weight: 2
+  entity_types:
+    node:
+      - persona
+  default_moderation_state: published
