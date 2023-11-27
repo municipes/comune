@@ -276,3 +276,10 @@ function comune_update_8006() {
   \Drupal::service('module_installer')->install(['statistics'], TRUE);
   \Drupal::service('module_installer')->install(['feeds'], TRUE);
 }
+
+/**
+ * Enable rubrica module.
+ */
+function comune_update_8007() {
+  \Drupal::service('module_installer')->install(['rubrica'], TRUE);
+}
