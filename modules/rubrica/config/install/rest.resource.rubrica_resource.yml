@@ -20,4 +20,3 @@ configuration:
     - json
   authentication:
     - basic_auth
-    - cookie
