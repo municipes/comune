@@ -168,6 +168,15 @@ process:
 
   field_parole_chiave: field_parole_chiave
 
+  field_triplette:
+    -
+      plugin: entity_lookup
+      source: triplette_name
+      entity_type: taxonomy_term
+      bundle: triplette
+      bundle_key: vid
+      value_key: name
+
   normalize:
     plugin: silfi_normalize_title
     source: field_nome_ufficio
@@ -183,6 +192,41 @@ process:
     default_values:
       status: 0
       uid: 1
+
+  persona_referente:
+    plugin: sub_process
+    source: field_referente
+    process:
+      value:
+        plugin: entity_generate
+        source: value
+        value_key: title
+        bundle_key: type
+        bundle: persona
+        entity_type: node
+        ignore_case: true
+        default_values:
+          status: 0
+          uid: 1
+          field_sezione_amministrazione/target_id: 209
+
+
+  persona_responsabile:
+    plugin: sub_process
+    source: field_responsabile
+    process:
+      value:
+        plugin: entity_generate
+        source: value
+        value_key: title
+        bundle_key: type
+        bundle: persona
+        entity_type: node
+        ignore_case: true
+        default_values:
+          status: 0
+          uid: 1
+          field_sezione_amministrazione/target_id: 209
 
   field_procedure_collegate_esito:
     plugin: sub_process
@@ -293,15 +337,15 @@ process:
           241: 40
           249: 45
 
-  # field_documenti:
-  #   -
-  #     plugin: migration_lookup
-  #     migration: cmis_document
-  #     source: documenti
-  #     no_stub: true
-  #   -
-  #     plugin: skip_on_empty
-  #     method: process
+  field_documenti:
+    -
+      plugin: migration_lookup
+      migration: cmis_document
+      source: documenti
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: process
 
 destination:
   plugin: 'entity:node'
