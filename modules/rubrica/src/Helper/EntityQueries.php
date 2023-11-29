@@ -97,8 +97,8 @@ class EntityQueries {
             $data['items'][$id]['persone'][$key]['incarico'] = $personaData['incarico'];
             $pPocs = $persona->field_punti_di_contatto->referencedEntities();
             $data['items'][$id]['persone'][$key]['numeri_riservati'] = [
-              $persona->field_cellulare_riservato->value,
-              $persona->field_telefono_riservato->value
+              'cell' => $persona->field_cellulare_riservato->getValue(),
+              'fisso' => $persona->field_telefono_riservato->getValue()
             ];
             $this->createPersonaPocsArray($data, $pPocs, $id, $key);
             $data['items'][$id]['persone'][$key]['uo'][] = $uo->title->value;
@@ -275,9 +275,11 @@ class EntityQueries {
       $uo = $node->field_unita_organizzativa->entity;
       $incarico = $node->label();
       $persona = $node->field_persona->entity;
-      $newNodes[$uo->id()]['uo'] = $uo;
-      $newNodes[$uo->id()]['persone'][$persona->id()]['incarico'] = $incarico;
-      $newNodes[$uo->id()]['persone'][$persona->id()]['persona'] = $persona;
+      if ($uo) {
+        $newNodes[$uo->id()]['uo'] = $uo;
+        $newNodes[$uo->id()]['persone'][$persona->id()]['incarico'] = $incarico;
+        $newNodes[$uo->id()]['persone'][$persona->id()]['persona'] = $persona;
+      }
     }
 
     return $newNodes;
