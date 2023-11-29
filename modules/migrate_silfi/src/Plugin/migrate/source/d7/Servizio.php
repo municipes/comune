@@ -22,12 +22,15 @@ class Servizio extends Node {
   /**
    * {@inheritdoc}
    */
-  // public function query() {
-  //   $query = parent::query();
-  //   $query->condition('n.nid', [11228, 11129], 'IN');
+  public function query() {
+    $query = parent::query();
+    $query->leftJoin('field_data_field_triplette', 'dt', '[n].[nid] = [dt].[entity_id]');
+    $query->addField('dt', 'field_triplette_tid', 'triplette_tid');
+    $query->leftJoin('taxonomy_term_data', 'ttd', 'dt.field_triplette_tid = ttd.tid');
+    $query->addField('ttd', 'name', 'triplette_name');
 
-  //   return $query;
-  // }
+    return $query;
+  }
 
   /**
    * {@inheritdoc}
@@ -35,6 +38,7 @@ class Servizio extends Node {
   public function fields() {
     return parent::fields() + [
       'documenti' => $this->t('documenti'),
+      'triplette_name' => $this->t('triplette_name'),
     ];
   }
 
