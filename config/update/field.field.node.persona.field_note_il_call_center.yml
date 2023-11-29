@@ -1,0 +1,19 @@
+uuid: 0d68be60-2ddd-437f-b2ef-085850082360
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_note_il_call_center
+    - node.type.persona
+id: node.persona.field_note_il_call_center
+field_name: field_note_il_call_center
+entity_type: node
+bundle: persona
+label: 'Note per il Call Center'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
