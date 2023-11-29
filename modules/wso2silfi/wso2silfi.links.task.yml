@@ -1,0 +1,19 @@
+wso2silfi.general_tab:
+  route_name: wso2silfi.general_config
+  title: 'General Settings'
+  base_route: wso2silfi.general_config
+  weight: 0
+
+wso2silfi.admin_settings_basic:
+  title: 'Citizen settings'
+  route_name: wso2silfi.citizen_config
+  base_route: wso2silfi.general_config
+  weight: 1
+
+wso2silfi.admin_settings_tab:
+  route_name: wso2silfi.operator_config
+  title: 'Operator Settings'
+  base_route: wso2silfi.general_config
+  weight: 2
+
+

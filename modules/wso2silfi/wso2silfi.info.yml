@@ -1,0 +1,16 @@
+name: 'WSO2 Silfi'
+type: module
+description: 'WSO2 identity server - OAuth 2.0 Module for Silfi.'
+core_version_requirement: ^9 || ^10
+tags:
+ - akabit
+package: 'Silfi'
+dependencies:
+ - drupal:user
+ - drupal:block
+ - externalauth:externalauth
+
+configure: ws02silfi.general_config
+
+version: '1.0.6'
+project: 'WSO2 Silfi'

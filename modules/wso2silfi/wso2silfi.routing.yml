@@ -1,0 +1,62 @@
+wso2silfi.general_config:
+  path: '/admin/config/people/wso2silfi'
+  defaults:
+    _form: '\Drupal\wso2silfi\Form\GeneralSettingsForm'
+    _title: 'WSO2 Configurazione Generale'
+  requirements:
+    _permission: 'administer wso2 silfi'
+  options:
+    _admin_route: TRUE
+
+wso2silfi.citizen_config:
+  path: '/admin/config/people/wso2silfi/citizen'
+  defaults:
+    _form: '\Drupal\wso2silfi\Form\CitizenSettingsForm'
+    _title: 'WSO2 Silfi  Configurazione Cittadini'
+  requirements:
+    _permission: 'administer wso2 silfi'
+  options:
+    _admin_route: TRUE
+
+wso2silfi.operator_config:
+  path: '/admin/config/people/wso2silfi/operator'
+  defaults:
+    _form: '\Drupal\wso2silfi\Form\OperatorSettingsForm'
+    _title: 'WSO2 Silfi Configurazione Operatori'
+  requirements:
+    _permission: 'administer wso2 silfi'
+  options:
+    _admin_route: TRUE
+
+wso2silfi.connect:
+  path: '/wso2silfi/connect/{access_type}'
+  defaults:
+    _controller:
+      '\Drupal\wso2silfi\Controller\WSO2Controller::clientLogin'
+    _title: 'Go to WSO2'
+  requirements:
+    _permission: 'access content'
+    access_type: '(?:operatore|cittadino)'
+  options:
+    no_cache: TRUE
+
+wso2silfi.authorized:
+  path: '/oauth2/authorized'
+  defaults:
+    _controller: 'Drupal\wso2silfi\Controller\WSO2Controller::redirectUrlPage'
+    _title: 'OAuth2 Redirect URL page'
+  requirements:
+    _user_is_logged_in: 'FALSE'
+  options:
+    no_cache: TRUE
+
+wso2silfi.debug:
+  path: '/wso2silfi/debug'
+  defaults:
+    _controller:
+      '\Drupal\wso2silfi\Controller\WSO2Controller::debug'
+    _title: 'Go to WSO2'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

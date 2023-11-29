@@ -1,0 +1,140 @@
+# Schema for the configuration files of the WSO2 module.
+
+wso2silfi.settings:
+  type: config_object
+  label: 'Impostazioni Silfi WSO2'
+  mapping:
+    general:
+      type: mapping
+      label: 'General settings'
+      mapping:
+        wso2silfi_enabled:
+          type: boolean
+          label: 'Enable WSO2'
+        wso2_subfolder:
+          type: string
+          label: 'Subfolder'
+        server_url:
+          type: uri
+          label: 'Server URL'
+        logout_url:
+          type: uri
+          label: 'Logout URL'
+        authorize:
+          type: string
+          label: 'Authorize method'
+        token:
+          type: string
+          label: 'GetToken method'
+        userinfo:
+          type: string
+          label: 'UserInfo method'
+        agEntityId:
+          type: uri
+          label: 'Id del servizio'
+        comEntityId:
+          type: uri
+          label: 'Entity Id del servizio'
+        proxy_enabled:
+          type: boolean
+          label: 'Enable Proxy configuration'
+        picture_enabled:
+          type: boolean
+          label: 'Enable picture on login form'
+        skip-ssl-verification:
+          type: boolean
+          label: 'Skip SSL verification'
+
+    citizen:
+      type: mapping
+      label: 'Citizen population'
+      mapping:
+    #     client_id:
+    #       type: string
+    #       label: 'Client ID'
+    #     client_secret:
+    #       type: string
+    #       label: 'Client Secret'
+    #     realm:
+    #       type: string
+    #       label: 'OpenAM server additionnal parameter REALM'
+    #     scope:
+    #       type: string
+    #       label: 'OpenAM server additionnal parameter SCOPE'
+    #     codiceServizio:
+    #       type: string
+    #       label: 'OpenAM server additional parameter codiceServizio'
+    #     codiceCanale:
+    #       type: string
+    #       label: 'OpenAM server additionnal parameter codiceCanale'
+        client_id:
+          type: string
+          label: 'Client ID'
+        client_secret:
+          type: string
+          label: 'Client secret'
+        username_attribute:
+          type: string
+          label: 'The profile attribute name to use as the Drupal username'
+        mail_attribute:
+          type: string
+          label: 'Define the attribute for the field mail'
+        firstname_attribute:
+          type: string
+          label: 'The profile name attribute to use as the firstname'
+        lastname_attribute:
+          type: string
+          label: 'The profile name attribute to use as the lastname'
+    #     birthday_attribute:
+    #       type: string
+    #       label: 'The name of the OpenAM profile attribute to use as birthday'
+    #     birthplace_attribute:
+    #       type: string
+    #       label: 'The name of the OpenAM profile attribute to use as birthplace'
+        fiscalcode_attribute:
+          type: string
+          label: 'The profile attribute name to use as fiscalcode'
+    #     phone_attribute:
+    #       type: string
+    #       label: 'The name of the OpenAM profile attribute to use as phone'
+        role:
+          type: string
+          label: 'Role assigned to registered user.'
+    #     skip-ssl-verification:
+    #       type: boolean
+    #       label: 'Skip SSl verification'
+
+    operator:
+      type: mapping
+      label: 'Operator population'
+      mapping:
+        client_id:
+          type: string
+          label: 'Client ID'
+        client_secret:
+          type: string
+          label: 'Client Secret'
+        app:
+          type: string
+          label: 'OpenAM server additional parameter APPLICAZIONE'
+        ente:
+          type: string
+          label: 'OpenAM server additionnal parameter ENTE'
+    #     realm:
+    #       type: string
+    #       label: 'OpenAM server additionnal parameter REALM'
+    #     scope:
+    #       type: string
+    #       label: 'OpenAM server additionnal parameter SCOPE'
+    #     username_attribute:
+    #       type: string
+    #       label: 'The name of the OpenAM profile attribute to use as the Drupal username'
+    #     mail_attribute:
+    #       type: string
+    #       label: 'Define the OpenAM attribute for the field mail'
+    #     rolepopulation:
+    #       type: string
+    #       label: 'Automatic role population from LDAP attributes'
+    #     skip-ssl-verification:
+    #       type: boolean
+    #       label: 'Skip SSl verification'

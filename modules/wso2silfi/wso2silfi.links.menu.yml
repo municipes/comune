@@ -1,0 +1,5 @@
+wso2silfi.general_config:
+  title: 'WSO2 Auth Settings'
+  parent: user.admin_index
+  description: 'Control the various settings of the WSO2 authentication module'
+  route_name: wso2silfi.general_config

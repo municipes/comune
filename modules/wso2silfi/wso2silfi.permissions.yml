@@ -1,0 +1,6 @@
+administer wso2 silfi:
+  title: 'WSO2: Administer user restrictions'
+  restrict access: true
+bypass wso2 silfi restrictions rules:
+  title: 'WSO2: Bypass user restrictions rules'
+  restrict access: true

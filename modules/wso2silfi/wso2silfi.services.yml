@@ -1,0 +1,21 @@
+parameters:
+  wso2silfi.service.class: 'Drupal\wso2silfi\Service\OAuth2Client'
+
+services:
+  oauth2.client:
+    class: '%wso2silfi.service.class%'
+    arguments:
+      - '@http_client'
+      - '@request_stack'
+      - '@tempstore.private'
+      - '@wso2silfi.status'
+  wso2silfi.gestione_privilegi_operatori:
+    class: Drupal\wso2silfi\Service\GestionePrivilegiOperatori
+    arguments: ['@http_client', '@messenger', '@wso2silfi.status']
+  wso2silfi.status:
+    class: Drupal\wso2silfi\Helper\Status
+    arguments: ['@config.factory']
+
+  logger.channel.wso2silfi:
+    parent: logger.channel_base
+    arguments: ['wso2silfi']

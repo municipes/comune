@@ -1,0 +1,12 @@
+Installation
+-------------------
+
+1. Extract and copy the contents of the wso2silfi package to the Drupal
+   "modules/custom" directory.
+
+2. Go to the Modules administration page and enable the WSO2Silfi module.
+
+3. Go to "Configuration > People > WSO2 Auth Settings" and enable the
+   checkbox "Enable WSO2" and compiled the necessary fields.
+
+4. Go to "Structure > Block layout" and add the login blocks.

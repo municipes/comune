@@ -1,0 +1,47 @@
+general:
+  wso2silfi_enabled: false
+  wso2_subfolder: null
+  server_url: "https://id.055055.it:9443/oauth2"
+  logout_url: "https://id.055055.it:9443/oidc/logout"
+  agEntityId: ""
+  comEntityId: ""
+  authorize: "/authorize"
+  token: "/token"
+  userinfo: "/userinfo"
+  proxy_enabled: false
+  picture_enabled: true
+  skip-ssl-verification: false
+
+citizen:
+#   client_id: "cmsdrupal"
+#   client_secret: ""
+#   realm: "forcns"
+#   scope: "cn mail peopleCognome peopleNome peopleDataNascita peopleLuogoNascita"
+#   codiceServizio: "RETECIVICATEST"
+#   codiceCanale: "PROD"
+  client_id: ""
+  client_secret: ""
+  username_attribute: "cn"
+  mail_attribute: "email"
+  firstname_attribute: "given_name"
+  lastname_attribute: "family_name"
+#   birthday_attribute: "peopleDataNascita"
+#   birthplace_attribute: "peopleLuogoNascita"
+  fiscalcode_attribute: "cn"
+#   phone_attribute: "peopleTelefono"
+  role: "cittadino"
+#   skip-ssl-verification: false
+
+operator:
+  client_id: ""
+  client_secret: ""
+  app: ""
+  ente: ""
+  username: ""
+  password: ""
+#   realm: "/ope"
+#   scope: "cn uid givenName memberOf mail spidCode"
+#   username_attribute: "uid"
+#   mail_attribute: "mail"
+#   rolepopulation: "redattore:REDATTORE"
+#   skip-ssl-verification: false

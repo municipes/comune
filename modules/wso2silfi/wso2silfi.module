@@ -1,0 +1,177 @@
+<?php
+
+/**
+ * @file
+ * Contains wso2silfi.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Site\Settings;
+use Drupal\wso2silfi\Helper\Cryptor;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Random;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+$key = Settings::get('hash_salt', NULL);
+\define('SILFISITEKEY', $key);
+$random = new Random();
+$state = $random->name(32, TRUE);
+\define('STATE', $state);
+
+/**
+ * Implements hook_help().
+ */
+function wso2silfi_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the wso2silfi module.
+    case 'help.page.wso2silfi':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('WSO2 identity server - OAuth 2.0 Module for Silfi.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function wso2silfi_theme($existing, $type, $theme, $path) {
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('wso2silfi')->getPath();
+  return [
+   'wso2silfi_block' => [
+        'variables' => [
+          'title' => NULL,
+          'module_path' => $module_path,
+          'profile' => NULL,
+          'requestUri' => NULL,
+        ],
+        'template' => 'block--wso2silfi-login',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function wso2silfi_block_access(Block $block, $operation, AccountInterface $account) {
+  $statusClass = \Drupal::service('wso2silfi.status');
+  if ($operation == 'view') {
+    if($block->id() == 'bloccologincittadino' || $block->id() == 'bloccologinoperatore') {
+      \Drupal::service('page_cache_kill_switch')->trigger();
+      $enabled = $statusClass->isEnabled();
+      if (!\Drupal::currentUser()->isAnonymous() || !$enabled) {
+        //Hide the block for specific user roles like editor
+        return AccessResult::forbiddenIf(true)->addCacheableDependency($block);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for user_login_form.
+ */
+function wso2silfi_form_user_login_form_alter(&$form, &$form_state) {
+  if (!\Drupal::config('wso2silfi.settings')->get('general.wso2silfi_enabled')
+    || !\Drupal::config('wso2silfi.settings')->get('general.picture_enabled')) {
+    return;
+  }
+  $form['#validate'][] = 'wso2silfi_validate';
+  $button = [
+    '#theme' => 'wso2silfi_block',
+    '#title' => 'WSO2 login Operatore',
+    '#profile' => 'operatore',
+  ];
+  $form['wso2silfi_signin'] = [
+    '#markup' => \Drupal::service('renderer')->render($button),
+  ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for user_form.
+ */
+function wso2silfi_form_user_form_alter(&$form, &$form_state) {
+  $form['#validate'][] = 'wso2silfi_validate';
+}
+
+/**
+ * Validation function to determine if the user is allowed on the site.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function wso2silfi_validate(array $form, FormStateInterface $form_state) {
+  if (!\Drupal::config('wso2silfi.settings')->get('general.wso2_enabled')) {
+    return;
+  }
+  if (\Drupal::currentUser()->hasPermission('bypass WSO2 restrictions rules')) {
+    return;
+  }
+
+  // During log in the current user will not be logged in so check first and
+  // load the user attempting to log in if this operation is occuring.
+  if (!\Drupal::currentUser()->isAuthenticated()) {
+    $admin = \Drupal::entityTypeManager()->getStorage('user')->load(1);
+    $admin_username = $admin->getAccountName();
+    $user = user_load_by_name($form_state->getValue('name'));
+    if ($user && $admin_username == $user->getAccountName()) {
+      return;
+    }
+    if ($user && $user->hasPermission('bypass WSO2 restrictions rules')) {
+      return;
+    }
+    // non ha i permessi fuori!
+    $url = Url::fromRoute('system.403');
+    $response = new RedirectResponse($url->toString());
+    $response->send();
+  }
+}
+
+/**
+ * Implement hook_user_logout.
+ */
+function wso2silfi_user_logout(AccountInterface $account) {
+  global $base_url;
+  $statusClass = \Drupal::service('wso2silfi.status');
+  $tempstore = \Drupal::service('tempstore.private')->get('wso2silfi');
+  $token = $tempstore->get('single_token');
+  $query_params = [
+    'id_token_hint' => $token['id_token'],
+    'post_logout_redirect_uri' => $base_url,
+    'state' => $token['state'],
+  ];
+  $serverUrl = $statusClass->logoutUrlWso2() . '?' . http_build_query($query_params);
+  $response = new RedirectResponse($serverUrl);
+  $response->send();
+  return $response;
+}
+
+/**
+ * Encrypt text
+ * @method encrypt
+ * @param  string  $plainText text to encrypt
+ * @return string             encrypted text
+ */
+function wso2silfi_encrypt($plainText) {
+  $cryptor = new Cryptor(SILFISITEKEY);
+  return $cryptor->encrypt($plainText);
+}
+
+/**
+ * Decrypt text
+ * @method decrypt
+ * @param  string  $encryptedText text to decrypt
+ * @return string                 decrypted text
+ */
+function wso2silfi_decrypt($encryptedText) {
+  $cryptor = new Cryptor(SILFISITEKEY);
+  return $cryptor->decrypt($encryptedText);
+}
