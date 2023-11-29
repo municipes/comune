@@ -96,8 +96,13 @@ class EntityQueries {
             $data['items'][$id]['persone'][$key]['title'] = $persona->title->value;
             $data['items'][$id]['persone'][$key]['incarico'] = $personaData['incarico'];
             $pPocs = $persona->field_punti_di_contatto->referencedEntities();
+            $data['items'][$id]['persone'][$key]['numeri_riservati'] = [
+              $persona->field_cellulare_riservato->value,
+              $persona->field_telefono_riservato->value
+            ];
             $this->createPersonaPocsArray($data, $pPocs, $id, $key);
             $data['items'][$id]['persone'][$key]['uo'][] = $uo->title->value;
+            $data['items'][$id]['persone'][$key]['note'][] = $persona->field_note_il_call_center->value;
 
             // $data['items'][$id]['persone'][$key]['node'] = $persona;
           }
