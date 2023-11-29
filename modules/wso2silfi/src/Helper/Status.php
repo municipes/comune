@@ -25,6 +25,8 @@ class Status {
    */
   protected $config;
 
+  protected $isEnabled;
+
   protected $stage;
 
   protected $endpoint;
@@ -45,7 +47,7 @@ class Status {
     ConfigFactoryInterface $config_factory
   ) {
     $this->config = $config_factory->get('wso2silfi.settings');
-    $this->enabled = $this->config->get('general.wso2silfi_enabled');
+    $this->isEnabled = $this->config->get('general.wso2silfi_enabled');
     $this->stage = $this->config->get('general.stage');
     $this->endpoint = $this->stage ? self::$stageUrl : self::$productionUrl;
     $this->endpointBpo = $this->stage ? self::$stageUrl : self::$productionUrl;
@@ -70,7 +72,7 @@ class Status {
   }
 
   public function isEnabled() : bool {
-    return $this->enabled;
+    return $this->isEnabled;
   }
 
   public function clientIdWso2() : string {
