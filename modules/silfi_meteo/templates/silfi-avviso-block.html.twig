@@ -23,7 +23,7 @@
           <p{{ txt_color }} class="d-block fs-4"><strong>{{ alert.area }}</strong></p>
           <div class="it-btn-container">
             <a{{ txt_color.setAttribute('style', 'color: ' ~ map[alert.exadecimal|lower] ~ '; box-shadow: inset 0 0 0 2px ' ~ map[alert.exadecimal|lower]) }}
-             class="btn btn-sm btn-outline-primary" href="{{ info_link }}">Maggiori informazioni</a>
+             class="btn btn-sm btn-outline-primary" href="{{ alert.info_link }}">Maggiori informazioni</a>
           </div>
         </div>
       </div>
