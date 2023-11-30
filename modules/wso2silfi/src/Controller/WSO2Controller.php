@@ -349,14 +349,14 @@ class WSO2Controller extends ControllerBase {
           $account_data = [
             'mail' => $token_info['email'],
           ];
-          $account = $this->loginUser($authname, $account_data, 'silfi');
-
           /* chiedo la lista funzioni applicazione */
-          $ruolo = $this->gestionePrivilegiOperatore->operatoreFunzioni($token_info['cn']);
+          if ($ruolo = $this->gestionePrivilegiOperatore->operatoreFunzioni($authname)) {
+            $account = $this->loginUser($authname, $account_data, 'silfi');
 
-          $this->roleMatchAdd($account, $ruolo);
+            $this->roleMatchAdd($account, $ruolo);
 
-          $account->save();
+            $account->save();
+          }
 
         }
         break;
@@ -437,6 +437,7 @@ class WSO2Controller extends ControllerBase {
   public function roleMatchAdd(UserInterface $account, array $roles) : void {
     // Get matching roles based on retrieved LDAP attributes.
     $matching_roles = $this->getMatchingRoles();
+    $account->removeRole();
 
     if ($matching_roles) {
       foreach ($matching_roles as $role_id => $role_eval) {
