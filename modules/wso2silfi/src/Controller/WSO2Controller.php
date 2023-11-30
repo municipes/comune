@@ -435,6 +435,15 @@ class WSO2Controller extends ControllerBase {
    *   The Drupal user to add roles to.
    */
   public function roleMatchAdd(UserInterface $account, array $roles) : void {
+    $current_user = \Drupal::currentUser();
+    $userRoles = $current_user->getRoles();
+    // delete all roles
+    if (count($userRoles) > 1) {
+      unset($userRoles[0]);
+      foreach ($userRoles as $key => $role) {
+        $account->removeRole($role);
+      }
+    }
     // Get matching roles based on retrieved LDAP attributes.
     $matching_roles = $this->getMatchingRoles();
     $account->removeRole();
