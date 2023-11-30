@@ -112,19 +112,17 @@ class ReconciliationCommands extends DrushCommands {
    * @param       $content_type
    *   Specify a content type for which the node links should be
    *   replaced.
-   * @param array $options
-   *   An associative array of options whose values come from cli, aliases,
-   *   config, etc.
+   * @param       $mtable
+   *   Specify a migration db table.
    *
-   * @option  option-name
    * @usage   reconciliation:replacelink article
    *
    * @command reconciliation:replacelink
    * @aliases rclrep
    */
-  public function commandName(
-    $content_type = "none",
-    $options = ['option-name' => 'default']
+  public function replacelink(
+    $content_type,
+    $mtable
   ) {
     // entity query
     $query = \Drupal::entityQuery('node');
@@ -141,7 +139,7 @@ class ReconciliationCommands extends DrushCommands {
         $db_bodies = $db_query->execute();
         foreach ($db_bodies as $dbBody) {
           $body = $dbBody->body_value;
-          $upd_body = $this->replaceLinks($body, $nid, $content_type);
+          $upd_body = $this->replaceLinks($body, $nid, $mtable);
           $db_upd = $database->update('node__body')
             ->fields(['body_value' => $body])
             ->condition('entity_id', $nid)
@@ -157,22 +155,22 @@ class ReconciliationCommands extends DrushCommands {
   /**
    * Cerca occorrenze di node/1234.
    */
-  private function replaceLinks(&$body, $nid, $content_type) {
+  private function replaceLinks(&$body, $nid, $mtable) {
     // preg_match_all('/<a href="(\/*)node\/(\d+)"/', $value, $matches, PREG_SET_ORDER);
     $pattern = '/node\/[0-9]+/';
     $res = [];
     $is_match = preg_match_all($pattern, $body, $res);
     if ($is_match > 0) {
       $sourceNids = $this->sourceNids($res, 'node');
-      $this->replaceNids($body, $sourceNids, $content_type, 'node');
+      $this->replaceNids($body, $sourceNids, $mtable, 'node');
     }
   }
 
   /**
    * Sostituisce vecchi nid con i nuovi.
    */
-  private function replaceNids(&$body, array $sourceNids, string $content_type, string $command = 'node') {
-    $destNids = $this->getDestNids($sourceNids, $content_type, $command);
+  private function replaceNids(&$body, array $sourceNids, string $mtable, string $command = 'node') {
+    $destNids = $this->getDestNids($sourceNids, $mtable, $command);
     foreach ($sourceNids as $key => $sourceNid) {
       if (isset($destNids[$sourceNid])) {
         $body = str_replace($sourceNid, $destNids[$sourceNid], $body, $count);
@@ -184,13 +182,13 @@ class ReconciliationCommands extends DrushCommands {
   /**
    * Cerca i nuovi nids dei nodi migrati.
    */
-  private function getDestNids(array $sourceNids, string $content_type, string $command = 'node') {
+  private function getDestNids(array $sourceNids, string $mtable, string $command = 'node') {
     $database = \Drupal::database();
     switch ($command) {
       case 'node':
-        $db_query = $database->select('migrate_map_silfi_d7_node_' . $content_type);
+        $db_query = $database->select('migrate_map_silfi_d7_node_' . $mtable);
         $db_query->condition('sourceid1', $sourceNids, 'IN');
-        $db_query->fields('migrate_map_silfi_d7_node_' . $content_type, ['sourceid1', 'destid1']);
+        $db_query->fields('migrate_map_silfi_d7_node_' . $mtable, ['sourceid1', 'destid1']);
         break;
 
       default:
