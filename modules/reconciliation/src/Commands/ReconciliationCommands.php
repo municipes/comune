@@ -186,9 +186,9 @@ class ReconciliationCommands extends DrushCommands {
     $database = \Drupal::database();
     switch ($command) {
       case 'node':
-        $db_query = $database->select('migrate_map_silfi_d7_node_' . $mtable);
+        $db_query = $database->select($mtable);
         $db_query->condition('sourceid1', $sourceNids, 'IN');
-        $db_query->fields('migrate_map_silfi_d7_node_' . $mtable, ['sourceid1', 'destid1']);
+        $db_query->fields($mtable, ['sourceid1', 'destid1']);
         break;
 
       default:
