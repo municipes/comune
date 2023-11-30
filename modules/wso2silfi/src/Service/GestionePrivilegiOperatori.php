@@ -184,7 +184,7 @@ class GestionePrivilegiOperatori {
         return $response->$method;
       }
       else {
-        throw new \Expeption("Errore $method: " . $response->messaggio);
+        throw new \Excpeption("Errore $method: " . $response->messaggio);
         $this->messenger->addError("Errore $method: " . $response->messaggio);
         $this->getLogger('wso2silfi')->error("Errore $method:  %error.", ['%error' => $response->messaggio]);
       }
