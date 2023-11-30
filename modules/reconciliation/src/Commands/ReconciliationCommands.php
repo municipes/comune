@@ -130,6 +130,7 @@ class ReconciliationCommands extends DrushCommands {
     $query = \Drupal::entityQuery('node');
     if ("none" != $content_type) {
       $query->condition('type', $content_type, '=');
+      $query->accessCheck(FALSE);
       $nids = $query->execute();
       $database = \Drupal::database();
       foreach ($nids as $nid) {
