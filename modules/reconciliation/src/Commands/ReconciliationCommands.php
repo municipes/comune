@@ -226,6 +226,8 @@ class ReconciliationCommands extends DrushCommands {
    *
    * @param string $content_type
    *   Il content type da modificare.
+   * @param string $field
+   *   Il nome del campo di destinazione.
    *
    * @command reconciliation:filelink
    * @aliases rcl-filelink rcl-flink
