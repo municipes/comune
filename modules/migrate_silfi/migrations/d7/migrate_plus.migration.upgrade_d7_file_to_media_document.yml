@@ -18,7 +18,7 @@ process:
   name:
     plugin: get
     source: description
-  field_media_document/name: description
+  field_media_document/description: description
   field_media_document/target_id:
     -
       plugin: migration_lookup
