@@ -13,7 +13,7 @@
   <div class="container">
     <div class="row">
       <div class="col-3">
-        {{ drupal_image(alert.icon, '', {alt: alert.sector}, responsive=true) }}
+        {{ drupal_image(alert.icon, '', {alt: alert.sector, width: 512, height: 512}, responsive=true) }}
         {# <img class="img-responsive" src="{{ alert.icon }}" alt="icona settore allerta: {{ alert.sector }}"> #}
       </div>
       <div class="col-9">
