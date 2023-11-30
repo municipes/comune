@@ -236,7 +236,8 @@ class ReconciliationCommands extends DrushCommands {
    * @usage reconciliation:filelink
    */
   public function filelink(
-      string $content_type = 'none',
+      string $content_type,
+      string $field,
       array $options = [
         'site' => null,
         'folder' => null,
@@ -254,21 +255,23 @@ class ReconciliationCommands extends DrushCommands {
       $database = \Drupal::database();
       foreach ($nids as $nid) {
         // $nid = 17128;
-        $db_query = $database->select('node__field_descrizione_completa');
+        $db_query = $database->select('node__' . $field);
         $db_query->condition('entity_id', $nid);
-        $db_query->condition('field_descrizione_completa_value', "%/file/%/download%", "LIKE");
-        $db_query->addField('node__field_descrizione_completa', 'field_descrizione_completa_value');
+        $db_query->condition($field . '_value', "%/file/%/download%", "LIKE");
+        $db_query->addField('node__' . $field, $field . '_value');
         $db_bodies = $db_query->execute();
+        $count = 0;
         foreach ($db_bodies as $dbBody) {
           $body = $dbBody->field_descrizione_completa_value;
           $this->replaceFiles($body, $options);
-          $database->update('node__field_descrizione_completa')
-            ->fields(['field_descrizione_completa_value' => $body])
+          $database->update('node__' . $field)
+            ->fields([$field . '_value' => $body])
             ->condition('entity_id', $nid)
             ->execute();
+          $count++;
         }
       }
-      $this->output()->writeln('Finito con i link!');
+      $this->output()->writeln('Finito con i link! Eseguiti: ' . $count);
     } else {
       $this->output()->writeln('Errore! Tipo di contenuto e site obbligatorio.');
     }
@@ -283,6 +286,7 @@ class ReconciliationCommands extends DrushCommands {
     $res = [];
     $is_match = preg_match_all($pattern, $body, $res);
     if ($is_match > 0) {
+      $this->output()->writeln('match!');
       $fids = $this->sourceNids($res, 'file');
       $i = 0;
       foreach ($fids as $fid => $value) {
@@ -290,6 +294,9 @@ class ReconciliationCommands extends DrushCommands {
         $body = str_replace($res[0][$i], '/' . $destination, $body);
         $i++;
       }
+    }
+    else {
+      $this->output()->writeln('no match :-(');
     }
   }
 
