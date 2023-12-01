@@ -420,7 +420,8 @@ class WSO2Controller extends ControllerBase {
    * @return string
    */
   private function getEnte(string $memberOf, bool $stage = FALSE): string {
-    $validIndex = $stage ? 0 : 1;
+    // $validIndex = $stage ? 0 : 0; // chiarire se esiste il problema
+    $validIndex = 0;
     $cn0 = explode(',', $memberOf);
     $cnvalue = explode('/', $cn0[$validIndex]);
     $operatore_ente = explode('_', $cnvalue[1]);
