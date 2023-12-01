@@ -142,8 +142,6 @@ third_party_settings:
         formatter: open
         description: 'Campi per notizia standard'
         required_fields: true
-_core:
-  default_config_hash: ezm_ux40glyQNs73HXZHCjz9YLlTn37oJRW6iFRgKl8
 id: node.notizia.default
 targetEntityType: node
 bundle: notizia
