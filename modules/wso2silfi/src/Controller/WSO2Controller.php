@@ -446,7 +446,6 @@ class WSO2Controller extends ControllerBase {
     }
     // Get matching roles based on retrieved LDAP attributes.
     $matching_roles = $this->getMatchingRoles();
-    $account->removeRole();
 
     if ($matching_roles) {
       foreach ($matching_roles as $role_id => $role_eval) {
