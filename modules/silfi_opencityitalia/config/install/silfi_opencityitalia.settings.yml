@@ -7,6 +7,7 @@ inefficency_path: /widgets/inefficiencies/bootstrap-italia@2/js/inefficiencies.j
 inefficency_variables: OC_MAP_SEARCH_PROVIDER|nominatim.openstreetmap.org
 helpdesk_path: /widgets/helpdesk/bootstrap-italia@2/js/helpdesk.js
 uuid: ''
+api: 'https://satisfy.opencityitalia.055055.it'
 satisfy_path: /widgets/satisfy/js/satisfy.js
 oc_spid_button: false
 login_path: /widgets/login-box/bootstrap-italia@2/js/login-box.js

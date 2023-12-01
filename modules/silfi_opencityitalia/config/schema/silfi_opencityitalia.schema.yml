@@ -26,6 +26,9 @@ silfi_opencityitalia.settings:
     uuid:
       type: string
       label: 'UUID'
+    api:
+      type: string
+      label: 'API'
     satisfy_path:
       type: string
       label: 'Satisfay path'

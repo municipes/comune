@@ -66,6 +66,7 @@ class SatisfyBlock extends BlockBase implements ContainerFactoryPluginInterface 
         '#theme' => 'oci_satisfy_block',
         '#data' => [
           'uuid' => $config->get('uuid'),
+          'api' => $config->get('api'),
           'common_url' => $config->get('common_url'),
           'satisfy_path' => $config->get('satisfy_path'),
         ],

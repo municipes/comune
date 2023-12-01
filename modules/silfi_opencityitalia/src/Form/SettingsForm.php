@@ -148,6 +148,16 @@ class SettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('uuid'),
     ];
 
+    $form['api'] = [
+      '#type'          => 'textfield',
+      '#title'         => t('Questionario di soddisfazione: API'),
+      '#description'   => t(''),
+      '#states'        => [
+        'visible' => [':input[name="enabled"]' => ['checked' => TRUE]],
+      ],
+      '#default_value' => $config->get('api'),
+    ];
+
     $form['satisfy_path'] = [
       '#type'          => 'textfield',
       '#title'         => t('Path script: Questionario soddisfazione'),
@@ -203,6 +213,7 @@ class SettingsForm extends ConfigFormBase {
       ->set('inefficency_variables', $values['inefficency_variables'])
       ->set('helpdesk_path', $values['helpdesk_path'])
       ->set('uuid', $values['uuid'])
+      ->set('api', $values['api'])
       ->set('satisfy_path', $values['satisfy_path'])
       ->set('login_path', $values['login_path'])
       ->set('oc_spid_button', $values['oc_spid_button'])

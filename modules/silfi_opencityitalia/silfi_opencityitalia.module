@@ -17,7 +17,6 @@ function silfi_opencityitalia_theme($existing, $type, $theme, $path) {
       // structure must be described here.
       'variables' => [
         'data' => NULL,
-        ''
       ],
     ],
     'opencityitalia_pages' => [
