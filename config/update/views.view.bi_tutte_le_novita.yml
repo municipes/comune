@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - search_api.index.novita
+    - taxonomy.vocabulary.tipi_di_notizia
   module:
     - search_api
     - user
@@ -146,7 +147,48 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-      arguments: {  }
+      arguments:
+        tid:
+          id: tid
+          table: search_api_index_novita
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: taxonomy_tid
+          default_argument_options:
+            term_page: '1'
+            node: true
+            limit: true
+            vids:
+              tipi_di_notizia: tipi_di_notizia
+            anyall: ','
+          default_argument_skip_url: false
+          summary_options: {  }
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: 'entity:taxonomy_term'
+            fail: ignore
+          validate_options:
+            bundles:
+              tipi_di_notizia: tipi_di_notizia
+            access: true
+            operation: view
+            multiple: 0
+          break_phrase: false
+          not: false
       filters:
         search_api_fulltext:
           id: search_api_fulltext
