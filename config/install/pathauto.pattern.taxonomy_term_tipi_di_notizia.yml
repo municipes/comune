@@ -1,0 +1,24 @@
+uuid: b5f970a9-ba31-4171-aded-78f37f63f68f
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: PEC3xNOocY4siknb2_gnIzMoZlT1g_bvpcRuevYayB8
+id: taxonomy_term_tipi_di_notizia
+label: 'Taxonomy term - Tipi di notizia'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'novita/[term:name]'
+selection_criteria:
+  2db06e6a-d9a4-4a1a-8164-174c86d908b2:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 2db06e6a-d9a4-4a1a-8164-174c86d908b2
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tipi_di_notizia: tipi_di_notizia
+selection_logic: and
+weight: 4
+relationships: {  }
