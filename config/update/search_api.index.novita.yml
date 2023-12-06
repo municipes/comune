@@ -6,10 +6,12 @@ dependencies:
     - field.storage.node.field_data_inizio
     - field.storage.node.field_data_fine
     - field.storage.node.field_descrizione_breve
+    - field.storage.node.field_tipo_di_notizia
     - search_api.server.drupal_db
     - core.entity_view_mode.node.full
   module:
     - node
+    - taxonomy
     - search_api
 _core:
   default_config_hash: jHDPJhH3cN_fYCmjdKdwAgwmKodAnv20W3xKFtikKYk
@@ -78,6 +80,16 @@ field_settings:
     dependencies:
       module:
         - node
+  tid:
+    label: 'Tipo di notizia » Termine della tassonomia » ID Termine'
+    datasource_id: 'entity:node'
+    property_path: 'field_tipo_di_notizia:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tipo_di_notizia
+      module:
+        - taxonomy
   title:
     label: Title
     datasource_id: 'entity:node'
