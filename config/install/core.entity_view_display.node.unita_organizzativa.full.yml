@@ -119,7 +119,7 @@ content:
     region: content
   field_incarichi:
     type: viewsreference_formatter
-    label: hidden
+    label: above
     settings:
       plugin_types:
         - block
@@ -320,7 +320,7 @@ content:
     type: pattern_wrapper_entity_reference_formatter
     label: hidden
     settings:
-      view_mode: card_teaser
+      view_mode: teaser
       pattern: node_full_field
       pattern_mapping:
         'field_wrapper:label':
@@ -337,10 +337,13 @@ content:
         node_full_field:
           attributes: ''
           override_label: ''
+          intro_text: ''
           label_size: ''
           label_visible: visible
           label_menu: visible
           heading_value: ''
+          use_card: 0
+          has_bg_grey: 0
           audio: null
       pattern_variant: default
       link: false
@@ -349,7 +352,7 @@ content:
     region: content
   field_view_persone:
     type: viewsreference_formatter
-    label: hidden
+    label: above
     settings:
       plugin_types:
         - block
@@ -358,7 +361,7 @@ content:
     region: content
   field_view_reference:
     type: viewsreference_formatter
-    label: hidden
+    label: above
     settings:
       plugin_types:
         - block
