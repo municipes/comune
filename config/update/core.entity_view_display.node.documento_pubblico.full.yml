@@ -474,7 +474,7 @@ content:
     region: content
   field_view_reference:
     type: viewsreference_formatter
-    label: hidden
+    label: above
     settings:
       plugin_types:
         - block

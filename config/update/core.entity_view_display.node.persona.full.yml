@@ -253,13 +253,13 @@ content:
     region: content
   field_incarichi:
     type: viewsreference_formatter
-    label: hidden
+    label: above
     settings:
       plugin_types:
         block: block
-        default: 0
-        page: 0
-        feed: 0
+        default: '0'
+        page: '0'
+        feed: '0'
     third_party_settings: {  }
     weight: 2
     region: content
@@ -433,7 +433,7 @@ content:
     region: content
   field_view_reference:
     type: viewsreference_formatter
-    label: hidden
+    label: above
     settings:
       plugin_types:
         - block
@@ -446,9 +446,12 @@ content:
     weight: 16
     region: content
 hidden:
+  field_cellulare_riservato: true
   field_cognome: true
   field_nome: true
+  field_note_il_call_center: true
   field_sezione_amministrazione: true
+  field_telefono_riservato: true
   langcode: true
   node_read_time: true
   search_api_excerpt: true
