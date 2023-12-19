@@ -9,7 +9,7 @@ _core:
 id: luogo
 label: Luogo
 type: 'canonical_entities:node'
-pattern: '/luogo/[node:title]'
+pattern: '/vivere-il-comune/luoghi/[node:title]'
 selection_criteria:
   26ed82b0-be64-42e6-aafd-c1307f1aaaa8:
     id: 'entity_bundle:node'
