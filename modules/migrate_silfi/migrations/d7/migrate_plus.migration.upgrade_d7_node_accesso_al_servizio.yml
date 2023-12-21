@@ -18,14 +18,14 @@ source:
     link_title: 'Accedi al servizio online'
 
 process:
-  nid:
-    -
-      plugin: get
-      source: tnid
-  vid:
-    -
-      plugin: get
-      source: vid
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
   langcode:
     -
       plugin: default_value
