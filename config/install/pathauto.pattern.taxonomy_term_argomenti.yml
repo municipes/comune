@@ -1,0 +1,24 @@
+uuid: 152bb432-3b50-4a43-9b78-169e71dd6bfc
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: PEC3xNOocY4siknb2_gnIzMoZlT1g_bvpcRuevYayB8
+id: taxonomy_term_argomenti
+label: 'Taxonomy term - Argomenti'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'argomenti/[term:name]'
+selection_criteria:
+  c75a9252-2cda-4e79-8ed7-66ae22eec47d:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: c75a9252-2cda-4e79-8ed7-66ae22eec47d
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      argomenti: argomenti
+selection_logic: and
+weight: 2
+relationships: {  }
