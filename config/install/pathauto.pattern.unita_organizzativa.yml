@@ -9,7 +9,7 @@ _core:
 id: unita_organizzativa
 label: 'Unità organizzativa'
 type: 'canonical_entities:node'
-pattern: '/amministrazione/uffici/[node:title]'
+pattern: '/amministrazione/[node:field_sezione_amministrazione]/[node:title]'
 selection_criteria:
   120bf174-f584-4045-80ea-f195e1710ca7:
     id: 'entity_bundle:node'
@@ -20,5 +20,5 @@ selection_criteria:
     bundles:
       unita_organizzativa: unita_organizzativa
 selection_logic: and
-weight: 0
+weight: 1
 relationships: {  }
