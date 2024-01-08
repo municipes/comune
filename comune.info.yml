@@ -59,6 +59,7 @@ install:
   - drupal:dblog
   - drupal:dynamic_page_cache
   - drupal:editor
+  - drupal:entity_clone
   - drupal:field_ui
   - drupal:filter
   - drupal:inline_form_errors
