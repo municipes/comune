@@ -9,7 +9,7 @@ _core:
 id: taxonomy_term_tipi_di_notizia
 label: 'Taxonomy term - Tipi di notizia'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'novita/[term:name]'
+pattern: 'novita/[term:field_plurale:value]'
 selection_criteria:
   2db06e6a-d9a4-4a1a-8164-174c86d908b2:
     id: 'entity_bundle:taxonomy_term'

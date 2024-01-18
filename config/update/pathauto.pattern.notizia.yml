@@ -9,7 +9,7 @@ _core:
 id: notizia
 label: Notizia
 type: 'canonical_entities:node'
-pattern: '/novita/[node:field_tipo_di_notizia:entity:name]/[node:title]'
+pattern: '/novita/[node:field_tipo_di_notizia:entity:field_plurale]/[node:title]'
 selection_criteria:
   744ef0d7-995c-48bb-99a2-543539ae9eb6:
     id: 'entity_bundle:node'
