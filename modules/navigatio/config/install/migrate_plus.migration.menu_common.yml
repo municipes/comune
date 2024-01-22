@@ -82,7 +82,7 @@ process:
   # Full Pipeline.. see https://www.drupal.org/node/2129651
   'link/uri':
     -
-      plugin: generate_path
+      plugin: get
       source: uri
 #  route_name: '@route/route_name'
 #  route_parameters: '@route/route_parameters'
