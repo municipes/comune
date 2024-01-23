@@ -203,7 +203,7 @@ process:
           46: 10058
           25: 10059
           29: 10036
-        # bypass: true
+        default_value: 0
 
   field_tipo_di_evento:
     plugin: sub_process
