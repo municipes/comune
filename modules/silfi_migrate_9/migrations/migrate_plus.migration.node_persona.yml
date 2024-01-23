@@ -1,0 +1,149 @@
+uuid: 3f088729-0315-4c5b-8d1a-4cf8e8cc198b
+langcode: it
+status: true
+id: node_persona
+label: 'D9 Node Persona'
+migration_group: migrate_drupal_9
+migration_tags:
+  - node
+
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: node
+  bundle: persona
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+  field_sezione_amministrazione:
+    plugin: sub_process
+    source: field_pe_tipo
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          66: 209
+          65: 208
+        bypass: true
+
+  nomecognome:
+    plugin: explode
+    source: title
+    delimiter: ' '
+
+  field_nome:
+    plugin: extract
+    source: '@nomecognome'
+    default: 'Nome'
+    index:
+      - 0
+
+  field_cognome:
+    plugin: extract
+    source: '@nomecognome'
+    default: 'Cognome'
+    index:
+      - 1
+
+  field_biografia:
+    plugin: sub_process
+    source: field_pe_bio
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve:
+    plugin: callback
+    callable: strip_tags
+    source: body
+
+  field_curriculum_vitae:
+    plugin: sub_process
+    source: field_pe_cv
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_doc
+        source: target_id
+        no_stub: true
+
+  field_deleghe:
+    plugin: sub_process
+    source: field_pe_deleghe
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_ulteriori_informazioni:
+    plugin: sub_process
+    source: field_pe_info
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_punti_di_contatto:
+    plugin: sub_process
+    source: field_contatti
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration:
+          - node_punto_di_contatto
+        source: target_id
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: persona
+migration_dependencies:
+  required:
+    - d9_file_to_media_image
+    - d9_file_to_media_doc
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

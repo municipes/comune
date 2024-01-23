@@ -1,0 +1,79 @@
+uuid: 77954e84-501e-48ee-b477-9fb3933c9d58
+langcode: it
+status: true
+id: node_sito_tematico
+label: 'D9 Node Sito tematico'
+migration_group: migrate_drupal_9
+migration_tags:
+  - node
+
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: node
+  bundle: sito_tematico
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+  # field_colore:
+
+  field_descrizione_breve: field_testo
+
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_link:
+    plugin: sub_process
+    source: field_lu_web
+    process:
+      uri: uri
+      title: title
+      # options:
+      #   plugin: default_value
+      #   default_value: ''
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: sito_tematico
+migration_dependencies:
+  required:
+    - d9_file_to_media_image
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

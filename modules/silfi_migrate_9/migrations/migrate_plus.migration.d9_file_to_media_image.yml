@@ -1,0 +1,59 @@
+uuid: e67a17e3-300a-42dd-ab29-e3afe108b891
+id: d9_file_to_media_image
+migration_tags:
+  - files
+  - media
+migration_group: migrate_drupal_9
+label: 'Migrate Media Images'
+source:
+  plugin: d9_file_by_type
+  key: d9_source_site
+  scheme: public
+  type: image  # application or image
+  fields:
+    - field_image
+    - field_ev_gallery
+    - field_lu_gallery
+    - field_pe_gallery
+  # get_alt: true
+  # get_title: true
+
+process:
+  field_media_image/target_id:
+    -
+      plugin: migration_lookup
+      migration: d9_file
+      source: fid
+    -
+      plugin: skip_on_empty
+      method: row
+  thumbnail/target_id:
+    plugin: migration_lookup
+    migration: d9_file
+    source: fid
+  field_media_image/alt:
+    -
+      plugin: get
+      source: alt
+    -
+      plugin: default_value
+      default_value: 'Descrizione immagine non disponibile'
+  # field_media_image/title: title
+  status: status
+  created: timestamp
+  changed: timestamp
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+destination:
+  plugin: 'entity:media'
+  default_bundle: image
+migration_dependencies:
+  required:
+    - d9_file
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

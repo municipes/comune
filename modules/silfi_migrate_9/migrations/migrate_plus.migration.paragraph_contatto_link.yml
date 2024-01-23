@@ -1,0 +1,54 @@
+
+langcode: it
+status: true
+id: paragraph_contatto_link
+label: 'D9 Paragraph Contatto link'
+migration_group: migrate_drupal_9
+migration_tags:
+  - paragraph
+
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: paragraph
+  bundle: riga_link
+
+  ids:
+    id:
+      type: string
+
+process:
+  # parent_id:
+  #   plugin: migration_lookup
+  #   migration:
+  #     - node_persona
+  #     - node_uo
+  #   source: parent_id
+  #   no_stub: true
+
+  parent_type:
+    plugin: default_value
+    default_value: 'node'
+
+  parent_field_name:
+    plugin: default_value
+    default_value: 'field_contatto'
+
+  field_tipo_punto_di_contatto:
+    plugin: default_value
+    default_value: 65
+
+  field_valore_punto_di_contatto: field_url/uri
+
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: punto_di_contatto
+migration_dependencies:
+  required:
+   - node_persona
+   - node_uo
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

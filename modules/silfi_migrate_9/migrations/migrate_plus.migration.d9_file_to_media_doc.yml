@@ -1,0 +1,56 @@
+id: d9_file_to_media_doc
+migration_tags:
+  - files
+  - media
+migration_group: migrate_drupal_9
+label: 'Migrate Media Documents'
+source:
+  plugin: d9_file_by_type
+  key: d9_source_site
+  scheme: public
+  type: application  # application or image
+  fields:
+    - field_da_file
+    - field_do_file
+    - field_nc_allegati
+    - field_pe_atto
+    - field_pe_cv
+
+process:
+  name:
+    plugin: get
+    source: description
+  field_media_document/description: description
+  field_media_document/target_id:
+    -
+      plugin: migration_lookup
+      migration: d9_file
+      source: fid
+    -
+      plugin: skip_on_empty
+      method: row
+  field_media_document/display:
+    plugin: default_value
+    default_value: 1
+  field_descrizione_dida:
+    -
+      plugin: get
+      source: description
+  status: status
+  created: timestamp
+  changed: timestamp
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+destination:
+  plugin: 'entity:media'
+  default_bundle: document
+migration_dependencies:
+  required:
+    - d9_file
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

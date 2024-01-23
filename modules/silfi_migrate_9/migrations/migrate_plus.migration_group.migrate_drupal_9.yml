@@ -1,0 +1,15 @@
+langcode: it
+status: true
+id: migrate_drupal_9
+label: 'Import from Silfi Drupal 9'
+description: 'Comuni Drupal 9'
+source_type: 'Drupal 9'
+module: null
+shared_configuration:
+  source:
+    key: d9_source_site
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

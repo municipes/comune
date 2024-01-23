@@ -1,0 +1,134 @@
+uuid: 14189b0e-5c4c-444c-a843-c0c8bddd3233
+langcode: it
+status: true
+id: node_luogo
+label: 'D9 Node Luogo'
+migration_group: migrate_drupal_9
+migration_tags:
+  - node
+
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: node
+  bundle: luogo
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+  field_descrizione_completa:
+    plugin: sub_process
+    source: field_lu_desc
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve: field_abstract
+
+  field_identificativo: field_lu_id
+
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_indirizzo: field_indirizzo
+
+  field_modalita_di_accesso:
+    plugin: sub_process
+    source: field_lu_access
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_sottotitolo: field_lu_altname
+
+  field_orario_per_il_pubblico:
+    plugin: sub_process
+    source: field_lu_orari
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_posizione_gps: field_gps
+
+  field_quartiere: field_quartiere
+
+  # field_argomenti:
+
+  field_tipo_di_luogo:
+    plugin: sub_process
+    source: field_lu_type
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          76: 179
+          139: 15
+          75: 130
+          131: 289
+          74: 56
+          138: 29
+          141: 81
+          142: 2
+          78: 155
+        # bypass: true
+
+  field_ulteriori_informazioni:
+    plugin: sub_process
+    source: field_lu_info
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: luogo
+migration_dependencies:
+  required:
+    - d9_file_to_media_image
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

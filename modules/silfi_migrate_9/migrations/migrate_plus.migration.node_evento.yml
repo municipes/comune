@@ -1,0 +1,261 @@
+uuid: f29f52fc-765f-4d77-bd9d-b9233bdb00f6
+langcode: it
+status: true
+id: node_evento
+label: 'D9 Node Evento'
+migration_group: migrate_drupal_9
+migration_tags:
+  - node
+
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: node
+  bundle: evento
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+  field_allegati:
+    plugin: sub_process
+    source: field_nc_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_doc
+        source: target_id
+        no_stub: true
+
+  desc_completa/0/value:
+    plugin: concat
+    source:
+      - field_ev_corpo/0/value
+      - field_ev_organized/0/value
+    delimiter: '<br>'
+
+  field_descrizione_completa:
+    plugin: sub_process
+    source: '@desc_completa'
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve: field_abstract
+
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_data_e_orario_di_inizio:
+    -
+      plugin: sub_process
+      source: field_date_recur
+      process:
+        value:
+          plugin: format_date
+          from_format: 'U'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+          from_timezone: 'UTC'
+          to_timezone: 'UTC'
+  field_data_e_orario_di_fine:
+    -
+      plugin: sub_process
+      source: field_date_recur
+      process:
+        value:
+          plugin: format_date
+          from_format: 'U'
+          to_format: 'Y-m-d\TH:i:s'
+          source: end_value
+          from_timezone: 'UTC'
+          to_timezone: 'UTC'
+
+  field_sottotitolo: field_ev_subtitle
+
+  field_evento_genitore:
+    plugin: sub_process
+    source: field_ev_figlio
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration: node_evento
+          source: target_id
+          no_stub: false
+        -
+          plugin: skip_on_empty
+          method: process
+
+  field_patrocinio:
+    plugin: sub_process
+    source: field_ev_patrocin
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_persone:
+    plugin: sub_process
+    source: field_ev_persone
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: node_persona
+        source: target_id
+        no_stub: true
+
+  field_importi_viaggio_servizio:
+    plugin: sub_process
+    source: field_ev_price
+    process:
+      value:
+        -
+          plugin: get
+          source: value
+        - plugin: default_value
+          default_value: 'Nessun costo.'
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_unita_organizzativa:
+    plugin: sub_process
+    source: field_ev_support
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: node_uo
+        source: target_id
+        no_stub: true
+
+  field_argomenti:
+    plugin: sub_process
+    source: field_tax_argomenti
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          38: 10002
+          47: 10029
+          143: 10004
+          36: 10039
+          16: 10008
+          165: 10013
+          155: 10011
+          154: 10013
+          23: 10013
+          163: 10013
+          153: 10040
+          33: 10052
+          166: 10055
+          26: 10021
+          34: 10026
+          48: 10001
+          35: 10029
+          17: 10032
+          30: 10034
+          31: 10017
+          39: 10023
+          40: 10007
+          41: 10045
+          21: 10007
+          43: 10051
+          32: 10055
+          37: 10062
+          45: 10057
+          46: 10058
+          25: 10059
+          29: 10036
+        # bypass: true
+
+  field_tipo_di_evento:
+    plugin: sub_process
+    source: field_ev_tipo_event
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          71: 258
+          102: 381
+          101: 372
+          103: 388
+          100: 269
+          98: 4
+          112: 12
+          110: 5
+          111: 7
+          # 73:
+          # 109:
+          72: 390
+          104: 391
+          105: 394
+          # 108:
+          # 106:
+          107: 396
+          99: 14
+          113: 16
+        bypass: true
+
+  field_ulteriori_informazioni:
+    plugin: sub_process
+    source: field_ev_info
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: evento
+migration_dependencies:
+  required:
+    - d9_file_to_media_image
+    - d9_file_to_media_doc
+    - node_luogo
+    - node_persona
+    - node_uo
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

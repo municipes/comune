@@ -1,0 +1,91 @@
+uuid: fb66c8c1-b976-4819-8d32-8c7bb68f38b2
+langcode: it
+status: true
+id: node_punto_di_contatto
+label: 'D9 Node Punto di contatto'
+migration_group: migrate_drupal_9
+migration_tags:
+  - node
+
+source:
+  plugin: d9_pocs
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  # created:
+  #   -
+  #     plugin: get
+  #     source: created
+  # changed:
+  #   -
+  #     plugin: get
+  #     source: changed
+
+  splitted_type:
+    plugin: explode
+    source: type
+    limit: 2
+    delimiter: '_'
+
+  new_type:
+    plugin: extract
+    source: '@splitted_type'
+    default: ''
+    index:
+      - 1
+
+  title:
+    plugin: concat
+    source:
+      - title
+      - '@new_type'
+    delimiter: ' '
+
+  pseudo_contatto:
+    -
+      plugin: migration_lookup
+      migration:
+        - paragraph_contatto_mail
+        - paragraph_contatto_telefono
+        - paragraph_contatto_link
+      source: id
+    -
+      plugin: null_as_array
+
+  field_contatto:
+    plugin: sub_process
+    source:
+      - '@pseudo_contatto'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: punto_di_contatto
+migration_dependencies: { }
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

@@ -1,0 +1,194 @@
+uuid: d561050c-7974-493f-b41c-036c60171b5c
+langcode: it
+status: true
+id: node_uo
+label: 'D9 Node Unità Organizzative'
+migration_group: migrate_drupal_9
+migration_tags:
+  - node
+
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: node
+  bundle: unita_organizzativa
+
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+  field_sezione_amministrazione:
+    plugin: sub_process
+    source: field_navigazione
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          2: 202
+          4: 205
+          5: 206
+          6: 207
+          7: 208
+          8: 429
+          88: 429
+          89: 429
+          90: 429
+          91: 429
+          92: 429
+          93: 429
+          94: 429
+          95: 429
+          121: 209
+          156: 429
+          158: 429
+          159: 429
+        bypass: true
+
+  field_competenze:
+    plugin: sub_process
+    source: field_uo_compet
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve: field_abstract
+
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_persona:
+    plugin: sub_process
+    source: field_uo_ref
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: node_persona
+        source: target_id
+        no_stub: true
+
+  field_luogo:
+    plugin: sub_process
+    source: field_sede_principale
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: node_luogo
+        source: target_id
+        no_stub: true
+
+  field_argomenti:
+    plugin: sub_process
+    source: field_tax_argomenti
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          38: 10002
+          47: 10029
+          143: 10004
+          36: 10039
+          16: 10008
+          165: 10013
+          155: 10011
+          154: 10013
+          23: 10013
+          163: 10013
+          153: 10040
+          33: 10052
+          166: 10055
+          26: 10021
+          34: 10026
+          48: 10001
+          35: 10029
+          17: 10032
+          30: 10034
+          31: 10017
+          39: 10023
+          40: 10007
+          41: 10045
+          21: 10007
+          43: 10051
+          32: 10055
+          37: 10062
+          45: 10057
+          46: 10058
+          25: 10059
+          29: 10036
+        # bypass: true
+
+  field_tipo_di_organizzazione:
+    plugin: sub_process
+    source: field_uo_tax_tipologia
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          50: 303
+          51: 304
+          52: 264
+          53: 311
+          54: 323
+        bypass: true
+
+  field_punti_di_contatto:
+    plugin: sub_process
+    source: field_contatti
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration:
+          - node_punto_di_contatto
+        source: target_id
+
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: unita_organizzativa
+migration_dependencies:
+  required:
+    - d9_file_to_media_image
+    - d9_file_to_media_doc
+    - node_luogo
+    - node_persona
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9
