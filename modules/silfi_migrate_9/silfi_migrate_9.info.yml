@@ -5,4 +5,5 @@ package: migrate
 core_version_requirement: ^10
 dependencies:
   - migrate_drupal_d8:migrate_drupal_d8
+  - migrate_skip_on_404:migrate_skip_on_404
   - migrate_silfi:migrate_silfi
