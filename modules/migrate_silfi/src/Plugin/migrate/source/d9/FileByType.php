@@ -9,8 +9,7 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  * Drupal 9 file source (optionally filtered by type) from database.
  *
  * @MigrateSource(
- *   id = "d9_file_by_type",
- *   source_module = "migrate_drupal"
+ *   id = "d9_file_by_type"
  * )
  */
 class FileByType extends DrupalSqlBase {
