@@ -65,6 +65,7 @@ install:
   - drupal:inline_form_errors
   - drupal:language
   - drupal:link
+  - drupal:linkit
   - drupal:locale
   - drupal:media_library
   - drupal:menu_link_content
