@@ -78,6 +78,9 @@ class Servizio extends Node {
     foreach ($result as $record) {
       $cmisID = $record['field_allegati_alfresco_path'];
     }
+    if (is_array(($cmisID))) {
+      return '';
+    }
 
     return $cmisID;
   }
