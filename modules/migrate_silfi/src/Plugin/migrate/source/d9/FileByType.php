@@ -61,23 +61,22 @@ class FileByType extends DrupalSqlBase {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    if (isset($this->configuration['get_alt']) || isset($this->configuration['get_description'])) {
-      $fid = (int)$row->getSourceProperty('fid');
-      $fields = $this->configuration['fields'];
-      foreach ($fields as $field) {
-        if ($this->configuration['type'] == 'image') {
-          if ($alt = $this->getAttr($field, $fid, '_alt')) {
-            $row->setSourceProperty('alt', $alt);
-          }
+    $fid = (int)$row->getSourceProperty('fid');
+    $fields = $this->configuration['fields'];
+    foreach ($fields as $field) {
+      if ($this->configuration['type'] == 'image') {
+        if ($alt = $this->getAttr($field, $fid, '_alt')) {
+          $row->setSourceProperty('alt', $alt);
         }
+      }
 
-        if ($this->configuration['type'] == 'application') {
-          if ($desc = $this->getAttr($field, $fid, '_description')) {
-            $row->setSourceProperty('description', $desc);
-          }
+      if ($this->configuration['type'] == 'application') {
+        if ($desc = $this->getAttr($field, $fid, '_description')) {
+          $row->setSourceProperty('description', $desc);
         }
       }
     }
+
     if ($this->configuration['type'] == 'video') {
       $uri = str_replace('v/', 'v=', $row->getSourceProperty('uri'));
       $uri = str_replace('youtube://', 'https://www.youtube.com/watch?', $uri);
@@ -101,12 +100,10 @@ class FileByType extends DrupalSqlBase {
     $query->fields('f', [$field . $attr]);
     if ($suffix == 'entity_id') {
       $query->condition('f.' . $suffix, $fid);
-    }
-    else {
+    } else {
       $query->condition('f.' . $field . $suffix, $fid);
     }
     $result = $query->execute();
     return $result->fetchField();
   }
-
 }
