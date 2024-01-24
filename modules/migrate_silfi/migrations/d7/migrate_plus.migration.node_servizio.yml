@@ -336,6 +336,9 @@ process:
           248: 28
           241: 40
           249: 45
+          266: 29
+          468: 40
+        default_value: 0
 
   field_documenti:
     -
