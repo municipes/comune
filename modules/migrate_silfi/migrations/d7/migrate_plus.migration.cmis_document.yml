@@ -26,7 +26,7 @@ source:
   track_changes: true
 
   urls:
-    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/gdbo_pontassieve_20231120_1437.json
+    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/sancasciano.json
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: content
@@ -147,7 +147,7 @@ process:
       'allegato': 55
       'atto': 52
       # 'Delibere':
-      # 'Determine':
+      'determina': 52
       # 'Ordinanze':
       'regolamento': 51
 
