@@ -1,0 +1,35 @@
+uuid: f7b6d374-24ba-4c36-bdcb-5a03471c4ea8
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_views_figli
+    - node.type.unita_organizzativa
+    - views.view.bi_campi_nodi
+  module:
+    - viewsreference
+id: node.unita_organizzativa.field_views_figli
+field_name: field_views_figli
+entity_type: node
+bundle: unita_organizzativa
+label: Uffici
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 5564d0be-09fc-47f3-b333-40ad9d4754b5
+    display_id: block_8
+    data: 'a:5:{s:6:"offset";N;s:5:"title";N;s:8:"argument";N;s:5:"pager";N;s:5:"limit";N;}'
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    block: block
+  preselect_views:
+    bi_campi_nodi: bi_campi_nodi
+  enabled_settings: {  }
+field_type: viewsreference

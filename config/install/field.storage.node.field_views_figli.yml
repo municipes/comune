@@ -1,0 +1,21 @@
+uuid: 05195fbb-2278-4a1c-8177-86d294262c99
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+    - views
+    - viewsreference
+id: node.field_views_figli
+field_name: field_views_figli
+entity_type: node
+type: viewsreference
+settings:
+  target_type: view
+module: viewsreference
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
