@@ -128,6 +128,7 @@ install:
   - paragraphs:paragraphs
   - pathauto:pathauto
   - rabbit_hole:rabbit_hole
+  - rabbit_hole:rh_node
   - scheduler:scheduler
   - search_api:search_api
   - search_api:search_api_db
