@@ -1,0 +1,14 @@
+uuid: 0739b366-af23-4dd1-b82b-b5a42b69b5dd
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.incarico
+id: node_type_incarico
+entity_type_id: node_type
+entity_id: incarico
+action: access_denied
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
