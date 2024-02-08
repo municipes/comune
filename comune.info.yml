@@ -127,6 +127,7 @@ install:
   - node_read_time:node_read_time
   - paragraphs:paragraphs
   - pathauto:pathauto
+  - rabbit_hole:rabbit_hole
   - scheduler:scheduler
   - search_api:search_api
   - search_api:search_api_db
