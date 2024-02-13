@@ -97,6 +97,7 @@ install:
   - admin_toolbar:admin_toolbar_tools
   - auto_entitylabel:auto_entitylabel
   - backup_migrate:backup_migrate
+  - cer:cer
   - color_field:color_field
   - components:components
   - crop:crop
@@ -119,6 +120,7 @@ install:
   - jquery_ui:jquery_ui
   - jquery_ui_draggable:jquery_ui_draggable
   - leaflet:leaflet
+  - linkit:linkit
   - media_video_micromodal:media_video_micromodal
   - menu_block:menu_block
   - migrate_plus:migrate_plus
