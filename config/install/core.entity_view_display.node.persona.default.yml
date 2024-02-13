@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.persona.field_altre_cariche
     - field.field.node.persona.field_biografia
+    - field.field.node.persona.field_cellulare_riservato
     - field.field.node.persona.field_cognome
     - field.field.node.persona.field_competenze
     - field.field.node.persona.field_curriculum_vitae
@@ -14,11 +15,14 @@ dependencies:
     - field.field.node.persona.field_galleria_immagini
     - field.field.node.persona.field_immagine
     - field.field.node.persona.field_incarichi
+    - field.field.node.persona.field_incarico
     - field.field.node.persona.field_nome
+    - field.field.node.persona.field_note_il_call_center
     - field.field.node.persona.field_punti_di_contatto
     - field.field.node.persona.field_sezione_amministrazione
     - field.field.node.persona.field_situazione_patrimoniale
     - field.field.node.persona.field_spese_elettorali
+    - field.field.node.persona.field_telefono_riservato
     - field.field.node.persona.field_ulteriori_informazioni
     - field.field.node.persona.field_v_situazione_patrimoniale
     - field.field.node.persona.field_view_reference
@@ -29,8 +33,6 @@ dependencies:
     - text
     - user
     - viewsreference
-_core:
-  default_config_hash: PNmPzyddMzcZrqc1qSnxNR0P06WrkD0IQQ-eKKmPSzA
 id: node.persona.default
 targetEntityType: node
 bundle: persona
@@ -61,6 +63,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_incarico:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_punti_di_contatto:
     type: entity_reference_label
     label: above
@@ -86,6 +96,7 @@ content:
 hidden:
   field_altre_cariche: true
   field_biografia: true
+  field_cellulare_riservato: true
   field_cognome: true
   field_curriculum_vitae: true
   field_deleghe: true
@@ -93,9 +104,11 @@ hidden:
   field_galleria_immagini: true
   field_incarichi: true
   field_nome: true
+  field_note_il_call_center: true
   field_sezione_amministrazione: true
   field_situazione_patrimoniale: true
   field_spese_elettorali: true
+  field_telefono_riservato: true
   field_ulteriori_informazioni: true
   field_v_situazione_patrimoniale: true
   langcode: true

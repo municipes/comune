@@ -15,7 +15,7 @@ source:
   plugin: d7_file
   scheme: public
   constants:
-    source_base_path: 'https://www.comune.pontassieve.fi.it/'
+    source_base_path: 'https://www.comune.dicomano.fi.it/'
 process:
   # fid:
   #   -

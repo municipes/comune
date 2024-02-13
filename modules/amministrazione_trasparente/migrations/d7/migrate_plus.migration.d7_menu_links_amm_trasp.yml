@@ -13,14 +13,14 @@ migration_group: migrate_drupal_7
 label: 'Amministrazione trasparente Menu links'
 source:
   plugin: amm_trasp_menu_link
-  mlid: 6385 # l'id del menu di partenza
+  mlid: 2233 # l'id del menu di partenza
   constants:
     bundle: menu_link_content
 process:
-  id:
-    -
-      plugin: get
-      source: mlid
+  # id:
+  #   -
+  #     plugin: get
+  #     source: mlid
   bundle:
     -
       plugin: get

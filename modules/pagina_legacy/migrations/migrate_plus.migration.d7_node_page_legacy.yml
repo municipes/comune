@@ -15,7 +15,7 @@ label: 'Node (Pagine legacy)'
 source:
   plugin: d7_migrate_page_legacy
   node_type: page
-  mlid: 6385 # l'id del menu amm trasp di partenza
+  mlid: 2233 # l'id del menu amm trasp di partenza
   not_at: true # esclude le pagine di Amministrazione Trasparente
   from_date: 1456786799 # data in unixtime dei nodi da cui iniziare migrazione
   context: 1 # valore del campo field_sito la Rete Civica

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.persona.field_galleria_immagini
     - field.field.node.persona.field_immagine
     - field.field.node.persona.field_incarichi
+    - field.field.node.persona.field_incarico
     - field.field.node.persona.field_nome
     - field.field.node.persona.field_note_il_call_center
     - field.field.node.persona.field_punti_di_contatto
@@ -38,6 +39,7 @@ third_party_settings:
     group_contenitore:
       children:
         - group_principale
+        - group_incarico
         - group_altro
         - group_dati_riservati_non_pubblic
       label: Contenitore
@@ -114,6 +116,21 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_incarico:
+      children:
+        - field_incarico
+      label: Incarico
+      region: content
+      parent_name: group_contenitore
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.persona.default
 targetEntityType: node
 bundle: persona
@@ -127,14 +144,14 @@ content:
     third_party_settings: {  }
   field_altre_cariche:
     type: media_library_widget
-    weight: 16
+    weight: 17
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_biografia:
     type: text_textarea
-    weight: 8
+    weight: 9
     region: content
     settings:
       rows: 5
@@ -158,7 +175,7 @@ content:
     third_party_settings: {  }
   field_competenze:
     type: text_textarea
-    weight: 6
+    weight: 7
     region: content
     settings:
       rows: 5
@@ -166,14 +183,14 @@ content:
     third_party_settings: {  }
   field_curriculum_vitae:
     type: media_library_widget
-    weight: 11
+    weight: 12
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_deleghe:
     type: text_textarea
-    weight: 7
+    weight: 8
     region: content
     settings:
       rows: 5
@@ -189,7 +206,7 @@ content:
     third_party_settings: {  }
   field_dichiarazione_dei_redditi:
     type: media_library_widget
-    weight: 13
+    weight: 14
     region: content
     settings:
       media_types: {  }
@@ -219,6 +236,24 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_incarico:
+    type: inline_entity_form_complex
+    weight: 6
+    region: content
+    settings:
+      form_mode: paragraph
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
   field_nome:
     type: string_textfield
     weight: 2
@@ -237,7 +272,7 @@ content:
     third_party_settings: {  }
   field_punti_di_contatto:
     type: inline_entity_form_complex
-    weight: 10
+    weight: 11
     region: content
     settings:
       form_mode: paragraph
@@ -261,7 +296,7 @@ content:
     third_party_settings: {  }
   field_situazione_patrimoniale:
     type: text_textarea
-    weight: 12
+    weight: 13
     region: content
     settings:
       rows: 5
@@ -269,7 +304,7 @@ content:
     third_party_settings: {  }
   field_spese_elettorali:
     type: media_library_widget
-    weight: 14
+    weight: 15
     region: content
     settings:
       media_types: {  }
@@ -284,7 +319,7 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 17
+    weight: 18
     region: content
     settings:
       rows: 5
@@ -292,7 +327,7 @@ content:
     third_party_settings: {  }
   field_v_situazione_patrimoniale:
     type: media_library_widget
-    weight: 15
+    weight: 16
     region: content
     settings:
       media_types: {  }

@@ -1,0 +1,14 @@
+uuid: 60a7d9a8-ae16-4422-b8cd-70c20d9b2038
+langcode: it
+status: true
+dependencies: {  }
+id: persone_incarichi
+label: 'Persone Incarichi'
+enabled: true
+first_field: field_incarico
+second_field: field_persona
+add_direction: append
+bundles:
+  node:
+    - incarico
+    - persona

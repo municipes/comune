@@ -26,7 +26,7 @@ source:
   track_changes: true
 
   urls:
-    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/sancasciano.json
+    - profiles/contrib/comune/modules/migrate_silfi/json/cmis/dicomano.json
 
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: content

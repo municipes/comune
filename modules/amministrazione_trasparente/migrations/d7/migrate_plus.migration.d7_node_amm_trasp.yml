@@ -15,7 +15,7 @@ label: 'Node (Amministrazione Trasparente)'
 source:
   plugin: d7_migrate_page_legacy
   node_type: page
-  mlid: 6385 # l'id del menu di partenza
+  mlid: 2233 # l'id del menu di partenza
   not_at: false # solo le pagine di Amministrazione Trasparente
   from_date: false # data in unixtime dei nodi da cui iniziare migrazione
   context: false # tid del vocabolario Contesto per la Rete Civica
