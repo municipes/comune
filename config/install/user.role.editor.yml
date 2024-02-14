@@ -21,7 +21,6 @@ dependencies:
     - node.type.notizia
     - node.type.pagamento
     - node.type.pagina
-    - node.type.pagina_legacy
     - node.type.persona
     - node.type.punto_di_contatto
     - node.type.servizio
