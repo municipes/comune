@@ -113,9 +113,22 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Nessun risultato.'
+            format: bootstrap_italia_2
+          tokenize: false
       sorts:
         search_api_relevance:
           id: search_api_relevance

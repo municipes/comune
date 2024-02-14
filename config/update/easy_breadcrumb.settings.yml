@@ -1,19 +1,17 @@
-_core:
-  default_config_hash: 4zI9sK9RHLh3VCyjtuRvYpISr4n-l0fF9hyPU2Bd97g
 langcode: it
 applies_admin_routes: false
 include_invalid_paths: true
 excluded_paths: ''
-replaced_titles: ''
+replaced_titles: 'Avviso::Avvisi\r\nComunicato (stampa)::Comunicati\r\nNotizia:Notizie'
 custom_paths: ''
 include_home_segment: true
-alternative_title_field: field_breadcrumb_title
+alternative_title_field: field_plurale
 home_segment_title: Home
 home_segment_keep: false
 include_title_segment: false
-title_from_page_when_available: false
+title_from_page_when_available: true
 title_segment_as_link: false
-use_menu_title_as_fallback: true
+use_menu_title_as_fallback: false
 use_page_title_as_menu_title_fallback: false
 menu_title_preferred_menu: main
 remove_repeated_segments: true
