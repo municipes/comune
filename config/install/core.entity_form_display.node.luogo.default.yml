@@ -1,123 +1,345 @@
-uuid: f7022628-d68f-412e-90d8-f934cad4f906
+uuid: cabe7533-5ae9-444c-8ea9-574c135a9dbe
 langcode: it
 status: true
 dependencies:
   config:
-    - field.field.node.persona.field_altre_cariche
-    - field.field.node.persona.field_biografia
-    - field.field.node.persona.field_cellulare_riservato
-    - field.field.node.persona.field_cognome
-    - field.field.node.persona.field_competenze
-    - field.field.node.persona.field_curriculum_vitae
-    - field.field.node.persona.field_deleghe
-    - field.field.node.persona.field_descrizione_breve
-    - field.field.node.persona.field_dichiarazione_dei_redditi
-    - field.field.node.persona.field_galleria_immagini
-    - field.field.node.persona.field_immagine
-    - field.field.node.persona.field_incarichi
-    - field.field.node.persona.field_incarico
-    - field.field.node.persona.field_nome
-    - field.field.node.persona.field_note_il_call_center
-    - field.field.node.persona.field_punti_di_contatto
-    - field.field.node.persona.field_sezione_amministrazione
-    - field.field.node.persona.field_situazione_patrimoniale
-    - field.field.node.persona.field_spese_elettorali
-    - field.field.node.persona.field_telefono_riservato
-    - field.field.node.persona.field_ulteriori_informazioni
-    - field.field.node.persona.field_v_situazione_patrimoniale
-    - field.field.node.persona.field_view_reference
-    - image.style.focal_point_vga_3_4_480x640_narrow
-    - node.type.persona
+    - field.field.node.luogo.field_argomenti
+    - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_descrizione_breve
+    - field.field.node.luogo.field_descrizione_completa
+    - field.field.node.luogo.field_galleria_immagini
+    - field.field.node.luogo.field_identificativo
+    - field.field.node.luogo.field_immagine
+    - field.field.node.luogo.field_indirizzo
+    - field.field.node.luogo.field_luoghi
+    - field.field.node.luogo.field_modalita_di_accesso
+    - field.field.node.luogo.field_orario_per_il_pubblico
+    - field.field.node.luogo.field_posizione_gps
+    - field.field.node.luogo.field_punti_di_contatto
+    - field.field.node.luogo.field_quartiere
+    - field.field.node.luogo.field_servizi_presenti_nel_luogo
+    - field.field.node.luogo.field_sottotitolo
+    - field.field.node.luogo.field_tipo_di_luogo
+    - field.field.node.luogo.field_ulteriori_informazioni
+    - field.field.node.luogo.field_unita_organizzativa
+    - field.field.node.luogo.field_video_esterno
+    - node.type.luogo
   module:
-    - media
+    - address
+    - inline_entity_form
+    - leaflet
+    - media_library
+    - path
     - text
-    - user
-    - viewsreference
-_core:
-  default_config_hash: 3UUsm0kenNZ1u3plPdsRE-Fzld1Swtm0_IJFXNk3WbM
-id: node.persona.default
+id: node.luogo.default
 targetEntityType: node
-bundle: persona
+bundle: luogo
 mode: default
 content:
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
+  created:
+    type: datetime_timestamp
+    weight: 23
     region: content
-  field_competenze:
-    type: text_default
-    label: above
     settings: {  }
     third_party_settings: {  }
+  field_argomenti:
+    type: entity_reference_autocomplete
     weight: 2
     region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_circoscrizione:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_descrizione_breve:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_immagine:
-    type: media_thumbnail
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: focal_point_vga_3_4_480x640_narrow
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_incarico:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_punti_di_contatto:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_view_reference:
-    type: viewsreference_formatter
-    label: above
-    settings:
-      plugin_types:
-        - block
-    third_party_settings: {  }
+    type: string_textarea
     weight: 5
     region: content
-  links:
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_descrizione_completa:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_galleria_immagini:
+    type: inline_entity_form_complex
+    weight: 8
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  field_identificativo:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_immagine:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_indirizzo:
+    type: address_default
+    weight: 12
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_luoghi:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_modalita_di_accesso:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_orario_per_il_pubblico:
+    type: text_textarea
+    weight: 16
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_posizione_gps:
+    type: leaflet_widget_default
+    weight: 15
+    region: content
+    settings:
+      map:
+        leaflet_map: 'OSM Mapnik'
+        height: 450
+        auto_center: 1
+        map_position:
+          force: false
+          center:
+            lat: 43.80382153433
+            lon: 11.367955126247
+          zoomControlPosition: topleft
+          zoom: 10
+          minZoom: 1
+          maxZoom: 18
+          zoomFiner: 0
+        scroll_zoom_enabled: 1
+      input:
+        show: false
+        readonly: false
+      toolbar:
+        position: topright
+        marker: defaultMarker
+        drawPolyline: false
+        drawRectangle: false
+        drawPolygon: false
+        drawCircle: false
+        drawText: false
+        editMode: false
+        dragMode: false
+        cutPolygon: false
+        removalMode: true
+        rotateMode: false
+      reset_map:
+        control: true
+        options: '{"position":"topleft","title":"Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+      fullscreen:
+        control: true
+        options: '{"position":"topleft","pseudoFullscreen":false}'
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      locate:
+        control: true
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+        automatic: false
+      geocoder:
+        control: true
+        settings:
+          autocomplete:
+            placeholder: 'Search Address'
+            title: 'Search an Address on the Map'
+          position: topright
+          input_size: 20
+          providers:
+            openstreetmap:
+              weight: 0
+              checked: true
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          popup: false
+          options: ''
+      geometry_validation: 0
+      feature_properties:
+        values: ''
+    third_party_settings: {  }
+  field_punti_di_contatto:
+    type: inline_entity_form_complex
+    weight: 17
+    region: content
+    settings:
+      form_mode: paragraph
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  field_quartiere:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_servizi_presenti_nel_luogo:
+    type: text_textarea
+    weight: 10
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_sottotitolo:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tipo_di_luogo:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ulteriori_informazioni:
+    type: text_textarea
+    weight: 19
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_unita_organizzativa:
+    type: options_select
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_esterno:
+    type: inline_entity_form_complex
+    weight: 9
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 21
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 24
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 27
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 25
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
     weight: 0
     region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
-  field_altre_cariche: true
-  field_biografia: true
-  field_cellulare_riservato: true
-  field_cognome: true
-  field_curriculum_vitae: true
-  field_deleghe: true
-  field_dichiarazione_dei_redditi: true
-  field_galleria_immagini: true
-  field_incarichi: true
-  field_nome: true
-  field_note_il_call_center: true
-  field_sezione_amministrazione: true
-  field_situazione_patrimoniale: true
-  field_spese_elettorali: true
-  field_telefono_riservato: true
-  field_ulteriori_informazioni: true
-  field_v_situazione_patrimoniale: true
-  langcode: true
-  node_read_time: true
-  search_api_excerpt: true
+  publish_on: true
+  unpublish_on: true
