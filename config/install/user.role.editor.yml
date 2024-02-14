@@ -11,7 +11,6 @@ dependencies:
     - media.type.image_svg
     - media.type.logo_content_type
     - node.type.accesso_al_servizio
-    - node.type.amministrazione_trasparente
     - node.type.appuntamento
     - node.type.dataset
     - node.type.documento_pubblico
@@ -33,7 +32,6 @@ dependencies:
     - workflows.workflow.servizi
   module:
     - content_moderation
-    - entity_clone
     - file
     - filter
     - geocoder
@@ -45,8 +43,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-_core:
-  default_config_hash: eF86r_HPXiljBVwu8P2xPIu4yhsXHMw02gLdMs9W9Ys
 id: editor
 label: Redattore
 weight: 11
