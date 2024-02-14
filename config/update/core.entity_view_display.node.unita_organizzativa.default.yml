@@ -1,0 +1,171 @@
+uuid: 9c7e8929-05e4-4e08-9d94-ff2ced6c64b1
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.unita_organizzativa.field_argomenti
+    - field.field.node.unita_organizzativa.field_competenze
+    - field.field.node.unita_organizzativa.field_descrizione_breve
+    - field.field.node.unita_organizzativa.field_documenti
+    - field.field.node.unita_organizzativa.field_immagine
+    - field.field.node.unita_organizzativa.field_incarichi
+    - field.field.node.unita_organizzativa.field_luoghi
+    - field.field.node.unita_organizzativa.field_luogo
+    - field.field.node.unita_organizzativa.field_persona
+    - field.field.node.unita_organizzativa.field_punti_di_contatto
+    - field.field.node.unita_organizzativa.field_sezione_amministrazione
+    - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
+    - field.field.node.unita_organizzativa.field_ulteriori_informazioni
+    - field.field.node.unita_organizzativa.field_unita_organizzativa
+    - field.field.node.unita_organizzativa.field_view_persone
+    - field.field.node.unita_organizzativa.field_view_reference
+    - node.type.unita_organizzativa
+  module:
+    - text
+    - user
+    - viewsreference
+_core:
+  default_config_hash: IIPDjgxAGETzvQm9gjDiCyh8Y_Lyt44ip7dpWoMCm4o
+id: node.unita_organizzativa.default
+targetEntityType: node
+bundle: unita_organizzativa
+mode: default
+content:
+  field_argomenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_competenze:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_documenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_incarichi:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_luoghi:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_luogo:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_persona:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_punti_di_contatto:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_sezione_amministrazione:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_tipo_di_organizzazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_unita_organizzativa:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_view_persone:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_view_reference:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

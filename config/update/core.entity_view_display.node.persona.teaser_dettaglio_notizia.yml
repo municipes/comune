@@ -1,9 +1,9 @@
-uuid: c12b7567-8cd7-4027-8d1c-fe2c823db894
+uuid: 04fe1723-a383-4820-a828-1aaa781bb159
 langcode: it
-status: true
+status: false
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_dettaglio_notizia
     - field.field.node.persona.field_altre_cariche
     - field.field.node.persona.field_biografia
     - field.field.node.persona.field_cellulare_riservato
@@ -30,32 +30,11 @@ dependencies:
     - node.type.persona
   module:
     - user
-id: node.persona.teaser
+id: node.persona.teaser_dettaglio_notizia
 targetEntityType: node
 bundle: persona
-mode: teaser
-content:
-  field_descrizione_breve:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_immagine:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card_teaser
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
+mode: teaser_dettaglio_notizia
+content: {  }
 hidden:
   field_altre_cariche: true
   field_biografia: true
@@ -64,8 +43,10 @@ hidden:
   field_competenze: true
   field_curriculum_vitae: true
   field_deleghe: true
+  field_descrizione_breve: true
   field_dichiarazione_dei_redditi: true
   field_galleria_immagini: true
+  field_immagine: true
   field_incarichi: true
   field_incarico: true
   field_nome: true
@@ -79,5 +60,6 @@ hidden:
   field_v_situazione_patrimoniale: true
   field_view_reference: true
   langcode: true
+  links: true
   node_read_time: true
   search_api_excerpt: true

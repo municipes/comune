@@ -1,9 +1,9 @@
-uuid: c12b7567-8cd7-4027-8d1c-fe2c823db894
+uuid: 9141f2f9-3071-4d8e-b599-d050283c5bcc
 langcode: it
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_in_evidenza_1
     - field.field.node.persona.field_altre_cariche
     - field.field.node.persona.field_biografia
     - field.field.node.persona.field_cellulare_riservato
@@ -30,31 +30,22 @@ dependencies:
     - node.type.persona
   module:
     - user
-id: node.persona.teaser
+id: node.persona.teaser_in_evidenza_1
 targetEntityType: node
 bundle: persona
-mode: teaser
+mode: teaser_in_evidenza_1
 content:
   field_descrizione_breve:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_immagine:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card_teaser
-      link: false
-    third_party_settings: {  }
     weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 100
     region: content
 hidden:
   field_altre_cariche: true
@@ -66,6 +57,7 @@ hidden:
   field_deleghe: true
   field_dichiarazione_dei_redditi: true
   field_galleria_immagini: true
+  field_immagine: true
   field_incarichi: true
   field_incarico: true
   field_nome: true

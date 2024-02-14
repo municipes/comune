@@ -26,8 +26,6 @@ dependencies:
     - ui_patterns_field_formatters
     - user
     - viewsreference
-_core:
-  default_config_hash: zQhxgJ53PE5yNorSD5CeOs5spQ3u6XkhD37xS5yum5o
 id: node.unita_organizzativa.full
 targetEntityType: node
 bundle: unita_organizzativa

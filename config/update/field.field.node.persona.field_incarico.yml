@@ -1,0 +1,29 @@
+uuid: 7f83c05b-19cf-4044-8220-a991021a5449
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_incarico
+    - node.type.incarico
+    - node.type.persona
+id: node.persona.field_incarico
+field_name: field_incarico
+entity_type: node
+bundle: persona
+label: Incarico
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      incarico: incarico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
