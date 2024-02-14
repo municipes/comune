@@ -54,15 +54,18 @@ class EntityQueries {
   ): mixed {
     $form = null;
     // Execute the query.
-    if ($nids = $this->queryByFields()) {
+    if ($nids = $this->queryByFields($firstName, $lastName)) {
       // Load the nodes with the given NIDs.
       // Get the node storage.
       $nodeStorage = $this->entityTypeManager->getStorage('node');
       if ($nodes = $nodeStorage->loadMultiple($nids)) {
         $newNodes = $this->createArray($nodes);
-        foreach ($newNodes as $uoData) {
+        foreach ($newNodes as $idRecord => $uoData) {
+          if (isset($uoData['uo'])) {
+            $idRecord = $uoData['uo']->id();
+          }
           $build = $this->createBuildArray($uoData);
-          $form['search_results']['result'][$uoData['uo']->id()] = $build;
+          $form['search_results']['result'][$idRecord] = $build;
         }
       }
     }
@@ -280,6 +283,10 @@ class EntityQueries {
         $newNodes[$uo->id()]['persone'][$persona->id()]['incarico'] = $incarico;
         $newNodes[$uo->id()]['persone'][$persona->id()]['persona'] = $persona;
       }
+      else {
+        $newNodes[$id]['persone'][$persona->id()]['incarico'] = $incarico;
+        $newNodes[$id]['persone'][$persona->id()]['persona'] = $persona;
+      }
     }
 
     return $newNodes;
@@ -293,12 +300,17 @@ class EntityQueries {
    */
   private function createBuildArray(array $uoData): array {
     $build = [];
-    $renderedUOContacts = $renderedPersone = null;
+    $renderedUOContacts = $renderedPersone = $uoLabel = null;
+    $uoAddress = new \stdClass();
+    $uoAddress->address_line1 = $uoAddress->postal_code = $uoAddress->locality = '';
     $viewBuilder = $this->entityTypeManager->getViewBuilder('node');
-    $uoAddress = $uoData['uo']->field_luogo->entity->field_indirizzo;
-    $uoContacts = $uoData['uo']->field_punti_di_contatto->entity;
-    if ($uoContacts) {
-      $renderedUOContacts = $viewBuilder->view($uoContacts, 'teaser');
+    if (isset($uoData['uo'])) {
+      $uoAddress = $uoData['uo']->field_luogo->entity->field_indirizzo;
+      $uoContacts = $uoData['uo']->field_punti_di_contatto->entity;
+      if ($uoContacts) {
+        $renderedUOContacts = $viewBuilder->view($uoContacts, 'teaser');
+      }
+      $uoLabel = $uoData['uo']->label();
     }
     foreach ($uoData['persone'] as $key => $personaData) {
       $persona = $personaData['persona'];
@@ -313,7 +325,7 @@ class EntityQueries {
     $build['rubrica'] = [
       '#theme' => 'rubrica_item',
       '#content' => [
-        'uo' => $uoData['uo']->label(),
+        'uo' => $uoLabel,
         'uo_address' => $uoAddress->address_line1 . ' ' . $uoAddress->postal_code . ' ' . $uoAddress->locality,
         'uo_contacts' => $renderedUOContacts,
         'persone' => $renderedPersone,
