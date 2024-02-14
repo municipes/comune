@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.persona.field_allegati
     - field.field.node.persona.field_altre_cariche
     - field.field.node.persona.field_biografia
     - field.field.node.persona.field_cellulare_riservato
@@ -17,6 +18,8 @@ dependencies:
     - field.field.node.persona.field_immagine
     - field.field.node.persona.field_incarichi
     - field.field.node.persona.field_incarico
+    - field.field.node.persona.field_link_esterni
+    - field.field.node.persona.field_luoghi
     - field.field.node.persona.field_nome
     - field.field.node.persona.field_note_il_call_center
     - field.field.node.persona.field_punti_di_contatto
@@ -30,6 +33,7 @@ dependencies:
     - node.type.persona
   module:
     - entity_reference_revisions
+    - link
     - ui_patterns_field_formatters
     - user
     - viewsreference
@@ -38,6 +42,37 @@ targetEntityType: node
 bundle: persona
 mode: full
 content:
+  field_allegati:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: card_teaser
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
   field_altre_cariche:
     type: pattern_wrapper_entity_reference_formatter
     label: hidden
@@ -70,7 +105,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 14
+    weight: 18
     region: content
   field_biografia:
     type: pattern_formatter
@@ -100,7 +135,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_competenze:
     type: pattern_formatter
@@ -133,7 +168,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_curriculum_vitae:
     type: pattern_wrapper_entity_reference_formatter
@@ -164,7 +199,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 9
+    weight: 11
     region: content
   field_deleghe:
     type: pattern_formatter
@@ -194,14 +229,14 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_descrizione_breve:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_dichiarazione_dei_redditi:
     type: pattern_wrapper_entity_reference_formatter
@@ -235,7 +270,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 11
+    weight: 13
     region: content
   field_galleria_immagini:
     type: entity_reference_revisions_entity_view
@@ -244,7 +279,7 @@ content:
       view_mode: preview
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_immagine:
     type: entity_reference_entity_view
@@ -253,7 +288,7 @@ content:
       view_mode: full
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_incarichi:
     type: viewsreference_formatter
@@ -265,7 +300,51 @@ content:
         page: '0'
         feed: '0'
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_link_esterni:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_luoghi:
+    type: pattern_wrapper_entity_reference_formatter
+    label: hidden
+    settings:
+      view_mode: card_simple
+      pattern: node_full_field
+      pattern_mapping:
+        'field_wrapper:label':
+          destination: field_label
+          weight: 0
+          plugin: field_wrapper
+          source: label
+        'field_wrapper:items':
+          destination: field_value
+          weight: 1
+          plugin: field_wrapper
+          source: items
+      pattern_settings:
+        node_full_field:
+          attributes: ''
+          override_label: ''
+          intro_text: ''
+          label_size: ''
+          heading_value: ''
+          label_visible: null
+          label_menu: null
+          audio: null
+      pattern_variant: default
+      link: false
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_punti_di_contatto:
     type: pattern_wrapper_entity_reference_formatter
@@ -299,7 +378,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_situazione_patrimoniale:
     type: pattern_formatter
@@ -332,7 +411,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 12
     region: content
   field_spese_elettorali:
     type: pattern_wrapper_entity_reference_formatter
@@ -366,7 +445,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 12
+    weight: 14
     region: content
   field_ulteriori_informazioni:
     type: pattern_formatter
@@ -399,7 +478,7 @@ content:
       pattern_variant: default
       variants_token: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 19
     region: content
   field_v_situazione_patrimoniale:
     type: pattern_wrapper_entity_reference_formatter
@@ -433,7 +512,7 @@ content:
       pattern_variant: default
       link: false
     third_party_settings: {  }
-    weight: 13
+    weight: 15
     region: content
   field_view_reference:
     type: viewsreference_formatter
@@ -442,12 +521,12 @@ content:
       plugin_types:
         - block
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 20
     region: content
 hidden:
   field_cellulare_riservato: true
