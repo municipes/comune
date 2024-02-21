@@ -419,15 +419,13 @@ class WSO2Controller extends ControllerBase {
    * @return string
    */
   private function getEnte(string $memberOf, bool $stage = FALSE): string {
-    $pattern = "/OPERATORE_(.*),/";
-    $result = preg_match($pattern, $memberOf, $matches);
-    $this->logger->debug('Parse ente %data.', ['%data' => '<pre><code>' . print_r($matches, true) . '</code></pre>']);
-    if ($result) {
-      return $matches[1];
-    }
     $pattern = "/OPERATORE_(.*)/";
-    $result = preg_match($pattern, $memberOf, $matches);
+    $result = preg_match($pattern, $pieces[0], $matches) ?
+      preg_match($pattern, $pieces[0], $matches) :
+      preg_match($pattern, $pieces[1], $matches);
+
     $this->logger->debug('Parse ente %data.', ['%data' => '<pre><code>' . print_r($matches, true) . '</code></pre>']);
+
     if ($result) {
       return $matches[1];
     }
