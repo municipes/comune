@@ -425,6 +425,12 @@ class WSO2Controller extends ControllerBase {
     if ($result) {
       return $matches[1];
     }
+    $pattern = "/OPERATORE_(.*),/";
+    $result = preg_match($pattern, $memberOf, $matches);
+    $this->logger->debug('Parse ente %data.', ['%data' => '<pre><code>' . print_r($matches, true) . '</code></pre>']);
+    if ($result) {
+      return $matches[1];
+    }
   }
 
   /**
