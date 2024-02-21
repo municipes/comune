@@ -357,7 +357,6 @@ class WSO2Controller extends ControllerBase {
 
             $account->save();
           }
-
         }
         break;
     }
@@ -420,13 +419,12 @@ class WSO2Controller extends ControllerBase {
    * @return string
    */
   private function getEnte(string $memberOf, bool $stage = FALSE): string {
-    // $validIndex = $stage ? 0 : 0; // chiarire se esiste il problema
-    $validIndex = 0;
-    $cn0 = explode(',', $memberOf);
-    $cnvalue = explode('/', $cn0[$validIndex]);
-    $operatore_ente = explode('_', $cnvalue[1]);
-
-    return $operatore_ente[1];
+    $pattern = "/OPERATORE_(.*)/";
+    $result = preg_match($pattern, $memberOf, $matches);
+    $this->logger->debug('Parse ente %data.', ['%data' => '<pre><code>' . print_r($matches, true) . '</code></pre>']);
+    if ($result) {
+      return $matches[1];
+    }
   }
 
   /**
@@ -435,7 +433,7 @@ class WSO2Controller extends ControllerBase {
    * @param \Drupal\user\UserInterface $account
    *   The Drupal user to add roles to.
    */
-  public function roleMatchAdd(UserInterface $account, array $roles) : void {
+  public function roleMatchAdd(UserInterface $account, array $roles): void {
     $current_user = \Drupal::currentUser();
     $userRoles = $current_user->getRoles();
     // delete all roles
@@ -468,7 +466,7 @@ class WSO2Controller extends ControllerBase {
    * @return array
    *   List of matching roles to assign to user.
    */
-  public function getMatchingRoles() : array {
+  public function getMatchingRoles(): array {
     $roles = [];
     // Obtain the role map stored. The role map is a concatenated string of
     // rules which, when LDAP attributes on the user match, will add
