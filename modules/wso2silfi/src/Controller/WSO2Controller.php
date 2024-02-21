@@ -419,6 +419,7 @@ class WSO2Controller extends ControllerBase {
    * @return string
    */
   private function getEnte(string $memberOf, bool $stage = FALSE): string {
+    $pieces = explode(',', $memberOf);
     $pattern = "/OPERATORE_(.*)/";
     $result = preg_match($pattern, $pieces[0], $matches) ?
       preg_match($pattern, $pieces[0], $matches) :
