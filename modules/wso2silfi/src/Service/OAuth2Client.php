@@ -463,10 +463,14 @@ class OAuth2Client implements OAuth2ClientInterface {
    */
   protected function getAuthenticationUrl() {
     // $state = md5(uniqid(rand(), TRUE));
+    $comEntityId = '';
+    if ($this->params['comEntityId']) {
+      $comEntityId = $this->params['comEntityId'];
+    }
     $query_params = [
       'response_type' => 'code',
       'agEntityId' => $this->params['agEntityId'],
-      'comEntityId' => $this->params['comEntityId'],
+      'comEntityId' => $comEntityId,
       'client_id' => $this->params['client_id'],
       // 'client_secret' => $this->params['client_secret'],
       'redirect_uri' => $this->params['redirect_uri'],

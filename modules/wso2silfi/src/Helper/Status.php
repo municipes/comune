@@ -135,7 +135,9 @@ class Status {
   }
 
   public function operatorAgEntityIdWso2() {
-    return trim($this->config->get('operator.agEntityId'));
+    if ($this->config->get('operator.agEntityId')) {
+      return trim($this->config->get('operator.agEntityId'));
+    }
   }
 
   public function operatorApp() : string {
