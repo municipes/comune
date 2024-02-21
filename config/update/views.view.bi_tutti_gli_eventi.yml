@@ -25,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Tutti gli eventi'
+      title: 'Eventi'
       fields:
         title:
           id: title

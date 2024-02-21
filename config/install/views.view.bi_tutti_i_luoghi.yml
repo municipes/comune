@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Tutti i luoghi'
+      title: 'Luoghi'
       fields:
         title:
           id: title
