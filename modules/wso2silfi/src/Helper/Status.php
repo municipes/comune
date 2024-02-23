@@ -76,11 +76,11 @@ class Status {
   }
 
   public function clientIdWso2() : string {
-    return trim($this->config->get('general.client_id'));
+    return trim($this->config->get('citizen.client_id'));
   }
 
   public function clientSecretWso2() : string {
-    return trim($this->config->get('general.client_secret'));
+    return trim($this->config->get('citizen.client_secret'));
   }
 
   public function agEntityIdWso2() : string {
