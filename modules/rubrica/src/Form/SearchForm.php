@@ -4,7 +4,8 @@ namespace Drupal\rubrica\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\rubrica\Helper\EntityQueries;
+use Drupal\rubrica\Helper\RicercaPersonaUo;
+use Drupal\rubrica\Helper\FullSearch;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -13,17 +14,25 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SearchForm extends FormBase {
 
   /**
-   * The entity type manager
+   * The search by field manager
    *
-   * @var \Drupal\rubrica\Helper\EntityQueries
+   * @var \Drupal\rubrica\Helper\RicercaPersonaUo
    */
-  protected $entityQueries;
+  protected $ricercaPersonaUo;
+
+  /**
+   * The search api manager
+   *
+   * @var \Drupal\rubrica\Helper\FullSearch
+   */
+  protected $fullSearch;
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(EntityQueries $entityQueries) {
-    $this->entityQueries = $entityQueries;
+  public function __construct(RicercaPersonaUo $ricercaPersonaUo, FullSearch $fullSearch) {
+    $this->ricercaPersonaUo = $ricercaPersonaUo;
+    $this->fullSearch = $fullSearch;
   }
 
   /**
@@ -31,7 +40,8 @@ class SearchForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('rubrica.entity_queries')
+      $container->get('rubrica.ricercapersonauo'),
+      $container->get('rubrica.fullsearch')
     );
   }
 
@@ -59,7 +69,7 @@ class SearchForm extends FormBase {
     ];
     $form['office'] = [
       '#type' => 'select',
-      '#options' => $this->entityQueries->getUO(),
+      '#options' => $this->ricercaPersonaUo->getUO(),
       '#title' => $this->t('Ufficio'),
       '#required' => FALSE,
     ];
@@ -113,10 +123,10 @@ class SearchForm extends FormBase {
       $office = $form_state->getValue('office');
       $fulltext = trim($form_state->getValue('fulltext'));
       if (empty($fulltext)) {
-        $result = $this->entityQueries->searchByFields($firstName, $lastName, $office);
+        $result = $this->ricercaPersonaUo->searchByFields($firstName, $lastName, $office);
       }
       else {
-        $result = $this->entityQueries->searchapiQuery($fulltext);
+        $result = $this->fullSearch->searchapiQuery($fulltext);
       }
 
       if ($result) {

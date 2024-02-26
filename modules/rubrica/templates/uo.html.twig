@@ -1,0 +1,30 @@
+{% macro uo(item) %}
+	<h2 class="h5">
+		{{ item.nome }}</h2>
+	<p>{{ item.desc }}</p>
+	{% for contatto in item.contatti %}
+		<div>{{ contatto.text }}</div>
+	{% endfor %}
+	{% if item.indirizzo %}
+		Indirizzo:
+		{{ item.indirizzo }}
+	{% endif %}
+	{% if item.responsabile %}
+		<div class="h6">
+			<em>Responsabile:</em>
+			{{ item.responsabile.nome }}
+			<span class="fs-6 fw-lighter">{{ item.responsabile.desc }}</span>
+		</div>
+		{% for contatto in item.responsabile.contatti %}
+			<div>{{ contatto }}</div>
+		{% endfor %}
+	{% endif %}
+	{% if item.persone %}
+		{% import "@rubrica/persona.html.twig" as personaFields %}
+		<ul>
+		{% for persona in item.persone %}
+			<li>{{ personaFields.persona(persona) }}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+{% endmacro %}

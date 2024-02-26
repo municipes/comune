@@ -1,4 +1,12 @@
 services:
-  rubrica.entity_queries:
-    class: Drupal\rubrica\Helper\EntityQueries
+  rubrica.ricercapersonauo:
+    class: Drupal\rubrica\Helper\RicercaPersonaUo
+    arguments: ['@entity_type.manager', '@rubrica.templatebuilder']
+
+  rubrica.fullsearch:
+    class: Drupal\rubrica\Helper\FullSearch
+    arguments: ['@rubrica.templatebuilder']
+
+  rubrica.templatebuilder:
+    class: Drupal\rubrica\Helper\TemplateBuilder
     arguments: ['@entity_type.manager']

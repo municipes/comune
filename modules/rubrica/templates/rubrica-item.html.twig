@@ -1,14 +1,12 @@
 <blockquote>
-  <h2>{{ content.uo }}</h2>
-  <div>Indirizzo:
-    {{ content.uo_address }}</div>
-  <div>Contatti:
-    {{ content.uo_contacts }}</div>
-  <div>
-  {% for persona in content.persone %}
-    <h3>{{ persona.name }}</h3>
-    <h4><em>{{ persona.incarico }}</em></h4>
-    <div>{{ persona.text }}</div>
-  {% endfor %}
-  </div>
+	{% for item in content.items %}
+		{% if item.type == 'persona' %}
+			{% import "@rubrica/persona.html.twig" as personaFields %}
+			{{ personaFields.persona(item.value) }}
+		{% else %}
+      {% import "@rubrica/uo.html.twig" as uoFields %}
+			{{ uoFields.uo(item.value) }}
+		{% endif %}
+		<hr>
+	{% endfor %}
 </blockquote>

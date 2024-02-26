@@ -1,0 +1,26 @@
+{% macro persona(item) %}
+	<h2 class="h5">
+		{{ item.nome }}</h2>
+	<p>{{ item.desc }}</p>
+	{% if item.incarichi %}
+		<h3 class="h6">Incarichi:</h3>
+		{% for incarico in item.incarichi %}
+			<ul>
+				<li>
+					<em>{{ incarico }}</em>
+				</li>
+			</ul>
+		{% endfor %}
+	{% endif %}
+	{% for contatto in item.contatti %}
+		<div>{{ contatto }}</div>
+	{% endfor %}
+	{% if item.uo %}
+		<h4 class="h6">Unità organizzative</h4>
+		{% for uo in item.uo %}
+			<em>{{ uo.name }}</em><br>
+			{{ uo.indirizzo }}
+		{% endfor %}
+	{% endif %}
+
+{% endmacro %}

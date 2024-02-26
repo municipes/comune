@@ -7,3 +7,5 @@ dependencies:
   - drupal:basic_auth
   - drupal:rest
   - restui:restui
+
+version: '1.0.1'
