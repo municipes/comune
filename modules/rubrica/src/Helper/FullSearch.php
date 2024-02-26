@@ -95,7 +95,10 @@ class FullSearch {
     }
 
     if ($entities) {
+      $items = $this->templateBuilder->createArrays($entities);
+      $build = $this->templateBuilder->createBuildArray($items);
 
+      $form['search_results']['result'][] = $build;
     }
 
     return $form;
