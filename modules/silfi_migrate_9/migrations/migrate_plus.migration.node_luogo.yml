@@ -111,6 +111,7 @@ process:
           142: 2
           78: 155
           140: 318
+          77: 56
         # bypass: true
 
   field_ulteriori_informazioni:
