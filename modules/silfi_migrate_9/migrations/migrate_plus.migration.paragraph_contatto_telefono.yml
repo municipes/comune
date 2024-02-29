@@ -43,10 +43,6 @@ process:
 destination:
   plugin: entity_reference_revisions:paragraph
   default_bundle: punto_di_contatto
-migration_dependencies:
-  required:
-   - node_persona
-   - node_uo
 
 dependencies:
   enforced:

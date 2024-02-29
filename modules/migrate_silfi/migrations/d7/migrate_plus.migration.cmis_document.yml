@@ -161,7 +161,9 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: documento_pubblico
-migration_dependencies: {}
+migration_dependencies:
+  required:
+    - cmis_file_via_json
 
 dependencies:
   enforced:

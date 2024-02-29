@@ -83,9 +83,14 @@ process:
         default_value: 'bootstrap_italia_2'
 
   field_descrizione_breve:
-    plugin: callback
-    callable: strip_tags
-    source: body
+    -
+      plugin: callback
+      callable: strip_tags
+      source: body/0/value
+    -
+      plugin: str_replace
+      search: '&nbsp;'
+      replace: ''
 
   field_curriculum_vitae:
     plugin: sub_process
@@ -142,6 +147,7 @@ migration_dependencies:
   required:
     - d9_file_to_media_image
     - d9_file_to_media_doc
+    - node_punto_di_contatto
 
 dependencies:
   enforced:
