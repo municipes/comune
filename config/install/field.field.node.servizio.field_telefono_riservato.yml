@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telefono_riservato
+    - node.type.servizio
+id: node.servizio.field_telefono_riservato
+field_name: field_telefono_riservato
+entity_type: node
+bundle: servizio
+label: 'Telefono secondo livello'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
