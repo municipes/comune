@@ -27,6 +27,7 @@
     "drupal/cer": "^5.0@beta",
     "drupal/linkit": "^6.1",
     "drupal/rabbit_hole": "^1.0@beta",
+    "drupal/simple_sitemap": "^4.1",
     "municipes/silfi_triplette": "^1.0",
     "municipes/privatum_documentum": "^1.x-dev",
     "municipes/libellus": "^1.x-dev",
