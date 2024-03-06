@@ -134,6 +134,9 @@ install:
   - scheduler:scheduler
   - search_api:search_api
   - search_api:search_api_db
+  - simple_sitemap:simple_sitemap
+  - simple_sitemap:simple_sitemap_engines
+  - simple_sitemap:simple_sitemap_views
   - taxonomy_custom_controller:taxonomy_custom_controller
   - taxonomy_menu:taxonomy_menu
   - twig_tweak:twig_tweak
