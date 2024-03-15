@@ -6,11 +6,13 @@
   {# {% if data.page == 'inefficiencies' %}
       <link rel="stylesheet" type="text/css" href="{{ data.common_url }}/widgets/inefficiencies/bootstrap-italia@2/css/inefficiencies.css" />
     {% endif %} #}
+  <link rel="stylesheet" href="{{ data.common_url }}/widgets/helpdesk/css/helpdesk.css" />
   <script>
     {% for item in data.variables %}
       {% set variable = item | split('|') %}
       window.{{ variable.0 }} = '{{ variable.1 }}';
     {% endfor %}
+    window.OC_RENDER_BREADCRUMB = 'true';
   </script>
   <script src="{{ data.common_url }}{{ data.widget }}"></script>
 {% else %}
