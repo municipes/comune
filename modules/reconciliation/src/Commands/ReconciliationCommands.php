@@ -255,6 +255,7 @@ class ReconciliationCommands extends DrushCommands {
       $query->accessCheck(FALSE);
       $nids = $query->execute();
       $database = \Drupal::database();
+      $count = 0;
       foreach ($nids as $nid) {
         // $nid = 17128;
         $db_query = $database->select('node__' . $field);
@@ -262,10 +263,11 @@ class ReconciliationCommands extends DrushCommands {
         $db_query->condition($field . '_value', "%/file/%/download%", "LIKE");
         $db_query->addField('node__' . $field, $field . '_value');
         $db_bodies = $db_query->execute();
-        $this->output()->writeln($db_query->__toString);
-        $count = 0;
+        // $this->output()->writeln($db_query->__toString);
+
+        $value_field = $field . '_value';
         foreach ($db_bodies as $dbBody) {
-          $body = $dbBody->field_descrizione_completa_value;
+          $body = $dbBody->{$value_field};
           $this->replaceFiles($body, $options);
           $database->update('node__' . $field)
             ->fields([$field . '_value' => $body])
