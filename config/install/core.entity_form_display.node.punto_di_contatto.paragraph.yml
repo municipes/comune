@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.paragraph
+    - field.field.node.punto_di_contatto.field_altra_persona
     - field.field.node.punto_di_contatto.field_contatto
     - field.field.node.punto_di_contatto.field_orari
     - field.field.node.punto_di_contatto.field_persona
@@ -11,15 +12,23 @@ dependencies:
     - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
     - node.type.punto_di_contatto
   module:
+    - content_moderation
     - inline_entity_form
     - office_hours
-_core:
-  default_config_hash: SiQbWTVrjVPb7I3bkj7Hx_lZO-1zpG8yUpdxvmwZLDc
+
 id: node.punto_di_contatto.paragraph
 targetEntityType: node
 bundle: punto_di_contatto
 mode: paragraph
 content:
+  field_altra_persona:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_contatto:
     type: inline_entity_form_complex
     weight: 1
@@ -40,7 +49,7 @@ content:
     third_party_settings: {  }
   field_orari:
     type: office_hours_list
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -56,7 +65,17 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap_index_now:
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

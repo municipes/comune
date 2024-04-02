@@ -1,0 +1,19 @@
+uuid: 73a4aedb-bcbe-4826-a448-ec4bd7da8ca7
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_altra_persona
+    - node.type.punto_di_contatto
+id: node.punto_di_contatto.field_altra_persona
+field_name: field_altra_persona
+entity_type: node
+bundle: punto_di_contatto
+label: 'Altra persona'
+description: 'Persona senza una corrispondente scheda nel sito.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
