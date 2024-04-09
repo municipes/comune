@@ -1,0 +1,18 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sottotitolo
+    - node.type.misura_pnrr
+id: node.misura_pnrr.field_sottotitolo
+field_name: field_sottotitolo
+entity_type: node
+bundle: misura_pnrr
+label: Sottotitolo
+description: 'Eventuale sottotitolo o titolo abbreviato'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

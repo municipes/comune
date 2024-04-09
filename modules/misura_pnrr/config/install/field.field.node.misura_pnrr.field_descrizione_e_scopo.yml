@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_e_scopo
+    - node.type.misura_pnrr
+  module:
+    - text
+id: node.misura_pnrr.field_descrizione_e_scopo
+field_name: field_descrizione_e_scopo
+entity_type: node
+bundle: misura_pnrr
+label: 'Descrizione e scopo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

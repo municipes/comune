@@ -1,0 +1,115 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.paragraph
+    - field.field.node.misura_pnrr.field_altri_allegati
+    - field.field.node.misura_pnrr.field_argomenti
+    - field.field.node.misura_pnrr.field_atti_legislativi_e_amminis
+    - field.field.node.misura_pnrr.field_attivita_finanziate
+    - field.field.node.misura_pnrr.field_avanzamento_del_progetto
+    - field.field.node.misura_pnrr.field_contatti
+    - field.field.node.misura_pnrr.field_data_di_pubblicazione
+    - field.field.node.misura_pnrr.field_descrizione_e_scopo
+    - field.field.node.misura_pnrr.field_dettagli
+    - field.field.node.misura_pnrr.field_importo_finanziato
+    - field.field.node.misura_pnrr.field_modalita_di_accesso_finanz
+    - field.field.node.misura_pnrr.field_sottotitolo
+    - field.field.node.misura_pnrr.field_tipologia_misura
+    - field.field.node.misura_pnrr.field_ulteriori_informazioni
+    - node.type.misura_pnrr
+  module:
+    - content_moderation
+    - path
+id: node.misura_pnrr.paragraph
+targetEntityType: node
+bundle: misura_pnrr
+mode: paragraph
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_altri_allegati: true
+  field_argomenti: true
+  field_atti_legislativi_e_amminis: true
+  field_attivita_finanziate: true
+  field_avanzamento_del_progetto: true
+  field_contatti: true
+  field_data_di_pubblicazione: true
+  field_descrizione_e_scopo: true
+  field_dettagli: true
+  field_importo_finanziato: true
+  field_modalita_di_accesso_finanz: true
+  field_sottotitolo: true
+  field_tipologia_misura: true
+  field_ulteriori_informazioni: true
+  publish_on: true
+  scheduler_settings: true
+  unpublish_on: true

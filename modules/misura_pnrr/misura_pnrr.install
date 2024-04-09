@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the comune installation profile.
+ */
+
+ use Drupal\migrate\MigrateMessage;
+ use Drupal\migrate_tools\MigrateExecutable as MigrateToolsExecutable;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function misura_pnrr_install() {
+  $options = [];
+  /** @var \Drupal\migrate\Plugin\MigrationPluginManager $plugin_manager_migration */
+  $plugin_manager_migration = \Drupal::service('plugin.manager.migration');
+
+  if ($migration = $plugin_manager_migration->createInstance('taxonomy_pnrr')) {
+    $executable = new MigrateToolsExecutable($migration, new MigrateMessage(), $options);
+    $executable->import();
+  }
+}

@@ -1,0 +1,64 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.misura_pnrr.field_altri_allegati
+    - field.field.node.misura_pnrr.field_argomenti
+    - field.field.node.misura_pnrr.field_atti_legislativi_e_amminis
+    - field.field.node.misura_pnrr.field_attivita_finanziate
+    - field.field.node.misura_pnrr.field_avanzamento_del_progetto
+    - field.field.node.misura_pnrr.field_contatti
+    - field.field.node.misura_pnrr.field_data_di_pubblicazione
+    - field.field.node.misura_pnrr.field_descrizione_e_scopo
+    - field.field.node.misura_pnrr.field_dettagli
+    - field.field.node.misura_pnrr.field_importo_finanziato
+    - field.field.node.misura_pnrr.field_modalita_di_accesso_finanz
+    - field.field.node.misura_pnrr.field_sottotitolo
+    - field.field.node.misura_pnrr.field_tipologia_misura
+    - field.field.node.misura_pnrr.field_ulteriori_informazioni
+    - node.type.misura_pnrr
+  module:
+    - text
+    - user
+id: node.misura_pnrr.search_index
+targetEntityType: node
+bundle: misura_pnrr
+mode: search_index
+content:
+  field_sottotitolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_altri_allegati: true
+  field_argomenti: true
+  field_atti_legislativi_e_amminis: true
+  field_attivita_finanziate: true
+  field_avanzamento_del_progetto: true
+  field_contatti: true
+  field_data_di_pubblicazione: true
+  field_descrizione_e_scopo: true
+  field_dettagli: true
+  field_importo_finanziato: true
+  field_modalita_di_accesso_finanz: true
+  field_tipologia_misura: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true

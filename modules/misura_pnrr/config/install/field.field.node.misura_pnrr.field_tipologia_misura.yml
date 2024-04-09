@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipologia_misura
+    - node.type.misura_pnrr
+    - taxonomy.vocabulary.tipologia_misura_pnrr
+id: node.misura_pnrr.field_tipologia_misura
+field_name: field_tipologia_misura
+entity_type: node
+bundle: misura_pnrr
+label: 'Tipologia Misura'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipologia_misura_pnrr: tipologia_misura_pnrr
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

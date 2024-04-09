@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ulteriori_informazioni
+    - node.type.misura_pnrr
+  module:
+    - text
+id: node.misura_pnrr.field_ulteriori_informazioni
+field_name: field_ulteriori_informazioni
+entity_type: node
+bundle: misura_pnrr
+label: 'Ulteriori informazioni'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

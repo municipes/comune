@@ -1,0 +1,28 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contatti
+    - node.type.misura_pnrr
+    - node.type.unita_organizzativa
+id: node.misura_pnrr.field_contatti
+field_name: field_contatti
+entity_type: node
+bundle: misura_pnrr
+label: Contatti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
