@@ -1,0 +1,21 @@
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: misura_pnrr
+label: 'Misura PNRR'
+type: 'canonical_entities:node'
+pattern: '/attuazione-misure-pnrr/[node:title]'
+selection_criteria:
+  b4933b10-fcdb-4743-86a3-33779f217c5c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: b4933b10-fcdb-4743-86a3-33779f217c5c
+    context_mapping:
+      node: node
+    bundles:
+      misura_pnrr: misura_pnrr
+selection_logic: and
+weight: -5
+relationships: {  }
