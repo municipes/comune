@@ -10,7 +10,7 @@ id: node.misura_pnrr.field_modalita_di_accesso_finanz
 field_name: field_modalita_di_accesso_finanz
 entity_type: node
 bundle: misura_pnrr
-label: 'Modalità di accesso al finanzimaneto'
+label: 'Modalità di accesso al finanziamento'
 description: ''
 required: false
 translatable: false
