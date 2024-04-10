@@ -56,7 +56,7 @@ class FullSearch {
 
     // Set fulltext search keywords and fields.
     $query->keys($keys);
-    $query->setFulltextFields(['field_persona_1', 'rendered_item']);
+    $query->setFulltextFields(['field_persona_1', 'field_cognome', 'field_nome', 'title']);
 
     // Set additional conditions.
     $query->addCondition('status', 1);

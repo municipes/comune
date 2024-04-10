@@ -97,12 +97,16 @@ class RicercaPersonaUo {
       ->groupBy('nid')
       ->sort('title', 'ASC');
 
-    if (!empty(trim($firstName))) {
-      $query->condition('field_nome', $firstName, 'CONTAINS');
+    if (!empty(trim($firstName)) || !empty(trim($lastName))) {
+      $query->condition('field_incarico.entity:node.field_tipo_di_incarico', 411);
+      if (!empty(trim($firstName))) {
+        $query->condition('field_nome', $firstName, 'CONTAINS');
+      }
+      if (!empty(trim($lastName))) {
+        $query->condition('field_cognome', $lastName, 'CONTAINS');
+      }
     }
-    if (!empty(trim($lastName))) {
-      $query->condition('field_cognome', $lastName, 'CONTAINS');
-    }
+
     if ($office != 0 && empty(trim($lastName)) && empty(trim($firstName))) {
       $query->condition('nid', $office, '=');
     }
@@ -124,6 +128,7 @@ class RicercaPersonaUo {
     $query = $nodeStorage->getQuery()
       ->condition('type', 'unita_organizzativa', '=')
       ->condition('status', 1, '=')
+      ->condition('field_tipo_di_organizzazione', [303, 304], 'IN')
       ->groupBy('nid')
       ->sort('title', 'ASC');
 
