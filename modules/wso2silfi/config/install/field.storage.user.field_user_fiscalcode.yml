@@ -1,0 +1,21 @@
+uuid: 33f7b6af-3308-4db1-8079-63442ab2bf1a
+langcode: it
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_user_fiscalcode
+field_name: field_user_fiscalcode
+entity_type: user
+type: string
+settings:
+  max_length: 16
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

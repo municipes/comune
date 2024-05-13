@@ -1,0 +1,20 @@
+uuid: f3d3b209-e951-4ed9-89b7-dea5383372bb
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_mail
+  module:
+    - user
+id: user.user.field_user_mail
+field_name: field_user_mail
+entity_type: user
+bundle: user
+label: 'E-mail per i Servizi'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email
