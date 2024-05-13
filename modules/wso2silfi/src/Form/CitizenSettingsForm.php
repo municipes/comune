@@ -94,7 +94,7 @@ class CitizenSettingsForm extends ConfigFormBase {
         '#default_value' => $config->get('citizen.firstname_attribute') ?? 'given_name',
         '#size' => 25,
         '#maxlength' => 64,
-        '#description' => t('Define the OpenAM attribute for the field name.'),
+        '#description' => t('Define the WSO2 attribute for the field name.'),
         '#required' => TRUE,
       );
     }
@@ -117,7 +117,7 @@ class CitizenSettingsForm extends ConfigFormBase {
         '#default_value' => $config->get('citizen.lastname_attribute') ?? 'family_name',
         '#size' => 25,
         '#maxlength' => 64,
-        '#description' => t('Define the OpenAM attribute for the field lastname.'),
+        '#description' => t('Define the WSO2 attribute for the field lastname.'),
         '#required' => TRUE,
       );
     }
@@ -132,29 +132,29 @@ class CitizenSettingsForm extends ConfigFormBase {
         '#value' => NULL,
       );
     }
-    // if (CheckUserFieldExist::exist('field_user_birthday')) {
-    //   // Define the peopleDataNascita attribute.
-    //   $form['attributes']['birthday_attribute'] = array(
-    //     '#type' => 'textfield',
-    //     '#title' => t('Data di nascita'),
-    //     '#default_value' => $config->get('citizen.birthday_attribute'),
-    //     '#size' => 25,
-    //     '#maxlength' => 64,
-    //     '#description' => t('Define the OpenAM attribute for the field birthday.'),
-    //     '#required' => TRUE,
-    //   );
-    // }
-    // else {
-    //   $form['attributes']['no_birthday_attribute'] = array(
-    //     '#type' => 'fieldset',
-    //     '#title' => t('Birthday field'),
-    //     '#description' => t('Il campo Giorno di nascita (field_user_birthday) non esiste nel profilo utente; fino a quando non verrà creato il campo per il match non apparirà.'),
-    //   );
-    //   $form['attributes']['birthday_attribute'] = array(
-    //     '#type' => 'hidden',
-    //     '#value' => NULL,
-    //   );
-    // }
+    if (CheckUserFieldExist::exist('field_user_mobilephone')) {
+      // Define the peopleDataNascita attribute.
+      $form['attributes']['mobilephone_attribute'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Telefono cellulare'),
+        '#default_value' => $config->get('citizen.mobilephone'),
+        '#size' => 25,
+        '#maxlength' => 64,
+        '#description' => t('Define the WSO2 attribute for the field mobile phone.'),
+        '#required' => TRUE,
+      );
+    }
+    else {
+      $form['attributes']['no_mobilephone_attribute'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Mobile phone field'),
+        '#description' => t('Il campo Cellulare (field_user_mobilephone) non esiste nel profilo utente; fino a quando non verrà creato il campo per il match non apparirà.'),
+      );
+      $form['attributes']['mobilephone_attribute'] = array(
+        '#type' => 'hidden',
+        '#value' => NULL,
+      );
+    }
     // if (CheckUserFieldExist::exist('field_user_birthplace')) {
     //   // Define the peopleLuogoNascita attribute.
     //   $form['attributes']['birthplace_attribute'] = array(
@@ -163,7 +163,7 @@ class CitizenSettingsForm extends ConfigFormBase {
     //     '#default_value' => $config->get('citizen.birthplace_attribute'),
     //     '#size' => 25,
     //     '#maxlength' => 64,
-    //     '#description' => t('Define the OpenAM attribute for the field birthplace.'),
+    //     '#description' => t('Define the WSO2 attribute for the field birthplace.'),
     //     '#required' => TRUE,
     //   );
     // }
@@ -186,7 +186,7 @@ class CitizenSettingsForm extends ConfigFormBase {
         '#default_value' => $config->get('citizen.fiscalcode_attribute') ?? 'cn',
         '#size' => 25,
         '#maxlength' => 64,
-        '#description' => t('Define the OpenAM attribute for the field fiscalcode.'),
+        '#description' => t('Define the WSO2 attribute for the field fiscalcode.'),
         '#required' => TRUE,
       );
     }
@@ -209,7 +209,7 @@ class CitizenSettingsForm extends ConfigFormBase {
     //     '#default_value' => $config->get('citizen.phone_attribute'),
     //     '#size' => 25,
     //     '#maxlength' => 64,
-    //     '#description' => t('Define the OpenAM attribute for the field phone.'),
+    //     '#description' => t('Define the WSO2 attribute for the field phone.'),
     //     '#required' => TRUE,
     //   );
     // }
@@ -306,7 +306,7 @@ class CitizenSettingsForm extends ConfigFormBase {
       // ->set('citizen.birthday_attribute', $form_state->getValue('birthday_attribute'))
       // ->set('citizen.birthplace_attribute', $form_state->getValue('birthplace_attribute'))
       ->set('citizen.fiscalcode_attribute', $form_state->getValue('fiscalcode_attribute'))
-      // ->set('citizen.phone_attribute', $form_state->getValue('phone_attribute'))
+      ->set('citizen.mobilephone_attribute', $form_state->getValue('mobilephone_attribute'))
       // ->set('citizen.redirectAfterLogin', $form_state->getValue('redirectAfterLogin'))
       ->set('citizen.role', $form_state->getValue('role'))
       ->set('citizen.roletoexclude', $form_state->getValue('roletoexclude'))

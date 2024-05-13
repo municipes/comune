@@ -316,10 +316,10 @@ class WSO2Controller extends ControllerBase {
         ) {
           $user->set('field_user_fiscalcode', $token_info[$username_attr]);
         }
-        // if (CheckUserFieldExist::exist('field_user_phone') &&
-        //   isset($token_info['peopleTelefono'])) {
-        //   $user->set('field_user_phone', $token_info['peopleTelefono']);
-        // }
+        if (CheckUserFieldExist::exist('field_user_mobilephone') &&
+          isset($token_info['mobilePhone'])) {
+          $user->set('field_user_mobilephone', $token_info['mobilePhone']);
+        }
 
         $user->save();
         break;
