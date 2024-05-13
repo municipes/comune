@@ -303,7 +303,7 @@ class WSO2Controller extends ControllerBase {
         }
         if (CheckUserFieldExist::exist('field_user_mail') &&
         isset($token_info[$email_attr])) {
-          $user->set('field_user_mail', $token_info['$email_attr']);
+          $user->set('field_user_mail', $token_info[$email_attr]);
         }
         // if (CheckUserFieldExist::exist('field_user_birthplace') &&
         // isset($token_info['peopleLuogoNascita'])) {
