@@ -301,10 +301,10 @@ class WSO2Controller extends ControllerBase {
         ) {
           $user->set('field_user_lastname', $token_info['family_name']);
         }
-        // if (CheckUserFieldExist::exist('field_user_birthday') &&
-        // isset($token_info['peopleDataNascita'])) {
-        //   $user->set('field_user_birthday', $token_info['peopleDataNascita']);
-        // }
+        if (CheckUserFieldExist::exist('field_user_mail') &&
+        isset($token_info[$email_attr])) {
+          $user->set('field_user_mail', $token_info['$email_attr']);
+        }
         // if (CheckUserFieldExist::exist('field_user_birthplace') &&
         // isset($token_info['peopleLuogoNascita'])) {
         //   $comune = $this->getComune($token_info['peopleLuogoNascita']);
