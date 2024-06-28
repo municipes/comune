@@ -1,0 +1,11 @@
+name: Silfi Simplenews
+type: module
+description: Impostazioni specifiche di simplenews
+package: Custom
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - simplenews:simplenews
+  - symfony_mailer:symfony_mailer
+
+version: '1.0.0'

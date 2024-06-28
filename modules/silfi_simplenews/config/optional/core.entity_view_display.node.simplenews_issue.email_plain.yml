@@ -1,0 +1,39 @@
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_plain
+    - field.field.node.simplenews_issue.body
+    - field.field.node.simplenews_issue.field_news_eventi
+    - field.field.node.simplenews_issue.simplenews_issue
+    - node.type.simplenews_issue
+  module:
+    - text
+    - user
+id: node.simplenews_issue.email_plain
+targetEntityType: node
+bundle: simplenews_issue
+mode: email_plain
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_news_eventi:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: email_plain
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  links: true
+  node_read_time: true
+  search_api_excerpt: true
+  simplenews_issue: true
