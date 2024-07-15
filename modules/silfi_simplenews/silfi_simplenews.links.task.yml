@@ -1,0 +1,7 @@
+silfi_simplenews.settings_template:
+  title: 'Impostazioni template'
+  description: 'Template options.'
+  base_route: simplenews.newsletter_list
+  route_name: silfi_simplenews.config
+  parent_id: simplenews.settings
+  weight: 5

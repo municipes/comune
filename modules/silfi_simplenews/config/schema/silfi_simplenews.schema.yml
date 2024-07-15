@@ -1,0 +1,21 @@
+# Schema for the configuration files of the Silfi Triplette module.
+silfi_simplenews.settings:
+  type: config_object
+  label: 'Silfi Simplenews settings'
+  mapping:
+    header_image_mail:
+      type: string
+      label: 'Image header fid'
+    nl_links:
+      title:
+        type: string
+        label: 'Titolo link'
+      url:
+        type: string
+        label: 'URL link'
+    footer_color:
+      type: string
+      label: 'Colore background footer'
+    text_color:
+      type: string
+      label: 'Colore testo footer'

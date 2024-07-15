@@ -1,0 +1,7 @@
+silfi_simplenews.config:
+  path: '/admin/config/services/simplenews/settings/template'
+  defaults:
+    _form: 'Drupal\silfi_simplenews\Form\SettingsForm'
+    _title: 'Configura template newsletter'
+  requirements:
+    _entity_create_access: 'simplenews_newsletter'

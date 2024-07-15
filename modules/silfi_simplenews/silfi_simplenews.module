@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Module file for Silfi Simplenews.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Url;
+use Drupal\bootstrap_italia\Helper\Helper;
+
+/**
+ * Preprocesses variables for email wrap.
+ *
+ * @param mixed $variables The variables to preprocess.
+ */
+function silfi_simplenews_preprocess_email_wrap(&$variables) {
+  $fid = FALSE;
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  // logo needs to be placed within specified folder
+  $variables['logo_path'] = \Drupal::config('scaenographia.settings')->get('logo.path');
+  if ($fid_setting = \Drupal::config('silfi_simplenews.settings')->get('header_image_mail')) {
+    $fid = $fid_setting[0];
+  }
+  $image_style = 'focal_point_hfhd_32_9_1920x540_';
+  $variables['img_header'] = '';
+  if ($fid && ($file = File::load($fid)) && $file instanceof File) {
+    $variables['img_header'] = ImageStyle::load($image_style)->buildUrl($file->getFileUri());
+  }
+  $variables['links'] = [];
+  if ($links = \Drupal::config('silfi_simplenews.settings')->get('nl_links')) {
+    $variables['links'] = $links;
+  }
+  $url_options = [
+    'absolute' => TRUE,
+    'language' => \Drupal::languageManager()->getCurrentLanguage(),
+  ];
+  $variables['base_url'] = Url::fromRoute('<front>', [], $url_options)->toString();
+  $footer_color = \Drupal::config('silfi_simplenews.settings')->get('footer_color') ?
+    \Drupal::config('silfi_simplenews.settings')->get('footer_color') :
+    'lightgrey';
+  $variables['footer_color'] = $footer_color;
+  $text_color = \Drupal::config('silfi_simplenews.settings')->get('text_color') ?
+    \Drupal::config('silfi_simplenews.settings')->get('text_color') :
+    'black';
+  $variables['text_color'] = $text_color;
+
+  // social
+  $socials = [];
+  foreach (Helper::getSocialItems() as $social) {
+    $low_social = strtolower($social);
+    if (!empty($url = theme_get_setting($low_social))) {
+      $socials[] = [
+        'label' => $low_social,
+        'url' => $url,
+      ];
+    }
+  }
+  $variables['socials'] = $socials;
+}
