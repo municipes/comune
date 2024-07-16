@@ -1,4 +1,3 @@
-uuid: f63d17e9-eca1-4f0d-ab38-7399ac63b7bb
 langcode: it
 status: true
 id: node_servizio
@@ -193,40 +192,91 @@ process:
       status: 0
       uid: 1
 
-  persona_referente:
-    plugin: sub_process
-    source: field_referente
-    process:
-      value:
-        plugin: entity_generate
-        source: value
-        value_key: title
-        bundle_key: type
-        bundle: persona
-        entity_type: node
-        ignore_case: true
-        default_values:
-          status: 0
-          uid: 1
-          field_sezione_amministrazione/target_id: 209
+  referente:
+    -
+      plugin: skip_on_empty
+      source: field_referente
+      method: process
+    -
+      plugin: silfi_normalize_title
 
+  persona_referente:
+    plugin: entity_generate
+    source: '@referente'
+    value_key: title
+    bundle_key: type
+    bundle: persona
+    entity_type: node
+    ignore_case: true
+    default_values:
+      status: 0
+      uid: 1
+      field_sezione_amministrazione/target_id: 209
+
+#    source: field_referente
+#    process:
+#      value:
+#        -
+#          plugin: callback
+#          callable: trim
+#          source: value
+#        -
+#          plugin: skip_on_empty
+#          method: process
+#        -
+#          plugin: entity_generate
+#          value_key: title
+#          bundle_key: type
+#          bundle: persona
+#          entity_type: node
+#          ignore_case: true
+#          default_values:
+#            status: 0
+#            uid: 1
+
+  responsabile:
+    -
+      plugin: skip_on_empty
+      source: field_responsabile
+      method: process
+    -
+      plugin: silfi_normalize_title
 
   persona_responsabile:
-    plugin: sub_process
-    source: field_responsabile
-    process:
-      value:
-        plugin: entity_generate
-        source: value
-        value_key: title
-        bundle_key: type
-        bundle: persona
-        entity_type: node
-        ignore_case: true
-        default_values:
-          status: 0
-          uid: 1
-          field_sezione_amministrazione/target_id: 209
+    plugin: entity_generate
+    source: '@responsabile'
+    value_key: title
+    bundle_key: type
+    bundle: persona
+    entity_type: node
+    ignore_case: true
+    default_values:
+      status: 0
+      uid: 1
+      field_sezione_amministrazione/target_id: 209
+
+#  persona_responsabile:
+#    plugin: sub_process
+#    source: field_responsabile
+#    process:
+#      value:
+#        -
+#          plugin: callback
+#          callable: trim
+#          source: value
+#        -
+#          plugin: skip_on_empty
+#          method: process
+#        -
+#          plugin: entity_generate
+#          value_key: title
+#          bundle_key: type
+#          bundle: persona
+#          entity_type: node
+#          ignore_case: true
+#          default_values:
+#            status: 0
+#            uid: 1
 
   field_procedure_collegate_esito:
     plugin: sub_process
@@ -323,22 +373,26 @@ process:
         plugin: static_map
         source: target_id
         map:
-          244: 36
-          246: 41
-          398: 29
-          250: 34
-          243: 31
-          252: 31
-          245: 27
-          247: 38
-          251: 39
-          242: 28
-          248: 28
           241: 40
+          245: 27
+          242: 28
+          243: 31
+          345: 28
+          244: 36
           249: 45
-          266: 29
-          468: 40
-        default_value: 0
+          246: 41
+          247: 38
+          248: 28
+          250: 34
+          251: 39
+          252: 31
+          257: 36
+          262: 34
+          263: 39
+          254: 27
+          346: 28
+          264: 31
+          default_value: 0
 
   field_documenti:
     -
