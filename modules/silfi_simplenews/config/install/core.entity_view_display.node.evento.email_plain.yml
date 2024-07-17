@@ -29,6 +29,9 @@ dependencies:
   module:
     - datetime
     - user
+  enforced:
+    module:
+      - silfi_simplenews
 id: node.evento.email_plain
 targetEntityType: node
 bundle: evento

@@ -3,6 +3,9 @@ status: true
 dependencies:
   module:
     - node
+  enforced:
+    module:
+      - silfi_simplenews
 id: node.field_news_eventi
 field_name: field_news_eventi
 entity_type: node

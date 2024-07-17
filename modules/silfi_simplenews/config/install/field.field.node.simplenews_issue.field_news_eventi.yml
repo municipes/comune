@@ -6,6 +6,9 @@ dependencies:
     - node.type.evento
     - node.type.notizia
     - node.type.simplenews_issue
+  enforced:
+    module:
+      - silfi_simplenews
 id: node.simplenews_issue.field_news_eventi
 field_name: field_news_eventi
 entity_type: node
