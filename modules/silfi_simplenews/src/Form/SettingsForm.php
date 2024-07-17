@@ -73,8 +73,8 @@ class SettingsForm extends ConfigFormBase {
       ],
     ];
 
-    $image = $config->get('header_image_mail');
-    if ($file = File::load($image[0])) {
+    $image = $config->get('header_image_mail') ? $config->get('header_image_mail') : [];
+    if (count($image) && $file = File::load($image[0])) {
       $form['image'] = [
         '#theme' => 'image_style',
         '#style_name' => 'medium',
@@ -82,7 +82,7 @@ class SettingsForm extends ConfigFormBase {
       ];
     }
 
-    $default_values = $config->get('nl_links');
+    $default_values = $config->get('nl_links') ? $config->get('nl_links'): [];
 
     if ($form_state->get('num_names') === NULL && count($default_values)) {
       $name_field = $form_state->set('num_names', count($default_values));
@@ -109,12 +109,12 @@ class SettingsForm extends ConfigFormBase {
         'title' => [
           '#type' => 'textfield',
           '#title' => t('Link title'),
-          '#default_value' => $default_values[$i]['title'],
+          '#default_value' => count($default_values) ? $default_values[$i]['title'] : '',
         ],
         'url' => [
           '#type' => 'url',
           '#title' => t('Link URL'),
-          '#default_value' => $default_values[$i]['url'],
+          '#default_value' => count($default_values) ? $default_values[$i]['url'] : '',
         ],
       ];
     }
@@ -214,6 +214,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $debug = $form_state->getValue('header_image_mail');
     $this->config('silfi_simplenews.settings')
       ->set('header_image_mail', $form_state->getValue('header_image_mail'))
       ->set('nl_links', $form_state->getValue(['names_fieldset', 'nl_links']))
