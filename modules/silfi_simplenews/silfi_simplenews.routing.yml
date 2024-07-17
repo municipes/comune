@@ -1,5 +1,5 @@
 silfi_simplenews.config:
-  path: '/admin/config/services/simplenews/settings/template'
+  path: '/admin/config/services/simplenews/settings/template-config'
   defaults:
     _form: 'Drupal\silfi_simplenews\Form\SettingsForm'
     _title: 'Configura template newsletter'
