@@ -4,7 +4,7 @@ silfi_simplenews.settings:
   label: 'Silfi Simplenews settings'
   mapping:
     header_image_mail:
-      type: string
+      type: array
       label: 'Image header fid'
     nl_links:
       title:
