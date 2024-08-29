@@ -214,13 +214,17 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $debug = $form_state->getValue('header_image_mail');
     $this->config('silfi_simplenews.settings')
       ->set('header_image_mail', $form_state->getValue('header_image_mail'))
       ->set('nl_links', $form_state->getValue(['names_fieldset', 'nl_links']))
       ->set('footer_color', $form_state->getValue('footer_color'))
       ->set('text_color', $form_state->getValue('text_color'))
       ->save();
+    $image = $form_state->getValue('header_image_mail');
+    $file = File::load($image[0]);
+    $file->setPermanent();
+    $file->save();
+
     parent::submitForm($form, $form_state);
   }
 }
