@@ -1,0 +1,161 @@
+uuid: 048b29ef-0ee1-462d-a47d-8d7df5572362
+langcode: it
+status: true
+dependencies: {  }
+id: d9_node_page_legacy
+migration_tags:
+  - 'Drupal 9'
+  - Content
+migration_group: migrate_drupal_9
+label: 'D9 Node Page (Pagine legacy)'
+source:
+  plugin: d8_entity
+  key: d9_source_site
+  entity_type: node
+  bundle: page
+process:
+  # nid:
+  #   -
+  #     plugin: get
+  #     source: tnid
+  # vid:
+  #   -
+  #     plugin: get
+  #     source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: it
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: default_value
+      default_value: 0
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+  # moderation_state:
+  #   plugin: static_map
+  #   source: status
+  #   default_value: draft
+  #   map:
+  #     '0': draft
+  #     '1': published
+  field_link_esterni: field_link_utili
+    # -
+    #   plugin: sub_process
+    #   source: field_link_utili
+    #   process:
+    #     uri: uri
+  field_allegati:
+    plugin: sub_process
+    source: field_nc_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_doc
+        source: target_id
+        no_stub: true
+  field_galleria:
+    plugin: sub_process
+    source: field_ev_gallery
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+  field_video_gdpr:
+    plugin: silfi_field_video
+    source: field_video
+
+  field_luoghi:
+    plugin: sub_process
+    source: field_nc_luoghi
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: node_luogo
+        source: target_id
+        no_stub: true
+
+  field_argomenti:
+    plugin: sub_process
+    source: field_tax_argomenti
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          38: 10002
+          47: 10029
+          143: 10004
+          36: 10039
+          16: 10008
+          165: 10013
+          155: 10011
+          154: 10013
+          23: 10013
+          163: 10013
+          153: 10040
+          33: 10052
+          166: 10055
+          26: 10021
+          34: 10026
+          48: 10001
+          35: 10029
+          17: 10032
+          30: 10034
+          31: 10017
+          39: 10023
+          40: 10007
+          41: 10045
+          21: 10007
+          43: 10051
+          32: 10055
+          37: 10062
+          45: 10057
+          46: 10058
+          25: 10059
+          29: 10036
+        default_value: 0
+
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: pagina_legacy
+# migration_dependencies:
+#   required:
+    # - upgrade_d7_user
+    # - upgrade_d7_file_to_media_document
+    # - upgrade_language
