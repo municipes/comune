@@ -1,0 +1,6 @@
+silfi_services.settings:
+  title: 'Silfi Services'
+  description: 'Configura le impostazioni di Silfi Services.'
+  parent: system.admin_config_services
+  route_name: silfi_services.settings
+  weight: 100

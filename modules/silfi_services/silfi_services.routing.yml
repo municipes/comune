@@ -1,0 +1,58 @@
+silfi_services.settings:
+  path: '/admin/config/services/silfi-services'
+  defaults:
+    _form: '\Drupal\silfi_services\Form\SilfiServicesSettingsForm'
+    _title: 'Configurazione Silfi Services'
+  requirements:
+    _permission: 'administer site configuration'
+
+# Rotta per ottenere un elenco di triplette.
+silfi_services.get_triplette:
+  path: '/api/v1/contactcenter/triplette'
+  defaults:
+    _controller: '\Drupal\silfi_services\Controller\ServiziController::getTriplette'
+    _title: 'Elenco delle triplette'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]
+
+# Rotta per ottenere un elenco di servizi.
+silfi_services.get_servizi:
+  path: '/api/v1/contactcenter/servizi'
+  defaults:
+    _controller: '\Drupal\silfi_services\Controller\ServiziController::getServizi'
+    _title: 'Elenco dei servizi'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]
+
+# Rotta per ottenere i dettagli di un singolo servizio dato un nid.
+silfi_services.get_servizio:
+  path: '/api/v1/contactcenter/servizio/{nid}'
+  defaults:
+    _controller: '\Drupal\silfi_services\Controller\ServiziController::getServizio'
+    _title: 'Dettagli del servizio'
+  requirements:
+    _permission: 'access content'
+    nid: \d+  # Verifica che il parametro nid sia un numero.
+  methods: [GET]
+
+silfi_services.get_list:
+  path: '/api/v1/contactcenter/list/{type}'
+  defaults:
+    _controller: '\Drupal\silfi_services\Controller\ServiziController::getList'
+    _title: 'Elenchi'
+  requirements:
+    _permission: 'access content'
+    method: '[a-zA-Z]+'
+  methods: [GET]
+
+silfi_services.search:
+  path: '/api/v1/contactcenter/fullsearch'
+  defaults:
+    _controller: '\Drupal\silfi_services\Controller\SearchServiziController::searchResults'
+    _title: 'searchResults'
+  requirements:
+    _permission: 'access content'
+  methods: [GET, POST]
+

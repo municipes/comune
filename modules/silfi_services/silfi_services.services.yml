@@ -1,0 +1,8 @@
+services:
+  silfi_services.node_field_manager:
+    class: Drupal\silfi_services\Service\ServizioNodeFieldManager
+    arguments:
+      - '@entity_type.manager'
+      - '@file_url_generator'
+      - '@stream_wrapper_manager'
+
