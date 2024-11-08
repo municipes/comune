@@ -58,6 +58,10 @@ class ServizioNodeFieldManager {
     return true;
   }
 
+  public function getFullNode() {
+    return $this->node;
+  }
+
   /**
    * Recupera il valore di un campo di testo.
    *
@@ -79,12 +83,15 @@ class ServizioNodeFieldManager {
    * @return array
    */
   public function getMultiTextField(string $fieldName): array {
-    if (!$this->node || !$this->node->hasField($fieldName)) {
+    if (!$this->node || !$this->node->hasField($fieldName) || !$this->node->get($fieldName)->isEmpty()) {
       return [];
     }
 
     $values = [];
-    foreach ($this->node->get($fieldName) as $item) {
+    $debug = $this->node->get($fieldName)->getValue();
+    $debug2 = $this->node->get($fieldName);
+    $text_values = array_column($debug, 'value');
+    foreach ($this->node->get($fieldName)->getValue() as $item) {
       if ($value = $item->value) {
         $values[] = $value;
       }
@@ -149,7 +156,41 @@ class ServizioNodeFieldManager {
 
     foreach ($entities as $entity) {
       if ($entity->hasField($targetField)) {
-        $value = $entity->get($targetField)->value;
+        $field_type = $entity->get($targetField)->getFieldDefinition()->getType();
+        switch ($field_type) {
+          case 'entity_reference_revisions':
+            $value = $entity->get($targetField)->entity;
+            break;
+
+          case 'link':
+            $link = $entity->get($targetField)->first();
+            if ($link) {
+              $value = [
+                'uri' => $link->get('uri')->getValue(),
+                'title' => $link->get('title')->getValue(),
+                'options' => $link->get('options')->getValue(),
+              ];
+            }
+            break;
+
+          case 'address':
+            $address = $entity->get($targetField)->first();
+            if ($address) {
+              $value = [
+                'name' => $entity->label(),
+                'address_line1' => $address->get('address_line1')->getValue(),
+                'postal_code' => $address->get('postal_code')->getValue(),
+                'locality' => $address->get('locality')->getValue(),
+                'administrative_area' => $address->get('administrative_area')->getValue(),
+              ];
+            }
+            break;
+
+          default:
+            $value = $entity->get($targetField)->value;
+            break;
+        }
+
         if ($value !== null) {
           $values[] = $value;
         }
@@ -522,7 +563,8 @@ class ServizioNodeFieldManager {
       $file = $this->getFileFromMedia($media);
       if ($file instanceof File) {
         $uri = $file->getFileUri();
-        $paths[] = $this->streamWrapperManager->getViaUri($uri)->realpath();
+        // $paths[] = $this->streamWrapperManager->getViaUri($uri)->realpath();
+        $paths[$media->label()] = $this->fileUrlGenerator->generateAbsoluteString($uri);
       }
     }
 

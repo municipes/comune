@@ -2,15 +2,18 @@
 
 namespace Drupal\silfi_services\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
-use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
-use Drupal\Core\Link;
 use Drupal\Core\Url;
-use Drupal\silfi_services\Service\ServizioNodeFieldManager;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Drupal\Core\Link;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\TermStorageInterface;
+use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Drupal\silfi_services\Service\ServizioNodeFieldManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -147,19 +150,6 @@ class ServiziController extends ControllerBase {
     // Preparare i dati per la risposta JSON.
     $response_data = [];
     foreach ($nodes as $node) {
-      // Recuperare il nome della tripla selezionata.
-      $name = '';
-      $triplette = [];
-      if (!$node->get('field_triplette')->isEmpty()) {
-        foreach ($node->get('field_triplette')->referencedEntities() as $term) {
-          $name = $term->getName();
-          $triplette[] = [
-            'tid' => $term->id(),
-            'name' => $name,
-          ];
-        }
-      }
-
       // Preparare i dati del singolo servizio.
       $response_data[] = [
         'nid' => $node->id(),
@@ -168,7 +158,7 @@ class ServiziController extends ControllerBase {
         'descrizione_breve' => $node->get('field_descrizione_breve')->value, // Campo principale
         'created' => date('Y-m-d', $node->getCreatedTime()),
         'updated' => date('Y-m-d', $node->getChangedTime()),
-        'triplette' => $triplette,
+        'triplette' => $this->getFieldTriplette($node),
       ];
     }
 
@@ -212,36 +202,45 @@ class ServiziController extends ControllerBase {
    *   I dettagli del nodo, inclusi i campi relazionati.
    */
   public function getServizio($nid, Request $request) {
-    // if (!$this->isAuthenticated($request)) {
-    //   return new Response('Unauthorized', 401);
-    // }
+    if (!$this->isAuthenticated($request)) {
+      return new Response('Unauthorized', 401);
+    }
 
     // Inizializza con l'ID del nodo e il bundle
     if (!$this->servizioNodeFieldManager->initNode($nid, 'servizio')) {
       return new JsonResponse(['message' => 'Nodo non trovato o non è un servizio.'], Response::HTTP_NOT_FOUND);
     }
 
+    $node = $this->servizioNodeFieldManager->getFullNode();
     $field_telefono_avanzato = $this->servizioNodeFieldManager->getTextField('field_telefono_riservato');
-    $field_nome_ufficio = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_unita_organizzative');
+    $uffici = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_unita_organizzative');
+    foreach ($uffici as $unid => $utitle) {
+      $ufficio = \Drupal::entityTypeManager()->getStorage('node')->load($unid);
+      $uurl =$ufficio->toUrl('canonical', ['absolute' => TRUE])->toString();
+      $field_nome_ufficio[$utitle] = $uurl;
+    }
+    $tempi_scadenze = [];
     $tempi_scadenze_text = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_tempi_e_scadenze', 'field_text');
-    $tempi_scadenze_parag = $this->servizioNodeFieldManager->getReferencedEntitiesEntities('field_tempi_e_scadenze', 'field_timeline_item');
+    $timeline = $node->get('field_tempi_e_scadenze')->entity;
+    $tempi_scadenze_parag = $timeline->field_timeline_item->referencedEntities();
+
+    $tempi_scadenze_items = [];
     foreach ($tempi_scadenze_parag as $paragraph) {
       if ($paragraph->bundle() == 'date_timeline_item') {
-        $key = $paragraph->get('field_date')->value;
+        $time = $paragraph->get('field_date')->value;
+        $time = date('d M Y', strtotime($time));
       }
       else {
-        $key = $paragraph->get('field_days')->value . ' giorni.';
+        $time = $paragraph->get('field_days')->value . ' giorni.';
       }
-      $tempi_scadenze_item[$key] = $paragraph->get('field_title')->value;
+      $tempi_scadenze_items[] = [
+        'time' => $time,
+        'title' => $paragraph->get('field_title')->value,
+      ];
     }
 
-    $tempi_scadenze = $tempi_scadenze_text[0];
-    foreach ($tempi_scadenze_item as $date_days => $title) {
-      $tempi_scadenze .= '<li>' . $date_days . ' ' . $title . '</li>';
-    }
-    $tempi_scadenze .= '</ul>';
-
-    $files = $this->servizioNodeFieldManager->getMediaFilesAbsolutePaths('field_condizioni_di_servizio');
+    $tempi_scadenze['intro'] = $tempi_scadenze_text[0];
+    $tempi_scadenze['rows'] = $tempi_scadenze_items;
 
     $field_documenti = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_documenti');
     foreach ($field_documenti as $dnid => $dtitle) {
@@ -250,6 +249,26 @@ class ServiziController extends ControllerBase {
       $documenti[$dtitle] = $durl;
     }
 
+    $field_accedi_al_servizio[] = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_accedi_al_servizio', 'field_link');
+    $field_accedi_al_servizio[] = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_accedi_al_servizio', 'field_indirizzo');
+
+    $field_punti_di_contatto = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_punti_di_contatto');
+    $contatti = [];
+    foreach ($field_punti_di_contatto as $pnid => $punto) {
+      $contatti[] = [
+        'nome' => $punto,
+        'valore' => $this->getValorePuntoDiContatto($pnid),
+      ];
+    }
+
+    $field_schede_collegate = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_schede_collegate');
+    foreach ($field_schede_collegate as $snid => $stitle) {
+      $scheda = \Drupal::entityTypeManager()->getStorage('node')->load($snid);
+      $surl =$scheda->toUrl('canonical', ['absolute' => TRUE])->toString();
+      $schede_collegate[$stitle] = $surl;
+    }
+
+
     // Preparare i dettagli del nodo.
     $response_data['data'][0] = [
       'pnrr' => TRUE,
@@ -257,6 +276,7 @@ class ServiziController extends ControllerBase {
       'field_stato_del_servizio' => (bool) $this->servizioNodeFieldManager->getTextField('field_stato_del_servizio'),
       'field_motivo_dello_stato' => $this->servizioNodeFieldManager->getTextField('field_motivo_dello_stato'),
       'title' => $this->servizioNodeFieldManager->getLabel(),
+      'breadcrumb' => $this->getFieldTriplette(),
       'field_telefono_avanzato' => $field_telefono_avanzato,
       'field_nome_ufficio' => $field_nome_ufficio,
       'field_descrizione' => $this->servizioNodeFieldManager->getTextField('field_descrizione_completa'),
@@ -266,9 +286,20 @@ class ServiziController extends ControllerBase {
       'field_cosa_si_ottiene' => $this->servizioNodeFieldManager->getTextField('field_cosa_si_ottiene'),
       'field_tempi_e_scadenze' => $tempi_scadenze,
       'field_costi' => $this->servizioNodeFieldManager->getTextField('field_costi'),
-      'field_condizioni_di_servizio' => $files,
+      'field_procedure_collegate_esito' => $this->servizioNodeFieldManager->getTextField('field_procedure_collegate_esito'),
+      'field_condizioni_di_servizio' => $this->servizioNodeFieldManager->getMediaFilesAbsolutePaths('field_condizioni_di_servizio'),
       'field_documenti' => $documenti,
       'field_note_interne' => $this->servizioNodeFieldManager->getTextField('field_note_interne'),
+      'field_accedi_al_servizio' => $field_accedi_al_servizio,
+      'field_punti_di_contatto' => $contatti,
+      'field_vincoli' => $this->servizioNodeFieldManager->getTextField('field_vincoli'),
+      'field_casi_particolari' => $this->servizioNodeFieldManager->getTextField('field_casi_particolari'),
+      'field_ulteriori_informazioni' => $this->servizioNodeFieldManager->getTextField('field_ulteriori_informazioni'),
+      'field_normativa_di_riferimento' => $this->servizioNodeFieldManager->getTextField('field_normativa_di_riferimento'),
+      'field_reclami_ricorsi_opposizioni' => $this->servizioNodeFieldManager->getTextField('field_reclami_ricorsi_opposizion'),
+      'field_allegati' => $this->servizioNodeFieldManager->getMediaFilesAbsolutePaths('field_allegati'),
+      'field_schede_collegate' => $schede_collegate,
+      'field_link_esterni' => $node->get('field_link_esterni')->getValue(),
       'path' => $this->servizioNodeFieldManager->getPath(TRUE),
       'created' => date('Y-m-d', $this->servizioNodeFieldManager->getCreatedTime()),
     ];
@@ -379,6 +410,80 @@ class ServiziController extends ControllerBase {
 
     // Restituire TRUE se l'autenticazione ha successo.
     return TRUE;
+  }
+
+  /**
+   * Restituisce la lista dei termini genitori e del termine selezionato per il
+   * campo "Tripletta" di un nodo di tipo "Servizio".
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   Il nodo di tipo "Servizio" per cui restituire la lista dei termini genitori
+   *   della Tripletta.
+   *
+   * @return array
+   *   La lista dei termini genitori e del termine selezionato, ciascuno
+   *   rappresentato da un array contenente le chiavi 'tid' e 'name'. Se il termine
+   *   non esiste, restituisce un array vuoto.
+   */
+  private function getFieldTriplette(?NodeInterface $node = NULL): array {
+    if ($node) {
+      // Inizializza il servizio per la gestione dei campi del nodo.
+      $this->servizioNodeFieldManager->initNode($node->id(), 'servizio');
+    }
+
+    $triplette = [];
+
+    // Recupera il termine selezionato per il campo "Tripletta".
+    if ($tripletta = $this->servizioNodeFieldManager->getReferencedEntity('field_triplette')) {
+      // Recupera la lista dei termini genitori del termine selezionato.
+      $breadcrumbs = $this->getTermParents($tripletta->id());
+
+      // Aggiunge il termine selezionato alla lista dei termini genitori.
+      $breadcrumb[] =  ['tid' => $tripletta->id(), 'name' => $tripletta->label()];
+
+      // Restituisce la lista dei termini genitori e del termine selezionato.
+      $triplette = array_merge($breadcrumbs, $breadcrumb);
+    }
+
+    return $triplette;
+  }
+
+  private function getValorePuntoDiContatto($nid) {
+    $node = Node::load($nid);
+    return $node->field_contatto->entity->field_valore_punto_di_contatto->value;
+  }
+
+  /**
+   * Restituisce la lista dei termini genitori di un termine di vocabolario.
+   *
+   * @param int $tid
+   *   L'ID del termine di vocabolario.
+   *
+   * @return array|null
+   *   La lista dei termini genitori, ciascuno rappresentato da un array
+   *   contenente le chiavi 'tid' e 'name'. Se il termine non esiste, restituisce
+   *   NULL.
+   */
+  private function getTermParents($tid): ?array {
+    /** @var TermStorageInterface $term_storage */
+    $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $term = $term_storage->load($tid);
+
+    if (!$term) {
+      return null;
+    }
+
+    $parents = $term_storage->loadParents($tid);
+
+    $parent_terms = [];
+    foreach ($parents as $parent) {
+      $parent_terms[] = [
+        'tid' => $parent->id(),
+        'name' => $parent->getName(),
+      ];
+    }
+
+    return array_reverse($parent_terms);
   }
 
 }
