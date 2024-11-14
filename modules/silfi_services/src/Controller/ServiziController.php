@@ -11,7 +11,6 @@ use Drupal\taxonomy\TermStorageInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\silfi_services\Service\ServizioNodeFieldManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -258,6 +257,8 @@ class ServiziController extends ControllerBase {
       $contatti[] = [
         'nome' => $punto,
         'valore' => $this->getValorePuntoDiContatto($pnid),
+        'orari' => $this->formatOrari($pnid),
+        // 'debug' => $this->getOrari($pnid),
       ];
     }
 
@@ -448,9 +449,78 @@ class ServiziController extends ControllerBase {
     return $triplette;
   }
 
+  /**
+   * Restituisce il valore del campo "Valore punto di contatto" di un nodo di tipo
+   * "Servizio".
+   *
+   * @param int $nid
+   *   L'ID del nodo di tipo "Servizio".
+   *
+   * @return string
+   *   Il valore del campo "Valore punto di contatto".
+   */
   private function getValorePuntoDiContatto($nid) {
+    // Carica il nodo di tipo "Servizio" con l'ID passato come argomento.
     $node = Node::load($nid);
+
+    // Restituisce il valore del campo "Valore punto di contatto" del nodo.
     return $node->field_contatto->entity->field_valore_punto_di_contatto->value;
+  }
+
+  /**
+   * Returns the value of the "Orari" field for a given node ID.
+   *
+   * @param int $nid
+   *   The ID of the node.
+   *
+   * @return array
+   *   The value of the "Orari" field.
+   */
+  private function getOrari($nid) {
+    // Carica il nodo di tipo "Servizio" con l'ID passato come argomento.
+    $node = Node::load($nid);
+
+    // Restituisce il valore del campo "Orari" del nodo.
+    return $node->field_orari->getValue();
+  }
+
+  private function formatOrari($nid) {
+    $formatted_orari = [];
+    $orari = $this->getOrari($nid);
+    $weekdays = [1 => 'Lunedi', 2 => 'Martedi', 3 => 'Mercoledi', 4 => 'Giovedi', 5 => 'Venerdi', 6 => 'Sabato', 7 => 'Domenica'];
+
+    $formatted_orari = [];
+    foreach ($orari as $orario) {
+      $start_hours = $this->formatHours($orario['starthours']);
+      $end_hours = $this->formatHours($orario['endhours']);
+      $formatted_orari[] = [
+        'day' => $weekdays[$orario['day']],
+        'day_delta' => $orario['day_delta'],
+        'all_day' => $orario['all_day'],
+        'start_hours' => $start_hours,
+        'end_hours' => $end_hours,
+        'comment' => $orario['comment'],
+      ];
+    }
+    return $formatted_orari;
+  }
+
+  /**
+   * Formats a time value into a string.
+   *
+   * @param int $number
+   *   The time value to format, in the format HHMM.
+   *
+   * @return string
+   *   The formatted time string, in the format HH:MM.
+   */
+  private function formatHours(int $number): string {
+    // Calculate the hours and minutes from the input value.
+    $hours = floor($number / 100);
+    $minutes = $number % 100;
+
+    // Pad with leading zeros if needed.
+    return sprintf('%02d:%02d', $hours, $minutes);
   }
 
   /**
