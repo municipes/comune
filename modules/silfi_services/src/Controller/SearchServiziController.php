@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\search_api\Entity\Index;
 use Drupal\search_api\Query\QueryInterface;
 use Drupal\search_api\Query\ResultSetInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,6 +30,10 @@ class SearchServiziController extends ControllerBase {
    *   La risposta JSON con i risultati di ricerca.
    */
   public function searchResults(Request $request) {
+    if (!$this->isAuthenticated($request)) {
+      return new Response('Unauthorized', 401);
+    }
+
     // Parametri per la paginazione: page (default 1) e limit (default 20).
     $page = (int) $this->getRequestParameter($request, 'page', 1);
     $limit = (int) $this->getRequestParameter($request, 'limit', 30);
@@ -129,7 +134,7 @@ class SearchServiziController extends ControllerBase {
         'nid' => $node->id(),
         'tipo' => $node->bundle(),
         'title' => $node->getTitle(),
-        // 'descrizione_breve' => $node->get('field_descrizione_breve')->value, // Campo principale
+        'descrizione_breve' => $node->get('field_descrizione_breve')->value, // Campo principale
         'created' => date('Y-m-d', $node->getCreatedTime()),
         'updated' => date('Y-m-d', $node->getChangedTime()),
         // 'triplette' => $triplette,
@@ -161,4 +166,35 @@ class SearchServiziController extends ControllerBase {
     return $request->query->get($key) ?? $request->request->get($key) ?? $default;
   }
 
+  /**
+   * Verifica se la richiesta è autenticata tramite l'API Key.
+   *
+   * Questo metodo recupera la chiave API dalla configurazione e la confronta
+   * con la chiave fornita nell'header della richiesta. Se le chiavi non coincidono
+   * o se la chiave non è presente, restituisce un errore 403.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   L'oggetto richiesta HTTP.
+   *
+   * @return \Symfony\Component\HttpFoundation\JsonResponse|bool
+   *   Restituisce TRUE se l'autenticazione ha successo, altrimenti una risposta
+   *   JSON con un messaggio di accesso negato.
+   */
+  private function isAuthenticated($request) {
+    // Recuperare la chiave API dalla configurazione.
+    $config = $this->config('silfi_services.settings');
+    $api_key = sha1($config->get('api_key') . $this->hashSalt);
+
+    // Verificare se l'header X-API-Key è presente e valido.
+    $provided_api_key = $request->headers->get('X-API-Key');
+
+    if ($provided_api_key !== $api_key || NULL === $provided_api_key) {
+      // Se la chiave API non è valida o mancante, restituire un errore 403.
+      // return new JsonResponse(['message' => 'Access denied. Invalid API Key.'], Response::HTTP_FORBIDDEN);
+      return FALSE;
+    }
+
+    // Restituire TRUE se l'autenticazione ha successo.
+    return TRUE;
+  }
 }
