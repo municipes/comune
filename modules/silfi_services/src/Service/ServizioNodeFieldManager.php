@@ -567,7 +567,7 @@ class ServizioNodeFieldManager {
         $paths[] = [
           'label' => $media->label(),
           'url' => $this->fileUrlGenerator->generateAbsoluteString($uri),
-          'size' => round($file->getSize() / 1024, 2) . ' KB',
+          'filesize' => round($file->getSize() / 1024, 2) . ' KB',
         ];
       }
     }
