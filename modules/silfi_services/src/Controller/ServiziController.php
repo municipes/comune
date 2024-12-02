@@ -281,6 +281,7 @@ class ServiziController extends ControllerBase {
 
     // Preparare i dettagli del nodo.
     $response_data['data'][0] = [
+      'site_url' => $request->getSchemeAndHttpHost() . base_path(),
       'pnrr' => TRUE,
       'nid' => $nid,
       'field_stato_del_servizio' => (bool) $this->servizioNodeFieldManager->getTextField('field_stato_del_servizio'),
