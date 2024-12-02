@@ -230,7 +230,7 @@ class ServiziController extends ControllerBase {
         $time = date('d M Y', strtotime($time));
       }
       else {
-        $time = $paragraph->get('field_days')->value . ' giorni.';
+        $time = $paragraph->get('field_days')->value . ' giorni';
       }
       $tempi_scadenze_items[] = [
         'time' => $time,
