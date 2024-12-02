@@ -7,10 +7,12 @@ use Drupal\Core\Link;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\taxonomy\TermStorageInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\silfi_services\Service\ServizioNodeFieldManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -219,27 +221,34 @@ class ServiziController extends ControllerBase {
       $field_nome_ufficio[$utitle] = $uurl;
     }
     $tempi_scadenze = [];
-    $tempi_scadenze_text = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_tempi_e_scadenze', 'field_text');
-    $timeline = $node->get('field_tempi_e_scadenze')->entity;
-    $tempi_scadenze_parag = $timeline->field_timeline_item->referencedEntities();
+    // $tempi_scadenze_text = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_tempi_e_scadenze', 'field_text');
+    $timelines = $node->get('field_tempi_e_scadenze')->referencedEntities();
+    foreach ($timelines as $i => $timeline) {
+      $tempi_scadenze_text = $timeline->get('field_text')->value;
+      $tempi_scadenze_parag = $timeline->field_timeline_item->referencedEntities();
 
-    $tempi_scadenze_items = [];
-    foreach ($tempi_scadenze_parag as $paragraph) {
-      if ($paragraph->bundle() == 'date_timeline_item') {
-        $time = $paragraph->get('field_date')->value;
-        $time = date('d M Y', strtotime($time));
+      $tempi_scadenze_items = [];
+      foreach ($tempi_scadenze_parag as $paragraph) {
+        if ($paragraph->bundle() == 'date_timeline_item') {
+          $time = $paragraph->get('field_date')->value;
+          $time = date('d M Y', strtotime($time));
+          $type_time = 'date';
+        }
+        else {
+          $time = $paragraph->get('field_days')->value . ' giorni';
+          $type_time = 'days';
+        }
+        $tempi_scadenze_items[] = [
+          'time' => $time,
+          'title' => $paragraph->get('field_title')->value,
+          'type' => $type_time,
+        ];
       }
-      else {
-        $time = $paragraph->get('field_days')->value . ' giorni';
-      }
-      $tempi_scadenze_items[] = [
-        'time' => $time,
-        'title' => $paragraph->get('field_title')->value,
-      ];
+
+      $tempi_scadenze[$i]['intro'] = $tempi_scadenze_text;
+      $tempi_scadenze[$i]['rows'] = $tempi_scadenze_items;
     }
 
-    $tempi_scadenze['intro'] = $tempi_scadenze_text[0];
-    $tempi_scadenze['rows'] = $tempi_scadenze_items;
 
     $field_documenti = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_documenti');
     foreach ($field_documenti as $dnid => $dtitle) {
