@@ -467,15 +467,20 @@ class ServiziController extends ControllerBase {
    * @param int $nid
    *   L'ID del nodo di tipo "Servizio".
    *
-   * @return string
+   * @return array
    *   Il valore del campo "Valore punto di contatto".
    */
   private function getValorePuntoDiContatto($nid) {
     // Carica il nodo di tipo "Servizio" con l'ID passato come argomento.
     $node = Node::load($nid);
+    $contatto = $node->field_contatto->entity;
+    $tipo = $contatto->field_tipo_punto_di_contatto->entity->label();
 
     // Restituisce il valore del campo "Valore punto di contatto" del nodo.
-    return $node->field_contatto->entity->field_valore_punto_di_contatto->value;
+    return [
+      'tipo' => $tipo,
+      'valore' =>  $node->field_contatto->entity->field_valore_punto_di_contatto->value
+    ];
   }
 
   /**
