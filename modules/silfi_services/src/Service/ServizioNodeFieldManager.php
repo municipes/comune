@@ -561,11 +561,13 @@ class ServizioNodeFieldManager {
 
     foreach ($mediaItems as $media) {
       $file = $this->getFileFromMedia($media);
+      $desc = $media->get('field_media_document')->description ?? $media->label();
       if ($file instanceof File) {
         $uri = $file->getFileUri();
         // $paths[] = $this->streamWrapperManager->getViaUri($uri)->realpath();
         $paths[] = [
           'label' => $media->label(),
+          'description' => $desc,
           'url' => $this->fileUrlGenerator->generateAbsoluteString($uri),
           'filesize' => round($file->getSize() / 1024, 2) . ' KB',
         ];
