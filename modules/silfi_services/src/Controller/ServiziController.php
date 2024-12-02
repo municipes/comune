@@ -286,6 +286,7 @@ class ServiziController extends ControllerBase {
       'nid' => $nid,
       'field_stato_del_servizio' => (bool) $this->servizioNodeFieldManager->getTextField('field_stato_del_servizio'),
       'field_motivo_dello_stato' => $this->servizioNodeFieldManager->getTextField('field_motivo_dello_stato'),
+      'descrizione_breve' => $this->servizioNodeFieldManager->getTextField('field_descrizione_breve'),
       'title' => $this->servizioNodeFieldManager->getLabel(),
       'breadcrumb' => $this->getFieldTriplette(),
       'field_telefono_avanzato' => $field_telefono_avanzato,
