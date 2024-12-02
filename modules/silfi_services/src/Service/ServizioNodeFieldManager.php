@@ -564,7 +564,11 @@ class ServizioNodeFieldManager {
       if ($file instanceof File) {
         $uri = $file->getFileUri();
         // $paths[] = $this->streamWrapperManager->getViaUri($uri)->realpath();
-        $paths[$media->label()] = $this->fileUrlGenerator->generateAbsoluteString($uri);
+        $paths[] = [
+          'label' => $media->label(),
+          'url' => $this->fileUrlGenerator->generateAbsoluteString($uri),
+          'size' => round($file->getSize() / 1024, 2) . ' KB',
+        ];
       }
     }
 
