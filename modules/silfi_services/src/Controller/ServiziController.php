@@ -261,6 +261,7 @@ class ServiziController extends ControllerBase {
       $durl =$documento->toUrl('canonical', ['absolute' => TRUE])->toString();
       $ddesc = $documento->get('field_descrizione_breve')->value;
       $documenti[$dtitle] = [
+        'title' => $dtitle,
         'url' => $durl,
         'descrizione' => $ddesc,
       ];
