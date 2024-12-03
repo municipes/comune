@@ -217,8 +217,13 @@ class ServiziController extends ControllerBase {
     $uffici = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_unita_organizzative');
     foreach ($uffici as $unid => $utitle) {
       $ufficio = \Drupal::entityTypeManager()->getStorage('node')->load($unid);
-      $uurl =$ufficio->toUrl('canonical', ['absolute' => TRUE])->toString();
-      $field_nome_ufficio[$utitle] = $uurl;
+      $uurl = $ufficio->toUrl('canonical', ['absolute' => TRUE])->toString();
+      $udesc = $ufficio->get('field_descrizione_breve')->value;
+      $field_nome_ufficio[$utitle] = [
+        'title' => $utitle,
+        'descrizione' => $udesc,
+        'url' => $uurl,
+      ];
     }
     $tempi_scadenze = [];
     // $tempi_scadenze_text = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_tempi_e_scadenze', 'field_text');
