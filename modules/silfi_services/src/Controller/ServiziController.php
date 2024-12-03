@@ -284,8 +284,13 @@ class ServiziController extends ControllerBase {
     $field_schede_collegate = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_schede_collegate');
     foreach ($field_schede_collegate as $snid => $stitle) {
       $scheda = \Drupal::entityTypeManager()->getStorage('node')->load($snid);
-      $surl =$scheda->toUrl('canonical', ['absolute' => TRUE])->toString();
-      $schede_collegate[$stitle] = $surl;
+      $surl = $scheda->toUrl('canonical', ['absolute' => TRUE])->toString();
+      $sdesc = $scheda->get('field_descrizione_breve')->value;
+      $schede_collegate[$stitle] = [
+        'title' => $stitle,
+        'descrizione' => $sdesc,
+        'url' => $surl,
+      ];
     }
 
 
