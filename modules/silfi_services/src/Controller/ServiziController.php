@@ -259,7 +259,11 @@ class ServiziController extends ControllerBase {
     foreach ($field_documenti as $dnid => $dtitle) {
       $documento = \Drupal::entityTypeManager()->getStorage('node')->load($dnid);
       $durl =$documento->toUrl('canonical', ['absolute' => TRUE])->toString();
-      $documenti[$dtitle] = $durl;
+      $ddesc = $documento->get('field_descrizione_breve')->value;
+      $documenti[$dtitle] = [
+        'url' => $durl,
+        'descrizione' => $ddesc,
+      ];
     }
 
     $field_accedi_al_servizio[] = $this->servizioNodeFieldManager->getReferencedEntitiesField('field_accedi_al_servizio', 'field_link');
