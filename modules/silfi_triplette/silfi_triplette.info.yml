@@ -7,4 +7,4 @@ configure: silfi_triplette.config
 dependencies:
   - drupal:taxonomy
 
-version: '1.0.0'
+version: '1.0.3'
