@@ -168,33 +168,58 @@ class TripletteImport {
    * @return Term
    */
   private function checkOrCreateTerm(string $name, string $description = null, int $parent = 0, int $id = null) : Term {
-    $terms = [];
+    $term = NULL;
+
+    // Prima, cerchiamo il termine per ID (se fornito)
     if ($id) {
-      if ($exist = $this->tripletteExist($id)) {
-        $terms[] = Term::load($exist['tid']);
+      $existingTermData = $this->tripletteExist($id);
+      if ($existingTermData) {
+        $term = Term::load($existingTermData['tid']);
       }
     }
-    else {
-      $terms = $this->searchTermByName($name);
-    }
-    if (!empty($terms)) {
-      if (count($terms) > 1) {
-        throw new \Exception("Error Processing Request", 1);
-      }
-      foreach($terms AS $termFind) {
-        if ($termFind) {
-          $term = $this->updateTerm($termFind, $name, $description, $parent, $id);
+
+    // Se non trovato per ID, cerchiamo per nome e filtriamo per parent
+    if (!$term) {
+      $matchingTerms = $this->searchTermByName($name);
+
+      // Filtriamo i termini per parent per gestire i casi di omonimia
+      $sameParentTerms = [];
+      foreach ($matchingTerms as $potentialTerm) {
+        $termParent = $this->getTermParent($potentialTerm);
+        if ($termParent == $parent) {
+          $sameParentTerms[] = $potentialTerm;
         }
-        else {
-          $term = $this->createTerm($name, $description, $parent, $id);
-        }
+      }
+
+      // Se troviamo più termini con lo stesso nome e parent, lanciamo un'eccezione
+      if (count($sameParentTerms) > 1) {
+        throw new \Exception("Trovati più termini con nome '$name' e stesso parent. Rilevata inconsistenza nei dati.", 1);
+      }
+      // Se troviamo esattamente un termine con il parent corretto, lo usiamo
+      elseif (count($sameParentTerms) == 1) {
+        $term = reset($sameParentTerms);
       }
     }
-    else {
+
+    // Aggiorniamo il termine esistente o ne creiamo uno nuovo
+    if ($term) {
+      $term = $this->updateTerm($term, $name, $description, $parent, $id);
+    } else {
       $term = $this->createTerm($name, $description, $parent, $id);
     }
 
     return $term;
+  }
+
+  /**
+   * Helper function per ottenere l'ID del parent di un termine
+   *
+   * @param Term $term
+   * @return int
+   */
+  private function getTermParent(Term $term) : int {
+    $parents = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($term->id());
+    return !empty($parents) ? reset($parents)->id() : 0;
   }
 
   /**
