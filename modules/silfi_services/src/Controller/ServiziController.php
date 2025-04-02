@@ -290,6 +290,7 @@ class ServiziController extends ControllerBase {
         'title' => $stitle,
         'descrizione' => $sdesc,
         'url' => $surl,
+        'nid' => $snid,
       ];
     }
 
