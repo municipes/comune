@@ -158,7 +158,7 @@ class ServiziController extends ControllerBase {
         'title' => $node->getTitle(),
         'descrizione_breve' => $node->get('field_descrizione_breve')->value, // Campo principale
         'created' => date('Y-m-d', $node->getCreatedTime()),
-        'updated' => date('Y-m-d', $node->getChangedTime()),
+        'updated' => date('Y-m-d H:i:s', $node->getChangedTime()),
         'triplette' => $this->getFieldTriplette($node),
       ];
     }
