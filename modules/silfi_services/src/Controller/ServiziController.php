@@ -523,8 +523,8 @@ class ServiziController extends ControllerBase {
 
     $formatted_orari = [];
     foreach ($orari as $orario) {
-      $start_hours = $this->formatHours($orario['starthours']);
-      $end_hours = $this->formatHours($orario['endhours']);
+      $start_hours = $this->formatHours((int)$orario['starthours']);
+      $end_hours = $this->formatHours((int)$orario['endhours']);
       $formatted_orari[] = [
         'day' => $weekdays[$orario['day']],
         'day_delta' => $orario['day_delta'],
