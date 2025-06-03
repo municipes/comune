@@ -1,0 +1,154 @@
+id: page_to_amministrazione_trasparente
+label: 'Migrazione nodi page verso amministrazione_trasparente'
+migration_group: migrate_drupal_9
+migration_tags:
+  - content
+  - nodes
+
+source:
+  plugin: d9_node_with_menu
+  key: d9_source_site
+  entity_type: node
+  bundle: page
+  menu_name: 'amministrazione-trasparente'
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: amministrazione_trasparente
+process:
+  # Mappatura dei campi standard del nodo.
+  # Assicurati che i nomi dei campi di destinazione (es. title, body)
+  # corrispondano ai tuoi tipi di contenuto in Drupal 10.
+  type:
+    plugin: default_value
+    default_value: amministrazione_trasparente
+  langcode:
+    -
+      plugin: default_value
+      # source: language
+      default_value: it
+  title: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+
+  field_allegati:
+    plugin: sub_process
+    source: field_nc_allegati
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_doc
+        source: target_id
+        no_stub: true
+
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: 'bootstrap_italia_2'
+
+  field_descrizione_breve: field_abstract
+
+  field_immagine:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_galleria:
+    plugin: sub_process
+    source: field_ev_gallery
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: d9_file_to_media_image
+        source: target_id
+        no_stub: true
+
+  field_link_esterni:
+    plugin: sub_process
+    source: field_link_utili
+    process:
+      uri: uri
+      title: title
+      # options:
+      #   plugin: default_value
+      #   default_value: ''
+
+  field_luoghi:
+    plugin: sub_process
+    source: field_nc_luoghi
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: node_luogo
+        source: target_id
+        no_stub: true
+
+
+  field_argomenti:
+    plugin: sub_process
+    source: field_tax_argomenti
+    process:
+      target_id:
+        plugin: static_map
+        source: target_id
+        map:
+          18: 10048
+          38: 10002
+          129: 10018
+          11: 10006
+          36: 10062
+          12: 10038
+          127: 10009
+          23: 10013
+          33: 10040
+          14: 10007
+          128: 10027
+          39: 10023
+          13: 10055
+          34: 10026
+          17: 10032
+          30: 10034
+          135: 10017
+          133: 10058
+          40: 10025
+          41: 10045
+          132: 10030
+          44: 10052
+          15: 10021
+          32: 10055
+          37: 10036
+          45: 10057
+          46: 10058
+          25: 10059
+        default_value: 0
+
+migration_dependencies:
+  required:
+    - d9_file_to_media_image
+    - d9_file_to_media_doc
+    - node_luogo
+
+dependencies:
+  enforced:
+    module:
+      - silfi_migrate_9

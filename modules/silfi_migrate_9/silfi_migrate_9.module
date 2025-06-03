@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Modulo per la migrazione dei nodi page con discriminazione per menu.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Plugin\migrate\source\SqlBase;
+use Drupal\migrate\Row;
+
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function silfi_migrate_9_migrate_prepare_row(Row $row, SqlBase $source, MigrationInterface $migration) {
+  // Logica aggiuntiva se necessaria per processare le righe
+
+  // Esempio: logging per debug
+  if (in_array($migration->id(), ['page_to_page', 'page_to_amministrazione_trasparente'])) {
+    \Drupal::logger('migrate_page_nodes')->info('Processing node @nid for migration @migration', [
+      '@nid' => $row->getSourceProperty('nid'),
+      '@migration' => $migration->id(),
+    ]);
+  }
+}
+
+/**
+ * Utility function per verificare se un nodo è presente in un menu.
+ */
+function silfi_migrate_9_is_node_in_menu($nid, $menu_name, $database = NULL) {
+  if (!$database) {
+    $database = Database::getConnection('d9_source_site', 'migrate');
+  }
+
+  $query = $database->select('menu_link_content_data', 'mlcd')
+    ->fields('mlcd', ['id'])
+    ->condition('mlcd.menu_name', $menu_name)
+    ->condition('mlcd.link__uri', 'entity:node/' . $nid)
+    ->range(0, 1);
+
+  return !empty($query->execute()->fetchField());
+}
