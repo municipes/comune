@@ -271,6 +271,16 @@ class ServizioNodeFieldManager {
   }
 
   /**
+   * Returns the cahnged time of the node.
+   *
+   * @return string|null
+   *   The creation time of the node, or null if the node is not found.
+   */
+  public function getChangedTime(): ?string {
+    return $this->node->getChangedTime();
+  }
+
+  /**
    * Recupera la label di un'entità referenziata.
    *
    * @param string $fieldName

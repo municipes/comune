@@ -329,7 +329,8 @@ class ServiziController extends ControllerBase {
       'field_schede_collegate' => $schede_collegate,
       'field_link_esterni' => $node->get('field_link_esterni')->getValue(),
       'path' => $this->servizioNodeFieldManager->getPath(TRUE),
-      'created' => date('Y-m-d', $this->servizioNodeFieldManager->getCreatedTime()),
+      'created' => date('Y-m-d H:i:s', $this->servizioNodeFieldManager->getCreatedTime()),
+      'changed' => date('Y-m-d H:i:s', $this->servizioNodeFieldManager->getChangedTime()),
     ];
 
     // Restituire i dettagli del nodo come JSON.
