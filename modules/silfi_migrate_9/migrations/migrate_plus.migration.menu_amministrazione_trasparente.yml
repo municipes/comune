@@ -1,0 +1,74 @@
+id: menu_amministrazione_trasparente
+label: 'Migrazione Menu Amministrazione Trasparente'
+migration_group: migrate_drupal_9
+source:
+  plugin: menu_link
+  menu_name: amministrazione-trasparente
+  constants:
+    menu_name: amministrazione-trasparente
+process:
+  # UUID del menu link
+  uuid: uuid
+
+  # Mantieni l'id del menu link
+  id:
+    plugin: machine_name
+    source: id
+
+  # Nome del menu di destinazione
+  menu_name: 'constants/menu_name'
+
+  # Titolo del menu link
+  title: title
+
+  # Descrizione
+  description: description
+
+  # URL/URI del link
+  link/uri:
+    plugin: silfi_menu_link_uri
+    source: link
+
+  # Opzioni del link
+  link/options: options
+
+  # Parent - gestione gerarchia
+  parent:
+    plugin: silfi_menu_link_parent
+    source: parent_uuid
+
+  # Peso per ordinamento
+  weight: weight
+
+  # Stato di pubblicazione
+  enabled: enabled
+
+  # Expanded
+  expanded: expanded
+
+  # Provider
+  provider: provider
+
+  # Metadata
+  metadata: metadata
+
+  # Route parameters se presenti
+  route_parameters: route_parameters
+
+  # External flag
+  external: external
+
+  # Rediscover flag
+  rediscover: rediscover
+
+destination:
+  plugin: entity:menu_link_content
+  default_bundle: menu_link_content
+  # Forza l'aggiornamento basandosi sull'UUID
+  overwrite_properties:
+    - uuid
+
+migration_dependencies:
+  required:
+    - page_to_amministrazione_trasparente
+    - page_to_page

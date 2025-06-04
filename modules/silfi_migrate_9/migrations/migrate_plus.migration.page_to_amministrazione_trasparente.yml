@@ -142,11 +142,11 @@ process:
           25: 10059
         default_value: 0
 
-migration_dependencies:
-  required:
-    - d9_file_to_media_image
-    - d9_file_to_media_doc
-    - node_luogo
+# migration_dependencies:
+#   required:
+#     - d9_file_to_media_image
+#     - d9_file_to_media_doc
+#     - node_luogo
 
 dependencies:
   enforced:
