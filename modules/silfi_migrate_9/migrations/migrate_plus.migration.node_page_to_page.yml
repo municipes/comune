@@ -18,7 +18,7 @@ process:
   # corrispondano ai tuoi tipi di contenuto in Drupal 10.
   type:
     plugin: default_value
-    default_value: page
+    default_value: pagina_legacy
   langcode:
     -
       plugin: default_value
