@@ -11,7 +11,7 @@ source:
     menu_name: 'amministrazione-trasparente'
 destination:
   plugin: 'entity:node'
-  default_bundle: page
+  default_bundle: pagina_legacy
 process:
   # Mappatura dei campi standard del nodo.
   # Assicurati che i nomi dei campi di destinazione (es. title, body)
