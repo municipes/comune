@@ -490,8 +490,25 @@ class ServiziController extends ControllerBase {
   private function getValorePuntoDiContatto($nid) {
     // Carica il nodo di tipo "Servizio" con l'ID passato come argomento.
     $node = Node::load($nid);
+
+    // Verificare se il nodo esiste.
+    if (!$node) {
+      return [];
+    }
+
     $contatto = $node->field_contatto->entity;
+
+    // Verificare se il campo "Contatto" contiene un riferimento a un'entità.
+    if (!$contatto) {
+      return [];
+    }
+
     $tipo = $contatto->field_tipo_punto_di_contatto->entity->label();
+
+    // Verificare se il campo "Tipo punto di contatto" contiene un riferimento a un'entità.
+    if (!$tipo) {
+      return [];
+    }
 
     // Restituisce il valore del campo "Valore punto di contatto" del nodo.
     return [
