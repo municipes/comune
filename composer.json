@@ -32,7 +32,7 @@
     "municipes/privatum_documentum": "^1.x-dev",
     "municipes/libellus": "^1.x-dev",
     "municipes/nuntium": "^1.x-dev",
-    "municipes/scaenographia": "^1.0"
+    "municipes-fs/scaenographia": "^1.0"
   },
   "support": {
     "docs": "https://drupal.org/project/comune_profile"
