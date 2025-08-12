@@ -496,24 +496,29 @@ class ServiziController extends ControllerBase {
       return [];
     }
 
-    $contatto = $node->field_contatto->entity;
-
     // Verificare se il campo "Contatto" contiene un riferimento a un'entità.
-    if (!$contatto) {
+    if (!$node->hasField('field_contatto') || $node->get('field_contatto')->isEmpty()) {
       return [];
     }
 
-    $tipo = $contatto->field_tipo_punto_di_contatto->entity->label();
+    $contatto = $node->get('field_contatto')->entity;
 
     // Verificare se il campo "Tipo punto di contatto" contiene un riferimento a un'entità.
-    if (!$tipo) {
+    if (!$contatto->hasField('field_tipo_punto_di_contatto') || $contatto->get('field_tipo_punto_di_contatto')->isEmpty()) {
+      return [];
+    }
+
+    $tipo = $contatto->get('field_tipo_punto_di_contatto')->entity->label();
+
+    // Verificare se il campo "Valore punto di contatto" contiene un valore.
+    if (!$contatto->hasField('field_valore_punto_di_contatto') || $contatto->get('field_valore_punto_di_contatto')->isEmpty()) {
       return [];
     }
 
     // Restituisce il valore del campo "Valore punto di contatto" del nodo.
     return [
       'tipo' => $tipo,
-      'valore' =>  $node->field_contatto->entity->field_valore_punto_di_contatto->value
+      'valore' => $contatto->get('field_valore_punto_di_contatto')->value
     ];
   }
 
