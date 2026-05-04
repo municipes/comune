@@ -2,11 +2,11 @@
 
 namespace Drupal\rubrica\Helper;
 
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 
 /**
  * Provides template arrays.
@@ -15,7 +15,7 @@ class TemplateBuilder {
   use DependencySerializationTrait;
 
   /**
-   * The entity type manager
+   * The entity type manager.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
@@ -38,20 +38,24 @@ class TemplateBuilder {
   }
 
   /**
-   * Build arrays for template or service
+   * Build arrays for template or service.
    *
    * @param array $nodes
+   *   Array di nodi indicizzato per NID.
    * @param bool $flat
+   *   Se TRUE restituisce array piatti invece di render arrays.
+   *
    * @return array
+   *   Array di item strutturati per tipo (persona/unita_organizzativa).
    */
-  public function createArrays(array $nodes, bool $flat = false): array {
+  public function createArrays(array $nodes, bool $flat = FALSE): array {
     $items = [];
     foreach ($nodes as $nid => $node) {
       switch ($node->bundle()) {
         case 'persona':
           $items[$nid] = [
             'type' => 'persona',
-            'value' => $this->getPersonaItem($node, $flat, true),
+            'value' => $this->getPersonaItem($node, $flat, TRUE),
           ];
           break;
 
@@ -63,7 +67,7 @@ class TemplateBuilder {
           break;
 
         default:
-          # code...
+          // code...
           break;
       }
     }
@@ -71,20 +75,27 @@ class TemplateBuilder {
   }
 
   /**
-   * Get persona item with values
+   * Get persona item with values.
    *
-   * @param EntityInterface $node
+   * @param \Drupal\Core\Entity\EntityInterface $node
+   *   Il nodo persona da elaborare.
    * @param bool $flat
+   *   Se TRUE restituisce array piatti invece di render arrays.
+   * @param bool $whitUo
+   *   Se TRUE include i dati dell'unità organizzativa collegata.
+   *
    * @return array
+   *   Array strutturato con i dati della persona.
    */
-  private function getPersonaItem(EntityInterface $node, bool $flat = false, $whitUo = false): array {
-    $incarichiEntity = $this->getReferencedNode($node->id(), 'field_persona', 'incarico', true);
+  private function getPersonaItem(EntityInterface $node, bool $flat = FALSE, $whitUo = FALSE): array {
+    $incarichiEntity = $this->getReferencedNode($node->id(), 'field_persona', 'incarico', TRUE);
     $contatti = $this->getFieldArray($node->field_punti_di_contatto);
     $uo = [];
     foreach ($contatti as $contatto) {
       if ($flat) {
         $tplContatto[] = $this->createContattiArray($contatto);
-      } else {
+      }
+      else {
         $tplContatto[] = $this->viewBuilder($contatto, 'teaser');
       }
     }
@@ -93,7 +104,7 @@ class TemplateBuilder {
       if ($whitUo) {
         $uoEntity = $incaricoEntity->field_unita_organizzativa->entity;
         if ($uoEntity) {
-          $indirizzo = isset($uoEntity->field_luogo->entity->field_indirizzo) ? $uoEntity->field_luogo->entity->field_indirizzo : false;
+          $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
           $uo[$key] = [
             'name' => $uoEntity->label(),
             'indirizzo' => $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality,
@@ -108,22 +119,28 @@ class TemplateBuilder {
       'desc' => $node->field_descrizione_breve->value,
       'incarichi' => $incarichi,
       'contatti' => $tplContatto,
-      'indirizzo' => false,
+      'indirizzo' => FALSE,
       'contatti_riservati' => 'da fare',
       'uo' => $uo,
     ];
   }
 
   /**
-   * Get uo item with values
+   * Get uo item with values.
    *
-   * @param EntityInterface $node
+   * @param \Drupal\Core\Entity\EntityInterface $node
+   *   Il nodo unita_organizzativa da elaborare.
    * @param bool $flat
+   *   Se TRUE restituisce array piatti invece di render arrays.
+   * @param bool $withPersone
+   *   Se TRUE include le persone afferenti all'unità.
+   *
    * @return array
+   *   Array strutturato con i dati dell'unità organizzativa.
    */
-  private function getUoItem(EntityInterface $node, bool $flat = false, $withPersone = true): array {
-    $indirizzo = isset($node->field_luogo->entity->field_indirizzo) ? $node->field_luogo->entity->field_indirizzo : false;
-    $responsabile = false;
+  private function getUoItem(EntityInterface $node, bool $flat = FALSE, $withPersone = TRUE): array {
+    $indirizzo = $node->field_luogo->entity->field_indirizzo ?? FALSE;
+    $responsabile = FALSE;
     $contatti = [];
     $personeUo = [];
     $incaricoResponsabile = $this->getReferencedNode($node->id(), 'field_responsabile_struttura', 'incarico', TRUE);
@@ -137,7 +154,10 @@ class TemplateBuilder {
       $incarichi = $this->getReferencedNode($node->id(), 'field_unita_organizzativa', 'incarico', TRUE);
       foreach ($incarichi as $incarico) {
         if (isset($incarico->field_persona->target_id)) {
-          $personeUo[] = $incarico->field_persona->entity;
+          $persona = $incarico->field_persona->entity;
+          if ($persona !== NULL) {
+            $personeUo[] = $persona;
+          }
         }
       }
     }
@@ -171,20 +191,26 @@ class TemplateBuilder {
   }
 
   /**
-   * Extract entities from reference field
+   * Extract entities from reference field.
    *
    * @param object $field
+   *   Il campo entity reference da cui estrarre le entità.
+   *
    * @return array
+   *   Array delle entità referenziate.
    */
   private function getFieldArray(object $field): array {
     return $field->referencedEntities();
   }
 
   /**
-   * Costruisce render array di risposta
+   * Costruisce render array di risposta.
    *
-   * @param array $data
+   * @param array $items
+   *   Array di item strutturati da includere nel render array.
+   *
    * @return array
+   *   Render array Drupal con il tema rubrica_item.
    */
   public function createBuildArray(array $items): array {
     $build = [];
@@ -200,10 +226,13 @@ class TemplateBuilder {
   }
 
   /**
-   * Create punto di contatto array
+   * Create punto di contatto array.
    *
-   * @param EntityTypeManagerInterface $contatto
+   * @param \Drupal\node\Entity\Node $contatto
+   *   Il nodo punto_di_contatto da serializzare.
+   *
    * @return array
+   *   Array con titolo e valori del punto di contatto.
    */
   private function createContattiArray(Node $contatto): array {
     $pocValues = $contatto->field_contatto->referencedEntities();
@@ -224,11 +253,15 @@ class TemplateBuilder {
   }
 
   /**
-   * Ritorna il nodo renderizzato
+   * Ritorna il nodo renderizzato.
    *
-   * @param Drupal\Core\Entity\EntityInterface $node
+   * @param \Drupal\Core\Entity\EntityInterface $node
+   *   Il nodo da renderizzare.
    * @param string $display
-   * @return void
+   *   La modalità di visualizzazione (es. 'teaser', 'full').
+   *
+   * @return mixed
+   *   Il render array del nodo nella modalità indicata.
    */
   private function viewBuilder(EntityInterface $node, string $display) {
     $viewBuilder = $this->entityTypeManager->getViewBuilder('node');
@@ -236,10 +269,19 @@ class TemplateBuilder {
   }
 
   /**
-   * Resume incarichi
+   * Carica i nodi che referenziano un'entità tramite un campo specifico.
    *
-   * @param int $idPersona
+   * @param int $id
+   *   ID dell'entità referenziata.
+   * @param string $field
+   *   Nome del campo entity reference su cui filtrare.
+   * @param string $type
+   *   Bundle (tipo) dei nodi da cercare.
+   * @param bool $full
+   *   Se TRUE carica i nodi completi, altrimenti solo il titolo.
+   *
    * @return array
+   *   Array di nodi (o titoli) indicizzato per NID.
    */
   private function getReferencedNode(int $id, string $field, string $type, bool $full = FALSE): array {
     $items = [];
@@ -261,10 +303,15 @@ class TemplateBuilder {
   }
 
   /**
-   * Load nodes by nids
+   * Load nodes by nids.
    *
    * @param array $nids
+   *   Array di NID da caricare.
+   * @param bool $full
+   *   Se TRUE carica i nodi completi, altrimenti solo il titolo.
+   *
    * @return array
+   *   Array di nodi (o titoli) indicizzato per NID.
    */
   public function loadNodes(array $nids, bool $full = FALSE): array {
     $nodeStorage = $this->entityTypeManager->getStorage('node');
@@ -276,4 +323,5 @@ class TemplateBuilder {
     }
     return $items;
   }
+
 }

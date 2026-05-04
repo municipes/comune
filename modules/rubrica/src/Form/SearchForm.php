@@ -4,8 +4,8 @@ namespace Drupal\rubrica\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\rubrica\Helper\RicercaPersonaUo;
 use Drupal\rubrica\Helper\FullSearch;
+use Drupal\rubrica\Helper\RicercaPersonaUo;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -14,14 +14,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SearchForm extends FormBase {
 
   /**
-   * The search by field manager
+   * The search by field manager.
    *
    * @var \Drupal\rubrica\Helper\RicercaPersonaUo
    */
   protected $ricercaPersonaUo;
 
   /**
-   * The search api manager
+   * The search api manager.
    *
    * @var \Drupal\rubrica\Helper\FullSearch
    */
@@ -69,7 +69,7 @@ class SearchForm extends FormBase {
     ];
     $form['office'] = [
       '#type' => 'select',
-      '#options' => $this->ricercaPersonaUo->getUO(),
+      '#options' => $this->ricercaPersonaUo->getUo(),
       '#title' => $this->t('Ufficio'),
       '#required' => FALSE,
     ];
@@ -163,4 +163,5 @@ class SearchForm extends FormBase {
     // Return the search results element of the form.
     return $form['search_results'];
   }
+
 }

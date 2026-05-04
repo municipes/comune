@@ -2,11 +2,9 @@
 
 namespace Drupal\rubrica\Helper;
 
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\search_api\Entity\Index;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
-use Drupal\rubrica\Helper\TemplateBuilder;
+use Drupal\search_api\Entity\Index;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides entity queries for search form.
@@ -15,7 +13,7 @@ class FullSearch {
   use DependencySerializationTrait;
 
   /**
-   * The search by field manager
+   * The search by field manager.
    *
    * @var \Drupal\rubrica\Helper\TemplateBuilder
    */
@@ -38,13 +36,16 @@ class FullSearch {
   }
 
   /**
-   * Ricerca fulltext tramite Search API
+   * Ricerca fulltext tramite Search API.
    *
    * @param string $keys
+   *   Parole chiave da cercare.
+   *
    * @return mixed
+   *   Array con i risultati della ricerca, o NULL se nessun risultato.
    */
-  public function searchapiQuery(string $keys = null): mixed {
-    $form = null;
+  public function searchapiQuery(string $keys = NULL): mixed {
+    $form = NULL;
     $index = Index::load('rubrica');
     $query = $index->query();
 
@@ -61,7 +62,6 @@ class FullSearch {
     // Set additional conditions.
     $query->addCondition('status', 1);
     // ->addCondition('author', 1, '<>');
-
     // Add more complex conditions.
     // (In this case, a condition for a specific datasource).
     // $time = \Drupal::service('datetime.time')->getRequestTime();
@@ -69,10 +69,8 @@ class FullSearch {
     // $conditions->addCondition('search_api_datasource', 'entity:node', '=');
     // // ->addCondition('created', $time - 7 * 24 * 3600, '>=');
     // $query->addConditionGroup($conditions);
-
     // Restrict the search to specific languages.
-    // $query->setLanguages(['de', 'it']);
-
+    // $query->setLanguages(['de', 'it']);.
     // Do paging.
     $query->range(0, 10);
 

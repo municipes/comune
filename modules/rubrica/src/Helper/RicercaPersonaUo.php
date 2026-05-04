@@ -2,10 +2,9 @@
 
 namespace Drupal\rubrica\Helper;
 
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\DependencyInjection\DependencySerializationTrait;
-use Drupal\rubrica\Helper\TemplateBuilder;
 
 /**
  * Provides Json and template data.
@@ -14,14 +13,14 @@ class RicercaPersonaUo {
   use DependencySerializationTrait;
 
   /**
-   * The entity type manager
+   * The entity type manager.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
   /**
-   * The search by field manager
+   * The search by field manager.
    *
    * @var \Drupal\rubrica\Helper\TemplateBuilder
    */
@@ -49,17 +48,21 @@ class RicercaPersonaUo {
    * Search with form fields.
    *
    * @param string $firstName
+   *   Nome da cercare (parziale).
    * @param string $lastName
+   *   Cognome da cercare (parziale).
    * @param int $office
-   * @param string $bundle
+   *   NID dell'unità organizzativa, 0 per nessun filtro.
+   *
    * @return mixed
+   *   Array con i risultati per il render, o NULL se nessun risultato.
    */
   public function searchByFields(
     string $firstName = '',
     string $lastName = '',
-    int $office = 0
+    int $office = 0,
   ): mixed {
-    $form = null;
+    $form = NULL;
     // Execute the query.
     if ($nids = $this->queryByFields($firstName, $lastName, $office)) {
       // Load the nodes with the given NIDs.
@@ -75,22 +78,27 @@ class RicercaPersonaUo {
     return $form;
   }
 
-
-
   /**
-   * Query per i primi 3 campi
+   * Query per i primi 3 campi.
    *
    * @param string $firstName
+   *   Nome da cercare (parziale).
    * @param string $lastName
+   *   Cognome da cercare (parziale).
    * @param int $office
+   *   NID dell'unità organizzativa, 0 per nessun filtro.
+   * @param bool $callcenter
+   *   Se TRUE aggiunge le persona in stato solo_contact_center.
+   *
    * @return mixed
+   *   Array di NID, o array vuoto se nessun risultato.
    */
   public function queryByFields(
     string $firstName = '',
     string $lastName = '',
-    int $office = 0
+    int $office = 0,
+    bool $callcenter = FALSE,
   ): mixed {
-    // Get the node storage.
     $nodeStorage = $this->entityTypeManager->getStorage('node');
     $query = $nodeStorage->getQuery()
       ->condition('status', 1, '=')
@@ -112,16 +120,58 @@ class RicercaPersonaUo {
     }
 
     $query->accessCheck(TRUE);
+    $nids = $query->execute();
 
-    return $query->execute();
+    if ($callcenter) {
+      $nids += $this->queryCallCenterPersone();
+    }
+
+    return $nids ?: [];
   }
 
   /**
-   * Crea valori per la select del form di ricerca
+   * Restituisce i NID delle persona in stato solo_contact_center.
+   *
+   * Sono inclusi solo i nodi non pubblicati con questo stato di moderazione.
    *
    * @return array
+   *   Array di NID indicizzato per NID.
    */
-  public function getUO(): array {
+  private function queryCallCenterPersone(): array {
+    $cmStorage = $this->entityTypeManager->getStorage('content_moderation_state');
+    $cmIds = $cmStorage->getQuery()
+      ->condition('content_entity_type', 'node')
+      ->condition('moderation_state', 'solo_contact_center')
+      ->accessCheck(FALSE)
+      ->execute();
+
+    if (empty($cmIds)) {
+      return [];
+    }
+
+    $candidateNids = array_map(
+      fn($e) => (int) $e->content_entity_id->value,
+      $cmStorage->loadMultiple($cmIds)
+    );
+
+    // Verifica che siano effettivamente persona non pubblicati.
+    $nodeStorage = $this->entityTypeManager->getStorage('node');
+    return $nodeStorage->getQuery()
+      ->condition('nid', $candidateNids, 'IN')
+      ->condition('type', 'persona', '=')
+      ->condition('status', 0, '=')
+      ->groupBy('nid')
+      ->accessCheck(FALSE)
+      ->execute();
+  }
+
+  /**
+   * Crea valori per la select del form di ricerca.
+   *
+   * @return array
+   *   Array di opzioni per la select delle unità organizzative.
+   */
+  public function getUo(): array {
     $options = [0 => '--- Seleziona ---'];
     // Get the node storage.
     $nodeStorage = $this->entityTypeManager->getStorage('node');
@@ -141,4 +191,5 @@ class RicercaPersonaUo {
 
     return $options;
   }
+
 }

@@ -4,13 +4,14 @@ namespace Drupal\rubrica\Plugin\rest\resource;
 
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
-use Drupal\rubrica\Helper\TemplateBuilder;
 use Drupal\rubrica\Helper\RicercaPersonaUo;
+use Drupal\rubrica\Helper\TemplateBuilder;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
- * Provides a Rubrica Resource
+ * Provides a Rubrica Resource.
  *
  * @RestResource(
  *   id = "rubrica_resource",
@@ -23,18 +24,25 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class RubricaResource extends ResourceBase {
 
   /**
-   * The template builder
+   * The template builder.
    *
    * @var \Drupal\rubrica\Helper\TemplateBuilder
    */
   protected $templateBuilder;
 
   /**
-   * The persona search
+   * The persona search helper.
    *
    * @var \Drupal\rubrica\Helper\RicercaPersonaUo
    */
   protected $ricercaPersonaUo;
+
+  /**
+   * The request stack.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
+  protected RequestStack $requestStack;
 
   /**
    * {@inheritdoc}
@@ -46,11 +54,13 @@ class RubricaResource extends ResourceBase {
     array $serializer_formats,
     LoggerInterface $logger,
     TemplateBuilder $templateBuilder,
-    RicercaPersonaUo $ricercaPersonaUo
+    RicercaPersonaUo $ricercaPersonaUo,
+    RequestStack $requestStack,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
     $this->templateBuilder = $templateBuilder;
     $this->ricercaPersonaUo = $ricercaPersonaUo;
+    $this->requestStack = $requestStack;
   }
 
   /**
@@ -64,38 +74,45 @@ class RubricaResource extends ResourceBase {
       $container->getParameter('serializer.formats'),
       $container->get('logger.factory')->get('rest'),
       $container->get('rubrica.templatebuilder'),
-      $container->get('rubrica.ricercapersonauo')
+      $container->get('rubrica.ricercapersonauo'),
+      $container->get('request_stack')
     );
   }
 
   /**
    * Responds to entity GET requests.
+   *
+   * Accepts optional query parameter ?callcenter=true to also include
+   * persona nodes in the 'solo_contact_center' moderation state.
+   *
    * @return \Drupal\rest\ResourceResponse
+   *   La risposta JSON con i dati della rubrica.
    */
   public function get() {
-    // $data = ['message' => 'Hello, this is a rest service'];
-    $data = $this->getData();
+    $callcenter = $this->requestStack->getCurrentRequest()->query->get('callcenter') === 'true';
+    $data = $this->getData($callcenter);
     $response = new ResourceResponse($data);
-    // In order to generate fresh result every time (without clearing
-    // the cache), you need to invalidate the cache.
     $response->addCacheableDependency($data);
     return $response;
   }
 
   /**
-   * Get data from db
+   * Raccoglie i dati della rubrica dal database.
+   *
+   * @param bool $callcenter
+   *   Se TRUE include anche le persona in stato solo_contact_center.
    *
    * @return array
+   *   Array con la chiave 'items' contenente i risultati.
    */
-  private function getData(): array {
+  private function getData(bool $callcenter = FALSE): array {
     $data['items'] = [];
-    // Execute the query.
-    if ($nids = $this->ricercaPersonaUo->queryByFields()) {
-      // Load the nodes with the given NIDs.
+    if ($nids = $this->ricercaPersonaUo->queryByFields('', '', 0, $callcenter)) {
       if ($nodes = $this->templateBuilder->loadNodes($nids, TRUE)) {
         $data['items'] = $this->templateBuilder->createArrays($nodes, TRUE);
       }
     }
     return $data;
   }
+
 }

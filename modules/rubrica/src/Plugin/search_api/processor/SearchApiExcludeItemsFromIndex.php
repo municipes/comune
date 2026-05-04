@@ -56,7 +56,7 @@ class SearchApiExcludeItemsFromIndex extends ProcessorPluginBase {
             foreach ($incarichi as $incarico) {
               if ($incarico->hasField('field_tipo_di_incarico')) {
                 $value = $incarico->get('field_tipo_di_incarico')->getValue();
-                if ((int)$value[0]['target_id'] != 411) {
+                if ((int) $value[0]['target_id'] != 411) {
                   unset($items[$item_id]);
                 }
               }
@@ -67,14 +67,14 @@ class SearchApiExcludeItemsFromIndex extends ProcessorPluginBase {
         case 'unita_organizzativa':
           if ($object->hasField('field_tipo_di_organizzazione')) {
             $value = $object->get('field_tipo_di_organizzazione')->getValue();
-            if ((int)$value[0]['target_id'] != 303 && (int)$value[0]['target_id'] != 304) {
+            if ((int) $value[0]['target_id'] != 303 && (int) $value[0]['target_id'] != 304) {
               unset($items[$item_id]);
             }
           }
           break;
 
         default:
-          # code...
+          // code...
           break;
       }
     }
