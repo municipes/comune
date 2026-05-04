@@ -1,0 +1,138 @@
+# Rubrica
+
+Provides a staff directory (rubrica) for Drupal sites, exposing an AJAX
+search form and a REST API endpoint. The module is part of the
+`comune_silfi` distribution and targets municipal websites built on the
+Municipes framework.
+
+## Features
+
+- Staff directory with search by first name, last name, and office unit.
+- Full-text search via Search API as an alternative to field-based search.
+- REST API endpoint returning all published *persona* and
+  *unita_organizzativa* nodes in JSON format.
+- Optional call-centre mode: the REST endpoint can also return unpublished
+  *persona* nodes whose Content Moderation state is `solo_contact_center`.
+- Twig templates for rendering individual person and office unit cards.
+- Search API processor to exclude irrelevant nodes from the search index.
+
+## Requirements
+
+- Drupal 9.5 or 10.x
+- [Basic Auth](https://www.drupal.org/docs/core-modules-and-themes/core-modules/basic-authentication-module) (Drupal core)
+- [RESTful Web Services](https://www.drupal.org/docs/core-modules-and-themes/core-modules/restful-web-services-module) (Drupal core)
+- [REST UI](https://www.drupal.org/project/restui)
+- [Search API](https://www.drupal.org/project/search_api) (optional, required for full-text search)
+- Content types: `persona`, `unita_organizzativa`, `incarico`,
+  `punto_di_contatto`
+- Workflow `persona_solo_contact_center` (provided by `comune_silfi`) for
+  call-centre mode
+
+## Installation
+
+This module ships as part of the `comune_silfi` distribution and is
+enabled automatically. If you need to enable it manually:
+
+```
+drush en rubrica
+drush cache:rebuild
+```
+
+The REST resource `rubrica_resource` is activated by the configuration in
+`config/install/rest.resource.rubrica_resource.yml` and requires no
+additional configuration steps.
+
+## Configuration
+
+### Search form
+
+The search form is available at `/rubrica/search` and requires the
+`access content` permission.
+
+### REST endpoint
+
+| Property       | Value                              |
+|----------------|------------------------------------|
+| URL            | `/rest/rubrica/api/v1/get/all`     |
+| Method         | GET                                |
+| Format         | JSON (`?_format=json`)             |
+| Authentication | Basic Auth                         |
+| Permission     | `restful get rubrica_resource`     |
+
+**Standard request** — returns all published *persona* and
+*unita_organizzativa* nodes:
+
+```
+GET /rest/rubrica/api/v1/get/all?_format=json
+```
+
+**Call-centre mode** — also includes unpublished *persona* nodes whose
+Content Moderation state is `solo_contact_center`:
+
+```
+GET /rest/rubrica/api/v1/get/all?_format=json&callcenter=true
+```
+
+### REST UI
+
+The endpoint can be inspected and toggled at
+**Administration › Configuration › Web services › REST**
+(`/admin/config/services/rest`).
+
+### Permissions
+
+| Permission                        | Description                          |
+|-----------------------------------|--------------------------------------|
+| `administer rubrica configuration`| Administer rubrica configuration     |
+| `restful get rubrica_resource`    | Access the rubrica REST endpoint     |
+
+## Search API index
+
+The module ships with a Search API index configuration
+(`search_api.index.rubrica`) and a custom processor
+`SearchApiExcludeItemsFromIndex` that removes from the index:
+
+- *persona* nodes not linked to any *incarico* of type 411;
+- *unita_organizzativa* nodes whose `field_tipo_di_organizzazione` is
+  neither 303 nor 304.
+
+## Architecture
+
+```
+rubrica/
+├── config/install/
+│   ├── rest.resource.rubrica_resource.yml   # REST resource activation
+│   └── search_api.index.rubrica.yml         # Search API index
+├── src/
+│   ├── Controller/RubricaController.php     # Placeholder controller
+│   ├── Form/SearchForm.php                  # AJAX search form
+│   ├── Helper/
+│   │   ├── FullSearch.php                   # Search API query helper
+│   │   ├── RicercaPersonaUo.php             # Entity query helper
+│   │   └── TemplateBuilder.php              # Data serialisation helper
+│   └── Plugin/
+│       ├── rest/resource/RubricaResource.php
+│       └── search_api/processor/SearchApiExcludeItemsFromIndex.php
+├── templates/
+│   ├── persona.html.twig
+│   ├── rubrica-item.html.twig
+│   └── uo.html.twig
+├── rubrica.info.yml
+├── rubrica.module                           # hook_theme()
+├── rubrica.permissions.yml
+├── rubrica.routing.yml
+└── rubrica.services.yml
+```
+
+### Services
+
+| Service ID                  | Class                | Description                        |
+|-----------------------------|----------------------|------------------------------------|
+| `rubrica.ricercapersonauo`  | `RicercaPersonaUo`   | Entity queries for the search form |
+| `rubrica.fullsearch`        | `FullSearch`         | Full-text Search API queries       |
+| `rubrica.templatebuilder`   | `TemplateBuilder`    | Node → array serialisation         |
+
+## Maintainers
+
+This module is maintained as part of the
+[Municipes](https://github.com/municipes) project.

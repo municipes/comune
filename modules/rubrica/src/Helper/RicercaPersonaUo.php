@@ -140,7 +140,7 @@ class RicercaPersonaUo {
   private function queryCallCenterPersone(): array {
     $cmStorage = $this->entityTypeManager->getStorage('content_moderation_state');
     $cmIds = $cmStorage->getQuery()
-      ->condition('content_entity_type', 'node')
+      ->condition('content_entity_type_id', 'node')
       ->condition('moderation_state', 'solo_contact_center')
       ->accessCheck(FALSE)
       ->execute();
