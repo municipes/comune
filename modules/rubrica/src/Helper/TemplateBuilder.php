@@ -44,25 +44,27 @@ class TemplateBuilder {
    *   Array di nodi indicizzato per NID.
    * @param bool $flat
    *   Se TRUE restituisce array piatti invece di render arrays.
+   * @param bool $callcenter
+   *   Se TRUE include i campi riservati per il call center.
    *
    * @return array
    *   Array di item strutturati per tipo (persona/unita_organizzativa).
    */
-  public function createArrays(array $nodes, bool $flat = FALSE): array {
+  public function createArrays(array $nodes, bool $flat = FALSE, bool $callcenter = FALSE): array {
     $items = [];
     foreach ($nodes as $nid => $node) {
       switch ($node->bundle()) {
         case 'persona':
           $items[$nid] = [
             'type' => 'persona',
-            'value' => $this->getPersonaItem($node, $flat, TRUE),
+            'value' => $this->getPersonaItem($node, $flat, TRUE, $callcenter),
           ];
           break;
 
         case 'unita_organizzativa':
           $items[$nid] = [
             'type' => 'unita_organizzativa',
-            'value' => $this->getUoItem($node, $flat),
+            'value' => $this->getUoItem($node, $flat, $callcenter),
           ];
           break;
 
@@ -83,11 +85,13 @@ class TemplateBuilder {
    *   Se TRUE restituisce array piatti invece di render arrays.
    * @param bool $whitUo
    *   Se TRUE include i dati dell'unità organizzativa collegata.
+   * @param bool $callcenter
+   *   Se TRUE include i campi riservati per il call center.
    *
    * @return array
    *   Array strutturato con i dati della persona.
    */
-  private function getPersonaItem(EntityInterface $node, bool $flat = FALSE, $whitUo = FALSE): array {
+  private function getPersonaItem(EntityInterface $node, bool $flat = FALSE, $whitUo = FALSE, bool $callcenter = FALSE): array {
     $incarichiEntity = $this->getReferencedNode($node->id(), 'field_persona', 'incarico', TRUE);
     $contatti = $this->getFieldArray($node->field_punti_di_contatto);
     $uo = [];
@@ -112,7 +116,7 @@ class TemplateBuilder {
         }
       }
     }
-    return [
+    $item = [
       'id' => $node->id(),
       'type' => $node->bundle(),
       'nome' => $node->label(),
@@ -120,9 +124,16 @@ class TemplateBuilder {
       'incarichi' => $incarichi,
       'contatti' => $tplContatto,
       'indirizzo' => FALSE,
-      'contatti_riservati' => 'da fare',
       'uo' => $uo,
     ];
+    if ($callcenter) {
+      $item['contatti_riservati'] = [
+        'telefono_riservato' => $node->field_telefono_riservato->value,
+        'cellulare_riservato' => $node->field_cellulare_riservato->value,
+        'note_call_center' => $node->field_note_il_call_center->value,
+      ];
+    }
+    return $item;
   }
 
   /**
@@ -132,13 +143,15 @@ class TemplateBuilder {
    *   Il nodo unita_organizzativa da elaborare.
    * @param bool $flat
    *   Se TRUE restituisce array piatti invece di render arrays.
+   * @param bool $callcenter
+   *   Se TRUE include i campi riservati per il call center nelle persone.
    * @param bool $withPersone
    *   Se TRUE include le persone afferenti all'unità.
    *
    * @return array
    *   Array strutturato con i dati dell'unità organizzativa.
    */
-  private function getUoItem(EntityInterface $node, bool $flat = FALSE, $withPersone = TRUE): array {
+  private function getUoItem(EntityInterface $node, bool $flat = FALSE, bool $callcenter = FALSE, $withPersone = TRUE): array {
     $indirizzo = $node->field_luogo->entity->field_indirizzo ?? FALSE;
     $responsabile = FALSE;
     $contatti = [];
@@ -178,13 +191,13 @@ class TemplateBuilder {
       $record['indirizzo'] = $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality;
     }
     if ($responsabile) {
-      $record['responsabile'] = $this->getPersonaItem($responsabile, $flat);
+      $record['responsabile'] = $this->getPersonaItem($responsabile, $flat, FALSE, $callcenter);
     }
     if ($personeUo) {
       foreach ($personeUo as $key => $personaUo) {
         $contatto = $this->getFieldArray($personaUo->field_punti_di_contatto);
         $contatto = reset($contatto);
-        $record['persone'][$key] = $this->getPersonaItem($personaUo, $flat);
+        $record['persone'][$key] = $this->getPersonaItem($personaUo, $flat, FALSE, $callcenter);
       }
     }
     return $record;

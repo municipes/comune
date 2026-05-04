@@ -109,7 +109,7 @@ class RubricaResource extends ResourceBase {
     $data['items'] = [];
     if ($nids = $this->ricercaPersonaUo->queryByFields('', '', 0, $callcenter)) {
       if ($nodes = $this->templateBuilder->loadNodes($nids, TRUE)) {
-        $data['items'] = $this->templateBuilder->createArrays($nodes, TRUE);
+        $data['items'] = $this->templateBuilder->createArrays($nodes, TRUE, $callcenter);
       }
     }
     return $data;
