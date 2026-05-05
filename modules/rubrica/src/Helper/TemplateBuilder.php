@@ -51,6 +51,23 @@ class TemplateBuilder {
    *   Array di item strutturati per tipo (persona/unita_organizzativa).
    */
   public function createArrays(array $nodes, bool $flat = FALSE, bool $callcenter = FALSE): array {
+    if ($callcenter) {
+      $unita_organizzative = [];
+      $persone = [];
+      foreach ($nodes as $nid => $node) {
+        switch ($node->bundle()) {
+          case 'persona':
+            $persone[$nid] = $this->getPersonaItem($node, $flat, TRUE, TRUE);
+            break;
+
+          case 'unita_organizzativa':
+            $unita_organizzative[$nid] = $this->getUoItem($node, $flat, TRUE);
+            break;
+        }
+      }
+      return ['unita_organizzative' => $unita_organizzative, 'persone' => $persone];
+    }
+
     $items = [];
     foreach ($nodes as $nid => $node) {
       switch ($node->bundle()) {
