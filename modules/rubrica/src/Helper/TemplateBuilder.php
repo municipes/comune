@@ -109,7 +109,9 @@ class TemplateBuilder {
         $uoEntity = $incaricoEntity->field_unita_organizzativa->entity;
         if ($uoEntity) {
           $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
-          $uo[$key] = [
+          // Callcenter uses UO NID as key for direct node path generation.
+          $uoKey = $callcenter ? $uoEntity->id() : $key;
+          $uo[$uoKey] = [
             'name' => $uoEntity->label(),
             'indirizzo' => $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality,
           ];
@@ -127,6 +129,7 @@ class TemplateBuilder {
       'uo' => $uo,
     ];
     if ($callcenter) {
+      $item['cognome'] = $node->field_cognome->value ?? '';
       $item['contatti_riservati'] = [
         'telefono_riservato' => $node->field_telefono_riservato->value,
         'cellulare_riservato' => $node->field_cellulare_riservato->value,
@@ -177,7 +180,7 @@ class TemplateBuilder {
 
     $contattiEntity = isset($node->field_punti_di_contatto) ? $this->getFieldArray($node->field_punti_di_contatto) : [];
     foreach ($contattiEntity as $contatto) {
-      $contatti = $this->createContattiArray($contatto);
+      $contatti[] = $this->createContattiArray($contatto);
     }
 
     $record = [
@@ -185,19 +188,21 @@ class TemplateBuilder {
       'type' => $node->bundle(),
       'nome' => $node->label(),
       // 'desc' => $node->field_descrizione_breve->value,
-      'contatti' => $contatti,
+      'contatti' => $contatti ?? [],
     ];
+    if ($callcenter) {
+      // Callcenter uses 'pocs' as the canonical contacts list.
+      $record['pocs'] = $contatti ?? [];
+    }
     if ($indirizzo) {
       $record['indirizzo'] = $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality;
     }
     if ($responsabile) {
-      $record['responsabile'] = $this->getPersonaItem($responsabile, $flat, FALSE, $callcenter);
+      $record['responsabile'] = $this->getPersonaItem($responsabile, $flat, $callcenter, $callcenter);
     }
     if ($personeUo) {
       foreach ($personeUo as $key => $personaUo) {
-        $contatto = $this->getFieldArray($personaUo->field_punti_di_contatto);
-        $contatto = reset($contatto);
-        $record['persone'][$key] = $this->getPersonaItem($personaUo, $flat, FALSE, $callcenter);
+        $record['persone'][$key] = $this->getPersonaItem($personaUo, $flat, $callcenter, $callcenter);
       }
     }
     return $record;
