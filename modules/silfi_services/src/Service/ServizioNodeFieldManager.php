@@ -83,17 +83,14 @@ class ServizioNodeFieldManager {
    * @return array
    */
   public function getMultiTextField(string $fieldName): array {
-    if (!$this->node || !$this->node->hasField($fieldName) || !$this->node->get($fieldName)->isEmpty()) {
+    if (!$this->node || !$this->node->hasField($fieldName) || $this->node->get($fieldName)->isEmpty()) {
       return [];
     }
 
     $values = [];
-    $debug = $this->node->get($fieldName)->getValue();
-    $debug2 = $this->node->get($fieldName);
-    $text_values = array_column($debug, 'value');
     foreach ($this->node->get($fieldName)->getValue() as $item) {
-      if ($value = $item->value) {
-        $values[] = $value;
+      if (!empty($item['value'])) {
+        $values[] = $item['value'];
       }
     }
     return $values;

@@ -6,6 +6,8 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\search_api\Entity\Index;
 use Drupal\search_api\Query\QueryInterface;
 use Drupal\search_api\Query\ResultSetInterface;
+use Drupal\silfi_services\Service\ServizioNodeFieldManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +21,18 @@ use Symfony\Component\HttpFoundation\Request;
 class SearchServiziController extends ControllerBase {
 
   private $hashSalt = 'SiN$W$B';
+
+  protected $servizioNodeFieldManager;
+
+  public function __construct(ServizioNodeFieldManager $servizioNodeFieldManager) {
+    $this->servizioNodeFieldManager = $servizioNodeFieldManager;
+  }
+
+  public static function create(ContainerInterface $container): self {
+    return new self(
+      $container->get('silfi_services.node_field_manager')
+    );
+  }
 
   /**
    * Restituisce i risultati di ricerca in formato JSON.
@@ -38,41 +52,31 @@ class SearchServiziController extends ControllerBase {
     $page = (int) $this->getRequestParameter($request, 'page', 1);
     $limit = (int) $this->getRequestParameter($request, 'limit', 30);
     $search_term = $this->getRequestParameter($request, 'keywords', '');
-    $debug = $request->query->get('page', 1);
 
     // Calcolare l'offset per la query in base alla pagina corrente.
     $offset = ($page - 1) * $limit;
 
-
-    // Ottieni l'indice di ricerca che vuoi utilizzare.
-    $index = Index::load('servizi');
-
-    // Crea una nuova query
-    $query = $index->query();
-
-    // Ottieni i parametri di ricerca dalla richiesta.
+    $response_data = [];
+    $total_count = 0;
+    $total_pages = 0;
 
     if (!empty(trim($search_term))) {
-      if (preg_match('/^[a-zA-Z0-9\s\-_\.]+$/', $search_term)) {
-        $keywords = $search_term;
-      } else {
-        throw new \InvalidArgumentException('Input non valido');
+      if (!preg_match('/^[a-zA-Z0-9\s\-_\.]+$/', $search_term)) {
+        return new JsonResponse(['error' => 'Input non valido'], 400);
       }
-      $query->keys($keywords);
 
-      // Configura la paginazione.
+      // Ottieni l'indice di ricerca che vuoi utilizzare.
+      $index = Index::load('servizi');
+      $query = $index->query();
+      $query->keys($search_term);
       $query->range($offset, $limit);
 
-      // Esegui la query e ottieni i risultati.
       $results = $this->executeQuery($query);
       $total_count = $results->getResultCount();
-
-      // Converti i risultati in un array di dati JSON.
+      $total_pages = (int) ceil($total_count / $limit);
       $response_data = $this->formatResultsAsJson($results);
-
-      $total_pages = ceil($results->getResultCount() / $limit);
     }
-    // Preparare i metadati di paginazione.
+
     $pagination = [
       'current_page' => $page,
       'total_pages' => $total_pages,
@@ -126,18 +130,33 @@ class SearchServiziController extends ControllerBase {
       ->getStorage('node')
       ->loadMultiple($nids);
 
+    $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+
     foreach ($nodes as $node) {
-      // Accedi ai campi indicizzati
-      // $fields = $result_item->getFields();
-      // Preparare i dati del singolo servizio.
+      $triplette = [];
+      $triplette_field = $node->get('field_triplette');
+      if (!$triplette_field->isEmpty() && $leaf = $triplette_field->entity) {
+        // loadAllParents restituisce il termine stesso + tutti gli antenati
+        // (ordine: foglia → radice). Escludiamo il termine radice del vocabolario
+        // (parent_tid = 0) e invertiamo per ottenere l'ordine macrostruttura → foglia.
+        $all = $term_storage->loadAllParents($leaf->id());
+        $filtered = array_filter($all, function ($t) {
+          return (int) ($t->get('parent')->getValue()[0]['target_id'] ?? 0) !== 0;
+        });
+        $triplette = array_map(
+          fn($t) => ['tid' => $t->id(), 'name' => $t->getName()],
+          array_reverse(array_values($filtered))
+        );
+      }
+
       $data[] = [
         'nid' => $node->id(),
         'tipo' => $node->bundle(),
         'title' => $node->getTitle(),
-        'descrizione_breve' => $node->get('field_descrizione_breve')->value, // Campo principale
+        'descrizione_breve' => $node->get('field_descrizione_breve')->value,
         'created' => date('Y-m-d', $node->getCreatedTime()),
         'updated' => date('Y-m-d H:i:s', $node->getChangedTime()),
-        // 'triplette' => $triplette,
+        'triplette' => $triplette,
       ];
     }
     return $data;

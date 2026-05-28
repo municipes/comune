@@ -80,7 +80,7 @@ class ServiziController extends ControllerBase {
     foreach ($terms as $term) {
       $response_data[] = [
         'name' => $term->getName(),
-        'parent_tid' => $term->get('parent')->getValue()[0]['target_id'],
+        'parent_tid' => (int) ($term->get('parent')->getValue()[0]['target_id'] ?? 0),
         'tid' => $term->id(),
       ];
     }
@@ -214,6 +214,7 @@ class ServiziController extends ControllerBase {
 
     $node = $this->servizioNodeFieldManager->getFullNode();
     $field_telefono_avanzato = $this->servizioNodeFieldManager->getTextField('field_telefono_riservato');
+    $field_nome_ufficio = [];
     $uffici = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_unita_organizzative');
     foreach ($uffici as $unid => $utitle) {
       $ufficio = \Drupal::entityTypeManager()->getStorage('node')->load($unid);
@@ -255,6 +256,7 @@ class ServiziController extends ControllerBase {
     }
 
 
+    $documenti = [];
     $field_documenti = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_documenti');
     foreach ($field_documenti as $dnid => $dtitle) {
       $documento = \Drupal::entityTypeManager()->getStorage('node')->load($dnid);
@@ -281,6 +283,7 @@ class ServiziController extends ControllerBase {
       ];
     }
 
+    $schede_collegate = [];
     $field_schede_collegate = $this->servizioNodeFieldManager->getReferencedEntitiesIdLabelMap('field_schede_collegate');
     foreach ($field_schede_collegate as $snid => $stitle) {
       $scheda = \Drupal::entityTypeManager()->getStorage('node')->load($snid);
@@ -463,15 +466,10 @@ class ServiziController extends ControllerBase {
     $triplette = [];
 
     // Recupera il termine selezionato per il campo "Tripletta".
-    if ($tripletta = $this->servizioNodeFieldManager->getReferencedEntity('field_triplette')) {
-      // Recupera la lista dei termini genitori del termine selezionato.
-      $breadcrumbs = $this->getTermParents($tripletta->id());
-
-      // Aggiunge il termine selezionato alla lista dei termini genitori.
-      $breadcrumb[] =  ['tid' => $tripletta->id(), 'name' => $tripletta->label()];
-
-      // Restituisce la lista dei termini genitori e del termine selezionato.
-      $triplette = array_merge($breadcrumbs, $breadcrumb);
+    if ($triplatta = $this->servizioNodeFieldManager->getReferencedEntity('field_triplette')) {
+      $breadcrumbs = $this->getTermParents($triplatta->id()) ?? [];
+      $leaf = [['tid' => $triplatta->id(), 'name' => $triplatta->label()]];
+      $triplette = array_merge($breadcrumbs, $leaf);
     }
 
     return $triplette;
@@ -595,20 +593,39 @@ class ServiziController extends ControllerBase {
     $term = $term_storage->load($tid);
 
     if (!$term) {
-      return null;
+      return NULL;
     }
 
-    $parents = $term_storage->loadParents($tid);
+    $ancestors = [];
+    $current_tid = $tid;
+    $visited = [];
 
-    $parent_terms = [];
-    foreach ($parents as $parent) {
-      $parent_terms[] = [
+    while (TRUE) {
+      if (isset($visited[$current_tid])) {
+        break;
+      }
+      $visited[$current_tid] = TRUE;
+
+      $parents = $term_storage->loadParents($current_tid);
+      if (empty($parents)) {
+        break;
+      }
+
+      $parent = reset($parents);
+      // Se il parent non ha a sua volta parents, è il termine radice del
+      // vocabolario (livello 0): lo escludiamo dal breadcrumb e ci fermiamo.
+      if (empty($term_storage->loadParents($parent->id()))) {
+        break;
+      }
+
+      $ancestors[] = [
         'tid' => $parent->id(),
         'name' => $parent->getName(),
       ];
+      $current_tid = $parent->id();
     }
 
-    return array_reverse($parent_terms);
+    return array_reverse($ancestors);
   }
 
 }
