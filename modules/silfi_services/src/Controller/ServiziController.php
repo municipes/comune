@@ -80,7 +80,7 @@ class ServiziController extends ControllerBase {
     foreach ($terms as $term) {
       $response_data[] = [
         'name' => $term->getName(),
-        'parent_tid' => (int) ($term->get('parent')->getValue()[0]['target_id'] ?? 0),
+        'parent_tid' => $term->get('parent')->getValue()[0]['target_id'] ?? '0',
         'tid' => $term->id(),
       ];
     }
