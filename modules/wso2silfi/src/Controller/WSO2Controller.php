@@ -276,7 +276,7 @@ class WSO2Controller extends ControllerBase {
         $username_attr = $is_spid ? 'cn' : 'upn';
         $email_attr = $is_spid ? 'email' : 'sub';
         /** andiamo a creare utente o fare login se esiste */
-        $email = isset($token_info[$email_attr]) ? $token_info[$email_attr] : $token_info["given_name"] . '.' . $token_info["family_name"] . '@cie.nomail';
+        $email = isset($token_info[$email_attr]) ? $token_info[$email_attr] : $token_info["given_name"] . '.' . $token_info["family_name"] . '@INDIRIZZOEMAIL.DAINSERIRE';
         $account_data = [
           'mail' => $email,
         ];
