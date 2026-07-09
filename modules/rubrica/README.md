@@ -104,7 +104,6 @@ rubrica/
 │   ├── rest.resource.rubrica_resource.yml   # REST resource activation
 │   └── search_api.index.rubrica.yml         # Search API index
 ├── src/
-│   ├── Controller/RubricaController.php     # Placeholder controller
 │   ├── Form/SearchForm.php                  # AJAX search form
 │   ├── Helper/
 │   │   ├── FullSearch.php                   # Search API query helper

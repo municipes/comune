@@ -4,6 +4,7 @@ namespace Drupal\rubrica\Helper;
 
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\search_api\Entity\Index;
+use Drupal\search_api\ParseMode\ParseModePluginManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -20,10 +21,18 @@ class FullSearch {
   protected $templateBuilder;
 
   /**
+   * The Search API parse mode plugin manager.
+   *
+   * @var \Drupal\search_api\ParseMode\ParseModePluginManager
+   */
+  protected ParseModePluginManager $parseModeManager;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(TemplateBuilder $templateBuilder) {
+  public function __construct(TemplateBuilder $templateBuilder, ParseModePluginManager $parseModeManager) {
     $this->templateBuilder = $templateBuilder;
+    $this->parseModeManager = $parseModeManager;
   }
 
   /**
@@ -31,27 +40,27 @@ class FullSearch {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('rubrica.templatebuilder')
+      $container->get('rubrica.templatebuilder'),
+      $container->get('plugin.manager.search_api.parse_mode')
     );
   }
 
   /**
    * Ricerca fulltext tramite Search API.
    *
-   * @param string $keys
+   * @param string|null $keys
    *   Parole chiave da cercare.
    *
    * @return mixed
    *   Array con i risultati della ricerca, o NULL se nessun risultato.
    */
-  public function searchapiQuery(string $keys = NULL): mixed {
+  public function searchapiQuery(?string $keys = NULL): mixed {
     $form = NULL;
     $index = Index::load('rubrica');
     $query = $index->query();
 
     // Change the parse mode for the search.
-    $parse_mode = \Drupal::service('plugin.manager.search_api.parse_mode')
-      ->createInstance('direct');
+    $parse_mode = $this->parseModeManager->createInstance('direct');
     $parse_mode->setConjunction('AND');
     $query->setParseMode($parse_mode);
 
@@ -61,20 +70,7 @@ class FullSearch {
 
     // Set additional conditions.
     $query->addCondition('status', 1);
-    // ->addCondition('author', 1, '<>');
-    // Add more complex conditions.
-    // (In this case, a condition for a specific datasource).
-    // $time = \Drupal::service('datetime.time')->getRequestTime();
-    // $conditions = $query->createConditionGroup('OR');
-    // $conditions->addCondition('search_api_datasource', 'entity:node', '=');
-    // // ->addCondition('created', $time - 7 * 24 * 3600, '>=');
-    // $query->addConditionGroup($conditions);
-    // Restrict the search to specific languages.
-    // $query->setLanguages(['de', 'it']);.
-    // Do paging.
     $query->range(0, 10);
-
-    // Add sorting.
     $query->sort('search_api_relevance', 'DESC');
 
     // Set one or more tags for the query.
@@ -84,12 +80,10 @@ class FullSearch {
 
     // Execute the search.
     $results = $query->execute();
-    // $count = $results->getResultCount();
-    $items = $results->getResultItems();
-    foreach ($items as $key => $item) {
+    $entities = [];
+    foreach ($results->getResultItems() as $item) {
       $entity = $item->getOriginalObject()->getEntity();
       $entities[$entity->id()] = $entity;
-      $types[] = $entity->bundle();
     }
 
     if ($entities) {

@@ -4,6 +4,7 @@ namespace Drupal\rubrica\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\rubrica\Helper\FullSearch;
 use Drupal\rubrica\Helper\RicercaPersonaUo;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -57,32 +58,58 @@ class SearchForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
+    $form['intro'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('I campi di ricerca sono alternativi: usa nome/cognome, oppure l\'ufficio, oppure la ricerca libera — non è possibile combinarli.'),
+    ];
+
     $form['first_name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Nome'),
       '#required' => FALSE,
+      '#states' => [
+        'enabled' => [
+          ':input[name="office"]' => ['value' => '0'],
+          ':input[name="fulltext"]' => ['value' => ''],
+        ],
+      ],
     ];
     $form['last_name'] = [
       '#type' => 'search',
       '#title' => $this->t('Cognome'),
       '#required' => FALSE,
+      '#states' => [
+        'enabled' => [
+          ':input[name="office"]' => ['value' => '0'],
+          ':input[name="fulltext"]' => ['value' => ''],
+        ],
+      ],
     ];
     $form['office'] = [
       '#type' => 'select',
       '#options' => $this->ricercaPersonaUo->getUo(),
       '#title' => $this->t('Ufficio'),
       '#required' => FALSE,
-    ];
-
-    $form['alternative'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('O in alternativa puoi usare la ricerca libera.'),
+      '#states' => [
+        'enabled' => [
+          ':input[name="first_name"]' => ['value' => ''],
+          ':input[name="last_name"]' => ['value' => ''],
+          ':input[name="fulltext"]' => ['value' => ''],
+        ],
+      ],
     ];
 
     $form['fulltext'] = [
       '#type' => 'search',
       '#title' => $this->t('Ricerca libera'),
       '#required' => FALSE,
+      '#states' => [
+        'enabled' => [
+          ':input[name="first_name"]' => ['value' => ''],
+          ':input[name="last_name"]' => ['value' => ''],
+          ':input[name="office"]' => ['value' => '0'],
+        ],
+      ],
     ];
 
     $form['actions'] = [
@@ -95,6 +122,12 @@ class SearchForm extends FormBase {
         'callback' => '::ajaxSubmit',
         'wrapper' => 'set_search_results_wrapper',
       ],
+    ];
+    $form['actions']['reset'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Reset'),
+      '#url' => Url::fromRoute('rubrica.search'),
+      '#attributes' => ['class' => ['btn', 'btn-outline-danger']],
     ];
 
     // The wrapper for search results.
@@ -111,17 +144,21 @@ class SearchForm extends FormBase {
       // is present when the page is loaded.
       '#markup' => '',
     ];
+    $form['search_results']['messages'] = [
+      '#type' => 'status_messages',
+      '#weight' => -10,
+    ];
 
     // The triggering element is the button that triggered the form submit. This
     // will be empty on initial page load, as the form has not been submitted
     // yet. Therefore the code inside the conditional is only executed when a
     // value has been submitted, and there are results to be rendered.
-    if ($form_state->getTriggeringElement()) {
+    if ($form_state->getTriggeringElement() && !$form_state->getErrors()) {
       // Get the text submitted by the user as a search query.
-      $firstName = trim($form_state->getValue('first_name'));
-      $lastName = trim($form_state->getValue('last_name'));
-      $office = $form_state->getValue('office');
-      $fulltext = trim($form_state->getValue('fulltext'));
+      $firstName = trim((string) $form_state->getValue('first_name'));
+      $lastName = trim((string) $form_state->getValue('last_name'));
+      $office = (int) $form_state->getValue('office');
+      $fulltext = trim((string) $form_state->getValue('fulltext'));
       if (empty($fulltext)) {
         $result = $this->ricercaPersonaUo->searchByFields($firstName, $lastName, $office);
       }
@@ -145,6 +182,23 @@ class SearchForm extends FormBase {
     }
 
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $office = (int) $form_state->getValue('office');
+    $hasName = trim((string) $form_state->getValue('first_name')) !== ''
+      || trim((string) $form_state->getValue('last_name')) !== '';
+    $hasFulltext = trim((string) $form_state->getValue('fulltext')) !== '';
+
+    if ($office !== 0 && $hasName) {
+      $form_state->setErrorByName('office', $this->t('Usa la ricerca per ufficio oppure per nome e cognome, non entrambe.'));
+    }
+    if ($hasFulltext && ($hasName || $office !== 0)) {
+      $form_state->setErrorByName('fulltext', $this->t('La ricerca libera non è combinabile con gli altri campi.'));
+    }
   }
 
   /**

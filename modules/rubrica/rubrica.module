@@ -5,7 +5,7 @@
  * Rubrica module.
  */
 
- /**
+/**
  * Implements hook_theme().
  */
 function rubrica_theme() {

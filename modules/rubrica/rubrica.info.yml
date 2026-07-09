@@ -2,10 +2,10 @@ name: Rubrica
 type: module
 description: Genera rubrica con ricerca
 package: Silfi
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^10.3 || ^11
 dependencies:
   - drupal:basic_auth
   - drupal:rest
   - restui:restui
 
-version: '1.0.1'
+version: '1.1.0'

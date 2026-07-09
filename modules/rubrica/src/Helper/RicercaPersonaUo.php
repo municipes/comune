@@ -103,7 +103,8 @@ class RicercaPersonaUo {
     $query = $nodeStorage->getQuery()
       ->condition('status', 1, '=')
       ->groupBy('nid')
-      ->sort('title', 'ASC');
+      ->sort('title', 'ASC')
+      ->sort('nid', 'ASC');
 
     if (!empty(trim($firstName)) || !empty(trim($lastName))) {
       $query->condition('field_incarico.entity:node.field_tipo_di_incarico', 411);
@@ -114,9 +115,14 @@ class RicercaPersonaUo {
         $query->condition('field_cognome', $lastName, 'CONTAINS');
       }
     }
-
-    if ($office != 0 && empty(trim($lastName)) && empty(trim($firstName))) {
+    elseif ($office != 0) {
+      $query->condition('type', 'unita_organizzativa', '=');
       $query->condition('nid', $office, '=');
+    }
+    else {
+      // Nessun filtro dal form: percorso REST/elenco completo. Limita ai
+      // bundle della rubrica invece di caricare tutti i nodi del sito.
+      $query->condition('type', ['persona', 'unita_organizzativa'], 'IN');
     }
 
     $query->accessCheck(TRUE);
@@ -161,6 +167,7 @@ class RicercaPersonaUo {
       ->condition('type', 'persona', '=')
       ->condition('status', 0, '=')
       ->groupBy('nid')
+      ->sort('nid', 'ASC')
       ->accessCheck(FALSE)
       ->execute();
   }
@@ -180,13 +187,14 @@ class RicercaPersonaUo {
       ->condition('status', 1, '=')
       ->condition('field_tipo_di_organizzazione', [303, 304], 'IN')
       ->groupBy('nid')
-      ->sort('title', 'ASC');
+      ->sort('title', 'ASC')
+      ->sort('nid', 'ASC');
 
     $query->accessCheck(TRUE);
 
     // Execute the query.
     if ($nids = $query->execute()) {
-      $options = $this->templateBuilder->loadNodes($nids);
+      $options += $this->templateBuilder->loadNodes($nids);
     }
 
     return $options;

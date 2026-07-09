@@ -10,7 +10,7 @@
 		{{ item.indirizzo }}
 	{% endif %}
 	{% if item.responsabile %}
-		<div class="h6">
+		<div class="h5">
 			<em>Responsabile:</em>
 			{{ item.responsabile.nome }}
 			<span class="fs-6 fw-lighter">{{ item.responsabile.desc }}</span>
@@ -23,7 +23,7 @@
 		{% import "@rubrica/persona.html.twig" as personaFields %}
 		<ul>
 		{% for persona in item.persone %}
-			<li>{{ personaFields.persona(persona) }}</li>
+			<li>{{ personaFields.persona(persona, 'h6') }}</li>
 		{% endfor %}
 		</ul>
 	{% endif %}

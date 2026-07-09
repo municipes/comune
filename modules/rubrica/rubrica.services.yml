@@ -5,7 +5,7 @@ services:
 
   rubrica.fullsearch:
     class: Drupal\rubrica\Helper\FullSearch
-    arguments: ['@rubrica.templatebuilder']
+    arguments: ['@rubrica.templatebuilder', '@plugin.manager.search_api.parse_mode']
 
   rubrica.templatebuilder:
     class: Drupal\rubrica\Helper\TemplateBuilder

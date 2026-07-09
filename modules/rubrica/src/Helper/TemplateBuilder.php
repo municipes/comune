@@ -22,6 +22,27 @@ class TemplateBuilder {
   protected $entityTypeManager;
 
   /**
+   * Incarichi pubblicati per persona (nid persona => incarichi per titolo).
+   *
+   * @var array
+   */
+  protected array $incarichiByPersona = [];
+
+  /**
+   * Incarichi di responsabile per UO (nid UO => incarichi per titolo).
+   *
+   * @var array
+   */
+  protected array $incarichiRespByUo = [];
+
+  /**
+   * Incarichi afferenti per UO (nid UO => incarichi per titolo).
+   *
+   * @var array
+   */
+  protected array $incarichiAfferentiByUo = [];
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entityTypeManager) {
@@ -51,6 +72,7 @@ class TemplateBuilder {
    *   Array di item strutturati per tipo (persona/unita_organizzativa).
    */
   public function createArrays(array $nodes, bool $flat = FALSE, bool $callcenter = FALSE): array {
+    $this->preloadRelations($nodes);
     if ($callcenter) {
       $unita_organizzative = [];
       $persone = [];
@@ -100,7 +122,7 @@ class TemplateBuilder {
    *   Il nodo persona da elaborare.
    * @param bool $flat
    *   Se TRUE restituisce array piatti invece di render arrays.
-   * @param bool $whitUo
+   * @param bool $withUo
    *   Se TRUE include i dati dell'unità organizzativa collegata.
    * @param bool $callcenter
    *   Se TRUE include i campi riservati per il call center.
@@ -108,10 +130,12 @@ class TemplateBuilder {
    * @return array
    *   Array strutturato con i dati della persona.
    */
-  private function getPersonaItem(EntityInterface $node, bool $flat = FALSE, $whitUo = FALSE, bool $callcenter = FALSE): array {
-    $incarichiEntity = $this->getReferencedNode($node->id(), 'field_persona', 'incarico', TRUE);
+  private function getPersonaItem(EntityInterface $node, bool $flat = FALSE, $withUo = FALSE, bool $callcenter = FALSE): array {
+    $incarichiEntity = $this->incarichiByPersona[$node->id()] ?? [];
     $contatti = $this->getFieldArray($node->field_punti_di_contatto);
     $uo = [];
+    $incarichi = [];
+    $tplContatto = [];
     foreach ($contatti as $contatto) {
       if ($flat) {
         $tplContatto[] = $this->createContattiArray($contatto);
@@ -122,7 +146,7 @@ class TemplateBuilder {
     }
     foreach ($incarichiEntity as $key => $incaricoEntity) {
       $incarichi[] = $incaricoEntity->label();
-      if ($whitUo) {
+      if ($withUo) {
         $uoEntity = $incaricoEntity->field_unita_organizzativa->entity;
         if ($uoEntity) {
           $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
@@ -130,7 +154,11 @@ class TemplateBuilder {
           $uoKey = $callcenter ? $uoEntity->id() : $key;
           $uo[$uoKey] = [
             'name' => $uoEntity->label(),
-            'indirizzo' => $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality,
+            // I due spazi replicano l'output storico quando manca il luogo,
+            // per mantenere identico il JSON dell'endpoint REST.
+            'indirizzo' => $indirizzo
+              ? $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality
+              : '  ',
           ];
         }
       }
@@ -176,15 +204,20 @@ class TemplateBuilder {
     $responsabile = FALSE;
     $contatti = [];
     $personeUo = [];
-    $incaricoResponsabile = $this->getReferencedNode($node->id(), 'field_responsabile_struttura', 'incarico', TRUE);
-    $incaricoResponsabile = reset($incaricoResponsabile);
+    $incarichiResponsabile = $this->incarichiRespByUo[$node->id()] ?? [];
 
-    if (isset($incaricoResponsabile->field_persona->target_id)) {
-      $responsabile = $incaricoResponsabile->field_persona->entity;
+    // Possono esistere più incarichi di responsabile per la stessa unità
+    // (es. incarichi storici senza persona collegata): usa il primo che
+    // referenzia una persona valida.
+    foreach ($incarichiResponsabile as $incaricoResponsabile) {
+      if (isset($incaricoResponsabile->field_persona->target_id) && $incaricoResponsabile->field_persona->entity !== NULL) {
+        $responsabile = $incaricoResponsabile->field_persona->entity;
+        break;
+      }
     }
 
     if ($withPersone) {
-      $incarichi = $this->getReferencedNode($node->id(), 'field_unita_organizzativa', 'incarico', TRUE);
+      $incarichi = $this->incarichiAfferentiByUo[$node->id()] ?? [];
       foreach ($incarichi as $incarico) {
         if (isset($incarico->field_persona->target_id)) {
           $persona = $incarico->field_persona->entity;
@@ -205,11 +238,11 @@ class TemplateBuilder {
       'type' => $node->bundle(),
       'nome' => $node->label(),
       // 'desc' => $node->field_descrizione_breve->value,
-      'contatti' => $contatti ?? [],
+      'contatti' => $contatti,
     ];
     if ($callcenter) {
       // Callcenter uses 'pocs' as the canonical contacts list.
-      $record['pocs'] = $contatti ?? [];
+      $record['pocs'] = $contatti;
     }
     if ($indirizzo) {
       $record['indirizzo'] = $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality;
@@ -255,6 +288,16 @@ class TemplateBuilder {
       '#content' => [
         'items' => $items,
       ],
+      '#cache' => [
+        'tags' => [
+          'node_list:persona',
+          'node_list:unita_organizzativa',
+          'node_list:incarico',
+          'node_list:punto_di_contatto',
+          'node_list:luogo',
+          'taxonomy_term_list',
+        ],
+      ],
     ];
 
     return $build;
@@ -271,9 +314,10 @@ class TemplateBuilder {
    */
   private function createContattiArray(Node $contatto): array {
     $pocValues = $contatto->field_contatto->referencedEntities();
+    $pocs = [];
 
-    foreach ($pocValues as $pkey => $pocParagraph) {
-      $pocParTitle = $pocParagraph->field_tipo_punto_di_contatto->entity->label();
+    foreach ($pocValues as $pocParagraph) {
+      $pocParTitle = $pocParagraph->field_tipo_punto_di_contatto->entity?->label() ?? '';
       $pocParValues = $pocParagraph->field_valore_punto_di_contatto->getValue();
       $pocParValuesToString = '';
       foreach ($pocParValues as $pocParvalue) {
@@ -304,37 +348,136 @@ class TemplateBuilder {
   }
 
   /**
-   * Carica i nodi che referenziano un'entità tramite un campo specifico.
+   * Query batch degli incarichi pubblicati che referenziano più target.
    *
-   * @param int $id
-   *   ID dell'entità referenziata.
+   * Replica la vecchia getReferencedNode() (status=1, type=incarico,
+   * sort title ASC, accessCheck TRUE) ma con una sola query per campo.
+   *
    * @param string $field
-   *   Nome del campo entity reference su cui filtrare.
-   * @param string $type
-   *   Bundle (tipo) dei nodi da cercare.
-   * @param bool $full
-   *   Se TRUE carica i nodi completi, altrimenti solo il titolo.
+   *   Campo entity reference dell'incarico su cui filtrare.
+   * @param array $ids
+   *   NID target da cercare.
    *
    * @return array
-   *   Array di nodi (o titoli) indicizzato per NID.
+   *   Mappa nid target => array di nodi incarico (keyed per nid incarico,
+   *   in ordine di titolo).
    */
-  private function getReferencedNode(int $id, string $field, string $type, bool $full = FALSE): array {
-    $items = [];
-    $nodeStorage = $this->entityTypeManager->getStorage('node');
-    $query = $nodeStorage->getQuery()
-      ->condition($field, $id, '=')
-      ->condition('status', 1, '=')
-      ->condition('type', $type, '=')
-      ->groupBy('nid')
-      ->sort('title', 'ASC');
-
-    $query->accessCheck(TRUE);
-
-    // Execute the query.
-    if ($nids = $query->execute()) {
-      $items = $this->loadNodes($nids, $full);
+  private function queryIncarichiBatch(string $field, array $ids): array {
+    if (empty($ids)) {
+      return [];
     }
-    return $items;
+    $nodeStorage = $this->entityTypeManager->getStorage('node');
+    $nids = $nodeStorage->getQuery()
+      ->condition($field, $ids, 'IN')
+      ->condition('status', 1, '=')
+      ->condition('type', 'incarico', '=')
+      ->sort('title', 'ASC')
+      ->sort('nid', 'ASC')
+      ->accessCheck(TRUE)
+      ->execute();
+
+    $map = [];
+    foreach ($nodeStorage->loadMultiple($nids) as $nid => $incarico) {
+      foreach ($incarico->get($field)->getValue() as $item) {
+        $map[(int) $item['target_id']][$nid] = $incarico;
+      }
+    }
+    return $map;
+  }
+
+  /**
+   * Precarica in batch incarichi ed entità collegate ai nodi in ingresso.
+   *
+   * Sostituisce le query per-nodo (N+1) con una query per relazione e
+   * scalda la cache statica dell'entity storage per i load annidati
+   * (persone, UO, luoghi, punti di contatto).
+   *
+   * @param array $nodes
+   *   Nodi persona/unita_organizzativa indicizzati per NID.
+   */
+  private function preloadRelations(array $nodes): void {
+    $personaNids = [];
+    $uoNids = [];
+    foreach ($nodes as $nid => $node) {
+      if ($node->bundle() === 'persona') {
+        $personaNids[] = (int) $nid;
+      }
+      elseif ($node->bundle() === 'unita_organizzativa') {
+        $uoNids[] = (int) $nid;
+      }
+    }
+
+    $this->incarichiRespByUo = $this->queryIncarichiBatch('field_responsabile_struttura', $uoNids);
+    $this->incarichiAfferentiByUo = $this->queryIncarichiBatch('field_unita_organizzativa', $uoNids);
+
+    // Anche le persone annidate nelle schede UO (responsabile e afferenti)
+    // hanno bisogno dei propri incarichi per le label.
+    foreach ([$this->incarichiRespByUo, $this->incarichiAfferentiByUo] as $map) {
+      foreach ($map as $incarichi) {
+        foreach ($incarichi as $incarico) {
+          if (!empty($incarico->field_persona->target_id)) {
+            $personaNids[] = (int) $incarico->field_persona->target_id;
+          }
+        }
+      }
+    }
+    $personaNids = array_values(array_unique($personaNids));
+    $this->incarichiByPersona = $this->queryIncarichiBatch('field_persona', $personaNids);
+
+    // Warm-up della cache statica per i ->entity annidati: persone e UO
+    // referenziate dagli incarichi, poi luoghi e punti di contatto.
+    $nodeStorage = $this->entityTypeManager->getStorage('node');
+    $warm = $personaNids;
+    foreach ($this->incarichiByPersona as $incarichi) {
+      foreach ($incarichi as $incarico) {
+        if (!empty($incarico->field_unita_organizzativa->target_id)) {
+          $warm[] = (int) $incarico->field_unita_organizzativa->target_id;
+        }
+      }
+    }
+    $referenced = $nodeStorage->loadMultiple(array_unique($warm));
+
+    $secondLevel = [];
+    foreach ($nodes + $referenced as $node) {
+      if ($node->hasField('field_punti_di_contatto')) {
+        foreach ($node->get('field_punti_di_contatto')->getValue() as $item) {
+          $secondLevel[] = (int) $item['target_id'];
+        }
+      }
+      if ($node->hasField('field_luogo') && !empty($node->field_luogo->target_id)) {
+        $secondLevel[] = (int) $node->field_luogo->target_id;
+      }
+    }
+    $secondLevelLoaded = $secondLevel
+      ? $nodeStorage->loadMultiple(array_unique($secondLevel))
+      : [];
+
+    // Paragraph dei punti di contatto (entity_reference_revisions):
+    // ERR EntityReferenceRevisions::getTarget() carica SEMPRE prima la
+    // default revision per entity ID ($storage->load($id)) e usa
+    // loadRevision() solo come fallback. Il warm-up efficace è quindi
+    // loadMultiple() sui target_id: scalda la cache statica per ID e
+    // azzera le query per-paragraph di createContattiArray().
+    if ($this->entityTypeManager->hasDefinition('paragraph')) {
+      $paragraphIds = [];
+      foreach ($secondLevelLoaded as $loaded) {
+        if ($loaded->hasField('field_contatto')) {
+          // Iterare gli item leggendo target_id direttamente: getValue()
+          // sugli item entity_reference_revisions computa la proprietà
+          // 'entity' e caricherebbe i paragraph uno a uno proprio qui
+          // (verificato: getValue() = 12 query, iterazione = 0 query).
+          foreach ($loaded->get('field_contatto') as $item) {
+            if (!empty($item->target_id)) {
+              $paragraphIds[] = (int) $item->target_id;
+            }
+          }
+        }
+      }
+      if ($paragraphIds) {
+        $this->entityTypeManager->getStorage('paragraph')
+          ->loadMultiple(array_unique($paragraphIds));
+      }
+    }
   }
 
   /**
@@ -349,6 +492,7 @@ class TemplateBuilder {
    *   Array di nodi (o titoli) indicizzato per NID.
    */
   public function loadNodes(array $nids, bool $full = FALSE): array {
+    $items = [];
     $nodeStorage = $this->entityTypeManager->getStorage('node');
     // Load the nodes with the given NIDs.
     if ($nodes = $nodeStorage->loadMultiple($nids)) {

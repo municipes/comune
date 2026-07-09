@@ -2,6 +2,9 @@
 
 namespace Drupal\rubrica\Plugin\rest\resource;
 
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\rest\Attribute\RestResource;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Drupal\rubrica\Helper\RicercaPersonaUo;
@@ -12,15 +15,14 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a Rubrica Resource.
- *
- * @RestResource(
- *   id = "rubrica_resource",
- *   label = @Translation("Rubrica Resource"),
- *   uri_paths = {
- *     "canonical" = "/rest/rubrica/api/v1/get/all"
- *   }
- * )
  */
+#[RestResource(
+  id: 'rubrica_resource',
+  label: new TranslatableMarkup('Rubrica Resource'),
+  uri_paths: [
+    'canonical' => '/rest/rubrica/api/v1/get/all',
+  ],
+)]
 class RubricaResource extends ResourceBase {
 
   /**
@@ -92,7 +94,20 @@ class RubricaResource extends ResourceBase {
     $callcenter = $this->requestStack->getCurrentRequest()->query->get('callcenter') === 'true';
     $data = $this->getData($callcenter);
     $response = new ResourceResponse($data);
-    $response->addCacheableDependency($data);
+    $cacheMeta = new CacheableMetadata();
+    $cacheMeta->setCacheTags([
+      'node_list:persona',
+      'node_list:unita_organizzativa',
+      'node_list:incarico',
+      'node_list:punto_di_contatto',
+      // Gli indirizzi arrivano da nodi luogo referenziati e i tipi di
+      // contatto da taxonomy term: senza questi tag resterebbero stantii
+      // (emendamento post-review task 5).
+      'node_list:luogo',
+      'taxonomy_term_list',
+    ]);
+    $cacheMeta->setCacheContexts(['url.query_args:callcenter']);
+    $response->addCacheableDependency($cacheMeta);
     return $response;
   }
 

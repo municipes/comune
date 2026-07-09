@@ -1,5 +1,5 @@
-{% macro persona(item) %}
-	<h2 class="h5">
+{% macro persona(item, size = 'h5') %}
+	<h2 class="{{ size }}">
 		{{ item.nome }}</h2>
 	<p>{{ item.desc }}</p>
 	{% if item.incarichi %}
