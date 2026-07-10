@@ -67,7 +67,7 @@ class SearchApiExcludeItemsFromIndex extends ProcessorPluginBase {
         case 'unita_organizzativa':
           if ($object->hasField('field_tipo_di_organizzazione')) {
             $value = $object->get('field_tipo_di_organizzazione')->getValue();
-            if ((int) $value[0]['target_id'] != 303 && (int) $value[0]['target_id'] != 304) {
+            if (!in_array((int) $value[0]['target_id'], [300, 303, 304], TRUE)) {
               unset($items[$item_id]);
             }
           }

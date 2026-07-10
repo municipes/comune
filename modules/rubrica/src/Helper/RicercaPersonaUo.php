@@ -185,7 +185,7 @@ class RicercaPersonaUo {
     $query = $nodeStorage->getQuery()
       ->condition('type', 'unita_organizzativa', '=')
       ->condition('status', 1, '=')
-      ->condition('field_tipo_di_organizzazione', [303, 304], 'IN')
+      ->condition('field_tipo_di_organizzazione', [300, 303, 304], 'IN')
       ->groupBy('nid')
       ->sort('title', 'ASC')
       ->sort('nid', 'ASC');

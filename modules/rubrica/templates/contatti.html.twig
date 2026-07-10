@@ -1,0 +1,45 @@
+{% macro group(contatti, label = 'Contatti') %}
+	{% if contatti %}
+		{% set icons = {
+			'email': 'it-mail',
+			'pec': 'it-mail',
+			'telefono': 'it-telephone',
+			'fax': 'it-print',
+			'linkedin': 'it-linkedin',
+			'skype': 'it-comment',
+			'telegram': 'it-telegram',
+			'twitter': 'it-twitter',
+			'whatsapp': 'it-whatsapp',
+		} %}
+		<div class="rubrica-contatti mb-2">
+			<span class="fw-semibold text-uppercase small text-secondary d-block mb-1">{{ label }}</span>
+			{% for contatto in contatti %}
+				{% set tipo = contatto.field_contatto.entity.field_tipo_punto_di_contatto.entity.label|lower %}
+				{% for valore in contatto.field_contatto.entity.field_valore_punto_di_contatto.getValue() %}
+					{% if valore.value %}
+						<div class="d-flex align-items-center gap-2 mb-1">
+							{% if icons[tipo] %}
+								{% include '@bi-bcl/icon/icon.html.twig' with {
+									name: icons[tipo],
+									size: 'sm',
+									color: 'primary',
+								} only %}
+							{% endif %}
+							<span class="fs-6">
+								{% if tipo == 'telefono' %}
+									<a href="tel:{{ valore.value }}">{{ valore.value }}</a>
+								{% elseif tipo == 'email' or tipo == 'pec' %}
+									<a href="mailto:{{ valore.value }}">{{ valore.value }}</a>
+								{% elseif tipo == 'url' %}
+									<a href="{{ valore.value }}" target="_blank" rel="noopener">{{ valore.value }}</a>
+								{% else %}
+									{{ valore.value }}
+								{% endif %}
+							</span>
+						</div>
+					{% endif %}
+				{% endfor %}
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endmacro %}

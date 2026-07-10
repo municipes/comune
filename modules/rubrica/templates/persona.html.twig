@@ -1,20 +1,9 @@
 {% macro persona(item, size = 'h5') %}
-	<h2 class="{{ size }}">
+	{% import "@rubrica/contatti.html.twig" as contattiFields %}
+	<h2 class="{{ size }} fw-bold mb-1">
 		{{ item.nome }}</h2>
-	<p>{{ item.desc }}</p>
-	{% if item.incarichi %}
-		<h3 class="h6">Incarichi:</h3>
-		{% for incarico in item.incarichi %}
-			<ul>
-				<li>
-					<em>{{ incarico }}</em>
-				</li>
-			</ul>
-		{% endfor %}
-	{% endif %}
-	{% for contatto in item.contatti %}
-		<div>{{ contatto }}</div>
-	{% endfor %}
+	{% if item.desc %}<p class="mb-2">{{ item.desc }}</p>{% endif %}
+	{{ contattiFields.group(item.contatti) }}
 	{% if item.uo %}
 		<h4 class="h6">Unità organizzative</h4>
 		{% for uo in item.uo %}

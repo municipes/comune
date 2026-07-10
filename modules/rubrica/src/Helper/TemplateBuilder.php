@@ -141,7 +141,10 @@ class TemplateBuilder {
         $tplContatto[] = $this->createContattiArray($contatto);
       }
       else {
-        $tplContatto[] = $this->viewBuilder($contatto, 'teaser');
+        // Nodo grezzo: il template lo renderizza raggruppato sotto un'unica
+        // etichetta "Contatti", senza il markup del teaser condiviso con le
+        // pagine nodo complete.
+        $tplContatto[] = $contatto;
       }
     }
     foreach ($incarichiEntity as $key => $incaricoEntity) {
@@ -230,7 +233,7 @@ class TemplateBuilder {
 
     $contattiEntity = isset($node->field_punti_di_contatto) ? $this->getFieldArray($node->field_punti_di_contatto) : [];
     foreach ($contattiEntity as $contatto) {
-      $contatti[] = $this->createContattiArray($contatto);
+      $contatti[] = $flat ? $this->createContattiArray($contatto) : $contatto;
     }
 
     $record = [
@@ -329,22 +332,6 @@ class TemplateBuilder {
       'title' => $contatto->label(),
       'value' => $pocs,
     ];
-  }
-
-  /**
-   * Ritorna il nodo renderizzato.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $node
-   *   Il nodo da renderizzare.
-   * @param string $display
-   *   La modalità di visualizzazione (es. 'teaser', 'full').
-   *
-   * @return mixed
-   *   Il render array del nodo nella modalità indicata.
-   */
-  private function viewBuilder(EntityInterface $node, string $display) {
-    $viewBuilder = $this->entityTypeManager->getViewBuilder('node');
-    return $viewBuilder->view($node, $display);
   }
 
   /**

@@ -1,29 +1,30 @@
 {% macro uo(item) %}
-	<h2 class="h5">
+	{% import "@rubrica/contatti.html.twig" as contattiFields %}
+	<h2 class="h3 fw-bold text-primary mb-2">
 		{{ item.nome }}</h2>
-	<p>{{ item.desc }}</p>
-	{% for contatto in item.contatti %}
-		<div>{{ contatto.text }}</div>
-	{% endfor %}
 	{% if item.indirizzo %}
-		Indirizzo:
-		{{ item.indirizzo }}
+		<p class="mb-2"><strong>Indirizzo:</strong> {{ item.indirizzo }}</p>
 	{% endif %}
+	{{ contattiFields.group(item.contatti) }}
 	{% if item.responsabile %}
-		<div class="h5">
+		<div class="h5 mb-1">
 			<em>Responsabile:</em>
 			{{ item.responsabile.nome }}
-			<span class="fs-6 fw-lighter">{{ item.responsabile.desc }}</span>
 		</div>
-		{% for contatto in item.responsabile.contatti %}
-			<div>{{ contatto }}</div>
-		{% endfor %}
+		{% if item.responsabile.desc %}
+			<p class="fs-6 fw-lighter mb-1">{{ item.responsabile.desc }}</p>
+		{% endif %}
+		{{ contattiFields.group(item.responsabile.contatti) }}
 	{% endif %}
 	{% if item.persone %}
 		{% import "@rubrica/persona.html.twig" as personaFields %}
-		<ul>
+		<ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
 		{% for persona in item.persone %}
-			<li>{{ personaFields.persona(persona, 'h6') }}</li>
+			<li class="col">
+				<div class="card h-100 p-3 border rounded-3 shadow-sm">
+					{{ personaFields.persona(persona, 'h6') }}
+				</div>
+			</li>
 		{% endfor %}
 		</ul>
 	{% endif %}
