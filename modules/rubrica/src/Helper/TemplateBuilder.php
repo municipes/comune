@@ -43,6 +43,13 @@ class TemplateBuilder {
   protected array $incarichiAfferentiByUo = [];
 
   /**
+   * Uffici figli per UO genitore (nid genitore => nodi UO figli per nid).
+   *
+   * @var array
+   */
+  protected array $childrenUoByParent = [];
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entityTypeManager) {
@@ -67,11 +74,14 @@ class TemplateBuilder {
    *   Se TRUE restituisce array piatti invece di render arrays.
    * @param bool $callcenter
    *   Se TRUE include i campi riservati per il call center.
+   * @param bool $withChildren
+   *   Se TRUE include gli uffici figli (field_unita_organizzativa) delle UO
+   *   di primo livello. Mai impostato dal percorso REST/call center.
    *
    * @return array
    *   Array di item strutturati per tipo (persona/unita_organizzativa).
    */
-  public function createArrays(array $nodes, bool $flat = FALSE, bool $callcenter = FALSE): array {
+  public function createArrays(array $nodes, bool $flat = FALSE, bool $callcenter = FALSE, bool $withChildren = FALSE): array {
     $this->preloadRelations($nodes);
     if ($callcenter) {
       $unita_organizzative = [];
@@ -103,7 +113,7 @@ class TemplateBuilder {
         case 'unita_organizzativa':
           $items[$nid] = [
             'type' => 'unita_organizzativa',
-            'value' => $this->getUoItem($node, $flat, $callcenter),
+            'value' => $this->getUoItem($node, $flat, $callcenter, TRUE, $withChildren),
           ];
           break;
 
@@ -198,11 +208,15 @@ class TemplateBuilder {
    *   Se TRUE include i campi riservati per il call center nelle persone.
    * @param bool $withPersone
    *   Se TRUE include le persone afferenti all'unità.
+   * @param bool $withChildren
+   *   Se TRUE include gli uffici figli (relazione field_unita_organizzativa
+   *   verso questa UO). I figli vengono elaborati con $withChildren=FALSE,
+   *   quindi la profondità è sempre limitata a un livello.
    *
    * @return array
    *   Array strutturato con i dati dell'unità organizzativa.
    */
-  private function getUoItem(EntityInterface $node, bool $flat = FALSE, bool $callcenter = FALSE, $withPersone = TRUE): array {
+  private function getUoItem(EntityInterface $node, bool $flat = FALSE, bool $callcenter = FALSE, $withPersone = TRUE, bool $withChildren = FALSE): array {
     $indirizzo = $node->field_luogo->entity->field_indirizzo ?? FALSE;
     $responsabile = FALSE;
     $contatti = [];
@@ -256,6 +270,14 @@ class TemplateBuilder {
     if ($personeUo) {
       foreach ($personeUo as $key => $personaUo) {
         $record['persone'][$key] = $this->getPersonaItem($personaUo, $flat, $callcenter, $callcenter);
+      }
+    }
+    if ($withChildren) {
+      $childrenNodes = $this->childrenUoByParent[$node->id()] ?? [];
+      foreach ($childrenNodes as $childNid => $childNode) {
+        // Un solo livello di profondità: i figli non ricevono a loro volta
+        // i propri figli.
+        $record['figli'][$childNid] = $this->getUoItem($childNode, $flat, $callcenter, $withPersone, FALSE);
       }
     }
     return $record;
@@ -373,6 +395,42 @@ class TemplateBuilder {
   }
 
   /**
+   * Query batch degli uffici figli (field_unita_organizzativa) di più UO.
+   *
+   * Un ufficio figlio è una unita_organizzativa il cui campo
+   * "Unità organizzativa genitore" (field_unita_organizzativa) referenzia
+   * una delle UO indicate.
+   *
+   * @param array $uoNids
+   *   NID delle UO genitore da cercare.
+   *
+   * @return array
+   *   Mappa nid genitore => nodi UO figli (keyed per nid figlio, in ordine
+   *   di titolo).
+   */
+  private function queryChildrenUoBatch(array $uoNids): array {
+    if (empty($uoNids)) {
+      return [];
+    }
+    $nodeStorage = $this->entityTypeManager->getStorage('node');
+    $nids = $nodeStorage->getQuery()
+      ->condition('type', 'unita_organizzativa', '=')
+      ->condition('field_unita_organizzativa', $uoNids, 'IN')
+      ->condition('status', 1, '=')
+      ->sort('title', 'ASC')
+      ->sort('nid', 'ASC')
+      ->accessCheck(TRUE)
+      ->execute();
+
+    $map = [];
+    foreach ($nodeStorage->loadMultiple($nids) as $nid => $child) {
+      $parentNid = (int) $child->field_unita_organizzativa->target_id;
+      $map[$parentNid][$nid] = $child;
+    }
+    return $map;
+  }
+
+  /**
    * Precarica in batch incarichi ed entità collegate ai nodi in ingresso.
    *
    * Sostituisce le query per-nodo (N+1) con una query per relazione e
@@ -393,6 +451,19 @@ class TemplateBuilder {
         $uoNids[] = (int) $nid;
       }
     }
+
+    // Gli uffici figli vanno cercati prima di precaricare incarichi/luoghi,
+    // cosi' che le loro relazioni finiscano nello stesso batch dei genitori
+    // invece di generare query aggiuntive in getUoItem().
+    $this->childrenUoByParent = $this->queryChildrenUoBatch($uoNids);
+    $childrenNodes = [];
+    foreach ($this->childrenUoByParent as $children) {
+      foreach ($children as $childNid => $childNode) {
+        $uoNids[] = $childNid;
+        $childrenNodes[$childNid] = $childNode;
+      }
+    }
+    $uoNids = array_values(array_unique($uoNids));
 
     $this->incarichiRespByUo = $this->queryIncarichiBatch('field_responsabile_struttura', $uoNids);
     $this->incarichiAfferentiByUo = $this->queryIncarichiBatch('field_unita_organizzativa', $uoNids);
@@ -425,7 +496,7 @@ class TemplateBuilder {
     $referenced = $nodeStorage->loadMultiple(array_unique($warm));
 
     $secondLevel = [];
-    foreach ($nodes + $referenced as $node) {
+    foreach ($nodes + $referenced + $childrenNodes as $node) {
       if ($node->hasField('field_punti_di_contatto')) {
         foreach ($node->get('field_punti_di_contatto')->getValue() as $item) {
           $secondLevel[] = (int) $item['target_id'];

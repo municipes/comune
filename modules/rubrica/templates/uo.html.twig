@@ -28,4 +28,16 @@
 		{% endfor %}
 		</ul>
 	{% endif %}
+	{% if item.figli %}
+		<div class="mt-3">
+			<span class="fw-semibold text-uppercase small text-secondary d-block mb-1">Uffici collegati</span>
+			{% for figlio in item.figli %}
+				{% include '@bi-bcl/accordion/accordion-item.html.twig' with {
+					item_title: figlio.nome,
+					item_body: _self.uo(figlio),
+					title_id: 'uo-figlio-' ~ figlio.id,
+				} only %}
+			{% endfor %}
+		</div>
+	{% endif %}
 {% endmacro %}

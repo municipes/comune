@@ -67,7 +67,9 @@ class RicercaPersonaUo {
     if ($nids = $this->queryByFields($firstName, $lastName, $office)) {
       // Load the nodes with the given NIDs.
       if ($nodes = $this->templateBuilder->loadNodes($nids, TRUE)) {
-        $items = $this->templateBuilder->createArrays($nodes);
+        // Gli uffici figli (field_unita_organizzativa) vengono mostrati solo
+        // per la ricerca per ufficio, non per nome/cognome.
+        $items = $this->templateBuilder->createArrays($nodes, FALSE, FALSE, $office !== 0);
       }
 
       $build = $this->templateBuilder->createBuildArray($items);
