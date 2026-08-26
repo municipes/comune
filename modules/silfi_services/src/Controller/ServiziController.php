@@ -533,6 +533,13 @@ class ServiziController extends ControllerBase {
     // Carica il nodo di tipo "Servizio" con l'ID passato come argomento.
     $node = Node::load($nid);
 
+    // Il riferimento puo' puntare a un nodo cancellato e field_orari esiste
+    // solo sul bundle "punto di contatto": senza queste verifiche un contatto
+    // orfano manderebbe in errore l'intera risposta della scheda.
+    if (!$node || !$node->hasField('field_orari')) {
+      return [];
+    }
+
     // Restituisce il valore del campo "Orari" del nodo.
     return $node->field_orari->getValue();
   }
