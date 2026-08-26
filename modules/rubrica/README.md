@@ -59,6 +59,13 @@ not listed in the select — it filters on
 `field_tipo_di_organizzazione` — but are still reachable this way, and
 the select gains the matching option for that request only.
 
+Full-text search results are loaded ten at a time. The result count is
+shown above them (`Risultati 1-10 di 17.`) and a *Mostra altri* button
+below reloads the wrapper with one more batch, through the same AJAX
+callback as the search itself. Starting a new search resets the batch
+size. Search by name or by office is never truncated, so neither the
+count nor the button appears there.
+
 ### REST endpoint
 
 | Property       | Value                              |

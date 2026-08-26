@@ -15,6 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SearchForm extends FormBase {
 
   /**
+   * Quanti risultati della ricerca libera mostrare per volta.
+   */
+  const RESULTS_STEP = 10;
+
+  /**
    * The search by field manager.
    *
    * @var \Drupal\rubrica\Helper\RicercaPersonaUo
@@ -183,15 +188,50 @@ class SearchForm extends FormBase {
         ? (int) $form_state->getValue('office')
         : $officeFromQuery;
       $fulltext = trim((string) $form_state->getValue('fulltext'));
+      $limit = (int) ($form_state->get('fulltext_limit') ?: self::RESULTS_STEP);
       if (empty($fulltext)) {
         $result = $this->ricercaPersonaUo->searchByFields($firstName, $lastName, $office);
       }
       else {
-        $result = $this->fullSearch->searchapiQuery($fulltext);
+        $result = $this->fullSearch->searchapiQuery($fulltext, $limit);
       }
 
       if ($result) {
         $form['search_results']['result'] = $result['search_results']['result'];
+      }
+
+      // La ricerca libera e' l'unica troncata: le altre restituiscono sempre
+      // l'insieme completo, quindi il conteggio e il pulsante non servono.
+      if ($fulltext !== '' && !empty($result['total'])) {
+        $total = (int) $result['total'];
+        $mostrati = min($limit, $total);
+        $form['search_results']['count'] = [
+          '#weight' => -5,
+          '#prefix' => '<p class="text-secondary">',
+          '#suffix' => '</p>',
+          '#markup' => $total > $mostrati
+            ? $this->t('Risultati 1-@mostrati di @total.', [
+              '@mostrati' => $mostrati,
+              '@total' => $total,
+            ])
+            : $this->formatPlural($total, '1 risultato.', '@count risultati.'),
+        ];
+        if ($total > $mostrati) {
+          $form['search_results']['more'] = [
+            '#type' => 'submit',
+            '#name' => 'load_more',
+            '#weight' => 50,
+            '#value' => $this->t('Mostra altri @quanti', [
+              '@quanti' => min(self::RESULTS_STEP, $total - $mostrati),
+            ]),
+            '#submit' => ['::loadMore'],
+            '#attributes' => ['class' => ['btn', 'btn-outline-primary']],
+            '#ajax' => [
+              'callback' => '::ajaxSubmit',
+              'wrapper' => 'set_search_results_wrapper',
+            ],
+          ];
+        }
       }
 
       // Check if no results were found.
@@ -229,8 +269,23 @@ class SearchForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Ogni nuova ricerca riparte dalla prima pagina di risultati.
+    $form_state->set('fulltext_limit', self::RESULTS_STEP);
     // Set the form to rebuild. The submitted values are maintained in the
     // form state, and used to build the search results in the form definition.
+    $form_state->setRebuild(TRUE);
+  }
+
+  /**
+   * Submit handler del pulsante "Mostra altri".
+   *
+   * Alza il limite della ricerca libera di uno scaglione e ricostruisce il
+   * form: i risultati vengono ricalcolati dall'inizio, non accodati, cosi'
+   * l'ordinamento per rilevanza resta quello dell'indice.
+   */
+  public function loadMore(array &$form, FormStateInterface $form_state) {
+    $limit = (int) ($form_state->get('fulltext_limit') ?: self::RESULTS_STEP);
+    $form_state->set('fulltext_limit', $limit + self::RESULTS_STEP);
     $form_state->setRebuild(TRUE);
   }
 
