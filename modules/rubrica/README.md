@@ -73,6 +73,26 @@ Content Moderation state is `solo_contact_center`:
 GET /rest/rubrica/api/v1/get/all?_format=json&callcenter=true
 ```
 
+**Opening hours** — every contact entry (`contatti`, and `pocs` in
+call-centre mode) carries an additional `orari` key when the underlying
+*punto_di_contatto* node has an `office_hours` field (`field_orari`)
+filled in. The key is omitted entirely otherwise, so consumers that do
+not handle it see an unchanged payload. Hours are normalised to one
+entry per time slot:
+
+```json
+"orari": [
+  { "giorno": 1, "dalle": "08:00", "alle": "13:00", "nota": "" },
+  { "giorno": 2, "dalle": "14:30", "alle": "18:00", "nota": "estate esclusa" }
+]
+```
+
+`giorno` follows the date_api convention used by office_hours
+(0 = Sunday … 6 = Saturday). Rows that office_hours stores as *exception
+dates* carry a `data` key in `Y-m-d` format instead of `giorno`. The
+`office_hours` module is an optional dependency: where it is not
+installed the field does not exist and no `orari` key is ever emitted.
+
 ### REST UI
 
 The endpoint can be inspected and toggled at

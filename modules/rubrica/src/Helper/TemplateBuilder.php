@@ -6,6 +6,7 @@ use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
+use Drupal\office_hours\OfficeHoursDateHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -350,10 +351,83 @@ class TemplateBuilder {
       }
       $pocs[] = $pocParTitle . ': ' . $pocParValuesToString;
     }
-    return [
+    $record = [
       'title' => $contatto->label(),
       'value' => $pocs,
     ];
+    // Chiave additiva: presente solo se il punto di contatto ha orari, così i
+    // consumatori che non la gestiscono vedono un JSON invariato.
+    if ($orari = $this->createOrariArray($contatto)) {
+      $record['orari'] = $orari;
+    }
+    return $record;
+  }
+
+  /**
+   * Normalizza il campo office_hours di un punto di contatto.
+   *
+   * Il campo `field_orari` è fornito dal modulo contrib office_hours, che qui
+   * resta una dipendenza opzionale: dove non è installato il campo non esiste
+   * e il metodo restituisce un array vuoto.
+   *
+   * Ogni riga del campo diventa una fascia oraria con gli orari già in HH:MM
+   * (il campo li salva come interi HHMM, es. 800). Le righe ordinarie portano
+   * `giorno` con la convenzione date_api di office_hours (0 = domenica …
+   * 6 = sabato); quelle che il modulo salva come eccezioni a data portano
+   * invece `data` in formato Y-m-d, perché office_hours riusa lo stesso `day`
+   * per entrambi i casi e vi mette un timestamp Unix quando è un'eccezione.
+   *
+   * @param \Drupal\node\Entity\Node $contatto
+   *   Il nodo punto_di_contatto da cui leggere gli orari.
+   *
+   * @return array
+   *   Array di fasce orarie, vuoto se il nodo non ha orari.
+   */
+  private function createOrariArray(Node $contatto): array {
+    if (!$contatto->hasField('field_orari') || $contatto->get('field_orari')->isEmpty()) {
+      return [];
+    }
+
+    $orari = [];
+    foreach ($contatto->get('field_orari')->getValue() as $item) {
+      $dalle = $this->formatOraOfficeHours($item['starthours'] ?? NULL);
+      $alle = $this->formatOraOfficeHours($item['endhours'] ?? NULL);
+      // Riga senza alcun orario: è un giorno di chiusura, non una fascia.
+      if ($dalle === NULL && $alle === NULL) {
+        continue;
+      }
+
+      // La distinzione giorno della settimana / eccezione a data è decisa da
+      // office_hours stesso: i timestamp delle eccezioni sono generati con la
+      // timezone di default di PHP, quindi date() è simmetrico alla scrittura.
+      $day = $item['day'] ?? 0;
+      $fascia = OfficeHoursDateHelper::isExceptionDay($day)
+        ? ['data' => date('Y-m-d', (int) $day)]
+        : ['giorno' => (int) $day];
+      $fascia['dalle'] = $dalle;
+      $fascia['alle'] = $alle;
+      $fascia['nota'] = (string) ($item['comment'] ?? '');
+      $orari[] = $fascia;
+    }
+
+    return $orari;
+  }
+
+  /**
+   * Converte un orario office_hours (intero HHMM) in stringa HH:MM.
+   *
+   * @param mixed $ora
+   *   Il valore grezzo del campo, es. 800 oppure NULL.
+   *
+   * @return string|null
+   *   L'orario in formato HH:MM, oppure NULL se non valorizzato.
+   */
+  private function formatOraOfficeHours($ora): ?string {
+    if ($ora === NULL || $ora === '') {
+      return NULL;
+    }
+    $ora = (int) $ora;
+    return sprintf('%02d:%02d', intdiv($ora, 100), $ora % 100);
   }
 
   /**
