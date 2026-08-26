@@ -7,7 +7,13 @@
 	{% if item.uo %}
 		<h4 class="h6">Unità organizzative</h4>
 		{% for uo in item.uo %}
-			<em>{{ uo.name }}</em><br>
+			{% if uo.id %}
+				<em>
+					<a href="{{ path('rubrica.search', {}, {'query': {'office': uo.id}}) }}" title="{{ 'Cerca nella rubrica il personale di @ufficio'|t({'@ufficio': uo.name}) }}">{{ uo.name }}</a>
+				</em><br>
+			{% else %}
+				<em>{{ uo.name }}</em><br>
+			{% endif %}
 			{{ uo.indirizzo }}
 		{% endfor %}
 	{% endif %}

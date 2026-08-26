@@ -58,6 +58,24 @@ class SearchForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
+    $uoOptions = $this->ricercaPersonaUo->getUo();
+    // Ricerca per ufficio avviabile via GET (?office=NNN): e' il link che i
+    // risultati per nominativo appendono a ogni unita organizzativa. Il nid
+    // vale solo se compare tra le opzioni della select, altrimenti si ignora
+    // e la pagina si comporta come un accesso normale.
+    $officeFromQuery = (int) $this->getRequest()->query->get('office');
+    if ($officeFromQuery && !isset($uoOptions[$officeFromQuery])) {
+      // Gli organi politici non stanno nella select ma sono referenziati
+      // dagli incarichi: l'opzione viene aggiunta al volo per questa sola
+      // richiesta, cosi' la select resta coerente con i risultati mostrati.
+      if ($label = $this->ricercaPersonaUo->getUoLabel($officeFromQuery)) {
+        $uoOptions[$officeFromQuery] = $label;
+      }
+    }
+    if (!$officeFromQuery || !isset($uoOptions[$officeFromQuery])) {
+      $officeFromQuery = 0;
+    }
+
     $form['intro'] = [
       '#type' => 'item',
       '#markup' => $this->t('I campi di ricerca sono alternativi: usa nome/cognome, oppure l\'ufficio, oppure la ricerca libera — non è possibile combinarli.'),
@@ -87,9 +105,10 @@ class SearchForm extends FormBase {
     ];
     $form['office'] = [
       '#type' => 'select',
-      '#options' => $this->ricercaPersonaUo->getUo(),
+      '#options' => $uoOptions,
       '#title' => $this->t('Ufficio'),
       '#required' => FALSE,
+      '#default_value' => $officeFromQuery,
       '#states' => [
         'enabled' => [
           ':input[name="first_name"]' => ['value' => ''],
@@ -153,11 +172,16 @@ class SearchForm extends FormBase {
     // will be empty on initial page load, as the form has not been submitted
     // yet. Therefore the code inside the conditional is only executed when a
     // value has been submitted, and there are results to be rendered.
-    if ($form_state->getTriggeringElement() && !$form_state->getErrors()) {
+    // Il link per ufficio arriva in GET, quindi senza triggering element:
+    // in quel caso i valori del form non esistono ancora e la ricerca parte
+    // dal solo nid validato piu' sopra.
+    if (($form_state->getTriggeringElement() || $officeFromQuery) && !$form_state->getErrors()) {
       // Get the text submitted by the user as a search query.
       $firstName = trim((string) $form_state->getValue('first_name'));
       $lastName = trim((string) $form_state->getValue('last_name'));
-      $office = (int) $form_state->getValue('office');
+      $office = $form_state->getTriggeringElement()
+        ? (int) $form_state->getValue('office')
+        : $officeFromQuery;
       $fulltext = trim((string) $form_state->getValue('fulltext'));
       if (empty($fulltext)) {
         $result = $this->ricercaPersonaUo->searchByFields($firstName, $lastName, $office);

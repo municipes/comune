@@ -49,6 +49,16 @@ additional configuration steps.
 The search form is available at `/rubrica/search` and requires the
 `access content` permission.
 
+The office search can also be started from a link: `?office=NNN`, where
+`NNN` is the node ID of an *unita_organizzativa*, preselects the office
+and renders its results on page load. Results of a search by name use it
+to make each organisational unit clickable. An ID that is not a
+published, viewable *unita_organizzativa* is ignored and the page behaves
+like a plain visit. Political bodies (council, cabinet, committees) are
+not listed in the select — it filters on
+`field_tipo_di_organizzazione` — but are still reachable this way, and
+the select gains the matching option for that request only.
+
 ### REST endpoint
 
 | Property       | Value                              |
@@ -92,6 +102,22 @@ entry per time slot:
 dates* carry a `data` key in `Y-m-d` format instead of `giorno`. The
 `office_hours` module is an optional dependency: where it is not
 installed the field does not exist and no `orari` key is ever emitted.
+
+**Organisational units of a person** — each *persona* entry carries a
+`uo` map of the organisational units the person belongs to. It is built
+from the `incarico` nodes linked to the person and collects both:
+
+- the unit the *incarico* is attached to (`field_unita_organizzativa`);
+- the unit the person is directly in charge of
+  (`field_responsabile_struttura`), which for managers, *elevate
+  qualificazioni* and heads of service is often the only link to a unit.
+
+Units of the second kind are appended after the first ones and only when
+not already present, so existing entries never move. Every entry exposes
+`id` (the unit node ID), `name` and `indirizzo`. In call-centre mode the
+map is keyed by unit node ID; in standard mode by *incarico* node ID,
+with the prefix `resp-` plus the unit node ID for units taken from
+`field_responsabile_struttura`.
 
 ### REST UI
 

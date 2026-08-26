@@ -158,23 +158,39 @@ class TemplateBuilder {
         $tplContatto[] = $contatto;
       }
     }
+    $uoVisti = [];
     foreach ($incarichiEntity as $key => $incaricoEntity) {
       $incarichi[] = $incaricoEntity->label();
       if ($withUo) {
         $uoEntity = $incaricoEntity->field_unita_organizzativa->entity;
         if ($uoEntity) {
-          $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
           // Callcenter uses UO NID as key for direct node path generation.
           $uoKey = $callcenter ? $uoEntity->id() : $key;
-          $uo[$uoKey] = [
-            'name' => $uoEntity->label(),
-            // I due spazi replicano l'output storico quando manca il luogo,
-            // per mantenere identico il JSON dell'endpoint REST.
-            'indirizzo' => $indirizzo
-              ? $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality
-              : '  ',
-          ];
+          $uo[$uoKey] = $this->createUoRefArray($uoEntity);
+          $uoVisti[$uoEntity->id()] = TRUE;
         }
+      }
+    }
+
+    // Seconda passata sulle strutture dirette (field_responsabile_struttura):
+    // per dirigenti, EQ e responsabili di servizio la struttura di cui sono a
+    // capo e' spesso l'unico collegamento a una UO, perche' l'incarico non
+    // valorizza field_unita_organizzativa. Vanno dopo le afferenze e solo se
+    // la UO non e' gia' presente, cosi' le voci esistenti non si spostano.
+    if ($withUo) {
+      foreach ($incarichiEntity as $incaricoEntity) {
+        $strutturaEntity = $incaricoEntity->field_responsabile_struttura->entity;
+        if (!$strutturaEntity || isset($uoVisti[$strutturaEntity->id()])) {
+          continue;
+        }
+        // In callcenter la chiave e' gia' il nid della UO; in HTML/REST
+        // standard e' il nid dell'incarico, che qui collide con l'afferenza
+        // dei 15 incarichi che valorizzano entrambi i campi.
+        $uoKey = $callcenter
+          ? $strutturaEntity->id()
+          : 'resp-' . $strutturaEntity->id();
+        $uo[$uoKey] = $this->createUoRefArray($strutturaEntity);
+        $uoVisti[$strutturaEntity->id()] = TRUE;
       }
     }
     $item = [
@@ -196,6 +212,30 @@ class TemplateBuilder {
       ];
     }
     return $item;
+  }
+
+  /**
+   * Costruisce la voce sintetica di una UO referenziata da una persona.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $uoEntity
+   *   Il nodo unita_organizzativa referenziato dall'incarico.
+   *
+   * @return array
+   *   Array con id, denominazione e indirizzo dell'unita organizzativa.
+   */
+  private function createUoRefArray(EntityInterface $uoEntity): array {
+    $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
+    return [
+      // L'id sta in testa perche' rende puramente additivo il diff del JSON
+      // rispetto alla baseline storica (nessuna riga esistente cambia).
+      'id' => $uoEntity->id(),
+      'name' => $uoEntity->label(),
+      // I due spazi replicano l'output storico quando manca il luogo,
+      // per mantenere identico il JSON dell'endpoint REST.
+      'indirizzo' => $indirizzo
+        ? $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality
+        : '  ',
+    ];
   }
 
   /**
@@ -564,6 +604,12 @@ class TemplateBuilder {
       foreach ($incarichi as $incarico) {
         if (!empty($incarico->field_unita_organizzativa->target_id)) {
           $warm[] = (int) $incarico->field_unita_organizzativa->target_id;
+        }
+        // Anche le strutture dirette: getPersonaItem() le legge come
+        // fallback per dirigenti, EQ e responsabili, e senza warm-up ogni
+        // ->entity tornerebbe una query.
+        if (!empty($incarico->field_responsabile_struttura->target_id)) {
+          $warm[] = (int) $incarico->field_responsabile_struttura->target_id;
         }
       }
     }
