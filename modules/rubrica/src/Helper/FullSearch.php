@@ -50,11 +50,15 @@ class FullSearch {
    *
    * @param string|null $keys
    *   Parole chiave da cercare.
+   * @param int $limit
+   *   Quanti risultati costruire. Il totale trovato viene comunque
+   *   restituito, cosi' il form puo' offrire il pulsante "Mostra altri".
    *
    * @return mixed
-   *   Array con i risultati della ricerca, o NULL se nessun risultato.
+   *   Array con i risultati della ricerca e la chiave 'total' con il numero
+   *   complessivo di corrispondenze, o NULL se nessun risultato.
    */
-  public function searchapiQuery(?string $keys = NULL): mixed {
+  public function searchapiQuery(?string $keys = NULL, int $limit = 10): mixed {
     $form = NULL;
     $index = Index::load('rubrica');
     $query = $index->query();
@@ -70,7 +74,7 @@ class FullSearch {
 
     // Set additional conditions.
     $query->addCondition('status', 1);
-    $query->range(0, 10);
+    $query->range(0, max(1, $limit));
     $query->sort('search_api_relevance', 'DESC');
 
     // Set one or more tags for the query.
@@ -91,6 +95,9 @@ class FullSearch {
       $build = $this->templateBuilder->createBuildArray($items);
 
       $form['search_results']['result'][] = $build;
+      // Il conteggio arriva dall'indice, non dagli item costruiti: serve a
+      // sapere quanti risultati restano oltre il limite corrente.
+      $form['total'] = (int) $results->getResultCount();
     }
 
     return $form;

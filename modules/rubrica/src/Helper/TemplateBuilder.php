@@ -6,6 +6,7 @@ use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
+use Drupal\office_hours\OfficeHoursDateHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -157,23 +158,39 @@ class TemplateBuilder {
         $tplContatto[] = $contatto;
       }
     }
+    $uoVisti = [];
     foreach ($incarichiEntity as $key => $incaricoEntity) {
       $incarichi[] = $incaricoEntity->label();
       if ($withUo) {
         $uoEntity = $incaricoEntity->field_unita_organizzativa->entity;
         if ($uoEntity) {
-          $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
           // Callcenter uses UO NID as key for direct node path generation.
           $uoKey = $callcenter ? $uoEntity->id() : $key;
-          $uo[$uoKey] = [
-            'name' => $uoEntity->label(),
-            // I due spazi replicano l'output storico quando manca il luogo,
-            // per mantenere identico il JSON dell'endpoint REST.
-            'indirizzo' => $indirizzo
-              ? $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality
-              : '  ',
-          ];
+          $uo[$uoKey] = $this->createUoRefArray($uoEntity);
+          $uoVisti[$uoEntity->id()] = TRUE;
         }
+      }
+    }
+
+    // Seconda passata sulle strutture dirette (field_responsabile_struttura):
+    // per dirigenti, EQ e responsabili di servizio la struttura di cui sono a
+    // capo e' spesso l'unico collegamento a una UO, perche' l'incarico non
+    // valorizza field_unita_organizzativa. Vanno dopo le afferenze e solo se
+    // la UO non e' gia' presente, cosi' le voci esistenti non si spostano.
+    if ($withUo) {
+      foreach ($incarichiEntity as $incaricoEntity) {
+        $strutturaEntity = $incaricoEntity->field_responsabile_struttura->entity;
+        if (!$strutturaEntity || isset($uoVisti[$strutturaEntity->id()])) {
+          continue;
+        }
+        // In callcenter la chiave e' gia' il nid della UO; in HTML/REST
+        // standard e' il nid dell'incarico, che qui collide con l'afferenza
+        // dei 15 incarichi che valorizzano entrambi i campi.
+        $uoKey = $callcenter
+          ? $strutturaEntity->id()
+          : 'resp-' . $strutturaEntity->id();
+        $uo[$uoKey] = $this->createUoRefArray($strutturaEntity);
+        $uoVisti[$strutturaEntity->id()] = TRUE;
       }
     }
     $item = [
@@ -195,6 +212,30 @@ class TemplateBuilder {
       ];
     }
     return $item;
+  }
+
+  /**
+   * Costruisce la voce sintetica di una UO referenziata da una persona.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $uoEntity
+   *   Il nodo unita_organizzativa referenziato dall'incarico.
+   *
+   * @return array
+   *   Array con id, denominazione e indirizzo dell'unita organizzativa.
+   */
+  private function createUoRefArray(EntityInterface $uoEntity): array {
+    $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
+    return [
+      // L'id sta in testa perche' rende puramente additivo il diff del JSON
+      // rispetto alla baseline storica (nessuna riga esistente cambia).
+      'id' => $uoEntity->id(),
+      'name' => $uoEntity->label(),
+      // I due spazi replicano l'output storico quando manca il luogo,
+      // per mantenere identico il JSON dell'endpoint REST.
+      'indirizzo' => $indirizzo
+        ? $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality
+        : '  ',
+    ];
   }
 
   /**
@@ -350,10 +391,83 @@ class TemplateBuilder {
       }
       $pocs[] = $pocParTitle . ': ' . $pocParValuesToString;
     }
-    return [
+    $record = [
       'title' => $contatto->label(),
       'value' => $pocs,
     ];
+    // Chiave additiva: presente solo se il punto di contatto ha orari, così i
+    // consumatori che non la gestiscono vedono un JSON invariato.
+    if ($orari = $this->createOrariArray($contatto)) {
+      $record['orari'] = $orari;
+    }
+    return $record;
+  }
+
+  /**
+   * Normalizza il campo office_hours di un punto di contatto.
+   *
+   * Il campo `field_orari` è fornito dal modulo contrib office_hours, che qui
+   * resta una dipendenza opzionale: dove non è installato il campo non esiste
+   * e il metodo restituisce un array vuoto.
+   *
+   * Ogni riga del campo diventa una fascia oraria con gli orari già in HH:MM
+   * (il campo li salva come interi HHMM, es. 800). Le righe ordinarie portano
+   * `giorno` con la convenzione date_api di office_hours (0 = domenica …
+   * 6 = sabato); quelle che il modulo salva come eccezioni a data portano
+   * invece `data` in formato Y-m-d, perché office_hours riusa lo stesso `day`
+   * per entrambi i casi e vi mette un timestamp Unix quando è un'eccezione.
+   *
+   * @param \Drupal\node\Entity\Node $contatto
+   *   Il nodo punto_di_contatto da cui leggere gli orari.
+   *
+   * @return array
+   *   Array di fasce orarie, vuoto se il nodo non ha orari.
+   */
+  private function createOrariArray(Node $contatto): array {
+    if (!$contatto->hasField('field_orari') || $contatto->get('field_orari')->isEmpty()) {
+      return [];
+    }
+
+    $orari = [];
+    foreach ($contatto->get('field_orari')->getValue() as $item) {
+      $dalle = $this->formatOraOfficeHours($item['starthours'] ?? NULL);
+      $alle = $this->formatOraOfficeHours($item['endhours'] ?? NULL);
+      // Riga senza alcun orario: è un giorno di chiusura, non una fascia.
+      if ($dalle === NULL && $alle === NULL) {
+        continue;
+      }
+
+      // La distinzione giorno della settimana / eccezione a data è decisa da
+      // office_hours stesso: i timestamp delle eccezioni sono generati con la
+      // timezone di default di PHP, quindi date() è simmetrico alla scrittura.
+      $day = $item['day'] ?? 0;
+      $fascia = OfficeHoursDateHelper::isExceptionDay($day)
+        ? ['data' => date('Y-m-d', (int) $day)]
+        : ['giorno' => (int) $day];
+      $fascia['dalle'] = $dalle;
+      $fascia['alle'] = $alle;
+      $fascia['nota'] = (string) ($item['comment'] ?? '');
+      $orari[] = $fascia;
+    }
+
+    return $orari;
+  }
+
+  /**
+   * Converte un orario office_hours (intero HHMM) in stringa HH:MM.
+   *
+   * @param mixed $ora
+   *   Il valore grezzo del campo, es. 800 oppure NULL.
+   *
+   * @return string|null
+   *   L'orario in formato HH:MM, oppure NULL se non valorizzato.
+   */
+  private function formatOraOfficeHours($ora): ?string {
+    if ($ora === NULL || $ora === '') {
+      return NULL;
+    }
+    $ora = (int) $ora;
+    return sprintf('%02d:%02d', intdiv($ora, 100), $ora % 100);
   }
 
   /**
@@ -490,6 +604,12 @@ class TemplateBuilder {
       foreach ($incarichi as $incarico) {
         if (!empty($incarico->field_unita_organizzativa->target_id)) {
           $warm[] = (int) $incarico->field_unita_organizzativa->target_id;
+        }
+        // Anche le strutture dirette: getPersonaItem() le legge come
+        // fallback per dirigenti, EQ e responsabili, e senza warm-up ogni
+        // ->entity tornerebbe una query.
+        if (!empty($incarico->field_responsabile_struttura->target_id)) {
+          $warm[] = (int) $incarico->field_responsabile_struttura->target_id;
         }
       }
     }

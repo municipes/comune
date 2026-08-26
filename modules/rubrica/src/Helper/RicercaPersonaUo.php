@@ -202,4 +202,33 @@ class RicercaPersonaUo {
     return $options;
   }
 
+  /**
+   * Restituisce l'etichetta di una UO ricercabile dal form.
+   *
+   * La select di getUo() filtra per field_tipo_di_organizzazione, quindi
+   * esclude gli organi politici (giunta, consiglio, commissioni); questi
+   * pero' sono referenziati dagli incarichi e compaiono tra le unita di
+   * una persona, dove il link "cerca in questo ufficio" deve funzionare
+   * lo stesso.
+   *
+   * @param int $nid
+   *   Il node ID da validare.
+   *
+   * @return string|null
+   *   L'etichetta della UO pubblicata e visibile, NULL altrimenti.
+   */
+  public function getUoLabel(int $nid): ?string {
+    if ($nid <= 0) {
+      return NULL;
+    }
+    $node = $this->entityTypeManager->getStorage('node')->load($nid);
+    if (!$node || $node->bundle() !== 'unita_organizzativa') {
+      return NULL;
+    }
+    if (!$node->isPublished() || !$node->access('view')) {
+      return NULL;
+    }
+    return (string) $node->label();
+  }
+
 }

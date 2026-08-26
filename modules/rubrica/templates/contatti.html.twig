@@ -39,6 +39,16 @@
 						</div>
 					{% endif %}
 				{% endfor %}
+				{% if contatto.hasField('field_orari') and not contatto.field_orari.isEmpty() %}
+					<div class="d-flex align-items-start gap-2 mb-1">
+						{% include '@bi-bcl/icon/icon.html.twig' with {
+							name: 'it-clock',
+							size: 'sm',
+							color: 'primary',
+						} only %}
+						<div class="fs-6 rubrica-orari">{{ contatto.field_orari|view }}</div>
+					</div>
+				{% endif %}
 			{% endfor %}
 		</div>
 	{% endif %}
