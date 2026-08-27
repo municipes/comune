@@ -98,6 +98,13 @@ class TemplateBuilder {
             break;
         }
       }
+      // I consumatori risolvono `padre` per riferimento mentre scorrono il
+      // documento, quindi i genitori devono precedere i figli. L'albero delle
+      // UO e' profondo un solo livello, percio' basta anteporre chi un
+      // genitore non ce l'ha; l'unione preserva le chiavi e non duplica nulla.
+      $radici = array_filter($unita_organizzative, static fn(array $uo): bool => !isset($uo['padre']));
+      $unita_organizzative = $radici + $unita_organizzative;
+
       return ['unita_organizzative' => $unita_organizzative, 'persone' => $persone];
     }
 
@@ -304,6 +311,14 @@ class TemplateBuilder {
     }
     if ($indirizzo) {
       $record['indirizzo'] = $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality;
+    }
+    // Chiave additiva: l'unita' organizzativa genitore, nella stessa forma
+    // compatta gia' usata per le UO delle persone. Presente solo se c'e', cosi'
+    // i consumatori che non la gestiscono vedono un JSON invariato. E' il
+    // verso opposto di `figli`: una sola reference sul figlio invece di
+    // duplicare l'intero oggetto UO dentro il padre.
+    if ($node->hasField('field_unita_organizzativa') && ($padre = $node->get('field_unita_organizzativa')->entity)) {
+      $record['padre'] = $this->createUoRefArray($padre);
     }
     if ($responsabile) {
       $record['responsabile'] = $this->getPersonaItem($responsabile, $flat, $callcenter, $callcenter);
