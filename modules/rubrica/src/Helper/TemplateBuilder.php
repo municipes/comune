@@ -173,7 +173,7 @@ class TemplateBuilder {
         if ($uoEntity) {
           // Callcenter uses UO NID as key for direct node path generation.
           $uoKey = $callcenter ? $uoEntity->id() : $key;
-          $uo[$uoKey] = $this->createUoRefArray($uoEntity);
+          $uo[$uoKey] = $this->createUoRefArray($uoEntity, $callcenter);
           $uoVisti[$uoEntity->id()] = TRUE;
         }
       }
@@ -196,7 +196,7 @@ class TemplateBuilder {
         $uoKey = $callcenter
           ? $strutturaEntity->id()
           : 'resp-' . $strutturaEntity->id();
-        $uo[$uoKey] = $this->createUoRefArray($strutturaEntity);
+        $uo[$uoKey] = $this->createUoRefArray($strutturaEntity, $callcenter);
         $uoVisti[$strutturaEntity->id()] = TRUE;
       }
     }
@@ -211,6 +211,11 @@ class TemplateBuilder {
       'uo' => $uo,
     ];
     if ($callcenter) {
+      // Chiave stabile fra comuni diversi: `id` e' il nid locale del sito, che
+      // fra due enti collide e fa fondere due persone in un nodo solo lato
+      // callcenter. L'uuid di Drupal e' invece globalmente unico. Additiva e
+      // solo per il callcenter, cosi' il JSON dell'endpoint REST resta identico.
+      $item['uuid'] = $node->uuid();
       $item['cognome'] = $node->field_cognome->value ?? '';
       $item['contatti_riservati'] = [
         'telefono_riservato' => $node->field_telefono_riservato->value,
@@ -226,13 +231,15 @@ class TemplateBuilder {
    *
    * @param \Drupal\Core\Entity\EntityInterface $uoEntity
    *   Il nodo unita_organizzativa referenziato dall'incarico.
+   * @param bool $callcenter
+   *   Se TRUE aggiunge l'uuid, chiave stabile fra comuni diversi.
    *
    * @return array
    *   Array con id, denominazione e indirizzo dell'unita organizzativa.
    */
-  private function createUoRefArray(EntityInterface $uoEntity): array {
+  private function createUoRefArray(EntityInterface $uoEntity, bool $callcenter = FALSE): array {
     $indirizzo = $uoEntity->field_luogo->entity->field_indirizzo ?? FALSE;
-    return [
+    $ref = [
       // L'id sta in testa perche' rende puramente additivo il diff del JSON
       // rispetto alla baseline storica (nessuna riga esistente cambia).
       'id' => $uoEntity->id(),
@@ -243,6 +250,10 @@ class TemplateBuilder {
         ? $indirizzo->address_line1 . ' ' . $indirizzo->postal_code . ' ' . $indirizzo->locality
         : '  ',
     ];
+    if ($callcenter) {
+      $ref['uuid'] = $uoEntity->uuid();
+    }
+    return $ref;
   }
 
   /**
@@ -306,6 +317,9 @@ class TemplateBuilder {
       'contatti' => $contatti,
     ];
     if ($callcenter) {
+      // Vedi getPersonaItem(): l'uuid e' l'unica chiave che non collide fra i
+      // siti dei diversi comuni importati dal callcenter.
+      $record['uuid'] = $node->uuid();
       // Callcenter uses 'pocs' as the canonical contacts list.
       $record['pocs'] = $contatti;
     }
@@ -318,7 +332,7 @@ class TemplateBuilder {
     // verso opposto di `figli`: una sola reference sul figlio invece di
     // duplicare l'intero oggetto UO dentro il padre.
     if ($node->hasField('field_unita_organizzativa') && ($padre = $node->get('field_unita_organizzativa')->entity)) {
-      $record['padre'] = $this->createUoRefArray($padre);
+      $record['padre'] = $this->createUoRefArray($padre, $callcenter);
     }
     if ($responsabile) {
       $record['responsabile'] = $this->getPersonaItem($responsabile, $flat, $callcenter, $callcenter);
