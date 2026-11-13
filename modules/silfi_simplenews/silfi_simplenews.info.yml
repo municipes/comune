@@ -2,7 +2,7 @@ name: Silfi Simplenews
 type: module
 description: Impostazioni specifiche di simplenews
 package: Custom
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10.3 || ^11
 
 dependencies:
   - simplenews:simplenews

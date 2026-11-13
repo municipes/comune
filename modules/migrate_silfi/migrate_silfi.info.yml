@@ -2,7 +2,7 @@ name: Silfi Migrate
 type: module
 description: Data migration from old websites
 package: Comune
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^10.3 || ^11
 dependencies:
   - migrate:migrate
   - migrate_plus:migrate_plus

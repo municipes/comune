@@ -1,7 +1,7 @@
 name: 'Silfi Services'
 type: module
 description: 'Modulo per esporre endpoint REST per query su content types.'
-core_version_requirement: ^10
+core_version_requirement: ^10.3 || ^11
 package: Custom
 dependencies:
   - drupal:rest

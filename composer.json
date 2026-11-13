@@ -28,10 +28,11 @@
     "drupal/linkit": "^7.0",
     "drupal/rabbit_hole": "^1.0@beta",
     "drupal/simple_sitemap": "^4.1",
-    "municipes/silfi_triplette": "^1.0",
-    "municipes/privatum_documentum": "^1.x-dev",
-    "municipes/libellus": "^1.x-dev",
-    "municipes/nuntium": "^1.x-dev",
+    "drupal/statistics": "^1.0",
+    "municipes/silfi_triplette": "^2.0@alpha",
+    "municipes/privatum_documentum": "^2.0@alpha",
+    "municipes/libellus": "^2.0@alpha",
+    "municipes/nuntium": "^2.0@alpha",
     "municipes-fs/scaenographia": "^1.0"
   },
   "support": {

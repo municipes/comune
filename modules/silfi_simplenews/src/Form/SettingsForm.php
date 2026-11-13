@@ -67,8 +67,8 @@ class SettingsForm extends ConfigFormBase {
       '#progress_message' => t('Please wait...'),
       '#upload_location' => 'public://mail',
       '#upload_validators' => [
-        'file_validate_extensions' => [
-          'gif png jpg jpeg webp',
+        'FileExtension' => [
+          'extensions' => 'gif png jpg jpeg webp',
         ],
       ],
     ];

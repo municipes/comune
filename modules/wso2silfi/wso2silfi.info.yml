@@ -1,7 +1,7 @@
 name: 'WSO2 Silfi'
 type: module
 description: 'WSO2 identity server - OAuth 2.0 Module for Silfi.'
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10.3 || ^11
 tags:
  - akabit
 package: 'Silfi'

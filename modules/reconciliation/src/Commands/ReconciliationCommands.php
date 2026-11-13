@@ -34,7 +34,7 @@ class ReconciliationCommands extends DrushCommands {
    */
   public function missedlinks($content_type = 'none') {
     // entity query
-    $query = \Drupal::entityQuery('node');
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE);
     if ("none" != $content_type) {
       $query->condition('type', $content_type, '=');
       $nids = $query->execute();
@@ -101,7 +101,7 @@ class ReconciliationCommands extends DrushCommands {
         $node->set('field_link_utili', $links);
         $node->save();
       } catch (\Exception $e) {
-        watchdog_exception('InsertLink', $e);
+        \Drupal\Core\Utility\Error::logException(\Drupal::logger('InsertLink'), $e);
       }
     }
   }
@@ -125,7 +125,7 @@ class ReconciliationCommands extends DrushCommands {
     $mtable
   ) {
     // entity query
-    $query = \Drupal::entityQuery('node');
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE);
     if ("none" != $content_type) {
       $query->condition('type', $content_type, '=');
       $query->accessCheck(FALSE);
@@ -246,7 +246,7 @@ class ReconciliationCommands extends DrushCommands {
       ]
     ) {
     // entity query
-    $query = \Drupal::entityQuery('node');
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE);
     if ("none" != $content_type && $options['site']) {
       if (!$options['folder']) {
         $options['folder'] = $options['site'];

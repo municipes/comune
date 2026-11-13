@@ -2,7 +2,7 @@ name: Silfi OpenCityItalia
 type: module
 description: Collezione di widget
 package: Silfi
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10.3 || ^11
 dependencies:
   - drupal:block
 configure: silfi_opencityitalia.settings

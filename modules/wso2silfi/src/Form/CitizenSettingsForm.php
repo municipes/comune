@@ -239,7 +239,7 @@ class CitizenSettingsForm extends ConfigFormBase {
     $roles = array_map([
       '\\Drupal\\Component\\Utility\\Html',
       'escape',
-    ], user_role_names(TRUE));
+    ], array_map(static fn ($role) => $role->label(), array_diff_key(\Drupal\user\Entity\Role::loadMultiple(), [\Drupal\user\RoleInterface::ANONYMOUS_ID => TRUE])));
     unset ($roles['authenticated']);
     $roles = ['none' => 'Nessuno (solo Autenticato)'] + $roles;
 

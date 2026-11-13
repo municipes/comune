@@ -2,7 +2,7 @@ name: 'Silfi Migrate 9'
 type: module
 description: 'Migrate from Comuni D9'
 package: migrate
-core_version_requirement: ^10
+core_version_requirement: ^10.3 || ^11
 dependencies:
   - migrate_drupal_d8:migrate_drupal_d8
   - migrate_skip_on_404:migrate_skip_on_404

@@ -2,7 +2,7 @@ name: Comune Silfi
 type: profile
 description: 'Installation profile for Municipality by Silfi.'
 version: VERSION
-core_version_requirement: '^10'
+core_version_requirement: ^10.3 || ^11
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
@@ -78,11 +78,10 @@ install:
   - drupal:page_cache
   - drupal:path
   - drupal:path_alias
-  - drupal:phpass
   - drupal:responsive_image
   - drupal:rest
   - drupal:shortcut
-  - drupal:statistics
+  - statistics:statistics
   - drupal:syslog
   - drupal:system
   - drupal:text

@@ -4,7 +4,7 @@ package: "Comune"
 hidden: true
 
 type: module
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^10.3 || ^11
 dependencies:
   - drupal:migrate
   - drupal:migrate_plus

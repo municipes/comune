@@ -4,7 +4,7 @@ description: Data migration from old Drupal 7 websites
 package: Comune
 hidden: false
 
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^10.3 || ^11
 dependencies:
   - comune:migrate_silfi
 
